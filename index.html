@@ -4,7 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Ministração Johrei</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Guia completo de ministração Johrei com fundamentos, casos, orientações e pontos focais. Ferramenta de consulta para praticantes e estudantes do Johrei.">
+    <meta name="keywords"
+        content="Johrei, ministração, guia, fundamentos, curas, pontos focais, orientações, tratamento espiritual, Meishu-Sama">
+    <meta name="author" content="Guia Johrei">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Guia de Ministração Johrei - 浄霊法講座">
+    <meta property="og:description"
+        content="Guia completo de ministração Johrei com fundamentos, casos e orientações para praticantes.">
+    <meta property="og:site_name" content="Guia Johrei">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Guia de Ministração Johrei">
+    <meta property="twitter:description"
+        content="Guia completo de ministração Johrei com fundamentos, casos e orientações para praticantes.">
+
+    <title>Guia de Ministração Johrei - 浄霊法講座</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙏</text></svg>">
     <style>
         /* Design Sueco Refinado: Cores, Não Ícones */
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
@@ -39,6 +65,9 @@
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.08);
             --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Font size control for accessibility */
+            --font-size-multiplier: 1;
         }
 
         * {
@@ -49,7 +78,7 @@
 
         body {
             font-family: var(--font-sans);
-            font-size: 16px;
+            font-size: calc(16px * var(--font-size-multiplier));
             line-height: 1.6;
             color: var(--color-text);
             background: var(--color-bg);
@@ -62,22 +91,242 @@
             color: var(--color-fundamentos);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+
+            .header,
+            .mode-switch-container,
+            .alphabet-filter,
+            .active-filters,
+            .tags-filter,
+            .modal-navigation,
+            .back-to-top,
+            .floating-controls,
+            .modal-close,
+            .search-container,
+            .tabs-container,
+            .breadcrumb-container {
+                display: none !important;
+            }
+
+            .card,
+            .modal {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .modal-overlay {
+                position: relative;
+                background: white;
+                padding: 0;
+            }
+
+            .modal {
+                height: auto;
+                max-width: none;
+                box-shadow: none;
+            }
+
+            .cards-grid {
+                display: block;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .modal-action-btn {
+                display: none !important;
+            }
         }
 
-        ::-webkit-scrollbar-track {
+        /* ==================== PASSWORD PROTECTION ==================== */
+        .password-overlay {
+            position: fixed;
+            inset: 0;
             background: var(--color-bg);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-border);
-            border-radius: 5px;
+        .password-overlay.hidden {
+            display: none;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--color-border-hover);
+        .password-container {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 4rem 3rem;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: var(--shadow-sm);
+            animation: slideUp 0.4s ease;
+        }
+
+        .password-logo {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .password-title {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .password-subtitle {
+            text-align: center;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        .password-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .password-input-group {
+            position: relative;
+        }
+
+        .password-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            font-family: var(--font-sans);
+            transition: var(--transition);
+            outline: none;
+            background: var(--color-surface);
+        }
+
+        .password-input:focus {
+            border-color: var(--color-fundamentos);
+            box-shadow: 0 0 0 3px var(--color-fundamentos-light);
+        }
+
+        .password-input.error {
+            border-color: #DC2626;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            75% {
+                transform: translateX(8px);
+            }
+        }
+
+        .password-error {
+            color: #DC2626;
+            font-size: 0.8rem;
+            margin-top: 0.625rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .password-error.visible {
+            display: block;
+        }
+
+        .password-remember {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-size: 0.875rem;
+            color: var(--color-text);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .password-remember input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--color-fundamentos);
+        }
+
+        .password-submit {
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--color-text);
+            color: var(--color-surface);
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-sans);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .password-submit:hover {
+            background: var(--color-fundamentos);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .password-submit:active {
+            transform: translateY(0);
+        }
+
+        .password-footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-lighter);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .site-content {
+            display: none;
+        }
+
+        .site-content.unlocked {
+            display: block;
         }
 
         /* Header */
@@ -129,6 +378,23 @@
             color: var(--color-fundamentos);
             display: block;
             line-height: 1;
+            transition: var(--transition);
+        }
+
+        .stats-number.animating {
+            animation: countUp 1s ease-out;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .stats-label {
@@ -162,6 +428,60 @@
 
         .search-input::placeholder {
             color: var(--color-text-lighter);
+        }
+
+        /* ==================== BREADCRUMB NAVIGATION ==================== */
+        .breadcrumb-container {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 0;
+            display: none;
+            position: sticky;
+            top: 220px;
+            z-index: 89;
+        }
+
+        .breadcrumb-container.active {
+            display: block;
+        }
+
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb-item {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .breadcrumb-item:hover {
+            color: var(--color-fundamentos);
+        }
+
+        .breadcrumb-separator {
+            color: var(--color-text-lighter);
+            margin: 0 0.25rem;
+        }
+
+        .breadcrumb-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-fundamentos-light);
+            color: var(--color-fundamentos);
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Active Filters */
@@ -478,6 +798,7 @@
             border-radius: 2rem;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
         }
 
         .tag-btn:hover {
@@ -490,6 +811,44 @@
             background: var(--color-text);
             color: var(--color-surface);
             border-color: var(--color-text);
+        }
+
+        /* Tooltip for tag count */
+        .tag-btn::after {
+            content: attr(data-count) ' itens';
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: var(--color-text);
+            color: var(--color-surface);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .tag-btn::before {
+            content: '';
+            position: absolute;
+            bottom: calc(100% + 2px);
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            border: 6px solid transparent;
+            border-top-color: var(--color-text);
+            opacity: 0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .tag-btn:hover::after,
+        .tag-btn:hover::before {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
         }
 
         /* Cards Grid */
@@ -732,6 +1091,11 @@
             color: var(--color-pontos-focais);
         }
 
+        .modal-title-wrapper {
+            flex: 1;
+            padding-right: 1rem;
+        }
+
         .modal-title {
             font-family: var(--font-serif);
             font-size: 2rem;
@@ -739,13 +1103,70 @@
             color: var(--color-text);
             margin-bottom: 0.75rem;
             line-height: 1.3;
-            padding-right: 2rem;
         }
 
         .modal-source {
             font-size: 0.9rem;
             color: var(--color-text-light);
             font-weight: 600;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+            align-items: start;
+        }
+
+        .modal-action-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--color-text-light);
+            position: relative;
+        }
+
+        .modal-action-btn:hover {
+            background: var(--color-bg);
+            color: var(--color-text);
+            border-color: var(--color-border-hover);
+            transform: translateY(-2px);
+        }
+
+        .modal-action-btn.copied {
+            background: var(--color-fundamentos-light);
+            color: var(--color-fundamentos);
+            border-color: var(--color-fundamentos);
+        }
+
+        .modal-action-btn::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: var(--color-text);
+            color: var(--color-surface);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+        }
+
+        .modal-action-btn:hover::after {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
         }
 
         .modal-close {
@@ -944,6 +1365,95 @@
             margin-bottom: 0.5rem;
         }
 
+        /* ==================== BACK TO TOP BUTTON ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--color-fundamentos);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-text);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ==================== FLOATING CONTROLS ==================== */
+        .floating-controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .floating-controls-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .font-size-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .font-size-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: var(--transition);
+            color: var(--color-text-light);
+        }
+
+        .font-size-btn:hover {
+            background: var(--color-bg);
+            border-color: var(--color-fundamentos);
+            color: var(--color-fundamentos);
+        }
+
+        .font-size-btn.active {
+            background: var(--color-fundamentos);
+            border-color: var(--color-fundamentos);
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -990,104 +1500,239 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="header-top">
-                <div>
-                    <h1 class="site-title">浄霊法講座</h1>
-                    <p class="site-subtitle">Guia de conhecimento e prática na ministração do Johrei</p>
-                </div>
-                <div class="stats">
-                    <span class="stats-number" id="itemCount">0</span>
-                    <span class="stats-label">ensinamentos</span>
-                </div>
+    <!-- Password Protection -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-container">
+            <div class="password-logo">
+                <h1 class="password-title">浄霊法講座</h1>
+                <p class="password-subtitle">Guia de Ministração Johrei</p>
             </div>
 
-            <!-- Active Filters -->
-            <div class="active-filters" id="activeFilters" style="display: none;">
-                <span class="active-filters-label">Filtros ativos:</span>
-                <div id="activeFiltersChips"></div>
-                <button class="clear-all-btn" id="clearAllBtn">Limpar todos</button>
-            </div>
-
-            <!-- Mode Switch - Pill Toggle -->
-            <div class="mode-switch-container">
-                <div class="mode-switch">
-                    <div class="mode-switch-track">
-                        <button class="mode-btn active" data-mode="ensinamentos">
-                            Palavras de Meishu-Sama
-                        </button>
-                        <button class="mode-btn" data-mode="explicacoes">
-                            Guias Explicativos
-                        </button>
+            <form class="password-form" id="passwordForm">
+                <div class="password-input-group">
+                    <label class="password-label" for="passwordInput">Senha</label>
+                    <input type="password" class="password-input" id="passwordInput" placeholder="Digite a senha"
+                        autocomplete="off">
+                    <div class="password-error" id="passwordError">
+                        Senha incorreta
                     </div>
                 </div>
-                <button id="sortToggle" class="sort-toggle" title="Alternar ordem">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round">
-                        <path d="M3 6h18M3 12h12M3 18h6" />
-                        <path d="M16 7l4 4 4-4M20 11v10" />
-                    </svg>
-                    <span class="sort-label">A-Z</span>
+
+                <label class="password-remember">
+                    <input type="checkbox" id="rememberPassword">
+                    <span>Lembrar neste dispositivo</span>
+                </label>
+
+                <button type="submit" class="password-submit">
+                    Acessar
                 </button>
-            </div>
+            </form>
 
-            <!-- Search -->
-            <div class="search-container">
-                <input type="text" class="search-input" id="searchInput"
-                    placeholder="Buscar por título, conteúdo, tags ou pontos focais...">
+            <div class="password-footer">
+                Área Protegida
             </div>
-
-            <!-- Alphabet Filter -->
-            <div class="alphabet-filter" id="alphabetFilter"></div>
         </div>
-    </header>
-
-    <!-- Tabs -->
-    <div class="tabs-container">
-        <div class="tabs" id="tabsContainer"></div>
     </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <p class="category-description" id="categoryDescription"></p>
-
-        <!-- Tags Filter -->
-        <div class="tags-filter" id="tagsFilter" style="display: none;">
-            <div class="tags-filter-title" id="tagsFilterTitle">Filtrar por Tags</div>
-            <div class="tags-list" id="tagsList"></div>
-        </div>
-
-        <!-- Cards Grid -->
-        <div class="cards-grid" id="cardsGrid"></div>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal" id="modal">
-            <div class="modal-header">
-                <div style="flex: 1;">
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <p class="modal-source" id="modalSource"></p>
+    <!-- Site Content -->
+    <div class="site-content" id="siteContent">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-top">
+                    <div>
+                        <h1 class="site-title">浄霊法講座</h1>
+                        <p class="site-subtitle">Guia de conhecimento e prática na ministração do Johrei</p>
+                    </div>
+                    <div class="stats">
+                        <span class="stats-number" id="itemCount">0</span>
+                        <span class="stats-label">ensinamentos</span>
+                    </div>
                 </div>
-                <button class="modal-close" id="modalClose">×</button>
+
+                <!-- Active Filters -->
+                <div class="active-filters" id="activeFilters" style="display: none;">
+                    <span class="active-filters-label">Filtros ativos:</span>
+                    <div id="activeFiltersChips"></div>
+                    <button class="clear-all-btn" id="clearAllBtn">Limpar todos</button>
+                    <button class="clear-all-btn" id="exportBtn" style="margin-left: auto;">📥 Exportar
+                        resultados</button>
+                </div>
+
+                <!-- Mode Switch - Pill Toggle -->
+                <div class="mode-switch-container">
+                    <div class="mode-switch">
+                        <div class="mode-switch-track">
+                            <button class="mode-btn active" data-mode="ensinamentos">
+                                Palavras de Meishu-Sama
+                            </button>
+                            <button class="mode-btn" data-mode="explicacoes">
+                                Guias Explicativos
+                            </button>
+                        </div>
+                    </div>
+                    <button id="sortToggle" class="sort-toggle" title="Alternar ordem">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <path d="M3 6h18M3 12h12M3 18h6" />
+                            <path d="M16 7l4 4 4-4M20 11v10" />
+                        </svg>
+                        <span class="sort-label">A-Z</span>
+                    </button>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput"
+                        placeholder="Buscar por título, conteúdo, tags ou pontos focais...">
+                </div>
+
+                <!-- Alphabet Filter -->
+                <div class="alphabet-filter" id="alphabetFilter"></div>
             </div>
-            <div class="modal-body" id="modalBody"></div>
-            <div class="modal-navigation" id="modalNavigation">
-                <button class="modal-nav-btn" id="prevBtn">
-                    <span>←</span>
-                    <span>Anterior</span>
-                </button>
-                <button class="modal-nav-btn" id="nextBtn">
-                    <span>Próximo</span>
-                    <span>→</span>
-                </button>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container" id="breadcrumbContainer">
+            <nav class="breadcrumb" id="breadcrumb"></nav>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs" id="tabsContainer"></div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <p class="category-description" id="categoryDescription"></p>
+
+            <!-- Cards Grid -->
+            <div class="cards-grid" id="cardsGrid"></div>
+        </main>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="modal-title-wrapper">
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <p class="modal-source" id="modalSource"></p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="modal-action-btn" id="shareBtn" data-tooltip="Compartilhar link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </button>
+                        <button class="modal-action-btn" id="printBtn" data-tooltip="Imprimir">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2">
+                                </path>
+                                <rect x="6" y="14" width="12" height="8"></rect>
+                            </svg>
+                        </button>
+                        <button class="modal-close" id="modalClose">×</button>
+                    </div>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-navigation" id="modalNavigation">
+                    <button class="modal-nav-btn" id="prevBtn">
+                        <span>←</span>
+                        <span>Anterior</span>
+                    </button>
+                    <button class="modal-nav-btn" id="nextBtn">
+                        <span>Próximo</span>
+                        <span>→</span>
+                    </button>
+                </div>
             </div>
         </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+            ↑
+        </button>
+
+        <!-- Floating Controls -->
+        <div class="floating-controls" id="floatingControls">
+            <div class="floating-controls-title">Tamanho da Fonte</div>
+            <div class="font-size-controls">
+                <button class="font-size-btn" data-size="0.875" title="Pequena">A-</button>
+                <button class="font-size-btn active" data-size="1" title="Normal">A</button>
+                <button class="font-size-btn" data-size="1.125" title="Grande">A+</button>
+            </div>
+        </div>
+
     </div>
+    <!-- End Site Content -->
 
     <script>
+        // ==================== PASSWORD PROTECTION ====================
+        const CORRECT_PASSWORD = '567'; // ALTERE AQUI PARA SUA SENHA
+
+        function checkPassword() {
+            // Check if password is remembered
+            const rememberedPassword = localStorage.getItem('johrei_password');
+            if (rememberedPassword === CORRECT_PASSWORD) {
+                unlockSite();
+                return;
+            }
+
+            // Show password overlay
+            document.getElementById('passwordOverlay').classList.remove('hidden');
+        }
+
+        function unlockSite() {
+            document.getElementById('passwordOverlay').classList.add('hidden');
+            document.getElementById('siteContent').classList.add('unlocked');
+        }
+
+        function handlePasswordSubmit(e) {
+            e.preventDefault();
+
+            const input = document.getElementById('passwordInput');
+            const error = document.getElementById('passwordError');
+            const remember = document.getElementById('rememberPassword');
+            const enteredPassword = input.value;
+
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Correct password
+                if (remember.checked) {
+                    localStorage.setItem('johrei_password', CORRECT_PASSWORD);
+                }
+                unlockSite();
+
+                // Clear input
+                input.value = '';
+                error.classList.remove('visible');
+                input.classList.remove('error');
+            } else {
+                // Wrong password
+                input.classList.add('error');
+                error.classList.add('visible');
+                input.value = '';
+
+                // Remove error after animation
+                setTimeout(() => {
+                    input.classList.remove('error');
+                }, 400);
+            }
+        }
+
+        // Initialize password protection
+        document.addEventListener('DOMContentLoaded', () => {
+            checkPassword();
+            document.getElementById('passwordForm').addEventListener('submit', handlePasswordSubmit);
+        });
+
+        // ==================== MAIN APPLICATION ====================
         // Configuração dos dois modos
         const MODES = {
             ensinamentos: {
@@ -1332,6 +1977,12 @@
             const items = getFilteredContent();
             currentItems = items;
 
+            // Animar contador
+            const itemCountEl = document.getElementById('itemCount');
+            itemCountEl.classList.add('animating');
+            itemCountEl.textContent = items.length;
+            setTimeout(() => itemCountEl.classList.remove('animating'), 1000);
+
             // Se houver busca, mostrar descrição diferente
             if (state.searchTerm) {
                 document.getElementById('categoryDescription').textContent = 'Resultados em todas as categorias';
@@ -1340,34 +1991,8 @@
                 document.getElementById('categoryDescription').textContent = category.description;
             }
 
-            document.getElementById('itemCount').textContent = items.length;
-
             renderActiveFilters();
-
-            const tags = getAllTags();
-            const tagsFilter = document.getElementById('tagsFilter');
-            const tagsFilterTitle = document.getElementById('tagsFilterTitle');
-            const tagsList = document.getElementById('tagsList');
-
-            // Mudar título do filtro baseado na aba ativa
-            if (state.activeTab === 'pontos_focais') {
-                tagsFilterTitle.textContent = 'Filtrar por Sistema do Corpo';
-            } else {
-                tagsFilterTitle.textContent = 'Filtrar por Tags';
-            }
-
-            if (tags.length > 0) {
-                tagsFilter.style.display = 'block';
-                tagsList.innerHTML = tags
-                    .filter(tag => tag && tag.trim())  // Filtrar tags vazias
-                    .map(tag => `
-                        <button class="tag-btn ${state.selectedTags.includes(tag) ? 'active' : ''}" data-tag="${tag}">
-                            ${tag}
-                        </button>
-                    `).join('');
-            } else {
-                tagsFilter.style.display = 'none';
-            }
+            renderBreadcrumb();
 
             const grid = document.getElementById('cardsGrid');
             if (items.length === 0) {
@@ -1542,6 +2167,210 @@
             }
         }
 
+        // ==================== NEW FUNCTIONS ====================
+
+        function renderBreadcrumb() {
+            const container = document.getElementById('breadcrumbContainer');
+            const breadcrumb = document.getElementById('breadcrumb');
+
+            const hasFilters = state.selectedTags.length > 0 || state.alphabetFilter || state.searchTerm;
+
+            if (!hasFilters) {
+                container.classList.remove('active');
+                return;
+            }
+
+            container.classList.add('active');
+
+            let crumbs = ['<a class="breadcrumb-item" onclick="clearAllFilters()">Início</a>'];
+
+            if (!state.searchTerm) {
+                crumbs.push('<span class="breadcrumb-separator">/</span>');
+                crumbs.push(`<span class="breadcrumb-item">${CATEGORIES[state.activeTab].name}</span>`);
+            }
+
+            if (state.searchTerm) {
+                crumbs.push('<span class="breadcrumb-separator">/</span>');
+                crumbs.push(`<span class="breadcrumb-badge">🔍 "${state.searchTerm}"</span>`);
+            }
+
+            if (state.alphabetFilter) {
+                crumbs.push('<span class="breadcrumb-separator">/</span>');
+                crumbs.push(`<span class="breadcrumb-badge">Letra ${state.alphabetFilter}</span>`);
+            }
+
+            if (state.selectedTags.length > 0) {
+                crumbs.push('<span class="breadcrumb-separator">/</span>');
+                crumbs.push(`<span class="breadcrumb-badge">${state.selectedTags.length} tag(s)</span>`);
+            }
+
+            breadcrumb.innerHTML = crumbs.join(' ');
+        }
+
+        function clearAllFilters() {
+            state.searchTerm = '';
+            state.selectedTags = [];
+            state.alphabetFilter = '';
+            document.getElementById('searchInput').value = '';
+            renderAlphabetFilter();
+            renderContent();
+        }
+
+        function shareContent() {
+            const shareBtn = document.getElementById('shareBtn');
+            const item = currentItems[currentItemIndex];
+            if (!item) return;
+
+            // Create a shareable URL with query parameters
+            const baseUrl = window.location.origin + window.location.pathname;
+            const params = new URLSearchParams({
+                mode: state.mode,
+                category: item.category || state.activeTab,
+                title: item.title
+            });
+            const shareUrl = `${baseUrl}?${params.toString()}`;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                shareBtn.classList.add('copied');
+                shareBtn.setAttribute('data-tooltip', 'Link copiado!');
+
+                setTimeout(() => {
+                    shareBtn.classList.remove('copied');
+                    shareBtn.setAttribute('data-tooltip', 'Compartilhar link');
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar:', err);
+                alert('Não foi possível copiar o link');
+            });
+        }
+
+        function printContent() {
+            window.print();
+        }
+
+        function changeFontSize(multiplier) {
+            document.documentElement.style.setProperty('--font-size-multiplier', multiplier);
+
+            // Update active button
+            document.querySelectorAll('.font-size-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseFloat(btn.dataset.size) === multiplier) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('fontSizeMultiplier', multiplier);
+        }
+
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function loadUserPreferences() {
+            // Load font size preference
+            const savedFontSize = localStorage.getItem('fontSizeMultiplier');
+            if (savedFontSize) {
+                changeFontSize(parseFloat(savedFontSize));
+            }
+        }
+
+        function exportResults() {
+            const items = currentItems;
+            if (items.length === 0) {
+                alert('Nenhum resultado para exportar');
+                return;
+            }
+
+            // Create HTML content for export
+            let html = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Johrei - Resultados Exportados</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2C5F8D; border-bottom: 3px solid #2C5F8D; padding-bottom: 10px; }
+        .item { margin-bottom: 40px; page-break-inside: avoid; border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
+        .item-title { color: #1E293B; font-size: 1.4em; font-weight: bold; margin-bottom: 10px; }
+        .item-source { color: #64748B; font-size: 0.9em; margin-bottom: 15px; }
+        .item-content { text-align: justify; }
+        .item-tags { margin-top: 15px; }
+        .tag { display: inline-block; background: #E8F1F8; color: #2C5F8D; padding: 4px 12px; border-radius: 12px; margin: 4px; font-size: 0.85em; }
+        .focus-points { background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .focus-points-title { font-weight: bold; margin-bottom: 10px; color: #2C5F8D; }
+        .focus-point { margin: 5px 0; padding-left: 15px; position: relative; }
+        .focus-point:before { content: "•"; position: absolute; left: 0; color: #2C5F8D; font-weight: bold; }
+        @media print {
+            body { margin: 20px; }
+            .item { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Guia de Ministração Johrei - Resultados Exportados</h1>
+    <p><strong>Total de itens:</strong> ${items.length}</p>
+    <p><strong>Data de exportação:</strong> ${new Date().toLocaleDateString('pt-BR')}</p>
+    ${state.searchTerm ? `<p><strong>Busca:</strong> "${state.searchTerm}"</p>` : ''}
+    ${state.selectedTags.length > 0 ? `<p><strong>Tags:</strong> ${state.selectedTags.join(', ')}</p>` : ''}
+    <hr style="margin: 30px 0;">
+`;
+
+            items.forEach((item, index) => {
+                html += `
+    <div class="item">
+        <div class="item-title">${index + 1}. ${item.title}</div>
+        <div class="item-source">${item.source}</div>
+        ${item.focusPoints && item.focusPoints.length > 0 ? `
+        <div class="focus-points">
+            <div class="focus-points-title">Pontos Focais:</div>
+            ${item.focusPoints.map(point => `<div class="focus-point">${point}</div>`).join('')}
+        </div>
+        ` : ''}
+        <div class="item-content">${item.content.split('\n\n').map(p => `<p>${p}</p>`).join('')}</div>
+        ${item.tags && item.tags.length > 0 ? `
+        <div class="item-tags">
+            ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+        ` : ''}
+    </div>
+`;
+            });
+
+            html += `
+</body>
+</html>`;
+
+            // Create and download file
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `guia-johrei-${new Date().getTime()}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
         function setupEventListeners() {
             // Sort Toggle Button
             document.getElementById('sortToggle').addEventListener('click', () => {
@@ -1613,12 +2442,6 @@
                 renderContent();
             });
 
-            document.getElementById('tagsList').addEventListener('click', (e) => {
-                if (e.target.classList.contains('tag-btn')) {
-                    toggleTag(e.target.dataset.tag);
-                }
-            });
-
             // Click em tags nos cards
             document.getElementById('cardsGrid').addEventListener('click', (e) => {
                 if (e.target.classList.contains('card-tag')) {
@@ -1667,6 +2490,8 @@
                 renderContent();
             });
 
+            document.getElementById('exportBtn').addEventListener('click', exportResults);
+
             document.getElementById('modalClose').addEventListener('click', closeModal);
             document.getElementById('modalOverlay').addEventListener('click', (e) => {
                 if (e.target === e.currentTarget) {
@@ -1688,6 +2513,24 @@
                     }
                 }
             });
+
+            // NEW: Share and Print buttons
+            document.getElementById('shareBtn').addEventListener('click', shareContent);
+            document.getElementById('printBtn').addEventListener('click', printContent);
+
+            // NEW: Font size controls
+            document.querySelectorAll('.font-size-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const size = parseFloat(e.target.dataset.size);
+                    changeFontSize(size);
+                });
+            });
+
+            // NEW: Initialize back to top
+            initBackToTop();
+
+            // NEW: Load user preferences
+            loadUserPreferences();
         }
 
         loadData();
