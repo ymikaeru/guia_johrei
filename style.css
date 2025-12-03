@@ -1,0 +1,245 @@
+/* --- UTILITÁRIOS --- */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- BOTÕES DE MODO (Switch) --- */
+.btn-mode-active {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dark .btn-mode-active {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-mode-inactive {
+    color: #9ca3af;
+}
+
+.dark .btn-mode-inactive {
+    color: #6b7280;
+}
+
+.btn-mode-inactive:hover {
+    color: #000;
+}
+
+.dark .btn-mode-inactive:hover {
+    color: #fff;
+}
+
+/* --- ABAS (Underline Style) --- */
+.tab-btn {
+    transition: all 0.3s ease;
+    padding-bottom: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    border-bottom-width: 2px;
+    border-color: transparent;
+    color: #9ca3af;
+    font-family: 'Inter', sans-serif;
+}
+
+.tab-btn:hover {
+    color: #000;
+}
+
+.dark .tab-btn:hover {
+    color: #fff;
+}
+
+/* --- A-Z FILTRO --- */
+.btn-swiss-active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.dark .btn-swiss-active {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* --- MAPA CORPORAL (SPOTLIGHT REFORÇADO) --- */
+
+.body-point {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 1. ESTADO NORMAL (Mouse fora do mapa) */
+/* Pontos são Pretos (ou Brancos no dark) */
+.body-point circle.visual {
+    fill: #000;
+    transition: fill 0.2s ease, opacity 0.2s ease;
+}
+
+.dark .body-point circle.visual {
+    fill: #fff;
+}
+
+/* 2. MOUSE EM CIMA DE UM PONTO (via :has): Todos os pontos viram CINZA CLARO */
+.diagram-svg:has(.body-point:hover) .body-point circle.visual {
+    fill: #e5e5e5;
+    opacity: 0.5;
+}
+
+.dark .diagram-svg:has(.body-point:hover) .body-point circle.visual {
+    fill: #333;
+}
+
+/* 3. MOUSE EM CIMA DE UM PONTO: Ele vira ROXO e Opaco (Vence a regra anterior) */
+.diagram-svg .body-point:hover circle.visual {
+    fill: #7c3aed !important;
+    /* Murasaki */
+    opacity: 1 !important;
+}
+
+/* 4. PONTO ATIVO (CLICADO): Mantém Roxo mesmo se tirar o mouse */
+.body-point.active circle.visual {
+    fill: #7c3aed !important;
+    opacity: 1 !important;
+}
+
+/* TEXTO DO MAPA */
+.body-point text {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    /* Mouse ignora o texto */
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 7px;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 1);
+    fill: #000;
+    text-anchor: middle;
+}
+
+.dark .body-point text {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    fill: #fff;
+}
+
+/* Texto aparece no Hover */
+.body-point:hover text {
+    opacity: 1;
+}
+
+/* --- TAGS --- */
+.tag-btn {
+    transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+    color: #000;
+    border-color: #000;
+}
+
+.dark .tag-btn:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.tag-btn.active-tag {
+    background-color: #000;
+    color: white;
+    border-color: #000;
+}
+
+.dark .tag-btn.active-tag {
+    background-color: #fff;
+    color: black;
+    border-color: #fff;
+}
+
+/* --- TIPOGRAFIA (MODAL) --- */
+.rich-text h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+    color: #000;
+}
+
+.dark .rich-text h3 {
+    color: #fff;
+}
+
+.rich-text p {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    color: #374151;
+    line-height: 1.9;
+    font-family: 'Inter', sans-serif;
+}
+
+.dark .rich-text p {
+    color: #d1d5db;
+}
+
+.rich-text strong.qa-label {
+    color: #000;
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.dark .rich-text strong.qa-label {
+    color: #fff;
+}
+
+.search-highlight {
+    background-color: #fef08a;
+    color: #000;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-weight: 600;
+}
+
+/* Font Sizes para controle */
+.text-sm-mode p {
+    font-size: 1rem !important;
+}
+
+.text-lg-mode p {
+    font-size: 1.25rem !important;
+}
+
+/* --- ANIMAÇÃO MODAL (Fade + Scale) --- */
+#modalCard {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+#modalCard.open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#modalBackdrop {
+    transition: opacity 0.3s ease;
+}
