@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "mode": "explicacoes",
+  "last_updated": "2025-12-03",
+  "categories": [
+    {
+      "id": "guia1",
+      "name": "Fundamentos",
+      "description": "Saúde e doença na atualidade, transição da noite para o dia, leis da natureza e purificação",
+      "file": "explicacoes_guia1.json",
+      "count": 25
+    },
+    {
+      "id": "guia2",
+      "name": "Revelação Divina",
+      "description": "Pesquisa divina de Meishu-Sama, vínculo com Kannon, revelação da verdade e poder divino",
+      "file": "explicacoes_guia2.json",
+      "count": 28
+    },
+    {
+      "id": "guia3",
+      "name": "Técnicas Práticas",
+      "description": "Importância dos pontos vitais, método de aplicação do Johrei e técnicas específicas",
+      "file": "explicacoes_guia3.json",
+      "count": 27
+    }
+  ],
+  "total_items": 80
+}

@@ -1,0 +1,28 @@
+{
+  "version": "3.2",
+  "last_updated": "2025-12-03",
+  "categories": [
+    {
+      "id": "fundamentos",
+      "name": "Fundamentos",
+      "description": "Princípios, filosofia, técnicas e métodos do Johrei",
+      "file": "fundamentos.json",
+      "count": 109
+    },
+    {
+      "id": "curas",
+      "name": "Casos e Orientações",
+      "description": "Perguntas, respostas e orientações sobre doenças e tratamentos",
+      "file": "curas.json",
+      "count": 135
+    },
+    {
+      "id": "pontos_focais",
+      "name": "Pontos Focais",
+      "description": "Guia detalhado de pontos para Johrei organizados por sistema do corpo",
+      "file": "pontos_focais.json",
+      "count": 188
+    }
+  ],
+  "total_items": 432
+}
