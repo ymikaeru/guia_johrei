@@ -257,6 +257,15 @@
             border-color: var(--color-text);
         }
 
+        .alphabet-btn:disabled,
+        .alphabet-btn.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: var(--color-bg);
+            border-color: var(--color-border);
+            color: var(--color-text-lighter);
+        }
+
         /* Tabs */
         .tabs-container {
             background: var(--color-surface);
@@ -1084,6 +1093,7 @@
             ensinamentos: {
                 dataPath: 'data/',
                 indexFile: 'index.json',
+                placeholder: 'Buscar por título, conteúdo, tags ou pontos focais dentro de "Palavras de Meishu-Sama"...',
                 categories: {
                     fundamentos: { name: 'Fundamentos', color: '#4A90E2', file: 'fundamentos.json' },
                     curas: { name: 'Casos e Orientações', color: '#50C878', file: 'curas.json' },
@@ -1093,6 +1103,7 @@
             explicacoes: {
                 dataPath: 'data/',
                 indexFile: 'explicacoes_index.json',
+                placeholder: 'Buscar por título, conteúdo, tags ou pontos focais dentro de "Guias Explicativos"...',
                 categories: {
                     guia1: { name: 'Fundamentos', color: '#4A90E2', file: 'explicacoes_guia1.json' },
                     guia2: { name: 'Revelação Divina', color: '#50C878', file: 'explicacoes_guia2.json' },
@@ -1160,6 +1171,9 @@
 
 
         function init() {
+            // Set initial placeholder
+            document.getElementById('searchInput').placeholder = MODES[state.mode].placeholder;
+
             renderTabs();
             renderAlphabetFilter();
             updateSortButtonVisuals();
@@ -1180,11 +1194,30 @@
         function renderAlphabetFilter() {
             const container = document.getElementById('alphabetFilter');
             const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+            // Obter itens da aba ativa para verificar quais letras têm conteúdo
+            const currentItems = JOHREI_DATA[state.activeTab] || [];
+
             container.innerHTML = `
                 <button class="alphabet-btn ${!state.alphabetFilter ? 'active' : ''}" data-letter="">All</button>
-                ${alphabet.map(letter => `
-                    <button class="alphabet-btn ${state.alphabetFilter === letter ? 'active' : ''}" data-letter="${letter}">${letter}</button>
-                `).join('')}
+                ${alphabet.map(letter => {
+                // Verificar se existe algum item que começa com esta letra
+                const hasItems = currentItems.some(item =>
+                    item.title && item.title.toUpperCase().startsWith(letter)
+                );
+
+                const disabledAttr = hasItems ? '' : 'disabled';
+                const disabledClass = hasItems ? '' : 'disabled';
+                const activeClass = state.alphabetFilter === letter ? 'active' : '';
+
+                return `
+                        <button class="alphabet-btn ${activeClass} ${disabledClass}" 
+                                data-letter="${letter}" 
+                                ${disabledAttr}>
+                            ${letter}
+                        </button>
+                    `;
+            }).join('')}
             `;
         }
 
@@ -1542,7 +1575,11 @@
                         state.selectedTags = [];
                         state.alphabetFilter = '';
                         state.searchTerm = '';
-                        document.getElementById('searchInput').value = '';
+
+                        // Update placeholder and clear input
+                        const searchInput = document.getElementById('searchInput');
+                        searchInput.value = '';
+                        searchInput.placeholder = MODES[newMode].placeholder;
 
                         // Recarregar dados do novo modo
                         await loadData(newMode);
