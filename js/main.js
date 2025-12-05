@@ -3,7 +3,7 @@ let STATE = {
     mode: 'ensinamentos',
     activeTab: null,
     activeLetter: '',
-    bodyFilter: '',
+    bodyFilter: [], // Array para múltiplos filtros
     activeTag: null,
     data: {},
     list: [],
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', (e) => {
             if (e.target.value) {
                 STATE.activeLetter = '';
-                STATE.bodyFilter = '';
+                // Se quiser que a busca limpe o mapa, descomente a linha abaixo:
+                // clearBodyFilter(); 
                 STATE.activeTag = null;
-                resetMapVisuals();
                 renderAlphabet();
                 document.getElementById('clearSearch').classList.remove('hidden');
             } else {
@@ -78,7 +78,11 @@ async function loadData() {
         renderTabs();
         renderAlphabet();
         applyFilters();
-        renderDiagrams();
+
+        // Render inicial se já estiver na aba mapa (raro no load, mas seguro)
+        if (STATE.activeTab === 'mapa') {
+            setTimeout(renderBodyMaps, 100);
+        }
 
     } catch (e) { console.error("Erro load:", e); }
 }
@@ -110,7 +114,11 @@ function setMode(newMode) {
 
     STATE.activeTab = null;
     STATE.activeLetter = '';
-    STATE.bodyFilter = '';
+
+    // Reseta filtros do mapa usando a função do body-map.js se existir
+    if (typeof clearBodyFilter === 'function') clearBodyFilter();
+    else STATE.bodyFilter = null;
+
     STATE.activeTag = null;
     document.getElementById('searchInput').value = '';
 
@@ -121,10 +129,14 @@ function setMode(newMode) {
 function setTab(id) {
     STATE.activeTab = id;
     STATE.activeLetter = '';
-    STATE.bodyFilter = '';
-    STATE.activeTag = null;
 
-    resetMapVisuals();
+    // Ao mudar de aba, geralmente queremos resetar o filtro específico do corpo
+    // a menos que estejamos indo PARA o mapa.
+    if (id !== 'mapa' && typeof clearBodyFilter === 'function') {
+        clearBodyFilter();
+    }
+
+    STATE.activeTag = null;
     document.getElementById('searchInput').value = '';
 
     renderTabs();
@@ -146,6 +158,7 @@ function renderTabs() {
         return `<button onclick="setTab('${id}')" class="tab-btn ${activeClass}">${label}</button>`;
     }).join('');
 
+    // Adiciona aba Mapa apenas no modo ensinamentos
     if (STATE.mode === 'ensinamentos') {
         const active = STATE.activeTab === 'mapa';
         const activeClass = active
@@ -161,113 +174,101 @@ function renderTabs() {
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
     const map = document.getElementById('bodyMapContainer');
+    const list = document.getElementById('contentList');
+    const empty = document.getElementById('emptyState');
 
     alpha.classList.add('hidden');
     map.classList.add('hidden');
+    list.classList.remove('hidden'); // Ensure list is visible by default
 
     if (tabId === 'pontos_focais') {
         alpha.classList.remove('hidden');
         renderAlphabet();
     } else if (tabId === 'mapa') {
         map.classList.remove('hidden');
-    }
-}
+        list.classList.add('hidden'); // Hide list for map tab
+        if (empty) empty.classList.add('hidden');
 
-// --- MAPA CORPORAL ---
-function getActivePoints(view) {
-    if (Object.keys(STATE.data).length === 0) return BODY_DATA.points[view];
+        // Render Static Images
+        const views = [
+            { id: 'front', img: 'assets/images/mapa_corporal_1.jpg', alt: 'Frente' },
+            { id: 'detail', img: 'assets/images/mapa_corporal_3.jpg', alt: 'Detalhes' },
+            { id: 'back', img: 'assets/images/mapa_corporal_2.jpg', alt: 'Costas' }
+        ];
 
-    let allItems = [];
-    Object.keys(STATE.data).forEach(cat => {
-        STATE.data[cat].forEach(item => allItems.push(item));
-    });
+        let html = `
+            <!-- Mapas Desktop: Grid 3 colunas -->
+            <div class="hidden md:grid md:grid-cols-3 gap-6 mb-12 max-w-[100rem] mx-auto">
+        `;
 
-    return BODY_DATA.points[view].filter(p => {
-        const keywords = BODY_DATA.keywords[p.id];
-        if (!keywords) return false;
-        return allItems.some(item => {
-            if (!item.focusPoints) return false;
-            return item.focusPoints.some(fp =>
-                keywords.some(kw => fp.toLowerCase().includes(kw))
-            );
+        views.forEach(view => {
+            html += `
+                <div class="relative">
+                    <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain p-4" />
+                </div>
+            `;
         });
-    });
-}
 
-function renderDiagrams() {
-    // As funções createDiagram estão no ui.js, mas como unificamos a lógica de acesso ao DOM aqui,
-    // se você estiver usando o modo "sem módulos", certifique-se de que o createDiagram está disponível.
-    // Aqui assumimos que o createDiagram está no escopo global via ui.js
-    document.getElementById('frontDiagram').innerHTML = createDiagram('front', getActivePoints('front'));
-    document.getElementById('backDiagram').innerHTML = createDiagram('back', getActivePoints('back'));
-}
+        html += `</div>`;
 
-function filterByBody(pointId) {
-    document.querySelectorAll('.body-point').forEach(p => {
-        if (p.getAttribute('onclick').includes(pointId)) {
-            p.classList.add('active');
-            p.classList.remove('dimmed');
-        } else {
-            p.classList.remove('active');
-            p.classList.add('dimmed');
-        }
-    });
+        // Mapas Mobile: Scroll horizontal
+        html += `
+            <div class="md:hidden flex overflow-x-auto snap-x gap-4 pb-8 hide-scrollbar">
+                ${views.map(view => `
+                    <div class="snap-center shrink-0 w-[85vw] relative">
+                        <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" />
+                    </div>
+                `).join('')}
+            </div>
+            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-4 md:hidden">Deslize para ver mais</p>
+        `;
 
-    document.getElementById('searchInput').value = '';
-    STATE.activeLetter = '';
-    STATE.bodyFilter = pointId;
-    STATE.activeTag = null;
-
-    applyFilters();
-
-    const list = document.getElementById('contentList');
-    const offset = 140;
-    if (list) {
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = list.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        map.innerHTML = html;
     }
 }
 
-function resetMapVisuals() {
-    document.querySelectorAll('.body-point').forEach(p => {
-        p.classList.remove('active');
-        p.classList.remove('dimmed');
-    });
-}
-
-// --- FILTROS E ORDENAÇÃO (CORRIGIDO) ---
+// --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 function applyFilters() {
     const q = document.getElementById('searchInput').value.toLowerCase();
-    const { activeTab, activeLetter, bodyFilter, activeTag } = STATE;
+    const { activeTab, activeLetter, activeTag, bodyFilter } = STATE;
+
     let rawItems = [];
     let label = "TODOS";
 
-    if (q || activeTag || activeTab === 'mapa') {
+    // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
+    if (q || activeTag || activeTab === 'mapa' || bodyFilter) {
         Object.keys(STATE.data).forEach(cat => {
             STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
         });
-        if (activeTag) label = `TAG: #${activeTag.toUpperCase()}`;
+
+        if (activeTag && bodyFilter) label = `TAG: #${activeTag} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'}`;
+        else if (activeTag) label = `TAG: #${activeTag.toUpperCase()}`;
+        else if (bodyFilter) label = "PONTO FOCAL SELECIONADO";
         else if (q) label = "RESULTADOS DA BUSCA";
-        else if (activeTab === 'mapa') label = bodyFilter ? "REGIÃO SELECIONADA" : "SELECIONE UMA REGIÃO ACIMA";
+        else if (activeTab === 'mapa') label = "SELECIONE UMA REGIÃO ACIMA";
     } else {
+        // Caso contrário, pega apenas itens da aba atual
         rawItems = (STATE.data[activeTab] || []).map(i => ({ ...i, _cat: activeTab }));
         label = CONFIG.modes[STATE.mode].cats[activeTab] ? CONFIG.modes[STATE.mode].cats[activeTab].label : activeTab;
     }
 
     let filtered = rawItems.filter(item => {
+        // 1. Filtro de TAG
         if (activeTag && (!item.tags || !item.tags.includes(activeTag))) return false;
-        if (activeTab === 'mapa' && !q && !bodyFilter && !activeTag) return false;
 
-        if (bodyFilter) {
-            const keywords = BODY_DATA.keywords[bodyFilter];
-            if (!(item.focusPoints && item.focusPoints.some(fp => keywords.some(kw => fp.toLowerCase().includes(kw))))) return false;
+        // 2. Filtro do MAPA (Integração)
+        // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
+        if (activeTab === 'mapa' && !bodyFilter && !q && !activeTag) return false;
+
+        // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
+        if (bodyFilter && typeof matchBodyPoint === 'function') {
+            if (!matchBodyPoint(item, bodyFilter)) return false;
         }
 
-        if (!q && !bodyFilter && !activeTag && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
+        // 3. Filtro de LETRA (Alfabeto)
+        if (!q && !activeTag && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
 
+        // 4. Filtro de BUSCA TEXTUAL
         if (q) {
             const content = (item.content || '').toLowerCase();
             const title = item.title.toLowerCase();
@@ -277,19 +278,19 @@ function applyFilters() {
         return true;
     });
 
-    // --- CORREÇÃO DA ORDENAÇÃO AQUI ---
+    // Ordenação (Preserva ordem numérica se existir)
     filtered.sort((a, b) => {
-        // Se tiver ordem numérica explícita no JSON, usa ela
         if (a.order !== undefined && b.order !== undefined) {
             return a.order - b.order;
         }
-        // SE NÃO TIVER ORDEM, NÃO MEXE (Retorna 0)
-        // Isso garante que a ordem original do array (DOCX) seja preservada
         return 0;
     });
 
     STATE.list = filtered;
-    document.getElementById('searchCount').textContent = `${filtered.length} Itens`;
+
+    // Atualiza contadores e UI
+    const countEl = document.getElementById('searchCount');
+    if (countEl) countEl.textContent = `${filtered.length} Itens`;
 
     renderList(filtered, activeTag, STATE.mode);
 }
@@ -300,7 +301,10 @@ function clearSearch() {
     document.getElementById('searchInput').value = '';
     document.getElementById('clearSearch').classList.add('hidden');
     STATE.activeTag = null;
-    resetMapVisuals();
+
+    // Opcional: Limpar mapa ao limpar busca? Geralmente não.
+    // if(typeof clearBodyFilter === 'function') clearBodyFilter();
+
     applyFilters();
 }
 
@@ -312,8 +316,14 @@ function filterByTag(tag, event) {
 
     document.getElementById('searchInput').value = '';
     STATE.activeLetter = '';
-    STATE.bodyFilter = '';
-    resetMapVisuals();
+
+    // DECISÃO DE INTEGRAÇÃO:
+    // Se estivermos na aba MAPA, NÃO limpamos o bodyFilter.
+    // Isso permite clicar em "Cabeça" e depois na tag "#Cura" para ver a interseção.
+    if (STATE.activeTab !== 'mapa') {
+        if (typeof clearBodyFilter === 'function') clearBodyFilter();
+        STATE.bodyFilter = null;
+    }
 
     applyFilters();
     window.scrollTo({ top: 0, behavior: "smooth" });
