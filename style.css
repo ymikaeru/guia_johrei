@@ -243,3 +243,7 @@ html {
 #modalBackdrop {
     transition: opacity 0.3s ease;
 }
+
+#modalBackdrop.open {
+    opacity: 1;
+}
