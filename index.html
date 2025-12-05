@@ -62,34 +62,56 @@
     <div id="appContent"
         class="hidden w-full max-w-[1600px] min-h-screen flex-col bg-white dark:bg-[#0a0a0a] shadow-2xl border-x border-gray-100 dark:border-gray-900">
 
-        <header class="flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md z-40 md:sticky md:top-0">
-            <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
-                <div>
-                    <h1
-                        class="text-4xl md:text-5xl font-serif font-bold tracking-wide leading-none mb-3 text-gray-900 dark:text-gray-50">
-                        MANUAL DO JOHREI</h1>
-                    <p id="modeDescription"
-                        class="text-[10px] md:text-xs text-gray-400 font-sans font-medium tracking-[0.2em] uppercase transition-all">
-                        Escritos sagrados</p>
-                </div>
-            </div>
-
-            <div class="px-8 md:px-12 pb-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end">
-                <div class="md:col-span-5 lg:col-span-4">
-                    <div class="flex bg-gray-50 dark:bg-[#111] p-2 rounded-xl">
-                        <button onclick="setMode('ensinamentos')" id="switch-ens"
-                            class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active">Escritos
-                            Sagrados</button>
-                        <button onclick="setMode('explicacoes')" id="switch-guia"
-                            class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive">Guias
-                            de Estudo</button>
+        <!-- Sticky Header Wrapper -->
+        <div
+            class="md:sticky md:top-0 z-50 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:border-b md:border-gray-100 md:dark:border-gray-900">
+            <header class="flex-none">
+                <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
+                    <div>
+                        <h1
+                            class="text-4xl md:text-5xl font-serif font-bold tracking-wide leading-none mb-3 text-gray-900 dark:text-gray-50">
+                            MANUAL DO JOHREI</h1>
+                        <p id="modeDescription"
+                            class="text-[10px] md:text-xs text-gray-400 font-sans font-medium tracking-[0.2em] uppercase transition-all">
+                            Escritos sagrados</p>
                     </div>
                 </div>
-                <!-- Desktop Search (Hidden on Mobile) -->
-                <div class="hidden md:block md:col-span-7 lg:col-span-8 relative">
+
+                <div class="px-8 md:px-12 pb-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end">
+                    <div class="md:col-span-5 lg:col-span-4">
+                        <div class="flex bg-gray-50 dark:bg-[#111] p-2 rounded-xl">
+                            <button onclick="setMode('ensinamentos')" id="switch-ens"
+                                class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active">Escritos
+                                Sagrados</button>
+                            <button onclick="setMode('explicacoes')" id="switch-guia"
+                                class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive">Guias
+                                de Estudo</button>
+                        </div>
+                    </div>
+                    <!-- Desktop Search (Hidden on Mobile) -->
+                    <div class="hidden md:block md:col-span-7 lg:col-span-8 relative">
+                        <input type="text" placeholder="BUSCAR..."
+                            class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl md:text-2xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                            <span
+                                class="search-count text-[10px] font-sans font-bold text-gray-400 uppercase tracking-widest">0
+                                Itens</span>
+                            <button onclick="clearSearch()"
+                                class="clear-search-btn hidden text-gray-400 hover:text-black dark:hover:text-white text-2xl">×</button>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- Mobile Search + Tabs + Alphabet -->
+            <div
+                class="sticky top-0 md:static z-50 bg-white/95 dark:bg-[#0a0a0a]/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-gray-100 dark:border-gray-900 md:border-none">
+                <!-- Mobile Search (Visible only on Mobile) -->
+                <div class="md:hidden px-8 pb-4 relative">
                     <input type="text" placeholder="BUSCAR..."
-                        class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl md:text-2xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
-                    <div class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                        class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
+                    <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-4">
                         <span
                             class="search-count text-[10px] font-sans font-bold text-gray-400 uppercase tracking-widest">0
                             Itens</span>
@@ -97,51 +119,36 @@
                             class="clear-search-btn hidden text-gray-400 hover:text-black dark:hover:text-white text-2xl">×</button>
                     </div>
                 </div>
-            </div>
 
-        </header>
+                <!-- Mobile Tabs Dropdown (Custom "Swedish Design") -->
+                <div class="md:hidden px-8 pb-4 z-50">
+                    <div class="relative">
+                        <button onclick="toggleMobileDropdown()" id="mobileDropdownBtn"
+                            class="w-full bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-widest flex justify-between items-center shadow-sm hover:shadow-md transition-all relative z-20">
+                            <span id="mobileDropdownLabel">SELECIONE UMA CATEGORIA</span>
+                            <svg class="w-4 h-4 text-gray-400 transition-transform duration-300" id="mobileDropdownIcon"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
 
-        <!-- Sticky Wrapper for Mobile Search + Tabs + Alphabet -->
-        <div
-            class="sticky top-0 z-50 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-900">
-            <!-- Mobile Search (Visible only on Mobile) -->
-            <div class="md:hidden px-8 pb-4 relative">
-                <input type="text" placeholder="BUSCAR..."
-                    class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
-                <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-4">
-                    <span class="search-count text-[10px] font-sans font-bold text-gray-400 uppercase tracking-widest">0
-                        Itens</span>
-                    <button onclick="clearSearch()"
-                        class="clear-search-btn hidden text-gray-400 hover:text-black dark:hover:text-white text-2xl">×</button>
-                </div>
-            </div>
-
-            <!-- Mobile Tabs Dropdown (Custom "Swedish Design") -->
-            <div class="md:hidden px-8 pb-4 z-50">
-                <div class="relative">
-                    <button onclick="toggleMobileDropdown()" id="mobileDropdownBtn"
-                        class="w-full bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-widest flex justify-between items-center shadow-sm hover:shadow-md transition-all relative z-20">
-                        <span id="mobileDropdownLabel">SELECIONE UMA CATEGORIA</span>
-                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-300" id="mobileDropdownIcon"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-
-                    <div id="mobileDropdownMenu"
-                        class="hidden absolute top-full left-0 right-0 -mt-[1px] bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-b-xl rounded-t-none shadow-xl overflow-hidden transition-all duration-300 transform -translate-y-4 opacity-0 z-10">
-                        <div id="mobileDropdownOptions" class="flex flex-col max-h-64 overflow-y-auto pt-2">
-                            <!-- Options injected by JS -->
+                        <div id="mobileDropdownMenu"
+                            class="hidden absolute top-full left-0 right-0 -mt-[1px] bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-b-xl rounded-t-none shadow-xl overflow-hidden transition-all duration-300 transform -translate-y-4 opacity-0 z-10">
+                            <div id="mobileDropdownOptions" class="flex flex-col max-h-64 overflow-y-auto pt-2">
+                                <!-- Options injected by JS -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <nav class="hidden md:flex px-8 md:px-12 gap-10 overflow-x-auto hide-scrollbar" id="tabsContainer"></nav>
+                <nav class="hidden md:flex px-8 md:px-12 gap-10 overflow-x-auto hide-scrollbar" id="tabsContainer">
+                </nav>
 
-            <div id="alphabetWrapper" class="hidden bg-gray-50 dark:bg-[#0f0f0f]">
-                <div class="flex overflow-x-auto hide-scrollbar px-8 md:px-12 py-6 gap-4" id="alphabetContainer">
+                <div id="alphabetWrapper" class="hidden bg-gray-50 dark:bg-[#0f0f0f]">
+                    <div class="flex overflow-x-auto hide-scrollbar px-8 md:px-12 py-6 gap-4" id="alphabetContainer">
+                    </div>
                 </div>
             </div>
         </div>
