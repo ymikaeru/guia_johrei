@@ -33,7 +33,7 @@ function formatBodyText(text, searchQuery) {
     }).join('');
 }
 
-function renderList(list, activeTag, mode) {
+function renderList(list, activeTags, mode) {
     const el = document.getElementById('contentList');
     const emptyEl = document.getElementById('emptyState');
     if (!list || list.length === 0) {
@@ -48,18 +48,35 @@ function renderList(list, activeTag, mode) {
         const catConfig = CONFIG.modes[mode].cats[item._cat];
 
         return `
-        <div onclick="openModal(${i})" class="group p-8 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+        <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
             <div>
-                <div class="mb-6">
+                <div class="mb-2">
                     <span class="text-[9px] font-bold uppercase tracking-widest ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
-                <h3 class="font-serif font-bold text-xl leading-tight mb-4 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                <h3 class="font-serif font-bold text-lg leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
             </div>
-            <div class="mt-6 pt-6 border-t border-gray-50 dark:border-gray-900 flex flex-wrap gap-2">
-                 ${item.tags ? item.tags.slice(0, 4).map(t => {
-            const activeClass = activeTag === t ? 'active-tag' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
-            return `<button onclick="filterByTag('${t}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium ${activeClass}">#${t}</button>`;
-        }).join('') : ''}
+            <div class="mt-[0.3rem] border-t border-gray-50 dark:border-gray-900 flex flex-wrap gap-2">
+                 ${item.tags ? (() => {
+                let tagsToShow = item.tags.slice(0, 4);
+
+                // Ensure ALL active tags are visible
+                if (activeTags && activeTags.length > 0) {
+                    const hiddenActiveTags = activeTags.filter(t => item.tags.includes(t) && !tagsToShow.includes(t));
+
+                    if (hiddenActiveTags.length > 0) {
+                        // Remove items from the end to make space
+                        tagsToShow.splice(tagsToShow.length - hiddenActiveTags.length, hiddenActiveTags.length);
+                        // Add the hidden active tags
+                        tagsToShow.push(...hiddenActiveTags);
+                    }
+                }
+
+                return tagsToShow.map(t => {
+                    const isActive = activeTags && activeTags.includes(t);
+                    const activeClass = isActive ? 'active-tag' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
+                    return `<button onclick="filterByTag('${t}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium ${activeClass}">#${t}</button>`;
+                }).join('');
+            })() : ''}
             </div>
         </div>`
     }).join('');
@@ -91,8 +108,4 @@ function createDiagram(view, points) {
                 </text>
             </g>`).join('')}
     </svg>`;
-}
-function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
 }

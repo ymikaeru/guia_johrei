@@ -1,19 +1,19 @@
+
 // --- ESTADO GLOBAL ---
 let STATE = {
-    mode: 'ensinamentos',
-    activeTab: null,
+    activeTab: 'fundamentos', // ou 'curas', 'pontos_focais', 'mapa'
     activeLetter: '',
-    bodyFilter: [], // Array para múltiplos filtros
-    activeTag: null,
-    data: {},
+    activeTags: [], // Changed from activeTag to activeTags array
+    bodyFilter: null, // Agora suporta array ou null, mas vamos manter simples por enquanto
+    mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
     list: [],
     idx: -1
 };
 
 // --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Carrega Tema Salvo
-    if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+    // 1. Carrega Tema Salvo (Removido)
+    // if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
 
     // 2. Verifica Autenticação
     if (localStorage.getItem('johrei_auth') === CONFIG.password) {
@@ -64,12 +64,12 @@ function unlockApp() {
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
-        const idxRes = await fetch(`${cfg.path}${cfg.file}`);
+        const idxRes = await fetch(`${cfg.path}${cfg.file} `);
         const idxData = await idxRes.json();
         STATE.data = {};
 
         await Promise.all(idxData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file}`);
+            const res = await fetch(`${cfg.path}${cat.file} `);
             STATE.data[cat.id] = await res.json();
         }));
 
@@ -120,7 +120,7 @@ function setMode(newMode) {
     else STATE.bodyFilter = null;
 
     STATE.activeTag = null;
-    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     loadData();
 }
@@ -137,7 +137,7 @@ function setTab(id) {
     }
 
     STATE.activeTag = null;
-    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     renderTabs();
     applyFilters();
@@ -145,14 +145,16 @@ function setTab(id) {
 
 function renderTabs() {
     const container = document.getElementById('tabsContainer');
+
     const catMap = CONFIG.modes[STATE.mode].cats;
 
+    // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
         const active = STATE.activeTab === id;
         const config = catMap[id];
         const label = config ? config.label : id;
         const activeClass = active
-            ? `border-${config.color} text-${config.color}`
+            ? `border-${config ? config.color : 'gray-900'} text-${config ? config.color : 'gray-900'}`
             : 'border-transparent hover:text-black dark:hover:text-white';
 
         return `<button onclick="setTab('${id}')" class="tab-btn ${activeClass}">${label}</button>`;
@@ -168,8 +170,95 @@ function renderTabs() {
     }
 
     container.innerHTML = html;
+
+    // Mobile Dropdown Options (Custom)
+    const mobileOptionsContainer = document.getElementById('mobileDropdownOptions');
+    const mobileLabel = document.getElementById('mobileDropdownLabel');
+
+    if (mobileOptionsContainer) {
+        let optionsHtml = Object.keys(STATE.data).map(id => {
+            const config = catMap[id];
+            const label = config ? config.label : id;
+            const isActive = STATE.activeTab === id;
+
+            if (isActive) {
+                if (mobileLabel) mobileLabel.textContent = label;
+                return ''; // Don't show active item in list
+            }
+
+            return `
+            <button onclick="selectMobileOption('${id}')"
+                class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
+                ${label}
+            </button>
+    `;
+        }).join('');
+
+        if (STATE.mode === 'ensinamentos') {
+            const isActive = STATE.activeTab === 'mapa';
+            if (isActive) {
+                if (mobileLabel) mobileLabel.textContent = "MAPA CORPORAL";
+            } else {
+                optionsHtml += `
+                <button onclick="selectMobileOption('mapa')"
+                    class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
+                    MAPA CORPORAL
+                </button>
+    `;
+            }
+        }
+        mobileOptionsContainer.innerHTML = optionsHtml;
+    }
+
     updateUIForTab(STATE.activeTab);
 }
+
+// --- CUSTOM DROPDOWN LOGIC ---
+function toggleMobileDropdown() {
+    const menu = document.getElementById('mobileDropdownMenu');
+    const icon = document.getElementById('mobileDropdownIcon');
+
+    if (menu.classList.contains('hidden')) {
+        // Open
+        menu.classList.remove('hidden');
+
+        requestAnimationFrame(() => {
+            menu.classList.remove('-translate-y-4', 'opacity-0', 'duration-150', 'ease-in');
+            menu.classList.add('translate-y-0', 'opacity-100', 'duration-300', 'ease-out');
+            icon.style.transform = 'rotate(180deg)';
+        });
+    } else {
+        closeMobileDropdown();
+    }
+}
+
+function closeMobileDropdown() {
+    const menu = document.getElementById('mobileDropdownMenu');
+    const icon = document.getElementById('mobileDropdownIcon');
+
+    menu.classList.remove('translate-y-0', 'opacity-100', 'duration-300', 'ease-out');
+    menu.classList.add('-translate-y-4', 'opacity-0', 'duration-150', 'ease-in');
+    icon.style.transform = 'rotate(0deg)';
+
+    setTimeout(() => {
+        menu.classList.add('hidden');
+    }, 150); // Match transition duration (half of open)
+}
+
+function selectMobileOption(id) {
+    setTab(id);
+    closeMobileDropdown();
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    const dropdown = document.getElementById('mobileDropdownMenu');
+    const btn = document.getElementById('mobileDropdownBtn');
+    if (dropdown && !dropdown.classList.contains('hidden') && !dropdown.contains(e.target) && !btn.contains(e.target)) {
+        closeMobileDropdown();
+    }
+});
+
 
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
@@ -197,8 +286,8 @@ function updateUIForTab(tabId) {
         ];
 
         let html = `
-            <!-- Mapas Desktop: Grid 3 colunas -->
-            <div class="hidden md:grid md:grid-cols-3 gap-6 mb-12 max-w-[100rem] mx-auto">
+        <!--Mapas Desktop: Grid 3 colunas-->
+        <div class="hidden md:grid md:grid-cols-3 gap-6 mb-12 max-w-[100rem] mx-auto">
         `;
 
         views.forEach(view => {
@@ -211,16 +300,15 @@ function updateUIForTab(tabId) {
 
         html += `</div>`;
 
-        // Mapas Mobile: Scroll horizontal
+        // Mapas Mobile: Stack vertical
         html += `
-            <div class="md:hidden flex overflow-x-auto snap-x gap-4 pb-8 hide-scrollbar">
+            <div class="md:hidden flex flex-col gap-8 pb-8">
                 ${views.map(view => `
-                    <div class="snap-center shrink-0 w-[85vw] relative">
-                        <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" />
-                    </div>
-                `).join('')}
+                <div class="w-full relative">
+                    <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" />
+                </div>
+            `).join('')}
             </div>
-            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-4 md:hidden">Deslize para ver mais</p>
         `;
 
         map.innerHTML = html;
@@ -229,20 +317,23 @@ function updateUIForTab(tabId) {
 
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 function applyFilters() {
-    const q = document.getElementById('searchInput').value.toLowerCase();
-    const { activeTab, activeLetter, activeTag, bodyFilter } = STATE;
+    // Get value from any search input (they should be synced)
+    const inputs = document.querySelectorAll('.search-input');
+    const q = inputs.length > 0 ? inputs[0].value.toLowerCase() : '';
+
+    const { activeTab, activeLetter, activeTags, bodyFilter } = STATE;
 
     let rawItems = [];
     let label = "TODOS";
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
-    if (q || activeTag || activeTab === 'mapa' || bodyFilter) {
+    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter) {
         Object.keys(STATE.data).forEach(cat => {
             STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
         });
 
-        if (activeTag && bodyFilter) label = `TAG: #${activeTag} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'}`;
-        else if (activeTag) label = `TAG: #${activeTag.toUpperCase()}`;
+        if (activeTags.length > 0 && bodyFilter) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'} `;
+        else if (activeTags.length > 0) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} `;
         else if (bodyFilter) label = "PONTO FOCAL SELECIONADO";
         else if (q) label = "RESULTADOS DA BUSCA";
         else if (activeTab === 'mapa') label = "SELECIONE UMA REGIÃO ACIMA";
@@ -253,12 +344,17 @@ function applyFilters() {
     }
 
     let filtered = rawItems.filter(item => {
-        // 1. Filtro de TAG
-        if (activeTag && (!item.tags || !item.tags.includes(activeTag))) return false;
+        // 1. Filtro de TAGS (AND Logic)
+        if (activeTags.length > 0) {
+            if (!item.tags) return false;
+            // Check if item has ALL active tags
+            const hasAllTags = activeTags.every(tag => item.tags.includes(tag));
+            if (!hasAllTags) return false;
+        }
 
         // 2. Filtro do MAPA (Integração)
         // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
-        if (activeTab === 'mapa' && !bodyFilter && !q && !activeTag) return false;
+        if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
 
         // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
         if (bodyFilter && typeof matchBodyPoint === 'function') {
@@ -266,7 +362,7 @@ function applyFilters() {
         }
 
         // 3. Filtro de LETRA (Alfabeto)
-        if (!q && !activeTag && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
+        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
 
         // 4. Filtro de BUSCA TEXTUAL
         if (q) {
@@ -288,33 +384,110 @@ function applyFilters() {
 
     STATE.list = filtered;
 
-    // Atualiza contadores e UI
-    const countEl = document.getElementById('searchCount');
-    if (countEl) countEl.textContent = `${filtered.length} Itens`;
+    // Atualiza contadores e UI (Multiple elements)
+    document.querySelectorAll('.search-count').forEach(el => {
+        el.textContent = `${filtered.length} Itens`;
+    });
 
-    renderList(filtered, activeTag, STATE.mode);
+    // Show/Hide Clear Buttons
+    document.querySelectorAll('.clear-search-btn').forEach(btn => {
+        if (q || STATE.activeTags.length > 0) btn.classList.remove('hidden');
+        else btn.classList.add('hidden');
+    });
+
+    renderList(filtered, activeTags, STATE.mode);
 }
 
 // --- FUNÇÕES AUXILIARES ---
 
+function renderPoints(points, prefix) {
+    return points.map(p => {
+        const isSelected = STATE.bodyFilter === p.id;
+        const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
+
+        return `
+        <button onclick="toggleBodyPoint('${p.id}')" 
+            class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
+            style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+            title="${p.name}">
+            <span class="sr-only">${p.name}</span>
+        </button>
+        `;
+    }).join('');
+}
+
+function toggleBodyPoint(id) {
+    if (STATE.bodyFilter === id) {
+        STATE.bodyFilter = null;
+    } else {
+        STATE.bodyFilter = id;
+    }
+
+    // Update UI
+    updateUIForTab('mapa');
+
+    // Update list
+    applyFilters();
+
+    // Scroll to list if point selected
+    if (STATE.bodyFilter) {
+        const list = document.getElementById('contentList');
+        list.classList.remove('hidden');
+        setTimeout(() => {
+            list.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+}
+
 function clearSearch() {
-    document.getElementById('searchInput').value = '';
-    document.getElementById('clearSearch').classList.add('hidden');
-    STATE.activeTag = null;
+    document.querySelectorAll('.search-input').forEach(input => input.value = '');
+
+    STATE.activeTags = [];
 
     // Opcional: Limpar mapa ao limpar busca? Geralmente não.
     // if(typeof clearBodyFilter === 'function') clearBodyFilter();
 
     applyFilters();
+
+    // Collapse search if empty
+    toggleSearch('desktop', false);
+    toggleSearch('mobile', false);
+}
+
+function toggleSearch(type, forceState = null) {
+    const wrapper = document.getElementById(`${type}SearchInputWrapper`);
+    const btn = document.getElementById(`${type}SearchBtn`);
+    const input = document.getElementById(`${type}SearchInput`);
+
+    if (!wrapper) return;
+
+    const isExpanded = wrapper.classList.contains('w-full');
+    const shouldExpand = forceState !== null ? forceState : !isExpanded;
+
+    if (shouldExpand) {
+        wrapper.classList.remove('w-0');
+        wrapper.classList.add('w-full');
+        btn.classList.add('hidden');
+        btn.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => input.focus(), 100);
+    } else {
+        wrapper.classList.remove('w-full');
+        wrapper.classList.add('w-0');
+        btn.classList.remove('opacity-0', 'pointer-events-none');
+    }
 }
 
 function filterByTag(tag, event) {
     if (event) event.stopPropagation();
 
-    if (STATE.activeTag === tag) STATE.activeTag = null;
-    else STATE.activeTag = tag;
+    const index = STATE.activeTags.indexOf(tag);
+    if (index > -1) {
+        STATE.activeTags.splice(index, 1); // Remove if exists
+    } else {
+        STATE.activeTags.push(tag); // Add if not exists
+    }
 
-    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.search-input').forEach(input => input.value = '');
     STATE.activeLetter = '';
 
     // DECISÃO DE INTEGRAÇÃO:
@@ -331,10 +504,35 @@ function filterByTag(tag, event) {
 
 function filterByLetter(l) {
     STATE.activeLetter = l;
-    STATE.activeTag = null;
+    STATE.activeTags = [];
     renderAlphabet();
     applyFilters();
 }
+
+// --- SETUP ---
+function setupSearch() {
+    const inputs = document.querySelectorAll('.search-input');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            // Sync all inputs
+            const val = e.target.value;
+            inputs.forEach(i => {
+                if (i !== e.target) i.value = val;
+            });
+
+            STATE.activeLetter = '';
+            STATE.activeTags = [];
+            applyFilters();
+        });
+    });
+}
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing initialization ...
+    setupSearch();
+});
 
 function renderAlphabet() {
     const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -365,13 +563,14 @@ function openModal(i) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
     if (catConfig) {
-        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
+        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1}`;
+    document.getElementById('modalRef').textContent = `#${i + 1} `;
 
-    const searchQuery = document.getElementById('searchInput').value.trim();
+    const inputs = document.querySelectorAll('.search-input');
+    const searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
     document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery);
 
     const fpContainer = document.getElementById('modalFocusContainer');
