@@ -1,4 +1,3 @@
-
 // --- ESTADO GLOBAL ---
 let STATE = {
     activeTab: 'fundamentos', // ou 'curas', 'pontos_focais', 'mapa'
@@ -17,6 +16,68 @@ let STATE = {
 function removeAccents(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
+// --- PULL TO REFRESH LOGIC ---
+(function initPullToRefresh() {
+    let ptrStart = 0;
+    let ptrCurrent = 0;
+    let ptrDistance = 0;
+    const ptrThreshold = 80;
+
+    // Check DOMContentLoaded to ensure spinner exists
+    document.addEventListener('DOMContentLoaded', () => {
+        const spinner = document.getElementById('ptr-spinner');
+        if (!spinner) return;
+
+        document.addEventListener('touchstart', (e) => {
+            if (window.scrollY === 0) {
+                ptrStart = e.touches[0].screenY;
+            }
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (window.scrollY === 0 && ptrStart > 0) {
+                ptrCurrent = e.touches[0].screenY;
+                ptrDistance = ptrCurrent - ptrStart;
+
+                if (ptrDistance > 0) {
+                    // Resistance
+                    const translateY = Math.min(ptrDistance * 0.4, 100);
+                    const opacity = Math.min(ptrDistance / ptrThreshold, 1);
+
+                    spinner.style.transform = `translateY(${translateY}px)`;
+                    spinner.style.opacity = opacity;
+
+                    // Only prevent default if we are purely pulling down at top
+                    if (ptrDistance > 10 && e.cancelable) {
+                        e.preventDefault();
+                    }
+                }
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchend', () => {
+            if (window.scrollY === 0 && ptrStart > 0) {
+                if (ptrDistance > ptrThreshold) {
+                    // RELOAD ACTION
+                    spinner.style.transform = `translateY(60px)`;
+                    spinner.style.opacity = '1';
+                    // Optional: Vibrate if supported
+                    if (navigator.vibrate) navigator.vibrate(50);
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 500);
+                } else {
+                    // Reset
+                    spinner.style.transform = 'translateY(0)';
+                    spinner.style.opacity = '0';
+                }
+            }
+            ptrStart = 0;
+            ptrDistance = 0;
+        });
+    });
+})();
 
 // --- INICIALIZAÇÃO ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -394,22 +455,15 @@ function updateUIForTab(tabId) {
         html += mobileTabs;
 
         html += `   <!-- Maps Area (Right on Desktop) -->
-            <div id="mobile-map-container" class="flex-grow flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none no-scrollbar scroll-smooth">
+            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 `;
 
         views.forEach((view, i) => {
-            // Mobile: All visible in DOM, controlled by scroll. Desktop: All visible in grid.
-            // On mobile, items are full width and snap. On desktop, they are just blocks in grid (grid handles matching).
-            // Actually, we need to ensure mobile layout is a row (flex) and desktop is grid.
-            // But 'grid' class on container might conflict with 'flex' if not handled.
-            // Let's use responsive classes carefully.
-            // Container: Mobile = flex row, overflow-x. Desktop = grid cols-3.
-
-            // Note: The previous code had "flex-grow grid grid-cols-1 md:grid-cols-3".
-            // We change it to: "flex-grow flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none no-scrollbar"
+            // Mobile: Only first one visible by default. Desktop: All visible.
+            const visibilityClass = i === 0 ? 'block' : 'hidden';
 
             html += `
-                <div id="view-${view.id}" class="min-w-full md:min-w-0 snap-center md:snap-align-none relative group transition-all duration-300">
+                <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
                     <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
                     <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
                         <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
@@ -425,59 +479,37 @@ function updateUIForTab(tabId) {
         </div > `;
 
         map.innerHTML = html;
-        setupMapObserver(); // Initialize observer
     }
 }
 
 // --- MOBILE MAP NAVIGATION ---
 window.switchMobileView = function (targetId) {
-    const el = document.getElementById(`view-${targetId}`);
-    if (el) {
-        // Smooth scroll to the element
-        el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-    }
-};
-
-// Observer to update tabs on scroll
-function setupMapObserver() {
-    const container = document.getElementById('mobile-map-container');
-    if (!container || window.innerWidth >= 768) return;
-
-    const options = {
-        root: container,
-        threshold: 0.6 // Update when item is 60% visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id.replace('view-', '');
-                updateTabStyle(id);
-                STATE.currentMobileView = id; // Sync state
-            }
-        });
-    }, options);
-
-    ['front', 'back', 'detail'].forEach(id => {
-        const el = document.getElementById(`view-${id}`);
-        if (el) observer.observe(el);
-    });
-}
-
-function updateTabStyle(activeId) {
     const views = ['front', 'detail', 'back'];
+    STATE.currentMobileView = targetId;
+
     views.forEach(id => {
+        const el = document.getElementById(`view-${id}`);
         const tab = document.getElementById(`tab-${id}`);
-        if (tab) {
-            if (id === activeId) {
+
+        if (el && tab) {
+            if (id === targetId) {
+                el.classList.remove('hidden');
+                // Active Styling
                 tab.classList.remove('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
                 tab.classList.add('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
             } else {
+                el.classList.add('hidden');
+                // Inactive Styling
                 tab.classList.remove('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
                 tab.classList.add('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
             }
         }
     });
+};
+
+/* Observer removed as we are back to tab switching */
+function updateTabStyle(activeId) {
+    // Legacy function, can be removed or kept empty if other things call it
 }
 
 
@@ -627,6 +659,23 @@ function applyFilters() {
     // Re-render tabs if cross-tab mode changed
     if (wasCrossTabMode !== STATE.isCrossTabMode) {
         renderTabs();
+    }
+
+    // LIST VISIBILITY ON MAP TAB
+    // Ensure list is visible if we have results and filters, even on 'mapa' tab
+    const list = document.getElementById('contentList');
+    const empty = document.getElementById('emptyState');
+
+    if (activeTab === 'mapa') {
+        const hasFilters = q || activeTags.length > 0 || bodyFilter;
+        if (hasFilters) {
+            list.classList.remove('hidden');
+            if (filtered.length === 0 && empty) empty.classList.remove('hidden');
+        } else {
+            // If no filters, hide list (show only map)
+            list.classList.add('hidden');
+            if (empty) empty.classList.add('hidden');
+        }
     }
 
     // Atualiza contadores e UI (Multiple elements)

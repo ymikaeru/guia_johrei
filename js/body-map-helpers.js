@@ -107,13 +107,13 @@ function selectBodyPoint(pointIds) {
     // Re-render maps to update selected point visualization
     updateUIForTab('mapa');
 
-    // Scroll to results
+    // Scroll to results (Mobile & Desktop)
     const contentList = document.getElementById('contentList');
-    if (contentList && window.innerWidth >= 768) {
+    if (contentList) {
         contentList.classList.remove('hidden');
         setTimeout(() => {
             contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        }, 300); // Slight delay to allow DOM update
     }
 
     // Show FAB on mobile
@@ -230,15 +230,21 @@ function highlightBodyPoint(element, name, event) {
         const tooltip = document.createElement('div');
         tooltip.id = 'body-tooltip';
         // Count items matching this point
-        const keyword = BODY_DATA.keywords[pointId] || pointId;
-        count = allItems.filter(item => { // Changed from STATE.data to allItems
-            // Use the same matching logic as filters
-            const q = removeAccents(keyword.toLowerCase());
-            const focusMatch = item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q));
-            const tagMatch = item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q));
-            const contentMatch = (item.title && removeAccents(item.title.toLowerCase()).includes(q)) ||
-                (item.content && removeAccents(item.content.toLowerCase()).includes(q));
-            return focusMatch || tagMatch || contentMatch;
+        const rawKey = BODY_DATA.keywords[pointId] || pointId;
+        const searchKeys = Array.isArray(rawKey) ? rawKey : [rawKey];
+
+        count = allItems.filter(item => {
+            // Check if ANY keyword matches
+            return searchKeys.some(k => {
+                if (!k) return false;
+                const q = removeAccents(String(k).toLowerCase());
+
+                const focusMatch = item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q));
+                const tagMatch = item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q));
+                const contentMatch = (item.title && removeAccents(item.title.toLowerCase()).includes(q)) ||
+                    (item.content && removeAccents(item.content.toLowerCase()).includes(q));
+                return focusMatch || tagMatch || contentMatch;
+            });
         }).length;
 
         tooltip.innerHTML = `${name.toUpperCase()} <span style="opacity: 0.7; font-size: 0.9em; margin-left: 2px;">(${count})</span>`;
@@ -488,13 +494,27 @@ document.addEventListener('click', (e) => {
 });
 
 // Polyfill for matchBodyPoint provided for safety
+// Robust matchBodyPoint for filtering
 function matchBodyPoint(item, pointId) {
-    // This is a safety fallback if main.js calls it.
-    // However, our primary filtering is done via filterByBodyPoint in this file.
-    const keywords = BODY_DATA.keywords[pointId] || [];
-    if (keywords.length === 0) return true; // Loose matching if no keywords?
+    // 1. Get Keywords
+    const rawKey = BODY_DATA.keywords[pointId] || pointId;
+    const searchKeys = Array.isArray(rawKey) ? rawKey : [rawKey];
 
-    // Strict matching
-    const searchText = removeAccents((item.title + ' ' + item.content).toLowerCase());
-    return keywords.some(keyword => searchText.includes(removeAccents(keyword.toLowerCase())));
+    // 2. Check overlap
+    return searchKeys.some(k => {
+        if (!k) return false;
+        const q = removeAccents(String(k).toLowerCase());
+
+        // Check Focus Points (Direct Match usually)
+        if (item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q))) return true;
+
+        // Check Tags
+        if (item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q))) return true;
+
+        // Check Content/Title
+        const titleVal = item.title ? removeAccents(item.title.toLowerCase()) : '';
+        const contentVal = item.content ? removeAccents(item.content.toLowerCase()) : '';
+
+        return titleVal.includes(q) || contentVal.includes(q);
+    });
 }
