@@ -181,7 +181,7 @@ function highlightBodyPoint(element, name, event) {
     if (!tooltip) {
         tooltip = document.createElement('div');
         tooltip.id = 'bodyPointTooltip';
-        tooltip.className = 'fixed z-50 px-3 py-1.5 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-gray-100 text-[10px] font-bold uppercase tracking-[0.15em] shadow-sm pointer-events-none transform -translate-x-1/2 -translate-y-full mb-3';
+        // ClassName removed as styles are now in style.css under #bodyPointTooltip
         document.body.appendChild(tooltip);
     }
 
@@ -194,7 +194,8 @@ function highlightBodyPoint(element, name, event) {
     const topY = rect.top; // Position above the element
 
     tooltip.style.left = centerX + 'px';
-    tooltip.style.top = (topY - 8) + 'px'; // 8px gap
+    // Position higher to account for arrow (margin-bottom in CSS handles the spacing, but we add gap here too)
+    tooltip.style.top = (topY - 16) + 'px'; // Raised more (16px gap)
 }
 
 function unhighlightBodyPoint(element) {

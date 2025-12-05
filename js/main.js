@@ -199,7 +199,7 @@ function renderTabs() {
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white';
-        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapa Corporal</button>`;
+        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
     }
 
     container.innerHTML = html;
@@ -230,12 +230,12 @@ function renderTabs() {
         if (STATE.mode === 'ensinamentos') {
             const isActive = STATE.activeTab === 'mapa';
             if (isActive) {
-                if (mobileLabel) mobileLabel.textContent = "MAPA CORPORAL";
+                if (mobileLabel) mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
             } else {
                 optionsHtml += `
                 <button onclick="selectMobileOption('mapa')"
                     class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
-                    MAPA CORPORAL
+                    MAPAS DE APLICAÇÃO
                 </button>
     `;
             }
