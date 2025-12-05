@@ -14,9 +14,9 @@ const CONFIG = {
             description: 'Conteúdos didáticos explicativos',
             file: 'explicacoes_index.json', path: 'data/',
             cats: {
-                guia1: { label: 'Fundamentos', color: 'cat-blue' },
-                guia2: { label: 'Revelação Divina', color: 'cat-green' },
-                guia3: { label: 'Técnicas Práticas', color: 'cat-purple' }
+                guia1: { label: 'Entender', color: 'cat-blue' },
+                guia2: { label: 'Aprofundar', color: 'cat-green' },
+                guia3: { label: 'Praticar', color: 'cat-purple' }
             }
         }
     }
