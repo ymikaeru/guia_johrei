@@ -48,17 +48,26 @@ function renderList(list, activeTags, mode, activeTab) {
     }
     emptyEl.classList.add('hidden');
 
+    // Detect if we're showing cross-tab results
+    const uniqueCategories = new Set(list.map(item => item._cat));
+    const isCrossTabSearch = uniqueCategories.size > 1;
+
     el.innerHTML = list.map((item, i) => {
         // Recupera cor e label da configuração
         const catConfig = CONFIG.modes[mode].cats[item._cat];
+
+        // Conditional classes for category badge prominence
+        const categoryBadgeClasses = isCrossTabSearch
+            ? `text-[10px] px-2 py-1 rounded-md ${catConfig ? `bg-${catConfig.color} text-white dark:bg-${catConfig.color} dark:text-white` : 'bg-gray-400 text-white'}`
+            : `text-[9px] ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}`;
 
         return `
         <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
             <div>
                 <div class="mb-2">
-                    <span class="text-[9px] font-bold uppercase tracking-widest ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}">${catConfig ? catConfig.label : item._cat}</span>
+                    <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
-                <h3 class="font-serif font-bold text-[1.825rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
                 ${activeTab === 'pontos_focais' && item.focusPoints && item.focusPoints.length > 0 ? `
                 <div class="mb-3 mt-2">
                     <div class="flex flex-wrap gap-2">

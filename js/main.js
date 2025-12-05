@@ -8,7 +8,8 @@ let STATE = {
     bodyFilter: null, // Agora suporta array ou null, mas vamos manter simples por enquanto
     mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
     list: [],
-    idx: -1
+    idx: -1,
+    isCrossTabMode: false // True when showing results from multiple tabs
 };
 
 // Helper to remove accents
@@ -83,22 +84,9 @@ async function loadData() {
         STATE.data = {};
 
         // For ensinamentos mode, set specific order
+        // Build STATE.data with tabs in desired order
         if (STATE.mode === 'ensinamentos') {
-            // First, create "todos" tab by combining all data
-            const allItems = [];
-            ['fundamentos', 'curas', 'pontos_focais'].forEach(tabId => {
-                if (tempData[tabId]) {
-                    tempData[tabId].forEach(item => {
-                        allItems.push({
-                            ...item,
-                            _sourceTab: tabId
-                        });
-                    });
-                }
-            });
-
-            // Build STATE.data in desired order: Todos, Fundamentos, Casos, Pontos Focais
-            STATE.data['todos'] = allItems;
+            STATE.data = {};
             STATE.data['fundamentos'] = tempData['fundamentos'];
             STATE.data['curas'] = tempData['curas'];
             STATE.data['pontos_focais'] = tempData['pontos_focais'];
@@ -194,7 +182,7 @@ function renderTabs() {
 
     // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
-        const active = STATE.activeTab === id;
+        const active = STATE.activeTab === id && !STATE.isCrossTabMode; // Hide indicator in cross-tab mode
         const config = catMap[id];
         const label = config ? config.label : id;
         const activeClass = active
@@ -206,7 +194,7 @@ function renderTabs() {
 
     // Adiciona aba Mapa apenas no modo ensinamentos
     if (STATE.mode === 'ensinamentos') {
-        const active = STATE.activeTab === 'mapa';
+        const active = STATE.activeTab === 'mapa' && !STATE.isCrossTabMode; // Hide indicator in cross-tab mode
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white';
@@ -466,6 +454,16 @@ function applyFilters() {
 
     STATE.list = filtered;
 
+    // Detect cross-tab mode and update state
+    const uniqueCategories = new Set(filtered.map(item => item._cat));
+    const wasCrossTabMode = STATE.isCrossTabMode;
+    STATE.isCrossTabMode = uniqueCategories.size > 1;
+
+    // Re-render tabs if cross-tab mode changed
+    if (wasCrossTabMode !== STATE.isCrossTabMode) {
+        renderTabs();
+    }
+
     // Atualiza contadores e UI (Multiple elements)
     document.querySelectorAll('.search-count').forEach(el => {
         el.textContent = `${filtered.length} Itens`;
@@ -647,10 +645,8 @@ function setupSearch() {
             STATE.activeLetter = '';
             STATE.activeTags = [];
 
-            // Auto-switch to "todos" tab when searching in ensinamentos mode
-            if (val.length > 0 && STATE.mode === 'ensinamentos' && STATE.activeTab !== 'todos') {
-                setTab('todos');
-            }
+            // When searching, results will come from all tabs
+            // No need to switch tabs - applyFilters handles cross-tab search
 
             applyFilters();
 
@@ -683,11 +679,19 @@ function setupSearch() {
                 currentSuggestions = [];
             } else if (val.length > 1) {
                 const q = removeAccents(val);
-                const currentData = STATE.data[STATE.activeTab] || [];
+
+                // Search across ALL data, not just active tab
+                const allData = [];
+                Object.keys(STATE.data).forEach(tabId => {
+                    if (STATE.data[tabId]) {
+                        allData.push(...STATE.data[tabId]);
+                    }
+                });
+
                 const suggestions = [];
                 const seen = new Set();
 
-                currentData.forEach(item => {
+                allData.forEach(item => {
                     // Search in title
                     if (item.title && removeAccents(item.title).includes(q)) {
                         const key = `title:${item.title}`;
