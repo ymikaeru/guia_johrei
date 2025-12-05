@@ -199,8 +199,18 @@
                             class="text-[10px] font-sans font-bold uppercase tracking-widest text-gray-300 block">REF
                             #00</span>
                     </div>
-                    <button onclick="closeModal()"
-                        class="text-3xl hover:opacity-50 transition-opacity font-light font-serif">&times;</button>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center bg-gray-100 dark:bg-[#222] rounded-lg p-1 gap-1">
+                            <button onclick="changeFontSize('sm')"
+                                class="w-8 h-8 flex items-center justify-center text-xs font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A-</button>
+                            <button onclick="changeFontSize('md')"
+                                class="w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A</button>
+                            <button onclick="changeFontSize('lg')"
+                                class="w-8 h-8 flex items-center justify-center text-lg font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A+</button>
+                        </div>
+                        <button onclick="closeModal()"
+                            class="text-3xl hover:opacity-50 transition-opacity font-light font-serif">&times;</button>
+                    </div>
                 </div>
                 <div class="flex-grow overflow-y-auto p-10 md:p-20 bg-white dark:bg-[#111]">
                     <h2 id="modalTitle"
