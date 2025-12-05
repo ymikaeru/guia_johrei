@@ -178,11 +178,8 @@ function filterByBodyPoint(pointId) {
         }
     });
 
-    // Filter items that match any of the keywords
-    const filtered = allItems.filter(item => {
-        const searchText = removeAccents((item.title + ' ' + item.content).toLowerCase());
-        return keywords.some(keyword => searchText.includes(removeAccents(keyword.toLowerCase())));
-    });
+    // Filter items using the robust matchBodyPoint function
+    const filtered = allItems.filter(item => matchBodyPoint(item, pointId));
 
     STATE.list = filtered;
     renderList(filtered, STATE.activeTags, STATE.mode, STATE.activeTab);
@@ -505,16 +502,20 @@ function matchBodyPoint(item, pointId) {
         if (!k) return false;
         const q = removeAccents(String(k).toLowerCase());
 
-        // Check Focus Points (Direct Match usually)
-        if (item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q))) return true;
+        // Escape special chars in q just in case
+        const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`\\b${safeQ}\\b`, 'i');
 
-        // Check Tags
-        if (item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q))) return true;
+        // Check Focus Points (Direct Match using Regex to avoid maxilar matching axila)
+        if (item.focusPoints && item.focusPoints.some(fp => regex.test(removeAccents(fp.toLowerCase())))) return true;
 
-        // Check Content/Title
+        // Check Tags - DISABLED for Body Map to ensure 100% text accuracy (User Request)
+        // if (item.tags && item.tags.some(tag => regex.test(removeAccents(tag.toLowerCase())))) return true;
+
+        // Check Content/Title using Regex for Word Boundaries (prevents Axila -> Maxilar)
         const titleVal = item.title ? removeAccents(item.title.toLowerCase()) : '';
         const contentVal = item.content ? removeAccents(item.content.toLowerCase()) : '';
 
-        return titleVal.includes(q) || contentVal.includes(q);
+        return regex.test(titleVal) || regex.test(contentVal);
     });
 }

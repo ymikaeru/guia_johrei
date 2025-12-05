@@ -1137,18 +1137,59 @@ function openModal(i) {
     document.getElementById('modalRef').textContent = `#${i + 1}`;
 
     const inputs = document.querySelectorAll('.search-input');
-    const searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
+    let searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
+
+    // Highlight body point keywords if filtering by body point
+    if (!searchQuery && STATE.selectedBodyPoint && STATE.activeTab === 'mapa') {
+        const pointIds = STATE.selectedBodyPoint.split(',');
+        const keywords = new Set();
+        pointIds.forEach(pid => {
+            const keys = BODY_DATA.keywords[pid];
+            if (keys) {
+                if (Array.isArray(keys)) keys.forEach(k => keywords.add(k));
+                else keywords.add(keys);
+            } else {
+                keywords.add(pid);
+            }
+        });
+        // Use | as delimiter to preserve phrases (handled in formatBodyText)
+        searchQuery = Array.from(keywords).join('|');
+    }
     document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery);
 
     const fpContainer = document.getElementById('modalFocusContainer');
     // Hide focus points for Fundamentos and Casos e Orientações (curas)
     const showFocusPoints = !['fundamentos', 'curas'].includes(STATE.activeTab);
 
+    // Build Highlight Regex (same logic as formatBodyText)
+    let highlightRegex = null;
+    if (searchQuery) {
+        let tokens;
+        let useBoundaries = false;
+        if (searchQuery.includes('|')) {
+            tokens = searchQuery.split('|').filter(t => t.trim().length > 0);
+            useBoundaries = true;
+        } else {
+            tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
+        }
+        const terms = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+        if (terms) {
+            highlightRegex = new RegExp(useBoundaries ? `\\b(${terms})\\b` : `(${terms})`, 'i');
+        }
+    }
+
     if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
         fpContainer.classList.remove('hidden');
-        const html = item.focusPoints.map(p =>
-            `<button onclick="filterByFocusPoint('${p}')" class="text-[10px] font-bold uppercase tracking-widest border border-black dark:border-white px-2 py-1 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${p}</button>`
-        ).join('');
+        const html = item.focusPoints.map(p => {
+            const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
+            // Highlighting style if matched
+            const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors";
+            const colorClass = isMatch
+                ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100" // Highlighted
+                : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"; // Normal
+
+            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}">${p}</button>`;
+        }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
         fpContainer.classList.add('hidden');

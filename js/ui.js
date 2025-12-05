@@ -5,7 +5,28 @@ function formatBodyText(text, searchQuery) {
     const lines = text.split('\n');
     const highlight = (str) => {
         if (!searchQuery) return str;
-        const regex = new RegExp(`(${searchQuery})`, 'gi');
+
+        let tokens;
+        let useBoundaries = false;
+
+        // Check if query uses specific delimiter (for body point keywords)
+        if (searchQuery.includes('|')) {
+            tokens = searchQuery.split('|').filter(t => t.trim().length > 0);
+            useBoundaries = true; // Use strict word boundaries for predefined keywords
+        } else {
+            // Default: Split by space for manual search
+            tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
+        }
+
+        const terms = tokens
+            .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // Escape regex special chars
+            .join('|');
+
+        if (!terms) return str;
+
+        // Use word boundaries if requested (prevents Axila -> Maxilar)
+        const pattern = useBoundaries ? `\\b(${terms})\\b` : `(${terms})`;
+        const regex = new RegExp(pattern, 'gi');
         return str.replace(regex, '<mark class="search-highlight">$1</mark>');
     };
 
