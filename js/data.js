@@ -25,23 +25,131 @@ const CONFIG = {
 const BODY_DATA = {
     points: {
         front: [
-            { id: "cabeca", name: "Cabeça", x: 103, y: 12 }, { id: "pescoco", name: "Pescoço", x: 103, y: 28 },
-            { id: "ombros", name: "Ombros", x: 82, y: 40 }, { id: "peito", name: "Peito", x: 103, y: 50 },
-            { id: "figado", name: "Fígado", x: 116, y: 75 }, { id: "estomago", name: "Estômago", x: 90, y: 70 },
-            { id: "umbigo", name: "Umbigo", x: 103, y: 93 }, { id: "virilhas", name: "Virilhas", x: 95, y: 118 },
-            { id: "bexiga", name: "Bexiga", x: 103, y: 113 }
+            { id: 'vertice', name: 'Alto da cabeça (Vértice)', x: 50, y: 2 },
+            { id: 'frontal', name: 'Frontal - Região frontal/Testa', x: 50, y: 7 },
+            { id: 'sobrancelhas', name: 'Sobrancelhas', x: 45, y: 13 }, // Novo
+            { id: 'olhos', name: 'Olhos', x: 55, y: 15 },
+            { id: 'nariz', name: 'Nariz', x: 50, y: 17.5 },
+            { id: 'boca', name: 'Boca', x: 50, y: 22.5 },
+            { id: 'garganta', name: 'Garganta', x: 50, y: 30 },
+            { id: 'laterais-pescoco', name: 'Laterais do pescoço', x: 42, y: 28 },
+            { id: 'arredores-garganta', name: 'Arredores de garganta', x: 58, y: 28 },
+            { id: 'linfaticas', name: 'Glândulas linfáticas cervicais', x: 53, y: 32 },
+            { id: 'ombros', name: 'Ombros', x: 28, y: 37 },
+            { id: 'bracos', name: 'Braços (raiz do braço)', x: 22, y: 43 },
+            { id: 'torax', name: 'Tórax', x: 50, y: 38 }, // Novo
+            { id: 'coracao', name: 'Coração', x: 50, y: 44.5 },
+            { id: 'axilas', name: 'Axilas', x: 30, y: 52 },
+            { id: 'pulmoes', name: 'Pulmões', x: 62, y: 49 },
+            { id: 'diafragma', name: 'Diafragma', x: 60, y: 57 },
+            { id: 'figado', name: 'Fígado', x: 53, y: 59.5 },
+            { id: 'estomago', name: 'Estômago', x: 57, y: 65 },
+            { id: 'pancreas', name: 'Pâncreas', x: 52, y: 67 },
+            { id: 'intestino', name: 'Intestino', x: 50, y: 74 }, // Novo
+            { id: 'baixo-ventre', name: 'Baixo ventre', x: 50, y: 78 },
+            { id: 'inguinal', name: 'Região inguinal', x: 63, y: 84 },
+            { id: 'virilha', name: 'Virilha', x: 42, y: 89 },
+            { id: 'membros', name: 'Membros e Extremidades', x: 72, y: 92 }
         ],
+
         back: [
-            { id: "nuca", name: "Nuca", x: 103, y: 28 }, { id: "escapulas", name: "Escápulas", x: 88, y: 50 },
-            { id: "coluna", name: "Coluna", x: 103, y: 75 }, { id: "rins", name: "Rins", x: 90, y: 85 },
-            { id: "lombar", name: "Lombar", x: 103, y: 95 }, { id: "coccix", name: "Cóccix", x: 103, y: 110 }
+            { id: 'occipital', name: 'Região Occipital', x: 50, y: 20.5 },
+            { id: 'nuca', name: 'Nuca', x: 50, y: 25 },
+            { id: 'bulbo', name: 'Bulbo Raquidiano', x: 50, y: 29 },
+            { id: 'medula-cervical', name: 'Medula cervical', x: 50, y: 32.5 },
+            { id: 'regiao_omoplatas', name: 'Região entre as omoplatas', x: 69, y: 41 },
+            { id: 'cardiaca-posterior', name: 'Região Cardíaca Posterior', x: 31, y: 41 }, // Novo
+            { id: 'coluna', name: 'Coluna', x: 52, y: 53 },
+            { id: 'rins', name: 'Rins - Região renal', x: 37, y: 66 },
+            { id: 'sacro', name: 'Sacro', x: 55, y: 80.5 },
+            { id: 'gluteos', name: 'Glúteos', x: 65, y: 86.5 },
+            { id: 'anus', name: 'Ânus', x: 50, y: 92 }
+        ],
+
+        detail: [
+            // --- Seção Superior: Cabeça (Perfil) ---
+            { id: 'ouvidos', name: 'Ouvidos', x: 54, y: 21 },
+            { id: 'parotida', name: 'Glândula parótida', x: 48, y: 23 },
+            { id: 'occipital-detail', name: 'Região Occipital', x: 63, y: 21 },
+            { id: 'nuca-detail', name: 'Nuca', x: 57, y: 25 },
+            { id: 'bulbo-detail', name: 'Bulbo Raquidiano', x: 56, y: 29 },
+            { id: 'medula-detail', name: 'Medula cervical', x: 56, y: 35 },
+            { id: 'bochechas', name: 'Bochechas', x: 43, y: 25 }, // Novo (Perfil)
+            { id: 'maxilar', name: 'Maxilar', x: 40, y: 28 }, // Novo (Perfil)
+            // --- Seção do Meio: Digestivo ---
+            { id: 'esofago', name: 'Esôfago', x: 47, y: 49 },
+            { id: 'figado-detail', name: 'Fígado', x: 34, y: 59 },
+            { id: 'estomago-detail', name: 'Estômago', x: 56, y: 60 },
+            { id: 'pancreas-detail', name: 'Pâncreas', x: 50, y: 65 },
+            // --- Seção Inferior: Pélvico ---
+            { id: 'orgaos-internos', name: 'Órgãos Internos', x: 60, y: 80 },
+            { id: 'utero', name: 'Útero (costas do útero)', x: 48, y: 83 }
         ]
     },
     keywords: {
-        cabeca: ['fronte', 'cabeça', 'cérebro'], pescoco: ['pescoço', 'garganta', 'tireoide'], ombros: ['ombros'],
-        peito: ['peito', 'pulmões', 'coração'], figado: ['fígado'], estomago: ['estômago', 'baço', 'gástrico'],
-        umbigo: ['umbigo'], virilhas: ['virilhas'], bexiga: ['bexiga'], nuca: ['nuca', 'medula'],
-        escapulas: ['escápulas'], coluna: ['coluna'], rins: ['rins', 'renal'], lombar: ['lombar'], coccix: ['cóccix']
-    },
-    path: `M104.265,117.959c-0.304,3.58,2.126,22.529,3.38,29.959c0.597,3.52,2.234,9.255,1.645,12.3 c-0.841,4.244-1.084,9.736-0.621,12.934c0.292,1.942,1.211,10.899-0.104,14.175c-0.688,1.718-1.949,10.522-1.949,10.522 c-3.285,8.294-1.431,7.886-1.431,7.886c1.017,1.248,2.759,0.098,2.759,0.098c1.327,0.846,2.246-0.201,2.246-0.201 c1.139,0.943,2.467-0.116,2.467-0.116c1.431,0.743,2.758-0.627,2.758-0.627c0.822,0.414,1.023-0.109,1.023-0.109 c2.466-0.158-1.376-8.05-1.376-8.05c-0.92-7.088,0.913-11.033,0.913-11.033c6.004-17.805,6.309-22.53,3.909-29.24 c-0.676-1.937-0.847-2.704-0.536-3.545c0.719-1.941,0.195-9.748,1.072-12.848c1.692-5.979,3.361-21.142,4.231-28.217 c1.169-9.53-4.141-22.308-4.141-22.308c-1.163-5.2,0.542-23.727,0.542-23.727c2.381,3.705,2.29,10.245,2.29,10.245 c-0.378,6.859,5.541,17.342,5.541,17.342c2.844,4.332,3.921,8.442,3.921,8.747c0,1.248-0.273,4.269-0.273,4.269l0.109,2.631 c0.049,0.67,0.426,2.977,0.365,4.092c-0.444,6.862,0.646,5.571,0.646,5.571c0.92,0,1.931-5.522,1.931-5.522 c0,1.424-0.348,5.687,0.42,7.295c0.919,1.918,1.595-0.329,1.607-0.78c0.243-8.737,0.768-6.448,0.768-6.448 c0.511,7.088,1.139,8.689,2.265,8.135c0.853-0.407,0.073-8.506,0.073-8.506c1.461,4.811,2.569,5.577,2.569,5.577 c2.411,1.693,0.92-2.983,0.585-3.909c-1.784-4.92-1.839-6.625-1.839-6.625c2.229,4.421,3.909,4.257,3.909,4.257 c2.174-0.694-1.9-6.954-4.287-9.953c-1.218-1.528-2.789-3.574-3.245-4.789c-0.743-2.058-1.304-8.674-1.304-8.674 c-0.225-7.807-2.155-11.198-2.155-11.198c-3.3-5.282-3.921-15.135-3.921-15.135l-0.146-16.635 c-1.157-11.347-9.518-11.429-9.518-11.429c-8.451-1.258-9.627-3.988-9.627-3.988c-1.79-2.576-0.767-7.514-0.767-7.514 c1.485-1.208,2.058-4.415,2.058-4.415c2.466-1.891,2.345-4.658,1.206-4.628c-0.914,0.024-0.707-0.733-0.707-0.733 C115.068,0.636,104.01,0,104.01,0h-1.688c0,0-11.063,0.636-9.523,13.089c0,0,0.207,0.758-0.715,0.733 c-1.136-0.03-1.242,2.737,1.215,4.628c0,0,0.572,3.206,2.058,4.415c0,0,1.023,4.938-0.767,7.514c0,0-1.172,2.73-9.627,3.988 c0,0-8.375,0.082-9.514,11.429l-0.158,16.635c0,0-0.609,9.853-3.922,15.135c0,0-1.921,3.392-2.143,11.198 c0,0-0.563,6.616-1.303,8.674c-0.451,1.209-2.021,3.255-3.249,4.789c-2.408,2.993-6.455,9.24-4.29,9.953 c0,0,1.689,0.164,3.909-4.257c0,0-0.046,1.693-1.827,6.625c-0.35,0.914-1.839,5.59,0.573,3.909c0,0,1.117-0.767,2.569-5.577 c0,0-0.779,8.099,0.088,8.506c1.133,0.555,1.751-1.047,2.262-8.135c0,0,0.524-2.289,0.767,6.448 c0.012,0.451,0.673,2.698,1.596,0.78c0.779-1.608,0.429-5.864,0.429-7.295c0,0,0.999,5.522,1.933,5.522 c0,0,1.099,1.291,0.648-5.571c-0.073-1.121,0.32-3.422,0.369-4.092l0.106-2.631c0,0-0.274-3.014-0.274-4.269 c0-0.311,1.078-4.415,3.921-8.747c0,0,5.913-10.488,5.532-17.342c0,0-0.082-6.54,2.299-10.245c0,0,1.69,18.526,0.545,23.727 c0,0-5.319,12.778-4.146,22.308c0.864,7.094,2.53,22.237,4.226,28.217c0.886,3.094,0.362,10.899,1.072,12.848 c0.32,0.847,0.152,1.627-0.536,3.545c-2.387,6.71-2.083,11.436,3.921,29.24c0,0,1.848,3.945,0.914,11.033 c0,0-3.836,7.892-1.379,8.05c0,0,0.192,0.523,1.023,0.109c0,0,1.327,1.37,2.761,0.627c0,0,1.328,1.06,2.463,0.116 c0,0,0.91,1.047,2.237,0.201c0,0,1.742,1.175,2.777-0.098c0,0,1.839,0.408-1.435-7.886c0,0-1.254-8.793-1.945-10.522 c-1.318-3.275-0.387-12.251-0.106-14.175c0.453-3.216,0.21-8.695-0.618-12.934c-0.606-3.038,1.035-8.774,1.641-12.3 c1.245-7.423,3.685-26.373,3.38-29.959l1.008,0.354C103.809,118.312,104.265,117.959,104.265,117.959z`
+        // Front view keywords
+        vertice: ['vértice', 'topo', 'alto', 'cabeça', 'centro da cabeça', 'alto da cabeça', 'ministrar johrei na cabeça cura', 'a cabeça fica mais leve após a hemorragia'],
+        frontal: ['fronte', 'frontal', 'testa', 'lobo frontal', 'recitar a oração zengensanji', 'região frontal', 'da região frontal até os olhos'],
+        olhos: ['olhos', 'vista', 'visão', 'parte superior dos olhos (sobrancelhas)'],
+        sobrancelhas: ['sobrancelhas', 'região frontal (sobrancelhas)'],
+        nariz: ['nariz', 'narinas', 'parte posterior do nariz', 'o nariz', 'arredores do nariz'],
+        'lados_nariz': ['lateral nariz', 'lados do nariz'],
+        boca: ['boca', 'lábios'],
+        bochechas: ['bochechas', 'face'],
+        maxilar: ['maxilar', 'mandíbula'],
+        pescoco: ['pescoço', 'ao redor do pescoço', 'laterais do pescoço'],
+        garganta: ['garganta', 'faringe', 'arredores da garganta', 'é a garganta'],
+        'arredores-garganta': ['arredores garganta'],
+        linfaticas: ['glândulas linfáticas', 'linfonodos', 'gânglios', 'glândulas linfáticas de pescoço', 'glândulas linfáticas cervicais'],
+        'laterais-pescoco': ['lateral pescoço'],
+        ombros: ['ombros', 'ombro'],
+        bracos: ['braços', 'raiz braço'],
+        axilas: ['axilas', 'axila'],
+        torax: ['tórax', 'peito'],
+        coracao: ['coração', 'cardíaco', 'se a trindade pulmão-coração-estômago estiver bem'],
+        pulmoes: ['pulmões', 'pulmonar', 'costas do pulmão', 'sem fazer o longo trajeto pelos pulmões'],
+        diafragma: ['diafragma', 'borda inferior do diafragma', 'região do diafragma'],
+        figado: ['fígado', 'hepático', 'fígado (costas)', 'costas do fígado', 'assim como a compressão do fígado afeta a vesícula'],
+        estomago: ['estômago', 'gástrico', 'estômago (costas)'],
+        pancreas: ['pâncreas', 'pâncreas (costas)'],
+        intestino: ['intestino', 'intestinos'],
+        'baixo-ventre': ['baixo ventre', 'hipogástrio', 'costas da região entre o umbigo'],
+        'regiao_inguinal': ['inguinal', 'virilha', 'parte superior da região inguinal'],
+        inguinal: ['inguinal', 'virilha'],
+        virilha: ['virilha'],
+        membros: ['membros', 'extremidades', 'braços', 'pernas'],
+
+        // Back view keywords
+        'centro_cabeca': ['centro cabeça'],
+        'centro_cerebro': ['centro cérebro'],
+        cerebro: ['cérebro', 'craniano'],
+        occipital: ['occipital', 'occipício', 'região occipital'],
+        nuca: ['nuca'],
+        bulbo: ['bulbo', 'bulbo raquidiano', 'medula oblonga', 'arredores do bulbo', 'lado direito do bulbo'],
+        'medula-cervical': ['medula cervical', 'cervical'],
+        'regiao_cardiaca_posterior': ['região cardíaca posterior', 'cardíaca costas', 'região cardíaca nas costas'],
+        'cardiaca-posterior': ['região cardíaca posterior', 'cardíaca costas', 'região cardíaca nas costas'],
+        costas: ['costas', 'dorso'],
+        regiao_omoplatas: ['omoplatas', 'escápulas', 'entre as omoplatas'],
+        coluna: ['coluna', 'espinha', 'vértebras', 'a coluna'],
+        rins: ['rins', 'renal', 'região renal', 'reativar os rins', 'região renal nas costas', 'paralisia da perna: rins', 'rins. nota: no johrei'],
+        'regiao_lombar': ['lombar', 'região lombar'],
+        sacro: ['sacro', 'costas do útero (sacro)'],
+        gluteos: ['glúteos', 'nádegas'],
+        anus: ['ânus'],
+
+        // Detail view keywords
+        ouvidos: ['ouvidos', 'orelha'],
+        parotida: ['glândula parótida', 'parótida', 'arredores da parótida'],
+        'occipital-detail': ['occipital'],
+        'nuca-detail': ['nuca'],
+        'bulbo-detail': ['bulbo'],
+        'medula-detail': ['medula cervical'],
+        esofago: ['esôfago', 'esôfago (nas costas)'],
+        'figado-detail': ['fígado'],
+        'estomago-detail': ['estômago'],
+        'pancreas-detail': ['pâncreas'],
+        'orgaos-internos': ['órgãos internos'],
+        utero: ['útero', 'uterino', 'útero costas']
+    }
 };

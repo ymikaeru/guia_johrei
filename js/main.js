@@ -9,7 +9,8 @@ let STATE = {
     mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
     list: [],
     idx: -1,
-    isCrossTabMode: false // True when showing results from multiple tabs
+    isCrossTabMode: false, // True when showing results from multiple tabs
+    selectedBodyPoint: null // Selected body point for filtering
 };
 
 // Helper to remove accents
@@ -71,12 +72,12 @@ function unlockApp() {
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
-        const idxRes = await fetch(`${cfg.path}${cfg.file} `);
+        const idxRes = await fetch(`${cfg.path}${cfg.file}`);
         const idxData = await idxRes.json();
         const tempData = {};
 
         await Promise.all(idxData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file} `);
+            const res = await fetch(`${cfg.path}${cat.file}`);
             tempData[cat.id] = await res.json();
         }));
 
@@ -310,38 +311,76 @@ function updateUIForTab(tabId) {
         list.classList.add('hidden'); // Hide list for map tab
         if (empty) empty.classList.add('hidden');
 
-        // Render Static Images
+        // Render Interactive Body Maps
         const views = [
-            { id: 'front', img: 'assets/images/mapa_corporal_1.jpg', alt: 'Frente' },
-            { id: 'detail', img: 'assets/images/mapa_corporal_3.jpg', alt: 'Detalhes' },
-            { id: 'back', img: 'assets/images/mapa_corporal_2.jpg', alt: 'Costas' }
+            { id: 'front', img: 'assets/images/mapa_corporal_1.jpg', alt: 'Frente', points: BODY_DATA.points.front },
+            { id: 'detail', img: 'assets/images/mapa_corporal_3.jpg', alt: 'Detalhes', points: BODY_DATA.points.detail },
+            { id: 'back', img: 'assets/images/mapa_corporal_2.jpg', alt: 'Costas', points: BODY_DATA.points.back }
         ];
 
         let html = `
-        <!--Mapas Desktop: Grid 3 colunas-->
-        <div class="hidden md:grid md:grid-cols-3 gap-6 mb-12 max-w-[100rem] mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
+            
+            <!-- Sidebar (Desktop Only) -->
+            <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 h-[600px] overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm">
+                 <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
+                    <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
+                 </div>
+                 <div id="bodyPointSidebarList">
+                    <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                        -- Todos os pontos --
+                    </div>
+                    ${generateSidebarOptions()}
+                 </div>
+            </div>
+
+            <!-- Mobile Dropdown Selector (Mobile Only) -->
+            <div class="block lg:hidden w-full mb-8 relative z-50">
+                 <div class="-mx-8 md:-mx-12 px-8 md:px-12 pt-2 pb-0 border-b border-gray-100 dark:border-gray-900">
+                    <div class="relative inline-block w-full text-left" id="customBodyPointDropdown">
+                        <button type="button" onclick="toggleCustomDropdown(event)"
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
+                            <span id="customDropdownLabel">Filtrar por Região</span>
+                            <svg id="customDropdownIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+
+                        <div id="customDropdownMenu"
+                        class="hidden absolute left-0 right-0 z-[100] mt-0 w-full bg-white dark:bg-[#111] shadow-2xl border border-gray-200 dark:border-gray-800 max-h-[50vh] overflow-y-auto custom-scrollbar transform transition-all duration-300 origin-top opacity-0 -translate-y-2 rounded-xl">
+                            <div class="py-0">
+                                <div class="px-5 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all flex justify-between items-center bg-white dark:bg-[#111] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
+                                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                                    -- Todos os pontos --
+                                </div>
+                                ${generateSidebarOptions()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maps Area (Right on Desktop) -->
+            <div class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         `;
 
         views.forEach(view => {
             html += `
-                <div class="relative">
-                    <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain p-4" />
+                <div class="relative group">
+                    <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
+                    <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
+                        <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            ${renderBodyPoints(view.points, view.id)}
+                        </svg>
+                    </div>
                 </div>
             `;
         });
 
-        html += `</div>`;
-
-        // Mapas Mobile: Stack vertical
-        html += `
-            <div class="md:hidden flex flex-col gap-8 pb-8">
-                ${views.map(view => `
-                <div class="w-full relative">
-                    <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" />
-                </div>
-            `).join('')}
-            </div>
-        `;
+        html += `   </div>
+        </div>`;
 
         map.innerHTML = html;
     }
@@ -486,13 +525,13 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-        <button onclick="toggleBodyPoint('${p.id}')" 
-            class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-            style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-            title="${p.name}">
+            <button onclick="toggleBodyPoint('${p.id}')"
+        class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
+        style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+        title="${p.name}">
             <span class="sr-only">${p.name}</span>
         </button>
-        `;
+            `;
     }).join('');
 }
 
@@ -657,9 +696,7 @@ function setupSearch() {
                     const history = SearchHistory.getHistory();
                     if (history.length > 0) {
                         suggestionsEl.innerHTML = `
-                            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">
-                                Buscas Recentes
-                            </div>
+                            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
                             ${history.slice(0, 5).map(h => `
                                 <div data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
                                      class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group">
@@ -668,7 +705,8 @@ function setupSearch() {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                 </div>
-                            `).join('')}`;
+                            `).join('')}
+                        `;
                         suggestionsEl.classList.remove('hidden');
                     } else {
                         suggestionsEl.classList.add('hidden');
@@ -750,12 +788,12 @@ function setupSearch() {
                         const isSelected = index === selectedIndex;
                         const selectedClass = isSelected ? 'bg-gray-100 dark:bg-gray-800' : '';
                         return `
-                        <div data-title="${match.text.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
-                             class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
-                            <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${match.text}</span>
-                            <span class="text-[9px] uppercase tracking-widest text-gray-400 border border-gray-100 dark:border-gray-800 rounded px-1.5 py-0.5 bg-gray-50 dark:bg-gray-900">${match.type}</span>
-                        </div>
-                    `;
+                            <div data-title="${match.text.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
+                                class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
+                                <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${match.text}</span>
+                                <span class="text-[9px] uppercase tracking-widest text-gray-400 border border-gray-100 dark:border-gray-800 rounded px-1.5 py-0.5 bg-gray-50 dark:bg-gray-900">${match.type}</span>
+                            </div>
+                        `;
                     }).join('');
                     suggestionsEl.classList.remove('hidden');
                 } else {
@@ -896,11 +934,11 @@ function openModal(i) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
     if (catConfig) {
-        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
+        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1} `;
+    document.getElementById('modalRef').textContent = `#${i + 1}`;
 
     const inputs = document.querySelectorAll('.search-input');
     const searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';

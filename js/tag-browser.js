@@ -49,8 +49,8 @@ function initializeTagBrowser() {
 
     if (!wrapper || !content) return;
 
-    // Only show on ensinamentos mode
-    if (STATE.mode !== 'ensinamentos') {
+    // Only show on ensinamentos mode and NOT on map tab
+    if (STATE.mode !== 'ensinamentos' || STATE.activeTab === 'mapa') {
         wrapper.style.display = 'none';
         return;
     }

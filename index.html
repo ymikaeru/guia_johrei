@@ -164,7 +164,7 @@
 
         <!-- Tag Browser Section -->
         <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900" style="display: none;">
-            <div class="px-8 md:px-12 py-6">
+            <div class="px-8 md:px-12 pt-2 pb-0">
                 <button onclick="toggleTagBrowser()" id="tagBrowserToggle"
                     class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
                     <span>Categorias</span>
@@ -182,7 +182,8 @@
 
         <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a]" id="mainList">
 
-            <div id="bodyMapContainer" class="hidden py-20 border-b border-gray-100 dark:border-gray-900">
+            <div id="bodyMapContainer"
+                class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900">
                 <div class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto">
                     <div class="relative w-[40%] aspect-[3/4]">
                         <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Frente
@@ -280,6 +281,7 @@
     <script src="js/search-engine.js?v=1"></script>
     <script src="js/tag-browser.js?v=1"></script>
     <script src="js/ui.js?v=2"></script>
+    <script src="js/body-map-helpers.js?v=1"></script>
 
     <script src="js/main.js?v=2"></script>
 </body>
