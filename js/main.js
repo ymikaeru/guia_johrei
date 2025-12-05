@@ -700,12 +700,12 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-            < button onclick = "toggleBodyPoint('${p.id}')"
+            <button onclick="toggleBodyPoint('${p.id}')"
         class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-        style = "left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-        title = "${p.name}" >
+        style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+        title="${p.name}">
             <span class="sr-only">${p.name}</span>
-        </button >
+        </button>
             `;
     }).join('');
 }
@@ -774,7 +774,7 @@ function toggleSearch(type, forceState = null) {
 
     if (!wrapper) return;
 
-    const isExpanded = wrapper.classList.contains('w-full');
+    const isExpanded = wrapper.classList.contains('w-0');
     const shouldExpand = forceState !== null ? forceState : !isExpanded;
 
     if (shouldExpand) {
@@ -890,7 +890,7 @@ function setupSearch() {
                     const history = SearchHistory.getHistory();
                     if (history.length > 0) {
                         suggestionsEl.innerHTML = `
-            < div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800" > Buscas Recentes</div >
+            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
                 ${history.slice(0, 5).map(h => `
                                 <div data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
                                      class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group">
@@ -1106,12 +1106,13 @@ function renderAlphabet() {
     const currentData = STATE.data[STATE.activeTab] || [];
     const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
 
-    container.innerHTML = `< button onclick = "filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id = "btn-letter-all" >*</button > `;
+    // Clear container
+    container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
 
     abc.forEach(l => {
         if (availableLetters.has(l)) {
             const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
-            const html = `< button onclick = "filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}" > ${l}</button > `;
+            const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
             container.insertAdjacentHTML('beforeend', html);
         }
     });
@@ -1129,11 +1130,11 @@ function openModal(i) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
     if (catConfig) {
-        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
+        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1} `;
+    document.getElementById('modalRef').textContent = `#${i + 1}`;
 
     const inputs = document.querySelectorAll('.search-input');
     const searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
@@ -1145,9 +1146,10 @@ function openModal(i) {
 
     if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
         fpContainer.classList.remove('hidden');
-        document.getElementById('modalFocusPoints').innerHTML = item.focusPoints.map(p =>
-            `< button onclick = "filterByFocusPoint('${p}')" class="text-[10px] font-bold uppercase tracking-widest border border-black dark:border-white px-2 py-1 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors" > ${p}</button > `
+        const html = item.focusPoints.map(p =>
+            `<button onclick="filterByFocusPoint('${p}')" class="text-[10px] font-bold uppercase tracking-widest border border-black dark:border-white px-2 py-1 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${p}</button>`
         ).join('');
+        document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
         fpContainer.classList.add('hidden');
     }
