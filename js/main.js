@@ -306,7 +306,21 @@ function updateUIForTab(tabId) {
     if (tabId === 'pontos_focais') {
         alpha.classList.remove('hidden');
         renderAlphabet();
-    } else if (tabId === 'mapa') {
+    }
+    // Toggle Search Visibility
+    const desktopSearch = document.getElementById('desktopSearchWrapper');
+    const mobileSearch = document.getElementById('mobileSearchWrapper');
+
+    if (tabId === 'mapa') {
+        if (desktopSearch) desktopSearch.classList.add('invisible'); // Invisible to keep layout? Or hidden? Let's use invisible to avoid header jumping
+        if (mobileSearch) mobileSearch.classList.add('hidden');
+    } else {
+        if (desktopSearch) desktopSearch.classList.remove('invisible');
+        if (mobileSearch) mobileSearch.classList.remove('hidden');
+    }
+
+    // Hide lists if map
+    if (tabId === 'mapa') {
         map.classList.remove('hidden');
         list.classList.add('hidden'); // Hide list for map tab
         if (empty) empty.classList.add('hidden');
