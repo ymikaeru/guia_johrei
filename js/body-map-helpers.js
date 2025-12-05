@@ -109,12 +109,45 @@ function selectBodyPoint(pointIds) {
 
     // Scroll to results
     const contentList = document.getElementById('contentList');
-    if (contentList) {
+    if (contentList && window.innerWidth >= 768) {
         contentList.classList.remove('hidden');
         setTimeout(() => {
             contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
     }
+
+    // Show FAB on mobile
+    if (window.innerWidth < 768) {
+        const fab = document.getElementById('mobileFab');
+        if (fab) {
+            fab.classList.remove('hidden');
+            // Pulse animation
+            fab.firstElementChild.classList.add('scale-110');
+            setTimeout(() => fab.firstElementChild.classList.remove('scale-110'), 200);
+        }
+
+        // Auto-switch view if needed
+        if (window.autoSwitchMapToPoint) {
+            window.autoSwitchMapToPoint(idArray[0]); // Use the first point ID for auto-switching
+        }
+    }
+}
+
+function clearBodyFilter() {
+    STATE.selectedBodyPoint = null;
+    const label = document.getElementById('selectedPointLabel');
+    if (label) label.classList.add('hidden');
+
+    // Hide FAB
+    const fab = document.getElementById('mobileFab');
+    if (fab) fab.classList.add('hidden');
+
+    // Update Button Label
+    const btnLabel = document.getElementById('customDropdownLabel');
+    if (btnLabel) btnLabel.textContent = 'Filtrar por Região';
+
+    applyFilters();
+    updateUIForTab('mapa');
 }
 
 function selectBodyPointFromDropdown(pointIds) {
@@ -176,29 +209,80 @@ function highlightBodyPoint(element, name, event) {
     element.setAttribute('stroke-width', '0.5');
     element.style.filter = 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.8))';
 
-    // Create or get tooltip element
-    let tooltip = document.getElementById('bodyPointTooltip');
-    if (!tooltip) {
-        tooltip = document.createElement('div');
-        tooltip.id = 'bodyPointTooltip';
-        // ClassName removed as styles are now in style.css under #bodyPointTooltip
+    // Calculate item count
+    const keywords = BODY_DATA.keywords[pointId] || [];
+    let count = 0;
+
+    if (keywords.length > 0 && STATE.data) {
+        // Collect all items from all tabs
+        let allItems = [];
+        Object.keys(STATE.data).forEach(tabId => {
+            if (STATE.data[tabId]) {
+                allItems.push(...STATE.data[tabId]);
+            }
+        });
+
+        // Show Tooltip
+        // Remove existing tooltip if any
+        const existingTooltip = document.getElementById('body-tooltip');
+        if (existingTooltip) existingTooltip.remove();
+
+        const tooltip = document.createElement('div');
+        tooltip.id = 'body-tooltip';
+        // Count items matching this point
+        const keyword = BODY_DATA.keywords[pointId] || pointId;
+        count = allItems.filter(item => { // Changed from STATE.data to allItems
+            // Use the same matching logic as filters
+            const q = removeAccents(keyword.toLowerCase());
+            const focusMatch = item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q));
+            const tagMatch = item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q));
+            const contentMatch = (item.title && removeAccents(item.title.toLowerCase()).includes(q)) ||
+                (item.content && removeAccents(item.content.toLowerCase()).includes(q));
+            return focusMatch || tagMatch || contentMatch;
+        }).length;
+
+        tooltip.innerHTML = `${name.toUpperCase()} <span style="opacity: 0.7; font-size: 0.9em; margin-left: 2px;">(${count})</span>`;
+
+        // Style - Fixed position to avoid scrolling issues, but we might want it to move?
+        // User complaint: "tooltip scrolls with the page". Usually means it stays fixed on screen relative to viewport, effectively sliding over content.
+        // Or it means "It moves UP with the page" (absolute). 
+        // If we want it to DISAPPEAR on scroll, we add a listener.
+        tooltip.className = 'absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
+
         document.body.appendChild(tooltip);
+
+        const rect = element.getBoundingClientRect();
+        const topY = rect.top + window.scrollY; // Absolute position relative to document
+        const leftX = rect.left + window.scrollX + (rect.width / 2);
+
+        tooltip.style.top = `${topY - 16}px`; // 16px offset
+        tooltip.style.left = `${leftX}px`;
+
+        // Hide on scroll to prevent detachment issues
+        const hideOnScroll = () => {
+            unhighlightBodyPoint(); // Call unhighlight to remove tooltip and reset element
+            window.removeEventListener('scroll', hideOnScroll);
+        };
+        window.addEventListener('scroll', hideOnScroll, { passive: true });
+        // Also store the listener to remove it if unmatched manually
+        element.dataset.scrollListener = 'active';
     }
-
-    tooltip.textContent = name;
-    tooltip.style.display = 'block';
-
-    // Position tooltip centered above the element
-    const rect = element.getBoundingClientRect();
-    const centerX = rect.left + (rect.width / 2);
-    const topY = rect.top; // Position above the element
-
-    tooltip.style.left = centerX + 'px';
-    // Position higher to account for arrow (margin-bottom in CSS handles the spacing, but we add gap here too)
-    tooltip.style.top = (topY - 16) + 'px'; // Raised more (16px gap)
 }
 
 function unhighlightBodyPoint(element) {
+    // If element is not provided, it means it's called from scroll listener, so we need to find the currently highlighted one
+    if (!element) {
+        const highlighted = document.querySelector('.body-map-point[data-scroll-listener="active"]');
+        if (highlighted) {
+            element = highlighted;
+        } else {
+            // No element to unhighlight, and no active scroll listener, so just hide tooltip
+            const tooltip = document.getElementById('body-tooltip');
+            if (tooltip) tooltip.remove();
+            return;
+        }
+    }
+
     // Skip if this point is selected
     const pointId = element.getAttribute('data-point-id');
     const selectedIds = STATE.selectedBodyPoint ? STATE.selectedBodyPoint.split(',') : [];

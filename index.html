@@ -239,6 +239,19 @@
                             class="text-3xl hover:opacity-50 transition-opacity font-light font-serif">&times;</button>
                     </div>
                 </div>
+                <!-- Mobile FAB (Floating Action Button) -->
+                <div id="mobileFab" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden md:hidden">
+                    <button onclick="scrollToResults()"
+                        class="bg-black text-white px-6 py-3 rounded-full shadow-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 hover:scale-105 transition-transform">
+                        <span>Ver Resultados</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Modals -->
                 <div class="flex-grow overflow-y-auto p-10 md:p-20 bg-white dark:bg-[#111]">
                     <h2 id="modalTitle"
                         class="text-3xl md:text-5xl font-serif font-bold leading-tight mb-16 text-black dark:text-white">

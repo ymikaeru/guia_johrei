@@ -12,7 +12,7 @@
       "Ministração de Johrei",
       "Purificação",
       "Saúde da Criança",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 5,
     "type": "Caso Clínico"
@@ -30,7 +30,6 @@
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
-      "Visão e Audição",
       "Olhos e Visão",
       "Ouvidos e Audição",
       "Pele",
@@ -47,6 +46,7 @@
     "source": "Curso I",
     "tags": [
       "Arte e Beleza",
+      "Asma",
       "Cabeça e Pescoço",
       "Dentes e Boca",
       "Gripe e Resfriado",
@@ -54,9 +54,8 @@
       "Purificação",
       "Respiratório",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma"
+      "Toxinas",
+      "Tuberculose"
     ],
     "order": 1
   },
@@ -70,10 +69,10 @@
       "Arte e Beleza",
       "Dentes e Boca",
       "Dores e Rigidez",
-      "Visão e Audição",
       "Olhos e Visão",
+      "Ouvidos e Audição",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 3,
     "type": "Caso Clínico"
@@ -91,13 +90,13 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
       "Olhos e Visão",
+      "Ouvidos e Audição",
       "Pele",
       "Purificação",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 4,
     "type": "Caso Clínico"
@@ -120,7 +119,7 @@
       "Pontos Vitais",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
+      "Toxinas",
       "Tuberculose"
     ],
     "focusPoints": [
@@ -174,7 +173,7 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 12,
     "type": "Caso Clínico"
@@ -186,9 +185,13 @@
     "source": "Curso II",
     "tags": [
       "Agricultura e Alimentação",
+      "Anemia",
       "Arte e Beleza",
+      "Asma",
       "Coração e Circulação",
       "Dentes e Boca",
+      "Derrame (AVC)",
+      "Diabetes",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Ministração de Johrei",
@@ -199,12 +202,8 @@
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Diabetes",
-      "Asma",
-      "Derrame (AVC)",
-      "Anemia"
+      "Toxinas",
+      "Tuberculose"
     ],
     "focusPoints": [
       "Ombros",
@@ -237,7 +236,6 @@
     "source": "Curso II",
     "tags": [
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Mundo Espiritual",
@@ -254,14 +252,14 @@
     "tags": [
       "Cabeça e Pescoço",
       "Coração e Circulação",
+      "Derrame (AVC)",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Pele",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Derrame (AVC)"
+      "Toxinas",
+      "Tuberculose"
     ],
     "focusPoints": [
       "Ombros",
@@ -281,11 +279,11 @@
     "content": "Como vimos, amolecer os ombros aumenta o apetite e previne a debilidade. As toxinas, ao descerem, são eliminadas. Contudo, quando o processo é lento, elas tendem a se fixar novamente nos braços, costas e quadris, gerando novos sintomas como a asma (que também tem causas no pescoço e cabeça).\n\nA falta de agilidade física e mental do homem moderno deve-se ao \"peso\" nos quadris e às toxinas no cérebro. Eu, apesar da idade, movo-me e penso com rapidez porque mantenho meus quadris e cabeça livres de toxinas através do Johrei. A lentidão de raciocínio, a incapacidade de perceber detalhes (como a diferença de tamanho no colarinho de um haori) e até os acidentes de trânsito são causados por essa torpeza sensorial provocada pelas toxinas. O corpo e a mente devem ser ágeis. A mulher, especialmente, precisa ser perspicaz, o que evita muitos infortúnios.",
     "source": "Curso II",
     "tags": [
+      "Asma",
       "Cabeça e Pescoço",
       "Dentes e Boca",
       "Gripe e Resfriado",
-      "Toxinas e Medicamentos",
-      "Asma"
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -308,7 +306,7 @@
       "Cabeça e Pescoço",
       "Gripe e Resfriado",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -351,7 +349,7 @@
       "Ministração de Johrei",
       "Purificação",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 16
   },
@@ -435,11 +433,10 @@
     "content": "(Terra Celestial Nº 3, pág. 14) (Pergunta) Pedem-me para ministrar Johrei em animais. Sinto que é um desperdício (desrespeitoso), o que devo fazer? (Resposta) Kannon derrama Sua misericórdia até sobre os insetos. No sentido da salvação, encare animais e humanos da mesma forma. E o Johrei é tanto mais eficaz quanto mais inferior for o animal. É quase impossível eliminar toxinas de remédios naturalmente. Pegar um resfriado, ter diarreia ou febre elimina um pouco, mas é ínfimo. Receber Johrei dezenas ou centenas de vezes elimina uma quantidade considerável.",
     "source": "Curso III",
     "tags": [
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 48,
     "type": "Caso Clínico"
@@ -456,7 +453,7 @@
       "Mundo Espiritual",
       "Ouvidos e Audição",
       "Purificação",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 15,
     "type": "Caso Clínico"
@@ -468,7 +465,6 @@
     "source": "Curso III",
     "tags": [
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Rins e Sistema Urinário"
@@ -530,7 +526,7 @@
     "source": "Curso III",
     "tags": [
       "Mundo Espiritual",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 47
   },
@@ -684,11 +680,11 @@
       "Dentes e Boca",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Neuralgia",
+      "Olhos e Visão",
       "Ouvidos e Audição",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Neuralgia"
+      "Toxinas"
     ]
   },
   {
@@ -700,7 +696,7 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 46,
     "type": "Caso Clínico"
@@ -729,12 +725,12 @@
       "Sistema Digestivo"
     ],
     "focusPoints": [
+      "Cabeça",
+      "Costas",
       "Ombros",
       "Pescoço",
-      "Cabeça",
-      "Topo da cabeça",
       "Rins",
-      "Costas"
+      "Topo Da Cabeça"
     ],
     "order": 30,
     "type": "Caso Clínico"
@@ -748,7 +744,7 @@
       "Dores e Rigidez",
       "Purificação",
       "Respiratório",
-      "Toxinas e Medicamentos",
+      "Toxinas",
       "Tuberculose"
     ],
     "order": 56
@@ -764,7 +760,7 @@
       "Ministração de Johrei",
       "Pele",
       "Purificação",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 52
   },
@@ -777,7 +773,7 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 55
   },
@@ -788,19 +784,18 @@
     "source": "Curso IV",
     "tags": [
       "Agricultura e Alimentação",
+      "Asma",
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Purificação",
       "Respiratório",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma"
+      "Sistema Digestivo",
+      "Toxinas",
+      "Tuberculose"
     ],
     "order": 49
   },
@@ -811,11 +806,11 @@
     "source": "Curso IV",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
-      "Toxinas e Medicamentos"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "order": 58
   },
@@ -840,7 +835,7 @@
     "tags": [
       "Dores e Rigidez",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 50
   },
@@ -855,7 +850,7 @@
       "Ministração de Johrei",
       "Olhos e Visão",
       "Pele",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 53,
     "type": "Caso Clínico"
@@ -870,7 +865,7 @@
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Pele",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "order": 57,
     "type": "Caso Clínico"
@@ -882,17 +877,16 @@
     "source": "Curso V",
     "tags": [
       "Coração e Circulação",
-      "Sistema Digestivo",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Ombros",
       "Pele",
       "Purificação",
-      "Rins e Sistema Urinário",
       "Respiratório",
-      "Toxinas e Medicamentos"
+      "Rins e Sistema Urinário",
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "order": 61,
     "type": "Q&A"
@@ -904,19 +898,19 @@
     "source": "Curso V",
     "tags": [
       "Arte e Beleza",
+      "Asma",
       "Coração e Circulação",
       "Câncer",
       "Dentes e Boca",
       "Diagnóstico",
-      "Sistema Digestivo",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Pele",
       "Respiratório",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
-      "Toxinas e Medicamentos",
-      "Asma"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -927,14 +921,14 @@
     "source": "Curso V",
     "tags": [
       "Agricultura e Alimentação",
+      "Anemia",
       "Arte e Beleza",
+      "Asma",
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Dentes e Boca",
       "Diagnóstico",
-      "Sistema Digestivo",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
@@ -943,20 +937,19 @@
       "Pele",
       "Pontos Vitais",
       "Purificação",
-      "Rins e Sistema Urinário",
       "Respiratório",
-      "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma",
-      "Anemia"
+      "Rins e Sistema Urinário",
+      "Sistema Digestivo",
+      "Toxinas",
+      "Tuberculose"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
       "Cabeça",
       "Cérebro",
       "Frontal",
-      "Topo da cabeça"
+      "Ombros",
+      "Pescoço",
+      "Topo Da Cabeça"
     ],
     "order": 59,
     "type": "Q&A"
@@ -972,7 +965,7 @@
       "Dores e Rigidez",
       "Purificação",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ]
   },
   {
@@ -995,7 +988,7 @@
       "Purificação",
       "Respiratório",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
+      "Toxinas",
       "Tuberculose"
     ],
     "type": "Caso Clínico"
@@ -1007,11 +1000,11 @@
     "source": "Curso IX",
     "tags": [
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
-      "Toxinas e Medicamentos"
+      "Olhos e Visão",
+      "Ouvidos e Audição",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1023,12 +1016,11 @@
     "tags": [
       "Cabeça e Pescoço",
       "Coração e Circulação",
-      "Sistema Digestivo",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Toxinas e Medicamentos"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1043,7 +1035,7 @@
       "Coração e Circulação",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1055,12 +1047,11 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
       "Olhos e Visão",
-      "Toxinas e Medicamentos"
+      "Ouvidos e Audição",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1099,7 +1090,7 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez",
       "Ombros",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -1128,15 +1119,15 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
       "Ombros",
       "Pescoço",
-      "Cabeça",
-      "Occipital",
-      "Frontal",
-      "Topo da cabeça"
+      "Topo Da Cabeça"
     ],
     "system": "Cabeça"
   },
@@ -1149,7 +1140,7 @@
       "Arte e Beleza",
       "Gripe e Resfriado",
       "Pontos Vitais",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Pescoço"
@@ -1183,7 +1174,7 @@
       "Pele",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Occipital",
@@ -1200,7 +1191,7 @@
     "tags": [
       "Cabeça e Pescoço",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Occipital",
@@ -1217,7 +1208,7 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Occipital",
@@ -1231,10 +1222,10 @@
     "content": "Todas as pessoas apresentam febre na região frontal, exceto aquelas com anemia cerebral. Embora certo grau de calor seja inevitável, ao tocar, percebemos dois tipos: o calor que vem do núcleo e o calor superficial. O calor profundo é constante, enquanto o superficial nem sempre é perceptível. Rigorosamente falando, o calor superficial também é indesejável, mas não chega a ser grave. As preocupações atraem toxinas para essa área.",
     "source": "Curso IX",
     "tags": [
+      "Anemia",
       "Cabeça e Pescoço",
       "Gripe e Resfriado",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas"
     ],
     "focusPoints": [
       "Frontal"
@@ -1264,7 +1255,7 @@
       "Cabeça e Pescoço",
       "Gripe e Resfriado",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Pescoço",
@@ -1295,7 +1286,7 @@
       "Cabeça e Pescoço",
       "Dentes e Boca",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Pescoço",
@@ -1315,8 +1306,8 @@
       "Boca e Garganta",
       "Coração e Circulação",
       "Dentes e Boca",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Derrame (AVC)",
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -1349,12 +1340,12 @@
     "content": "(Pergunta) Policial de 25 anos. Desmaios, tonturas, diagnosticado com \"distonia neurovegetativa\". Tratado com gelo, injeções, sedativos. Ficou inválido. Com Johrei, melhorou, mas teve recaída por buscar medicina novamente (injeções). Agora sente-se num sonho constante.\n\n(Orientação) \"Distonia neurovegetativa\"... que nome. A causa é rigidez no pescoço e ombros. O gelo e os sedativos solidificaram as toxinas, agravando a doença. Originalmente era anemia cerebral (nódulo no pescoço). Ao derreter com febre, causa tontura. Os remédios criaram uma doença de \"lucro médico\" (Yakudoku). Basta dissolver as toxinas antigas e novas no pescoço e coração.",
     "source": "Curso IX",
     "tags": [
+      "Anemia",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Outros",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -1388,9 +1379,9 @@
     "tags": [
       "Cabeça e Pescoço",
       "Coração e Circulação",
+      "Derrame (AVC)",
       "Ouvidos e Audição",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Toxinas"
     ],
     "focusPoints": [
       "Cabeça",
@@ -1420,14 +1411,13 @@
     "source": "Curso VII",
     "tags": [
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Purificação",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "type": "Q&A"
   },
@@ -1456,14 +1446,13 @@
       "Coração e Circulação",
       "Dentes e Boca",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1477,17 +1466,16 @@
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Câncer",
-      "Sistema Digestivo",
+      "Derrame (AVC)",
       "Dores e Rigidez",
-      "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Purificação",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1512,13 +1500,13 @@
     "content": "Pergunta: Antes de casar, a menstruação era normal. Após casar, vem uma vez a cada seis meses ou um ano, em pouca quantidade.\n\nResposta: É estranho. O normal é regularizar após o casamento. Verifique se há solidificações no baixo ventre (origem nos rins) e ministre Johrei. Também verifique se há anemia. Se ela for saudável e corada, pressione o baixo ventre para investigar. Não deveria ser assim.\n\nPergunta: Menina de 18 anos. Menstruação dura um mês inteiro. Pálida, mas sem outros sintomas.\n\nResposta: O fluxo deve ser fraco. Há toxinas no abdômen; dissolvendo-as, resolve-se. A origem está nos rins. Também pode ser sangue muito \"grosso\" (tóxico). Sangue bom é fluido e circula bem; sangue tóxico é viscoso e circula mal.",
     "source": "Curso VII",
     "tags": [
+      "Anemia",
       "Coração e Circulação",
-      "Sistema Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1528,13 +1516,13 @@
     "content": "Pergunta: Fiel de 69 anos. Teve retroversão uterina no passado. Teve três grandes hemorragias desde outubro, chegando a perder litros de sangue e perder a consciência. Recuperou-se com Johrei, mas o coração está fraco. Curará?\n\nResposta: O sangramento é vaginal? (Interlocutor: Sim.) Isso é sangue menstrual velho que estava acumulado e saiu. Essa pessoa tem muito sangue tóxico. O sangue saiu junto com outras toxinas da região. Deveria ser bom sair, mas como o corpo se mantinha com esse sangue tóxico e o sangue novo não se forma tão rápido, ocorre anemia. (Interlocutor: O rosto inchou...) Sim, mesmo em úlceras gástricas com muita perda de sangue, ocorre inchaço pálido. Com a anemia, a atividade renal diminui e a urina não é processada, causando o inchaço. Mas à medida que o sangue aumentar, os rins se recuperarão. Não se preocupe.",
     "source": "Curso VII",
     "tags": [
+      "Anemia",
       "Coração e Circulação",
       "Ministração de Johrei",
       "Pele",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1553,7 +1541,7 @@
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "focusPoints": [
       "Pescoço",
@@ -1598,6 +1586,7 @@
     "content": "Pergunta: Após hemorragia severa no parto, fiz curetagem quatro horas depois e fiquei de cama sob cuidados médicos. Depois tive hemorroidas, fiz banhos de assento e tomei remédios caros, mas piorei. Tenho zumbido, dor de cabeça forte e sangramento a qualquer movimento.\n\nResposta: O foco do Johrei deve ser a cabeça, ao redor do pescoço e ombros. Com paciência, curará. Esse estado deplorável é tudo consequência dos medicamentos e intervenções.\n\nPergunta: Criança de 2 anos tem febre e diarreia há duas semanas. A mãe tem corrimento constante desde o parto. Há relação com o leite materno?\n\nResposta: A mãe tem muitas toxinas. O corrimento é ótimo; se sair tudo, ela sara. A diarreia da criança também é purificação e é excelente.\n\nPergunta: Mulher de 32 anos. O sangramento parou no quinto dia após o terceiro parto. Na segunda semana, começou a fazer tarefas domésticas. Sentiu-se mal da cabeça, taquicardia, dor lombar e perda de sensibilidade do lado esquerdo. Diagnosticada com trombose cerebral, tomou injeções de Metabolin e cardiotônicos, fez massagem e punção espinhal. Teve recaída e paralisia total. Com Johrei, a urina aumentou, começou a ter corrimento, dores nas articulações e suor intenso. Ao receber Johrei na cabeça, sente vontade incontrolável de rir. A fala é desconexa.\n\nResposta: Há causas espirituais e físicas. A causa física é o sangramento ter parado no quinto dia. O sangue velho não saiu todo e, provavelmente por ter usado a mente ou se preocupado, subiu para a cabeça, causando sintomas de anemia cerebral e posterior trombose. Somam-se a isso as injeções e remédios. Contudo, com paciência, curará. O sangue velho foi para o cérebro, mas a recuperação deve ser relativamente rápida. Não se preocupe.",
     "source": "Curso VII",
     "tags": [
+      "Anemia",
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
@@ -1607,8 +1596,7 @@
       "Saúde da Criança",
       "Saúde da Mulher",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas"
     ],
     "focusPoints": [
       "Ombros",
@@ -1752,7 +1740,7 @@
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1763,10 +1751,10 @@
     "source": "Curso VII",
     "tags": [
       "Coração e Circulação",
-      "Sistema Digestivo",
       "Gravidez e Saúde da Mulher",
       "Saúde da Mulher",
-      "Toxinas e Medicamentos"
+      "Sistema Digestivo",
+      "Toxinas"
     ],
     "type": "Q&A"
   },
@@ -1795,7 +1783,7 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Febre e Gripe"
+      "Gripe e Resfriado"
     ]
   },
   {
@@ -1826,10 +1814,10 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Febre e Gripe",
+      "Gripe e Resfriado",
       "Ministração de Johrei",
       "Respiratório",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ],
     "type": "Caso Clínico"
   },
@@ -1842,7 +1830,7 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez",
       "Purificação",
-      "Toxinas e Medicamentos"
+      "Toxinas"
     ]
   },
   {
@@ -1852,11 +1840,11 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
-      "Toxinas e Medicamentos"
+      "Sistema Digestivo",
+      "Toxinas"
     ]
   },
   {
@@ -1886,7 +1874,7 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Febre e Gripe",
+      "Gripe e Resfriado",
       "Ministração de Johrei"
     ],
     "type": "Caso Clínico"
@@ -1951,7 +1939,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Cabeça",
@@ -1965,7 +1953,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Intestinos",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Intestinos",
@@ -1979,7 +1967,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Cabeça",
@@ -1992,8 +1980,9 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Visão e Audição",
-      "Toxinas Medicamentosas"
+      "Olhos e Visão",
+      "Ouvidos e Audição",
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Olhos",
@@ -2008,7 +1997,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Cabeça",
@@ -2022,7 +2011,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Boca e Garganta",
@@ -2036,7 +2025,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Boca e Garganta",
@@ -2050,7 +2039,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Pele",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Pele",
@@ -2065,7 +2054,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Pele",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Pele",
@@ -2079,7 +2068,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Ouvidos",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Ouvidos",
@@ -2093,7 +2082,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Membros",
-      "Toxinas Medicamentosas"
+      "Toxinas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Membros",
@@ -2153,7 +2142,7 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Coração",
+      "Coração e Circulação",
       "Mundo Espiritual",
       "Sistema Urinário"
     ],
@@ -2299,12 +2288,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Coração",
+      "Asma",
+      "Coração e Circulação",
+      "Diabetes",
       "Dores e Rigidez",
       "Pontos Vitais - Fundamentos",
-      "Saúde da Criança",
-      "Diabetes",
-      "Asma"
+      "Saúde da Criança"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Coração",
@@ -2418,12 +2407,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Coração",
+      "Asma",
+      "Coração e Circulação",
+      "Diabetes",
       "Dores e Rigidez",
       "Saúde da Criança",
-      "Sistema Urinário",
-      "Diabetes",
-      "Asma"
+      "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Coração",
@@ -2567,8 +2556,7 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Pele",
-      "Pele e Tecidos"
+      "Pele"
     ],
     "category": "Pele e Tecidos",
     "system": "Pele",
@@ -2581,8 +2569,7 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Pele",
-      "Pele e Tecidos"
+      "Pele"
     ],
     "category": "Pele e Tecidos",
     "system": "Pele",

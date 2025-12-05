@@ -336,7 +336,7 @@ function updateUIForTab(tabId) {
             </div>
 
             <!-- Mobile Dropdown Selector (Mobile Only) -->
-            <div class="block lg:hidden w-full mb-8 relative z-50">
+            <div class="block lg:hidden w-full mb-8 relative z-30">
                  <div class="-mx-8 md:-mx-12 px-8 md:px-12 pt-2 pb-0 border-b border-gray-100 dark:border-gray-900">
                     <div class="relative inline-block w-full text-left" id="customBodyPointDropdown">
                         <button type="button" onclick="toggleCustomDropdown(event)"
@@ -361,13 +361,34 @@ function updateUIForTab(tabId) {
                 </div>
             </div>
 
-            <!-- Maps Area (Right on Desktop) -->
-            <div class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         `;
 
-        views.forEach(view => {
+        // Mobile Tabs
+        const mobileTabs = `
+            <div class="flex md:hidden justify-center gap-3 mb-6 w-full">
+                ${views.map((v, i) => `
+                    <button onclick="switchMobileView('${v.id}')" 
+                        id="tab-${v.id}"
+                        class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest border rounded-md transition-all ${i === 0 ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-white dark:bg-black text-gray-400 border-gray-200 dark:border-gray-800'}">
+                        ${v.alt}
+                    </button>
+                `).join('')
+            }
+            </div>
+            `;
+
+        html += mobileTabs;
+
+        html += `   <!-- Maps Area (Right on Desktop) -->
+            <div class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                `;
+
+        views.forEach((view, i) => {
+            // Mobile: Only first one visible by default. Desktop: All visible.
+            const visibilityClass = i === 0 ? 'block' : 'hidden';
+
             html += `
-                <div class="relative group">
+                <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
                     <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
                     <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
                         <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
@@ -376,13 +397,94 @@ function updateUIForTab(tabId) {
                         </svg>
                     </div>
                 </div>
-            `;
+                `;
         });
 
         html += `   </div>
-        </div>`;
+        </div > `;
 
         map.innerHTML = html;
+        setupSwipeGestures();
+    }
+}
+
+// --- MOBILE MAP NAVIGATION ---
+// --- MOBILE MAP NAVIGATION ---
+window.switchMobileView = function (targetId) {
+    const views = ['front', 'detail', 'back'];
+    STATE.currentMobileView = targetId; // Track current view state
+
+    views.forEach(id => {
+        const el = document.getElementById(`view-${id}`);
+        const tab = document.getElementById(`tab-${id}`);
+
+        if (el && tab) {
+            if (id === targetId) {
+                el.classList.remove('hidden');
+                // Active Styling
+                tab.classList.remove('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+                tab.classList.add('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
+            } else {
+                el.classList.add('hidden');
+                // Inactive Styling
+                tab.classList.remove('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
+                tab.classList.add('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+            }
+        }
+    });
+};
+
+// Global helper to switch view based on point
+window.autoSwitchMapToPoint = function (pointId) {
+    if (window.innerWidth >= 768) return; // Desktop doesn't need switching
+
+    // Find which map contains the point
+    let targetView = 'front'; // Default
+    if (BODY_DATA.points.back.some(p => p.id === pointId)) targetView = 'back';
+    else if (BODY_DATA.points.detail.some(p => p.id === pointId)) targetView = 'detail';
+
+    // Only switch if different (and exists)
+    if (targetView) {
+        window.switchMobileView(targetView);
+    }
+};
+
+// Add Swipe Support
+function setupSwipeGestures() {
+    const mapContainer = document.querySelector('.grid-cols-1');
+    if (!mapContainer) return;
+
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    mapContainer.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    mapContainer.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const viewOrder = ['front', 'detail', 'back'];
+
+        // Threshold
+        if (Math.abs(touchendX - touchstartX) < 50) return;
+
+        const currentIdx = viewOrder.indexOf(STATE.currentMobileView || 'front');
+
+        if (touchendX < touchstartX) {
+            // Swiped Left -> Next View
+            const nextIdx = (currentIdx + 1) % viewOrder.length;
+            window.switchMobileView(viewOrder[nextIdx]);
+        }
+
+        if (touchendX > touchstartX) {
+            // Swiped Right -> Prev View
+            const prevIdx = (currentIdx - 1 + viewOrder.length) % viewOrder.length;
+            window.switchMobileView(viewOrder[prevIdx]);
+        }
     }
 }
 
@@ -414,9 +516,25 @@ function applyFilters() {
         rawItems = (STATE.data[activeTab] || []).map(i => ({ ...i, _cat: activeTab }));
         label = CONFIG.modes[STATE.mode].cats[activeTab] ? CONFIG.modes[STATE.mode].cats[activeTab].label : activeTab;
     }
-
+    // Filter Logic
     let filtered = rawItems.filter(item => {
-        // 1. Filtro de TAGS (AND Logic)
+        // 1. Text Search (Check title, content, tags, focus points)
+        if (q.length > 0) {
+            const searchableText = removeAccents((
+                (item.title || '') + ' ' +
+                (item.content || '') + ' ' +
+                (item.tags ? item.tags.join(' ') : '') + ' ' +
+                (item.focusPoints ? item.focusPoints.join(' ') : '')
+            ).toLowerCase());
+
+            // Strict Search: ALL terms must match (AND logic)
+            const terms = q.split(/\s+/).filter(t => t.length > 0);
+            const matchesAll = terms.every(term => searchableText.includes(term));
+
+            if (!matchesAll) return false;
+        }
+
+        // 1.2 Filter by TAGS (AND Logic)
         if (activeTags.length > 0) {
             if (!item.tags) return false;
             // Check if item has ALL active tags
@@ -525,12 +643,12 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-            <button onclick="toggleBodyPoint('${p.id}')"
+            < button onclick = "toggleBodyPoint('${p.id}')"
         class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-        style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-        title="${p.name}">
+        style = "left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+        title = "${p.name}" >
             <span class="sr-only">${p.name}</span>
-        </button>
+        </button >
             `;
     }).join('');
 }
@@ -538,8 +656,18 @@ function renderPoints(points, prefix) {
 function toggleBodyPoint(id) {
     if (STATE.bodyFilter === id) {
         STATE.bodyFilter = null;
+        document.getElementById('mobileFab').classList.add('hidden');
     } else {
         STATE.bodyFilter = id;
+        // Show FAB on mobile if point selected
+        if (window.innerWidth < 768) {
+            const fab = document.getElementById('mobileFab');
+            fab.classList.remove('hidden');
+            // Update FAB count if possible? For now just visual cue.
+            // Pulse animation
+            fab.firstElementChild.classList.add('scale-110');
+            setTimeout(() => fab.firstElementChild.classList.remove('scale-110'), 200);
+        }
     }
 
     // Update UI
@@ -548,14 +676,23 @@ function toggleBodyPoint(id) {
     // Update list
     applyFilters();
 
-    // Scroll to list if point selected
-    if (STATE.bodyFilter) {
+    // Scroll behavior - simplified: use FAB for explicit action on mobile, auto-scroll on desktop
+    if (window.innerWidth >= 768 && STATE.bodyFilter) {
         const list = document.getElementById('contentList');
         list.classList.remove('hidden');
         setTimeout(() => {
             list.scrollIntoView({ behavior: 'smooth' });
         }, 100);
     }
+}
+
+// Mobile FAB Action
+function scrollToResults() {
+    const list = document.getElementById('contentList');
+    list.classList.remove('hidden');
+    list.scrollIntoView({ behavior: 'smooth' });
+    // Hide FAB after interaction? or keep it? Keep it until deselected.
+    document.getElementById('mobileFab').classList.add('hidden');
 }
 
 function clearSearch() {
@@ -574,9 +711,9 @@ function clearSearch() {
 }
 
 function toggleSearch(type, forceState = null) {
-    const wrapper = document.getElementById(`${type}SearchInputWrapper`);
-    const btn = document.getElementById(`${type}SearchBtn`);
-    const input = document.getElementById(`${type}SearchInput`);
+    const wrapper = document.getElementById(`${type} SearchInputWrapper`);
+    const btn = document.getElementById(`${type} SearchBtn`);
+    const input = document.getElementById(`${type} SearchInput`);
 
     if (!wrapper) return;
 
@@ -696,8 +833,8 @@ function setupSearch() {
                     const history = SearchHistory.getHistory();
                     if (history.length > 0) {
                         suggestionsEl.innerHTML = `
-                            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
-                            ${history.slice(0, 5).map(h => `
+            < div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800" > Buscas Recentes</div >
+                ${history.slice(0, 5).map(h => `
                                 <div data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
                                      class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group">
                                     <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${h}</span>
@@ -705,8 +842,9 @@ function setupSearch() {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                 </div>
-                            `).join('')}
-                        `;
+                            `).join('')
+                            }
+        `;
                         suggestionsEl.classList.remove('hidden');
                     } else {
                         suggestionsEl.classList.add('hidden');
@@ -732,7 +870,7 @@ function setupSearch() {
                 allData.forEach(item => {
                     // Search in title
                     if (item.title && removeAccents(item.title).includes(q)) {
-                        const key = `title:${item.title}`;
+                        const key = `title:${item.title} `;
                         if (!seen.has(key)) {
                             suggestions.push({
                                 text: item.title,
@@ -747,7 +885,7 @@ function setupSearch() {
                     if (item.tags && Array.isArray(item.tags)) {
                         item.tags.forEach(tag => {
                             if (removeAccents(tag).includes(q)) {
-                                const key = `tag:${tag}`;
+                                const key = `tag:${tag} `;
                                 if (!seen.has(key)) {
                                     suggestions.push({
                                         text: tag,
@@ -764,7 +902,7 @@ function setupSearch() {
                     if (item.focusPoints && Array.isArray(item.focusPoints)) {
                         item.focusPoints.forEach(fp => {
                             if (removeAccents(fp).includes(q)) {
-                                const key = `fp:${fp}`;
+                                const key = `fp:${fp} `;
                                 if (!seen.has(key)) {
                                     suggestions.push({
                                         text: fp,
@@ -789,11 +927,11 @@ function setupSearch() {
                         const selectedClass = isSelected ? 'bg-gray-100 dark:bg-gray-800' : '';
                         return `
                             <div data-title="${match.text.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
-                                class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
+                            class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
                                 <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${match.text}</span>
                                 <span class="text-[9px] uppercase tracking-widest text-gray-400 border border-gray-100 dark:border-gray-800 rounded px-1.5 py-0.5 bg-gray-50 dark:bg-gray-900">${match.type}</span>
-                            </div>
-                        `;
+                            </div >
+        `;
                     }).join('');
                     suggestionsEl.classList.remove('hidden');
                 } else {
@@ -911,12 +1049,12 @@ function renderAlphabet() {
     const currentData = STATE.data[STATE.activeTab] || [];
     const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
 
-    container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
+    container.innerHTML = `< button onclick = "filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id = "btn-letter-all" >*</button > `;
 
     abc.forEach(l => {
         if (availableLetters.has(l)) {
             const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
-            const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
+            const html = `< button onclick = "filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}" > ${l}</button > `;
             container.insertAdjacentHTML('beforeend', html);
         }
     });
@@ -934,11 +1072,11 @@ function openModal(i) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
     if (catConfig) {
-        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
+        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1}`;
+    document.getElementById('modalRef').textContent = `#${i + 1} `;
 
     const inputs = document.querySelectorAll('.search-input');
     const searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
@@ -951,7 +1089,7 @@ function openModal(i) {
     if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
         fpContainer.classList.remove('hidden');
         document.getElementById('modalFocusPoints').innerHTML = item.focusPoints.map(p =>
-            `<button onclick="filterByFocusPoint('${p}')" class="text-[10px] font-bold uppercase tracking-widest border border-black dark:border-white px-2 py-1 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${p}</button>`
+            `< button onclick = "filterByFocusPoint('${p}')" class="text-[10px] font-bold uppercase tracking-widest border border-black dark:border-white px-2 py-1 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors" > ${p}</button > `
         ).join('');
     } else {
         fpContainer.classList.add('hidden');
