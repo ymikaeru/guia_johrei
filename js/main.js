@@ -394,15 +394,22 @@ function updateUIForTab(tabId) {
         html += mobileTabs;
 
         html += `   <!-- Maps Area (Right on Desktop) -->
-            <div class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            <div id="mobile-map-container" class="flex-grow flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none no-scrollbar scroll-smooth">
                 `;
 
         views.forEach((view, i) => {
-            // Mobile: Only first one visible by default. Desktop: All visible.
-            const visibilityClass = i === 0 ? 'block' : 'hidden';
+            // Mobile: All visible in DOM, controlled by scroll. Desktop: All visible in grid.
+            // On mobile, items are full width and snap. On desktop, they are just blocks in grid (grid handles matching).
+            // Actually, we need to ensure mobile layout is a row (flex) and desktop is grid.
+            // But 'grid' class on container might conflict with 'flex' if not handled.
+            // Let's use responsive classes carefully.
+            // Container: Mobile = flex row, overflow-x. Desktop = grid cols-3.
+
+            // Note: The previous code had "flex-grow grid grid-cols-1 md:grid-cols-3".
+            // We change it to: "flex-grow flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none no-scrollbar"
 
             html += `
-                <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
+                <div id="view-${view.id}" class="min-w-full md:min-w-0 snap-center md:snap-align-none relative group transition-all duration-300">
                     <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
                     <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
                         <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
@@ -418,35 +425,61 @@ function updateUIForTab(tabId) {
         </div > `;
 
         map.innerHTML = html;
-        setupSwipeGestures();
+        setupMapObserver(); // Initialize observer
     }
 }
 
 // --- MOBILE MAP NAVIGATION ---
-// --- MOBILE MAP NAVIGATION ---
 window.switchMobileView = function (targetId) {
-    const views = ['front', 'detail', 'back'];
-    STATE.currentMobileView = targetId; // Track current view state
+    const el = document.getElementById(`view-${targetId}`);
+    if (el) {
+        // Smooth scroll to the element
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    }
+};
 
-    views.forEach(id => {
+// Observer to update tabs on scroll
+function setupMapObserver() {
+    const container = document.getElementById('mobile-map-container');
+    if (!container || window.innerWidth >= 768) return;
+
+    const options = {
+        root: container,
+        threshold: 0.6 // Update when item is 60% visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id.replace('view-', '');
+                updateTabStyle(id);
+                STATE.currentMobileView = id; // Sync state
+            }
+        });
+    }, options);
+
+    ['front', 'back', 'detail'].forEach(id => {
         const el = document.getElementById(`view-${id}`);
-        const tab = document.getElementById(`tab-${id}`);
+        if (el) observer.observe(el);
+    });
+}
 
-        if (el && tab) {
-            if (id === targetId) {
-                el.classList.remove('hidden');
-                // Active Styling
+function updateTabStyle(activeId) {
+    const views = ['front', 'detail', 'back'];
+    views.forEach(id => {
+        const tab = document.getElementById(`tab-${id}`);
+        if (tab) {
+            if (id === activeId) {
                 tab.classList.remove('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
                 tab.classList.add('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
             } else {
-                el.classList.add('hidden');
-                // Inactive Styling
                 tab.classList.remove('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
                 tab.classList.add('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
             }
         }
     });
-};
+}
+
 
 // Global helper to switch view based on point
 window.autoSwitchMapToPoint = function (pointId) {
@@ -462,45 +495,6 @@ window.autoSwitchMapToPoint = function (pointId) {
         window.switchMobileView(targetView);
     }
 };
-
-// Add Swipe Support
-function setupSwipeGestures() {
-    const mapContainer = document.querySelector('.grid-cols-1');
-    if (!mapContainer) return;
-
-    let touchstartX = 0;
-    let touchendX = 0;
-
-    mapContainer.addEventListener('touchstart', e => {
-        touchstartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    mapContainer.addEventListener('touchend', e => {
-        touchendX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const viewOrder = ['front', 'detail', 'back'];
-
-        // Threshold
-        if (Math.abs(touchendX - touchstartX) < 50) return;
-
-        const currentIdx = viewOrder.indexOf(STATE.currentMobileView || 'front');
-
-        if (touchendX < touchstartX) {
-            // Swiped Left -> Next View
-            const nextIdx = (currentIdx + 1) % viewOrder.length;
-            window.switchMobileView(viewOrder[nextIdx]);
-        }
-
-        if (touchendX > touchstartX) {
-            // Swiped Right -> Prev View
-            const prevIdx = (currentIdx - 1 + viewOrder.length) % viewOrder.length;
-            window.switchMobileView(viewOrder[prevIdx]);
-        }
-    }
-}
 
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 function applyFilters() {
