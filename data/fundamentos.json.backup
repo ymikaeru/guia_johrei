@@ -7,6 +7,7 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Ministração de Johrei",
@@ -14,8 +15,7 @@
       "Saúde da Criança",
       "Toxinas e Medicamentos"
     ],
-    "order": 5,
-    "type": "Caso Clínico"
+    "order": 5
   },
   {
     "id": "fundamentos_46",
@@ -26,19 +26,19 @@
       "Agricultura e Alimentação",
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Ouvidos e Audição",
       "Pele",
       "Rins e Sistema Urinário",
       "Sistema Digestivo"
     ],
-    "order": 2,
-    "type": "Caso Clínico"
+    "order": 2
   },
   {
     "id": "fundamentos_45",
@@ -55,8 +55,7 @@
       "Respiratório",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma"
+      "Tuberculose"
     ],
     "order": 1
   },
@@ -68,15 +67,15 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
+      "Caso Clínico",
       "Dentes e Boca",
       "Dores e Rigidez",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
-    "order": 3,
-    "type": "Caso Clínico"
+    "order": 3
   },
   {
     "id": "fundamentos_48",
@@ -86,12 +85,13 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dentes e Boca",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Pele",
       "Purificação",
@@ -99,8 +99,7 @@
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 4,
-    "type": "Caso Clínico"
+    "order": 4
   },
   {
     "id": "fundamentos_44",
@@ -118,6 +117,7 @@
       "Ouvidos e Audição",
       "Pele",
       "Pontos Vitais",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
       "Toxinas e Medicamentos",
@@ -132,8 +132,7 @@
       "Pulmões"
     ],
     "system": "Pontos Vitais",
-    "order": 0,
-    "type": "Q&A"
+    "order": 0
   },
   {
     "id": "fundamentos_17",
@@ -142,13 +141,13 @@
     "source": "Curso II",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
       "Pele",
       "Purificação"
     ],
-    "order": 13,
-    "type": "Caso Clínico"
+    "order": 13
   },
   {
     "id": "fundamentos_14",
@@ -169,6 +168,7 @@
     "source": "Curso II",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dentes e Boca",
       "Dores e Rigidez",
@@ -176,8 +176,7 @@
       "Pele",
       "Toxinas e Medicamentos"
     ],
-    "order": 12,
-    "type": "Caso Clínico"
+    "order": 12
   },
   {
     "id": "fundamentos_15",
@@ -200,11 +199,7 @@
       "Saúde da Criança",
       "Sistema Digestivo",
       "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Diabetes",
-      "Asma",
-      "Derrame (AVC)",
-      "Anemia"
+      "Tuberculose"
     ],
     "focusPoints": [
       "Ombros",
@@ -253,6 +248,7 @@
     "source": "Curso II",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gripe e Resfriado",
       "Ministração de Johrei",
@@ -260,8 +256,7 @@
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
       "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Derrame (AVC)"
+      "Tuberculose"
     ],
     "focusPoints": [
       "Ombros",
@@ -272,8 +267,7 @@
       "Bulbo"
     ],
     "system": "Cabeça",
-    "order": 9,
-    "type": "Caso Clínico"
+    "order": 9
   },
   {
     "id": "tecnicas_16",
@@ -282,10 +276,10 @@
     "source": "Curso II",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
       "Gripe e Resfriado",
-      "Toxinas e Medicamentos",
-      "Asma"
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
@@ -295,8 +289,7 @@
       "Costas"
     ],
     "system": "Cabeça",
-    "order": 10,
-    "type": "Caso Clínico"
+    "order": 10
   },
   {
     "id": "pontos_focais_0",
@@ -306,6 +299,7 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Gripe e Resfriado",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
@@ -317,8 +311,7 @@
       "Frontal"
     ],
     "system": "Cabeça",
-    "order": 11,
-    "type": "Caso Clínico"
+    "order": 11
   },
   {
     "id": "fundamentos_3",
@@ -337,10 +330,11 @@
     "content": "(Registro de Ensinamentos Orais Nº 3, pág. 1) (Pergunta) Antes foi orientado que o princípio era um ministrante para um paciente. Quando a purificação é muito intensa, várias pessoas ministram ao mesmo tempo. Como devemos proceder? (Resposta) Naquela época era assim. Mas o tempo avança e não é sempre igual. Conforme o tempo passa, muda-se. Façam o que for adequado ao momento. Não precisam ser rígidos; ajam com flexibilidade.",
     "source": "Curso III",
     "tags": [
-      "Purificação"
+      "Caso Clínico",
+      "Purificação",
+      "Q&A"
     ],
-    "order": 34,
-    "type": "Caso Clínico"
+    "order": 34
   },
   {
     "id": "fundamentos_1",
@@ -376,10 +370,10 @@
     "source": "Curso III",
     "tags": [
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 22,
-    "type": "Q&A"
+    "order": 22
   },
   {
     "id": "fundamentos_6",
@@ -388,10 +382,10 @@
     "source": "Curso III",
     "tags": [
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 24,
-    "type": "Q&A"
+    "order": 24
   },
   {
     "id": "fundamentos_7",
@@ -400,10 +394,10 @@
     "source": "Curso III",
     "tags": [
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 31,
-    "type": "Q&A"
+    "order": 31
   },
   {
     "id": "fundamentos_8",
@@ -411,10 +405,10 @@
     "content": "(Terra Celestial Nº 3, pág. 15) (Pergunta) Um discípulo pode ministrar Johrei no mestre, ou alguém com Ohikari comum em alguém com Ohikari de Dai-Komyo? (Resposta) Não há problema. Ao ministrar Johrei, a posição se inverte. Mesmo que quem recebe seja o mestre, no momento do Johrei, Deus protege quem ministra, então não há problema.",
     "source": "Curso III",
     "tags": [
-      "Ministração de Johrei"
+      "Ministração de Johrei",
+      "Q&A"
     ],
-    "order": 32,
-    "type": "Q&A"
+    "order": 32
   },
   {
     "id": "fundamentos_10",
@@ -424,10 +418,10 @@
     "tags": [
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Purificação"
+      "Purificação",
+      "Q&A"
     ],
-    "order": 35,
-    "type": "Q&A"
+    "order": 35
   },
   {
     "id": "fundamentos_13",
@@ -435,14 +429,15 @@
     "content": "(Terra Celestial Nº 3, pág. 14) (Pergunta) Pedem-me para ministrar Johrei em animais. Sinto que é um desperdício (desrespeitoso), o que devo fazer? (Resposta) Kannon derrama Sua misericórdia até sobre os insetos. No sentido da salvação, encare animais e humanos da mesma forma. E o Johrei é tanto mais eficaz quanto mais inferior for o animal. É quase impossível eliminar toxinas de remédios naturalmente. Pegar um resfriado, ter diarreia ou febre elimina um pouco, mas é ínfimo. Receber Johrei dezenas ou centenas de vezes elimina uma quantidade considerável.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 48,
-    "type": "Caso Clínico"
+    "order": 48
   },
   {
     "id": "fundamentos_0",
@@ -453,13 +448,13 @@
       "Agricultura e Alimentação",
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Mundo Espiritual",
       "Ouvidos e Audição",
       "Purificação",
       "Toxinas e Medicamentos"
     ],
-    "order": 15,
-    "type": "Caso Clínico"
+    "order": 15
   },
   {
     "id": "fundamentos_11",
@@ -467,14 +462,15 @@
     "content": "(Ensinamento) Outro ponto crucial é a região entre os rins e as costas: entre as omoplatas e os dois lados da coluna, onde se formam lombadas musculares, é um local traiçoeiro. Melancolia e problemas estomacais têm causa aí. A origem disso são os rins. Pessoas com dores lombares ou abdominais têm causa na pelve renal (um pouco abaixo dos rins, pressionando lateralmente dói); essa área tende a febre. Mesmo alguém rolando de dor abdominal melhora logo se fizer Johrei aí.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Renal e Urinário",
       "Rins e Sistema Urinário"
     ],
-    "order": 36,
-    "type": "Caso Clínico"
+    "order": 36
   },
   {
     "id": "fundamentos_2",
@@ -500,8 +496,8 @@
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Pontos Vitais",
-      "Rins e Sistema Urinário",
-      "Derrame (AVC)"
+      "Q&A",
+      "Rins e Sistema Urinário"
     ],
     "focusPoints": [
       "Ombros",
@@ -509,8 +505,7 @@
       "Occipital"
     ],
     "system": "Pontos Vitais",
-    "order": 37,
-    "type": "Q&A"
+    "order": 37
   },
   {
     "id": "tecnicas_3",
@@ -540,12 +535,12 @@
     "content": "(Coletânea de Ensinamentos Nº 18, pág. 43) Gostaria de alertar que ainda parece haver força na forma como ministram Johrei. Essa força vem do \"esforço excessivo\". Esse \"fazer com todo o empenho\" é o problema. Especialmente em casos graves ou de grande sofrimento, a ânsia de curar rápido leva a esse esforço, o que diminui a eficácia. Justamente quando o paciente sofre ou quando se quer curar logo é que não se deve fazer \"força\". As coisas de Deus são frequentemente o oposto do senso comum; deve-se fazer com a maior leveza possível, quase como se fosse problema de outro. A Luz sai do Ohikari, passa pelo braço e sai pela mão; se houver tensão na mão (palma), a Luz bloqueia ali. Se a mão estiver relaxada, sem \"energia física\", a Luz passa livremente. Eu tenho o desejo de \"curar, retirar as nuvens\", mas minha mão atua com um sentimento de \"ah, coitado, vou fazer aqui\", o que pode soar pouco sério, mas é assim que faço. E funciona melhor. Não esqueçam disso.\n\nMuitas vezes recebo telegramas por casos que deveriam curar facilmente. É sinal de que o Johrei não está funcionando bem porque há força. Há diferença entre veteranos e novatos, mas esse ponto é o principal.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Rins e Sistema Urinário"
     ],
-    "order": 21,
-    "type": "Caso Clínico"
+    "order": 21
   },
   {
     "id": "tecnicas_1",
@@ -553,10 +548,10 @@
     "content": "(Registro de Ensinamentos Orais Nº 3, pág. 64) (Pergunta) No Johrei, é melhor esticar o braço? (Resposta) Se esticar, entra força. Deve-se dobrar um pouco. A mão também não deve ficar rígida; deve ficar leve.",
     "source": "Curso III",
     "tags": [
-      "Ministração de Johrei"
+      "Ministração de Johrei",
+      "Q&A"
     ],
-    "order": 23,
-    "type": "Q&A"
+    "order": 23
   },
   {
     "id": "tecnicas_2",
@@ -586,14 +581,14 @@
     "content": "(Coletânea de Ensinamentos Nº 20, pág. 39) Por exemplo, quando vêm pacientes para o Johrei, deve-se atender primeiro quem tem a doença mais grave, ou seja, quem sofre mais dor. Se houver várias pessoas sem muita dor, atenda por ordem de idade. Isso é racional. Mas, mesmo na ordem de idade, bebês são exceção. Se chorarem e incomodarem os outros, é racional atendê-los logo. Se não houver essas questões, a idade prevalece. Pelo senso comum, pessoas de posição social elevada ou muito ocupadas também podem ser atendidas antes; isso também tem lógica. A ordem de chegada também é necessária. Se não souberem como decidir, usem a ordem de chegada. Mas, mesmo na ordem de chegada, se houver alguém com muita dor ou grave, peça licença aos que esperam: \"Este caso é grave, vou atender primeiro\". A ordem é: 1) Gravidade da doença; 2) Ordem de chegada; 3) Idade; o resto vai pelo senso comum. Não bagunçar essa ordem melhora a cura e a eficácia.\n\nO Mundo Espiritual funciona assim. Quando notarem algo estranho, é porque a ordem foi quebrada. Parece complicado, mas quando se entende, torna-se natural. Inconscientemente, passa-se a seguir a ordem correta. Tem que ser assim.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Rins e Sistema Urinário",
       "Saúde da Criança"
     ],
-    "order": 41,
-    "type": "Caso Clínico"
+    "order": 41
   },
   {
     "id": "tecnicas_8",
@@ -601,11 +596,12 @@
     "content": "(Terra Celestial Nº 7, pág. 12) (Pergunta) Até que ponto devemos ser gentis com os pacientes no Johrei? (Resposta) Quanto mais gentil, melhor. Não há limite, mas a ordem é importante; Deus deve vir primeiro. Contudo, discriminar pessoas é proibido. Deve-se ser justo sempre.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário"
     ],
-    "order": 42,
-    "type": "Caso Clínico"
+    "order": 42
   },
   {
     "id": "tecnicas_9",
@@ -613,11 +609,11 @@
     "content": "(Coletânea de Ensinamentos Nº 25, pág. 5) É importante não pender demais nem para o espiritual nem para o físico. O princípio geral da cura é fazer o espírito penetrar profundamente no corpo do paciente. Por exemplo, ao tratar o peito, ministre Johrei mirando as costas. O próprio doente tem força de cura; devemos utilizar isso.",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual"
     ],
-    "order": 43,
-    "type": "Caso Clínico"
+    "order": 43
   },
   {
     "id": "doencas_0",
@@ -625,10 +621,11 @@
     "content": "(Ensinamento) (Pergunta) Posso ministrar Johrei com o paciente deitado? (Resposta) Sim, não há problema. Dependendo da doença, é melhor deitado. Mesmo deitado, mantenha a mão afastada de 15 a 30 centímetros.",
     "source": "Curso III",
     "tags": [
-      "Ministração de Johrei"
+      "Caso Clínico",
+      "Ministração de Johrei",
+      "Q&A"
     ],
-    "order": 29,
-    "type": "Caso Clínico"
+    "order": 29
   },
   {
     "id": "casos_clinicos_0",
@@ -637,19 +634,20 @@
     "source": "Curso III",
     "tags": [
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 25,
-    "type": "Q&A"
+    "order": 25
   },
   {
     "id": "casos_clinicos_1",
     "title": "Em Qualquer Caso, é Melhor Manter Distância",
     "content": "(Ensinamento) (Pergunta) Não preciso me preocupar tanto com a distância da mão? (Resposta) Não precisa se preocupar. Se for nas costas de alguém deitado que não pode se mover, pode-se colocar a mão por baixo e tocar diretamente. Mas tocar diretamente não é muito religioso e o efeito é melhor mantendo distância.",
     "source": "Curso III",
-    "tags": [],
-    "order": 26,
-    "type": "Q&A"
+    "tags": [
+      "Q&A"
+    ],
+    "order": 26
   },
   {
     "id": "casos_clinicos_2",
@@ -657,10 +655,11 @@
     "content": "(Registro de Ensinamentos Orais Nº 15, pág. 12) (Pergunta) Costumamos deitar os pacientes graves por cansaço, mas os jovens hoje têm dificuldade em sentar-se no chão (estilo japonês). Podemos usar cadeiras? (Resposta) Não há problema. Sem isso, não se poderia ministrar Johrei em estrangeiros.",
     "source": "Curso III",
     "tags": [
-      "Ministração de Johrei"
+      "Caso Clínico",
+      "Ministração de Johrei",
+      "Q&A"
     ],
-    "order": 33,
-    "type": "Caso Clínico"
+    "order": 33
   },
   {
     "id": "casos_clinicos_3",
@@ -668,11 +667,12 @@
     "content": "(Ensinamento) (Pergunta) Às vezes minha palma fica quente durante o Johrei. Por que? E por que alguns conseguem saber onde está o mal? (Resposta) A mão fica quente porque o Elemento Fogo se concentra e sai intensamente por ela; isso é natural e quanto mais quente, melhor. A minha fica muito quente. Os pacientes costumam dizer \"está quente\". Pessoas que percebem o local do mal têm nervos agudos, um sexto sentido sensível. Até certo ponto, treinar permite isso. Mas quando vêm muitas pessoas em sequência, não dá tempo para isso. Eu não faço isso. O normal é não saber (sensorialmente).",
     "source": "Curso III",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 45,
-    "type": "Caso Clínico"
+    "order": 45
   },
   {
     "id": "tecnicas_10",
@@ -684,11 +684,10 @@
       "Dentes e Boca",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Neuralgia"
+      "Toxinas e Medicamentos"
     ]
   },
   {
@@ -698,12 +697,13 @@
     "source": "Curso III",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 46,
-    "type": "Caso Clínico"
+    "order": 46
   },
   {
     "id": "tecnicas_5",
@@ -723,8 +723,11 @@
     "source": "Curso III",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
       "Ombros",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Sistema Digestivo"
     ],
@@ -736,8 +739,7 @@
       "Rins",
       "Costas"
     ],
-    "order": 30,
-    "type": "Caso Clínico"
+    "order": 30
   },
   {
     "id": "fundamentos_22",
@@ -789,7 +791,7 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
@@ -798,9 +800,9 @@
       "Purificação",
       "Respiratório",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma"
+      "Tuberculose"
     ],
     "order": 49
   },
@@ -811,10 +813,11 @@
     "source": "Curso IV",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "order": 58
@@ -851,14 +854,14 @@
     "source": "Curso IV",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Pele",
       "Toxinas e Medicamentos"
     ],
-    "order": 53,
-    "type": "Caso Clínico"
+    "order": 53
   },
   {
     "id": "tecnicas_19",
@@ -868,12 +871,12 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Pele",
       "Toxinas e Medicamentos"
     ],
-    "order": 57,
-    "type": "Caso Clínico"
+    "order": 57
   },
   {
     "id": "fundamentos_95",
@@ -882,7 +885,7 @@
     "source": "Curso V",
     "tags": [
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
@@ -890,12 +893,14 @@
       "Ombros",
       "Pele",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Respiratório",
+      "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 61,
-    "type": "Q&A"
+    "order": 61
   },
   {
     "id": "fundamentos_94",
@@ -904,21 +909,22 @@
     "source": "Curso V",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Dentes e Boca",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
       "Respiratório",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
-      "Toxinas e Medicamentos",
-      "Asma"
-    ],
-    "type": "Caso Clínico"
+      "Sistema Digestivo",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_93",
@@ -932,7 +938,7 @@
       "Coração e Circulação",
       "Dentes e Boca",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
@@ -943,12 +949,13 @@
       "Pele",
       "Pontos Vitais",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Respiratório",
+      "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos",
-      "Tuberculose",
-      "Asma",
-      "Anemia"
+      "Tuberculose"
     ],
     "focusPoints": [
       "Ombros",
@@ -958,8 +965,7 @@
       "Frontal",
       "Topo da cabeça"
     ],
-    "order": 59,
-    "type": "Q&A"
+    "order": 59
   },
   {
     "id": "fundamentos_84",
@@ -983,6 +989,7 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Dentes e Boca",
@@ -993,12 +1000,12 @@
       "Ministração de Johrei",
       "Pele",
       "Purificação",
+      "Q&A",
       "Respiratório",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos",
       "Tuberculose"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_30",
@@ -1006,14 +1013,15 @@
     "content": "(Pergunta) Homem de 60 anos. Febre alta, rigidez na nuca, consciência turva. O Johrei baixa a febre com suor, mas ela volta. Parece encefalite.\n\n(Orientação) É um tipo de encefalite. As toxinas solidificam na nuca. Está melhorando, mas a dissolução é lenta pela rigidez. As oscilações ocorrem porque endurece de novo. Ministre Johrei dez vezes ao dia, a cada trinta minutos. Curará em dois ou três dias. Uma vez ao dia é pouco. E não use força, ou dissolverá mais devagar.",
     "source": "Curso IX",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_34",
@@ -1022,15 +1030,17 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_6",
@@ -1040,12 +1050,13 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Ministração de Johrei",
       "Mundo Espiritual",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_8",
@@ -1054,15 +1065,16 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_11",
@@ -1071,11 +1083,12 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Saúde da Criança"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "regioes_corpo_3",
@@ -1086,9 +1099,8 @@
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Ministração de Johrei",
-      "Derrame (AVC)"
-    ],
-    "type": "Q&A"
+      "Q&A"
+    ]
   },
   {
     "id": "pontos_focais_1",
@@ -1164,14 +1176,13 @@
     "tags": [
       "Cabeça e Pescoço",
       "Coração e Circulação",
-      "Derrame (AVC)"
+      "Q&A"
     ],
     "focusPoints": [
       "Frontal",
       "Bulbo"
     ],
-    "system": "Cabeça",
-    "type": "Q&A"
+    "system": "Cabeça"
   },
   {
     "id": "pontos_focais_2",
@@ -1199,6 +1210,7 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
@@ -1207,8 +1219,7 @@
       "Frontal",
       "Estômago"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "pontos_focais_4",
@@ -1233,8 +1244,7 @@
     "tags": [
       "Cabeça e Pescoço",
       "Gripe e Resfriado",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Frontal"
@@ -1293,7 +1303,9 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
+      "Q&A",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
@@ -1303,8 +1315,7 @@
       "Occipital",
       "Abdômen"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "pontos_focais_11",
@@ -1315,8 +1326,7 @@
       "Boca e Garganta",
       "Coração e Circulação",
       "Dentes e Boca",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
@@ -1333,15 +1343,15 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
-      "Derrame (AVC)"
+      "Q&A"
     ],
     "focusPoints": [
       "Pescoço",
       "Cabeça"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "doencas_2",
@@ -1349,20 +1359,20 @@
     "content": "(Pergunta) Policial de 25 anos. Desmaios, tonturas, diagnosticado com \"distonia neurovegetativa\". Tratado com gelo, injeções, sedativos. Ficou inválido. Com Johrei, melhorou, mas teve recaída por buscar medicina novamente (injeções). Agora sente-se num sonho constante.\n\n(Orientação) \"Distonia neurovegetativa\"... que nome. A causa é rigidez no pescoço e ombros. O gelo e os sedativos solidificaram as toxinas, agravando a doença. Originalmente era anemia cerebral (nódulo no pescoço). Ao derreter com febre, causa tontura. Os remédios criaram uma doença de \"lucro médico\" (Yakudoku). Basta dissolver as toxinas antigas e novas no pescoço e coração.",
     "source": "Curso IX",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Outros",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Q&A",
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
       "Pescoço",
       "Coração"
     ],
-    "system": "Outros",
-    "type": "Caso Clínico"
+    "system": "Outros"
   },
   {
     "id": "doencas_3",
@@ -1370,15 +1380,16 @@
     "content": "(Pergunta) Mulher de 31 anos. Perda progressiva de movimentos. Diagnóstico: \"encolhimento dos nervos\".\n\n(Orientação) Diagnóstico estranho. É apenas rigidez na cabeça. Eu mesmo sinto isso quando escrevo muito. A causa está nos gânglios linfáticos do pescoço e na rigidez do lado direito da cabeça. Tratando isso e os ombros, resolve-se.",
     "source": "Curso IX",
     "tags": [
-      "Cabeça e Pescoço"
+      "Cabeça e Pescoço",
+      "Caso Clínico",
+      "Q&A"
     ],
     "focusPoints": [
       "Ombros",
       "Pescoço",
       "Cabeça"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "regioes_corpo_5",
@@ -1389,16 +1400,15 @@
       "Cabeça e Pescoço",
       "Coração e Circulação",
       "Ouvidos e Audição",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Q&A",
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Cabeça",
       "Cérebro",
       "Ouvidos"
     ],
-    "system": "Cabeça",
-    "type": "Q&A"
+    "system": "Cabeça"
   },
   {
     "id": "fundamentos_75",
@@ -1406,12 +1416,13 @@
     "content": "Pergunta: O uso da cinta na gravidez é exclusivo do Japão?\n\nResposta: Tanto faz usar ou não. A origem é para impedir que o bebê cresça demais, facilitando o parto. Sem ela, cresce à vontade e o parto é difícil. Mas não aperte demais, pois causa aborto. É muito comum. Se apertar, empurra para baixo. Os idosos reclamam se não usar. Use com aperto moderado. Para trabalhar, ajuda a firmar a barriga. No exterior não usam. É para \"parir pequeno e criar grande\". Apertar atrofia o crescimento e facilita a saída. Também se usa no \"Dia do Cão\" porque cães parem fácil. Mas não é algo essencial. Faça como preferir. Se apertar muito, é perigoso. Se houver idosos insistentes, use; se der trabalho, não use.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Criança",
       "Saúde da Mulher",
       "Sistema Digestivo"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_74",
@@ -1425,11 +1436,11 @@
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_78",
@@ -1437,14 +1448,16 @@
     "content": "Pergunta: Fiz um aborto e cirurgia há 20 anos. Desde então, surgiu um nódulo no abdômen, que ficou visível há uns 5 anos. Recebo Johrei desde 1948, mas o abdômen não diminui e agora as pernas incham. Qual a causa?\n\nResposta: A causa é a cirurgia do aborto. O nódulo no abdômen é, provavelmente, um bloco de desinfetantes ou sangue estagnado solidificado. Deveria sair com Johrei, mas algo foi prejudicado na cirurgia; talvez tenham cortado algo vital, enfraquecendo a capacidade de excreção. Como é uma solidificação antiga, é difícil dissolver. Ministre Johrei pelas costas, na região do cóccix. Isso ajudará a dissolver. Focar apenas pela frente não resolve.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Purificação"
-    ],
-    "type": "Caso Clínico"
+      "Purificação",
+      "Q&A",
+      "Sistema Digestivo"
+    ]
   },
   {
     "id": "fundamentos_79",
@@ -1453,6 +1466,7 @@
     "source": "Curso VII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dentes e Boca",
       "Dores e Rigidez",
@@ -1460,12 +1474,12 @@
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_80",
@@ -1475,9 +1489,10 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
@@ -1485,11 +1500,12 @@
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
-    ],
-    "type": "Caso Clínico"
+      "Sistema Digestivo",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_81",
@@ -1497,14 +1513,16 @@
     "content": "Pergunta: Mulher de 27 anos. Removeu ovário e nódulo há um ano. A ferida não cicatriza, sente pressão no peito e insônia. Com Johrei, melhorou. O médico diz ser \"doença nervosa\".\n\nResposta: Pensar que é doença nervosa é um grande erro. Ministre Johrei na área afetada e nos rins (costas).",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Pele",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_82",
@@ -1512,15 +1530,17 @@
     "content": "Pergunta: Antes de casar, a menstruação era normal. Após casar, vem uma vez a cada seis meses ou um ano, em pouca quantidade.\n\nResposta: É estranho. O normal é regularizar após o casamento. Verifique se há solidificações no baixo ventre (origem nos rins) e ministre Johrei. Também verifique se há anemia. Se ela for saudável e corada, pressione o baixo ventre para investigar. Não deveria ser assim.\n\nPergunta: Menina de 18 anos. Menstruação dura um mês inteiro. Pálida, mas sem outros sintomas.\n\nResposta: O fluxo deve ser fraco. Há toxinas no abdômen; dissolvendo-as, resolve-se. A origem está nos rins. Também pode ser sangue muito \"grosso\" (tóxico). Sangue bom é fluido e circula bem; sangue tóxico é viscoso e circula mal.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Anemia"
-    ],
-    "type": "Caso Clínico"
+      "Sistema Digestivo",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_83",
@@ -1528,15 +1548,16 @@
     "content": "Pergunta: Fiel de 69 anos. Teve retroversão uterina no passado. Teve três grandes hemorragias desde outubro, chegando a perder litros de sangue e perder a consciência. Recuperou-se com Johrei, mas o coração está fraco. Curará?\n\nResposta: O sangramento é vaginal? (Interlocutor: Sim.) Isso é sangue menstrual velho que estava acumulado e saiu. Essa pessoa tem muito sangue tóxico. O sangue saiu junto com outras toxinas da região. Deveria ser bom sair, mas como o corpo se mantinha com esse sangue tóxico e o sangue novo não se forma tão rápido, ocorre anemia. (Interlocutor: O rosto inchou...) Sim, mesmo em úlceras gástricas com muita perda de sangue, ocorre inchaço pálido. Com a anemia, a atividade renal diminui e a urina não é processada, causando o inchaço. Mas à medida que o sangue aumentar, os rins se recuperarão. Não se preocupe.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Anemia"
-    ],
-    "type": "Caso Clínico"
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_73",
@@ -1545,6 +1566,7 @@
     "source": "Curso VII",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Mundo Espiritual",
@@ -1563,8 +1585,7 @@
       "Frontal",
       "Coluna"
     ],
-    "system": "Sistema Reprodutor",
-    "type": "Caso Clínico"
+    "system": "Sistema Reprodutor"
   },
   {
     "id": "fundamentos_76",
@@ -1574,10 +1595,12 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
       "Olhos e Visão",
       "Outros",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
@@ -1589,8 +1612,7 @@
       "Estômago",
       "Olhos"
     ],
-    "system": "Outros",
-    "type": "Caso Clínico"
+    "system": "Outros"
   },
   {
     "id": "fundamentos_77",
@@ -1599,16 +1621,17 @@
     "source": "Curso VII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ouvidos e Audição",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
@@ -1616,8 +1639,7 @@
       "Cabeça",
       "Cérebro"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "tecnicas_55",
@@ -1625,12 +1647,13 @@
     "content": "Pergunta: Minha esposa engravidou e abortou recentemente, mas a menstruação parou. Achamos que estava grávida de novo, mas a menstruação desceu. O que houve?\n\nResposta: Não era gravidez, mas sim gravidez psicológica. Isso é comum. De tanto pensar \"será que engravidei?\", a menstruação para e a barriga cresce, geralmente até o quinto ou sexto mês. Isso mostra como a ação nervosa humana é poderosa. Como é apenas menstruação acumulada, quando desce, a barriga murcha como um balão. Abortos ditos \"espontâneos\" muitas vezes são desfechos de gravidez psicológica; o verdadeiro aborto sempre tem coágulos de sangue. Se essas pessoas ingressarem na fé e acumularem virtudes, poderão ter filhos saudáveis.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Mulher",
       "Sistema Digestivo"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_56",
@@ -1638,11 +1661,12 @@
     "content": "Pergunta: Um médico disse que ao abrir um mioma extrauterino, encontrou algo do tamanho de um feto de três meses com pelos e presas. Qual o significado espiritual?\n\nResposta: Isso é possível. É uma gravidez ectópica, mas não de um ser humano, e sim a reencarnação de um pequeno animal, como cão ou gato. Na vida anterior, a pessoa amou esse animal como se fosse um filho, criando esse elo cármico. Por isso, a gravidez não é normal. Feto humano não tem presas nem pelos assim.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Mulher"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_59",
@@ -1650,12 +1674,13 @@
     "content": "Pergunta: O governo parece que vai liberar a venda de anticoncepcionais... (1) Se uma mãe saudável abortar por dificuldades financeiras, o que acontece com o espírito do feto? (2) Que pecado os pais recebem de Deus e como o espírito do feto afetará o futuro deles?\n\nResposta: O aborto é maligno. É diferente do controle de natalidade (contracepção). Achar que um filho trará dificuldades financeiras é um erro; a criança traz consigo sua própria provisão. Onde há mais filhos, a renda aumenta. O aborto é assassinato, um grande erro. A contracepção, comparada ao aborto, é um pecado menor.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
       "Olhos e Visão",
+      "Q&A",
       "Saúde da Criança"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "doencas_6",
@@ -1663,12 +1688,13 @@
     "content": "Pergunta: Há casos em que o marido sente os enjoos da gravidez e a esposa fica bem. Por que? Casais trocam purificações?\n\nResposta: É natural. O elo espiritual do casal é o mais forte e espesso, então o marido pode assumir os enjoos. O inverso também ocorre: a esposa assume purificações do marido se ele precisar trabalhar para sustentar a casa, ou filhos assumem purificações dos pais. Às vezes, até a vida da criança é sacrificada.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Criança",
       "Saúde da Mulher"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_18",
@@ -1677,10 +1703,10 @@
     "source": "Curso VII",
     "tags": [
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Criança",
       "Saúde da Mulher"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "casos_clinicos_19",
@@ -1688,11 +1714,12 @@
     "content": "Pergunta: Por que a criança parece com um dos pais ou com nenhum?\n\nResposta: Depende do momento. Se a mãe vê muito o pai durante a gravidez, parece com o pai. Se o pai está ausente, parece com quem está sempre perto da mãe. Olhar para fotos de beldades ou grandes homens funciona: a criança nasce parecida. A educação pré-natal visual tem fundamento.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Criança",
       "Saúde da Mulher"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_20",
@@ -1700,9 +1727,9 @@
     "content": "Pergunta: Dizem desde antigamente que crianças cujo cordão umbilical cai rápido são saudáveis, e as que demoram são fracas. Há alguma relação?\n\nResposta: Sim. O natural é separar-se. Se demora a cair, é porque a vitalidade é fraca. Isso é absolutamente verdadeiro.",
     "source": "Curso VII",
     "tags": [
+      "Q&A",
       "Saúde da Criança"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "casos_clinicos_22",
@@ -1712,9 +1739,9 @@
     "tags": [
       "Arte e Beleza",
       "Dentes e Boca",
-      "Gravidez e Saúde da Mulher"
-    ],
-    "type": "Q&A"
+      "Gravidez e Saúde da Mulher",
+      "Q&A"
+    ]
   },
   {
     "id": "tecnicas_57",
@@ -1723,9 +1750,9 @@
     "source": "Curso VII",
     "tags": [
       "Dores e Rigidez",
-      "Mundo Espiritual"
-    ],
-    "type": "Q&A"
+      "Mundo Espiritual",
+      "Q&A"
+    ]
   },
   {
     "id": "doencas_5",
@@ -1737,11 +1764,11 @@
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Mundo Espiritual",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Sistema Digestivo"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "doencas_8",
@@ -1749,12 +1776,13 @@
     "content": "Pergunta: Minha filha foi operada de mioma, mas ao abrir, não era mioma, e sim algo parecido com amendoins.\n\nResposta: Essas coisas parecidas com amendoins são nódulos de toxinas. O Johrei as dissolveria.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_17",
@@ -1763,12 +1791,13 @@
     "source": "Curso VII",
     "tags": [
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Mulher",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_54",
@@ -1777,16 +1806,19 @@
     "source": "Curso VII",
     "tags": [
       "Arte e Beleza",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Respiratório",
+      "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
+      "Sistema Digestivo",
       "Tuberculose"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "regioes_corpo_0",
@@ -1825,13 +1857,13 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Ministração de Johrei",
       "Respiratório",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_24",
@@ -1852,7 +1884,7 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
@@ -1875,9 +1907,9 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "pontos_focais_5",
@@ -1886,10 +1918,10 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Febre e Gripe",
       "Ministração de Johrei"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "doencas_1",
@@ -1907,6 +1939,7 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Digestivo",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
@@ -1920,9 +1953,8 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
-      "Sistema Urinário",
-      "Asma"
+      "Renal e Urinário",
+      "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
@@ -1937,7 +1969,7 @@
     "tags": [
       "Câncer e Outras Doenças",
       "Dores e Rigidez",
-      "Rins e Sistema Urinário"
+      "Renal e Urinário"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Rins",
@@ -1992,13 +2024,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Toxinas Medicamentosas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Olhos",
-    "order": 211,
-    "type": "Caso Clínico"
+    "order": 211
   },
   {
     "id": "pf131",
@@ -2049,13 +2081,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Caso Clínico",
       "Pele",
       "Toxinas Medicamentosas"
     ],
     "category": "Toxinas Medicamentosas",
     "system": "Pele",
-    "order": 239,
-    "type": "Caso Clínico"
+    "order": 239
   },
   {
     "id": "pf135",
@@ -2124,7 +2156,7 @@
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Pontos Vitais - Fundamentos",
-      "Rins e Sistema Urinário"
+      "Renal e Urinário"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Rins",
@@ -2137,14 +2169,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Caso Clínico",
       "Mundo Espiritual",
       "Pontos Vitais - Fundamentos",
       "Pulmões"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Pulmões",
-    "order": 246,
-    "type": "Caso Clínico"
+    "order": 246
   },
   {
     "id": "pf44",
@@ -2196,14 +2228,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Câncer e Outras Doenças",
       "Pele",
       "Saúde da Criança"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Pele",
-    "order": 69,
-    "type": "Caso Clínico"
+    "order": 69
   },
   {
     "id": "pf72",
@@ -2228,8 +2260,7 @@
     "tags": [
       "Cabeça e Pescoço",
       "Câncer e Outras Doenças",
-      "Mundo Espiritual",
-      "Derrame (AVC)"
+      "Mundo Espiritual"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -2271,7 +2302,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais - Fundamentos",
-      "Rins e Sistema Urinário"
+      "Renal e Urinário"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Rins",
@@ -2285,8 +2316,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Pontos Vitais - Fundamentos",
-      "Derrame (AVC)"
+      "Pontos Vitais - Fundamentos"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Cabeça",
@@ -2302,9 +2332,7 @@
       "Coração",
       "Dores e Rigidez",
       "Pontos Vitais - Fundamentos",
-      "Saúde da Criança",
-      "Diabetes",
-      "Asma"
+      "Saúde da Criança"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Coração",
@@ -2333,13 +2361,13 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Pontos Vitais - Fundamentos"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Cabeça",
-    "order": 108,
-    "type": "Caso Clínico"
+    "order": 108
   },
   {
     "id": "pf84",
@@ -2421,9 +2449,7 @@
       "Coração",
       "Dores e Rigidez",
       "Saúde da Criança",
-      "Sistema Urinário",
-      "Diabetes",
-      "Asma"
+      "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Coração",
@@ -2453,8 +2479,7 @@
     "tags": [
       "Dores e Rigidez",
       "Sistema Digestivo",
-      "Ânus",
-      "Derrame (AVC)"
+      "Ânus"
     ],
     "category": "Sistema Digestivo",
     "system": "Ânus",
@@ -2493,13 +2518,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Caso Clínico",
+      "Renal e Urinário",
       "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
     "system": "Rins",
-    "order": 214,
-    "type": "Caso Clínico"
+    "order": 214
   },
   {
     "id": "pf119",
@@ -2509,7 +2534,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Dores e Rigidez",
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
@@ -2523,13 +2548,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
     "system": "Estômago",
-    "order": 221,
-    "type": "Caso Clínico"
+    "order": 221
   },
   {
     "id": "pf122",

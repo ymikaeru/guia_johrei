@@ -33,12 +33,17 @@ function formatBodyText(text, searchQuery) {
     }).join('');
 }
 
-function renderList(list, activeTags, mode) {
+function renderList(list, activeTags, mode, activeTab) {
     const el = document.getElementById('contentList');
     const emptyEl = document.getElementById('emptyState');
     if (!list || list.length === 0) {
         el.innerHTML = '';
-        emptyEl.classList.remove('hidden');
+        // Don't show empty state on map tab
+        if (activeTab !== 'mapa') {
+            emptyEl.classList.remove('hidden');
+        } else {
+            emptyEl.classList.add('hidden');
+        }
         return;
     }
     emptyEl.classList.add('hidden');
@@ -53,31 +58,67 @@ function renderList(list, activeTags, mode) {
                 <div class="mb-2">
                     <span class="text-[9px] font-bold uppercase tracking-widest ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
-                <h3 class="font-serif font-bold text-lg leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                <h3 class="font-serif font-bold text-[1.825rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                ${activeTab === 'pontos_focais' && item.focusPoints && item.focusPoints.length > 0 ? `
+                <div class="mb-3 mt-2">
+                    <div class="flex flex-wrap gap-2">
+                        ${item.focusPoints.map(fp => {
+            const isActive = STATE.activeFocusPoints && STATE.activeFocusPoints.includes(fp);
+            const activeClass = isActive
+                ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white'
+                : 'border-gray-100 dark:border-gray-800 text-gray-400 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black';
+
+            return `<button onclick="filterByFocusPoint('${fp}', event)" class="text-[9px] font-bold uppercase tracking-widest border px-2 py-1 rounded-md transition-colors ${activeClass}">
+                                ${fp}
+                            </button>`;
+        }).join('')}
+                    </div>
+                </div>
+                ` : ''}
             </div>
+            ${activeTab !== 'pontos_focais' ? `
             <div class="mt-[0.3rem] border-t border-gray-50 dark:border-gray-900 flex flex-wrap gap-2">
-                 ${item.tags ? (() => {
-                let tagsToShow = item.tags.slice(0, 4);
+                 ${(() => {
+                    const tags = item.tags || [];
+                    const points = item.focusPoints || [];
 
-                // Ensure ALL active tags are visible
-                if (activeTags && activeTags.length > 0) {
-                    const hiddenActiveTags = activeTags.filter(t => item.tags.includes(t) && !tagsToShow.includes(t));
+                    // Combine items: Tags first, then Points
+                    let allItems = [
+                        ...tags.map(t => ({ text: t, type: 'tag' })),
+                        ...points.map(p => ({ text: p, type: 'point' }))
+                    ];
 
-                    if (hiddenActiveTags.length > 0) {
-                        // Remove items from the end to make space
-                        tagsToShow.splice(tagsToShow.length - hiddenActiveTags.length, hiddenActiveTags.length);
-                        // Add the hidden active tags
-                        tagsToShow.push(...hiddenActiveTags);
+                    if (allItems.length === 0) return '';
+
+                    let itemsToShow = allItems.slice(0, 6); // Show up to 6 items
+
+                    // Ensure ALL active tags are visible
+                    if (activeTags && activeTags.length > 0) {
+                        const hiddenActiveItems = allItems.filter(i => i.type === 'tag' && activeTags.includes(i.text) && !itemsToShow.some(show => show.text === i.text && show.type === 'tag'));
+
+                        if (hiddenActiveItems.length > 0) {
+                            // Remove items from the end to make space
+                            if (itemsToShow.length + hiddenActiveItems.length > 6) {
+                                itemsToShow.splice(itemsToShow.length - hiddenActiveItems.length, hiddenActiveItems.length);
+                            }
+                            // Add the hidden active tags
+                            itemsToShow.push(...hiddenActiveItems);
+                        }
                     }
-                }
 
-                return tagsToShow.map(t => {
-                    const isActive = activeTags && activeTags.includes(t);
-                    const activeClass = isActive ? 'active-tag' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
-                    return `<button onclick="filterByTag('${t}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium ${activeClass}">#${t}</button>`;
-                }).join('');
-            })() : ''}
+                    return itemsToShow.map(i => {
+                        if (i.type === 'tag') {
+                            const isActive = activeTags && activeTags.includes(i.text);
+                            const activeClass = isActive ? 'active-tag' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
+                            return `<button onclick="filterByTag('${i.text}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium ${activeClass}">#${i.text}</button>`;
+                        } else {
+                            // Focus Point (styled like inactive tag)
+                            return `<button onclick="filterByFocusPoint('${i.text}', event)" class="text-[9px] font-bold uppercase tracking-widest border border-gray-100 dark:border-gray-800 text-gray-400 px-2 py-1 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${i.text}</button>`;
+                        }
+                    }).join('');
+                })()}
             </div>
+            ` : ''}
         </div>`
     }).join('');
 }

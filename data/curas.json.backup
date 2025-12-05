@@ -5,17 +5,19 @@
     "content": "Existem ambas. Geralmente, a causa física é mais comum. A principal é a existência de solidificações no abdômen. Dizem que \"pele da barriga grossa impede o parto\", o que significa que há toxinas urinárias acumuladas no peritônio; sem poder expandir para os lados, a força exerce pressão para baixo, causando o aborto. Se o útero puder expandir livremente, o aborto não ocorre. O oposto, pressão para cima, causa os enjoos (êmese gravídica); nesse caso, trata-se entre o umbigo e o epigástrio. Anteversão e retroversão também são causadas por blocos de toxinas. Julgar a saúde pela pele da barriga requer experiência.\n\nEspiritualmente, o natimorto pode ser obra de um espírito vingativo que impede o nascimento. Fisicamente, é toxina medicamentosa; a toxina concentra-se no útero, impedindo o desenvolvimento fetal. Por isso, natimortos são mais raros no campo (onde se usa menos remédio).\n\nPergunta: Há relação espiritual em natimortos e abortos? Como consagrar o feto?\n\nResposta: Há causas espirituais e físicas. A raiz está nas impurezas e pecados da pessoa. Pecados como impedir a continuidade de uma linhagem ou um ancestral que matou alguém e extinguiu aquela família geram esse carma. Fisicamente, tomar remédios na gravidez ou antes dela debilita o feto, pois as toxinas dos pais passam facilmente para o filho. O feto fraco morre asfixiado no parto.\n\nO aborto espontâneo também tem os dois lados. Físico: peritonite purulenta; o útero não consegue expandir e aborta. Johrei nos rins resolve. Espiritual: casos de amantes ou traição; o espírito vivo da mulher traída ou da amante atrapalha a gravidez da esposa. Com a fé, isso desaparece.\n\nEm caso de aborto após o quinto mês, deve-se fazer um funeral simples e dar um nome póstumo (Kaimyo), pois já tem forma humana. Às vezes, mesmo com três ou quatro meses, pode haver encosto espiritual.",
     "source": "Curso VII",
     "tags": [
-      "Sistema Digestivo",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 19,
-    "type": "Q&A"
+    "order": 19
   },
   {
     "id": "tecnicas_62",
@@ -24,14 +26,15 @@
     "source": "Curso VII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Criança",
       "Saúde da Mulher"
     ],
-    "order": 27,
-    "type": "Caso Clínico"
+    "order": 27
   },
   {
     "id": "casos_clinicos_16",
@@ -40,15 +43,16 @@
     "source": "Curso VII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher"
     ],
-    "order": 20,
-    "type": "Caso Clínico"
+    "order": 20
   },
   {
     "id": "casos_clinicos_21",
@@ -56,14 +60,15 @@
     "content": "Pergunta: Sobre a produção de leite materno.\n\nResposta: É bom saber disso. A falta de leite ocorre quando o estômago está contraído ou quando as glândulas mamárias estão comprimidas. Se as glândulas estiverem comprimidas, estarão rígidas e doloridas ao toque; isso é fácil de identificar. O caso mais comum, porém, é quando toxinas comprimem o estômago pela frente e por trás, diminuindo seu tamanho e impedindo a ingestão suficiente de comida. Quem amamenta precisa comer por dois; se não come, falta leite. O Johrei resolve isso facilmente.",
     "source": "Curso VII",
     "tags": [
-      "Sistema Digestivo",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 36,
-    "type": "Q&A"
+    "order": 36
   },
   {
     "id": "tecnicas_58",
@@ -74,11 +79,11 @@
       "Arte e Beleza",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher"
     ],
-    "order": 17,
-    "type": "Q&A"
+    "order": 17
   },
   {
     "id": "doencas_7",
@@ -86,12 +91,13 @@
     "content": "Pergunta: Mulher de 68 anos sofre com útero flácido.\n\nResposta: Os ligamentos que sustentam o útero estão frouxos. Toxinas no baixo ventre pressionam esses ligamentos, impedindo-os de tensionar. Ministre Johrei acima das coxas e nos lados do umbigo. É comum em quem teve muitos filhos. Em jovens cura rápido, mas aos 68 anos pode demorar. Curei uma jovem esposa camponesa com esse sintoma; o marido ameaçava devolvê-la por não cumprir seus deveres conjugais, mas ela ficou curada.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 39,
-    "type": "Caso Clínico"
+    "order": 39
   },
   {
     "id": "casos_clinicos_15",
@@ -99,15 +105,16 @@
     "content": "Pergunta: Mulher de 30 anos, grávida de seis meses. A barriga não cresceu, e o médico disse que o feto morreu há três meses e está apodrecendo, exigindo cirurgia. Ela não sente dor e teme a operação. O Johrei pode expelir o feto se estiver morto? Já tem dois filhos e um aborto.\n\nResposta: Mesmo se estiver morto, o Johrei o expelirá. Pode ser sangue velho solidificado ou gravidez psicológica, deve-se considerar essas hipóteses. A gravidez psicológica é curiosa: só de pensar \"vai nascer\", a barriga cresce sem nem haver ar dentro.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
+      "Q&A",
       "Saúde da Mulher",
       "Sistema Digestivo"
     ],
-    "order": 14,
-    "type": "Caso Clínico"
+    "order": 14
   },
   {
     "id": "tecnicas_61",
@@ -116,13 +123,15 @@
     "source": "Curso VII",
     "tags": [
       "Agricultura e Alimentação",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 23,
-    "type": "Caso Clínico"
+    "order": 23
   },
   {
     "id": "tecnicas_64",
@@ -130,15 +139,17 @@
     "content": "Pergunta: Mulher de 52 anos com prolapso uterino. Com Johrei, o útero reduziu para o tamanho de um ovo. Defeca muitas vezes ao dia, mas tem edema maciço das coxas para cima, dificultando o andar. Come pouco. Ministro Johrei nos rins.\n\nResposta: O edema pode ser renal ou por toxinas medicamentosas. Edemas localizados (coxa, cintura) são toxinas que se dissolveram e estagnaram temporariamente. Edema renal é sistêmico (rosto inchado, corpo pesado). Foque o Johrei onde está o inchaço.\n\nPergunta: Grávida de 4 meses (33 anos), diagnosticada com prolapso uterino pelo médico, que recomendou cirurgia. Ela sente apenas um desconforto abdominal.\n\nResposta: Prolapso uterino é quando o útero desce para a vagina. Isso não acontece na gravidez. O canal é do mesmo tamanho e o útero cresce, então é fisicamente improvável que desça (caia para fora). É uma história sem lógica. Ela estava bem com o Johrei e foi ao médico por causa da gravidez, e ele disse essa bobagem. Não há prolapso. Ignore e deixe como está. É problemático quando médicos dizem coisas estranhas e causam preocupação. Eu costumava confiar nos médicos, mas depois de entender a verdade, penso o oposto do que dizem e acerto. Para ter saúde, fiz o contrário do que a medicina e a higiene pregam. Interprete ao contrário e não errará.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
     ],
-    "order": 42,
-    "type": "Caso Clínico"
+    "order": 42
   },
   {
     "id": "tecnicas_65",
@@ -146,17 +157,20 @@
     "content": "Pergunta: Mulher de 54 anos. Nódulo no baixo ventre direito desde 1947. Cresceu muito desde setembro passado, ocupando do epigástrio ao fígado, parecendo gravidez de 7 meses. O nódulo move-se quando ela deita. Sente-se bem de manhã, mas à tarde incha e não consegue comer.\n\nResposta: É hidropisia do ovário (água no ovário). A causa são os rins, portanto, ministre Johrei neles. O ovário incha bastante, mas se tratar com Johrei, a urina aumentará e o inchaço diminuirá gradualmente. Não tenha pressa. A falta de apetite deve-se à compressão do estômago; é inevitável até que o inchaço diminua.\n\nPergunta: Mulher de 25 anos. Nódulo no baixo ventre cresceu até o umbigo, duro ao toque. Sente peso e dificuldade ao trabalhar.\n\nResposta: Provavelmente cisto ou hidropisia do ovário. Ministre Johrei nos rins. O ovário é de cura difícil (lenta).\n\nPergunta: Mulher de 32 anos. Queimadura grave na infância. Barriga cresceu, diagnosticada com cisto ovariano e operada. O Johrei cura?\n\nResposta: Não creio que seja pela queimadura. Se for peritonite, o inchaço é suave; se for cisto, é abrupto (como uma ladeira íngreme). Se não tivesse operado, curaria totalmente. Como operou, talvez não volte ao estado original perfeito, mas haverá grande melhora.",
     "source": "Curso VII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
-      "Saúde da Mulher"
+      "Saúde da Mulher",
+      "Sistema Digestivo"
     ],
-    "order": 43,
-    "type": "Caso Clínico"
+    "order": 43
   },
   {
     "id": "pontos_focais_18",
@@ -164,16 +178,18 @@
     "content": "Pergunta: Esposa de 29 anos, fez duas curetagens por hipoplasia uterina. Tem solidificações consideráveis nos rins. O marido bebe bastante, mas é saudável. É possível engravidar?\n\nResposta: Sim, é perfeitamente possível. Curetagem por hipoplasia é algo cômico. A hipoplasia existe, mas a causa são os rins. Dissolvendo as solidificações nos rins e os nódulos que certamente existem na virilha, ela engravidará. Para anteversão ou retroversão, também se trata os rins e a região logo acima deles, onde há rigidez. Pode demorar um pouco, mas com paciência resolve-se.",
     "source": "Curso VII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Mulher"
     ],
     "focusPoints": [
       "Rins",
       "Virilha"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_53",
@@ -186,6 +202,7 @@
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Sistema Digestivo",
@@ -198,8 +215,7 @@
       "Região lombar",
       "Baixo ventre"
     ],
-    "system": "Sistema Reprodutor",
-    "type": "Q&A"
+    "system": "Sistema Reprodutor"
   },
   {
     "id": "tecnicas_63",
@@ -208,15 +224,16 @@
     "source": "Curso VII",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
       "Mundo Espiritual",
       "Pele",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Sistema Digestivo",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
@@ -224,8 +241,7 @@
       "Cabeça",
       "Abdômen"
     ],
-    "system": "Sistema Reprodutor",
-    "type": "Caso Clínico"
+    "system": "Sistema Reprodutor"
   },
   {
     "id": "pontos_focais_19",
@@ -234,8 +250,10 @@
     "source": "Curso VII",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Coração e Circulação",
       "Gravidez e Saúde da Mulher",
+      "Q&A",
       "Saúde da Mulher",
       "Sistema Digestivo"
     ],
@@ -243,8 +261,7 @@
       "Abdômen"
     ],
     "system": "Sistema Reprodutor",
-    "order": 32,
-    "type": "Caso Clínico"
+    "order": 32
   },
   {
     "id": "fundamentos_57",
@@ -256,11 +273,11 @@
       "Ministração de Johrei",
       "Pele",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Sistema Digestivo"
     ],
-    "order": 65,
-    "type": "Q&A"
+    "order": 65
   },
   {
     "id": "fundamentos_70",
@@ -290,18 +307,20 @@
     "source": "Curso VIII",
     "tags": [
       "Agricultura e Alimentação",
+      "Caso Clínico",
       "Dentes e Boca",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Ombros",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 71,
-    "type": "Caso Clínico"
+    "order": 71
   },
   {
     "id": "fundamentos_67",
@@ -309,15 +328,18 @@
     "content": "(Pergunta) Um membro de cinquenta e três anos. No outono de 1950 surgiu um nódulo do tamanho de uma xícara de chá no abdômen. Na primavera de 1951, o médico disse ser algo no mesentério, operou e retirou vinte e um nódulos, grandes e pequenos. No verão do mesmo ano, surgiu um nódulo grande no mesmo lugar. Ingressou na fé em novembro de 1951. Com o Johrei, teve uma dor intensa, a urina ficou turva, a constipação acabou e o abdômen começou a fazer um barulho de \"go-go\". Sente dor ao mover-se e dificuldade para andar.\n\n(Orientação) A constipação acabou... que estranho. Os vinte e um nódulos iniciais no abdômen... é o que os médicos chamariam de peritonite tuberculosa ou algo assim. São nódulos de pus. Com o Johrei, eles sairiam um por um, mas a cirurgia os deteve. Ao deter, ocorre um rebote; o nódulo grande é isso. O barulho \"go-go\" significa que dissolveu. Se fizer com paciência, não há o que não cure. A origem, afinal, é toxina medicinal. Tratem bem os rins. A doença é algo simples.",
     "source": "Curso VIII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 80,
-    "type": "Caso Clínico"
+    "order": 80
   },
   {
     "id": "fundamentos_66",
@@ -325,14 +347,15 @@
     "content": "(Pergunta) Na primavera de 1949, minha mãe (membro) faleceu após apenas três dias de dor abdominal. Na noite do décimo quarto dia após o falecimento, tive uma dor abdominal repentina (sintomas iguais aos da minha mãe falecida). Sofri por dez dias e, com a preocupação de todos, tomei uma injeção. Desde então, tenho uma purificação de dor abdominal cerca de uma vez por mês; é uma dor gástrica intensa que dura de uma semana a dez dias. Quando a dor para, volto ao normal rapidamente. Nas primeiras três ou quatro vezes consultei médicos e tomei injeções, mas não surtiram efeito na dor. Quando a dor começa, meu ombro direito fica muito rígido e sinto uma leve dor. Graças à proteção, não tenho mais aquelas dores violentas do início, mas repito esse ciclo há quatro anos. O que devo fazer?\n\n(Orientação) É toxina medicinal. Essa pessoa tem uma solidificação que vai do ombro às costas. Se ministrar Johrei ali com paciência, curará infalivelmente.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
-    "order": 79,
-    "type": "Caso Clínico"
+    "order": 79
   },
   {
     "id": "fundamentos_68",
@@ -345,11 +368,11 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
-    "order": 82,
-    "type": "Q&A"
+    "order": 82
   },
   {
     "id": "fundamentos_71",
@@ -359,15 +382,17 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Febre e Gripe",
       "Gripe e Resfriado",
-      "Purificação"
+      "Purificação",
+      "Q&A",
+      "Sistema Digestivo"
     ],
-    "order": 93,
-    "type": "Caso Clínico"
+    "order": 93
   },
   {
     "id": "fundamentos_72",
@@ -376,12 +401,13 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 97,
-    "type": "Q&A"
+    "order": 97
   },
   {
     "id": "fundamentos_50",
@@ -391,16 +417,18 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 50,
-    "type": "Caso Clínico"
+    "order": 50
   },
   {
     "id": "fundamentos_51",
@@ -409,19 +437,21 @@
     "source": "Curso VIII",
     "tags": [
       "Agricultura e Alimentação",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dentes e Boca",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Pele",
       "Purificação",
+      "Q&A",
       "Saúde da Criança",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 52,
-    "type": "Caso Clínico"
+    "order": 52
   },
   {
     "id": "fundamentos_52",
@@ -429,17 +459,19 @@
     "content": "(Pergunta) Tenho hiperacidez gástrica desde os dezessete anos. Na primavera de 1948, comecei a sentir dores no estômago que aumentaram gradativamente. Ingressei na fé em setembro do mesmo ano, mas os sintomas não cederam como esperado. Recentemente, recebo Johrei todos os dias, mas a dor persiste. Segundo o diagnóstico médico, tenho úlcera duodenal, atonia gástrica e gastroptose. Sinto dores quase o dia todo no estômago e em toda a região correspondente nas costas.\n\n(Orientação) Quem está ministrando o Johrei? Um caso assim não deveria demorar tanto para curar, pois a dor é o sintoma mais fácil de eliminar. A dor é a purificação ocorrendo. Dor de estômago não é algo grave. Provavelmente estão colocando força física no Johrei. Além disso, a causa desse caso está inteiramente nas costas. Não há necessidade de focar na frente. Embora pareça doer na frente, são as toxinas dissolvidas nas costas que migram para o estômago. (Interlocutor: \"Tenho algo semelhante a uma pedra na barriga.\") Se você acha que essa \"pedra\" é a causa da doença, está enganado. Há dor um pouco acima dessa área, nas costas; ministrando Johrei ali, curará rapidamente. Mesmo em casos de cãibra estomacal, focando nas costas e não na frente, a cura é imediata. Tudo isso é toxina medicinal.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Dentes e Boca",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 56,
-    "type": "Caso Clínico"
+    "order": 56
   },
   {
     "id": "fundamentos_54",
@@ -449,8 +481,9 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
+      "Caso Clínico",
       "Dentes e Boca",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
@@ -458,13 +491,15 @@
       "Pele",
       "Pontos Vitais",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Respiratório",
+      "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos",
       "Tuberculose"
     ],
-    "order": 59,
-    "type": "Caso Clínico"
+    "order": 59
   },
   {
     "id": "fundamentos_55",
@@ -472,16 +507,18 @@
     "content": "(Pergunta) Um homem de quarenta e oito anos, membro desde abril de 1950. Em abril de 1951 teve uma purificação no estômago. Melhorou em 26 de dezembro e voltou ao trabalho, mas em 4 de janeiro teve uma recaída, perdendo o apetite e enfraquecendo progressivamente. Todas as noites, entre uma e duas da manhã, sente dores gástricas agudas, por vezes insuportáveis. Haveria alguma causa espiritual para essa dor com horário marcado? Ele sempre foi saudável, mas em 1943 foi internado com úlcera; disseram que precisaria operar, mas ele saiu do hospital e curou-se com jejum.\n\n(Orientação) Quanto remédio essa pessoa tomou? (Interlocutor: \"Parece que quase não tomou.\") É estranho ter úlcera gástrica sem ter tomado remédio. A úlcera gástrica é fabricada pelos remédios. Causas espirituais existem, mas é raro causarem dor de estômago. Ele não tomou remédios na infância? (Interlocutor: \"Não sei os detalhes...\") Certamente tomou. Pergunte a ele. Estão ministrando Johrei nas costas? Deveria curar facilmente. Há nódulos nas costas. (Interlocutor: \"Ele é membro de Nagasaki e, como não há professor responsável lá, são os membros que ministram.\") Devem estar colocando força no Johrei. Se relaxarem a força, curará sem problemas. Isso é, com certeza, toxina medicinal. Deve ter tomado na infância, talvez fitoterápicos.",
     "source": "Curso VIII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Purificação",
+      "Q&A",
       "Saúde da Criança",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 60,
-    "type": "Caso Clínico"
+    "order": 60
   },
   {
     "id": "fundamentos_60",
@@ -489,17 +526,19 @@
     "content": "(Pergunta) Um homem de trinta e quatro anos. Há sete anos, sentia dores leves perto do estômago ao caminhar e urinava pequenas quantidades mais de dez vezes ao dia. O fígado começou a doer e teve constipação. O médico diagnosticou disenteria amebiana no fígado e aplicou muitas injeções, sem efeito. Ingressou na fé em novembro de 1947, mas atualmente sente dores nas escápulas esquerda e direita, nos lados da coluna e no fígado. Ao receber Johrei, o abdômen todo se expande e ele sente náuseas, provocando o vômito artificialmente. Pergunto a causa dessa rápida expansão abdominal.\n\n(Orientação) Bem, as toxinas estão nas costas e, ao caminhar, migram para o estômago. Trata-se de remédios ingeridos no passado. Urinar mais de dez vezes ao dia é um pouco frequente, mas não é grave. (Interlocutor: \"Sai de pouco em pouco.\") Ele sente vontade de urinar. (Interlocutor: \"Sim, tem vontade, mas sai pouco.\") Isso significa que há toxinas entre a bexiga e a uretra. Mas isso não é nada. A dor no fígado também é por causa dessas toxinas. E a constipação... como é a alimentação dele? (Interlocutor: \"É pouca.\") Ah, por comer pouco é que tem constipação. Mas a constipação não tem problema nenhum. Pelo contrário, dá menos trabalho, é até bom. (Risos) A medicina diz que é ruim, mas não é. Eu mesmo, achando trabalhoso ir ao banheiro todo dia, tentei ficar constipado, mas não consegui. (Risos) Dizer que é disenteria amebiana é um absurdo. Essa pessoa sofrerá um pouco por algum tempo. Não sei a natureza ou a concentração dos remédios, mas haverá purificação. A dor intensa é a purificação. E mesmo que as toxinas dissolvam, se forem densas, ficam acumuladas por um tempo, inchando a barriga.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Ouvidos e Audição",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 70,
-    "type": "Caso Clínico"
+    "order": 70
   },
   {
     "id": "fundamentos_63",
@@ -509,23 +548,25 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Pele",
       "Pontos Vitais",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Sistema Digestivo",
+      "Toxinas e Medicamentos"
     ],
-    "order": 75,
-    "type": "Caso Clínico"
+    "order": 75
   },
   {
     "id": "fundamentos_64",
@@ -536,15 +577,16 @@
       "Agricultura e Alimentação",
       "Coração e Circulação",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 76,
-    "type": "Q&A"
+    "order": 76
   },
   {
     "id": "fundamentos_65",
@@ -552,15 +594,17 @@
     "content": "(Pergunta) Um homem de quarenta e cinco anos. Trabalha na mina de carvão Sakito, em Nagasaki. Desde que entrou na fé em novembro de 1951, tem recebido proteção; embora sofra com dores abdominais à noite, trabalha todos os dias. Recentemente a purificação intensificou-se. Enquanto recebe Johrei ou ministra em outros, sente-se aliviado, por isso dedica-se ao Johrei diariamente. Já fez quatro cirurgias e vários tratamentos, creio que seja ação de purificação de remédios estomacais e desinfetantes. Peço instruções sobre método e locais de Johrei.\n\n(Orientação) Sem dúvida é toxina medicinal. O ponto vital é principalmente a região dos rins; depois, o local da dor abdominal, ministrando com a força o mais relaxada possível.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pontos Vitais",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
-    "order": 78,
-    "type": "Caso Clínico"
+    "order": 78
   },
   {
     "id": "fundamentos_69",
@@ -585,7 +629,7 @@
       "Arte e Beleza",
       "Cabeça e Pescoço",
       "Câncer",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
@@ -593,7 +637,9 @@
       "Pele",
       "Pontos Vitais",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -603,8 +649,7 @@
       "Fígado",
       "Costas"
     ],
-    "order": 57,
-    "type": "Q&A"
+    "order": 57
   },
   {
     "id": "fundamentos_56",
@@ -613,7 +658,8 @@
     "source": "Curso VIII",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
@@ -623,10 +669,13 @@
       "Ombros",
       "Pele",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Respiratório",
+      "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos",
       "Tuberculose"
     ],
@@ -636,8 +685,7 @@
       "Abdômen",
       "Rins"
     ],
-    "order": 64,
-    "type": "Caso Clínico"
+    "order": 64
   },
   {
     "id": "fundamentos_58",
@@ -646,7 +694,8 @@
     "source": "Curso VIII",
     "tags": [
       "Agricultura e Alimentação",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
@@ -654,8 +703,11 @@
       "Pele",
       "Pontos Vitais",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -663,8 +715,7 @@
       "Rins",
       "Baixo ventre"
     ],
-    "order": 66,
-    "type": "Caso Clínico"
+    "order": 66
   },
   {
     "id": "fundamentos_62",
@@ -674,15 +725,19 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Ombros",
       "Pele",
       "Purificação",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -693,8 +748,7 @@
       "Fígado",
       "Rins"
     ],
-    "order": 74,
-    "type": "Caso Clínico"
+    "order": 74
   },
   {
     "id": "fundamentos_59",
@@ -702,10 +756,13 @@
     "content": "(Pergunta) Uma mulher de trinta e nove anos. Desde a primavera de 1951 sentia-se indisposta, com o corpo pesado, sem apetite e debilitada. Por volta de maio, o baixo ventre endureceu e distendeu-se; após um mês, amoleceu um pouco, mas então o abdômen todo inchou, apresentando sintomas de peritonite. No final de agosto diminuiu, mas o apetite não retornou e ela sentia dores ocasionais. Em setembro, teve febre alta repentina, sentiu o corpo pesado, perdeu o apetite e ficou pele e osso. Recentemente sente fome, mas ao tentar comer, sente-se cheia e a comida não desce. Se forçar, sente dores abdominais. O Johrei alivia a dor, mas se parar, a dor retorna por três ou quatro horas. Há três nódulos longos, grandes e pequenos, no abdômen, que se movem e desaparecem. Desde jovem, cerca de cinco vértebras atrás do estômago saltaram para fora; não sente dor ali, mas às vezes sente um cansaço dilacerante e um sofrimento indescritível. Ministramos Johrei principalmente nas costas do estômago, na coluna saliente, no rim esquerdo, pescoço e parótidas. A família toda é membro e possui o Altar Divino e a Imagem de Kannon. Peço orientação sobre os pontos de Johrei, os nódulos e a incapacidade de comer apesar da fome.\n\n(Orientação) Existem nódulos no abdômen. Se eles se movem, pode ser uma cobra espiritual, agindo com um propósito maligno. Contudo, ela já deveria estar conseguindo comer. Se melhorou até esse ponto, é porque há excesso de toxinas naquela região. Ou seja, por haver toxinas, torna-se fácil o encosto de espíritos malignos. São ambas as coisas. O foco nas costas e no fígado/rins é importante, mas deve-se tratar também pela frente, no abdômen. Provavelmente estão usando força física. Se relaxarem a força, a dissolução será muito fácil. Experimentem fazer sem força. Falta apenas um pouco para a cura. Sobre a coluna saliente, não tem muita relação; pode ser tratada depois que o resto sarar. Quanto ao cansaço dilacerante, é a purificação ocorrendo; é bom ministrar Johrei nesses momentos, pois a cura será mais rápida. E também a cabeça. A cabeça pode influenciar o apetite. Verifiquem a região occipital (atrás da cabeça); se houver nódulos ou calor, dissolvam-nos. Assim, faltará pouco para a melhora.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Mundo Espiritual",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
@@ -719,8 +776,7 @@
       "Fígado"
     ],
     "system": "Rins",
-    "order": 67,
-    "type": "Caso Clínico"
+    "order": 67
   },
   {
     "id": "tecnicas_37",
@@ -729,14 +785,16 @@
     "source": "Curso VIII",
     "tags": [
       "Agricultura e Alimentação",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Mundo Espiritual",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 54,
-    "type": "Caso Clínico"
+    "order": 54
   },
   {
     "id": "tecnicas_38",
@@ -745,12 +803,13 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 55,
-    "type": "Q&A"
+    "order": 55
   },
   {
     "id": "tecnicas_41",
@@ -758,16 +817,19 @@
     "content": "(Pergunta) Um menino de quatro anos e sete meses. Desde o final de 1952 o abdômen começou a distender-se gradualmente. Percebemos em 11 de janeiro e ministramos Johrei, mas o inchaço aumentou, tornou-se enorme e as veias azuis ficaram visíveis. No final de fevereiro o quadro era preocupante, mas, pela proteção divina, a urina aumentou aos poucos e ele recuperou a energia. Depois disso, o quadro oscilou e o inchaço abdominal permanece inalterado. Urina a cada duas horas, cerca de um copo e meio a dois (tamanho de dose de uísque), e tem suores noturnos profusos. O apetite é razoável. Eu ministro Johrei a cada dez dias, e membros antigos ou os pais ministram várias vezes ao dia. Houve uma época em que reduzimos para uma vez ao dia e a urina diminuiu, então voltamos a fazer várias vezes. Recentemente, o enfraquecimento é visível; há dois ou três dias ele diz \"não quero morrer\", \"vou morrer, vou morrer\", com lágrimas nos olhos e ar triste, ou então diz isso rindo, zombando da mãe, com uma atitude que não parece de criança. Peço orientação sobre os locais e a frequência do Johrei.\n\n(Orientação) Os pontos vitais são os rins e a bexiga. Deveria curar sem problemas, mas quem ministra deve estar errando o local. Deve-se ministrar muitas vezes no lado direito e, durante o Johrei, relaxar a força o máximo possível.",
     "source": "Curso VIII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
-      "Saúde da Criança"
+      "Saúde da Criança",
+      "Sistema Digestivo"
     ],
-    "order": 68,
-    "type": "Caso Clínico"
+    "order": 68
   },
   {
     "id": "casos_clinicos_12",
@@ -777,14 +839,16 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Saúde da Criança"
+      "Q&A",
+      "Saúde da Criança",
+      "Sistema Digestivo"
     ],
-    "order": 51,
-    "type": "Caso Clínico"
+    "order": 51
   },
   {
     "id": "tecnicas_47",
@@ -795,11 +859,11 @@
       "Agricultura e Alimentação",
       "Febre e Gripe",
       "Gripe e Resfriado",
+      "Q&A",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 85,
-    "type": "Q&A"
+    "order": 85
   },
   {
     "id": "pontos_focais_17",
@@ -809,10 +873,10 @@
     "tags": [
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Sistema Digestivo"
     ],
-    "order": 96,
-    "type": "Q&A"
+    "order": 96
   },
   {
     "id": "tecnicas_51",
@@ -820,13 +884,13 @@
     "content": "(Ensinamento) No tifo intestinal, a mucosa do intestino amolece e surgem vermes (bactérias). Eles abrem buracos. Se entrar comida sólida nesses buracos, dá febre. Por isso, a medicina e nós usamos dieta líquida. Mas com Johrei cura logo. Pacientes de tifo internados não têm essa sorte; como os buracos não fecham fácil, ficam na dieta líquida. Devem ajustar a alimentação conforme os sintomas.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Sistema Digestivo"
     ],
-    "order": 94,
-    "type": "Caso Clínico"
+    "order": 94
   },
   {
     "id": "tecnicas_52",
@@ -837,10 +901,10 @@
       "Arte e Beleza",
       "Coração e Circulação",
       "Febre e Gripe",
-      "Gripe e Resfriado"
+      "Gripe e Resfriado",
+      "Q&A"
     ],
-    "order": 95,
-    "type": "Q&A"
+    "order": 95
   },
   {
     "id": "pontos_focais_15",
@@ -848,13 +912,14 @@
     "content": "(Pergunta) Uma senhora veio com nevralgia na nádega esquerda. A nevralgia curou, mas a constipação antiga não mudou; pelo contrário, piorou recentemente. Ela sente dores agudas ocasionais na região púbica e a urina vaza. Fez uma cirurgia abdominal no passado, recebendo anestesia geral em grande quantidade. Qual a causa da constipação?\n\n(Orientação) São as toxinas medicinais daquela época. Vai demorar um pouco. As toxinas da cirurgia estão descendo. Ministre Johrei profundamente para alcançar o fundo. Há várias causas para constipação: pessoas que comem pouco, que mastigam muito bem, ou estreitamento do reto — neste último caso, há um nódulo de toxinas que precisa ser dissolvido. A pouca ingestão de água também causa constipação.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
-    "order": 72,
-    "type": "Caso Clínico"
+    "order": 72
   },
   {
     "id": "tecnicas_39",
@@ -865,8 +930,9 @@
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
       "Coração e Circulação",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "order": 61
@@ -889,11 +955,11 @@
     "source": "Curso VIII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
       "Toxinas e Medicamentos"
     ],
-    "order": 90,
-    "type": "Caso Clínico"
+    "order": 90
   },
   {
     "id": "tecnicas_35",
@@ -901,14 +967,16 @@
     "content": "(Pergunta) Um rapaz de dezessete anos adoeceu em novembro retrasado. Recebeu tratamento médico e, a partir de 25 de julho do ano passado, começou a receber Johrei. No início, estava extremamente magro, sem apetite, com rigidez e tensão muscular no abdômen, chegando a vomitar várias vezes ao dia um líquido viscoso, pálido e ácido. Com o Johrei, houve uma melhora temporária no apetite e no humor. Sua mãe ingressou na fé em setembro e passou a ministrar-lhe Johrei três vezes ao dia. Entretanto, desde o final de outubro, embora ele sinta fome, ao começar a comer sente o estômago distendido e não consegue prosseguir. Se forçar a alimentação, acaba vomitando, sentindo o corpo pesado e sofrendo um enfraquecimento extremo. Além disso, costuma ficar mais de dez dias sem evacuar.\n\n(Orientação) Este caso é semelhante ao anterior: trata-se, inegavelmente, de toxinas medicinais alojadas nas costas. O líquido viscoso, pálido e ácido que ele expele nada mais é do que a própria toxina sendo eliminada.",
     "source": "Curso VIII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 49,
-    "type": "Caso Clínico"
+    "order": 49
   },
   {
     "id": "tecnicas_36",
@@ -917,18 +985,20 @@
     "source": "Curso VIII",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Ouvidos e Audição",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 53,
-    "type": "Caso Clínico"
+    "order": 53
   },
   {
     "id": "tecnicas_42",
@@ -936,16 +1006,18 @@
     "content": "(Pergunta) Um rapaz de vinte e seis anos. Desde janeiro de 1951 passou por purificações de toxinas medicinais como tosse, catarro, dor abdominal, diarreia e hemorroidas. Graças a Deus, a recuperação vinha sendo satisfatória, mas, a partir do final de julho, começou a sentir dormência em ambas as pernas. No final de agosto, o quadro agravou-se e, atualmente, a paralisia é tal que ele mal sente se beliscarem a área coberta por um sapato, dizendo ser perigoso ir ao banheiro. Além das pernas, o abdômen está duro e, após comer, sente-se distendido e aflito. O enfraquecimento é considerável. Tem febre baixa e pulso entre oitenta e noventa. A dormência nas pernas deve-se à descida de toxinas pesadas para essa região ou há outro significado? Ele tomou quarenta injeções de cálcio, trinta de Salbro e remédios orais por cerca de trinta dias. O pai ministra o Johrei.\n\n(Orientação) São os remédios descendo. Portanto, não é nada grave. Se tiverem paciência, curará. A distensão abdominal ocorre porque os remédios estão se acumulando no abdômen. O estômago incha e a barriga estufa. A fraqueza deve-se à pouca ingestão de comida. A febre não é problema. Apenas ocorre que os remédios descem e acumulam-se embaixo; tira-se e acumula de novo, por isso é preciso perseverança. Basta que a quantidade retirada seja maior que a acumulada. Ministrem várias vezes ao dia. Assim curará rápido. Remédios são um problema inevitável. Num caso desses, se for ao médico, será diagnosticado erroneamente como beribéri. Se tomar injeções de vitamina B, aí sim a vida estará em risco. Seria como um suicida pedindo auxílio para morrer. E custa caro.",
     "source": "Curso VIII",
     "tags": [
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Respiratório",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 69,
-    "type": "Caso Clínico"
+    "order": 69
   },
   {
     "id": "tecnicas_44",
@@ -954,16 +1026,19 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Câncer",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 81,
-    "type": "Caso Clínico"
+    "order": 81
   },
   {
     "id": "tecnicas_45",
@@ -972,16 +1047,18 @@
     "source": "Curso VIII",
     "tags": [
       "Agricultura e Alimentação",
+      "Caso Clínico",
       "Câncer",
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 83,
-    "type": "Caso Clínico"
+    "order": 83
   },
   {
     "id": "tecnicas_46",
@@ -990,17 +1067,20 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
       "Pontos Vitais",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 84,
-    "type": "Caso Clínico"
+    "order": 84
   },
   {
     "id": "tecnicas_50",
@@ -1010,16 +1090,17 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 92,
-    "type": "Q&A"
+    "order": 92
   },
   {
     "id": "pontos_focais_16",
@@ -1043,15 +1124,15 @@
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Diabetes"
+      "Q&A",
+      "Sistema Digestivo"
     ],
-    "order": 91,
-    "type": "Q&A"
+    "order": 91
   },
   {
     "id": "casos_clinicos_13",
@@ -1060,15 +1141,16 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
-    "order": 58,
-    "type": "Q&A"
+    "order": 58
   },
   {
     "id": "pontos_focais_14",
@@ -1078,15 +1160,17 @@
     "tags": [
       "Agricultura e Alimentação",
       "Arte e Beleza",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Dores e Rigidez",
+      "Q&A",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Estômago"
     ],
-    "order": 48,
-    "type": "Caso Clínico"
+    "order": 48
   },
   {
     "id": "tecnicas_40",
@@ -1095,11 +1179,14 @@
     "source": "Curso VIII",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Câncer",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Gripe e Resfriado",
+      "Q&A",
       "Rins e Sistema Urinário",
+      "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -1111,8 +1198,7 @@
       "Rins"
     ],
     "system": "Estômago",
-    "order": 62,
-    "type": "Caso Clínico"
+    "order": 62
   },
   {
     "id": "tecnicas_43",
@@ -1120,10 +1206,12 @@
     "content": "(Pergunta) Um rapaz de dezoito anos. Há três anos, sempre evacua muco e sangue antes das fezes. Tomou vários remédios e injeções. Há um ano foi diagnosticado com úlceras em todo o reto por disenteria amebiana. Em fevereiro de 1952, prestes a ser operado, começou a receber Johrei. Por mais de dez dias o abdômen não acumulou gases, o sangue e o muco diminuíram, o apetite aumentou e ele recuperou o ânimo. Porém, depois o sangue e o muco aumentaram e o estado voltou a ser como antes do Johrei, persistindo há mais de vinte dias. Toma Estreptomicina, Cloromicetina, hemostáticos e muitas injeções e remédios. Sua cor é péssima, muito pálida. Peço orientação sobre os pontos vitais, a disenteria amebiana e a causa das úlceras.\n\n(Orientação) Muco e sangue são ótimos sinais. Se tivessem deixado essa pessoa em paz, alegrando-se com os sintomas, ela já teria sarado há muito tempo. O erro foi achar que era ruim e procurar médico. O médico também achou ruim e deu remédios e injeções. Isso é que é ruim. Úlcera... isso é mentira. Não existe tal coisa. Os médicos não entendem a doença. Como não entendem, mas admitir isso afetaria sua credibilidade, fingem que entendem. Isso é mau. Claro, se disserem que não sabem, afeta os negócios, então mentem por necessidade. É uma mentira comercial. Disenteria amebiana, se deixada quieta, cura sozinha. Úlceras são criadas pelos remédios; se não tomar remédio, cura. Também basta deixar quieto. O ponto vital do Johrei: a causa está aqui (região occipital). Há um nódulo aqui; basta ministrar Johrei neste local. Isso também cura se deixar quieto. Isso nem entra na categoria de doença. Vão ao médico, aumentam o problema e ganham uma doença nova; é uma história terrível. Estreptomicina, Cloromicetina, hemostáticos... fazendo isso, essas toxinas aparecerão em algum lugar futuramente; é bom estar preparado. Pode vir como febre baixa, diarreia, vômito... quando vier, devem ficar felizes.",
     "source": "Curso VIII",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Gripe e Resfriado",
       "Outros",
+      "Q&A",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
@@ -1132,8 +1220,7 @@
       "Abdômen"
     ],
     "system": "Outros",
-    "order": 77,
-    "type": "Caso Clínico"
+    "order": 77
   },
   {
     "id": "tecnicas_49",
@@ -1174,9 +1261,9 @@
     "source": "Curso X",
     "tags": [
       "Dentes e Boca",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_116",
@@ -1184,11 +1271,12 @@
     "content": "(Pergunta) A desafinação ou falta de tom em crianças é espiritual?\n\n(Orientação) É uma questão de calibre. Quantos anos tem? \"Quinta ou sexta série.\" Adultos também têm isso. Trata-se da válvula que emite a voz — a garganta. Ela pode ser mais grossa ou fina que o normal, haver um desencontro. Ou então, há uma falha na transmissão nervosa, impedindo que a vontade se concretize. O Johrei cura isso.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Criança"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_118",
@@ -1197,10 +1285,10 @@
     "source": "Curso X",
     "tags": [
       "Dentes e Boca",
-      "Ministração de Johrei"
+      "Ministração de Johrei",
+      "Q&A"
     ],
-    "order": 236,
-    "type": "Q&A"
+    "order": 236
   },
   {
     "id": "fundamentos_119",
@@ -1209,11 +1297,11 @@
     "source": "Curso X",
     "tags": [
       "Dentes e Boca",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança"
     ],
-    "order": 133,
-    "type": "Q&A"
+    "order": 133
   },
   {
     "id": "fundamentos_106",
@@ -1223,11 +1311,11 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_97",
@@ -1236,17 +1324,18 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Febre e Gripe",
       "Gravidez e Saúde da Mulher",
       "Gripe e Resfriado",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Pele",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_113",
@@ -1254,10 +1343,11 @@
     "content": "(Pergunta) Mulher de 31 anos. \"Curou\" sinusite há 4 anos, mas o nariz entupiu e perdeu o olfato.\n\n(Orientação) Cura-se. Não curou antes, apenas solidificou. A sinusite é pus do bulbo que se acumula ao lado do nariz para sair. Tratando o bulbo, o nariz desentope e o olfato volta.",
     "source": "Curso X",
     "tags": [
-      "Pele"
+      "Caso Clínico",
+      "Pele",
+      "Q&A"
     ],
-    "order": 215,
-    "type": "Caso Clínico"
+    "order": 215
   },
   {
     "id": "fundamentos_111",
@@ -1266,13 +1356,14 @@
     "source": "Curso X",
     "tags": [
       "Agricultura e Alimentação",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Ministração de Johrei",
       "Pele",
-      "Purificação"
-    ],
-    "type": "Caso Clínico"
+      "Purificação",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_112",
@@ -1280,12 +1371,13 @@
     "content": "(Pergunta) Homem de 52 anos sem olfato de nascença.\n\n(Orientação) Pode ser espiritual (encosto de ave, demora a curar - Johrei no nariz e testa) ou físico (nódulos na nuca/bulbo ou sinusite nas laterais do nariz).",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Mundo Espiritual"
+      "Mundo Espiritual",
+      "Q&A"
     ],
-    "order": 214,
-    "type": "Caso Clínico"
+    "order": 214
   },
   {
     "id": "fundamentos_104",
@@ -1294,13 +1386,14 @@
     "source": "Curso X",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Dores e Rigidez",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 186,
-    "type": "Caso Clínico"
+    "order": 186
   },
   {
     "id": "fundamentos_105",
@@ -1309,10 +1402,11 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_96",
@@ -1320,19 +1414,20 @@
     "content": "(Pergunta) Minha filha mais velha (36 anos) teve problemas de ouvido aos dez anos e, aos 21, sofreu de otite média, passando por uma incisão. Depois disso, sua audição diminuiu gradativamente. Casou-se aos 23 anos e logo teve um parto de natimorto. Aos 30 anos, surgiu uma \"nuvem\" (opacidade) no olho esquerdo; consultou vários médicos, mas não houve melhora. Por fim, o olho direito também perdeu a visão da mesma forma, e ela vive dias de angústia. Desde setembro, sua visão tem diminuído ainda mais. Peço vossa orientação.\n\n(Orientação) A \"nuvem\" no olho esquerdo nada mais é do que a formação de um furúnculo no olho — uma purificação. Ao tratá-lo medicamente, a eliminação das toxinas foi interrompida, e elas tentaram sair pelo outro olho, resultando na cegueira bilateral. O fato de ter perdido a visão é uma purificação do yakudoku (toxina medicamentosa), indicando que a toxina original (da época do início da doença) foi removida.\n\n(Pergunta) Uma senhora não membro teve uma purificação nos olhos (nuvem). Haviam surgido cerca de vinte ou trinta manchas vermelhas em suas costas. Com uma sessão de Johrei, as manchas desapareceram, mas mais da metade da íris ficou branca e ela perdeu a visão gradativamente. Peço orientação.\n\n(Orientação) Na maioria das vezes, isso não é espiritual. O olho ficou branco porque o medicamento se espalhou; ao atingir certa extensão, será expelido posteriormente como remela. Doenças oculares surgem como purificação de máculas acumuladas por atos como \"enganar os olhos\" de outros (iludir ou trapacear).",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Ouvidos e Audição",
       "Pele",
       "Purificação",
+      "Q&A",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
     ],
-    "order": 168,
-    "type": "Caso Clínico"
+    "order": 168
   },
   {
     "id": "fundamentos_100",
@@ -1341,14 +1436,15 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Diagnóstico",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
-      "Purificação"
-    ],
-    "type": "Caso Clínico"
+      "Purificação",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_101",
@@ -1357,19 +1453,19 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Rins e Sistema Urinário",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
+      "Toxinas e Medicamentos"
     ],
-    "order": 178,
-    "type": "Caso Clínico"
+    "order": 178
   },
   {
     "id": "fundamentos_102",
@@ -1383,15 +1479,15 @@
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
     ],
-    "order": 179,
-    "type": "Q&A"
+    "order": 179
   },
   {
     "id": "fundamentos_107",
@@ -1400,13 +1496,14 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_108",
@@ -1421,14 +1518,12 @@
       "Gripe e Resfriado",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
       "Purificação",
-      "Toxinas e Medicamentos",
-      "Neuralgia",
-      "Anemia"
-    ],
-    "type": "Q&A"
+      "Q&A",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_109",
@@ -1436,16 +1531,18 @@
     "content": "(Pergunta) Menina de 8 anos. Mãe quase abortou por saúde fraca, mas o Johrei salvou. Após vacina antivariólica (1,5 ano), teve otorreia (secreção) contínua. Surda do ouvido esquerdo, atraso mental de 2 anos, mas ótima em esportes.\n\n(Orientação) Sair pus é excelente. Quanto mais anos sair, melhor; é muita toxina. Além dos remédios, a vacina influiu. A surdez vem de pus solidificado. Trate o lado surdo, focando nos gânglios linfáticos, ombros e rins. A origem pode estar nos rins. Não tema a saída de pus; alegre-se.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ombros",
       "Ouvidos e Audição",
       "Pele",
+      "Q&A",
+      "Renal e Urinário",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_114",
@@ -1456,6 +1553,7 @@
       "Agricultura e Alimentação",
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Dentes e Boca",
@@ -1464,9 +1562,9 @@
       "Mundo Espiritual",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_115",
@@ -1482,9 +1580,9 @@
       "Ouvidos e Audição",
       "Pele",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_117",
@@ -1492,19 +1590,20 @@
     "content": "(Pergunta) Após pleurisia e peritonite tratadas por médicos, surgiu um nódulo na mandíbula inferior por volta de 1943. O médico diagnosticou linfadenite purulenta e fez uma incisão, mas saiu pouco sangue e pus. A mandíbula inflamou, surgiram nódulos atrás da orelha que estouravam e formavam crostas dolorosas. Deixei a medicina por dois anos. Então, o olho esquerdo inflamou, abrindo um orifício no canal lacrimal. O médico diagnosticou dacriocistite tuberculosa e linfadenite. Surgiu um inchaço entre os olhos; operaram e removeram o saco lacrimal, o que resultou em periostite e raspagem do osso. Após mais tratamentos (lavagem, pomadas, banhos de luz, Raio-X), tudo piorou. Abandonei os médicos. Hoje tenho crostas no nariz, bochecha, atrás da orelha, e a pálpebra inferior está repuxada. Desde fevereiro de 1949, com uma purificação em Atami, perdi a visão do olho direito, que dói com o vento.\n\n(Orientação) Se tivesse deixado ao encargo da natureza, teria sarado apenas com o nódulo na mandíbula. Como cortaram antes do pus se reunir totalmente, o veneno tentou sair por toda a mandíbula. Foi impedido novamente e tentou sair pela parótida e ouvidos. Depois foi para os olhos. Ao cortarem o saco lacrimal, o veneno perdeu seu ponto de saída e interiorizou-se, atingindo o periósteo. O Raio-X serviu apenas para solidificar. É como se tivessem fabricado a doença propositalmente. Considere que levará cerca de dez anos para curar.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Ouvidos e Audição",
       "Pele",
       "Purificação",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos",
       "Tuberculose"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_103",
@@ -1514,16 +1613,17 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Pontos Vitais",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Occipital"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_98",
@@ -1531,8 +1631,10 @@
     "content": "(Pergunta) Membro de 21 anos. Desde a infância tem problemas de visão, diagnosticada como \"olhos pobres\" (visão fraca). Tratou por 18 anos sem cura. Tem miopia, nuvens na córnea e visão dupla ocasional. Às vezes surgem manchas brancas ou a visão escurece totalmente, acompanhada de muita remela e dor insuportável. Recebe Johrei há um ano e meio, mas o quadro persiste.\n\n(Orientação) Nesse caso, as toxinas do cérebro, pescoço e ombros estão se concentrando nos olhos devido à ação de purificação. Ministrando Johrei primeiramente no cérebro, a cura é certa. A remela e a dor são sinais do processo de cura. Contudo, como foi inserida muita toxina medicamentosa, levará bastante tempo. A remela, as lágrimas e a dor são todas eliminações de yakudoku (toxina medicamentosa).",
     "source": "Curso X",
     "tags": [
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
@@ -1543,8 +1645,7 @@
       "Cérebro",
       "Olhos"
     ],
-    "system": "Olhos",
-    "type": "Caso Clínico"
+    "system": "Olhos"
   },
   {
     "id": "fundamentos_99",
@@ -1553,8 +1654,10 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Sistema Digestivo",
       "Toxinas e Medicamentos"
     ],
@@ -1565,8 +1668,7 @@
       "Occipital",
       "Olhos"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "tecnicas_78",
@@ -1574,11 +1676,12 @@
     "content": "(Pergunta) Uma criança de quatro anos. Usam anestesia...\n\n(Orientação) Não tem problema. É apenas no local. A injeção no dente sai logo, não precisa se preocupar. A anestesia não é prejudicial como os outros remédios, pois seu efeito é temporário.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Dentes e Boca",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "medicamentos_1",
@@ -1587,9 +1690,9 @@
     "source": "Curso X",
     "tags": [
       "Dores e Rigidez",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_67",
@@ -1597,10 +1700,10 @@
     "content": "A chamada \"injeção no globo ocular\" é algo nefasto. Injetar diretamente no olho é extremamente prejudicial. Com o tempo, essa substância será expelida na forma de remela, embora isso possa levar alguns anos para ocorrer.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Olhos e Visão",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_74",
@@ -1609,12 +1712,13 @@
     "source": "Curso X",
     "tags": [
       "Arte e Beleza",
+      "Caso Clínico",
       "Câncer",
       "Dores e Rigidez",
       "Ministração de Johrei",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_76",
@@ -1625,7 +1729,7 @@
       "Dentes e Boca",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
       "Sistema Digestivo"
     ]
@@ -1663,12 +1767,12 @@
     "source": "Curso X",
     "tags": [
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_72",
@@ -1687,12 +1791,13 @@
     "content": "(Pergunta) Mulher de 29 anos. Cega há 8 anos após injeção para febre. Vê vultos de rostos negros, depois brancos, e fios azuis.\n\n(Orientação) É toxina medicamentosa. Cura. Toxina no olho solidifica muito e demora. As visões ocorrem porque ela está começando a enxergar novamente (recuperação da função nervosa).",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_70",
@@ -1700,16 +1805,17 @@
     "content": "(Pergunta) Criança de 3 anos. Mãe teve beribéri na amamentação; ambos tomaram injeções de vitamina. Criança teve otite. Surdez percebida tarde. Diagnóstico: casamento consanguíneo. Fala pouco (\"uma-uma\"). Nódulos na parótida/mandíbula.\n\n(Orientação) Há solidificações. Doença de ouvido geralmente vem do bulbo. As toxinas dos pais e as vitaminas solidificaram na garganta. Vai curar. Se fala \"uma-uma\", está bem. Trate o bulbo e os gânglios linfáticos sem usar força alguma.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Diagnóstico",
       "Dores e Rigidez",
       "Gravidez e Saúde da Mulher",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_71",
@@ -1717,11 +1823,12 @@
     "content": "(Pergunta) Operou sinusite há 35 anos. Ronca muito alto e incomoda os outros.\n\n(Orientação) Ainda há solidificações no fundo do nariz, entre o nariz e a garganta (adenoide). O inchaço faz o ar vazar pela boca, vibrando as cordas vocais. O ronco vem dessa área entre a garganta e o nariz. Ministrando Johrei ali, o resto da sinusite sairá e o ronco passará.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Dentes e Boca",
       "Ministração de Johrei",
-      "Pele"
-    ],
-    "type": "Caso Clínico"
+      "Pele",
+      "Q&A"
+    ]
   },
   {
     "id": "tecnicas_73",
@@ -1730,13 +1837,14 @@
     "source": "Curso X",
     "tags": [
       "Agricultura e Alimentação",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Pele",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_77",
@@ -1748,9 +1856,9 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_80",
@@ -1758,6 +1866,7 @@
     "content": "(Pergunta) Homem de 26 anos. Em setembro de 1950, inchou perto do molar esquerdo. O médico disse ser o dente do siso nascendo e o extraiu. O inchaço aumentou com dor intensa. Tomou dezenas de injeções (vitaminas, etc.). Um especialista diagnosticou sarcoma e internou-o para tratamento com rádio, que causou dores insuportáveis. Saiu do hospital e melhorou com o Johrei em março de 1951. Porém, em junho, voltou a supurar; a boca inchou monstruosamente, o rosto deformou-se em dois lugares como uma cabaça, e a boca não abre, permitindo apenas líquidos. Com Johrei, sai sangue e pus como uma torrente. Desde outubro, o lado esquerdo do corpo, especialmente a perna, dói e incha.\n\n(Orientação) Foi por pouco. Inicialmente, se tivesse deixado o inchaço perto do molar em paz, teria sarado. \"Nascer do siso\" foi um erro de diagnóstico; siso não dói tanto. A dor intensa tinha outra causa: toxinas tentando sair pelo dente. O inchaço aumentou pelo erro médico. Vitaminas... isso é ruim. Tratamento com rádio e dor insuportável... isso é fraude. Se diminuísse a dor, vá lá, mas aumentou. Em suma, são as toxinas originais somadas às toxinas medicamentosas saindo como pus e sangue. Isso é excelente. \"Sai constantemente\"... ótimo. Saindo tudo, cura. A dor na perna ocorre porque as toxinas descem até lá. Ministrando Johrei, curará gradativamente. Parece grave, mas é uma doença relativamente fácil. Só vai demorar porque há muita \"matéria-prima\" para sair. Ministre no local afetado e na perna.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Câncer",
       "Dentes e Boca",
@@ -1765,10 +1874,10 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Pele",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "doencas_9",
@@ -1776,15 +1885,16 @@
     "content": "(Pergunta) Jovem de 20 anos. Picada por uma mutuca (tavão) perto do olho. Ficou cega por horas, melhorou sozinha, mas restaram manchas pretas e visão distorcida. Usou colírio por alguns dias. Diagnosticada com Coroidite Crônica e risco de cegueira.\n\n(Orientação) Não é nada grave. A picada causou hemorragia interna que não saiu totalmente e solidificou dentro do olho. O colírio endureceu ainda mais. A dor recente é a toxina tentando sair. \"Coroidite Crônica\" é um nome aleatório. Risco de cegueira é absurdo; não se fica cego por picada de inseto. Não é veneno do inseto, é sangue. O Johrei dissolverá o coágulo. Médicos não entendem e fazem diagnósticos irresponsáveis.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Ouvidos e Audição",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_23",
@@ -1796,12 +1906,12 @@
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Olhos e Visão",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
     ],
-    "order": 169,
-    "type": "Q&A"
+    "order": 169
   },
   {
     "id": "casos_clinicos_24",
@@ -1809,12 +1919,13 @@
     "content": "(Pergunta) Jovem de 16 anos. Diz ter \"catarata negra\" (Amaurose/Glaucoma) desde os 3 anos. É congênito? Qual a causa cármica?\n\n(Orientação) Sendo aos 3 anos, pode-se dizer congênito. Ministre Johrei. Se for catarata verdadeira, cura. Mas se houver muito medicamento, demorará.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 182,
-    "type": "Caso Clínico"
+    "order": 182
   },
   {
     "id": "casos_clinicos_28",
@@ -1822,11 +1933,12 @@
     "content": "(Pergunta) Mulher de 39 anos. Fica com olheiras pretas na primavera e verão.\n\n(Orientação) É comum. É sangue tóxico (estagnado). Ministre Johrei na área escura. O sangue tóxico concentra-se ali.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Coração e Circulação",
       "Ministração de Johrei",
+      "Q&A",
       "Rins e Sistema Urinário"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_31",
@@ -1847,12 +1959,13 @@
     "content": "(Pergunta) Filha de 28 anos. Surda dos dois ouvidos após otite média e problemas oculares há 10 anos. Se o tímpano estiver intacto, volta a ouvir?\n\n(Orientação) Volta. O pus da otite solidificou no ouvido médio. A audição ocorre pela vibração do tímpano transmitida ao líquido interno e ao nervo; o pus solidificado impede isso. O Johrei dissolve o pus e a audição retorna.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
-      "Pele"
-    ],
-    "type": "Caso Clínico"
+      "Pele",
+      "Q&A"
+    ]
   },
   {
     "id": "doencas_10",
@@ -1862,12 +1975,12 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Ouvidos e Audição",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "doencas_12",
@@ -1876,10 +1989,11 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_29",
@@ -1888,16 +2002,17 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Gripe e Resfriado",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
       "Pele",
+      "Q&A",
       "Respiratório",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_30",
@@ -1906,10 +2021,11 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
-      "Dores e Rigidez"
-    ],
-    "type": "Caso Clínico"
+      "Dores e Rigidez",
+      "Q&A"
+    ]
   },
   {
     "id": "medicamentos_0",
@@ -1918,12 +2034,13 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "medicamentos_2",
@@ -1933,15 +2050,16 @@
     "tags": [
       "Agricultura e Alimentação",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Câncer",
       "Febre e Gripe",
       "Gripe e Resfriado",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Ouvidos e Audição",
       "Pele",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "regioes_corpo_7",
@@ -1954,10 +2072,10 @@
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Olhos e Visão",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_68",
@@ -1966,13 +2084,14 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_69",
@@ -1980,12 +2099,13 @@
     "content": "(Pergunta) Homem de 41 anos. Operou de sinusite. Vê contas pretas diante dos olhos, que agora parecem cobras pequenas. Tem pólipos nasais. Espiritual?\n\n(Orientação) Depende de como vê. Se é uma mancha no globo ocular, é simples. Provavelmente são toxinas medicamentosas da cirurgia solidificadas no fundo de ambos os olhos. A \"cobra\" não é um espírito, é a forma da toxina que muda.",
     "source": "Curso X",
     "tags": [
+      "Caso Clínico",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_75",
@@ -1994,15 +2114,16 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Câncer",
       "Diagnóstico",
-      "Sistema Digestivo",
+      "Digestivo",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Toxinas e Medicamentos",
-      "Neuralgia"
-    ],
-    "type": "Caso Clínico"
+      "Q&A",
+      "Sistema Digestivo",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "doencas_11",
@@ -2011,16 +2132,17 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Respiratório",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_27",
@@ -2029,12 +2151,13 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Olhos e Visão",
-      "Pele"
-    ],
-    "type": "Caso Clínico"
+      "Pele",
+      "Q&A"
+    ]
   },
   {
     "id": "medicamentos_3",
@@ -2043,11 +2166,11 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
       "Ministração de Johrei",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "regioes_corpo_6",
@@ -2060,10 +2183,10 @@
       "Febre e Gripe",
       "Gripe e Resfriado",
       "Ministração de Johrei",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 172,
-    "type": "Q&A"
+    "order": 172
   },
   {
     "id": "tecnicas_66",
@@ -2077,7 +2200,7 @@
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
       "Ombros",
       "Pele",
@@ -2102,10 +2225,12 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -2113,8 +2238,7 @@
       "Occipital",
       "Olhos"
     ],
-    "order": 171,
-    "type": "Caso Clínico"
+    "order": 171
   },
   {
     "id": "pontos_focais_26",
@@ -2123,16 +2247,17 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Occipital"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "pontos_focais_20",
@@ -2141,9 +2266,11 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Coração e Circulação",
       "Dores e Rigidez",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
@@ -2151,8 +2278,7 @@
       "Bulbo"
     ],
     "system": "Cabeça",
-    "order": 170,
-    "type": "Caso Clínico"
+    "order": 170
   },
   {
     "id": "pontos_focais_22",
@@ -2161,8 +2287,10 @@
     "source": "Curso X",
     "tags": [
       "Arte e Beleza",
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
@@ -2171,8 +2299,7 @@
       "Olhos"
     ],
     "system": "Olhos",
-    "order": 177,
-    "type": "Caso Clínico"
+    "order": 177
   },
   {
     "id": "pontos_focais_23",
@@ -2182,14 +2309,14 @@
     "tags": [
       "Cabeça e Pescoço",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Occipital"
     ],
     "system": "Cabeça",
-    "order": 183,
-    "type": "Q&A"
+    "order": 183
   },
   {
     "id": "pontos_focais_24",
@@ -2199,15 +2326,16 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Occipital",
       "Olhos"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "pontos_focais_25",
@@ -2215,15 +2343,16 @@
     "content": "(Pergunta) Qual o ponto vital para cegueira causada por álcool metílico há 6 anos?\n\n(Orientação) Ministre nos olhos. O metanol cega inicialmente, mas se deixado sem tratamento, a visão volta. A toxina do metanol solidifica acima dos olhos; se não mexer, ela derrete e sai. O uso de colírios solidifica tudo. Ministre nos olhos e atrás deles. Intoxicações sempre curam se o paciente não morrer. O erro é usar colírio.",
     "source": "Curso X",
     "tags": [
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Olhos e Visão",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Olhos"
     ],
-    "system": "Olhos",
-    "type": "Caso Clínico"
+    "system": "Olhos"
   },
   {
     "id": "pontos_focais_27",
@@ -2233,15 +2362,15 @@
     "tags": [
       "Cabeça e Pescoço",
       "Coração e Circulação",
-      "Olhos e Visão"
+      "Olhos e Visão",
+      "Q&A"
     ],
     "focusPoints": [
       "Ombros",
       "Cabeça",
       "Olhos"
     ],
-    "system": "Cabeça",
-    "type": "Q&A"
+    "system": "Cabeça"
   },
   {
     "id": "pontos_focais_28",
@@ -2267,8 +2396,10 @@
     "source": "Curso X",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dentes e Boca",
-      "Pele"
+      "Pele",
+      "Q&A"
     ],
     "focusPoints": [
       "Occipital",
@@ -2276,8 +2407,7 @@
       "Nariz",
       "Bulbo"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "casos_clinicos_25",
@@ -2287,9 +2417,11 @@
     "tags": [
       "Arte e Beleza",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Gripe e Resfriado",
       "Olhos e Visão",
       "Pele",
+      "Q&A",
       "Rins e Sistema Urinário",
       "Toxinas e Medicamentos"
     ],
@@ -2298,8 +2430,7 @@
       "Pescoço",
       "Cabeça"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "fundamentos_40",
@@ -2307,10 +2438,8 @@
     "content": "(Pergunta) Minha avó morreu de anemia cerebral...\n\n(Orientação) Ninguém morre de anemia cerebral. Deve ter sido derrame ou congestão cerebral.",
     "source": "Curso IX",
     "tags": [
-      "Derrame (AVC)",
-      "Anemia"
-    ],
-    "type": "Q&A"
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_25",
@@ -2322,9 +2451,9 @@
       "Dores e Rigidez",
       "Febre e Gripe",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_36",
@@ -2333,14 +2462,15 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_42",
@@ -2349,12 +2479,13 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_27",
@@ -2363,12 +2494,13 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Febre e Gripe",
       "Ministração de Johrei",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_7",
@@ -2378,10 +2510,10 @@
     "tags": [
       "Cabeça e Pescoço",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_32",
@@ -2391,10 +2523,8 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Hipertensão",
-      "Derrame (AVC)"
-    ],
-    "type": "Q&A"
+      "Q&A"
+    ]
   },
   {
     "id": "regioes_corpo_1",
@@ -2403,11 +2533,12 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_10",
@@ -2415,11 +2546,11 @@
     "content": "(Pergunta) Mulher de 35 anos, recuperada de derrame, mas com o lado esquerdo avermelhado e que sente dor ao tocar coisas frias.\n\n(Orientação) Ainda há sangue tóxico, por isso a cor vermelha. A sensibilidade ao frio é característica da toxina medicamentosa.",
     "source": "Curso IX",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
-    ],
-    "type": "Caso Clínico"
+      "Q&A",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "casos_clinicos_4",
@@ -2428,9 +2559,9 @@
     "source": "Curso IX",
     "tags": [
       "Febre e Gripe",
-      "Ministração de Johrei"
-    ],
-    "type": "Q&A"
+      "Ministração de Johrei",
+      "Q&A"
+    ]
   },
   {
     "id": "tecnicas_29",
@@ -2441,10 +2572,10 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "tecnicas_33",
@@ -2454,10 +2585,9 @@
     "tags": [
       "Cabeça e Pescoço",
       "Mundo Espiritual",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
-    ],
-    "type": "Q&A"
+      "Q&A",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "casos_clinicos_5",
@@ -2466,10 +2596,11 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Febre e Gripe",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "casos_clinicos_9",
@@ -2478,9 +2609,10 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Dores e Rigidez"
-    ],
-    "type": "Caso Clínico"
+      "Caso Clínico",
+      "Dores e Rigidez",
+      "Q&A"
+    ]
   },
   {
     "id": "regioes_corpo_2",
@@ -2490,9 +2622,8 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Derrame (AVC)"
-    ],
-    "type": "Q&A"
+      "Q&A"
+    ]
   },
   {
     "id": "tecnicas_27",
@@ -2501,11 +2632,12 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "tecnicas_28",
@@ -2516,10 +2648,10 @@
       "Cabeça e Pescoço",
       "Ministração de Johrei",
       "Mundo Espiritual",
+      "Q&A",
       "Toxinas e Medicamentos",
       "Tumor"
-    ],
-    "type": "Q&A"
+    ]
   },
   {
     "id": "fundamentos_91",
@@ -2527,12 +2659,13 @@
     "content": "1. Bebê com convulsões diárias\n\nPergunta: Segundo filho, convulsões diárias desde os 110 dias de vida. Pescoço não firma. Lado direito do pescoço alto e quente. Peito afundado. Diagnóstico: Raquitismo.\n\nResposta: É devido a toxinas medicamentosas. Encontre o calor e ministre Johrei. Há duas causas possíveis: injeções logo após o nascimento ou a mãe tomou muitos remédios/injeções durante a gravidez.\n\n2. Pessoa com calafrios, tosse e debilidade\n\nPergunta: Desde setembro, calafrios, tosse intensa, constipação. Pés finos, mas aparência saudável. Dormentes na lombar, falta de ar. Sente um bloco no epigástrio subindo ao peito. Histórico de remédios estomacais e para beribéri.\n\nResposta: Não é espiritual, é toxina medicamentosa (\"medicamental\"). Há muito remédio no corpo. Como tem 53 anos, a purificação é lenta e sistêmica, não aguda. Por isso demora. A falta de apetite vem da febre. O segredo é encontrar o ponto de maior calor e ministrar Johrei ali, sem usar força.\n\n3. Mulher debilitada com diarreia severa (mãe e filha)\n\nPergunta: Irmã de 30 anos. Parto prematuro, bebê morreu. Diarreia severa, vômito de líquido incolor, tosse. A filha de 6 anos tem os mesmos sintomas. Histórico familiar de mortes por tuberculose.\n\nResposta: É toxina medicamentosa. A mãe tinha tanta toxina que passou para a filha (hereditariedade). Procure a febre leve; ali está a toxina solidificada. Levará anos para a cura completa.\n\n4. Jovem com dor geral, surdez e debilidade\n\nPergunta: Dor lombar, febre, tosse. Continuou trabalhando e piorou. Gânglios inchados, dor de dente, surdez esquerda, peso na cabeça.\n\nResposta: É tudo toxina medicamentosa. Só resta purificar pacientemente com Johrei. Foque onde há dor, calor ou rigidez.\n\n5. Homem com dor de cabeça e dormência facial\n\nPergunta: Aos 19 anos, pernas dormentes e retenção urinária. Diagnosticado com sífilis congênita, depois tumor espinhal. Operado. Tomou remédios chineses, moxa. Após receber Johrei, o corpo move-se involuntariamente (Katsugen). Recentemente, dor no centro da cabeça, dormência no rosto, saída de pus pelo joelho.\n\nResposta: É doença de toxinas medicamentosas. Ministre Johrei onde houver calor, rigidez ou dormência. Com paciência, curará.\n\n6. Mulher com menstruação irregular e leucorreia\n\nPergunta: Esposa de 27 anos. Menstruação irregular. Tomou 30 injeções de hormônio e fez curetagem. Teve sarna, engravidou e abortou (feto roxo). Engravidou novamente, mas tem dores abdominais e câimbras.\n\nResposta: Tudo devido a toxinas medicamentosas. Ministre Johrei nos locais de dor. Leia as publicações da igreja para entender o terror dos remédios.\n\n7. Mulher com sintomas de tuberculose\n\nPergunta: Mulher de 36 anos. Pleurisia, doença do sangue, útero. Tratada sem sucesso. Com Johrei, sentiu \"bolhas\" estourando no abdômen. Menstruação parou.\n\nResposta: Todas as doenças são purificação de toxinas medicamentosas. O ministrante está colocando muita força; deve relaxar.\n\n8. Homem com dor no corpo todo e constipação\n\nPergunta: Homem de 50 anos. Diagnosticado com \"sequela de mielite\". Tomou Penicilina, Salvarsan. Paralisia temporária. Agora tem dor nas costas/peito, rigidez nas pernas, dificuldade urinária. Johrei aumentou a dor.\n\nResposta: O diagnóstico é estranho. São toxinas solidificadas nas costas e rins. O aumento da dor é prova da purificação (cura). Explique isso a ele e faça-o ler os ensinamentos.\n\n9. Homem com oscilação térmica e dor no peito\n\nPergunta: Homem de 51 anos. Dor súbita no braço, calafrios que passam com Johrei, mas febre alta nas costas e pernas. Coração e peito oprimidos. Tem hérnia. É espiritual?\n\nResposta: Não é espiritual. São toxinas medicamentosas no corpo todo dissolvendo sequencialmente. A febre nas pernas é a toxina dissolvendo. A hérnia é uma solidificação no abdômen pressionando. Quase nunca é espiritual; encostos precisam de \"nuvens\" (toxinas) para ficar. Doença é remédio. Remédios chineses são assustadores e sobem para a cabeça. É difícil para as pessoas entenderem isso devido à superstição médica.\n\n10. Mulher diagnosticada com câncer de estômago\n\nPergunta: Esposa de 53 anos. Vômitos, diagnosticada com gastroptose, depois câncer de estômago inoperável. Recebeu injeções de Nitromin, glicose, transfusões. Com Johrei, expeliu fezes negras granulares. Nódulo na nuca, abdômen duro e inchado. Histórico de febre puerperal (8 meses de injeções), asma (efedrina) e mioma.\n\nResposta: Esta pessoa é um exemplo clássico de uma vítima da medicina. A doença inteira é um bloco de toxinas medicamentosas. Ela irá melhorar gradualmente através das excreções. Curará, mas demorará. Ministre Johrei nas solidificações, sem força e com frequência.",
     "source": "Curso VI",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Mundo Espiritual",
       "Outros",
+      "Q&A",
       "Saúde da Criança",
-      "Saúde da Mulher",
-      "Asma"
+      "Saúde da Mulher"
     ],
     "focusPoints": [
       "Pescoço",
@@ -2542,8 +2675,7 @@
       "Estômago",
       "Rins"
     ],
-    "system": "Outros",
-    "type": "Caso Clínico"
+    "system": "Outros"
   },
   {
     "id": "fundamentos_30",
@@ -2552,13 +2684,14 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Pontos Vitais",
+      "Q&A",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_39",
@@ -2567,11 +2700,11 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Visão e Audição",
+      "Caso Clínico",
+      "Olhos e Ouvidos",
       "Purificação",
-      "Derrame (AVC)"
-    ],
-    "type": "Caso Clínico"
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_43",
@@ -2579,9 +2712,9 @@
     "content": "(Pergunta) E no caso de cãibras nas pernas?\n\n(Orientação) Mesmo nas pernas, a raiz está na nuca. Já curei pernas tratando a testa (glabela). A causa muitas vezes está na cabeça.",
     "source": "Curso IX",
     "tags": [
-      "Cabeça e Pescoço"
-    ],
-    "type": "Q&A"
+      "Cabeça e Pescoço",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_29",
@@ -2590,9 +2723,9 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Ministração de Johrei"
-    ],
-    "type": "Q&A"
+      "Ministração de Johrei",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_31",
@@ -2601,15 +2734,16 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Câncer",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Purificação",
+      "Q&A",
       "Toxinas e Medicamentos"
     ],
-    "order": 58,
-    "type": "Caso Clínico"
+    "order": 58
   },
   {
     "id": "fundamentos_32",
@@ -2619,9 +2753,9 @@
     "tags": [
       "Cabeça e Pescoço",
       "Ministração de Johrei",
-      "Mundo Espiritual"
-    ],
-    "type": "Q&A"
+      "Mundo Espiritual",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_35",
@@ -2630,11 +2764,12 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Digestivo",
+      "Caso Clínico",
+      "Digestivo",
       "Ministração de Johrei",
-      "Purificação"
-    ],
-    "type": "Caso Clínico"
+      "Purificação",
+      "Q&A"
+    ]
   },
   {
     "id": "fundamentos_38",
@@ -2643,13 +2778,13 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
-      "Toxinas e Medicamentos",
-      "Derrame (AVC)"
-    ],
-    "type": "Caso Clínico"
+      "Q&A",
+      "Toxinas e Medicamentos"
+    ]
   },
   {
     "id": "fundamentos_34",
@@ -2658,18 +2793,19 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ministração de Johrei",
       "Mundo Espiritual",
       "Ombros",
       "Purificação",
+      "Q&A",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
     ],
     "focusPoints": [
       "Ombros",
       "Pescoço"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_28",
@@ -2677,14 +2813,15 @@
     "content": "(Pergunta) Minha filha de quinze anos, cuja família ingressou na fé em abril de 1950, perdeu todo o cabelo devido à alopecia e permanece assim há três ou quatro meses. Ela apresentava sintomas leves desde os três ou quatro anos e fez tratamentos elétricos. Creio ser uma purificação, mas continuando com o Johrei, o cabelo voltará a nascer? Quais os pontos vitais?\n\n(Orientação) Perda total... isso é complicado. A alopecia tem cura. O problema é que tratamentos elétricos e pomadas impediram a cura natural, tornando o caso mais trabalhoso. Sem essas intervenções, a recuperação seria rápida. Com paciência, cura-se. Deus fez a cabeça para ter cabelos; se não nascem, é porque há toxinas — sejam herdadas ou adquiridas — solidificadas ali. É como jogar fertilizante onde cresce o mato. À medida que as toxinas forem eliminadas, o cabelo nascerá. Como o local foi muito \"atacado\" por tratamentos, levará tempo. Mas não tanto assim. Calcule um ou dois anos e a cura virá. O foco do Johrei deve ser a cabeça toda e ao redor do pescoço.",
     "source": "Curso IX",
     "tags": [
-      "Outros"
+      "Caso Clínico",
+      "Outros",
+      "Q&A"
     ],
     "focusPoints": [
       "Pescoço",
       "Cabeça"
     ],
-    "system": "Outros",
-    "type": "Caso Clínico"
+    "system": "Outros"
   },
   {
     "id": "fundamentos_33",
@@ -2692,15 +2829,16 @@
     "content": "(Pergunta) Moça de 17 anos. Teve meningite aos seis meses, tratada com injeções e remédios. Ficou acamada, imóvel como um boneco Daruma, apesar de cirurgias ortopédicas e injeções na medula. Recebe Johrei desde 1951.\n\n(Orientação) Solidificaram a meningite com injeções, remédios e gelo. A meningite é uma purificação do lobo frontal. Ao solidificarem essa área, paralisaram mãos e pés. A causa está na cabeça. \"Todos os tratamentos possíveis\" foi o erro. A cirurgia ortopédica e as injeções na medula pioraram tudo. Se não fosse isso, meningite seria simples. O ponto vital é o interior do lobo frontal. As toxinas estão solidificadas lá dentro. Não use força. Se a cirurgia não tiver cortado tendões vitais, há cura. Foquem também nos gânglios linfáticos do pescoço.",
     "source": "Curso IX",
     "tags": [
-      "Cabeça e Pescoço"
+      "Cabeça e Pescoço",
+      "Caso Clínico",
+      "Q&A"
     ],
     "focusPoints": [
       "Pescoço",
       "Cabeça",
       "Frontal"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   },
   {
     "id": "fundamentos_37",
@@ -2708,15 +2846,16 @@
     "content": "(Pergunta) Homem de 63 anos com paralisia. Ombro direito dói e sai muito catarro. Mão e pé direitos ainda imóveis.\n\n(Orientação) Sair catarro é excelente. É sangue tóxico do ombro dissolvendo. O ponto vital é onde dói ou onde há nódulos. Trate bem a região entre o pescoço e o maxilar; a origem está ali. O vaso rompe, sobe à cabeça e desce para o lado oposto.",
     "source": "Curso IX",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
-      "Membros"
+      "Membros",
+      "Q&A"
     ],
     "focusPoints": [
       "Pescoço",
       "Cabeça"
     ],
-    "system": "Membros",
-    "type": "Caso Clínico"
+    "system": "Membros"
   },
   {
     "id": "tecnicas_24",
@@ -2724,11 +2863,12 @@
     "content": "Uma das empregadas tossia muito. Ao examiná-la, detectei uma solidificação no bulbo. Dissolvi-a e a tosse parou. Isso ocorre porque as toxinas dissolvidas penetram momentaneamente nos pulmões e são expelidas como tosse e fleuma.",
     "source": "Curso IX",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
+      "Q&A",
       "Respiratório",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_92",
@@ -2737,15 +2877,15 @@
     "source": "Curso VI",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_41",
@@ -2754,15 +2894,16 @@
     "source": "Curso IX",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Ombros",
-      "Purificação"
+      "Purificação",
+      "Q&A"
     ],
     "focusPoints": [
       "Ombros",
       "Pescoço",
       "Cabeça"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_86",
@@ -2771,16 +2912,16 @@
     "source": "Curso VI",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Mundo Espiritual",
-      "Visão e Audição",
+      "Olhos e Ouvidos",
       "Purificação",
-      "Toxinas e Medicamentos",
-      "Anemia"
+      "Q&A",
+      "Toxinas e Medicamentos"
     ],
-    "order": 7,
-    "type": "Caso Clínico"
+    "order": 7
   },
   {
     "id": "fundamentos_87",
@@ -2788,14 +2929,15 @@
     "content": "1. Mulher paralisada da cintura para baixo\n\nPergunta: Mulher de 40 anos. Inicialmente a perna direita paralisou. Com tratamentos médicos, a paralisia estendeu-se da cintura para baixo e as pernas afinaram. Diagnóstico: paralisia espinhal.\n\nResposta: Cura-se, mas é toxina medicamentosa. A toxina solidificou na perna direita. Afinou por falta de uso. A toxina subiu. \"Paralisia espinhal\" é um diagnóstico aleatório. Injeções de vitaminas só pioram o quadro. Isso é uma \"Doença Artificial\" (Jinzobyo). O foco principal do Johrei são os rins, depois as coxas (lado externo) e a parte inferior das nádegas.\n\n2. Homem com ciática\n\nPergunta: Homem de 33 anos. Dor lombar diagnosticada como ciática. Tomou 20 injeções locais, remédios chineses e acupuntura. Operou o apêndice em 1943. Recebe Johrei há 6 meses, melhora e piora.\n\nResposta: É devido às toxinas medicamentosas. Ao usar remédios para a nevralgia, solidificou-se a toxina, o que torna a cura demorada. A dor é purificação, portanto, é algo positivo. Embora seja penoso, quanto mais doer, mais rápido curará. Tenha paciência.",
     "source": "Curso VI",
     "tags": [
+      "Caso Clínico",
       "Diagnóstico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Toxinas e Medicamentos"
-    ],
-    "type": "Caso Clínico"
+    ]
   },
   {
     "id": "fundamentos_88",
@@ -2804,17 +2946,18 @@
     "source": "Curso VI",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Febre e Gripe",
       "Ministração de Johrei",
       "Pontos Vitais",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Saúde da Criança",
       "Toxinas e Medicamentos"
     ],
-    "order": 22,
-    "type": "Caso Clínico"
+    "order": 22
   },
   {
     "id": "fundamentos_89",
@@ -2822,16 +2965,17 @@
     "content": "1. Homem com desconforto na bexiga e uretra\n\nPergunta: Aos 20 anos tive polaciúria. No exército, diagnosticado com gonorreia, tomei centenas de injeções (606, etc.). Curei-me com Johrei, mas agora sinto desconforto na bexiga e dor aguda na uretra ao trabalhar. Coceira intensa na uretra durante a purificação.\n\nResposta: Esta pessoa é uma vítima de medicamentos. Haverá várias dores futuramente; ministre Johrei onde doer para reduzir as toxinas aos poucos. Como a quantidade é grande, prepare-se para um longo processo.\n\n2. Mulher obesa sem sensação de evacuação\n\nPergunta: Mulher de 28 anos. No parto difícil, a parteira aplicou duas injeções nas coxas para \"induzir\" as contrações. As contrações pararam e o parto foi a fórceps; o bebê morreu. Desde então, não sente a saída de urina ou fezes, embora saiam em grande quantidade se ela for ao banheiro. Obesidade generalizada e dor na nuca.\n\nResposta: Há muitas toxinas. É curioso: aplicaram injeção para contração fraca e a contração parou de vez. A falta de sensação deve-se às toxinas solidificadas na parte inferior, paralisando os nervos. Com paciência, a sensibilidade voltará. A obesidade é toxina solidificada nos rins. Tudo é toxina, provavelmente de remédios chineses (Kampo), que são terríveis. As toxinas descem e solidificam no ânus e genitais. Ministre Johrei nessas áreas e nos locais de dormência.",
     "source": "Curso VI",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Ministração de Johrei",
       "Purificação",
-      "Rins e Sistema Urinário",
+      "Q&A",
+      "Renal e Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
       "Toxinas e Medicamentos"
     ],
-    "order": 18,
-    "type": "Caso Clínico"
+    "order": 18
   },
   {
     "id": "fundamentos_85",
@@ -2840,8 +2984,10 @@
     "source": "Curso VI",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Mundo Espiritual",
+      "Q&A",
       "Saúde da Criança"
     ],
     "focusPoints": [
@@ -2852,7 +2998,6 @@
       "Bulbo",
       "Tórax"
     ],
-    "system": "Cabeça",
-    "type": "Caso Clínico"
+    "system": "Cabeça"
   }
 ]

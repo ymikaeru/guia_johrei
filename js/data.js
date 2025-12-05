@@ -5,6 +5,7 @@ const CONFIG = {
             description: 'Escritos sagrados originais de Meishu-Sama',
             file: 'index.json', path: 'data/',
             cats: {
+                // 'todos' tab hidden - data still exists for global search
                 fundamentos: { label: 'Fundamentos', color: 'cat-blue' },
                 curas: { label: 'Casos e Orientações', color: 'cat-green' },
                 pontos_focais: { label: 'Pontos Focais', color: 'cat-purple' }

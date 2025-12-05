@@ -14,8 +14,7 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Anemia"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -34,13 +33,13 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 2,
-    "type": "Caso Clínico"
+    "order": 2
   },
   {
     "id": "pf3",
@@ -78,14 +77,12 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Hipertensão",
-      "Derrame (AVC)"
+      "Caso Clínico",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 4,
-    "type": "Caso Clínico"
+    "order": 4
   },
   {
     "id": "pf5",
@@ -103,14 +100,13 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Derrame (AVC)"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 5,
-    "type": "Caso Clínico"
+    "order": 5
   },
   {
     "id": "pf6",
@@ -122,8 +118,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Nervoso e Cabeça",
-      "Cabeça e Pescoço",
-      "Anemia"
+      "Cabeça e Pescoço"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -143,8 +138,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Anemia"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -161,13 +155,13 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Mundo Espiritual",
       "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 9,
-    "type": "Caso Clínico"
+    "order": 9
   },
   {
     "id": "pf10",
@@ -352,14 +346,14 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
       "Sistema Nervoso e Cabeça",
       "Boca e Garganta"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Boca e Garganta",
-    "order": 21,
-    "type": "Caso Clínico"
+    "order": 21
   },
   {
     "id": "pf23",
@@ -371,15 +365,14 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Sistema Nervoso e Cabeça",
       "Cabeça e Pescoço",
-      "Boca e Garganta",
-      "Neuralgia"
+      "Boca e Garganta"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 23,
-    "type": "Caso Clínico"
+    "order": 23
   },
   {
     "id": "pf24",
@@ -412,13 +405,13 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Coração",
       "Sistema Cardiovascular"
     ],
     "category": "Sistema Cardiovascular",
     "system": "Coração",
-    "order": 26,
-    "type": "Caso Clínico"
+    "order": 26
   },
   {
     "id": "pf27",
@@ -449,8 +442,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Coração",
-      "Sistema Cardiovascular",
-      "Hipertensão"
+      "Sistema Cardiovascular"
     ],
     "category": "Sistema Cardiovascular",
     "system": "Coração",
@@ -502,13 +494,13 @@
     "tags": [
       "Mundo Espiritual",
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Sistema Cardiovascular",
       "Sistema Respiratório"
     ],
     "category": "Sistema Cardiovascular",
     "system": "Cabeça",
-    "order": 25,
-    "type": "Caso Clínico"
+    "order": 25
   },
   {
     "id": "pf33",
@@ -569,8 +561,7 @@
       "Sistema Respiratório",
       "Dores e Rigidez",
       "Sistema Digestivo",
-      "Pulmões",
-      "Asma"
+      "Pulmões"
     ],
     "category": "Sistema Respiratório",
     "system": "Pulmões",
@@ -586,8 +577,9 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Digestivo",
-      "Dores e Rigidez"
+      "Digestivo",
+      "Dores e Rigidez",
+      "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Estômago",
@@ -604,6 +596,7 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Digestivo",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
@@ -619,6 +612,7 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Digestivo",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
@@ -637,6 +631,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Urinário",
+      "Digestivo",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
@@ -655,12 +650,12 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Urinário",
-      "Rins e Sistema Urinário"
+      "Renal e Urinário",
+      "Caso Clínico"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
-    "order": 45,
-    "type": "Caso Clínico"
+    "order": 45
   },
   {
     "id": "pf46",
@@ -671,7 +666,7 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
@@ -687,7 +682,7 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
@@ -705,16 +700,16 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Mundo Espiritual",
       "Câncer e Outras Doenças",
       "Sistema Urinário",
-      "Dores e Rigidez"
+      "Dores e Rigidez",
+      "Caso Clínico"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
-    "order": 49,
-    "type": "Caso Clínico"
+    "order": 49
   },
   {
     "id": "pf52",
@@ -780,7 +775,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Câncer e Outras Doenças",
-      "Sistema Digestivo"
+      "Digestivo"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Estômago",
@@ -797,7 +792,7 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Câncer e Outras Doenças",
-      "Sistema Digestivo"
+      "Digestivo"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Fígado",
@@ -850,13 +845,12 @@
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Anemia"
+      "Caso Clínico",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
-    "order": 60,
-    "type": "Caso Clínico"
+    "order": 60
   },
   {
     "id": "pf61",
@@ -960,13 +954,13 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Câncer e Outras Doenças",
       "Saúde da Mulher"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Sistema Reprodutor",
-    "order": 66,
-    "type": "Caso Clínico"
+    "order": 66
   },
   {
     "id": "pf68",
@@ -979,15 +973,15 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Caso Clínico",
       "Câncer e Outras Doenças",
-      "Sistema Digestivo",
+      "Digestivo",
       "Saúde da Criança",
       "Saúde da Mulher"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Estômago",
-    "order": 68,
-    "type": "Caso Clínico"
+    "order": 68
   },
   {
     "id": "pf70",
@@ -1042,8 +1036,7 @@
       "Cabeça e Pescoço",
       "Câncer e Outras Doenças",
       "Dores e Rigidez",
-      "Mundo Espiritual",
-      "Anemia"
+      "Mundo Espiritual"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1064,8 +1057,7 @@
     "tags": [
       "Cabeça e Pescoço",
       "Câncer e Outras Doenças",
-      "Mundo Espiritual",
-      "Anemia"
+      "Mundo Espiritual"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1099,18 +1091,15 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Dores e Rigidez",
       "Mundo Espiritual",
       "Saúde da Criança",
-      "Sistema Nervoso e Cabeça",
-      "Hipertensão",
-      "Derrame (AVC)",
-      "Anemia"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 122,
-    "type": "Caso Clínico"
+    "order": 122
   },
   {
     "id": "pf87",
@@ -1125,8 +1114,7 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez",
       "Saúde da Criança",
-      "Sistema Nervoso e Cabeça",
-      "Anemia"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -1164,12 +1152,12 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
-    "order": 176,
-    "type": "Caso Clínico"
+    "order": 176
   },
   {
     "id": "pf92",
@@ -1215,13 +1203,13 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Caso Clínico",
+      "Renal e Urinário",
       "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
-    "order": 189,
-    "type": "Caso Clínico"
+    "order": 189
   },
   {
     "id": "pf102",
@@ -1233,7 +1221,7 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
+      "Digestivo",
       "Sistema Urinário"
     ],
     "category": "Sistema Urinário",
@@ -1250,8 +1238,9 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
-      "Dores e Rigidez"
+      "Digestivo",
+      "Dores e Rigidez",
+      "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Fígado",
@@ -1273,14 +1262,13 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Caso Clínico",
       "Coração",
-      "Sistema Digestivo",
-      "Diabetes"
+      "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Coração",
-    "order": 196,
-    "type": "Caso Clínico"
+    "order": 196
   },
   {
     "id": "pf105",
@@ -1292,12 +1280,12 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
+      "Caso Clínico",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Boca e Garganta",
-    "order": 198,
-    "type": "Caso Clínico"
+    "order": 198
   },
   {
     "id": "pf106",
@@ -1309,12 +1297,12 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Cabeça",
-    "order": 199,
-    "type": "Caso Clínico"
+    "order": 199
   },
   {
     "id": "pf107",
@@ -1358,13 +1346,13 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Caso Clínico",
       "Sistema Digestivo",
       "Ânus"
     ],
     "category": "Sistema Digestivo",
     "system": "Ânus",
-    "order": 204,
-    "type": "Caso Clínico"
+    "order": 204
   },
   {
     "id": "pf111",
@@ -1377,13 +1365,13 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Caso Clínico",
       "Saúde da Mulher",
       "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Cabeça",
-    "order": 205,
-    "type": "Caso Clínico"
+    "order": 205
   },
   {
     "id": "pf114",
@@ -1395,16 +1383,15 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Caso Clínico",
       "Dores e Rigidez",
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Saúde da Criança",
-      "Saúde da Mulher",
-      "Anemia"
+      "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
     "system": "Rins",
-    "order": 210,
-    "type": "Caso Clínico"
+    "order": 210
   },
   {
     "id": "pf117",
@@ -1417,7 +1404,7 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Dores e Rigidez",
-      "Rins e Sistema Urinário",
+      "Renal e Urinário",
       "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
@@ -1433,7 +1420,7 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
+      "Digestivo",
       "Saúde da Mulher"
     ],
     "category": "Sistema Reprodutor",
@@ -1450,16 +1437,15 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
+      "Caso Clínico",
       "Doenças Infantis",
       "Mundo Espiritual",
       "Saúde da Criança",
-      "Saúde da Mulher",
-      "Asma"
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
-    "order": 67,
-    "type": "Caso Clínico"
+    "order": 67
   },
   {
     "id": "pf124",
