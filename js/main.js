@@ -536,11 +536,6 @@ function toggleFilterMenu(event) {
 
     const desktopMenu = document.getElementById('filterMenuDesktop');
     const mobileMenu = document.getElementById('filterMenuMobile');
-    const btnDesktop = document.getElementById('filterBtnDesktop');
-    const btnMobile = document.getElementById('filterBtnMobile');
-
-    const isDesktopHidden = desktopMenu?.classList.contains('hidden');
-    const isMobileHidden = mobileMenu?.classList.contains('hidden');
 
     // Only proceed if at least one menu exists
     if (!desktopMenu && !mobileMenu) {
@@ -548,8 +543,16 @@ function toggleFilterMenu(event) {
         return;
     }
 
-    if (isDesktopHidden && isMobileHidden) {
-        // Open menu
+    // Check if either menu is currently visible
+    const desktopVisible = desktopMenu && !desktopMenu.classList.contains('hidden');
+    const mobileVisible = mobileMenu && !mobileMenu.classList.contains('hidden');
+    const anyVisible = desktopVisible || mobileVisible;
+
+    if (anyVisible) {
+        // Close all menus
+        closeFilterMenu();
+    } else {
+        // Open menus
         if (desktopMenu) {
             desktopMenu.classList.remove('hidden');
             renderFilterMenu();
@@ -562,9 +565,6 @@ function toggleFilterMenu(event) {
             mobileMenu.classList.remove('hidden');
             renderFilterMenu();
         }
-    } else {
-        // Close menu
-        closeFilterMenu();
     }
 }
 
