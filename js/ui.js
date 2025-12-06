@@ -127,15 +127,26 @@ function renderList(list, activeTags, mode, activeTab) {
         `;
     } else {
         // Standard Header for other tabs (Search Results / Category View)
-        // Feature: Add All Button
-        let addAllBtn = '';
-        if (typeof Favorites !== 'undefined' && list && list.length > 0) {
-            addAllBtn = `
-                <button onclick="Favorites.addAll(STATE.list.map(i => i.id))" 
-                    class="text-blue-500 hover:text-blue-700 font-bold text-[10px] uppercase tracking-widest px-3 py-2 border border-blue-100 hover:border-blue-300 rounded transition-colors ml-auto">
-                    + Adicionar Todos (${list.length})
-                </button>
-             `;
+        // Feature: Add All Button moved to #listActionButtons in index.html
+
+        const actionBtnsEl = document.getElementById('listActionButtons');
+        if (actionBtnsEl) {
+            actionBtnsEl.innerHTML = ''; // Clear previous
+            if (typeof Favorites !== 'undefined' && list && list.length > 0) {
+                const allAdded = list.every(i => Favorites.is(i.id));
+                const btnLabel = allAdded ? '- REMOVE ALL' : '+ ADD ALL';
+                const btnClass = allAdded
+                    ? 'text-red-500 hover:text-red-700 border-red-100 dark:border-red-900 hover:border-red-300'
+                    : 'text-blue-500 hover:text-blue-700 border-blue-100 dark:border-blue-900 hover:border-blue-300';
+                const btnAction = allAdded ? 'removeAll' : 'addAll';
+
+                actionBtnsEl.innerHTML = `
+                    <button onclick="Favorites.${btnAction}(STATE.list.map(i => i.id))"
+                        class="${btnClass} font-bold text-[10px] uppercase tracking-widest px-3 py-2 border rounded transition-colors">
+                        ${btnLabel}
+                    </button>
+                `;
+            }
         }
 
         headerHtml = `
@@ -143,7 +154,6 @@ function renderList(list, activeTags, mode, activeTab) {
                 <div>
                      ${formatBodyText()}
                 </div>
-                ${addAllBtn}
              </div>
         `;
     }
@@ -155,7 +165,7 @@ function renderList(list, activeTags, mode, activeTab) {
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                     </svg>
-                     <h2 class="text-2xl font-serif font-bold">Apostilas</h2>stila está vazia</p>
+                     <h2 class="text-2xl font-serif font-bold">Apostila Vazia</h2>
                     <p class="text-sm text-gray-400 mt-2">Clique na estrela nos cards para adicionar itens.</p>
                 </div>
             `;

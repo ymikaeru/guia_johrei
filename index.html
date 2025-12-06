@@ -246,23 +246,28 @@
             </div>
         </div>
 
-        <!-- Tag Browser Section -->
-        <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900" style="display: none;">
-            <div class="px-8 md:px-12 pt-2 pb-0">
+        <!-- Tag Browser Header -->
+        <div class="border-t border-gray-100 dark:border-gray-900 bg-white dark:bg-[#0a0a0a]">
+            <div class="px-8 md:px-12 pt-4 pb-4 flex justify-between items-center">
                 <button onclick="toggleTagBrowser()" id="tagBrowserToggle"
-                    class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
+                    class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                     <span>Categorias</span>
                     <svg id="tagBrowserIcon" class="w-4 h-4 transition-transform duration-300" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-
-                <div id="tagBrowserContent" class="hidden space-y-6">
-                    <!-- Tag categories will be injected here by JavaScript -->
-                </div>
+                <div id="listActionButtons" class="flex items-center gap-2"></div>
             </div>
         </div>
+
+        <!-- Tag Browser Content (Collapsible) -->
+        <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900" style="display: none;">
+            <div id="tagBrowserContent" class="hidden space-y-6 px-8 md:px-12 py-6">
+                <!-- Tag categories will be injected here by JavaScript -->
+            </div>
+        </div>
+
 
         <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a]" id="mainList">
 
@@ -291,6 +296,7 @@
                 <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Nenhum resultado</p>
             </div>
         </main>
+    </div>
     </div>
 
     <div id="readModal" class="fixed inset-0 z-50 hidden">
@@ -385,7 +391,6 @@
     <script src="js/favorites.js"></script>
     <script src="js/print-manager.js"></script>
     <script src="js/main.js"></script> <!-- Main Logic -->
-    <script src="js/ui.js"></script> <!-- UI Components -->
 
     <script>
         // Init happens in main.js

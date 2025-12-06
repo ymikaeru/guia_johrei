@@ -348,10 +348,10 @@ function renderTabs() {
             }
 
             return `
-    < button onclick = "selectMobileOption('${id}')"
-class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white" >
+    <button onclick="selectMobileOption('${id}')"
+class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
     ${label}
-            </button >
+            </button>
     `;
         }).join('');
 
@@ -361,10 +361,10 @@ class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest bo
                 if (mobileLabel) mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
             } else {
                 optionsHtml += `
-    < button onclick = "selectMobileOption('mapa')"
-class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white" >
+    <button onclick="selectMobileOption('mapa')"
+class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
     MAPAS DE APLICAÇÃO
-                </button >
+                </button>
     `;
             }
         }

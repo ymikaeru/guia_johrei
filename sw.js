@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'johrei-guide-v1';
+const CACHE_NAME = 'johrei-guide-v2';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',

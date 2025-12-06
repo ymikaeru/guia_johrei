@@ -158,6 +158,28 @@ const Favorites = {
         return false;
     },
 
+    removeAll(ids) {
+        if (!ids || ids.length === 0) return false;
+
+        let currentList = this.trays[this.activeTray];
+        let removedCount = 0;
+
+        ids.forEach(id => {
+            const idx = currentList.indexOf(id);
+            if (idx > -1) {
+                currentList.splice(idx, 1);
+                removedCount++;
+            }
+        });
+
+        if (removedCount > 0) {
+            this.save();
+            this.triggerUpdates();
+            return true;
+        }
+        return false;
+    },
+
     renameTray(oldName, newName) {
         const cleanNew = newName.trim();
         if (!cleanNew) return false;
