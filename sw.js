@@ -15,7 +15,6 @@ const ASSETS_TO_CACHE = [
     './js/print-manager.js',
     './assets/images/icon.png',
     './data/index.json',
-    './data/categories.json',
     // We should technically list all data files if we want 100% offline on first load,
     // or let the user browse to cache them. 
     // For a "Perfect" app, let's try to cache key data files if possible, 

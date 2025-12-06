@@ -353,6 +353,16 @@ const SearchHistory = {
         }
     },
 
+    remove(query) {
+        let history = this.getHistory();
+        history = history.filter(h => h !== query);
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify(history));
+        } catch (e) {
+            console.error('Failed to update search history:', e);
+        }
+    },
+
     clearHistory() {
         try {
             localStorage.removeItem(this.storageKey);

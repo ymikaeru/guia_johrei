@@ -4,6 +4,8 @@ const STATE = {
     activeTab: 'fundamentos', // aba ativa
     activeLetter: '', // filtro de letra
     activeTags: [], // tags selecionadas (agora array para suportar múltiplas)
+    activeCategories: [], // Categorias selecionadas para filtro combinado
+    activeSources: [], // Fontes selecionadas para filtro combinado
     bodyFilter: null, // filtro do mapa corporal
     activeFocusPoints: [], // Pontos focais selecionados (array)
     selectedBodyPoint: null, // ID do ponto selecionado no mapa
@@ -232,6 +234,17 @@ function setMode(newMode) {
     loadData();
 }
 
+// --- HELPER: Search Placeholder ---
+function updateSearchPlaceholder(tabId) {
+    const inputs = document.querySelectorAll('.search-input');
+    let placeholder = 'BUSCAR...';
+    if (tabId === 'favoritos' && typeof Favorites !== 'undefined') {
+        const trayName = Favorites.activeTray;
+        placeholder = `BUSCAR NA APOSTILA ${trayName.toUpperCase()}...`;
+    }
+    inputs.forEach(i => i.placeholder = placeholder);
+}
+
 // --- CONTROLE DE ABAS ---
 function setTab(id) {
     STATE.activeTab = id;
@@ -285,11 +298,22 @@ function renderTabs() {
     if (typeof Favorites !== 'undefined' && Favorites.list.length > 0) {
         const active = STATE.activeTab === 'favoritos';
         const activeClass = active
-            ? `border-johrei-murasaki text-johrei-murasaki font-bold`
-            : 'border-transparent text-gray-500 hover:text-johrei-murasaki';
+            ? `border-blue-600 text-blue-600 font-bold`
+            : 'border-transparent text-gray-500 hover:text-blue-600';
+
+        // Use Active Tray Name for Tab Label
+        let tabLabel = 'Apostilas';
+        if (Favorites.activeTray && Favorites.activeTray !== 'Principal') {
+            tabLabel = Favorites.activeTray; // e.g. "Aula 1"
+            // Ensure visual limit if name is too long?
+            if (tabLabel.length > 20) tabLabel = tabLabel.substring(0, 18) + '...';
+        } else if (Favorites.activeTray === 'Principal') {
+            tabLabel = 'Apostila Principal'; // More explicit
+        }
+
         html += `<button onclick="setTab('favoritos')" class="tab-btn ${activeClass} flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" /></svg>
-            Bandeja (${Favorites.list.length})
+            ${tabLabel} (${Favorites.list.length})
         </button>`;
     }
 
@@ -335,6 +359,7 @@ class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest bo
     }
 
     updateUIForTab(STATE.activeTab);
+    updateSearchPlaceholder(STATE.activeTab);
 }
 
 // --- CUSTOM DROPDOWN LOGIC ---
@@ -451,13 +476,12 @@ function updateUIForTab(tabId) {
             <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 h-[600px] overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm">
                  <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
                     <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
-                 </div>
-                 <div id="bodyPointSidebarList">
+                <div id="bodyPointSidebarList">
                     <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
                         onclick="selectCustomOption('', '-- Todos os pontos --', event)">
                         -- Todos os pontos --
                     </div>
-                    ${generateSidebarOptions()}
+                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
                  </div>
             </div>
 
@@ -579,6 +603,142 @@ window.autoSwitchMapToPoint = function (pointId) {
     }
 };
 
+// --- FILTER MENU LOGIC ---
+function toggleFilterMenu() {
+    const desktopMenu = document.getElementById('filterMenuDesktop');
+    const mobileMenu = document.getElementById('filterMenuMobile');
+    const isDesktop = window.innerWidth >= 768;
+
+    const menu = isDesktop ? desktopMenu : mobileMenu;
+    if (menu) {
+        if (menu.classList.contains('hidden')) {
+            renderFilterMenu();
+            menu.classList.remove('hidden');
+            // Close on click outside
+            setTimeout(() => {
+                document.addEventListener('click', closeFilterMenuOnClickOutside);
+            }, 0);
+        } else {
+            closeFilterMenu();
+        }
+    }
+}
+
+function closeFilterMenu() {
+    document.getElementById('filterMenuDesktop')?.classList.add('hidden');
+    document.getElementById('filterMenuMobile')?.classList.add('hidden');
+    document.removeEventListener('click', closeFilterMenuOnClickOutside);
+}
+
+function closeFilterMenuOnClickOutside(e) {
+    const desktopMenu = document.getElementById('filterMenuDesktop');
+    const mobileMenu = document.getElementById('filterMenuMobile');
+    const btnDesktop = document.getElementById('filterBtnDesktop');
+    const btnMobile = document.getElementById('filterBtnMobile');
+
+    // Check if click is outside desktop menu AND button
+    if (!desktopMenu?.classList.contains('hidden') && !desktopMenu?.contains(e.target) && !btnDesktop?.contains(e.target)) {
+        document.getElementById('filterMenuDesktop').classList.add('hidden');
+    }
+    // Check if click is outside mobile menu AND button
+    if (!mobileMenu?.classList.contains('hidden') && !mobileMenu?.contains(e.target) && !btnMobile?.contains(e.target)) {
+        document.getElementById('filterMenuMobile').classList.add('hidden');
+    }
+
+    // Remove listener if both are hidden
+    if (document.getElementById('filterMenuDesktop')?.classList.contains('hidden') &&
+        document.getElementById('filterMenuMobile')?.classList.contains('hidden')) {
+        document.removeEventListener('click', closeFilterMenuOnClickOutside);
+    }
+}
+
+function renderFilterMenu() {
+    const containerDesktop = document.getElementById('filterMenuDesktop');
+    const containerMobile = document.getElementById('filterMenuMobile');
+    if (!containerDesktop && !containerMobile) return;
+
+    // Get Categories
+    const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
+        id: key,
+        label: CONFIG.modes[STATE.mode].cats[key].label
+    }));
+
+    // Get Sources (unique from loaded data)
+    let allItems = [];
+    Object.keys(STATE.data).forEach(key => {
+        if (Array.isArray(STATE.data[key])) {
+            allItems = allItems.concat(STATE.data[key]);
+        }
+    });
+
+    const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
+
+    const generateMenuHTML = () => {
+        let html = '<div class="p-4 space-y-4 max-h-96 overflow-y-auto">';
+
+        // Categories Section
+        html += '<div><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Categorias</h3><div class="space-y-2">';
+        categories.forEach(cat => {
+            const isChecked = STATE.activeCategories.includes(cat.id);
+            html += `
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" onchange="toggleFilter('category', '${cat.id}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
+                    <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${cat.label}</span>
+                </label>
+            `;
+        });
+        html += '</div></div>';
+
+        // Sources Section
+        if (sources.length > 0) {
+            html += '<div class="border-t border-gray-100 dark:border-gray-700 pt-2"><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Fontes</h3><div class="space-y-2">';
+            sources.forEach(src => {
+                const isChecked = STATE.activeSources.includes(src);
+                html += `
+                    <label class="flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" onchange="toggleFilter('source', '${src}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
+                        <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${src}</span>
+                    </label>
+                `;
+            });
+            html += '</div></div>';
+        }
+
+        html += '</div>'; // End container
+
+        // Reset Button
+        if (STATE.activeCategories.length > 0 || STATE.activeSources.length > 0) {
+            html += `
+                <div class="p-2 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 sticky bottom-0">
+                    <button onclick="STATE.activeCategories=[]; STATE.activeSources=[]; applyFilters(); renderFilterMenu();" class="w-full text-xs text-swiss-red hover:underline">Limpar Filtros</button>
+                </div>
+            `;
+        }
+
+        return html;
+    };
+
+    const html = generateMenuHTML();
+    if (containerDesktop) containerDesktop.innerHTML = html;
+    if (containerMobile) containerMobile.innerHTML = html;
+}
+
+function toggleFilter(type, value) {
+    let targetArray = type === 'category' ? STATE.activeCategories : STATE.activeSources;
+
+    if (targetArray.includes(value)) {
+        targetArray = targetArray.filter(i => i !== value);
+    } else {
+        targetArray.push(value);
+    }
+
+    if (type === 'category') STATE.activeCategories = targetArray;
+    else STATE.activeSources = targetArray;
+
+    applyFilters();
+    renderFilterMenu();
+}
+
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 function applyFilters() {
     // Get value from any search input (they should be synced)
@@ -586,14 +746,15 @@ function applyFilters() {
     const searchValue = inputs.length > 0 ? inputs[0].value : '';
     const q = removeAccents(searchValue); // Normalize for accent-insensitive search
 
-    const { activeTab, activeLetter, activeTags, bodyFilter } = STATE;
+    const { activeTab, activeLetter, activeTags, bodyFilter, activeCategories, activeSources } = STATE;
 
     let rawItems = [];
     let label = "TODOS";
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
     // OU se estivermos na aba FAVORITOS (precisa buscar de todas as categorias)
-    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter || activeTab === 'favoritos') {
+    // OU se houver filtros combinados ativos (Categorias ou Fontes)
+    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter || activeTab === 'favoritos' || activeCategories.length > 0 || activeSources.length > 0) {
         Object.keys(STATE.data).forEach(cat => {
             if (Array.isArray(STATE.data[cat])) {
                 STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
@@ -605,10 +766,11 @@ function applyFilters() {
             rawItems = rawItems.filter(item => Favorites.is(item.id));
         }
 
-        if (activeTab === 'favoritos') label = "BANDEJA DE IMPRESSÃO";
+        if (activeTab === 'favoritos') label = "APOSTILAS";
         else if (activeTags.length > 0 && bodyFilter) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'} `;
         else if (activeTags.length > 0) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} `;
         else if (bodyFilter) label = "PONTO FOCAL SELECIONADO";
+        else if (activeCategories.length > 0 || activeSources.length > 0) label = "RESULTADOS FILTRADOS";
         else if (q) label = "RESULTADOS DA BUSCA";
         else if (activeTab === 'mapa') label = "SELECIONE UMA REGIÃO ACIMA";
     } else {
@@ -642,6 +804,16 @@ function applyFilters() {
             if (!hasAllTags) return false;
         }
 
+        // 1.3 Filter by CATEGORIES (OR Logic for list of categories)
+        if (activeCategories.length > 0) {
+            if (!activeCategories.includes(item._cat)) return false;
+        }
+
+        // 1.4 Filter by SOURCE (OR Logic for list of sources)
+        if (activeSources.length > 0) {
+            if (!item.source || !activeSources.includes(item.source)) return false;
+        }
+
         // 1.5 Filtro de PONTOS FOCAIS (Multi-select)
         if (STATE.activeFocusPoints.length > 0) {
             if (!item.focusPoints) return false;
@@ -650,8 +822,8 @@ function applyFilters() {
         }
 
         // 2. Filtro do MAPA (Integração)
-        // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
-        if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
+        // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag/cat/source), não mostra nada
+        if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0 && activeCategories.length === 0 && activeSources.length === 0) return false;
 
         // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
         if (bodyFilter && typeof matchBodyPoint === 'function') {
@@ -659,7 +831,7 @@ function applyFilters() {
         }
 
         // 3. Filtro de LETRA (Alfabeto)
-        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
+        if (!q && activeTags.length === 0 && !bodyFilter && activeCategories.length === 0 && activeSources.length === 0 && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
 
         return true;
     });
@@ -927,13 +1099,7 @@ function filterByTag(tag, event) {
 }
 
 function filterByLetter(l) {
-    // Update Search Placeholder based on Tab
-    const searchInputs = document.querySelectorAll('.search-input');
-    const placeholderText = tabId === 'favoritos' ? 'BUSCAR NA BANDEJA...' : 'BUSCAR...';
-    searchInputs.forEach(input => input.placeholder = placeholderText);
-
     // Update active state in state tracking
-    STATE.activeTab = tabId;
     renderAlphabet();
     applyFilters();
 }
@@ -1006,18 +1172,26 @@ function setupSearch() {
                     const history = SearchHistory.getHistory();
                     if (history.length > 0) {
                         suggestionsEl.innerHTML = `
-    <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
-        ${history.slice(0, 5).map(h => `
-                                <div data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
-                                     class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group">
-                                    <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${h}</span>
-                                    <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
+                            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800 flex justify-between items-center">
+                                <span>Buscas Recentes</span>
+                                <button onclick="clearAllHistory(event)" class="text-[9px] text-red-400 hover:text-red-600 font-bold uppercase tracking-widest transition-colors">LIMPAR</button>
+                            </div>
+                            ${history.slice(0, 5).map(h => `
+                                <div class="group/item flex items-center justify-between px-4 hover:bg-gray-50 dark:hover:bg-gray-900 border-b border-gray-50 dark:border-gray-800 last:border-0 cursor-pointer">
+                                    <div class="flex-grow py-3 flex items-center gap-3" data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}">
+                                         <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span class="font-bold font-serif text-sm group-hover/item:text-black dark:group-hover/item:text-white">${h}</span>
+                                    </div>
+                                    <button onclick="deleteFromHistory('${h.replace(/'/g, "\\'")}', event)" class="p-2 text-gray-300 hover:text-red-500 transition-colors opacity-0 group-hover/item:opacity-100" title="Remover do histórico">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
                                 </div>
-                            `).join('')
-                            }
-`;
+                            `).join('')}
+                        `;
                         suggestionsEl.classList.remove('hidden');
                     } else {
                         suggestionsEl.classList.add('hidden');
@@ -1339,6 +1513,82 @@ function selectSuggestion(title, tab) {
     applyFilters();
 }
 
+function deleteFromHistory(term, event) {
+    if (event) event.stopPropagation();
+
+    if (typeof SearchHistory !== 'undefined') {
+        SearchHistory.remove(term);
+
+        // Re-trigger input logic
+        const inputs = document.querySelectorAll('.search-input');
+        if (inputs.length > 0) {
+            const input = inputs[0];
+            // Trigger logic to re-render suggestions
+            // We need to simulate the condition where suggestions are shown (empty input or focus)
+            // Using dispatchEvent might be enough if the listener handles it.
+            // Line 1153 handles val.length === 0.
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.focus();
+        }
+    }
+}
+
+function clearAllHistory(event) {
+    if (event) event.stopPropagation();
+
+    if (typeof SearchHistory !== 'undefined') {
+        SearchHistory.clearHistory();
+
+        // Re-trigger input logic to refresh suggestions (will hide history)
+        const inputs = document.querySelectorAll('.search-input');
+        if (inputs.length > 0) {
+            const input = inputs[0];
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.focus();
+        }
+    }
+}
+
+// --- KEYBOARD SHORTCUTS ---
+document.addEventListener('keydown', (e) => {
+    // 1. Focus Search: '/' or 'Cmd+K' / 'Ctrl+K'
+    if (
+        (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) ||
+        ((e.metaKey || e.ctrlKey) && e.key === 'k')
+    ) {
+        e.preventDefault();
+        const input = document.getElementById('desktopSearchInput') || document.querySelector('.search-input');
+        if (input) {
+            // Ensure proper view logic
+            const desktopWrapper = document.getElementById('desktopSearchWrapper');
+            // If desktop wrapper is visible (offsetParent != null), focus desktop input
+            if (desktopWrapper && desktopWrapper.offsetParent !== null) {
+                document.getElementById('desktopSearchInput').focus();
+            } else {
+                // Mobile
+                document.querySelector('.search-input').focus();
+            }
+        }
+    }
+
+    // 2. Escape: Close Modal OR Clear/Blur Search
+    if (e.key === 'Escape') {
+        // If modal open, close it
+        const modal = document.getElementById('readModal');
+        if (modal && !modal.classList.contains('hidden')) {
+            closeModal();
+            return;
+        }
+
+        // If suggestion box open or input focused, clear/blur
+        const active = document.activeElement;
+        if (active && active.classList.contains('search-input')) {
+            active.blur();
+            document.getElementById('searchSuggestions')?.classList.add('hidden');
+        }
+    }
+});
+
 // Scroll to Top functionality
 function scrollToTop() {
     window.scrollTo({
@@ -1359,6 +1609,20 @@ window.addEventListener('scroll', () => {
             scrollBtn.classList.add('opacity-0', 'pointer-events-none');
         }
     }
+
+    // Update scroll progress bar
+    const progressBar = document.getElementById('scrollProgressBar');
+    if (progressBar) {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.scrollY;
+
+        let scrollPercentage = 0;
+        if (documentHeight > windowHeight) {
+            scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+        }
+        progressBar.style.width = Math.min(scrollPercentage, 100) + '%';
+    }
 });
 
 
@@ -1375,12 +1639,12 @@ function renderAlphabet() {
     const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
 
     // Clear container
-    container.innerHTML = `< button onclick = "filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id = "btn-letter-all" >*</button > `;
+    container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
 
     abc.forEach(l => {
         if (availableLetters.has(l)) {
             const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
-            const html = `< button onclick = "filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}" > ${l}</button > `;
+            const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
             container.insertAdjacentHTML('beforeend', html);
         }
     });
@@ -1398,19 +1662,35 @@ function openModal(i) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
 
-    // Favorites Button in Modal
+    // Generate Breadcrumbs
+    const breadcrumbEl = document.getElementById('modalBreadcrumb');
+    if (breadcrumbEl) {
+        const modeLabel = CONFIG.modes[STATE.mode].description;
+        const categoryLabel = catConfig ? catConfig.label : item._cat;
+
+        breadcrumbEl.innerHTML = `
+            <span class="font-semibold">${modeLabel}</span>
+            <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="font-semibold">${categoryLabel}</span>
+        `;
+    }
+
+    // Favorites Button in Modal (Now "Add to Apostila")
     let favBtnHtml = '';
     if (typeof Favorites !== 'undefined') {
         const isFav = Favorites.is(item.id);
-        const emptyStar = `< path stroke - linecap="round" stroke - linejoin="round" d = "M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /> `;
-        const filledStar = `< path fill = "currentColor" fill - rule="evenodd" d = "M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip - rule="evenodd" /> `;
+        // Icon: Minimalist Swiss Style (Thin)
+        const emptyIcon = `<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" stroke-width="1" />`;
+        const filledIcon = `<path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />`;
 
-        favBtnHtml = `< button class="fav-btn ml-auto p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-onclick = "Favorites.toggle('${item.id}')" data - id="${item.id}" title = "Adicionar à Bandeja" >
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-        ${isFav ? filledStar : emptyStar}
+        favBtnHtml = `<button class="fav-btn ml-auto p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors group/icon"
+onclick="Favorites.toggle('${item.id}')" data-id="${item.id}" title="${isFav ? 'Remover da Apostila' : 'Adicionar à Apostila'}">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 transition-all duration-300 ${isFav ? 'text-blue-600 fill-blue-600' : 'text-gray-300 hover:text-blue-400 dark:text-gray-600 dark:hover:text-blue-400'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+        ${isFav ? filledIcon : emptyIcon}
     </svg>
-        </button > `;
+        </button>`;
     }
 
     if (catConfig) {
@@ -1622,3 +1902,29 @@ window.changeFontSize = function (size) {
     if (size === 'sm') content.classList.add('text-sm-mode');
     if (size === 'lg') content.classList.add('text-lg-mode');
 };
+// --- BODY MAP HELPERS ---
+function generateSidebarOptions() {
+    if (typeof BODY_DATA === 'undefined') return '';
+
+    let html = '';
+    // Front Points
+    if (BODY_DATA.points && BODY_DATA.points.front) {
+        BODY_DATA.points.front.forEach(p => {
+            html += renderSidebarItem(p);
+        });
+    }
+    // Back Points
+    if (BODY_DATA.points && BODY_DATA.points.back) {
+        BODY_DATA.points.back.forEach(p => {
+            html += renderSidebarItem(p);
+        });
+    }
+    return html;
+}
+
+function renderSidebarItem(p) {
+    return `<div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-500"
+        onclick="toggleBodyPoint('${p.id}')">
+        ${p.name}
+    </div>`;
+}

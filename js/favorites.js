@@ -1,118 +1,237 @@
-
 const FAV_KEY = 'johrei_favorites';
 
 const Favorites = {
-    list: [],
+    trays: {
+        'Principal': []
+    },
+    activeTray: 'Principal',
 
     init() {
         try {
             const stored = localStorage.getItem(FAV_KEY);
-            if (stored) this.list = JSON.parse(stored);
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                // Migration V1 (Array) -> V2 (Objects)
+                if (Array.isArray(parsed)) {
+                    this.trays = { 'Principal': parsed };
+                    this.activeTray = 'Principal';
+                    this.save();
+                } else {
+                    // V2
+                    this.trays = parsed.trays || { 'Principal': [] };
+                    this.activeTray = parsed.activeTray || 'Principal';
+                    if (!this.trays[this.activeTray]) {
+                        this.activeTray = Object.keys(this.trays)[0] || 'Principal';
+                    }
+                }
+            } else {
+                this.trays = { 'Principal': [] };
+                this.activeTray = 'Principal';
+            }
         } catch (e) {
             console.error('Error loading favorites', e);
-            this.list = [];
+            this.trays = { 'Principal': [] };
+            this.activeTray = 'Principal';
         }
-    },
-
-    toggle(id) {
-        const idx = this.list.indexOf(id);
-        if (idx === -1) {
-            this.list.push(id);
-        } else {
-            this.list.splice(idx, 1);
-        }
-        this.save();
-
-        // Trigger UI updates
-        if (typeof renderTabs === 'function') renderTabs();
-
-        // If currently viewing favorites, re-render
-        if (STATE.activeTab === 'favoritos') {
-            renderFavorites();
-        }
-
-        // Update specific button states
-        this.updateButtons(id);
     },
 
     save() {
-        localStorage.setItem(FAV_KEY, JSON.stringify(this.list));
+        const data = {
+            trays: this.trays,
+            activeTray: this.activeTray
+        };
+        localStorage.setItem(FAV_KEY, JSON.stringify(data));
+    },
+
+    // Getter/Setter for backward compatibility & easy access
+    get list() {
+        return this.trays[this.activeTray] || [];
+    },
+
+    set list(val) {
+        if (this.trays[this.activeTray]) {
+            this.trays[this.activeTray] = val;
+            this.save();
+        }
     },
 
     is(id) {
         return this.list.includes(id);
     },
 
-    updateButtons(id) {
-        // Find all buttons for this ID
-        const btns = document.querySelectorAll(`.fav-btn[data-id="${id}"]`);
-        btns.forEach(btn => {
-            const isFav = this.is(id);
-            // Update Icon
-            // Empty Star path
-            const emptyStar = `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />`;
-            // Filled Star path
-            const filledStar = `<path fill="currentColor" fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />`;
+    toggle(id) {
+        // Must use 'this.list' getter to get the array reference, but we need to modify the array in place.
+        // getter returns reference, so push/splice works.
+        // CHECK: Does getter value copy or ref? JS arrays are refs.
+        const currentList = this.trays[this.activeTray];
 
-            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">${isFav ? filledStar : emptyStar}</svg>`;
+        const idx = currentList.indexOf(id);
+        if (idx === -1) {
+            currentList.push(id);
+        } else {
+            currentList.splice(idx, 1);
+        }
+
+        this.save();
+        this.triggerUpdates(id);
+    },
+
+    // --- TRAY MANAGEMENT ---
+
+    createTray(name) {
+        const cleanName = name.trim();
+        if (!cleanName) return false;
+        if (this.trays[cleanName]) return false; // Exists
+
+        this.trays[cleanName] = [];
+        this.activeTray = cleanName;
+        this.save();
+        this.triggerUpdates();
+        return true;
+    },
+
+    deleteTray(name) {
+        if (name === 'Principal') return false; // Prevent deletion of default
+        if (!this.trays[name]) return false;
+
+        delete this.trays[name];
+
+        // If we deleted the active tray, switch to Principal
+        if (this.activeTray === name) {
+            this.activeTray = 'Principal';
+        }
+
+        this.save();
+        this.triggerUpdates();
+        return true;
+    },
+
+    renameTray(oldName, newName) {
+        const cleanNew = newName.trim();
+        if (!cleanNew) return false;
+        if (oldName === 'Principal') return false;
+        if (!this.trays[oldName]) return false;
+        if (this.trays[cleanNew]) return false; // Target name exists
+
+        // Move data
+        this.trays[cleanNew] = this.trays[oldName];
+        delete this.trays[oldName];
+
+        if (this.activeTray === oldName) {
+            this.activeTray = cleanNew;
+        }
+
+        this.save();
+        this.triggerUpdates();
+        return true;
+    },
+
+    switchTray(name) {
+        if (!this.trays[name]) return false;
+        this.activeTray = name;
+        this.save();
+        this.triggerUpdates();
+        return true;
+    },
+
+    clearCurrentTray() {
+        if (this.trays[this.activeTray]) {
+            this.trays[this.activeTray] = [];
+            this.save();
+            this.triggerUpdates();
+        }
+    },
+
+    // --- UI UPDATES ---
+
+    triggerUpdates(itemId = null) {
+        // Update Tab Counter
+        if (typeof renderTabs === 'function') renderTabs();
+
+        // If we are currently viewing the Favorites tab, we must re-render the list
+        // because the source data (active tray or its content) has changed.
+        if (typeof STATE !== 'undefined' && STATE.activeTab === 'favoritos') {
+            // Re-run filter logic to update STATE.list and then render
+            if (typeof applyFilters === 'function') applyFilters();
+        }
+
+        // Update individual item buttons (stars/bookmarks)
+        if (itemId) {
+            this.updateButtons(itemId);
+        } else {
+            // Update all buttons if we switched trays or cleared all
+            this.updateAllButtons();
+        }
+    },
+
+    updateButtons(id) {
+        const isFav = this.is(id);
+        // Define paths centrally or duplicated? Duplicated for now to ensure self-contained fix without global vars import issues.
+        // Empty: Thin elegant circle
+        const emptyIconHtml = `<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" stroke-width="1" />`;
+        // Filled: Thin circle with check mark
+        const filledIconHtml = `<path fill="currentColor" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />`;
+
+        document.querySelectorAll(`.fav-btn[data-id="${id}"]`).forEach(btn => {
+            const svg = btn.querySelector('svg');
+            if (svg) {
+                // Update SVG Content
+                svg.innerHTML = isFav ? filledIconHtml : emptyIconHtml;
+
+                // Update Colors
+                if (isFav) {
+                    svg.classList.remove('text-gray-300', 'hover:text-blue-400', 'dark:text-gray-600', 'dark:hover:text-blue-400', 'hover:text-gray-500', 'dark:hover:text-gray-400'); // Clean old
+                    svg.classList.add('text-blue-600', 'fill-blue-600');
+                } else {
+                    svg.classList.remove('text-blue-600', 'fill-blue-600');
+                    svg.classList.add('text-gray-300', 'dark:text-gray-600');
+                    // Note: Hover classes might be lost if we mess too much with classList. 
+                    // Simpler to just toggle the 'active' state classes.
+                    // Let's reset to base state
+                    svg.setAttribute('class', `w-6 h-6 transition-all duration-300 ${isFav ? 'text-blue-600 fill-blue-600' : 'text-gray-300 hover:text-blue-400 dark:text-gray-600 dark:hover:text-blue-400'}`);
+                    // Modal uses w-8 h-8... we need to preserve size.
+                    if (btn.parentElement.id === 'modalCard' || btn.classList.contains('ml-auto')) {
+                        svg.setAttribute('class', `w-8 h-8 transition-all duration-300 ${isFav ? 'text-blue-600 fill-blue-600' : 'text-gray-300 hover:text-blue-400 dark:text-gray-600 dark:hover:text-blue-400'}`);
+                    }
+                }
+
+                // Update Title
+                btn.title = isFav ? 'Remover da Apostila' : 'Adicionar à Apostila';
+            }
         });
+    },
+
+    updateAllButtons() {
+        if (typeof applyFilters === 'function') applyFilters(); // Re-renders list
+
+        // Also update Modal button if open
+        const modalBtn = document.querySelector('#modalCard .fav-btn');
+        if (modalBtn) {
+            this.updateButtons(modalBtn.dataset.id);
+        }
     }
 };
 
-function renderFavorites() {
-    const container = document.getElementById('results');
-    const favs = Favorites.list;
+Favorites.init();
 
-    if (favs.length === 0) {
-        container.innerHTML = `<div class="p-8 text-center text-gray-500">Sua bandeja de impressão está vazia. Adicione itens clicando na estrela. ⭐</div>`;
-        return;
-    }
-
-    // Need to find items by ID across all data
-    // Assuming STATE.data is populated
-    let items = [];
-    // Helper to find item
-    const findItem = (id) => {
-        for (const tab in STATE.data) {
-            const found = STATE.data[tab].find(i => i.id === id);
-            if (found) return found;
+// --- GLOBAL UI HELPERS ---
+window.createNewTray = function () {
+    const name = prompt("Nome da nova apostila:");
+    if (name) {
+        if (!Favorites.createTray(name)) {
+            alert('Erro: Nome inválido, já existente ou "Principal".');
+            Favorites.triggerUpdates(); // Reset select
         }
-        return null;
-    };
+    } else {
+        Favorites.triggerUpdates(); // Reset Select if cancelled
+    }
+};
 
-    favs.forEach(id => {
-        const item = findItem(id);
-        if (item) items.push(item);
-    });
-
-    // Reuse render logic?
-    // We can manually build the HTML using `renderCard` style logic or call a reusable function if one existed.
-    // The current render logic is inside `renderList` in main.js
-    // I'll quickly reimplement a cleaner version for favorites or refactor `renderList`.
-    // Since `renderList` is complex (handling 'mapa' etc), I'll write specific render logical for Favorites.
-
-    let html = `<div class="mb-4 flex justify-between items-center no-print px-4">
-        <h2 class="text-xl font-bold font-serif text-johrei-murasaki">Bandeja de Impressão (${items.length})</h2>
-        <button onclick="window.print()" class="bg-johrei-murasaki text-white px-4 py-2 rounded-lg font-bold shadow hover:bg-purple-700 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" /></svg>
-            Imprimir Todos
-        </button>
-    </div>`;
-
-    html += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-20 print:block print:gap-0 print:pb-0">`; // Print: block to allow page breaks naturally
-
-    items.forEach((item) => {
-        // Find index for modal? opening modal from favorites might be tricky if not in STATE.list context.
-        // We can open modal by PASSING THE ITEM directly or finding its index in the GLOBAL list?
-        // openModal(i) takes an index from STATE.list.
-        // If we are in 'favoritos' mode, STATE.list should probably BE the favorites list?
-        // Yes! When switching tab, we should set STATE.list = favoritesItems.
-        // But here I am rendering manually. 
-        // Best approach: In `filterByTab`, if tab === 'favoritos', set STATE.list = mappedItems.
-        // Then `renderList` handles it?
-        // `renderList` expects STATE.list.
-        // So I don't need this `renderFavorites` function to generate HTML! 
-        // I just need `filterByTab` to handle 'favoritos' case!
-    });
-    // Abort writing specialized HTML here. Move logic to main.js:filterByTab.
-}
+window.renameCurrentTray = function () {
+    const newName = prompt("Novo nome para a apostila:", Favorites.activeTray);
+    if (newName && newName !== Favorites.activeTray) {
+        if (!Favorites.renameTray(Favorites.activeTray, newName)) {
+            alert('Erro: Nome inválido, já existente ou "Principal".');
+        }
+    }
+};

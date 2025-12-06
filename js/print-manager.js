@@ -6,7 +6,7 @@
 
 const PrintManager = {
     // Main function to trigger printing
-    printBooklet(favoriteIds) {
+    printBooklet(favoriteIds, title) {
         if (!favoriteIds || favoriteIds.length === 0) {
             alert('Sua bandeja está vazia.');
             return;
@@ -17,7 +17,7 @@ const PrintManager = {
         if (items.length === 0) return;
 
         // 2. Generate HTML Content
-        const htmlContent = this.generateHTML(items);
+        const htmlContent = this.generateHTML(items, title);
 
         // 3. Open Print Window
         this.openPrintWindow(htmlContent);
@@ -43,7 +43,7 @@ const PrintManager = {
         return solved;
     },
 
-    generateHTML(items) {
+    generateHTML(items, title) {
         const date = new Date().toLocaleDateString('pt-BR');
 
         return `
@@ -207,7 +207,7 @@ const PrintManager = {
                 <div class="book-cover">
                     <div>
                         <img src="assets/images/cover-logo.jpg" style="width: 90px; height: auto; margin: 0 auto 1.5rem; display: block;">
-                        <h1>Guia Johrei</h1>
+                        <h1>${title || 'Guia Johrei'}</h1>
                     </div>
                     <div class="meta">
                         <p>Gerado em: ${date}</p>
