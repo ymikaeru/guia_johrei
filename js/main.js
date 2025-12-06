@@ -683,8 +683,6 @@ function toggleFilter(type, value) {
     renderFilterMenu();
 }
 function applyFilters() {
-    console.log('[applyFilters] START - activeTab:', STATE.activeTab, 'activeTags:', STATE.activeTags);
-
     // Get value from any search input (they should be synced)
     const inputs = document.querySelectorAll('.search-input');
     // --- FILTER MENU LOGIC ---
@@ -854,7 +852,6 @@ function applyFilters() {
         else btn.classList.add('hidden');
     });
     // Render filtered results
-    console.log('[applyFilters] END - activeTab:', STATE.activeTab, 'filtered count:', filtered.length);
     renderList(filtered, activeTags, STATE.mode, activeTab);
 }
 
@@ -967,9 +964,6 @@ function filterByTag(tag, event) {
         STATE.activeTags.push(tag); // Add if not exists
     }
 
-    console.log('[filterByTag] activeTab ANTES:', STATE.activeTab);
-    console.log('[filterByTag] activeTags:', STATE.activeTags);
-
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
     STATE.activeLetter = '';
 
@@ -982,8 +976,6 @@ function filterByTag(tag, event) {
     }
 
     applyFilters();
-
-    console.log('[filterByTag] activeTab DEPOIS:', STATE.activeTab);
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
