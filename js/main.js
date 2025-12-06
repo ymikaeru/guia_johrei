@@ -246,7 +246,7 @@ function renderTabs() {
 
     // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
-        const active = STATE.activeTab === id && !STATE.isCrossTabMode; // Hide indicator in cross-tab mode
+        const active = STATE.activeTab === id; // Keep active tab highlighted even in cross-tab mode
         const config = catMap[id];
         const label = config ? config.label : id;
         const activeClass = active
@@ -258,7 +258,7 @@ function renderTabs() {
 
     // Adiciona aba Mapa apenas no modo ensinamentos
     if (STATE.mode === 'ensinamentos') {
-        const active = STATE.activeTab === 'mapa' && !STATE.isCrossTabMode; // Hide indicator in cross-tab mode
+        const active = STATE.activeTab === 'mapa'; // Keep active tab highlighted
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white';
