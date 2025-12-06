@@ -1,16 +1,22 @@
 // --- ESTADO GLOBAL ---
-let STATE = {
-    activeTab: 'fundamentos', // ou 'curas', 'pontos_focais', 'mapa'
-    activeLetter: '',
-    activeTags: [], // Changed from activeTag to activeTags array
-    activeFocusPoints: [], // Multi-select for focus points
-    bodyFilter: null, // Agora suporta array ou null, mas vamos manter simples por enquanto
+const STATE = {
     mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
-    list: [],
-    idx: -1,
-    isCrossTabMode: false, // True when showing results from multiple tabs
-    selectedBodyPoint: null // Selected body point for filtering
+    activeTab: 'fundamentos', // aba ativa
+    activeLetter: '', // filtro de letra
+    activeTags: [], // tags selecionadas (agora array para suportar múltiplas)
+    bodyFilter: null, // filtro do mapa corporal
+    activeFocusPoints: [], // Pontos focais selecionados (array)
+    selectedBodyPoint: null, // ID do ponto selecionado no mapa
+    data: {}, // dados carregados
+    list: [], // lista filtrada atual
+    isCrossTabMode: false, // se a busca retorna itens de várias abas
+    validCandidates: null, // Cache for autocomplete candidates
+    correctionUsed: null // Track if auto-correction was applied
 };
+
+// Expose for debugging
+window.STATE = STATE;
+if (typeof SearchEngine !== 'undefined') window.SearchEngine = SearchEngine;
 
 // Helper to remove accents
 function removeAccents(str) {
@@ -305,10 +311,10 @@ function renderTabs() {
             }
 
             return `
-            <button onclick="selectMobileOption('${id}')"
-                class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
-                ${label}
-            </button>
+    < button onclick = "selectMobileOption('${id}')"
+class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white" >
+    ${label}
+            </button >
     `;
         }).join('');
 
@@ -318,10 +324,10 @@ function renderTabs() {
                 if (mobileLabel) mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
             } else {
                 optionsHtml += `
-                <button onclick="selectMobileOption('mapa')"
-                    class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
-                    MAPAS DE APLICAÇÃO
-                </button>
+    < button onclick = "selectMobileOption('mapa')"
+class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white" >
+    MAPAS DE APLICAÇÃO
+                </button >
     `;
             }
         }
@@ -439,9 +445,9 @@ function updateUIForTab(tabId) {
         ];
 
         let html = `
-        <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
+    < div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start" >
             
-            <!-- Sidebar (Desktop Only) -->
+            < !--Sidebar(Desktop Only) -->
             <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 h-[600px] overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm">
                  <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
                     <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
@@ -455,38 +461,38 @@ function updateUIForTab(tabId) {
                  </div>
             </div>
 
-            <!-- Mobile Dropdown Selector (Mobile Only) -->
-            <div class="block lg:hidden w-full mb-8 relative z-30">
-                 <div class="-mx-8 md:-mx-12 px-8 md:px-12 pt-2 pb-0 border-b border-gray-100 dark:border-gray-900">
-                    <div class="relative inline-block w-full text-left" id="customBodyPointDropdown">
-                        <button type="button" onclick="toggleCustomDropdown(event)"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
-                            <span id="customDropdownLabel">Filtrar por Região</span>
-                            <svg id="customDropdownIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
+            <!--Mobile Dropdown Selector(Mobile Only)-- >
+    <div class="block lg:hidden w-full mb-8 relative z-30">
+        <div class="-mx-8 md:-mx-12 px-8 md:px-12 pt-2 pb-0 border-b border-gray-100 dark:border-gray-900">
+            <div class="relative inline-block w-full text-left" id="customBodyPointDropdown">
+                <button type="button" onclick="toggleCustomDropdown(event)"
+                    class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
+                    <span id="customDropdownLabel">Filtrar por Região</span>
+                    <svg id="customDropdownIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
 
-                        <div id="customDropdownMenu"
-                        class="hidden absolute left-0 right-0 z-[100] mt-0 w-full bg-white dark:bg-[#111] shadow-2xl border border-gray-200 dark:border-gray-800 max-h-[50vh] overflow-y-auto custom-scrollbar transform transition-all duration-300 origin-top opacity-0 -translate-y-2 rounded-xl">
-                            <div class="py-0">
-                                <div class="px-5 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all flex justify-between items-center bg-white dark:bg-[#111] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
-                                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                                    -- Todos os pontos --
-                                </div>
-                                ${generateSidebarOptions()}
-                            </div>
+                <div id="customDropdownMenu"
+                    class="hidden absolute left-0 right-0 z-[100] mt-0 w-full bg-white dark:bg-[#111] shadow-2xl border border-gray-200 dark:border-gray-800 max-h-[50vh] overflow-y-auto custom-scrollbar transform transition-all duration-300 origin-top opacity-0 -translate-y-2 rounded-xl">
+                    <div class="py-0">
+                        <div class="px-5 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all flex justify-between items-center bg-white dark:bg-[#111] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
+                            onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                            -- Todos os pontos --
                         </div>
+                        ${generateSidebarOptions()}
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-        `;
+`;
 
         // Mobile Tabs
         const mobileTabs = `
-            <div class="flex md:hidden justify-center gap-3 mb-6 w-full">
-                ${views.map((v, i) => `
+    < div class="flex md:hidden justify-center gap-3 mb-6 w-full" >
+        ${views.map((v, i) => `
                     <button onclick="switchMobileView('${v.id}')" 
                         id="tab-${v.id}"
                         class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest border rounded-md transition-all ${i === 0 ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-white dark:bg-black text-gray-400 border-gray-200 dark:border-gray-800'}">
@@ -494,30 +500,30 @@ function updateUIForTab(tabId) {
                     </button>
                 `).join('')
             }
-            </div>
-            `;
+            </div >
+    `;
 
         html += mobileTabs;
 
-        html += `   <!-- Maps Area (Right on Desktop) -->
-            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                `;
+        html += `   < !--Maps Area(Right on Desktop)-- >
+    <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        `;
 
         views.forEach((view, i) => {
             // Mobile: Only first one visible by default. Desktop: All visible.
             const visibilityClass = i === 0 ? 'block' : 'hidden';
 
             html += `
-                <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
-                    <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
-                    <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
-                        <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
-                        <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            ${renderBodyPoints(view.points, view.id)}
-                        </svg>
-                    </div>
-                </div>
-                `;
+        <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
+            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
+            <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
+                <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    ${renderBodyPoints(view.points, view.id)}
+                </svg>
+            </div>
+        </div>
+        `;
         });
 
         html += `   </div>
@@ -533,8 +539,8 @@ window.switchMobileView = function (targetId) {
     STATE.currentMobileView = targetId;
 
     views.forEach(id => {
-        const el = document.getElementById(`view-${id}`);
-        const tab = document.getElementById(`tab-${id}`);
+        const el = document.getElementById(`view - ${id} `);
+        const tab = document.getElementById(`tab - ${id} `);
 
         if (el && tab) {
             if (id === targetId) {
@@ -666,7 +672,7 @@ function applyFilters() {
         // Use SearchEngine for smart search with ranking if available
         if (typeof SearchEngine !== 'undefined') {
             filtered = SearchEngine.search(filtered, inputs[0].value, {
-                minScore: 10,
+                minScore: 5,
                 maxResults: 100,
                 useOperators: true,
                 useFuzzy: true,
@@ -676,22 +682,32 @@ function applyFilters() {
             // --- AUTO-CORRECT FALLBACK ---
             // If 0 results and we have valid query > 2 chars, try correction
             if (filtered.length === 0 && q.length > 2) {
-                // Build candidates from rawItems (Titles + Tags + Synonyms)
-                const candidates = new Set();
-                rawItems.forEach(item => {
-                    if (item.title) candidates.add(item.title);
-                    if (item.tags) item.tags.forEach(t => candidates.add(t));
-                });
-                if (SearchEngine.synonyms) {
-                    Object.keys(SearchEngine.synonyms).forEach(k => candidates.add(k));
+                // Ensure candidates are prepared (using ALL data for candidates, even if filtering local subset)
+                if (!STATE.validCandidates) {
+                    STATE.validCandidates = new Set();
+                    const allItems = [];
+                    Object.values(STATE.data).forEach(list => {
+                        if (Array.isArray(list)) allItems.push(...list);
+                    });
+
+                    allItems.forEach(item => {
+                        if (item.title) STATE.validCandidates.add(item.title);
+                        if (item.tags) item.tags.forEach(t => STATE.validCandidates.add(t));
+                    });
+                    if (SearchEngine.synonyms) {
+                        Object.keys(SearchEngine.synonyms).forEach(key => {
+                            // Always add synonym keys as valid candidates
+                            STATE.validCandidates.add(key);
+                        });
+                    }
                 }
 
-                const correction = SearchEngine.suggestCorrection(searchValue, Array.from(candidates));
+                const correction = SearchEngine.suggestCorrection(searchValue, Array.from(STATE.validCandidates));
 
                 if (correction) {
                     // Re-run search with correction
                     filtered = SearchEngine.search(rawItems, correction, { // Search in rawItems again
-                        minScore: 10,
+                        minScore: 5,
                         maxResults: 100,
                         useOperators: true,
                         useFuzzy: true,
@@ -703,7 +719,6 @@ function applyFilters() {
                     }
                 }
             }
-
         } else {
             // Fallback to basic search if SearchEngine not loaded
             filtered = filtered.filter(item => {
@@ -775,9 +790,9 @@ function applyFilters() {
         const banner = document.createElement('div');
         banner.className = 'bg-yellow-50 border-b border-yellow-200 px-6 py-3 text-sm flex items-center gap-2 text-yellow-800 mb-4 animate-fade-in';
         banner.innerHTML = `
-            <svg class="w-4 h-4 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            <span>Exibindo resultados para <strong>${STATE.correctionUsed.corrected}</strong> em vez de <em>${STATE.correctionUsed.original}</em></span>
-        `;
+    < svg class="w-4 h-4 text-yellow-600" fill = "none" stroke = "currentColor" viewBox = "0 0 24 24" > <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg >
+        <span>Exibindo resultados para <strong>${STATE.correctionUsed.corrected}</strong> em vez de <em>${STATE.correctionUsed.original}</em></span>
+`;
         // Insert at top of list
         const container = document.getElementById('resultsContainer');
         if (container) {
@@ -796,13 +811,13 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-            <button onclick="toggleBodyPoint('${p.id}')"
-        class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-        style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-        title="${p.name}">
-            <span class="sr-only">${p.name}</span>
-        </button>
-            `;
+    < button onclick = "toggleBodyPoint('${p.id}')"
+class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
+style = "left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+title = "${p.name}" >
+    <span class="sr-only">${p.name}</span>
+        </button >
+    `;
     }).join('');
 }
 
@@ -991,8 +1006,8 @@ function setupSearch() {
                     const history = SearchHistory.getHistory();
                     if (history.length > 0) {
                         suggestionsEl.innerHTML = `
-            <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
-                ${history.slice(0, 5).map(h => `
+    <div class="px-4 py-2 text-[9px] uppercase tracking-widest text-gray-400 font-bold border-b border-gray-50 dark:border-gray-800">Buscas Recentes</div>
+        ${history.slice(0, 5).map(h => `
                                 <div data-title="${h.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
                                      class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group">
                                     <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${h}</span>
@@ -1002,7 +1017,7 @@ function setupSearch() {
                                 </div>
                             `).join('')
                             }
-        `;
+`;
                         suggestionsEl.classList.remove('hidden');
                     } else {
                         suggestionsEl.classList.add('hidden');
@@ -1093,7 +1108,44 @@ function setupSearch() {
                     }
                 });
 
-                // Sort by priority (titles first, then tags, then focus points) and limit to 8
+                // Search in synonyms (Keys match -> Suggest Values)
+                if (typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
+                    const normalizedQ = removeAccents(q);
+                    Object.keys(SearchEngine.synonyms).forEach(key => {
+                        const values = SearchEngine.synonyms[key];
+                        const normalizedKey = removeAccents(key);
+
+                        // Check if query matches the KEY or any of the VALUES
+                        const matchKey = normalizedKey.includes(normalizedQ);
+                        const matchValue = values.some(v => removeAccents(v).includes(normalizedQ));
+
+                        if (matchKey || matchValue) {
+                            // Add Key itself
+                            const kKey = `syn:${key}`;
+                            if (!seen.has(kKey)) {
+                                suggestions.push({
+                                    text: key.charAt(0).toUpperCase() + key.slice(1),
+                                    type: 'Sinônimo',
+                                    priority: 4 // Higher priority than Titles (3)
+                                });
+                                seen.add(kKey);
+                            }
+
+                            // Add all Values
+                            values.forEach(val => {
+                                const sKey = `syn:${val}`;
+                                if (!seen.has(sKey)) {
+                                    suggestions.push({
+                                        text: val.charAt(0).toUpperCase() + val.slice(1),
+                                        type: 'Sinônimo',
+                                        priority: 4 // Higher priority than Titles (3)
+                                    });
+                                    seen.add(sKey);
+                                }
+                            });
+                        }
+                    });
+                }              // Sort by priority (titles first, then tags, then focus points, then synonyms) and limit to 8
                 suggestions.sort((a, b) => b.priority - a.priority);
                 currentSuggestions = suggestions.slice(0, 8);
                 selectedIndex = -1; // Reset selection
@@ -1110,7 +1162,7 @@ function setupSearch() {
                         if (item.tags) item.tags.forEach(t => candidates.add(t));
                     });
 
-                    // Add Synonym Keys
+                    // Add Synonym Keys (Always add them, don't check for results)
                     if (SearchEngine.synonyms) {
                         Object.keys(SearchEngine.synonyms).forEach(k => candidates.add(k));
                     }
@@ -1178,7 +1230,7 @@ function setupSearch() {
                                         <span class="font-bold font-serif text-black dark:text-white"><em>Você quis dizer:</em> ${match.text}?</span>
                                     </div>
                                     <span class="text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-200 rounded px-1.5 py-0.5 bg-yellow-50">Correção</span>
-                                </div >
+                                </div>
                             `;
                         }
 
@@ -1187,7 +1239,7 @@ function setupSearch() {
                             class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
                                 <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${match.text}</span>
                                 <span class="text-[9px] uppercase tracking-widest text-gray-400 border border-gray-100 dark:border-gray-800 rounded px-1.5 py-0.5 bg-gray-50 dark:bg-gray-900">${match.type}</span>
-                            </div >
+                            </div>
                         `;
                     }).join('');
                     suggestionsEl.classList.remove('hidden');
@@ -1323,12 +1375,12 @@ function renderAlphabet() {
     const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
 
     // Clear container
-    container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
+    container.innerHTML = `< button onclick = "filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id = "btn-letter-all" >*</button > `;
 
     abc.forEach(l => {
         if (availableLetters.has(l)) {
             const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
-            const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
+            const html = `< button onclick = "filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}" > ${l}</button > `;
             container.insertAdjacentHTML('beforeend', html);
         }
     });
@@ -1350,19 +1402,19 @@ function openModal(i) {
     let favBtnHtml = '';
     if (typeof Favorites !== 'undefined') {
         const isFav = Favorites.is(item.id);
-        const emptyStar = `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />`;
-        const filledStar = `<path fill="currentColor" fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />`;
+        const emptyStar = `< path stroke - linecap="round" stroke - linejoin="round" d = "M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /> `;
+        const filledStar = `< path fill = "currentColor" fill - rule="evenodd" d = "M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip - rule="evenodd" /> `;
 
-        favBtnHtml = `<button class="fav-btn ml-auto p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" 
-            onclick="Favorites.toggle('${item.id}')" data-id="${item.id}" title="Adicionar à Bandeja">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                ${isFav ? filledStar : emptyStar}
-            </svg>
-        </button>`;
+        favBtnHtml = `< button class="fav-btn ml-auto p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+onclick = "Favorites.toggle('${item.id}')" data - id="${item.id}" title = "Adicionar à Bandeja" >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        ${isFav ? filledStar : emptyStar}
+    </svg>
+        </button > `;
     }
 
     if (catConfig) {
-        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
+        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
     }
 
     // Inject button into header area
@@ -1396,7 +1448,7 @@ function openModal(i) {
 
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1}`;
+    document.getElementById('modalRef').textContent = `#${i + 1} `;
 
     const inputs = document.querySelectorAll('.search-input');
     let searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
@@ -1436,7 +1488,7 @@ function openModal(i) {
         }
         const terms = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
         if (terms) {
-            highlightRegex = new RegExp(useBoundaries ? `\\b(${terms})\\b` : `(${terms})`, 'i');
+            highlightRegex = new RegExp(useBoundaries ? `\\b(${terms}) \\b` : `(${terms})`, 'i');
         }
     }
 
@@ -1450,7 +1502,7 @@ function openModal(i) {
                 ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100" // Highlighted
                 : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"; // Normal
 
-            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}">${p}</button>`;
+            return `< button onclick = "filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}" > ${p}</button > `;
         }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
@@ -1481,7 +1533,7 @@ function openModal(i) {
 
     // Deep Linking: Update URL Hash
     const slug = generateSlug(item.title);
-    history.replaceState(null, null, `#/${slug}`);
+    history.replaceState(null, null, `# / ${slug} `);
 }
 
 function closeModal() {

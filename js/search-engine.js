@@ -20,7 +20,7 @@ const SearchEngine = {
         'toxina': ['toxinas', 'impureza', 'impurezas', 'veneno', 'medicamento'],
         'johrei': ['luz divina', 'luz', 'energia'],
         'cura': ['curar', 'tratamento', 'sarar', 'recuperação', 'milagre'],
-        'quadril': ['quadris', 'bacia', 'pélvis', 'cintura'],
+        'quadril': ['quadris', 'bacia', 'pélvis', 'cintura', 'rim', 'rins', 'ciático', 'coluna lumbar'],
         'perna': ['pernas', 'membros inferiores', 'coxa', 'joelho', 'tornozelo', 'pé'],
         'braço': ['braços', 'membros superiores', 'cotovelo', 'pulso', 'mão'],
         'febre': ['temperatura', 'quente', 'calor'],
@@ -229,13 +229,27 @@ const SearchEngine = {
         }
 
         // Content matches (lower weight, but still valuable)
+        // Content matches (lower weight, but still valuable)
         if (item.content) {
             const content = removeAccents(item.content.toLowerCase());
-            const matches = content.split(q).length - 1;
-            score += Math.min(matches * 5, 25); // Cap at 25 points
 
-            // Bonus if query appears in first 100 chars
-            if (content.substring(0, 100).includes(q)) score += 10;
+            // Check all search terms against content
+            let contentScore = 0;
+            for (const term of searchTerms) {
+                const termNorm = removeAccents(term.toLowerCase());
+                const matches = content.split(termNorm).length - 1;
+                contentScore += matches * 5;
+            }
+            score += Math.min(contentScore, 25); // Cap at 25 points
+
+            // Bonus if ANY search term appears in first 100 chars
+            for (const term of searchTerms) {
+                const termNorm = removeAccents(term.toLowerCase());
+                if (content.substring(0, 100).includes(termNorm)) {
+                    score += 10;
+                    break;
+                }
+            }
         }
 
         return score;
