@@ -1136,6 +1136,19 @@ function openModal(i) {
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
     document.getElementById('modalRef').textContent = `#${i + 1}`;
 
+    // Generate breadcrumb
+    const breadcrumbEl = document.getElementById('modalBreadcrumb');
+    if (breadcrumbEl) {
+        const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
+        const catLabel = catConfig ? catConfig.label : item._cat;
+        const breadcrumbHTML = `
+            <span class="text-gray-500">${modeLabel}</span>
+            <span class="text-gray-600">›</span>
+            <span class="text-gray-400">${catLabel}</span>
+        `;
+        breadcrumbEl.innerHTML = breadcrumbHTML;
+    }
+
     const inputs = document.querySelectorAll('.search-input');
     let searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
 
