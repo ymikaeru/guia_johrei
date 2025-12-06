@@ -282,5 +282,17 @@ const SearchHistory = {
             const hNorm = removeAccents(h.toLowerCase());
             return hNorm.includes(q) || q.includes(hNorm);
         }).slice(0, 5);
+    },
+
+    removeHistoryItem(query) {
+        try {
+            let history = this.getHistory();
+            history = history.filter(h => h !== query);
+            localStorage.setItem(this.storageKey, JSON.stringify(history));
+            return true;
+        } catch (e) {
+            console.error('Failed to remove search history item:', e);
+            return false;
+        }
     }
 };
