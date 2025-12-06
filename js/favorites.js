@@ -123,6 +123,41 @@ const Favorites = {
         return true;
     },
 
+    addAll(ids) {
+        if (!ids || ids.length === 0) return false;
+
+        let currentList = this.trays[this.activeTray];
+        let addedCount = 0;
+
+        // Special check for first add to empty Principal
+        if (this.activeTray === 'Principal' && currentList.length === 0) {
+            const newName = prompt("Você está criando uma nova Apostila. Digite um nome para ela (ou OK para manter na 'Principal'):");
+            if (newName && newName.trim()) {
+                const clean = newName.trim();
+                if (!this.trays[clean]) {
+                    this.createTray(clean);
+                }
+                this.switchTray(clean);
+                // Update ref
+                currentList = this.trays[this.activeTray];
+            }
+        }
+
+        ids.forEach(id => {
+            if (!currentList.includes(id)) {
+                currentList.push(id);
+                addedCount++;
+            }
+        });
+
+        if (addedCount > 0) {
+            this.save();
+            this.triggerUpdates();
+            return true;
+        }
+        return false;
+    },
+
     renameTray(oldName, newName) {
         const cleanNew = newName.trim();
         if (!cleanNew) return false;

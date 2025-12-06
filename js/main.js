@@ -229,7 +229,20 @@ function setMode(newMode) {
     else STATE.bodyFilter = null;
 
     STATE.activeTag = null;
-    document.querySelectorAll('.search-input').forEach(input => input.value = '');
+    STATE.activeTags = [];       // Reset multiple tags
+    STATE.activeCategories = []; // Reset categories
+    STATE.activeSources = [];    // Reset sources
+
+    // Clear search using the global helper to ensure full state reset
+    if (typeof clearSearch === 'function') {
+        clearSearch(false); // false = don't render list immediately, loadData will handle it
+    } else {
+        // Fallback if helper is missing
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) searchInput.value = '';
+        const clearBtn = document.getElementById('clearSearch');
+        if (clearBtn) clearBtn.classList.add('hidden');
+    }
 
     loadData();
 }
@@ -1037,6 +1050,8 @@ function scrollToResults() {
 
 function clearSearch() {
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
+    document.getElementById('desktopSearchGhost').value = '';
+    document.getElementById('mobileSearchGhost').value = '';
 
     STATE.activeTags = [];
 
@@ -1630,6 +1645,31 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     // ... existing initialization ...
     setupSearch();
+
+    // Keyboard Navigation for Modal
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('readModal');
+        if (modal && !modal.classList.contains('hidden')) {
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                navModal(-1);
+            } else if (e.key === 'ArrowRight') {
+                navModal(1);
+            }
+        }
+    });
+
+    // Keyboard shortcut for Search (/)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+            const active = document.activeElement;
+            if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) return;
+
+            e.preventDefault();
+            document.querySelector('.search-input')?.focus();
+        }
+    });
 });
 
 function renderAlphabet() {

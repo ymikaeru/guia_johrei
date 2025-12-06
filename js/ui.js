@@ -125,6 +125,27 @@ function renderList(list, activeTags, mode, activeTab) {
                 </div>
             </div>
         `;
+    } else {
+        // Standard Header for other tabs (Search Results / Category View)
+        // Feature: Add All Button
+        let addAllBtn = '';
+        if (typeof Favorites !== 'undefined' && list && list.length > 0) {
+            addAllBtn = `
+                <button onclick="Favorites.addAll(STATE.list.map(i => i.id))" 
+                    class="text-blue-500 hover:text-blue-700 font-bold text-[10px] uppercase tracking-widest px-3 py-2 border border-blue-100 hover:border-blue-300 rounded transition-colors ml-auto">
+                    + Adicionar Todos (${list.length})
+                </button>
+             `;
+        }
+
+        headerHtml = `
+             <div class="col-span-full mb-6 pb-6 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                <div>
+                     ${formatBodyText()}
+                </div>
+                ${addAllBtn}
+             </div>
+        `;
     }
 
     if (!list || list.length === 0) {
