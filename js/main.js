@@ -913,6 +913,28 @@ function setupSearch() {
             } else if (val.length > 1) {
                 const q = removeAccents(val);
 
+                const suggestions = [];
+                const seen = new Set();
+
+                // 1. Check for Direct Synonyms (High Priority)
+                if (typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
+                    const related = SearchEngine.getRelatedTerms(val);
+                    // Filter out the query itself from related
+                    const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
+
+                    synonyms.slice(0, 3).forEach(syn => {
+                        const key = `syn:${syn}`;
+                        if (!seen.has(key)) {
+                            suggestions.push({
+                                text: syn,
+                                type: 'Sinônimo',
+                                priority: 4 // Highest
+                            });
+                            seen.add(key);
+                        }
+                    });
+                }
+
                 // Search across ALL data, not just active tab
                 const allData = [];
                 Object.keys(STATE.data).forEach(tabId => {
@@ -920,9 +942,6 @@ function setupSearch() {
                         allData.push(...STATE.data[tabId]);
                     }
                 });
-
-                const suggestions = [];
-                const seen = new Set();
 
                 allData.forEach(item => {
                     // Search in title
@@ -973,10 +992,37 @@ function setupSearch() {
                     }
                 });
 
-                // Sort by priority (titles first, then tags, then focus points) and limit to 8
+                // Sort by priority (synonyms first, then titles, tags, focus points) and limit to 8
                 suggestions.sort((a, b) => b.priority - a.priority);
                 currentSuggestions = suggestions.slice(0, 8);
                 selectedIndex = -1; // Reset selection
+
+                // --- SPELL CORRECTION (Did You Mean?) ---
+                // Only if no results found and query > 2 chars
+                if (currentSuggestions.length === 0 && val.length > 2 && typeof SearchEngine !== 'undefined') {
+                    const candidates = new Set();
+
+                    // Add Titles and Tags
+                    allData.forEach(item => {
+                        if (item.title) candidates.add(item.title);
+                        if (item.tags) item.tags.forEach(t => candidates.add(t));
+                    });
+
+                    // Add Synonym Keys
+                    if (SearchEngine.synonyms) {
+                        Object.keys(SearchEngine.synonyms).forEach(k => candidates.add(k));
+                    }
+
+                    const correction = SearchEngine.suggestCorrection(val, Array.from(candidates));
+
+                    if (correction) {
+                        currentSuggestions.push({
+                            text: correction,
+                            type: 'Você quis dizer?',
+                            priority: 5 // Top priority
+                        });
+                    }
+                }
 
                 if (currentSuggestions.length > 0) {
                     suggestionsEl.innerHTML = currentSuggestions.map((match, index) => {
