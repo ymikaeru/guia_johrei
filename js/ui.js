@@ -67,13 +67,50 @@ function renderList(list, activeTags, mode, activeTab) {
         }
         return;
     }
-    emptyEl.classList.add('hidden');
+    // Empty State
+    if (list.length === 0) {
+        if (activeTab === 'favoritos') {
+            el.innerHTML = `
+                <div class="col-span-full flex flex-col items-center justify-center py-20 text-center opacity-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                    <p class="text-xl font-serif text-gray-400">Sua bandeja de impressão está vazia</p>
+                    <p class="text-sm text-gray-400 mt-2">Clique na estrela nos cards para adicionar itens aqui.</p>
+                </div>
+            `;
+            // Call callback to hide empty state container if needed, or handled by Main
+            return;
+        }
+        el.innerHTML = ''; // managed by main.js empty elements usually
+        return;
+    }
+    // Ensure hidden if not empty (main.js handles this typically but good to be safe)
+    if (emptyEl) emptyEl.classList.add('hidden');
 
     // Detect if we're showing cross-tab results
     const uniqueCategories = new Set(list.map(item => item._cat));
     const isCrossTabSearch = uniqueCategories.size > 1;
 
-    el.innerHTML = list.map((item, i) => {
+    let headerHtml = '';
+    if (activeTab === 'favoritos' && list.length > 0) {
+        headerHtml = `
+            <div class="col-span-full flex justify-between items-center mb-6 pb-4 border-b border-gray-100 dark:border-gray-800">
+                <div>
+                   <h2 class="text-2xl font-serif font-bold">Bandeja de Impressão</h2>
+                   <p class="text-sm text-gray-500">${list.length} itens selecionados</p>
+                </div>
+                <button onclick="if(typeof PrintManager !== 'undefined') PrintManager.printBooklet(Favorites.list); else window.print()" class="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-lg flex items-center gap-2 hover:opacity-80 transition-opacity print:hidden shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span class="font-bold tracking-wide text-sm">GERAR APOSTILA</span>
+                </button>
+            </div>
+        `;
+    }
+
+    el.innerHTML = headerHtml + list.map((item, i) => {
         // Recupera cor e label da configuração
         const catConfig = CONFIG.modes[mode].cats[item._cat];
 
@@ -82,10 +119,32 @@ function renderList(list, activeTags, mode, activeTab) {
             ? `text-[10px] px-2 py-1 rounded-md ${catConfig ? `bg-${catConfig.color} text-white dark:bg-${catConfig.color} dark:text-white` : 'bg-gray-400 text-white'}`
             : `text-[9px] ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}`;
 
+        // Favorites Star
+        let favBtn = '';
+        if (typeof Favorites !== 'undefined') {
+            const isFav = Favorites.is(item.id);
+            const emptyStar = `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />`;
+            const filledStar = `<path fill="currentColor" fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />`;
+
+            favBtn = `<button class="fav-btn absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors z-[5]"
+                onclick="event.preventDefault(); event.stopPropagation(); Favorites.toggle('${item.id}')" data-id="${item.id}">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    ${isFav ? filledStar : emptyStar}
+                </svg>
+            </button>`;
+        }
+
+        const catLabel = catConfig ? catConfig.label : item._cat;
+        const catColor = catConfig ? catConfig.color : 'gray-400';
+        const cardClassList = ''; // Assuming cardClassList is an empty string or defined elsewhere if needed
+
         return `
-        <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+        <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-${catColor} dark:hover:border-${catColor} transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+            
+            ${favBtn}
+
             <div>
-                <div class="mb-2">
+                <div class="mb-2 pr-8">
                     <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
                 <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
@@ -98,7 +157,7 @@ function renderList(list, activeTags, mode, activeTab) {
                 ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white'
                 : 'border-gray-100 dark:border-gray-800 text-gray-400 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black';
 
-            return `<button onclick="filterByFocusPoint('${fp}', event)" class="text-[9px] font-bold uppercase tracking-widest border px-2 py-1 rounded-md transition-colors ${activeClass}">
+            return `<button onclick="filterByFocusPoint('${fp}', event)" class="text-[9px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors ${activeClass}">
                                 ${fp}
                             </button>`;
         }).join('')}
@@ -107,7 +166,7 @@ function renderList(list, activeTags, mode, activeTab) {
                 ` : ''}
             </div>
             ${activeTab !== 'pontos_focais' ? `
-            <div class="mt-[0.3rem] border-t border-gray-50 dark:border-gray-900 flex flex-wrap gap-2">
+            <div class="mt-auto border-t border-gray-50 dark:border-gray-900 pt-3 flex flex-wrap gap-2">
                  ${(() => {
                     const tags = item.tags || [];
                     const points = item.focusPoints || [];

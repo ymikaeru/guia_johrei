@@ -4,22 +4,31 @@
 const SearchEngine = {
     // Synonym dictionary for Portuguese medical/spiritual terms
     synonyms: {
-        'cabeça': ['crânio', 'cérebro'],
-        'dor': ['doença', 'enfermidade', 'mal'],
-        'coração': ['cardíaco', 'cardio'],
-        'pulmão': ['pulmonar', 'respiratório'],
-        'estômago': ['gástrico', 'digestivo'],
-        'fígado': ['hepático'],
-        'rim': ['renal'],
-        'sangue': ['sanguíneo', 'hemático'],
-        'olhos': ['olho', 'ocular', 'visão'],
-        'ouvido': ['auditivo', 'audição'],
-        'garganta': ['faríngeo', 'laringe'],
-        'intestino': ['intestinal', 'entérico'],
-        'espírito': ['espiritual', 'alma'],
-        'toxina': ['toxinas', 'impureza', 'impurezas'],
-        'johrei': ['luz divina', 'luz'],
-        'cura': ['curar', 'tratamento', 'sarar']
+        'cabeça': ['crânio', 'cérebro', 'encefalo'],
+        'dor': ['doença', 'enfermidade', 'mal', 'algias', 'problema', 'sintoma'],
+        'coração': ['cardíaco', 'cardio', 'peito', 'tórax'],
+        'pulmão': ['pulmonar', 'respiratório', 'ar'],
+        'estômago': ['gástrico', 'digestivo', 'barriga', 'abdômen', 'ventre'],
+        'fígado': ['hepático', 'vesícula', 'bile'],
+        'rim': ['renal', 'urina', 'urinário'],
+        'sangue': ['sanguíneo', 'hemático', 'circulação'],
+        'olhos': ['olho', 'ocular', 'visão', 'vista'],
+        'ouvido': ['auditivo', 'audição', 'orelha', 'zumbido'],
+        'garganta': ['faríngeo', 'laringe', 'faringe', 'amígdalas', 'rouquidão'],
+        'intestino': ['intestinal', 'entérico', 'evacuação', 'prisão de ventre', 'diarreia'],
+        'espírito': ['espiritual', 'alma', 'mental', 'emocional'],
+        'toxina': ['toxinas', 'impureza', 'impurezas', 'veneno', 'medicamento'],
+        'johrei': ['luz divina', 'luz', 'energia'],
+        'cura': ['curar', 'tratamento', 'sarar', 'recuperação', 'milagre'],
+        'quadril': ['quadris', 'bacia', 'pélvis', 'cintura'],
+        'perna': ['pernas', 'membros inferiores', 'coxa', 'joelho', 'tornozelo', 'pé'],
+        'braço': ['braços', 'membros superiores', 'cotovelo', 'pulso', 'mão'],
+        'febre': ['temperatura', 'quente', 'calor'],
+        'resfriado': ['gripe', 'coriza', 'tosse', 'catarro'],
+        'mulher': ['feminino', 'utero', 'ovario', 'menstruação'],
+        'homem': ['masculino', 'próstata'],
+        'pele': ['cutâneo', 'derme', 'coceira', 'alergia', 'erupção'],
+        'boca': ['dentes', 'gengiva', 'lingua', 'oral']
     },
 
     // Get all related terms for a word (including synonyms)
@@ -42,11 +51,75 @@ const SearchEngine = {
         return [...new Set(related)];
     },
 
-    // Simple fuzzy matching using Levenshtein-like distance
+    // Levenshtein Correction Suggestion
+    suggestCorrection(query, candidates) {
+        const q = removeAccents(query.toLowerCase());
+        if (q.length < 3) return null; // Too short to correct
+
+        let bestMatch = null;
+        let minDistance = Infinity;
+
+        candidates.forEach(candidate => {
+            const term = removeAccents(candidate.toLowerCase());
+            const dist = this.levenshtein(q, term);
+
+            // Dynamic threshold: Allow 1 error for short words, 2 for longer
+            const threshold = q.length <= 4 ? 1 : 2;
+
+            if (dist <= threshold && dist < minDistance) {
+                minDistance = dist;
+                bestMatch = candidate; // Return original casing
+            }
+        });
+
+        // Only suggest if distance is small and it's not the query itself
+        if (bestMatch && minDistance > 0) {
+            return bestMatch;
+        }
+        return null;
+    },
+
+    // Levenshtein Distance Algorithm
+    levenshtein(a, b) {
+        if (a.length === 0) return b.length;
+        if (b.length === 0) return a.length;
+
+        const matrix = [];
+
+        // Increment along the first column of each row
+        for (let i = 0; i <= b.length; i++) {
+            matrix[i] = [i];
+        }
+
+        // Increment each column in the first row
+        for (let j = 0; j <= a.length; j++) {
+            matrix[0][j] = j;
+        }
+
+        // Fill in the rest of the matrix
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1, // substitution
+                        Math.min(
+                            matrix[i][j - 1] + 1, // insertion
+                            matrix[i - 1][j] + 1  // deletion
+                        )
+                    );
+                }
+            }
+        }
+
+        return matrix[b.length][a.length];
+    },
+
+    // Simple fuzzy matching (score based)
     fuzzyMatch(query, target, threshold = 0.7) {
         const q = removeAccents(query.toLowerCase());
         const t = removeAccents(target.toLowerCase());
-
         // Exact match
         if (t.includes(q)) return 1.0;
 

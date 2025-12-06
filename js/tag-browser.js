@@ -49,84 +49,109 @@ function initializeTagBrowser() {
 
     if (!wrapper || !content) return;
 
-    // Only show on ensinamentos mode and NOT on map tab
-    if (STATE.mode !== 'ensinamentos' || STATE.activeTab === 'mapa') {
+    // 1. Hide on specific tabs (Favorites, Map)
+    // Note: main.js also handles this in updateUIForTab, but this acts as a safeguard/init logic
+    if (typeof STATE !== 'undefined' && (STATE.activeTab === 'favoritos' || STATE.activeTab === 'mapa')) {
         wrapper.style.display = 'none';
         return;
     }
 
-    wrapper.style.display = 'block';
+    // 2. Check if current items have any tags
+    const activeTab = STATE.activeTab;
+    const items = STATE.data[activeTab] || [];
 
-    // Get all tags from current data with counts
-    const tagCounts = {};
-    if (STATE.data && STATE.data[STATE.activeTab]) {
-        STATE.data[STATE.activeTab].forEach(item => {
-            const tags = item.tags || [];
-            tags.forEach(tag => {
-                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-            });
-        });
+    // Collect all tags from current items
+    const availableTags = new Set();
+    items.forEach(item => {
+        if (item.tags) {
+            item.tags.forEach(tag => availableTags.add(tag));
+        }
+    });
+
+    if (availableTags.size === 0) {
+        wrapper.style.display = 'none';
+        return;
     }
 
-    // Generate HTML for each category
+    // 3. Show wrapper if conditions met
+    wrapper.style.display = 'block';
+
+    // 4. Group tags by category
+    const categories = {};
+    const uncategorized = [];
+
+    availableTags.forEach(tag => {
+        let found = false;
+        for (const [cat, tags] of Object.entries(TAG_CATEGORIES)) {
+            if (tags.includes(tag)) {
+                if (!categories[cat]) categories[cat] = [];
+                categories[cat].push(tag);
+                found = true;
+                break;
+            }
+        }
+        if (!found) uncategorized.push(tag);
+    });
+
+    // 5. Render HTML
     let html = '';
-    for (const [category, tags] of Object.entries(TAG_CATEGORIES)) {
-        // Filter to only tags that exist in data
-        const availableTags = tags.filter(tag => tagCounts[tag] > 0);
 
-        if (availableTags.length === 0) continue;
-
+    // Render categorized tags
+    for (const [cat, tags] of Object.entries(categories)) {
+        if (tags.length === 0) continue;
         html += `
-            <div class="tag-category">
-                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3">${category}</div>
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">${cat}</h4>
                 <div class="flex flex-wrap gap-2">
-                    ${availableTags.map(tag => {
-            const count = tagCounts[tag] || 0;
-            const isActive = STATE.activeTags.includes(tag);
-            return `
-                            <button onclick="toggleTag('${tag.replace(/'/g, "\\'")}', event)" 
-                                class="tag-pill ${isActive ? 'tag-pill-active' : ''}"
-                                data-tag="${tag}">
-                                <span>${tag}</span>
-                                <span class="tag-count">${count}</span>
-                            </button>
-                        `;
-        }).join('')}
+                    ${tags.sort().map(tag => renderTagButton(tag)).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    // Render uncategorized
+    if (uncategorized.length > 0) {
+        html += `
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-3">Outros</h4>
+                <div class="flex flex-wrap gap-2">
+                    ${uncategorized.sort().map(tag => renderTagButton(tag)).join('')}
                 </div>
             </div>
         `;
     }
 
     content.innerHTML = html;
+}
 
-    // Restore collapsed state from localStorage
-    const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true';
-    if (isExpanded) {
-        content.classList.remove('hidden');
-        document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
-    }
+function renderTagButton(tag) {
+    const isActive = STATE.activeTags.includes(tag);
+    const activeClass = isActive
+        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white'
+        : 'bg-white dark:bg-[#111] text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white';
+
+    return `
+        <button onclick="toggleTag('${tag}')" 
+                class="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 border rounded-md transition-all ${activeClass}">
+            ${tag}
+        </button>
+    `;
 }
 
 function toggleTagBrowser() {
     const content = document.getElementById('tagBrowserContent');
     const icon = document.getElementById('tagBrowserIcon');
 
-    const isExpanded = !content.classList.contains('hidden');
-
-    if (isExpanded) {
-        content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-        localStorage.setItem('tagBrowserExpanded', 'false');
-    } else {
+    if (content.classList.contains('hidden')) {
         content.classList.remove('hidden');
         icon.style.transform = 'rotate(180deg)';
-        localStorage.setItem('tagBrowserExpanded', 'true');
+    } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
     }
 }
 
-function toggleTag(tag, event) {
-    if (event) event.preventDefault();
-
+function toggleTag(tag) {
     const index = STATE.activeTags.indexOf(tag);
 
     if (index > -1) {
@@ -137,24 +162,16 @@ function toggleTag(tag, event) {
         STATE.activeTags.push(tag);
     }
 
-    // Update UI
-    updateTagPillStates();
+    // Re-initialize to update button states (simple way)
+    initializeTagBrowser();
 
-    // Apply filters
-    applyFilters();
+    // Apply filters in main app
+    if (typeof applyFilters === 'function') {
+        applyFilters();
+    }
 }
 
-function updateTagPillStates() {
-    document.querySelectorAll('.tag-pill').forEach(pill => {
-        const tag = pill.dataset.tag;
-        if (STATE.activeTags.includes(tag)) {
-            pill.classList.add('tag-pill-active');
-        } else {
-            pill.classList.remove('tag-pill-active');
-        }
-    });
-}
-
-// Export functions to global scope
+// Make functions global
+window.initializeTagBrowser = initializeTagBrowser;
 window.toggleTagBrowser = toggleTagBrowser;
 window.toggleTag = toggleTag;

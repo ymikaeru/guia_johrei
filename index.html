@@ -36,6 +36,19 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/tag-browser.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="apple-touch-icon" href="assets/images/icon.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW registred:', reg.scope))
+                    .catch(err => console.log('SW fail:', err));
+            });
+        }
+    </script>
 </head>
 
 <body
@@ -105,11 +118,16 @@
                     <!-- Desktop Search (Hidden on Mobile) -->
                     <div id="desktopSearchWrapper" class="hidden md:block md:col-span-7 lg:col-span-8 relative">
                         <div class="relative w-full">
+                            <!-- Ghost Input -->
+                            <input type="text" id="desktopSearchGhost" disabled
+                                class="absolute top-0 left-0 w-full bg-transparent py-4 pl-0 pr-24 text-xl md:text-2xl font-serif font-medium border-b border-transparent text-gray-200 dark:text-gray-800 pointer-events-none uppercase opacity-50 z-0"
+                                placeholder="">
+                            <!-- Real Input -->
                             <input type="text" id="desktopSearchInput"
-                                class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl md:text-2xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700"
+                                class="relative z-10 search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl md:text-2xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700"
                                 placeholder="BUSCAR...">
                             <button onclick="clearSearch()"
-                                class="clear-search-btn hidden absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black dark:hover:text-white">
+                                class="clear-search-btn hidden absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black dark:hover:text-white z-20">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M6 18L18 6M6 6l12 12"></path>
@@ -130,9 +148,15 @@
                 class="sticky top-0 md:static z-50 bg-white/95 dark:bg-[#0a0a0a]/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-gray-100 dark:border-gray-900 md:border-none">
                 <!-- Mobile Search (Visible only on Mobile) -->
                 <div id="mobileSearchWrapper" class="md:hidden px-8 pb-4 relative">
-                    <input type="text" placeholder="BUSCAR..."
-                        class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
-                    <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-4">
+                    <div class="relative w-full">
+                        <!-- Ghost Input -->
+                        <input type="text" id="mobileSearchGhost" disabled
+                            class="absolute top-0 left-0 w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium border-b border-transparent text-gray-200 dark:text-gray-800 pointer-events-none uppercase opacity-50 z-0"
+                            placeholder="">
+                        <input type="text" placeholder="BUSCAR..."
+                            class="relative z-10 search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
+                    </div>
+                    <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-4 z-20">
                         <span
                             class="search-count text-[10px] font-sans font-bold text-gray-400 uppercase tracking-widest">0
                             Itens</span>
@@ -302,13 +326,20 @@
         </svg>
     </button>
 
-    <script src="js/data.js?v=2"></script>
-    <script src="js/search-engine.js?v=1"></script>
-    <script src="js/tag-browser.js?v=1"></script>
-    <script src="js/ui.js?v=2"></script>
-    <script src="js/body-map-helpers.js?v=1"></script>
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/search-engine.js"></script>
+    <script src="js/tag-browser.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/print-manager.js"></script>
+    <script src="js/main.js"></script> <!-- Main Logic -->
+    <script src="js/ui.js"></script> <!-- UI Components -->
 
-    <script src="js/main.js?v=2"></script>
+    <script>
+        // Init happens in main.js
+    </script>
 </body>
 
 </html>
+```

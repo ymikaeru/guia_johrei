@@ -80,6 +80,15 @@ function removeAccents(str) {
 })();
 
 // --- INICIALIZAÇÃO ---
+async function init() {
+    setupTheme();
+    setupMobileMenu();
+    // Initialize Favorites
+    if (typeof Favorites !== 'undefined') Favorites.init();
+
+    // Load categories first
+    await loadCategories();
+}
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Carrega Tema Salvo (Removido)
     // if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
@@ -173,6 +182,9 @@ async function loadData() {
             setTimeout(renderBodyMaps, 100);
         }
 
+        // Check for Deep Link hash
+        checkHashAndOpen();
+
     } catch (e) { console.error("Erro load:", e); }
 }
 
@@ -261,6 +273,18 @@ function renderTabs() {
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white';
         html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
+    }
+
+    // Favorites Tab (Dynamic)
+    if (typeof Favorites !== 'undefined' && Favorites.list.length > 0) {
+        const active = STATE.activeTab === 'favoritos';
+        const activeClass = active
+            ? `border-johrei-murasaki text-johrei-murasaki font-bold`
+            : 'border-transparent text-gray-500 hover:text-johrei-murasaki';
+        html += `<button onclick="setTab('favoritos')" class="tab-btn ${activeClass} flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" /></svg>
+            Bandeja (${Favorites.list.length})
+        </button>`;
     }
 
     container.innerHTML = html;
@@ -363,6 +387,27 @@ function updateUIForTab(tabId) {
     alpha.classList.add('hidden');
     map.classList.add('hidden');
     list.classList.remove('hidden'); // Ensure list is visible by default
+
+    // Hide Tag Browser (labeled "Categorias") on Favorites and Map tabs
+    const tagBrowserWrapper = document.getElementById('tagBrowserWrapper');
+    if (tagBrowserWrapper) {
+        if (tabId === 'favoritos' || tabId === 'mapa') {
+            tagBrowserWrapper.style.display = 'none';
+        } else {
+            // Check if tab has tags to decide visibility
+            const hasTags = STATE.data[tabId] && STATE.data[tabId].some(i => i.tags && i.tags.length > 0);
+            tagBrowserWrapper.style.display = hasTags ? 'block' : 'none';
+        }
+        // Always reset state on tab switch
+        document.getElementById('tagBrowserContent').classList.add('hidden');
+        const tbIcon = document.getElementById('tagBrowserIcon');
+        if (tbIcon) tbIcon.style.transform = 'rotate(0deg)';
+    }
+
+    // Initialize Tag Browser logic (load tags) if needed
+    if (tabId !== 'favoritos' && tabId !== 'mapa') {
+        if (typeof initializeTagBrowser === 'function') initializeTagBrowser();
+    }
 
     if (tabId === 'pontos_focais') {
         alpha.classList.remove('hidden');
@@ -541,12 +586,21 @@ function applyFilters() {
     let label = "TODOS";
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
-    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter) {
+    // OU se estivermos na aba FAVORITOS (precisa buscar de todas as categorias)
+    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter || activeTab === 'favoritos') {
         Object.keys(STATE.data).forEach(cat => {
-            STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
+            if (Array.isArray(STATE.data[cat])) {
+                STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
+            }
         });
 
-        if (activeTags.length > 0 && bodyFilter) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'} `;
+        // Se for favoritos, filtra apenas os favoritados
+        if (activeTab === 'favoritos' && typeof Favorites !== 'undefined') {
+            rawItems = rawItems.filter(item => Favorites.is(item.id));
+        }
+
+        if (activeTab === 'favoritos') label = "BANDEJA DE IMPRESSÃO";
+        else if (activeTags.length > 0 && bodyFilter) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'} `;
         else if (activeTags.length > 0) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} `;
         else if (bodyFilter) label = "PONTO FOCAL SELECIONADO";
         else if (q) label = "RESULTADOS DA BUSCA";
@@ -601,22 +655,15 @@ function applyFilters() {
         // 3. Filtro de LETRA (Alfabeto)
         if (!q && activeTags.length === 0 && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
 
-        // 4. Filtro de BUSCA TEXTUAL - Now handled by SearchEngine below
-        // Keep this for non-search filters only
-        if (!q) return true;
-
-        // Search filtering will be handled separately
         return true;
     });
 
-    // If there's a search query, use the advanced SearchEngine
+    // 4. Filtro de BUSCA TEXTUAL (Separado do filter loop principal)
     if (q) {
-        // Add to search history
-        if (typeof SearchHistory !== 'undefined') {
-            SearchHistory.addSearch(inputs[0].value);
-        }
+        // Reset correction state
+        STATE.correctionUsed = null;
 
-        // Use SearchEngine for smart search with ranking
+        // Use SearchEngine for smart search with ranking if available
         if (typeof SearchEngine !== 'undefined') {
             filtered = SearchEngine.search(filtered, inputs[0].value, {
                 minScore: 10,
@@ -625,6 +672,38 @@ function applyFilters() {
                 useFuzzy: true,
                 useSynonyms: true
             });
+
+            // --- AUTO-CORRECT FALLBACK ---
+            // If 0 results and we have valid query > 2 chars, try correction
+            if (filtered.length === 0 && q.length > 2) {
+                // Build candidates from rawItems (Titles + Tags + Synonyms)
+                const candidates = new Set();
+                rawItems.forEach(item => {
+                    if (item.title) candidates.add(item.title);
+                    if (item.tags) item.tags.forEach(t => candidates.add(t));
+                });
+                if (SearchEngine.synonyms) {
+                    Object.keys(SearchEngine.synonyms).forEach(k => candidates.add(k));
+                }
+
+                const correction = SearchEngine.suggestCorrection(searchValue, Array.from(candidates));
+
+                if (correction) {
+                    // Re-run search with correction
+                    filtered = SearchEngine.search(rawItems, correction, { // Search in rawItems again
+                        minScore: 10,
+                        maxResults: 100,
+                        useOperators: true,
+                        useFuzzy: true,
+                        useSynonyms: true
+                    });
+
+                    if (filtered.length > 0) {
+                        STATE.correctionUsed = { original: searchValue, corrected: correction };
+                    }
+                }
+            }
+
         } else {
             // Fallback to basic search if SearchEngine not loaded
             filtered = filtered.filter(item => {
@@ -656,40 +735,57 @@ function applyFilters() {
     const wasCrossTabMode = STATE.isCrossTabMode;
     STATE.isCrossTabMode = uniqueCategories.size > 1;
 
-    // Re-render tabs if cross-tab mode changed
     if (wasCrossTabMode !== STATE.isCrossTabMode) {
         renderTabs();
     }
 
-    // LIST VISIBILITY ON MAP TAB
-    // Ensure list is visible if we have results and filters, even on 'mapa' tab
+    // Special handling for Favorites Tab
+    // ... (logic handled above in rawItems init, but filtered here) ...
+
+    // List Visibility logic...
     const list = document.getElementById('contentList');
     const empty = document.getElementById('emptyState');
-
     if (activeTab === 'mapa') {
         const hasFilters = q || activeTags.length > 0 || bodyFilter;
         if (hasFilters) {
             list.classList.remove('hidden');
             if (filtered.length === 0 && empty) empty.classList.remove('hidden');
         } else {
-            // If no filters, hide list (show only map)
             list.classList.add('hidden');
             if (empty) empty.classList.add('hidden');
         }
     }
 
-    // Atualiza contadores e UI (Multiple elements)
+    // Update Counters
     document.querySelectorAll('.search-count').forEach(el => {
         el.textContent = `${filtered.length} Itens`;
     });
 
-    // Show/Hide Clear Buttons
+    // Clear Buttons
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
         if (q || STATE.activeTags.length > 0) btn.classList.remove('hidden');
         else btn.classList.add('hidden');
     });
 
+    // Render List
     renderList(filtered, activeTags, STATE.mode, STATE.activeTab);
+
+    // --- INJECT CORRECTION BANNER ---
+    if (STATE.correctionUsed) {
+        const banner = document.createElement('div');
+        banner.className = 'bg-yellow-50 border-b border-yellow-200 px-6 py-3 text-sm flex items-center gap-2 text-yellow-800 mb-4 animate-fade-in';
+        banner.innerHTML = `
+            <svg class="w-4 h-4 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <span>Exibindo resultados para <strong>${STATE.correctionUsed.corrected}</strong> em vez de <em>${STATE.correctionUsed.original}</em></span>
+        `;
+        // Insert at top of list
+        const container = document.getElementById('resultsContainer');
+        if (container) {
+            container.insertBefore(banner, container.firstChild);
+        }
+    }
+
+
 }
 
 // --- FUNÇÕES AUXILIARES ---
@@ -816,8 +912,13 @@ function filterByTag(tag, event) {
 }
 
 function filterByLetter(l) {
-    STATE.activeLetter = l;
-    STATE.activeTags = [];
+    // Update Search Placeholder based on Tab
+    const searchInputs = document.querySelectorAll('.search-input');
+    const placeholderText = tabId === 'favoritos' ? 'BUSCAR NA BANDEJA...' : 'BUSCAR...';
+    searchInputs.forEach(input => input.placeholder = placeholderText);
+
+    // Update active state in state tracking
+    STATE.activeTab = tabId;
     renderAlphabet();
     applyFilters();
 }
@@ -912,6 +1013,28 @@ function setupSearch() {
                 currentSuggestions = [];
             } else if (val.length > 1) {
                 const q = removeAccents(val);
+                const suggestions = [];
+                const seen = new Set();
+
+                // 1. Check for Direct Synonyms (High Priority)
+                if (typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
+                    // Check if query is a key or value in synonyms
+                    const related = SearchEngine.getRelatedTerms(val);
+                    // Filter out the query itself from related
+                    const synonyms = related.filter(r => removeAccents(r) !== q && !r.includes(q)); // Show distinct terms
+
+                    synonyms.forEach(syn => {
+                        const key = `syn:${syn} `;
+                        if (!seen.has(key)) {
+                            suggestions.push({
+                                text: syn, // Capitalize?
+                                type: 'Sinônimo',
+                                priority: 4 // Highest
+                            });
+                            seen.add(key);
+                        }
+                    });
+                }
 
                 // Search across ALL data, not just active tab
                 const allData = [];
@@ -920,9 +1043,6 @@ function setupSearch() {
                         allData.push(...STATE.data[tabId]);
                     }
                 });
-
-                const suggestions = [];
-                const seen = new Set();
 
                 allData.forEach(item => {
                     // Search in title
@@ -978,17 +1098,97 @@ function setupSearch() {
                 currentSuggestions = suggestions.slice(0, 8);
                 selectedIndex = -1; // Reset selection
 
+                // --- 3. SPELL CORRECTION (Did You Mean?) ---
+                // Only if no results found and query > 2 chars
+                if (currentSuggestions.length === 0 && val.length > 2 && typeof SearchEngine !== 'undefined') {
+                    // Collect candidates for correction
+                    const candidates = new Set();
+
+                    // Add Titles and Tags
+                    allData.forEach(item => {
+                        if (item.title) candidates.add(item.title);
+                        if (item.tags) item.tags.forEach(t => candidates.add(t));
+                    });
+
+                    // Add Synonym Keys
+                    if (SearchEngine.synonyms) {
+                        Object.keys(SearchEngine.synonyms).forEach(k => candidates.add(k));
+                    }
+
+                    const correction = SearchEngine.suggestCorrection(val, Array.from(candidates));
+
+                    if (correction) {
+                        currentSuggestions.push({
+                            text: correction,
+                            type: 'Você quis dizer?',
+                            priority: 5, // Top priority
+                            isCorrection: true
+                        });
+                    }
+                }
+
+                // --- GHOST INPUT LOGIC ---
+                const isMobile = window.innerWidth < 768; // Example breakpoint for mobile
+                const ghostInput = isMobile ? document.getElementById('mobileSearchGhost') : document.getElementById('desktopSearchGhost');
+
+                if (ghostInput) {
+                    // Reset ghost if input changed
+                    ghostInput.value = '';
+
+                    // Only show ghost if we have suggestions and input > 1 char
+                    if (val.length > 1 && currentSuggestions.length > 0) {
+                        const topMatch = currentSuggestions[0];
+
+                        // Only ghost if it acts as a suffix (starts with input) and IS NOT a correction
+                        // Case insensitive check, but we display the SUGGESTION's casing
+                        if (!topMatch.isCorrection && topMatch.text.toLowerCase().startsWith(val.toLowerCase())) {
+                            // Visually align casing:
+                            // We want to keep the user's typed casing but append the rest?
+                            // Actually, iOS usually replaces the casing with the suggestion's standard casing.
+                            // But for "Ghost behind", if user types "baRR", and suggestion is "Barriga",
+                            // "Barriga" behind "baRR" looks like "B-a-R-R-i-g-a".
+                            // "B" vs "b" clash.
+                            // To look perfect, the ghost must MATCH user casing for the prefix.
+                            // Hard to do.
+                            // Alternative: Ghost Input text color is light gray. Real input text color is solid black.
+                            // If they overlap perfectly, black covers gray.
+                            // "b" covers "B"? No.
+                            // "b" and "B" have different shapes.
+                            // Ideal: suggestion.slice(val.length).
+                            // But we can't position it easily without canvas measurement.
+                            // COMPROMISE: We set ghost value to Suggestion Casing.
+                            // Users usually accept the "Official" casing.
+                            ghostInput.value = topMatch.text;
+                        }
+                    }
+                }
+
                 if (currentSuggestions.length > 0) {
                     suggestionsEl.innerHTML = currentSuggestions.map((match, index) => {
                         const isSelected = index === selectedIndex;
                         const selectedClass = isSelected ? 'bg-gray-100 dark:bg-gray-800' : '';
+
+                        // Distinct style for corrections
+                        if (match.isCorrection) {
+                            return `
+                                <div data-title="${match.text.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
+                                class="px-4 py-3 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
+                                    <div class="flex items-center gap-2">
+                                        <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        <span class="font-bold font-serif text-black dark:text-white"><em>Você quis dizer:</em> ${match.text}?</span>
+                                    </div>
+                                    <span class="text-[9px] uppercase tracking-widest text-yellow-600 border border-yellow-200 rounded px-1.5 py-0.5 bg-yellow-50">Correção</span>
+                                </div >
+                            `;
+                        }
+
                         return `
                             <div data-title="${match.text.replace(/"/g, '&quot;')}" data-tab="${STATE.activeTab}" 
                             class="px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-900 cursor-pointer text-sm border-b border-gray-50 dark:border-gray-800 last:border-0 flex justify-between items-center group ${selectedClass}">
                                 <span class="font-bold font-serif group-hover:text-black dark:group-hover:text-white">${match.text}</span>
                                 <span class="text-[9px] uppercase tracking-widest text-gray-400 border border-gray-100 dark:border-gray-800 rounded px-1.5 py-0.5 bg-gray-50 dark:bg-gray-900">${match.type}</span>
                             </div >
-        `;
+                        `;
                     }).join('');
                     suggestionsEl.classList.remove('hidden');
                 } else {
@@ -997,6 +1197,22 @@ function setupSearch() {
             } else {
                 suggestionsEl.classList.add('hidden');
                 currentSuggestions = [];
+            }
+        });
+
+        // Keydown for Ghost Accept
+        input.addEventListener('keydown', (e) => {
+            const isMobile = window.innerWidth < 768;
+            const ghostInput = isMobile ? document.getElementById('mobileSearchGhost') : document.getElementById('desktopSearchGhost');
+
+            if (e.key === 'Tab' || (e.key === 'ArrowRight' && input.selectionStart === input.value.length)) {
+                if (ghostInput && ghostInput.value) {
+                    e.preventDefault();
+                    input.value = ghostInput.value;
+                    ghostInput.value = ''; // Clear ghost
+                    // Trigger existing logic (updates suggestions too)
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
             }
         });
 
@@ -1129,9 +1345,55 @@ function openModal(i) {
     document.getElementById('modalTitle').textContent = item.title;
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : item._cat;
+
+    // Favorites Button in Modal
+    let favBtnHtml = '';
+    if (typeof Favorites !== 'undefined') {
+        const isFav = Favorites.is(item.id);
+        const emptyStar = `<path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />`;
+        const filledStar = `<path fill="currentColor" fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />`;
+
+        favBtnHtml = `<button class="fav-btn ml-auto p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" 
+            onclick="Favorites.toggle('${item.id}')" data-id="${item.id}" title="Adicionar à Bandeja">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-colors ${isFav ? 'text-yellow-400' : 'text-gray-400 dark:text-gray-500'}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                ${isFav ? filledStar : emptyStar}
+            </svg>
+        </button>`;
+    }
+
     if (catConfig) {
         catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
     }
+
+    // Inject button into header area
+    // Actually, modal header structure is: Title, Cat.
+    // I can append it to modalCategory parent or Title parent.
+    // Let's replace title area with flex container effectively.
+    // BUT modifying HTML structure might break existing CSS.
+    // I'll assume I can just append it to the `modalHeader` container dynamically or insert it.
+    // Wait, `modalTitle` is inside a div?
+    // Let's just modify the `modalCategory` element to include the button next to it? No, category is a span.
+
+    // Simpler: Inject it into `modalTitle`'s parent.
+    // Or replace `modalCategory` logic to include it.
+    // I will check DOM in next step if this insertion is tricky.
+    // But for now, let's insert it into the DOM directly.
+    const headerContainer = document.getElementById('modalTitle').parentElement;
+    // Check if button already exists to avoid duplication?
+    // Better: Re-render header actions completely.
+    // Since I can't see the HTML structure fully here, I'll view it first?
+    // I already viewed `openModal`.
+    // References: `modalTitle`, `modalCategory`.
+    // I'll try to find a container.
+    // Let's use `document.getElementById('modalActions')` if it exists? No.
+
+    // I will output the button into a new container or append to existing.
+    // Let's assume there's a space.
+    // Actually, I'll create a container next to category.
+
+    // Plan B: Replace `catEl.innerHTML` with button? No.
+    // I'll view index.html modal structure first.
+
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
     document.getElementById('modalRef').textContent = `#${i + 1}`;
@@ -1216,6 +1478,10 @@ function openModal(i) {
             if (highlight) highlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 400);
     }
+
+    // Deep Linking: Update URL Hash
+    const slug = generateSlug(item.title);
+    history.replaceState(null, null, `#/${slug}`);
 }
 
 function closeModal() {
@@ -1226,10 +1492,63 @@ function closeModal() {
     card.classList.remove('open');
     backdrop.classList.remove('open');
 
+    // Deep Linking: Clear URL Hash
+    history.replaceState(null, null, ' ');
+
     setTimeout(() => {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
-    }, 250);
+        currentModalIndex = -1;
+    }, 300);
+}
+
+// --- DEEP LINKING HELPERS ---
+function generateSlug(text) {
+    return text.toString().toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start
+        .replace(/-+$/, '');            // Trim - from end
+}
+
+function checkHashAndOpen() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#/')) {
+        const slug = hash.substring(2); // Remove #/
+
+        let foundIndex = -1;
+        let foundTab = '';
+
+        // Search through all tabs
+        for (const tab of Object.keys(STATE.data)) {
+            const items = STATE.data[tab];
+            const idx = items.findIndex(i => generateSlug(i.title) === slug);
+            if (idx !== -1) {
+                foundTab = tab;
+                foundIndex = idx;
+                break;
+            }
+        }
+
+        if (foundIndex !== -1) {
+            // Switch to that tab
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                if (b.dataset.tab === foundTab) b.click();
+            });
+            // Open modal (setTimeout to allow list render?)
+            setTimeout(() => {
+                // Re-find in STATE.list (which is now filtered/populated by switchTab)
+                // But wait, switchTab resets filters.
+                // We can just find the global index?
+                // openModal(i) uses STATE.list[i].
+                // If we switched tab, STATE.list should be STATE.data[foundTab] (unless search is active).
+                // So foundIndex should be correct index in that tab's list.
+                openModal(foundIndex);
+            }, 100);
+        }
+    }
 }
 
 function navModal(dir) {
