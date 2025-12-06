@@ -963,6 +963,9 @@ function filterByTag(tag, event) {
         STATE.activeTags.push(tag); // Add if not exists
     }
 
+    console.log('[filterByTag] activeTab ANTES:', STATE.activeTab);
+    console.log('[filterByTag] activeTags:', STATE.activeTags);
+
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
     STATE.activeLetter = '';
 
@@ -975,6 +978,9 @@ function filterByTag(tag, event) {
     }
 
     applyFilters();
+
+    console.log('[filterByTag] activeTab DEPOIS:', STATE.activeTab);
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
