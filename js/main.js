@@ -531,149 +531,149 @@ window.autoSwitchMapToPoint = function (pointId) {
 };
 
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
-    function toggleFilterMenu() {
-        const desktopMenu = document.getElementById('filterMenuDesktop');
-        const mobileMenu = document.getElementById('filterMenuMobile');
-        const btnDesktop = document.getElementById('filterBtnDesktop');
-        const btnMobile = document.getElementById('filterBtnMobile');
+function toggleFilterMenu() {
+    const desktopMenu = document.getElementById('filterMenuDesktop');
+    const mobileMenu = document.getElementById('filterMenuMobile');
+    const btnDesktop = document.getElementById('filterBtnDesktop');
+    const btnMobile = document.getElementById('filterBtnMobile');
 
-        const isDesktopHidden = desktopMenu?.classList.contains('hidden');
-        const isMobileHidden = mobileMenu?.classList.contains('hidden');
+    const isDesktopHidden = desktopMenu?.classList.contains('hidden');
+    const isMobileHidden = mobileMenu?.classList.contains('hidden');
 
-        if (isDesktopHidden && isMobileHidden) {
-            // Open menu
-            if (desktopMenu) {
-                desktopMenu.classList.remove('hidden');
-                renderFilterMenu();
-                // Add outside click listener
-                setTimeout(() => {
-                    document.addEventListener('click', closeFilterMenuOnClickOutside);
-                }, 100);
-            }
-            if (mobileMenu) {
-                mobileMenu.classList.remove('hidden');
-                renderFilterMenu();
-            }
-        } else {
-            // Close menu
-            closeFilterMenu();
+    if (isDesktopHidden && isMobileHidden) {
+        // Open menu
+        if (desktopMenu) {
+            desktopMenu.classList.remove('hidden');
+            renderFilterMenu();
+            // Add outside click listener
+            setTimeout(() => {
+                document.addEventListener('click', closeFilterMenuOnClickOutside);
+            }, 100);
         }
+        if (mobileMenu) {
+            mobileMenu.classList.remove('hidden');
+            renderFilterMenu();
+        }
+    } else {
+        // Close menu
+        closeFilterMenu();
+    }
+}
+
+function closeFilterMenu() {
+    document.getElementById('filterMenuDesktop')?.classList.add('hidden');
+    document.getElementById('filterMenuMobile')?.classList.add('hidden');
+    document.removeEventListener('click', closeFilterMenuOnClickOutside);
+}
+
+function closeFilterMenuOnClickOutside(e) {
+    const desktopMenu = document.getElementById('filterMenuDesktop');
+    const mobileMenu = document.getElementById('filterMenuMobile');
+    const btnDesktop = document.getElementById('filterBtnDesktop');
+    const btnMobile = document.getElementById('filterBtnMobile');
+
+    // Check if click is outside desktop menu AND button
+    if (!desktopMenu?.classList.contains('hidden') && !desktopMenu?.contains(e.target) && !btnDesktop?.contains(e.target)) {
+        document.getElementById('filterMenuDesktop').classList.add('hidden');
+    }
+    // Check if click is outside mobile menu AND button
+    if (!mobileMenu?.classList.contains('hidden') && !mobileMenu?.contains(e.target) && !btnMobile?.contains(e.target)) {
+        document.getElementById('filterMenuMobile').classList.add('hidden');
     }
 
-    function closeFilterMenu() {
-        document.getElementById('filterMenuDesktop')?.classList.add('hidden');
-        document.getElementById('filterMenuMobile')?.classList.add('hidden');
+    // Remove listener if both are hidden
+    if (document.getElementById('filterMenuDesktop')?.classList.contains('hidden') &&
+        document.getElementById('filterMenuMobile')?.classList.contains('hidden')) {
         document.removeEventListener('click', closeFilterMenuOnClickOutside);
     }
+}
 
-    function closeFilterMenuOnClickOutside(e) {
-        const desktopMenu = document.getElementById('filterMenuDesktop');
-        const mobileMenu = document.getElementById('filterMenuMobile');
-        const btnDesktop = document.getElementById('filterBtnDesktop');
-        const btnMobile = document.getElementById('filterBtnMobile');
+function renderFilterMenu() {
+    const containerDesktop = document.getElementById('filterMenuDesktop');
+    const containerMobile = document.getElementById('filterMenuMobile');
+    if (!containerDesktop && !containerMobile) return;
 
-        // Check if click is outside desktop menu AND button
-        if (!desktopMenu?.classList.contains('hidden') && !desktopMenu?.contains(e.target) && !btnDesktop?.contains(e.target)) {
-            document.getElementById('filterMenuDesktop').classList.add('hidden');
+    // Get Categories
+    const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
+        id: key,
+        label: CONFIG.modes[STATE.mode].cats[key].label
+    }));
+
+    // Get Sources (unique from loaded data)
+    let allItems = [];
+    Object.keys(STATE.data).forEach(key => {
+        if (Array.isArray(STATE.data[key])) {
+            allItems = allItems.concat(STATE.data[key]);
         }
-        // Check if click is outside mobile menu AND button
-        if (!mobileMenu?.classList.contains('hidden') && !mobileMenu?.contains(e.target) && !btnMobile?.contains(e.target)) {
-            document.getElementById('filterMenuMobile').classList.add('hidden');
-        }
+    });
 
-        // Remove listener if both are hidden
-        if (document.getElementById('filterMenuDesktop')?.classList.contains('hidden') &&
-            document.getElementById('filterMenuMobile')?.classList.contains('hidden')) {
-            document.removeEventListener('click', closeFilterMenuOnClickOutside);
-        }
-    }
+    const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
 
-    function renderFilterMenu() {
-        const containerDesktop = document.getElementById('filterMenuDesktop');
-        const containerMobile = document.getElementById('filterMenuMobile');
-        if (!containerDesktop && !containerMobile) return;
+    const generateMenuHTML = () => {
+        let html = '<div class="p-4 space-y-4 max-h-96 overflow-y-auto">';
 
-        // Get Categories
-        const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
-            id: key,
-            label: CONFIG.modes[STATE.mode].cats[key].label
-        }));
-
-        // Get Sources (unique from loaded data)
-        let allItems = [];
-        Object.keys(STATE.data).forEach(key => {
-            if (Array.isArray(STATE.data[key])) {
-                allItems = allItems.concat(STATE.data[key]);
-            }
+        // Categories Section
+        html += '<div><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Categorias</h3><div class="space-y-2">';
+        categories.forEach(cat => {
+            const isChecked = STATE.activeCategories.includes(cat.id);
+            html += `
+            <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" onchange="toggleFilter('category', '${cat.id}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
+                <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${cat.label}</span>
+            </label>
+        `;
         });
+        html += '</div></div>';
 
-        const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
-
-        const generateMenuHTML = () => {
-            let html = '<div class="p-4 space-y-4 max-h-96 overflow-y-auto">';
-
-            // Categories Section
-            html += '<div><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Categorias</h3><div class="space-y-2">';
-            categories.forEach(cat => {
-                const isChecked = STATE.activeCategories.includes(cat.id);
+        // Sources Section
+        if (sources.length > 0) {
+            html += '<div class="border-t border-gray-100 dark:border-gray-700 pt-2"><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Fontes</h3><div class="space-y-2">';
+            sources.forEach(src => {
+                const isChecked = STATE.activeSources.includes(src);
                 html += `
                 <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="checkbox" onchange="toggleFilter('category', '${cat.id}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
-                    <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${cat.label}</span>
+                    <input type="checkbox" onchange="toggleFilter('source', '${src}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
+                    <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${src}</span>
                 </label>
             `;
             });
             html += '</div></div>';
-
-            // Sources Section
-            if (sources.length > 0) {
-                html += '<div class="border-t border-gray-100 dark:border-gray-700 pt-2"><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Fontes</h3><div class="space-y-2">';
-                sources.forEach(src => {
-                    const isChecked = STATE.activeSources.includes(src);
-                    html += `
-                    <label class="flex items-center space-x-2 cursor-pointer">
-                        <input type="checkbox" onchange="toggleFilter('source', '${src}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
-                        <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${src}</span>
-                    </label>
-                `;
-                });
-                html += '</div></div>';
-            }
-
-            html += '</div>'; // End container
-
-            // Reset Button
-            if (STATE.activeCategories.length > 0 || STATE.activeSources.length > 0) {
-                html += `
-                <div class="p-2 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 sticky bottom-0">
-                    <button onclick="STATE.activeCategories=[]; STATE.activeSources=[]; applyFilters(); renderFilterMenu();" class="w-full text-xs text-swiss-red hover:underline">Limpar Filtros</button>
-                </div>
-            `;
-            }
-
-            return html;
-        };
-
-        const html = generateMenuHTML();
-        if (containerDesktop) containerDesktop.innerHTML = html;
-        if (containerMobile) containerMobile.innerHTML = html;
-    }
-
-    function toggleFilter(type, value) {
-        let targetArray = type === 'category' ? STATE.activeCategories : STATE.activeSources;
-
-        if (targetArray.includes(value)) {
-            targetArray = targetArray.filter(i => i !== value);
-        } else {
-            targetArray.push(value);
         }
 
-        if (type === 'category') STATE.activeCategories = targetArray;
-        else STATE.activeSources = targetArray;
+        html += '</div>'; // End container
 
-        applyFilters();
-        renderFilterMenu();
+        // Reset Button
+        if (STATE.activeCategories.length > 0 || STATE.activeSources.length > 0) {
+            html += `
+            <div class="p-2 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 sticky bottom-0">
+                <button onclick="STATE.activeCategories=[]; STATE.activeSources=[]; applyFilters(); renderFilterMenu();" class="w-full text-xs text-swiss-red hover:underline">Limpar Filtros</button>
+            </div>
+        `;
+        }
+
+        return html;
+    };
+
+    const html = generateMenuHTML();
+    if (containerDesktop) containerDesktop.innerHTML = html;
+    if (containerMobile) containerMobile.innerHTML = html;
+}
+
+function toggleFilter(type, value) {
+    let targetArray = type === 'category' ? STATE.activeCategories : STATE.activeSources;
+
+    if (targetArray.includes(value)) {
+        targetArray = targetArray.filter(i => i !== value);
+    } else {
+        targetArray.push(value);
     }
+
+    if (type === 'category') STATE.activeCategories = targetArray;
+    else STATE.activeSources = targetArray;
+
+    applyFilters();
+    renderFilterMenu();
+}
 function applyFilters() {
     // Get value from any search input (they should be synced)
     const inputs = document.querySelectorAll('.search-input');
