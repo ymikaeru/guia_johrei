@@ -593,6 +593,9 @@ function applyFilters() {
         // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
         if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
 
+        // Na aba mapa, mostrar apenas itens com pontos focais
+        if (activeTab === 'mapa' && !item.focusPoints) return false;
+
         // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
         if (bodyFilter && typeof matchBodyPoint === 'function') {
             if (!matchBodyPoint(item, bodyFilter)) return false;
