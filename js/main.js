@@ -893,8 +893,9 @@ function toggleBodyPoint(id) {
         }
     }
 
-    // Update UI
-    updateUIForTab('mapa');
+    // Update UI for CURRENT tab, not hardcoded 'mapa'
+    // This was causing tags to navigate to maps tab
+    updateUIForTab(STATE.activeTab);
 
     // Update list
     applyFilters();
