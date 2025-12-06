@@ -540,6 +540,12 @@ function toggleFilterMenu() {
     const isDesktopHidden = desktopMenu?.classList.contains('hidden');
     const isMobileHidden = mobileMenu?.classList.contains('hidden');
 
+    // Only proceed if at least one menu exists
+    if (!desktopMenu && !mobileMenu) {
+        console.warn('No filter menus found');
+        return;
+    }
+
     if (isDesktopHidden && isMobileHidden) {
         // Open menu
         if (desktopMenu) {
