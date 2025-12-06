@@ -531,7 +531,9 @@ window.autoSwitchMapToPoint = function (pointId) {
 };
 
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
-function toggleFilterMenu() {
+function toggleFilterMenu(event) {
+    if (event) event.stopPropagation();
+
     const desktopMenu = document.getElementById('filterMenuDesktop');
     const mobileMenu = document.getElementById('filterMenuMobile');
     const btnDesktop = document.getElementById('filterBtnDesktop');
@@ -551,10 +553,10 @@ function toggleFilterMenu() {
         if (desktopMenu) {
             desktopMenu.classList.remove('hidden');
             renderFilterMenu();
-            // Add outside click listener
+            // Add outside click listener with delay
             setTimeout(() => {
                 document.addEventListener('click', closeFilterMenuOnClickOutside);
-            }, 100);
+            }, 300);
         }
         if (mobileMenu) {
             mobileMenu.classList.remove('hidden');
