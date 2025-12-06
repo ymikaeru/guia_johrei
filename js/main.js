@@ -531,10 +531,6 @@ window.autoSwitchMapToPoint = function (pointId) {
 };
 
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
-function applyFilters() {
-    // Get value from any search input (they should be synced)
-    const inputs = document.querySelectorAll('.search-input');
-    // --- FILTER MENU LOGIC ---
     function toggleFilterMenu() {
         const desktopMenu = document.getElementById('filterMenuDesktop');
         const mobileMenu = document.getElementById('filterMenuMobile');
@@ -678,6 +674,10 @@ function applyFilters() {
         applyFilters();
         renderFilterMenu();
     }
+function applyFilters() {
+    // Get value from any search input (they should be synced)
+    const inputs = document.querySelectorAll('.search-input');
+    // --- FILTER MENU LOGIC ---
 
     const searchValue = inputs.length > 0 ? inputs[0].value : '';
     const q = removeAccents(searchValue); // Normalize for accent-insensitive search
