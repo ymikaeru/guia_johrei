@@ -1698,7 +1698,20 @@ onclick="Favorites.toggle('${item.id}')" data-id="${item.id}" title="${isFav ? '
     }
 
     // Inject button into header area
-    // Actually, modal header structure is: Title, Cat.
+    // Find the actions container (parent of close button or font controls)
+    const activeModalCard = document.getElementById('modalCard');
+    const actionsContainer = activeModalCard.querySelector('.flex.items-center.gap-4');
+
+    if (actionsContainer) {
+        // Remove existing favorite button if any
+        const existingBtn = actionsContainer.querySelector('.fav-btn');
+        if (existingBtn) existingBtn.remove();
+
+        // Inject new button at the beginning (left of font controls)
+        // or between font controls and close button?
+        // Let's put it to the left of font controls for visibility
+        actionsContainer.insertAdjacentHTML('afterbegin', favBtnHtml);
+    }
     // I can append it to modalCategory parent or Title parent.
     // Let's replace title area with flex container effectively.
     // BUT modifying HTML structure might break existing CSS.

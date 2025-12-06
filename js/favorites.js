@@ -63,10 +63,27 @@ const Favorites = {
         // Must use 'this.list' getter to get the array reference, but we need to modify the array in place.
         // getter returns reference, so push/splice works.
         // CHECK: Does getter value copy or ref? JS arrays are refs.
-        const currentList = this.trays[this.activeTray];
+        let currentList = this.trays[this.activeTray];
 
         const idx = currentList.indexOf(id);
         if (idx === -1) {
+            // Adding item
+            // Feature: Prompt for Apostila Name on first add to Principal
+            if (this.activeTray === 'Principal' && currentList.length === 0) {
+                const newName = prompt("Você está criando uma nova Apostila. Digite um nome para ela (ou OK para manter na 'Principal'):");
+                if (newName && newName.trim()) {
+                    const clean = newName.trim();
+                    if (this.trays[clean]) {
+                        alert(`Apostila "${clean}" já existe. Adicionando item a ela.`);
+                        this.switchTray(clean);
+                    } else {
+                        this.createTray(clean);
+                        this.switchTray(clean);
+                    }
+                    // Update reference to the NEW active tray list
+                    currentList = this.trays[this.activeTray];
+                }
+            }
             currentList.push(id);
         } else {
             currentList.splice(idx, 1);
@@ -228,10 +245,26 @@ window.createNewTray = function () {
 };
 
 window.renameCurrentTray = function () {
-    const newName = prompt("Novo nome para a apostila:", Favorites.activeTray);
-    if (newName && newName !== Favorites.activeTray) {
-        if (!Favorites.renameTray(Favorites.activeTray, newName)) {
-            alert('Erro: Nome inválido, já existente ou "Principal".');
+    if (!Favorites.activeTray || Favorites.activeTray === 'Principal') return;
+
+    const currentName = Favorites.activeTray;
+    const newName = prompt(`Renomear "${currentName}" para:`, currentName);
+
+    if (newName && newName !== currentName) {
+        if (Favorites.renameTray(currentName, newName)) {
+            // Success
+        } else {
+            alert('Nome inválido ou já existente.');
         }
     }
+}
+
+window.confirmClearTray = function (event) {
+    if (event) event.preventDefault();
+    // Use timeout to ensure no UI race condition
+    setTimeout(() => {
+        if (confirm('Tem certeza que deseja limpar esta apostila?')) {
+            Favorites.clearCurrentTray();
+        }
+    }, 10);
 };

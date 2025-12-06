@@ -80,8 +80,9 @@ function renderList(list, activeTags, mode, activeTab) {
             </button>
         ` : '';
 
-        const clearBtn = list && list.length > 0 ? `
-            <button onclick="if(confirm('Tem certeza que deseja limpar esta apostila?')) Favorites.clearCurrentTray()" 
+        const currentTrayCount = Favorites.trays[currentTray] ? Favorites.trays[currentTray].length : 0;
+        const clearBtn = currentTrayCount > 0 ? `
+            <button onclick="window.confirmClearTray(event)" 
                 class="text-red-400 hover:text-red-600 font-bold text-[10px] uppercase tracking-widest px-3 py-2 border border-red-100 hover:border-red-300 rounded transition-colors mr-2">
                 Limpar
             </button>
