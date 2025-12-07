@@ -1,23 +1,4 @@
-// --- ESTADO GLOBAL ---
-let STATE = {
-    activeTab: 'fundamentos', // ou 'curas', 'pontos_focais', 'mapa'
-    activeLetter: '',
-    activeTags: [], // Changed from activeTag to activeTags array
-    activeCategories: [], // Filter by categories (combined)
-    activeSources: [], // Filter by sources
-    activeFocusPoints: [], // Multi-select for focus points
-    bodyFilter: null, // Agora suporta array ou null, mas vamos manter simples por enquanto
-    mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
-    list: [],
-    idx: -1,
-    isCrossTabMode: false, // True when showing results from multiple tabs
-    selectedBodyPoint: null // Selected body point for filtering
-};
 
-// Helper to remove accents
-function removeAccents(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
 // --- PULL TO REFRESH LOGIC ---
 (function initPullToRefresh() {
     let ptrStart = 0;
@@ -109,15 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
+            const clearBtn = document.getElementById('clearSearch');
             if (e.target.value) {
                 STATE.activeLetter = '';
                 // Se quiser que a busca limpe o mapa, descomente a linha abaixo:
                 // clearBodyFilter(); 
                 STATE.activeTag = null;
                 renderAlphabet();
-                document.getElementById('clearSearch').classList.remove('hidden');
+                if (clearBtn) clearBtn.classList.remove('hidden');
             } else {
-                document.getElementById('clearSearch').classList.add('hidden');
+                if (clearBtn) clearBtn.classList.add('hidden');
             }
             applyFilters();
         });
@@ -1046,6 +1028,80 @@ function setupSearch() {
             // When searching, results will come from all tabs
             // No need to switch tabs - applyFilters handles cross-tab search
 
+            // Build allData FIRST for auto-correction check
+            const allData = [];
+            Object.keys(STATE.data).forEach(tabId => {
+                if (STATE.data[tabId]) {
+                    allData.push(...STATE.data[tabId]);
+                }
+            });
+
+
+
+            // Auto-correction: if synonym has MORE results than query, auto-replace
+            if (val.length > 2 && typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
+                const q = removeAccents(val);
+                const related = SearchEngine.getRelatedTerms(val);
+                const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
+
+
+
+                if (synonyms.length > 0) {
+                    // Count results for query
+                    const queryPattern = new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+                    const queryCount = allData.filter(item => {
+                        const searchable = removeAccents((
+                            (item.title || '') + ' ' +
+                            (item.tags ? item.tags.join(' ') : '') + ' ' +
+                            (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
+                            (item.content || '')
+                        ).toLowerCase());
+                        return queryPattern.test(searchable);
+                    }).length;
+
+
+
+                    // Find synonym with most results
+                    let bestSyn = null;
+                    let bestCount = queryCount;
+
+                    for (const syn of synonyms.slice(0, 3)) {
+                        const synNorm = removeAccents(syn.toLowerCase());
+                        const synPattern = new RegExp(`\\b${synNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+                        const synCount = allData.filter(item => {
+                            const searchable = removeAccents((
+                                (item.title || '') + ' ' +
+                                (item.tags ? item.tags.join(' ') : '') + ' ' +
+                                (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
+                                (item.content || '')
+                            ).toLowerCase());
+                            return synPattern.test(searchable);
+                        }).length;
+
+
+
+                        if (synCount > bestCount) {
+                            bestSyn = syn;
+                            bestCount = synCount;
+                        }
+                    }
+
+                    if (bestSyn) {
+
+                        inputs.forEach(i => {
+                            if (i !== e.target) i.value = bestSyn;
+                        });
+                        e.target.value = bestSyn;
+                    } else {
+
+                    }
+                } else {
+
+                }
+            } else {
+
+            }
+
             applyFilters();
 
             // Autocomplete Logic - Show history or suggestions
@@ -1081,26 +1137,7 @@ function setupSearch() {
                 const suggestions = [];
                 const seen = new Set();
 
-                // 1. Check for Direct Synonyms (High Priority)
-                if (typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
-                    const related = SearchEngine.getRelatedTerms(val);
-                    // Filter out the query itself from related
-                    const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
-
-                    synonyms.slice(0, 3).forEach(syn => {
-                        const key = `syn:${syn}`;
-                        if (!seen.has(key)) {
-                            suggestions.push({
-                                text: syn,
-                                type: 'Sinônimo',
-                                priority: 4 // Highest
-                            });
-                            seen.add(key);
-                        }
-                    });
-                }
-
-                // Search across ALL data, not just active tab
+                // Build allData FIRST so we can check if terms have results
                 const allData = [];
                 Object.keys(STATE.data).forEach(tabId => {
                     if (STATE.data[tabId]) {
@@ -1108,6 +1145,75 @@ function setupSearch() {
                     }
                 });
 
+                // 1. Check for Direct Synonyms (High Priority)
+                if (typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
+                    const related = SearchEngine.getRelatedTerms(val);
+                    // Filter out the query itself from related
+                    const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
+
+
+
+                    // Check if query itself has matches in data
+                    const queryHasResults = allData.some(item => {
+                        const searchable = removeAccents((
+                            (item.title || '') + ' ' +
+                            (item.tags ? item.tags.join(' ') : '') + ' ' +
+                            (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
+                            (item.content || '')
+                        ).toLowerCase());
+                        return searchable.includes(q);
+                    });
+
+
+
+                    // If query has NO results, check if synonyms do
+                    if (!queryHasResults && synonyms.length > 0) {
+
+                        // Find first synonym that has results
+                        for (const syn of synonyms.slice(0, 3)) {
+                            const synNorm = removeAccents(syn.toLowerCase());
+                            const synHasResults = allData.some(item => {
+                                const searchable = removeAccents((
+                                    (item.title || '') + ' ' +
+                                    (item.tags ? item.tags.join(' ') : '') + ' ' +
+                                    (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
+                                    (item.content || '')
+                                ).toLowerCase());
+                                return searchable.includes(synNorm);
+                            });
+
+
+
+                            if (synHasResults) {
+                                // Promote this to "Você quis dizer?" instead of synonym
+
+                                suggestions.push({
+                                    text: syn,
+                                    type: 'Você quis dizer?',
+                                    priority: 5 // Highest priority
+                                });
+                                seen.add(`correction:${syn}`);
+                                break; // Only suggest one correction
+                            }
+                        }
+                    } else if (queryHasResults) {
+
+                        // Query has results, show synonyms normally
+                        synonyms.slice(0, 3).forEach(syn => {
+                            const key = `syn:${syn}`;
+                            if (!seen.has(key)) {
+                                suggestions.push({
+                                    text: syn,
+                                    type: 'Sinônimo',
+                                    priority: 4
+                                });
+                                seen.add(key);
+                            }
+                        });
+                    }
+                }
+
+                // Now search in titles, tags, focus points
                 allData.forEach(item => {
                     // Search in title
                     if (item.title && removeAccents(item.title).includes(q)) {
@@ -1280,6 +1386,12 @@ function selectSuggestion(title, tab) {
 
     // Apply filters to show results
     applyFilters();
+
+    // Auto-trigger suggestions for the new term (synonyms, etc.)
+    if (inputs.length > 0) {
+        // Dispatch input event to trigger suggestion dropdown
+        inputs[0].dispatchEvent(new Event('input', { bubbles: true }));
+    }
 }
 
 // Scroll to Top functionality
@@ -1328,150 +1440,3 @@ function renderAlphabet() {
         }
     });
 }
-
-// --- MODAL LOGIC ---
-let currentModalIndex = -1;
-
-function openModal(i) {
-    currentModalIndex = i;
-    const item = STATE.list[i];
-    const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
-
-    document.getElementById('modalTitle').textContent = item.title;
-    const catEl = document.getElementById('modalCategory');
-    catEl.textContent = catConfig ? catConfig.label : item._cat;
-    if (catConfig) {
-        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
-    }
-
-    document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1}`;
-
-    // Generate breadcrumb
-    const breadcrumbEl = document.getElementById('modalBreadcrumb');
-    if (breadcrumbEl) {
-        const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
-        const catLabel = catConfig ? catConfig.label : item._cat;
-        const breadcrumbHTML = `
-            <span class="text-gray-500">${modeLabel}</span>
-            <span class="text-gray-600">›</span>
-            <span class="text-gray-400">${catLabel}</span>
-        `;
-        breadcrumbEl.innerHTML = breadcrumbHTML;
-    }
-
-    const inputs = document.querySelectorAll('.search-input');
-    let searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
-
-    // Highlight body point keywords if filtering by body point
-    if (!searchQuery && STATE.selectedBodyPoint && STATE.activeTab === 'mapa') {
-        const pointIds = STATE.selectedBodyPoint.split(',');
-        const keywords = new Set();
-        pointIds.forEach(pid => {
-            const keys = BODY_DATA.keywords[pid];
-            if (keys) {
-                if (Array.isArray(keys)) keys.forEach(k => keywords.add(k));
-                else keywords.add(keys);
-            } else {
-                keywords.add(pid);
-            }
-        });
-        // Use | as delimiter to preserve phrases (handled in formatBodyText)
-        searchQuery = Array.from(keywords).join('|');
-    }
-    document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery);
-
-    const fpContainer = document.getElementById('modalFocusContainer');
-    // Hide focus points for Fundamentos and Casos e Orientações (curas)
-    const showFocusPoints = !['fundamentos', 'curas'].includes(STATE.activeTab);
-
-    // Build Highlight Regex (same logic as formatBodyText)
-    let highlightRegex = null;
-    if (searchQuery) {
-        let tokens;
-        let useBoundaries = false;
-        if (searchQuery.includes('|')) {
-            tokens = searchQuery.split('|').filter(t => t.trim().length > 0);
-            useBoundaries = true;
-        } else {
-            tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
-        }
-        const terms = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
-        if (terms) {
-            highlightRegex = new RegExp(useBoundaries ? `\\b(${terms})\\b` : `(${terms})`, 'i');
-        }
-    }
-
-    if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
-        fpContainer.classList.remove('hidden');
-        const html = item.focusPoints.map(p => {
-            const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
-            // Highlighting style if matched
-            const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors";
-            const colorClass = isMatch
-                ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100" // Highlighted
-                : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"; // Normal
-
-            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}">${p}</button>`;
-        }).join('');
-        document.getElementById('modalFocusPoints').innerHTML = html;
-    } else {
-        fpContainer.classList.add('hidden');
-    }
-
-    document.getElementById('prevBtn').disabled = i === 0;
-    document.getElementById('nextBtn').disabled = i === STATE.list.length - 1;
-
-    const modal = document.getElementById('readModal');
-    const card = document.getElementById('modalCard');
-    const backdrop = document.getElementById('modalBackdrop');
-
-    modal.classList.remove('hidden');
-    void modal.offsetWidth;
-
-    card.classList.add('open');
-    backdrop.classList.add('open');
-
-    document.body.style.overflow = 'hidden';
-
-    if (searchQuery) {
-        setTimeout(() => {
-            const highlight = document.querySelector('.search-highlight');
-            if (highlight) highlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 400);
-    }
-}
-
-function closeModal() {
-    const modal = document.getElementById('readModal');
-    const card = document.getElementById('modalCard');
-    const backdrop = document.getElementById('modalBackdrop');
-
-    card.classList.remove('open');
-    backdrop.classList.remove('open');
-
-    setTimeout(() => {
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-    }, 250);
-}
-
-function navModal(dir) {
-    const next = currentModalIndex + dir;
-    if (next >= 0 && next < STATE.list.length) {
-        const content = document.getElementById('modalContent');
-        content.style.opacity = '0';
-        setTimeout(() => {
-            openModal(next);
-            content.style.opacity = '1';
-        }, 200);
-    }
-}
-
-// Controle de Fonte
-window.changeFontSize = function (size) {
-    const content = document.getElementById('modalContent');
-    content.classList.remove('text-sm-mode', 'text-lg-mode');
-    if (size === 'sm') content.classList.add('text-sm-mode');
-    if (size === 'lg') content.classList.add('text-lg-mode');
-};
