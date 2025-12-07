@@ -20,7 +20,7 @@ const SearchEngine = {
         'toxina': ['toxinas', 'impureza', 'impurezas', 'veneno', 'medicamento'],
         'johrei': ['luz divina', 'luz', 'energia'],
         'cura': ['curar', 'tratamento', 'sarar', 'recuperação', 'milagre'],
-        'quadril': ['quadris', 'bacia', 'pélvis', 'cintura'],
+        'quadril': ['quadris', 'bacia', 'cintura'],
         'perna': ['pernas', 'membros inferiores', 'coxa', 'joelho', 'tornozelo', 'pé'],
         'braço': ['braços', 'membros superiores', 'cotovelo', 'pulso', 'mão'],
         'febre': ['temperatura', 'quente', 'calor'],
