@@ -696,7 +696,8 @@ function applyFilters() {
     // Filter Logic
     let filtered = rawItems.filter(item => {
         // 1. Text Search (Check title, content, tags, focus points)
-        if (q.length > 0) {
+        // ONLY valid if SearchEngine is NOT used. If SearchEngine is used, we skip this strict check to allow synonyms.
+        if (q.length > 0 && typeof SearchEngine === 'undefined') {
             const searchableText = removeAccents((
                 (item.title || '') + ' ' +
                 (item.content || '') + ' ' +
