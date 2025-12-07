@@ -1028,64 +1028,6 @@ function setupSearch() {
             // When searching, results will come from all tabs
             // No need to switch tabs - applyFilters handles cross-tab search
 
-            // Build allData FIRST for auto-correction check
-            const allData = [];
-            Object.keys(STATE.data).forEach(tabId => {
-                if (STATE.data[tabId]) {
-                    allData.push(...STATE.data[tabId]);
-                }
-            });
-
-
-
-            // Auto-correction: ONLY if query has ZERO results, try synonyms
-            if (val.length > 2 && typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
-                const q = removeAccents(val);
-                const related = SearchEngine.getRelatedTerms(val);
-                const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
-
-                if (synonyms.length > 0) {
-                    // Count results for query
-                    const queryPattern = new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-                    const queryCount = allData.filter(item => {
-                        const searchable = removeAccents((
-                            (item.title || '') + ' ' +
-                            (item.tags ? item.tags.join(' ') : '') + ' ' +
-                            (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
-                            (item.content || '')
-                        ).toLowerCase());
-                        return queryPattern.test(searchable);
-                    }).length;
-
-                    // ONLY auto-correct if query has ZERO results
-                    if (queryCount === 0) {
-                        // Find first synonym that HAS results
-                        for (const syn of synonyms.slice(0, 3)) {
-                            const synNorm = removeAccents(syn.toLowerCase());
-                            const synPattern = new RegExp(`\\b${synNorm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-                            const synCount = allData.filter(item => {
-                                const searchable = removeAccents((
-                                    (item.title || '') + ' ' +
-                                    (item.tags ? item.tags.join(' ') : '') + ' ' +
-                                    (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
-                                    (item.content || '')
-                                ).toLowerCase());
-                                return synPattern.test(searchable);
-                            }).length;
-
-                            if (synCount > 0) {
-                                // Auto-correct to first synonym with results
-                                inputs.forEach(i => {
-                                    if (i !== e.target) i.value = syn;
-                                });
-                                e.target.value = syn;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
             applyFilters();
 
             // Autocomplete Logic - Show history or suggestions
