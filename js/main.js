@@ -146,6 +146,7 @@ async function loadData() {
         renderTabs();
         renderAlphabet();
         applyFilters();
+        renderSourceFilters(); // Initialize source chips
 
         // Initialize tag browser if available
         if (typeof initializeTagBrowser === 'function') {
@@ -615,20 +616,8 @@ function renderFilterMenu() {
         });
         html += '</div></div>';
 
-        // Sources Section
-        if (sources.length > 0) {
-            html += '<div class="border-t border-gray-100 dark:border-gray-700 pt-2"><h3 class="font-bold text-sm mb-2 text-gray-700 dark:text-gray-300">Fontes</h3><div class="space-y-2">';
-            sources.forEach(src => {
-                const isChecked = STATE.activeSources.includes(src);
-                html += `
-                <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="checkbox" onchange="toggleFilter('source', '${src}')" class="form-checkbox text-swiss-red rounded" ${isChecked ? 'checked' : ''}>
-                    <span class="text-sm ${isChecked ? 'font-semibold text-swiss-red' : 'text-gray-600 dark:text-gray-400'}">${src}</span>
-                </label>
-            `;
-            });
-            html += '</div></div>';
-        }
+        // Sources Section - MOVED TO MAIN UI
+        // if (sources.length > 0) { ... }
 
         html += '</div>'; // End container
 
@@ -649,20 +638,64 @@ function renderFilterMenu() {
     if (containerMobile) containerMobile.innerHTML = html;
 }
 
-function toggleFilter(type, value) {
-    let targetArray = type === 'category' ? STATE.activeCategories : STATE.activeSources;
+// New Source Filter Logic (Horizontal Chips)
+function renderSourceFilters() {
+    const container = document.getElementById('sourceTabsContainer');
+    if (!container) return;
 
-    if (targetArray.includes(value)) {
-        targetArray = targetArray.filter(i => i !== value);
-    } else {
-        targetArray.push(value);
+    // Get Sources (unique from loaded data)
+    let allItems = [];
+    Object.keys(STATE.data).forEach(key => {
+        if (Array.isArray(STATE.data[key])) {
+            allItems = allItems.concat(STATE.data[key]);
+        }
+    });
+
+    const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
+
+    if (sources.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    container.style.display = 'flex';
+
+    const html = sources.map(src => {
+        const isActive = STATE.activeSources.includes(src);
+        // Chip style: 'pill' shape, active has distinct color
+        const activeClass = isActive
+            ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white'
+            : 'bg-white dark:bg-[#111] text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600';
+
+        return `
+            <button onclick="toggleFilter('source', '${src}')" 
+                class="flex-none px-4 py-2 text-[10px] font-bold uppercase tracking-widest border rounded-full transition-all whitespace-nowrap ${activeClass}">
+                ${src}
+            </button>
+        `;
+    }).join('');
+
+    container.innerHTML = html;
+}
+
+function toggleFilter(type, value) {
+    if (type === 'category') {
+        if (STATE.activeCategories.includes(value)) {
+            STATE.activeCategories = STATE.activeCategories.filter(c => c !== value);
+        } else {
+            STATE.activeCategories.push(value);
+        }
+    } else if (type === 'source') {
+        // Toggle source logic
+        if (STATE.activeSources.includes(value)) {
+            STATE.activeSources = STATE.activeSources.filter(s => s !== value);
+        } else {
+            STATE.activeSources.push(value);
+        }
     }
 
-    if (type === 'category') STATE.activeCategories = targetArray;
-    else STATE.activeSources = targetArray;
-
     applyFilters();
-    renderFilterMenu();
+    renderFilterMenu(); // Update checkboxes
+    renderSourceFilters(); // Update chips visual state
 }
 function applyFilters() {
     // Get value from any search input (they should be synced)
