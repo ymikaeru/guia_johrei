@@ -90,15 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
+            const clearBtn = document.getElementById('clearSearch');
             if (e.target.value) {
                 STATE.activeLetter = '';
                 // Se quiser que a busca limpe o mapa, descomente a linha abaixo:
                 // clearBodyFilter(); 
                 STATE.activeTag = null;
                 renderAlphabet();
-                document.getElementById('clearSearch').classList.remove('hidden');
+                if (clearBtn) clearBtn.classList.remove('hidden');
             } else {
-                document.getElementById('clearSearch').classList.add('hidden');
+                if (clearBtn) clearBtn.classList.add('hidden');
             }
             applyFilters();
         });
