@@ -200,7 +200,10 @@
       "Pontos Vitais",
       "Toxinas",
       "Purificação",
-      "Doenças"
+      "Doenças",
+      "Quadril",
+      "Bacia",
+      "Pernas"
     ],
     "order": 7,
     "searchKeywords": [
