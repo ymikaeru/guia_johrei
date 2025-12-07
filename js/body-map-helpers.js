@@ -133,31 +133,7 @@ function selectBodyPoint(pointIds) {
     }
 }
 
-function clearBodyFilter() {
-    STATE.selectedBodyPoint = null;
-    const label = document.getElementById('selectedPointLabel');
-    if (label) label.classList.add('hidden');
 
-    // Reset UI
-    document.querySelectorAll('.body-point button').forEach(btn => {
-        btn.classList.remove('bg-black', 'text-white', 'scale-125', 'z-10', 'dark:bg-white', 'dark:text-black');
-        btn.classList.add('bg-white', 'dark:bg-black', 'border', 'border-gray-200', 'dark:border-gray-800');
-    });
-
-    // Update UI respecting current tab
-    updateUIForTab(STATE.activeTab);
-
-    // Esconde FAB
-    const fab = document.getElementById('mobileFab');
-    if (fab) fab.classList.add('hidden');
-
-    // Update Button Label
-    const btnLabel = document.getElementById('customDropdownLabel');
-    if (btnLabel) btnLabel.textContent = 'Filtrar por Região';
-
-    applyFilters();
-    updateUIForTab('mapa');
-}
 
 function selectBodyPointFromDropdown(pointIds) {
     selectBodyPoint(pointIds);
