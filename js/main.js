@@ -765,7 +765,7 @@ function applyFilters() {
         // Use SearchEngine for smart search with ranking
         if (typeof SearchEngine !== 'undefined') {
             filtered = SearchEngine.search(filtered, inputs[0].value, {
-                minScore: 5,
+                minScore: 10,
                 maxResults: 100,
                 useOperators: true,
                 useFuzzy: true,

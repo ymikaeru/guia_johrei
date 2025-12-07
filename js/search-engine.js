@@ -4,31 +4,7 @@
 const SearchEngine = {
     // Synonym dictionary for Portuguese medical/spiritual terms
     synonyms: {
-        'cabeça': ['crânio', 'cérebro', 'encefalo'],
-        'dor': ['doença', 'enfermidade', 'mal', 'algias', 'problema', 'sintoma'],
-        'coração': ['cardíaco', 'cardio', 'peito', 'tórax'],
-        'pulmão': ['pulmonar', 'respiratório', 'ar'],
-        'estômago': ['gástrico', 'digestivo', 'barriga', 'abdômen', 'ventre'],
-        'fígado': ['hepático', 'vesícula', 'bile'],
-        'rim': ['renal', 'urina', 'urinário'],
-        'sangue': ['sanguíneo', 'hemático', 'circulação'],
-        'olhos': ['olho', 'ocular', 'visão', 'vista'],
-        'ouvido': ['auditivo', 'audição', 'orelha', 'zumbido'],
-        'garganta': ['faríngeo', 'laringe', 'faringe', 'amígdalas', 'rouquidão'],
-        'intestino': ['intestinal', 'entérico', 'evacuação', 'prisão de ventre', 'diarreia'],
-        'espírito': ['espiritual', 'alma', 'mental', 'emocional'],
-        'toxina': ['toxinas', 'impureza', 'impurezas', 'veneno', 'medicamento'],
-        'johrei': ['luz divina', 'luz', 'energia'],
-        'cura': ['curar', 'tratamento', 'sarar', 'recuperação', 'milagre'],
-        'quadril': ['quadris', 'bacia', 'cintura'],
-        'perna': ['pernas', 'membros inferiores', 'coxa', 'joelho', 'tornozelo', 'pé'],
-        'braço': ['braços', 'membros superiores', 'cotovelo', 'pulso', 'mão'],
-        'febre': ['temperatura', 'quente', 'calor'],
-        'resfriado': ['gripe', 'coriza', 'tosse', 'catarro'],
-        'mulher': ['feminino', 'utero', 'ovario', 'menstruação'],
-        'homem': ['masculino', 'próstata'],
-        'pele': ['cutâneo', 'derme', 'coceira', 'alergia', 'erupção'],
-        'boca': ['dentes', 'gengiva', 'lingua', 'oral']
+        'quadril': ['quadris'],
     },
 
     // Get all related terms for a word (including synonyms)
@@ -51,7 +27,7 @@ const SearchEngine = {
         return [...new Set(related)];
     },
 
-    // Simple fuzzy matching using Levenshtein-like distance
+    // Improved fuzzy matching using Levenshtein distance
     fuzzyMatch(query, target, threshold = 0.7) {
         const q = removeAccents(query.toLowerCase());
         const t = removeAccents(target.toLowerCase());
@@ -59,11 +35,12 @@ const SearchEngine = {
         // Exact match
         if (t.includes(q)) return 1.0;
 
-        // Calculate similarity based on common characters
-        const qChars = new Set(q.split(''));
-        const tChars = new Set(t.split(''));
-        const intersection = new Set([...qChars].filter(x => tChars.has(x)));
-        const similarity = (intersection.size * 2) / (qChars.size + tChars.size);
+        // Use Levenshtein for better quality
+        const dist = this.levenshtein(q, t);
+        const maxLen = Math.max(q.length, t.length);
+        if (maxLen === 0) return 1.0;
+
+        const similarity = 1 - (dist / maxLen);
 
         return similarity >= threshold ? similarity : 0;
     },
@@ -117,11 +94,11 @@ const SearchEngine = {
         else if (title.startsWith(q)) score += 80; // Starts with
         else if (title.includes(q)) score += 60; // Contains
         else {
-            // Check synonyms
+            // Check synonyms - Boosted score
             for (const term of searchTerms) {
                 const termNorm = removeAccents(term.toLowerCase());
                 if (title.includes(termNorm)) {
-                    score += 40;
+                    score += 60; // Boosted from 40 to 60 for synonyms in title
                     break;
                 }
             }
@@ -139,7 +116,7 @@ const SearchEngine = {
                 else {
                     for (const term of searchTerms) {
                         if (tagNorm.includes(removeAccents(term.toLowerCase()))) {
-                            score += 25;
+                            score += 30; // Boosted from 25
                             break;
                         }
                     }
@@ -156,7 +133,7 @@ const SearchEngine = {
                 else {
                     for (const term of searchTerms) {
                         if (fpNorm.includes(removeAccents(term.toLowerCase()))) {
-                            score += 20;
+                            score += 25; // Boosted from 20
                             break;
                         }
                     }
@@ -175,7 +152,7 @@ const SearchEngine = {
                 const termNorm = removeAccents(term.toLowerCase());
                 const synonymMatches = content.split(termNorm).length - 1;
                 if (synonymMatches > 0) {
-                    score += Math.min(synonymMatches * 10, 40);
+                    score += Math.min(synonymMatches * 20, 60); // Boosted from *10 to *20, cap 60
                     break;
                 }
             }
