@@ -1035,7 +1035,7 @@ function setupSearch() {
                 }
             });
 
-            console.log('🔧 AUTO-CORRECTION: Starting check for val:', val);
+
 
             // Auto-correction: if synonym has MORE results than query, auto-replace
             if (val.length > 2 && typeof SearchEngine !== 'undefined' && SearchEngine.synonyms) {
@@ -1043,7 +1043,7 @@ function setupSearch() {
                 const related = SearchEngine.getRelatedTerms(val);
                 const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
 
-                console.log('  🔧 Synonyms:', synonyms);
+
 
                 if (synonyms.length > 0) {
                     // Count results for query
@@ -1058,7 +1058,7 @@ function setupSearch() {
                         return queryPattern.test(searchable);
                     }).length;
 
-                    console.log('  🔧 Query result count:', queryCount);
+
 
                     // Find synonym with most results
                     let bestSyn = null;
@@ -1077,7 +1077,7 @@ function setupSearch() {
                             return synPattern.test(searchable);
                         }).length;
 
-                        console.log(`    🔧 "${syn}" result count:`, synCount);
+
 
                         if (synCount > bestCount) {
                             bestSyn = syn;
@@ -1086,19 +1086,19 @@ function setupSearch() {
                     }
 
                     if (bestSyn) {
-                        console.log(`    ✨ AUTO-CORRECTING to "${bestSyn}" (${bestCount} results vs ${queryCount})`);
+
                         inputs.forEach(i => {
                             if (i !== e.target) i.value = bestSyn;
                         });
                         e.target.value = bestSyn;
                     } else {
-                        console.log('  🔧 No better synonym found');
+
                     }
                 } else {
-                    console.log('  🔧 No synonyms to check');
+
                 }
             } else {
-                console.log('  🔧 Skipping auto-correction (conditions not met)');
+
             }
 
             applyFilters();
@@ -1150,8 +1150,7 @@ function setupSearch() {
                     // Filter out the query itself from related
                     const synonyms = related.filter(r => removeAccents(r) !== q && !removeAccents(r).includes(q));
 
-                    console.log('🔍 Query:', val, '| Normalized:', q);
-                    console.log('📚 Synonyms found:', synonyms);
+
 
                     // Check if query itself has matches in data
                     const queryHasResults = allData.some(item => {
@@ -1164,11 +1163,11 @@ function setupSearch() {
                         return searchable.includes(q);
                     });
 
-                    console.log('✅ Query has results?', queryHasResults);
+
 
                     // If query has NO results, check if synonyms do
                     if (!queryHasResults && synonyms.length > 0) {
-                        console.log('🔄 Checking synonyms for results...');
+
                         // Find first synonym that has results
                         for (const syn of synonyms.slice(0, 3)) {
                             const synNorm = removeAccents(syn.toLowerCase());
@@ -1182,11 +1181,11 @@ function setupSearch() {
                                 return searchable.includes(synNorm);
                             });
 
-                            console.log(`  📍 "${syn}" has results?`, synHasResults);
+
 
                             if (synHasResults) {
                                 // Promote this to "Você quis dizer?" instead of synonym
-                                console.log(`✨ PROMOTING "${syn}" to "Você quis dizer?"`);
+
                                 suggestions.push({
                                     text: syn,
                                     type: 'Você quis dizer?',
@@ -1197,7 +1196,7 @@ function setupSearch() {
                             }
                         }
                     } else if (queryHasResults) {
-                        console.log('📌 Showing synonyms normally (query has results)');
+
                         // Query has results, show synonyms normally
                         synonyms.slice(0, 3).forEach(syn => {
                             const key = `syn:${syn}`;
