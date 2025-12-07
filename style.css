@@ -148,31 +148,7 @@ html {
 }
 
 /* --- TAGS --- */
-.tag-btn {
-    transition: all 0.2s ease;
-}
 
-.tag-btn:hover {
-    color: #000;
-    border-color: #000;
-}
-
-.dark .tag-btn:hover {
-    color: #fff;
-    border-color: #fff;
-}
-
-.tag-btn.active-tag {
-    background-color: #000;
-    color: white;
-    border-color: #000;
-}
-
-.dark .tag-btn.active-tag {
-    background-color: #fff;
-    color: black;
-    border-color: #fff;
-}
 
 /* --- TIPOGRAFIA (MODAL) --- */
 .rich-text h3 {

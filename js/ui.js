@@ -139,8 +139,9 @@ function renderList(list, activeTags, mode, activeTab) {
                     return itemsToShow.map(i => {
                         if (i.type === 'tag') {
                             const isActive = activeTags && activeTags.includes(i.text);
-                            const activeClass = isActive ? 'active-tag' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
-                            return `<button onclick="filterByTag('${i.text}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium ${activeClass}">#${i.text}</button>`;
+                            // Removing active-tag class and cursor pointer, and ensuring default cursor
+                            const activeClass = isActive ? 'text-black dark:text-white border-black dark:border-white' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
+                            return `<span onclick="event.stopPropagation()" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium cursor-default ${activeClass}">#${i.text}</span>`;
                         } else {
                             // Focus Point (styled like inactive tag)
                             return `<button onclick="filterByFocusPoint('${i.text}', event)" class="text-[9px] font-bold uppercase tracking-widest border border-gray-100 dark:border-gray-800 text-gray-400 px-2 py-1 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${i.text}</button>`;
