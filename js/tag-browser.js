@@ -68,8 +68,41 @@ function initializeTagBrowser() {
         });
     }
 
-    // Generate HTML for each category
+    // --- INJECT SOURCES SECTION ---
     let html = '';
+
+    // Get unique sources
+    const allItems = STATE.data[STATE.activeTab] || [];
+    const sourceCounts = {};
+    allItems.forEach(item => {
+        if (item.source) {
+            sourceCounts[item.source] = (sourceCounts[item.source] || 0) + 1;
+        }
+    });
+    const validSources = Object.keys(sourceCounts).sort();
+
+    if (validSources.length > 0) {
+        html += `
+            <div class="tag-category">
+                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3">Fontes</div>
+                <div class="flex flex-wrap gap-2">
+                    ${validSources.map(src => {
+            const count = sourceCounts[src];
+            const isActive = STATE.activeSources.includes(src);
+            return `
+                            <button onclick="toggleFilter('source', '${src.replace(/'/g, "\\'")}')" 
+                                class="tag-pill ${isActive ? 'tag-pill-active' : ''}">
+                                <span>${src}</span>
+                                <span class="tag-count">${count}</span>
+                            </button>
+                        `;
+        }).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    // Generate HTML for each category
     for (const [category, tags] of Object.entries(TAG_CATEGORIES)) {
         // Filter to only tags that exist in data
         const availableTags = tags.filter(tag => tagCounts[tag] > 0);
