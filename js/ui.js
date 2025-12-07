@@ -139,9 +139,11 @@ function renderList(list, activeTags, mode, activeTab) {
                     return itemsToShow.map(i => {
                         if (i.type === 'tag') {
                             const isActive = activeTags && activeTags.includes(i.text);
-                            // Removing active-tag class and cursor pointer, and ensuring default cursor
-                            const activeClass = isActive ? 'text-black dark:text-white border-black dark:border-white' : 'border border-gray-100 dark:border-gray-800 text-gray-400';
-                            return `<span onclick="event.stopPropagation()" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-medium cursor-default ${activeClass}">#${i.text}</span>`;
+                            const activeClass = isActive
+                                ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+                                : 'bg-gray-100 text-gray-500 dark:bg-[#1a1a1a] dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-[#252525]';
+
+                            return `<button onclick="filterByTag('${i.text.replace(/'/g, "\\'")}', event)" class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-bold transition-colors ${activeClass}">${i.text}</button>`;
                         } else {
                             // Focus Point (styled like inactive tag)
                             return `<button onclick="filterByFocusPoint('${i.text}', event)" class="text-[9px] font-bold uppercase tracking-widest border border-gray-100 dark:border-gray-800 text-gray-400 px-2 py-1 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">${i.text}</button>`;

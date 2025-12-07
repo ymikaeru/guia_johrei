@@ -797,6 +797,13 @@ function clearSearch() {
     // Opcional: Limpar mapa ao limpar busca? Geralmente não.
     // if(typeof clearBodyFilter === 'function') clearBodyFilter();
 
+    // Update Tag Browser UI
+    if (typeof initializeTagBrowser === 'function') {
+        initializeTagBrowser();
+    } else if (typeof updateTagPillStates === 'function') {
+        updateTagPillStates();
+    }
+
     applyFilters();
 
     // Collapse search if empty
