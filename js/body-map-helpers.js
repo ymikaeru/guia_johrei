@@ -258,15 +258,17 @@ function highlightBodyPoint(element, name, event) {
 }
 
 function unhighlightBodyPoint(element) {
+    // 1. Always remove tooltip first
+    const tooltip = document.getElementById('body-tooltip');
+    if (tooltip) tooltip.remove();
+
     // If element is not provided, it means it's called from scroll listener, so we need to find the currently highlighted one
     if (!element) {
         const highlighted = document.querySelector('.body-map-point[data-scroll-listener="active"]');
         if (highlighted) {
             element = highlighted;
         } else {
-            // No element to unhighlight, and no active scroll listener, so just hide tooltip
-            const tooltip = document.getElementById('body-tooltip');
-            if (tooltip) tooltip.remove();
+            // No element to unhighlight, and tooltip already removed above
             return;
         }
     }
@@ -286,11 +288,7 @@ function unhighlightBodyPoint(element) {
     element.setAttribute('stroke-width', '0.25');
     element.style.filter = 'none';
 
-    // Hide tooltip
-    const tooltip = document.getElementById('bodyPointTooltip');
-    if (tooltip) {
-        tooltip.style.display = 'none';
-    }
+    // Tooltip removal handled at start of function
 }
 
 // Preview points when hovering over dropdown options
