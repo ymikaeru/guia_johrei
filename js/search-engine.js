@@ -168,7 +168,17 @@ const SearchEngine = {
         if (item.content) {
             const content = removeAccents(item.content.toLowerCase());
             const matches = content.split(q).length - 1;
-            score += Math.min(matches * 5, 25); // Cap at 25 points
+            score += Math.min(matches * 12, 50); // Higher weight to catch single mentions
+
+            // Check synonyms in content
+            for (const term of searchTerms) {
+                const termNorm = removeAccents(term.toLowerCase());
+                const synonymMatches = content.split(termNorm).length - 1;
+                if (synonymMatches > 0) {
+                    score += Math.min(synonymMatches * 10, 40);
+                    break;
+                }
+            }
 
             // Bonus if query appears in first 100 chars
             if (content.substring(0, 100).includes(q)) score += 10;
@@ -180,7 +190,7 @@ const SearchEngine = {
     // Enhanced search with all features
     search(items, query, options = {}) {
         const {
-            minScore = 10,
+            minScore = 5,  // Lowered from 10 to allow more content matches
             maxResults = 100,
             useOperators = true,
             useFuzzy = true,
