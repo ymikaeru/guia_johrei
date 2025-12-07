@@ -212,22 +212,8 @@ function highlightBodyPoint(element, name, event) {
         const tooltip = document.createElement('div');
         tooltip.id = 'body-tooltip';
         // Count items matching this point
-        const rawKey = BODY_DATA.keywords[pointId] || pointId;
-        const searchKeys = Array.isArray(rawKey) ? rawKey : [rawKey];
-
-        count = allItems.filter(item => {
-            // Check if ANY keyword matches
-            return searchKeys.some(k => {
-                if (!k) return false;
-                const q = removeAccents(String(k).toLowerCase());
-
-                const focusMatch = item.focusPoints && item.focusPoints.some(fp => removeAccents(fp.toLowerCase()).includes(q));
-                const tagMatch = item.tags && item.tags.some(tag => removeAccents(tag.toLowerCase()).includes(q));
-                const contentMatch = (item.title && removeAccents(item.title.toLowerCase()).includes(q)) ||
-                    (item.content && removeAccents(item.content.toLowerCase()).includes(q));
-                return focusMatch || tagMatch || contentMatch;
-            });
-        }).length;
+        // Count items matching this point using the STRICT logic
+        count = allItems.filter(item => matchBodyPoint(item, pointId)).length;
 
         tooltip.innerHTML = `${name.toUpperCase()} <span style="opacity: 0.7; font-size: 0.9em; margin-left: 2px;">(${count})</span>`;
 
@@ -474,6 +460,7 @@ document.addEventListener('click', (e) => {
 
 // Polyfill for matchBodyPoint provided for safety
 // Robust matchBodyPoint for filtering
+// Robust matchBodyPoint for filtering
 function matchBodyPoint(item, pointId) {
     // 1. Get Keywords
     const rawKey = BODY_DATA.keywords[pointId] || pointId;
@@ -488,16 +475,9 @@ function matchBodyPoint(item, pointId) {
         const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`\\b${safeQ}\\b`, 'i');
 
-        // Check Focus Points (Direct Match using Regex to avoid maxilar matching axila)
+        // Check Focus Points Only (Strict Mode)
         if (item.focusPoints && item.focusPoints.some(fp => regex.test(removeAccents(fp.toLowerCase())))) return true;
 
-        // Check Tags - DISABLED for Body Map to ensure 100% text accuracy (User Request)
-        // if (item.tags && item.tags.some(tag => regex.test(removeAccents(tag.toLowerCase())))) return true;
-
-        // Check Content/Title using Regex for Word Boundaries (prevents Axila -> Maxilar)
-        const titleVal = item.title ? removeAccents(item.title.toLowerCase()) : '';
-        const contentVal = item.content ? removeAccents(item.content.toLowerCase()) : '';
-
-        return regex.test(titleVal) || regex.test(contentVal);
+        return false;
     });
 }
