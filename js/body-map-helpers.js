@@ -485,7 +485,6 @@ function clearBodyFilter() {
     if (btnLabel) btnLabel.textContent = 'Filtrar por Região';
 
     applyFilters();
-    updateUIForTab('mapa');
 }
 
 // Close custom dropdown when clicking outside
