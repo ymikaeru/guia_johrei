@@ -736,17 +736,68 @@ function applyFilters() {
     const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
 
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
-        if (hasActiveFilters) {
-            btn.classList.remove('hidden');
-            // Show "LIMPAR FILTROS" text
-            btn.innerHTML = `<span class="text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>`;
-        } else if (q) {
-            btn.classList.remove('hidden');
-            // Show X Icon
-            btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-        } else {
-            btn.classList.add('hidden');
+        const currentState = btn.dataset.state || 'hidden'; // hidden, icon, text
+        let newState = 'hidden';
+
+        if (hasActiveFilters) newState = 'text';
+        else if (q) newState = 'icon';
+
+        // State Machine for Transitions
+        if (newState === currentState) {
+            // Consistency check only (ensure content matches state if somehow it drifted, or just do nothing)
+            return;
         }
+
+        const iconHtml = `<div class="absolute inset-0 flex items-center justify-center transition-transform duration-300 transform"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></div>`;
+        const textHtml = `<div class="absolute inset-0 flex items-center justify-center w-full h-full"><span class="text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors whitespace-nowrap">Limpar Filtros</span></div>`;
+
+        // Reset classes
+        btn.classList.remove('hidden');
+        btn.classList.add('relative', 'w-24', 'h-8', 'overflow-hidden'); // Ensure container has size
+
+        if (newState === 'hidden') {
+            btn.classList.add('hidden');
+            btn.dataset.state = 'hidden';
+            btn.innerHTML = '';
+            return;
+        }
+
+        // Transition: Icon -> Text
+        if (currentState === 'icon' && newState === 'text') {
+            // 1. Current Icon spins out left
+            btn.innerHTML = `
+                <div class="animate-spin-out-left absolute inset-0 flex items-center justify-center">${iconHtml}</div>
+                <div class="animate-slide-in-right absolute inset-0 flex items-center justify-center opacity-0">${textHtml}</div>
+             `;
+            // Cleanup after animation (0.3s)
+            setTimeout(() => {
+                if (btn.dataset.state === 'text') btn.innerHTML = textHtml;
+            }, 300);
+
+        }
+        // Transition: Text -> Icon
+        else if (currentState === 'text' && newState === 'icon') {
+            // Immediate switch for now, or reverse animation?
+            // Let's just switch cleanly or maybe simple fade?
+            // For now, clean switch to avoid complexity overload
+            btn.innerHTML = iconHtml;
+            btn.classList.remove('w-24'); // Reset width constraint if needed
+            btn.classList.add('w-8');
+        }
+        // Transition: Hidden -> Icon/Text (Fade In)
+        else {
+            if (newState === 'text') {
+                btn.classList.remove('w-8');
+                btn.classList.add('w-24');
+                btn.innerHTML = textHtml;
+            } else {
+                btn.classList.remove('w-24');
+                btn.classList.add('w-8');
+                btn.innerHTML = iconHtml;
+            }
+        }
+
+        btn.dataset.state = newState;
     });
     // Render filtered results
     renderList(filtered, activeTags, STATE.mode, activeTab);
