@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 if (clearBtn) clearBtn.classList.add('hidden');
             }
+            renderTabs(); // Update tab styles (remove highlight if searching)
             applyFilters();
         });
     }
@@ -193,6 +194,13 @@ function setMode(newMode) {
     else STATE.bodyFilter = null;
 
     STATE.activeTag = null;
+    STATE.activeTags = [];       // Reset Tags
+    STATE.activeCategories = []; // Reset Categories
+    STATE.activeSources = [];    // Reset Sources
+
+    // Update Active Filters UI
+    if (typeof renderActiveFilters === 'function') renderActiveFilters();
+
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     loadData();
@@ -226,24 +234,28 @@ function renderTabs() {
 
     const catMap = CONFIG.modes[STATE.mode].cats;
 
+    // Check if search is active (Global Search visual feedback)
+    const searchQuery = document.getElementById('searchInput')?.value?.trim() || '';
+    const isSearchActive = searchQuery.length > 0;
+
     // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
-        const active = STATE.activeTab === id; // Keep active tab highlighted even in cross-tab mode
+        const active = !isSearchActive && STATE.activeTab === id;
         const config = catMap[id];
         const label = config ? config.label : id;
         const activeClass = active
             ? `border-${config ? config.color : 'gray-900'} text-${config ? config.color : 'gray-900'}`
-            : 'border-transparent hover:text-black dark:hover:text-white';
+            : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
 
         return `<button onclick="setTab('${id}')" class="tab-btn ${activeClass}">${label}</button>`;
     }).join('');
 
     // Adiciona aba Mapa apenas no modo ensinamentos
     if (STATE.mode === 'ensinamentos') {
-        const active = STATE.activeTab === 'mapa'; // Keep active tab highlighted
+        const active = !isSearchActive && STATE.activeTab === 'mapa';
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
-            : 'border-transparent hover:text-black dark:hover:text-white';
+            : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
         html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
     }
 
@@ -549,6 +561,7 @@ function toggleFilter(type, value) {
     }
 
     applyFilters();
+    renderActiveFilters();
     // Update Tag Browser UI (if visible) since it now handles filters
     if (typeof initializeTagBrowser === 'function') {
         initializeTagBrowser();
@@ -797,11 +810,91 @@ function clearSearch() {
     // Opcional: Limpar mapa ao limpar busca? Geralmente não.
     // if(typeof clearBodyFilter === 'function') clearBodyFilter();
 
+    // Update Tag Browser UI
+    if (typeof initializeTagBrowser === 'function') {
+        initializeTagBrowser();
+    } else if (typeof updateTagPillStates === 'function') {
+        updateTagPillStates();
+    }
+
+    // Update Active Filters Display (Swedish Minimalist Design)
+    renderActiveFilters();
+
     applyFilters();
 
     // Collapse search if empty
     toggleSearch('desktop', false);
     toggleSearch('mobile', false);
+}
+
+function renderActiveFilters() {
+    const container = document.getElementById('activeFiltersWrapper');
+    if (!container) return;
+
+    let items = [];
+
+    // Categories
+    if (STATE.activeCategories) {
+        STATE.activeCategories.forEach(catId => {
+            const label = CONFIG.modes[STATE.mode].cats[catId]?.label || catId;
+            items.push({ text: label, onclick: `toggleFilter('category', '${catId}')` });
+        });
+    }
+
+    // Sources
+    if (STATE.activeSources) {
+        STATE.activeSources.forEach(src => {
+            items.push({ text: src, onclick: `toggleFilter('source', '${src.replace(/'/g, "\\'")}')` });
+        });
+    }
+
+    // Tags
+    if (STATE.activeTags) {
+        STATE.activeTags.forEach(tag => {
+            items.push({ text: '#' + tag, onclick: `filterByTag('${tag.replace(/'/g, "\\'")}')` });
+        });
+    }
+
+    // Focus Points (New)
+    if (STATE.activeFocusPoints) {
+        STATE.activeFocusPoints.forEach(fp => {
+            items.push({ text: 'Ponto: ' + fp, onclick: `filterByFocusPoint('${fp.replace(/'/g, "\\'")}')` });
+        });
+    }
+
+    // Body Filter
+    if (STATE.bodyFilter) {
+        // Find body point name if possible
+        const point = BODY_DATA && BODY_DATA.points ?
+            (BODY_DATA.points.front.find(p => p.id === STATE.bodyFilter) ||
+                BODY_DATA.points.back.find(p => p.id === STATE.bodyFilter) ||
+                BODY_DATA.points.detail.find(p => p.id === STATE.bodyFilter))
+            : null;
+
+        const label = point ? point.name : STATE.bodyFilter;
+        items.push({ text: 'Região: ' + label, onclick: `toggleBodyPoint('${STATE.bodyFilter}')` });
+    }
+
+    if (items.length === 0) {
+        container.innerHTML = '';
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+    // Generate Chips HTML
+    const chipsHtml = items.map(item => `
+        <button onclick="${item.onclick}" class="group flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-lg text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:border-red-400 hover:text-red-500 transition-all shadow-sm">
+            <span>${item.text}</span>
+            <svg class="w-3 h-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    `).join('');
+
+    // Prepend Label
+    container.innerHTML = `
+        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-300 self-center mr-2">Filtros:</span>
+        ${chipsHtml}
+    `;
 }
 
 function toggleSearch(type, forceState = null) {
@@ -849,6 +942,7 @@ function filterByTag(tag, event) {
     }
 
     applyFilters();
+    renderActiveFilters();
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -884,6 +978,7 @@ function filterByFocusPoint(point, event) {
     }
 
     applyFilters();
+    renderActiveFilters();
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 

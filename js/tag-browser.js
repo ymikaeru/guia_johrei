@@ -49,8 +49,16 @@ function initializeTagBrowser() {
 
     if (!wrapper || !content) return;
 
-    // Only show on ensinamentos mode and NOT on map tab
-    if (STATE.mode !== 'ensinamentos' || STATE.activeTab === 'mapa') {
+    // Only show on ensinamentos/explicacoes mode and NOT on map tab, OR if there are active filters
+    const hasActiveFilters = (STATE.activeTags && STATE.activeTags.length > 0) ||
+        (STATE.activeCategories && STATE.activeCategories.length > 0) ||
+        (STATE.activeSources && STATE.activeSources.length > 0) ||
+        (STATE.activeFocusPoints && STATE.activeFocusPoints.length > 0) ||
+        STATE.bodyFilter;
+
+    const allowedModes = ['ensinamentos', 'explicacoes'];
+
+    if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') && !hasActiveFilters) {
         wrapper.style.display = 'none';
         return;
     }
@@ -132,11 +140,29 @@ function initializeTagBrowser() {
 
     content.innerHTML = html;
 
+
     // Restore collapsed state from localStorage
-    const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true';
-    if (isExpanded) {
-        content.classList.remove('hidden');
-        document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
+    // BUT if we are showing because of active filters (and arguably normally hidden), maybe default to hidden?
+    // Actually, keep logic simple: check localStorage.
+
+    // Logic for toggle button visibility: HIDE toggle if not in allowed modes
+    const toggleBtn = document.getElementById('tagBrowserToggle');
+    // allowedModes is already defined above.
+
+
+    if (!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') {
+        if (toggleBtn) toggleBtn.style.display = 'none';
+        // content should be hidden if button hidden? No, content is toggled.
+        // If button hidden, user can't toggle. Content should be hidden.
+        content.classList.add('hidden');
+    } else {
+        if (toggleBtn) toggleBtn.style.display = 'flex';
+
+        const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true';
+        if (isExpanded) {
+            content.classList.remove('hidden');
+            document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
+        }
     }
 }
 
