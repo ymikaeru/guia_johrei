@@ -208,6 +208,13 @@ function setMode(newMode) {
 
 // --- CONTROLE DE ABAS ---
 function setTab(id) {
+    // Fast Exit for Clear Button: reduce friction when switching contexts
+    document.querySelectorAll('.clear-search-btn').forEach(btn => {
+        btn.classList.add('fast-exit');
+        // Cleanup after transition
+        setTimeout(() => btn.classList.remove('fast-exit'), 300);
+    });
+
     STATE.activeTab = id;
     STATE.activeLetter = '';
 

@@ -378,3 +378,12 @@ html {
     opacity: 0;
     pointer-events: none;
 }
+/* Fast Exit for Tab Switching */
+.clear-search-btn.fast-exit {
+    transition: all 0.2s ease-out !important;
+}
+
+.clear-search-btn.fast-exit .icon-wrapper,
+.clear-search-btn.fast-exit .clear-label {
+    transition: all 0.2s ease-out !important;
+}
