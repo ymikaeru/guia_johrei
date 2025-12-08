@@ -538,21 +538,10 @@ window.autoSwitchMapToPoint = function (pointId) {
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 // --- FILTERS MOVED TO TAG BROWSER ---
 
-// Get Categories
-const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
-    id: key,
-    label: CONFIG.modes[STATE.mode].cats[key].label
-}));
+// --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
+// --- FILTERS MOVED TO TAG BROWSER ---
 
-// Get Sources (unique from loaded data)
-let allItems = [];
-Object.keys(STATE.data).forEach(key => {
-    if (Array.isArray(STATE.data[key])) {
-        allItems = allItems.concat(STATE.data[key]);
-    }
-});
-
-const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
+// Filters are now handled dynamically in tag-browser.js and applyFilters()
 
 
 function toggleFilter(type, value) {

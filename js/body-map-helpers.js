@@ -45,20 +45,25 @@ function renderBodyPoints(points, viewId) {
                 ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
                 : 'none';
 
-        // If selected, render a background "ripple" ellipse
-        const rippleElement = isSelected ? `
+        // Always render a background "ripple" ellipse (hidden by default unless selected/previewed)
+        // We set initial state here, but updatePointsVisual handles dynamic updates
+        const showRipple = isSelected || isPreviewed;
+        const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#f59e0b' : 'none');
+        const rippleOpacity = showRipple ? '0.5' : '0';
+
+        const rippleElement = `
             <ellipse 
                 cx="${point.x}" 
                 cy="${point.y}" 
                 rx="${rx}" 
                 ry="${ry}" 
-                fill="${fillColor}" 
-                fill-opacity="0.5"
+                fill="${rippleColor}" 
+                fill-opacity="${rippleOpacity}"
                 stroke="none"
-                class="animate-pulse-ring pointer-events-none"
-                style="transform-origin: center; transform-box: fill-box;"
+                class="animate-pulse-ring pointer-events-none ${showRipple ? '' : 'hidden-ripple'}"
+                style="transform-origin: center; transform-box: fill-box; display: ${showRipple ? 'block' : 'none'};"
             ></ellipse>
-        ` : '';
+        `;
 
         return `
             ${rippleElement}
@@ -121,7 +126,13 @@ function selectBodyPoint(pointIds) {
     filterByBodyPoint(idArray[0]);
 
     // Re-render maps to update selected point visualization
-    updateUIForTab('mapa');
+    updatePointsVisual(); // FAST UPDATE instead of re-render
+    // Note: We used to call renderBodyMaps() here, but updatePointsVisual is enough now that we persist ripple elements.
+    // However, for the very first selection, we might need render if ripples weren't there?
+    // Actually, since we changed renderBodyPoints to ALWAYS render ripples, a full re-render is safer needed?
+    // No, updatePointsVisual should be enough IF the maps were rendered with the new code.
+    // Let's keep it safe: updatesVisual is fast, if it fails we might need re-render.
+    // But since `renderBodyPoints` is only called when mounting the tab, we effectively just update classes now.
 
     // Scroll to results (Mobile & Desktop)
     const contentList = document.getElementById('contentList');
@@ -330,9 +341,9 @@ function updatePointsVisual() {
         let fillColor, fillOpacity, strokeColor, strokeWidth, baseRadius;
 
         if (isSelected) {
-            fillColor = '#7c3aed';
+            fillColor = '#3b82f6';
             fillOpacity = '1';
-            strokeColor = '#7c3aed';
+            strokeColor = '#3b82f6';
             strokeWidth = '0.4';
             baseRadius = 1.8;
         } else if (isPreviewed) {
@@ -352,8 +363,23 @@ function updatePointsVisual() {
         const rx = baseRadius * 1.5;
         const ry = baseRadius;
 
+        // --- RIPPLE UPDATE ---
+        const ripple = ellipse.previousElementSibling;
+        if (ripple && ripple.tagName === 'ellipse') { // Simple check, assumindo estrutura
+            if (isSelected || isPreviewed) {
+                const rippleColor = isSelected ? '#3b82f6' : '#f59e0b';
+                ripple.setAttribute('fill', rippleColor);
+                ripple.setAttribute('fill-opacity', '0.5'); // Ensure opacity is reset
+                ripple.setAttribute('rx', rx);
+                ripple.setAttribute('ry', ry);
+                ripple.style.display = 'block';
+            } else {
+                ripple.style.display = 'none';
+            }
+        }
+
         const glowFilter = isSelected
-            ? 'drop-shadow(0 0 3px rgba(124, 58, 237, 0.6))'
+            ? 'drop-shadow(0 0 3px rgba(59, 130, 246, 0.6))'
             : isPreviewed
                 ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
                 : 'none';
@@ -499,6 +525,12 @@ function matchBodyPoint(item, pointId) {
         // Backup: Check Tags (sometimes body parts are tags)
         if (item.tags && item.tags.some(t => regex.test(removeAccents(t.toLowerCase())))) return true;
 
+        // Backup: Check Title
+        if (item.title && regex.test(removeAccents(item.title.toLowerCase()))) return true;
+
+        // Backup: Check Content (Deep search)
+        if (item.content && regex.test(removeAccents(item.content.toLowerCase()))) return true;
+
         return false;
     });
 }
@@ -513,8 +545,8 @@ function showScrollIndicator() {
         indicator.id = 'scrollIndicatorArrow';
         indicator.className = 'fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer animate-bounce transition-opacity duration-500';
         indicator.innerHTML = `
-            <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 opacity-90 hover:opacity-100">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 opacity-90 hover:opacity-100 flex items-center justify-center">
+                <svg class="w-6 h-6" style="transform: translateY(-3px);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7"></path>
                 </svg>
             </div>
