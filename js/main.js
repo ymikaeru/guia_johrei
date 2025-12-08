@@ -377,13 +377,14 @@ function updateUIForTab(tabId) {
     // Toggle Search Visibility
     const desktopSearch = document.getElementById('desktopSearchWrapper');
     const mobileSearch = document.getElementById('mobileSearchWrapper');
+    const searchInputs = document.querySelectorAll('.search-input'); // Select all search inputs
 
     if (tabId === 'mapa') {
-        if (desktopSearch) desktopSearch.classList.add('invisible'); // Invisible to keep layout? Or hidden? Let's use invisible to avoid header jumping
-        if (mobileSearch) mobileSearch.classList.add('hidden');
+        // Don't hide the wrapper, just fade the input line/text
+        // This keeps the Clear Button visible if it's there
+        searchInputs.forEach(input => input.classList.add('input-faded'));
     } else {
-        if (desktopSearch) desktopSearch.classList.remove('invisible');
-        if (mobileSearch) mobileSearch.classList.remove('hidden');
+        searchInputs.forEach(input => input.classList.remove('input-faded'));
     }
 
     // Hide lists if map

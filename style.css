@@ -387,3 +387,9 @@ html {
 .clear-search-btn.fast-exit .clear-label {
     transition: all 0.2s ease-out !important;
 }
+
+/* Faded Input for Map Tab */
+.input-faded {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
