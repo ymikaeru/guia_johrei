@@ -1,4 +1,4 @@
-// --- FUNÇÕES DE UI ---
+// --- FUNÇÕES DE UI (Animations Disabled) ---
 
 function formatBodyText(text, searchQuery) {
     if (!text) return '';
