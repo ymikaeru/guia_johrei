@@ -22,10 +22,12 @@ function openModal(i) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : item._cat;
         const sourceLabel = item.source ? ` (${item.source})` : '';
+        const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
         const breadcrumbHTML = `
             <span class="text-gray-500">${modeLabel}</span>
             <span class="text-gray-600">›</span>
-            <span class="text-gray-400">${catLabel}${sourceLabel}</span>
+            <span class="${catColorClass}">${catLabel}</span>
+            <span class="text-gray-400">${sourceLabel}</span>
         `;
         breadcrumbEl.innerHTML = breadcrumbHTML;
     }
