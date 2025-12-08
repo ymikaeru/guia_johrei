@@ -192,7 +192,7 @@ function renderApostilaView() {
                 <div onclick="openApostilaModal('${item.id}')" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md rounded-none md:rounded-lg">
 
                     <div class="absolute top-4 right-4 z-20">
-                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-300 hover:text-red-500 bg-white/10 dark:bg-black/10 backdrop-blur-sm hover:bg-red-50 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
+                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:text-red-300 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                         </button>
                     </div>
