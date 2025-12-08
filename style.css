@@ -324,14 +324,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .clear-search-btn .icon-wrapper {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: rotate(0deg);
 }
 
 .clear-search-btn .clear-label {
@@ -339,12 +340,17 @@ html {
     opacity: 0;
     overflow: hidden;
     white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: all 0.4s ease-in-out;
     margin-left: 0;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    transform: translateX(20px);
+}
+
+.clear-search-btn.expanded .icon-wrapper {
+    transform: rotate(-180deg);
 }
 
 .clear-search-btn.expanded .clear-label {
@@ -352,4 +358,5 @@ html {
     /* Adjust as needed */
     opacity: 1;
     margin-left: 0.5rem;
+    transform: translateX(0);
 }
