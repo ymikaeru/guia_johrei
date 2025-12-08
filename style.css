@@ -204,6 +204,52 @@ html {
     font-size: 1.25rem !important;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.4s cubic-bezier(0.0, 0.0, 0.2, 1) forwards;
+}
+
+.animate-fade-down {
+    animation: fadeDown 0.3s cubic-bezier(0.0, 0.0, 0.2, 1) forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.0, 0.0, 0.2, 1) forwards;
+}
+
 /* --- ANIMAÇÃO MODAL (Fade + Scale) --- */
 #modalCard {
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
