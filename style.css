@@ -317,3 +317,79 @@ html {
 .dark #bodyPointTooltip::before {
     border-color: #1f2937 transparent transparent transparent;
 }
+
+
+/* Expanded Clear Button Transitions */
+/* Expanded Clear Button Transitions */
+.clear-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Exit: ease-in */
+    transition: all 0.4s ease-in;
+}
+
+.clear-search-btn .icon-wrapper {
+    /* Exit: ease-in */
+    transition: transform 0.4s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0deg);
+}
+
+.clear-search-btn .clear-label {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Exit: ease-in */
+    transition: all 0.4s ease-in;
+    margin-left: 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: translateX(20px);
+}
+
+.clear-search-btn.expanded {
+    /* Enter: ease-out */
+    transition: all 0.4s ease-out;
+}
+
+.clear-search-btn.expanded .icon-wrapper {
+    transform: rotate(-180deg);
+    /* Enter: ease-out */
+    transition: transform 0.4s ease-out;
+}
+
+.clear-search-btn.expanded .clear-label {
+    max-width: 120px;
+    opacity: 1;
+    margin-left: 0.5rem;
+    transform: translateX(0);
+    /* Enter: ease-out */
+    transition: all 0.4s ease-out;
+}
+
+/* Clear Button Visibility Transition */
+.clear-search-btn.btn-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+/* Fast Exit for Tab Switching */
+.clear-search-btn.fast-exit {
+    transition: all 0.2s ease-out !important;
+}
+
+.clear-search-btn.fast-exit .icon-wrapper,
+.clear-search-btn.fast-exit .clear-label {
+    transition: all 0.2s ease-out !important;
+}
+
+/* Faded Input for Map Tab */
+.input-faded {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

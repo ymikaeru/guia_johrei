@@ -208,6 +208,13 @@ function setMode(newMode) {
 
 // --- CONTROLE DE ABAS ---
 function setTab(id) {
+    // Fast Exit for Clear Button: reduce friction when switching contexts
+    document.querySelectorAll('.clear-search-btn').forEach(btn => {
+        btn.classList.add('fast-exit');
+        // Cleanup after transition
+        setTimeout(() => btn.classList.remove('fast-exit'), 300);
+    });
+
     STATE.activeTab = id;
     STATE.activeLetter = '';
 
@@ -217,7 +224,9 @@ function setTab(id) {
         clearBodyFilter();
     }
 
-    STATE.activeTag = null;
+    // STATE.activeTag = null; // Removed to persist tags across tabs
+    // STATE.activeTags is NOT cleared here, so filters persist.
+
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     renderTabs();
@@ -236,7 +245,8 @@ function renderTabs() {
 
     // Check if search is active (Global Search visual feedback)
     const searchQuery = document.getElementById('searchInput')?.value?.trim() || '';
-    const isSearchActive = searchQuery.length > 0;
+    const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
+    const isSearchActive = searchQuery.length > 0 || hasActiveFilters;
 
     // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
@@ -367,13 +377,14 @@ function updateUIForTab(tabId) {
     // Toggle Search Visibility
     const desktopSearch = document.getElementById('desktopSearchWrapper');
     const mobileSearch = document.getElementById('mobileSearchWrapper');
+    const searchInputs = document.querySelectorAll('.search-input'); // Select all search inputs
 
     if (tabId === 'mapa') {
-        if (desktopSearch) desktopSearch.classList.add('invisible'); // Invisible to keep layout? Or hidden? Let's use invisible to avoid header jumping
-        if (mobileSearch) mobileSearch.classList.add('hidden');
+        // Don't hide the wrapper, just fade the input line/text
+        // This keeps the Clear Button visible if it's there
+        searchInputs.forEach(input => input.classList.add('input-faded'));
     } else {
-        if (desktopSearch) desktopSearch.classList.remove('invisible');
-        if (mobileSearch) mobileSearch.classList.remove('hidden');
+        searchInputs.forEach(input => input.classList.remove('input-faded'));
     }
 
     // Hide lists if map
@@ -733,9 +744,43 @@ function applyFilters() {
     });
 
     // Show/Hide Clear Buttons
+    const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
+
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
-        if (q || STATE.activeTags.length > 0) btn.classList.remove('hidden');
-        else btn.classList.add('hidden');
+        // Ensure persistent structure exists
+        if (!btn.querySelector('.clear-label')) {
+            const originalContent = btn.innerHTML;
+            const isMobile = btn.textContent.trim() === '×';
+            const iconContent = isMobile
+                ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`
+                : originalContent;
+
+            btn.innerHTML = `
+                <div class="icon-wrapper">${iconContent}</div>
+                <span class="clear-label text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>
+             `;
+        }
+
+        // Toggle Visibility
+        if (!q && !hasActiveFilters) {
+            btn.classList.add('btn-hidden');
+            // Remove from DOM flow after transition? No, it's absolute positioned.
+            // Just ensuring it doesn't block clicks (pointer-events: none in CSS)
+        } else {
+            btn.classList.remove('hidden'); // Ensure legacy hidden is gone
+
+            // Force Reflow to ensure transition plays if it was previously display:none or just added
+            void btn.offsetWidth;
+
+            btn.classList.remove('btn-hidden');
+        }
+
+        // Toggle Expansion
+        if (hasActiveFilters) {
+            btn.classList.add('expanded');
+        } else {
+            btn.classList.remove('expanded');
+        }
     });
     // Render filtered results
     renderList(filtered, activeTags, STATE.mode, activeTab);
