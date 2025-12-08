@@ -851,15 +851,18 @@ function clearSearch() {
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     STATE.activeTags = [];
+    STATE.activeCategories = [];
+    STATE.activeSources = [];
+    STATE.activeFocusPoints = [];
 
     // Opcional: Limpar mapa ao limpar busca? Geralmente não.
     // if(typeof clearBodyFilter === 'function') clearBodyFilter();
 
     // Update Tag Browser UI
     if (typeof initializeTagBrowser === 'function') {
-        initializeTagBrowser();
+        initializeTagBrowser(); // Full re-render handles all types
     } else if (typeof updateTagPillStates === 'function') {
-        updateTagPillStates();
+        updateTagPillStates(); // Partial fallback
     }
 
     // Update Active Filters Display (Swedish Minimalist Design)

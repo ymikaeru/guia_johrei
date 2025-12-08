@@ -158,10 +158,16 @@ function initializeTagBrowser() {
     } else {
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true';
+        // const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true'; 
+        // Force closed by default as per user request
+        const isExpanded = false;
+
         if (isExpanded) {
             content.classList.remove('hidden');
-            document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
+            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)'; // No rotation for filter icon
+        } else {
+            content.classList.add('hidden');
+            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(0deg)';
         }
     }
 }
@@ -174,12 +180,29 @@ function toggleTagBrowser() {
 
     if (isExpanded) {
         content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
+        // icon.style.transform = 'rotate(0deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'false');
+
+        // Remove click listener immediately
+        document.removeEventListener('click', closeByOutsideClick);
     } else {
         content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
+        // icon.style.transform = 'rotate(180deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'true');
+
+        // Add click listener to close when clicking outside
+        // Delay slightly to prevent the current click from closing it immediately
+        setTimeout(() => {
+            document.addEventListener('click', closeByOutsideClick);
+        }, 10);
+    }
+}
+
+function closeByOutsideClick(event) {
+    const wrapper = document.getElementById('tagBrowserWrapper');
+    if (wrapper && !wrapper.contains(event.target)) {
+        // Toggle (Close)
+        toggleTagBrowser();
     }
 }
 
