@@ -45,7 +45,23 @@ function renderBodyPoints(points, viewId) {
                 ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
                 : 'none';
 
+        // If selected, render a background "ripple" ellipse
+        const rippleElement = isSelected ? `
+            <ellipse 
+                cx="${point.x}" 
+                cy="${point.y}" 
+                rx="${rx}" 
+                ry="${ry}" 
+                fill="${fillColor}" 
+                fill-opacity="0.5"
+                stroke="none"
+                class="animate-pulse-ring pointer-events-none"
+                style="transform-origin: center; transform-box: fill-box;"
+            ></ellipse>
+        ` : '';
+
         return `
+            ${rippleElement}
             <ellipse 
                 cx="${point.x}" 
                 cy="${point.y}" 
@@ -55,7 +71,7 @@ function renderBodyPoints(points, viewId) {
                 fill-opacity="${fillOpacity}"
                 stroke="${strokeColor}"
                 stroke-width="${strokeWidth}"
-                class="body-map-point pointer-events-auto cursor-pointer transition-all duration-200 ${isSelected ? 'animate-pulse-ring' : ''}"
+                class="body-map-point pointer-events-auto cursor-pointer transition-all duration-200"
                 style="filter: ${glowFilter}; transform-origin: center;"
                 data-point-id="${point.id}"
                 data-point-name="${point.name}"
