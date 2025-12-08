@@ -49,14 +49,16 @@ function initializeTagBrowser() {
 
     if (!wrapper || !content) return;
 
-    // Only show on ensinamentos mode and NOT on map tab, OR if there are active filters
+    // Only show on ensinamentos/explicacoes mode and NOT on map tab, OR if there are active filters
     const hasActiveFilters = (STATE.activeTags && STATE.activeTags.length > 0) ||
         (STATE.activeCategories && STATE.activeCategories.length > 0) ||
         (STATE.activeSources && STATE.activeSources.length > 0) ||
         (STATE.activeFocusPoints && STATE.activeFocusPoints.length > 0) ||
         STATE.bodyFilter;
 
-    if ((STATE.mode !== 'ensinamentos' || STATE.activeTab === 'mapa') && !hasActiveFilters) {
+    const allowedModes = ['ensinamentos', 'explicacoes'];
+
+    if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') && !hasActiveFilters) {
         wrapper.style.display = 'none';
         return;
     }
@@ -143,9 +145,12 @@ function initializeTagBrowser() {
     // BUT if we are showing because of active filters (and arguably normally hidden), maybe default to hidden?
     // Actually, keep logic simple: check localStorage.
 
-    // Logic for toggle button visibility: HIDE toggle if not ensinamentos
+    // Logic for toggle button visibility: HIDE toggle if not in allowed modes
     const toggleBtn = document.getElementById('tagBrowserToggle');
-    if (STATE.mode !== 'ensinamentos' || STATE.activeTab === 'mapa') {
+    // allowedModes is already defined above.
+
+
+    if (!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') {
         if (toggleBtn) toggleBtn.style.display = 'none';
         // content should be hidden if button hidden? No, content is toggled.
         // If button hidden, user can't toggle. Content should be hidden.
