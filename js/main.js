@@ -148,12 +148,14 @@ async function loadData() {
         // Build STATE.data with tabs in desired order
         if (STATE.mode === 'ensinamentos') {
             STATE.data = {};
-            // 1. Palavras de Meishu-sama (Default)
-            if (tempData['ensinamentos']) STATE.data['ensinamentos'] = tempData['ensinamentos'];
-            // 2. Especiais (Salmos, Orações)
-            if (tempData['especiais']) STATE.data['especiais'] = tempData['especiais'];
-            // 3. Palestras e Outros
-            if (tempData['palestras']) STATE.data['palestras'] = tempData['palestras'];
+            // 1. Palavras de Meishu-sama (Fundamentos)
+            if (tempData['fundamentos']) STATE.data['fundamentos'] = tempData['fundamentos'];
+            // 2. Casos e Orientações (Curas)
+            if (tempData['curas']) STATE.data['curas'] = tempData['curas'];
+
+            // Note: pontos_focais is usually handled separately in the map tab logic, 
+            // but if we want it as a searchable tab, we include it.
+            if (tempData['pontos_focais']) STATE.data['pontos_focais'] = tempData['pontos_focais'];
         } else {
             // For other modes, just copy all data
             STATE.data = tempData;
@@ -163,8 +165,6 @@ async function loadData() {
 
         renderTabs();
 
-        // New: Check URL for Deep Link after data is loaded
-        checkUrlForDeepLink();
 
         renderAlphabet();
         applyFilters();
@@ -179,16 +179,31 @@ async function loadData() {
             setTimeout(renderBodyMaps, 100);
         }
 
+        // New: Check URL for Deep Link AFTER UI is fully rendered
+        checkUrlForDeepLink();
+
     } catch (e) { console.error("Erro load:", e); }
 }
 
 function checkUrlForDeepLink() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const itemId = urlParams.get('item');
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemSlug = urlParams.get('item');
 
-    if (itemId && STATE.globalData && STATE.globalData[itemId]) {
-        console.log("Deep link found for:", itemId);
-        openModal(STATE.globalData[itemId]);
+        if (itemSlug && STATE.globalData) {
+            // Search for item by matching slugified title
+            const foundId = Object.keys(STATE.globalData).find(key => {
+                const item = STATE.globalData[key];
+                return item && item.title && toSlug(item.title) === itemSlug;
+            });
+
+            if (foundId) {
+                console.log("Deep link found for:", itemSlug);
+                openModal(STATE.globalData[foundId]);
+            }
+        }
+    } catch (e) {
+        console.error("Error checking deep link:", e);
     }
 }
 

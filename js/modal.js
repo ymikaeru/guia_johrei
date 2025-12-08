@@ -19,30 +19,36 @@ function openModal(input) {
 
     if (!item) return;
 
-    // Update URL for Deep Linking
-    updateUrl(item.id);
+    // Update URL for Deep Linking using Title (Slug)
+    updateUrl(item.title);
 
-    const catConfig = CONFIG.modes[STATE.mode].cats[item._cat] || CONFIG.modes[STATE.mode].cats[item.category]; // Fallback if _cat missing
+    // Safe access to config
+    const modeConfig = CONFIG.modes[STATE.mode];
+    if (!modeConfig) {
+        console.error("Invalid mode:", STATE.mode);
+        return;
+    }
+    const catConfig = modeConfig.cats ? (modeConfig.cats[item._cat] || modeConfig.cats[item.category]) : null;
 
     document.getElementById('modalTitle').textContent = item.title;
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : (item._cat || item.category);
     if (catConfig) {
-        catEl.className = `text - [10px] font - sans font - bold uppercase tracking - widest block mb - 2 text - ${catConfig.color} `;
+        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${item.order || '?'} `; // Use item.order if index not relevant
+    document.getElementById('modalRef').textContent = `#${item.order || '?'}`; // Use item.order if index not relevant
 
     // Generate breadcrumb
     const breadcrumbEl = document.getElementById('modalBreadcrumb');
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : (item._cat || item.category);
-        const sourceHtml = item.source ? `< span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2" > ${item.source}</span > ` : '';
-        const catColorClass = catConfig ? `text - ${catConfig.color} ` : 'text-gray-400';
+        const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
+        const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
         const breadcrumbHTML = `
-    < span class="text-gray-500" > ${modeLabel}</span >
+            <span class="text-gray-500">${modeLabel}</span>
             <span class="text-gray-600">›</span>
             <span class="${catColorClass}">${catLabel}</span>
             ${sourceHtml}
@@ -103,7 +109,7 @@ function openModal(input) {
                 ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100" // Highlighted
                 : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"; // Normal
 
-            return `< button onclick = "filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}" > ${p}</button > `;
+            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}">${p}</button>`;
         }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {

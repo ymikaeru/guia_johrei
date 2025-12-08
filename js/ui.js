@@ -1,10 +1,23 @@
 // --- FUNÇÕES DE UI (Animations Disabled) ---
 
-function updateUrl(id) {
-    if (!id) return;
+function toSlug(text) {
+    if (!text) return '';
+    return text.toString().toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start
+        .replace(/-+$/, '');            // Trim - from end
+}
+
+function updateUrl(title) {
+    if (!title) return;
+    const slug = toSlug(title);
     const url = new URL(window.location);
-    url.searchParams.set('item', id);
-    window.history.pushState({ itemId: id }, '', url);
+    url.searchParams.set('item', slug);
+    // itemId in state can remain for history navigation if needed, but title is safer for URL
+    window.history.pushState({ itemSlug: slug }, '', url);
 }
 
 function clearUrl() {
