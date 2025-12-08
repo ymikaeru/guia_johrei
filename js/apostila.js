@@ -20,37 +20,39 @@ function toggleApostilaItem(cardId, btnElement) {
     const currentApostila = STATE.apostilas[STATE.mode];
     const index = currentApostila.items.indexOf(cardId);
 
+    // Active/Inactive Class Sets
+    const activeClasses = ['bg-yellow-50', 'text-yellow-600', 'border-yellow-200'];
+    const inactiveClasses = ['bg-white', 'text-gray-300', 'border-gray-100'];
+
     if (index === -1) {
         // First item check: Prompt for Title
         if (currentApostila.items.length === 0) {
-            // Simple prompt for now, can be upgraded to modal later
-            // We use setTimeout to allow the click calculation to finish avoiding UI glitch
             setTimeout(() => {
                 const newTitle = prompt("Dê um nome para sua nova apostila:", currentApostila.title);
                 if (newTitle && newTitle.trim() !== "") {
                     currentApostila.title = newTitle;
                     if (STATE.activeTab === 'apostila') renderApostilaView();
-                    renderTabs(); // Refresh name in tab
+                    renderTabs();
                 }
             }, 50);
         }
 
         // Add
         currentApostila.items.push(cardId);
-        if (icon) {
-            icon.setAttribute('fill', 'currentColor'); // Solid fill
-            icon.classList.add('text-yellow-500');
-            icon.classList.remove('text-gray-400'); // Circle logic handled in UI update next
-        }
+
+        // Update Button Style
+        btnElement.classList.add(...activeClasses);
+        btnElement.classList.remove(...inactiveClasses);
+
         showToast('Adicionado à Apostila');
     } else {
         // Remove
         currentApostila.items.splice(index, 1);
-        if (icon) {
-            icon.setAttribute('fill', 'none'); // Outline
-            icon.classList.remove('text-yellow-500');
-            icon.classList.add('text-gray-400');
-        }
+
+        // Update Button Style
+        btnElement.classList.add(...inactiveClasses);
+        btnElement.classList.remove(...activeClasses);
+
         showToast('Removido da Apostila');
     }
 
@@ -96,9 +98,9 @@ function renderApostilaView() {
                 
                 <!-- Top Right: Clear/Delete Button (Red, Icon Only) -->
                 <div class="absolute top-6 right-6 z-10">
-                     <button onclick="clearApostila()" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 transition-all duration-300" title="Apagar Apostila">
-                        <!-- Trash Icon -->
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                     <button onclick="clearApostila()" class="p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full transition-colors text-red-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/40" title="Limpar Apostila">
+                        <!-- X Icon for Clearing Apostila -->
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
                 </div>
 
@@ -191,17 +193,17 @@ function renderApostilaView() {
             html += `
                 <div onclick="openApostilaModal('${item.id}')" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md rounded-none md:rounded-lg">
 
-                    <div class="absolute top-3 right-4 z-20">
-                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    <div class="absolute top-3 right-3 z-20">
+                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-red-900/40 transition-colors" title="Remover da Apostila">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                         </button>
                     </div>
 
                     <div>
-                        <div class="mb-6 mr-8">
+                        <div class="mb-2 mr-8">
                             <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catLabel}</span>
                         </div>
-                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 mt-[1.5rem] group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
 
                         <div class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed mb-4">
                             ${(item.content || '').substring(0, 150)}...
@@ -237,7 +239,7 @@ function openApostilaModal(id) {
     // Reset classes
     catEl.className = 'text-[10px] font-sans font-bold uppercase tracking-widest block mb-2';
     if (catConfig) {
-        catEl.classList.add(`text-${catConfig.color}`);
+        catEl.classList.add(`text - ${catConfig.color} `);
     } else {
         catEl.classList.add('text-gray-500');
     }
@@ -251,11 +253,11 @@ function openApostilaModal(id) {
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
-        const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
-        const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
+        const sourceHtml = item.source ? `< span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2" > ${item.source}</span > ` : '';
+        const catColorClass = catConfig ? `text - ${catConfig.color} ` : 'text-gray-400';
 
         breadcrumbEl.innerHTML = `
-        <span class="text-gray-500">Apostila</span>
+        < span class="text-gray-500" > Apostila</span >
             <span class="text-gray-600">›</span>
             <span class="${catColorClass}">${catLabel}</span>
             ${sourceHtml}
@@ -278,7 +280,7 @@ function openApostilaModal(id) {
         const html = item.focusPoints.map(p => {
             const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
             // Note: filterByFocusPoint is global, will switch tab to map. Acceptable behavior.
-            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass}">${p}</button>`;
+            return `< button onclick = "filterByFocusPoint('${p}')" class="${baseClass}" > ${p}</button > `;
         }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
@@ -380,38 +382,38 @@ function printApostila() {
     const bodyFontSize = fontSizeMap[currentFontSize];
 
     const printContent = `
-        <!DOCTYPE html>
+        < !DOCTYPE html >
             <html>
                 <head>
                     <title>${currentApostila.title}</title>
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700&display=swap');
 
-                        body {font-family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; margin: 0 auto; }
-                        h1, h2, h3 {font-family: 'Cormorant Garamond', serif; }
+                        body {font - family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; mx-auto; }
+                        h1, h2, h3 {font - family: 'Cormorant Garamond', serif; }
 
-                        .cover {text-align: center; margin-top: 200px; page-break-after: always; }
-                        .cover h1 {font-size: 48px; margin-bottom: 20px; }
-                        .cover p {font-size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; }
+                        .cover {text - align: center; margin-top: 200px; page-break-after: always; }
+                        .cover h1 {font - size: 48px; margin-bottom: 20px; }
+                        .cover p {font - size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; }
 
-                        .item {margin-bottom: 60px; page-break-inside: avoid; }
-                        .item h2 {font-size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-                        .item .meta {font-size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
-                        .item-content {font-size: ${bodyFontSize}; line-height: 1.8; text-align: justify; }
-                        .item-content p {margin-bottom: 1em; }
+                        .item {margin - bottom: 60px; page-break-inside: avoid; }
+                        .item h2 {font - size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+                        .item .meta {font - size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
+                        .item-content {font - size: ${bodyFontSize}; line-height: 1.8; text-align: justify; }
+                        .item-content p {margin - bottom: 1em; }
 
-                        .glossary-section {page-break-before: always; border-top: 5px solid #000; padding-top: 40px; }
+                        .glossary-section {page -break-before: always; border-top: 5px solid #000; padding-top: 40px; }
                         .map-container {position: relative; width: 400px; margin: 0 auto; }
                         .map-container svg {width: 100%; height: auto; }
 
-                        .glossary-list {margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
+                        .glossary-list {margin - top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
                         .glossary-item {padding: 10px; background: #f9f9f9; border-left: 2px solid #000; }
                         .glossary-item strong {display: block; text-transform: uppercase; margin-bottom: 4px; }
 
                         @media print {
                             @page {margin: 2cm; }
-                            body {-webkit-print-color-adjust: exact; }
-                        }
+                        body {-webkit - print - color - adjust: exact; }
+                }
                     </style>
                 </head>
                 <body>
@@ -543,38 +545,50 @@ function showToast(msg) {
  */
 function addAllVisibleToApostila() {
     if (!STATE.list || STATE.list.length === 0) {
-        showToast('Nenhum item visível para adicionar');
+        showToast('Nenhum item visível');
         return;
     }
 
     const currentApostila = STATE.apostilas[STATE.mode];
-    let addedCount = 0;
+    // Check if ALL are present
+    const allPresent = STATE.list.every(item => currentApostila.items.includes(item.id));
 
-    STATE.list.forEach(item => {
-        if (!currentApostila.items.includes(item.id)) {
-            currentApostila.items.push(item.id);
-            addedCount++;
-        }
-    });
-
-    if (addedCount > 0) {
-        if (currentApostila.items.length === addedCount) {
-            // First time add, maybe prompt for title?
-            setTimeout(() => {
-                const newTitle = prompt("Dê um nome para sua nova apostila:", currentApostila.title);
-                if (newTitle && newTitle.trim() !== "") {
-                    currentApostila.title = newTitle;
-                }
-                renderTabs(); // Update tab if title changed
-            }, 100);
-        }
-
-        showToast(`${addedCount} itens adicionados à Apostila`);
-        renderTabs(); // Refresh UI to show Apostila tab if hidden
-        applyFilters(); // Re-render list to update icons
+    if (allPresent) {
+        // ACTION: Remove All visible items
+        STATE.list.forEach(item => {
+            const idx = currentApostila.items.indexOf(item.id);
+            if (idx > -1) currentApostila.items.splice(idx, 1);
+        });
+        showToast(`${STATE.list.length} itens removidos da Apostila`);
     } else {
-        showToast('Todos os itens já estão na Apostila');
+        // ACTION: Add missing items
+        let addedCount = 0;
+        STATE.list.forEach(item => {
+            if (!currentApostila.items.includes(item.id)) {
+                currentApostila.items.push(item.id);
+                addedCount++;
+            }
+        });
+
+        if (addedCount > 0) {
+            if (currentApostila.items.length === addedCount) {
+                // First time add, prompt logic kept
+                setTimeout(() => {
+                    const newTitle = prompt("Dê um nome para sua nova apostila:", currentApostila.title);
+                    if (newTitle && newTitle.trim() !== "") {
+                        currentApostila.title = newTitle;
+                    }
+                    renderTabs();
+                }, 100);
+            }
+            showToast(`${addedCount} itens adicionados à Apostila`);
+        } else {
+            showToast('Todos os itens já estão na Apostila');
+        }
     }
+
+    renderTabs();
+    applyFilters(); // Re-render to update UI (Button state)
 }
 
 /**

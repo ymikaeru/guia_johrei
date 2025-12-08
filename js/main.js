@@ -810,42 +810,54 @@ function applyFilters() {
     // Show/Hide Clear Buttons
     const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
 
+    // 1. Update Input Result Count (New Permanent Indicator)
+    const inputCountEl = document.getElementById('inputResultCount');
+    if (inputCountEl) {
+        inputCountEl.textContent = `${filtered.length} CARDS`;
+
+        // Optional: Highlight color if filtered
+        if (q || hasActiveFilters) {
+            inputCountEl.classList.remove('text-gray-400');
+            inputCountEl.classList.add('text-gray-900', 'dark:text-white');
+        } else {
+            inputCountEl.classList.add('text-gray-400');
+            inputCountEl.classList.remove('text-gray-900', 'dark:text-white');
+        }
+    }
+
+    // 2. Legacy Floating Bubble (Disabled/Hidden)
+    // We removed the active usage of .clear-search-btn as a bubble in favor of the input indicator.
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
-        // Ensure persistent structure exists
-        if (!btn.querySelector('.clear-label')) {
-            const originalContent = btn.innerHTML;
-            const isMobile = btn.textContent.trim() === '×';
-            const iconContent = isMobile
-                ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`
-                : originalContent;
-
-            btn.innerHTML = `
-        <div class="icon-wrapper">${iconContent}</div>
-            <span class="clear-label text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>
-    `;
-        }
-
-        // Toggle Visibility
-        if (!q && !hasActiveFilters) {
-            btn.classList.add('btn-hidden');
-            // Remove from DOM flow after transition? No, it's absolute positioned.
-            // Just ensuring it doesn't block clicks (pointer-events: none in CSS)
-        } else {
-            btn.classList.remove('hidden'); // Ensure legacy hidden is gone
-
-            // Force Reflow to ensure transition plays if it was previously display:none or just added
-            void btn.offsetWidth;
-
-            btn.classList.remove('btn-hidden');
-        }
-
-        // Toggle Expansion
-        if (hasActiveFilters) {
-            btn.classList.add('expanded');
-        } else {
-            btn.classList.remove('expanded');
-        }
+        btn.classList.add('hidden');
     });
+
+    // 3. Toggle Header "Limpar Filtros" Button (Only for Tags)
+    const headerClearBtn = document.getElementById('headerClearFiltersBtn');
+    if (headerClearBtn) {
+        if (activeTags.length > 0) {
+            headerClearBtn.classList.remove('hidden');
+        } else {
+            headerClearBtn.classList.add('hidden');
+        }
+    }
+
+    // 4. Update "Add All" Button State (Toggle Text)
+    const addAllBtn = document.getElementById('addAllBtn');
+    if (addAllBtn && STATE.apostilas) {
+        const currentApostila = STATE.apostilas[STATE.mode];
+        const btnSpan = addAllBtn.querySelector('span');
+
+        if (filtered.length > 0) {
+            const allPresent = filtered.every(item => currentApostila.items.includes(item.id));
+            if (btnSpan) {
+                btnSpan.textContent = allPresent ? 'Remove All' : 'Add All';
+            }
+            // Optional: Toggle Style/Icon if needed (e.g. Red for Remove), but keeping simple text toggle for now per request.
+        } else {
+            if (btnSpan) btnSpan.textContent = 'Add All';
+        }
+    }
+
     // Render filtered results
     renderList(filtered, activeTags, STATE.mode, activeTab);
 }
