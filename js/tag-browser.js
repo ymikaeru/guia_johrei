@@ -158,10 +158,16 @@ function initializeTagBrowser() {
     } else {
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true';
+        // const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true'; 
+        // Force closed by default as per user request
+        const isExpanded = false;
+
         if (isExpanded) {
             content.classList.remove('hidden');
             document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
+        } else {
+            content.classList.add('hidden');
+            document.getElementById('tagBrowserIcon').style.transform = 'rotate(0deg)';
         }
     }
 }
