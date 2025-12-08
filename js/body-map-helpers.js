@@ -45,7 +45,23 @@ function renderBodyPoints(points, viewId) {
                 ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
                 : 'none';
 
+        // If selected, render a background "ripple" ellipse
+        const rippleElement = isSelected ? `
+            <ellipse 
+                cx="${point.x}" 
+                cy="${point.y}" 
+                rx="${rx}" 
+                ry="${ry}" 
+                fill="${fillColor}" 
+                fill-opacity="0.5"
+                stroke="none"
+                class="animate-pulse-ring pointer-events-none"
+                style="transform-origin: center; transform-box: fill-box;"
+            ></ellipse>
+        ` : '';
+
         return `
+            ${rippleElement}
             <ellipse 
                 cx="${point.x}" 
                 cy="${point.y}" 
@@ -56,7 +72,7 @@ function renderBodyPoints(points, viewId) {
                 stroke="${strokeColor}"
                 stroke-width="${strokeWidth}"
                 class="body-map-point pointer-events-auto cursor-pointer transition-all duration-200"
-                style="filter: ${glowFilter};"
+                style="filter: ${glowFilter}; transform-origin: center;"
                 data-point-id="${point.id}"
                 data-point-name="${point.name}"
                 onclick="selectBodyPoint('${point.id}')"
@@ -111,9 +127,8 @@ function selectBodyPoint(pointIds) {
     const contentList = document.getElementById('contentList');
     if (contentList) {
         contentList.classList.remove('hidden');
-        setTimeout(() => {
-            contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300); // Slight delay to allow DOM update
+        // Replace auto-scroll with visual indicator
+        showScrollIndicator();
     }
 
     // Show FAB on mobile
@@ -221,7 +236,7 @@ function highlightBodyPoint(element, name, event) {
         // User complaint: "tooltip scrolls with the page". Usually means it stays fixed on screen relative to viewport, effectively sliding over content.
         // Or it means "It moves UP with the page" (absolute). 
         // If we want it to DISAPPEAR on scroll, we add a listener.
-        tooltip.className = 'absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
+        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
 
         document.body.appendChild(tooltip);
 
@@ -475,9 +490,65 @@ function matchBodyPoint(item, pointId) {
         const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`\\b${safeQ}\\b`, 'i');
 
-        // Check Focus Points Only (Strict Mode)
+        // Check Focus Points (Strict Mode)
         if (item.focusPoints && item.focusPoints.some(fp => regex.test(removeAccents(fp.toLowerCase())))) return true;
+
+        // Check searchKeywords (often used for body parts in JSONs)
+        if (item.searchKeywords && item.searchKeywords.some(sk => regex.test(removeAccents(sk.toLowerCase())))) return true;
+
+        // Backup: Check Tags (sometimes body parts are tags)
+        if (item.tags && item.tags.some(t => regex.test(removeAccents(t.toLowerCase())))) return true;
 
         return false;
     });
+}
+
+// --- SCROLL INDICATOR ---
+
+function showScrollIndicator() {
+    let indicator = document.getElementById('scrollIndicatorArrow');
+
+    if (!indicator) {
+        indicator = document.createElement('div');
+        indicator.id = 'scrollIndicatorArrow';
+        indicator.className = 'fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer animate-bounce transition-opacity duration-500';
+        indicator.innerHTML = `
+            <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7"></path>
+                </svg>
+            </div>
+        `;
+        document.body.appendChild(indicator);
+
+        indicator.onclick = () => {
+            const contentList = document.getElementById('contentList');
+            if (contentList) {
+                contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                hideScrollIndicator();
+            }
+        };
+    }
+
+    // Show
+    indicator.classList.remove('opacity-0', 'pointer-events-none');
+
+    // Auto-hide on scroll
+    const hideOnScroll = () => {
+        // Hide if scrolled down sufficiently or near bottom? 
+        // Just hiding on any significant scroll is good UX to clear clutter
+        if (window.scrollY > (window.innerHeight * 0.2)) {
+            hideScrollIndicator();
+            window.removeEventListener('scroll', hideOnScroll);
+        }
+    };
+
+    window.addEventListener('scroll', hideOnScroll, { passive: true });
+}
+
+function hideScrollIndicator() {
+    const indicator = document.getElementById('scrollIndicatorArrow');
+    if (indicator) {
+        indicator.classList.add('opacity-0', 'pointer-events-none');
+    }
 }

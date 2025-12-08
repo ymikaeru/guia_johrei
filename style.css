@@ -378,6 +378,7 @@ html {
     opacity: 0;
     pointer-events: none;
 }
+
 /* Fast Exit for Tab Switching */
 .clear-search-btn.fast-exit {
     transition: all 0.2s ease-out !important;
@@ -392,4 +393,29 @@ html {
 .input-faded {
     opacity: 0 !important;
     pointer-events: none !important;
+}
+
+/* Body Map Pulse Animation */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 2s infinite ease-in-out;
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Square Tooltips for Body Map */
+.body-point-tooltip {
+    border-radius: 0 !important;
+    /* Square */
 }
