@@ -55,8 +55,8 @@ function renderBodyPoints(points, viewId) {
                 fill-opacity="${fillOpacity}"
                 stroke="${strokeColor}"
                 stroke-width="${strokeWidth}"
-                class="body-map-point pointer-events-auto cursor-pointer transition-all duration-200"
-                style="filter: ${glowFilter};"
+                class="body-map-point pointer-events-auto cursor-pointer transition-all duration-200 ${isSelected ? 'animate-pulse-ring' : ''}"
+                style="filter: ${glowFilter}; transform-origin: center;"
                 data-point-id="${point.id}"
                 data-point-name="${point.name}"
                 onclick="selectBodyPoint('${point.id}')"
@@ -221,7 +221,7 @@ function highlightBodyPoint(element, name, event) {
         // User complaint: "tooltip scrolls with the page". Usually means it stays fixed on screen relative to viewport, effectively sliding over content.
         // Or it means "It moves UP with the page" (absolute). 
         // If we want it to DISAPPEAR on scroll, we add a listener.
-        tooltip.className = 'absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
+        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
 
         document.body.appendChild(tooltip);
 
