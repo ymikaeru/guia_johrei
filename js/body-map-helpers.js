@@ -490,8 +490,14 @@ function matchBodyPoint(item, pointId) {
         const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`\\b${safeQ}\\b`, 'i');
 
-        // Check Focus Points Only (Strict Mode)
+        // Check Focus Points (Strict Mode)
         if (item.focusPoints && item.focusPoints.some(fp => regex.test(removeAccents(fp.toLowerCase())))) return true;
+
+        // Check searchKeywords (often used for body parts in JSONs)
+        if (item.searchKeywords && item.searchKeywords.some(sk => regex.test(removeAccents(sk.toLowerCase())))) return true;
+
+        // Backup: Check Tags (sometimes body parts are tags)
+        if (item.tags && item.tags.some(t => regex.test(removeAccents(t.toLowerCase())))) return true;
 
         return false;
     });
@@ -501,7 +507,7 @@ function matchBodyPoint(item, pointId) {
 
 function showScrollIndicator() {
     let indicator = document.getElementById('scrollIndicatorArrow');
-    
+
     if (!indicator) {
         indicator = document.createElement('div');
         indicator.id = 'scrollIndicatorArrow';
@@ -514,29 +520,29 @@ function showScrollIndicator() {
             </div>
         `;
         document.body.appendChild(indicator);
-        
+
         indicator.onclick = () => {
-             const contentList = document.getElementById('contentList');
-             if (contentList) {
-                 contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                 hideScrollIndicator();
-             }
+            const contentList = document.getElementById('contentList');
+            if (contentList) {
+                contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                hideScrollIndicator();
+            }
         };
     }
-    
+
     // Show
     indicator.classList.remove('opacity-0', 'pointer-events-none');
-    
+
     // Auto-hide on scroll
     const hideOnScroll = () => {
         // Hide if scrolled down sufficiently or near bottom? 
         // Just hiding on any significant scroll is good UX to clear clutter
-        if (window.scrollY > (window.innerHeight * 0.2)) { 
-             hideScrollIndicator();
-             window.removeEventListener('scroll', hideOnScroll);
+        if (window.scrollY > (window.innerHeight * 0.2)) {
+            hideScrollIndicator();
+            window.removeEventListener('scroll', hideOnScroll);
         }
     };
-    
+
     window.addEventListener('scroll', hideOnScroll, { passive: true });
 }
 
