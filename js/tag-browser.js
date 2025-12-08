@@ -182,10 +182,27 @@ function toggleTagBrowser() {
         content.classList.add('hidden');
         icon.style.transform = 'rotate(0deg)';
         localStorage.setItem('tagBrowserExpanded', 'false');
+
+        // Remove click listener immediately
+        document.removeEventListener('click', closeByOutsideClick);
     } else {
         content.classList.remove('hidden');
         icon.style.transform = 'rotate(180deg)';
         localStorage.setItem('tagBrowserExpanded', 'true');
+
+        // Add click listener to close when clicking outside
+        // Delay slightly to prevent the current click from closing it immediately
+        setTimeout(() => {
+            document.addEventListener('click', closeByOutsideClick);
+        }, 10);
+    }
+}
+
+function closeByOutsideClick(event) {
+    const wrapper = document.getElementById('tagBrowserWrapper');
+    if (wrapper && !wrapper.contains(event.target)) {
+        // Toggle (Close)
+        toggleTagBrowser();
     }
 }
 
