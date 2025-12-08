@@ -10,12 +10,12 @@ function unlockApp() {
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
-        const idxRes = await fetch(`${cfg.path}${cfg.file}`);
+        const idxRes = await fetch(`${cfg.path}${cfg.file}?t=${Date.now()}`);
         const idxData = await idxRes.json();
         const tempData = {};
 
         await Promise.all(idxData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file}`);
+            const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
             tempData[cat.id] = await res.json();
         }));
 
@@ -74,17 +74,84 @@ function checkUrlForDeepLink() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const itemSlug = urlParams.get('item');
+        const itemId = urlParams.get('id');
 
-        if (itemSlug && STATE.globalData) {
-            // Search for item by matching slugified title
-            const foundId = Object.keys(STATE.globalData).find(key => {
-                const item = STATE.globalData[key];
-                return item && item.title && toSlug(item.title) === itemSlug;
-            });
+        // Detect Mode Switch
+        const urlMode = urlParams.get('mode');
+
+        if (urlMode && CONFIG.modes[urlMode]) {
+            if (STATE.mode !== urlMode) {
+                console.log(`Deep Link: Switching mode to ${urlMode}`);
+                if (typeof setMode === 'function') {
+                    setMode(urlMode);
+                    return;
+                }
+            }
+        }
+
+        // Fallback: Detect Mode based on ID prefix if logic exists (Optional, kept for backward compat)
+        if (itemId && !urlMode) {
+            let requiredMode = null;
+            if (itemId.startsWith('explicacao_')) {
+                requiredMode = 'explicacoes';
+            } else if (itemId.startsWith('fundamentos_') || itemId.startsWith('curas_') || itemId.startsWith('pontos_')) {
+                requiredMode = 'ensinamentos';
+            }
+
+            if (requiredMode && STATE.mode !== requiredMode) {
+                setMode(requiredMode);
+                return;
+            }
+        }
+
+        if (STATE.globalData) {
+            let foundId = null;
+
+            // 1. Try Direct ID Match
+            if (itemId && STATE.globalData[itemId]) {
+                foundId = itemId;
+            }
+
+            // 2. Try Slug Match (if no ID match or ID not provided)
+            if (!foundId && itemSlug) {
+                foundId = Object.keys(STATE.globalData).find(key => {
+                    const item = STATE.globalData[key];
+                    return item && item.title && toSlug(item.title) === itemSlug;
+                });
+            }
 
             if (foundId) {
-                console.log("Deep link found for:", itemSlug);
-                openModal(STATE.globalData[foundId]);
+                console.log("Deep link found for:", foundId);
+                // Ensure list is filtered/ready? 
+                // Currently filterList filters based on STATE.selectedCategory etc.
+                // If the item is in globalData but not in list (due to filters), openModal might fail if it relies on index in STATE.list.
+                // We should force a "Global Search" state or reset filters to ensure item is in list.
+
+                // For safety, clear filters to ensure item appears in list
+                // But blindly clearing filters might be annoying. 
+                // Better: find index in global list, or just ensure it's in render list.
+
+                // Existing logic used filterList(), then findIndex in STATE.list.
+                // Let's reset filters to ensure visibility.
+                if (typeof clearSearch === 'function') clearSearch(); // This might be too aggressive?
+
+                // Alternative: just ensure the category of the item is active?
+                // The item has `_cat`.
+                const item = STATE.globalData[foundId];
+                if (item && item._cat) {
+                    // We could set STATE.selectedCategory... but let's just use filterList default
+                }
+
+                filterList(); // Re-run filter to be sure (init state)
+
+                const newIndex = STATE.list.findIndex(listItem => listItem.id === foundId);
+                if (newIndex !== -1) {
+                    openModal(newIndex);
+                } else {
+                    console.error("Deep-linked item not found in filtered list:", foundId);
+                    // Fallback: If not in list, maybe force add it? (Complicated)
+                    // If we cleared search/filters, it SHOULD be in list unless logic is weird.
+                }
             }
         }
     } catch (e) {

@@ -16,6 +16,22 @@ function openModal(i) {
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
     document.getElementById('modalRef').textContent = `#${i + 1}`;
 
+    // Generate breadcrumb (moved up for context if needed, but keeping flow)
+
+    // Update URL with deep link (Slug + Mode)
+    if (item.title) {
+        const newUrl = new URL(window.location);
+        const slug = typeof toSlug === 'function' ? toSlug(item.title) : item.id;
+
+        // Clear ID if present to prefer Item/Mode
+        newUrl.searchParams.delete('id');
+
+        newUrl.searchParams.set('item', slug);
+        newUrl.searchParams.set('mode', STATE.mode);
+
+        window.history.pushState({ path: newUrl.href }, '', newUrl.href);
+    }
+
     // Generate breadcrumb
     const breadcrumbEl = document.getElementById('modalBreadcrumb');
     if (breadcrumbEl) {
@@ -119,6 +135,13 @@ function closeModal() {
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
     const backdrop = document.getElementById('modalBackdrop');
+
+    // Restore URL
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.delete('id');
+    newUrl.searchParams.delete('item');
+    newUrl.searchParams.delete('mode');
+    window.history.pushState({ path: newUrl.href }, '', newUrl.href);
 
     card.classList.remove('open');
     backdrop.classList.remove('open');

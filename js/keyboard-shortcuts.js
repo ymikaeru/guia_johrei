@@ -29,11 +29,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Escape - Close modal if open
-        if (e.key === 'Escape') {
-            if (modal && !modal.classList.contains('hidden')) {
+        // Modal Shortcuts (Escape, Left, Right)
+        const readModal = document.getElementById('readModal');
+        const isModalOpen = readModal && !readModal.classList.contains('hidden');
+
+        if (isModalOpen) {
+            // Escape - Close modal
+            if (e.key === 'Escape') {
                 if (typeof closeModal === 'function') {
                     closeModal();
+                }
+            }
+
+            // ArrowLeft - Prev Item
+            if (e.key === 'ArrowLeft') {
+                if (typeof navModal === 'function') {
+                    navModal(-1);
+                }
+            }
+
+            // ArrowRight - Next Item
+            if (e.key === 'ArrowRight') {
+                if (typeof navModal === 'function') {
+                    navModal(1);
                 }
             }
         }
