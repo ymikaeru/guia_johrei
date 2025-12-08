@@ -236,7 +236,8 @@ function renderTabs() {
 
     // Check if search is active (Global Search visual feedback)
     const searchQuery = document.getElementById('searchInput')?.value?.trim() || '';
-    const isSearchActive = searchQuery.length > 0;
+    const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
+    const isSearchActive = searchQuery.length > 0 || hasActiveFilters;
 
     // Desktop Tabs
     let html = Object.keys(STATE.data).map(id => {
@@ -757,6 +758,10 @@ function applyFilters() {
             // Just ensuring it doesn't block clicks (pointer-events: none in CSS)
         } else {
             btn.classList.remove('hidden'); // Ensure legacy hidden is gone
+
+            // Force Reflow to ensure transition plays if it was previously display:none or just added
+            void btn.offsetWidth;
+
             btn.classList.remove('btn-hidden');
         }
 
