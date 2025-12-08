@@ -16,7 +16,8 @@ let STATE = {
     idx: -1,
     isCrossTabMode: false, // True when showing results from multiple tabs
     selectedBodyPoint: null, // Selected body point for filtering
-    globalData: {} // Cache for all loaded data (persists across modes)
+    globalData: {}, // Cache for all loaded data (persists across modes)
+    data: {} // Holds loaded content
 };
 
 // Helper to remove accents

@@ -191,17 +191,17 @@ function renderApostilaView() {
             html += `
                 <div onclick="openApostilaModal('${item.id}')" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md rounded-none md:rounded-lg">
 
-                    <div class="absolute top-4 right-4 z-20">
-                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-300 hover:text-red-500 bg-white/10 dark:bg-black/10 backdrop-blur-sm hover:bg-red-50 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
+                    <div class="absolute top-3 right-4 z-20">
+                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                         </button>
                     </div>
 
                     <div>
-                        <div class="mb-2 mr-8">
+                        <div class="mb-6 mr-8">
                             <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catLabel}</span>
                         </div>
-                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 mt-[1.5rem] group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
 
                         <div class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed mb-4">
                             ${(item.content || '').substring(0, 150)}...
@@ -372,16 +372,16 @@ function printApostila() {
     // 3. Generate HTML content for Print Window
     // Font Size Logic
     const fontSizeMap = {
-        'small': '20px',
-        'medium': '23px',
-        'large': '26px'
+        'small': '18px',  // Was 12px
+        'medium': '22px', // Was 14px
+        'large': '26px'   // Was 18px
     };
     const currentFontSize = STATE.printFontSize || 'medium';
     const bodyFontSize = fontSizeMap[currentFontSize];
 
     const printContent = `
         <!DOCTYPE html>
-            <html lang="pt-BR">
+            <html>
                 <head>
                     <title>${currentApostila.title}</title>
                     <style>
@@ -397,7 +397,7 @@ function printApostila() {
                         .item {margin-bottom: 60px; page-break-inside: avoid; }
                         .item h2 {font-size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
                         .item .meta {font-size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
-                        .item-content {font-size: ${bodyFontSize}; line-height: 1.8; text-align: justify; hyphens: auto; -webkit-hyphens: auto; word-break: break-word; }
+                        .item-content {font-size: ${bodyFontSize}; line-height: 1.8; text-align: justify; }
                         .item-content p {margin-bottom: 1em; }
 
                         .glossary-section {page-break-before: always; border-top: 5px solid #000; padding-top: 40px; }

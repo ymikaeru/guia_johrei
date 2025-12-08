@@ -1,47 +1,8 @@
 // --- FUNÇÕES DE UI (Animations Disabled) ---
 
-function toSlug(text) {
-    if (!text) return '';
-    return text.toString().toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start
-        .replace(/-+$/, '');            // Trim - from end
-}
-
-function updateUrl(title) {
-    if (!title) return;
-    const slug = toSlug(title);
-    const url = new URL(window.location);
-    url.searchParams.set('item', slug);
-    // itemId in state can remain for history navigation if needed, but title is safer for URL
-    window.history.pushState({ itemSlug: slug }, '', url);
-}
-
-function clearUrl() {
-    const url = new URL(window.location);
-    url.searchParams.delete('item');
-    window.history.pushState({}, '', url);
-}
-
 function formatBodyText(text, searchQuery) {
     if (!text) return '';
-    // Normalize newlines: JSON data might contain literal "\n" (escaped backslash n)
-    text = text.replace(/\\n/g, '\n');
     const lines = text.split('\n');
-
-    // Helper: Apply Markdown Inline Styles (Bold, Italic)
-    const applyMarkdown = (str) => {
-        return str
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-            .replace(/__(.*?)__/g, '<strong>$1</strong>')   // Bold alt
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')           // Italic
-            .replace(/_(.*?)_/g, '<em>$1</em>');            // Italic alt
-    };
-
-    // Helper: Highlight Search Terms
     const highlight = (str) => {
         if (!searchQuery) return str;
 
@@ -64,9 +25,6 @@ function formatBodyText(text, searchQuery) {
         if (!terms) return str;
 
         // Use word boundaries if requested (prevents Axila -> Maxilar)
-        // WARNING: Applying highlight AFTER markdown means we search inside HTML tags.
-        // Ideally we shouldn't, but for this simple app, assuming user doesn't search for "strong" or "div".
-        // To be safer, we could parse HTML text nodes, but that's complex.
         const pattern = useBoundaries ? `\\b(${terms})\\b` : `(${terms})`;
         const regex = new RegExp(pattern, 'gi');
         return str.replace(regex, '<mark class="search-highlight">$1</mark>');
@@ -76,21 +34,8 @@ function formatBodyText(text, searchQuery) {
         const cleanLine = line.trim();
         if (!cleanLine) return '<br>';
 
-        // 1. Check for Markdown Headings (e.g. ## Title)
-        const headerMatch = cleanLine.match(/^(#{1,6})\s+(.*)/);
-        if (headerMatch) {
-            const level = headerMatch[1].length; // # = 1, ## = 2
-            const content = headerMatch[2];
-            // Adjust level: MD # usually H1, but in modal context maybe H3 is better base?
-            // Existing logic uses <h3> for ALL CAPS. Let's map # -> h3, ## -> h4 or just use h3/h4/h5
-            // Actually, let's just make ## -> h3, ### -> h4 to match UI scale
-            const tagName = level === 1 ? 'h2' : (level === 2 ? 'h3' : 'h4');
-            const processed = highlight(applyMarkdown(content));
-            return `<${tagName}>${processed}</${tagName}>`;
-        }
-
-        // 2. Check for QA pattern
         const qaMatch = cleanLine.match(/^(Pergunta|Resposta|P|R|P\.|R\.)(\s*[:\-\.]\s*)(.*)/i);
+
         if (qaMatch) {
             const label = qaMatch[1];
             const separator = qaMatch[2];
@@ -98,21 +43,14 @@ function formatBodyText(text, searchQuery) {
             const isAnswer = /^(Resposta|R)/i.test(label);
             const indentClass = isAnswer ? 'pl-6 border-l-2 border-gray-100 dark:border-gray-800' : '';
 
-            // Apply formatting to content
-            const processedContent = highlight(applyMarkdown(content));
-            return `<p class="${indentClass}"><strong class="qa-label">${label}${separator}</strong>${processedContent}</p>`;
+            return `<p class="${indentClass}"><strong class="qa-label">${label}${separator}</strong>${highlight(content)}</p>`;
         }
 
-        // 3. Check for ALL CAPS Header (Legacy)
-        // Only if it doesn't look like a sentence (no ending dot, short length)
         if (cleanLine.length < 80 && cleanLine === cleanLine.toUpperCase() && !cleanLine.endsWith('.')) {
-            const processed = highlight(applyMarkdown(cleanLine));
-            return `<h3>${processed}</h3>`;
+            return `<h3>${highlight(cleanLine)}</h3>`;
         }
 
-        // 4. Standard Paragraph
-        const processedLine = highlight(applyMarkdown(cleanLine));
-        return `<p>${processedLine}</p>`;
+        return `<p>${highlight(cleanLine)}</p>`;
     }).join('');
 }
 
@@ -152,7 +90,7 @@ function renderList(list, activeTags, mode, activeTab) {
         return `
         <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
             
-            <div class="absolute top-4 right-4 z-20">
+            <div class="absolute top-[0.5rem] right-[0.3rem] z-20">
                 <button onclick="event.stopPropagation(); toggleApostilaItem('${item.id}', this)" class="p-2 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full transition-colors ${favClass}" title="Adicionar à Apostila">
                      <svg class="w-6 h-6" fill="${favFill}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </button>
@@ -162,7 +100,7 @@ function renderList(list, activeTags, mode, activeTab) {
                 <div class="mb-2 mr-8">
                     <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
-                <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 mt-[1.5rem] group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
                 ${activeTab === 'pontos_focais' && item.focusPoints && item.focusPoints.length > 0 ? `
                 <div class="mb-3 mt-2">
                     <div class="flex flex-wrap gap-2">

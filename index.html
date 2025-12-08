@@ -34,7 +34,7 @@
         }
     </script>
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/tag-browser.css">
 </head>
 
@@ -210,39 +210,33 @@
             </div>
         </div>
 
-        <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a] overflow-y-auto"
-            id="mainList">
+        <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a]" id="mainList">
 
-            <div id="mapViewWrapper" class="flex flex-col h-full w-full relative transition-all duration-300">
-                <div id="bodyMapContainer"
-                    class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900 overflow-visible transition-all duration-300">
-                    <div
-                        class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto overflow-visible">
-                        <div class="relative w-[40%] aspect-[3/4] overflow-visible">
-                            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">
-                                Frente
-                            </p>
-                            <div id="frontDiagram" class="w-full h-full"></div>
-                        </div>
-                        <div class="relative w-[40%] aspect-[3/4] overflow-visible">
-                            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">
-                                Costas
-                            </p>
-                            <div id="backDiagram" class="w-full h-full"></div>
-                        </div>
+            <div id="bodyMapContainer"
+                class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900">
+                <div class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto">
+                    <div class="relative w-[40%] aspect-[3/4]">
+                        <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Frente
+                        </p>
+                        <div id="frontDiagram" class="w-full h-full"></div>
                     </div>
-                    <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-16"
-                        id="mapInstruction">Selecione uma região</p>
+                    <div class="relative w-[40%] aspect-[3/4]">
+                        <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Costas
+                        </p>
+                        <div id="backDiagram" class="w-full h-full"></div>
+                    </div>
                 </div>
+                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-16"
+                    id="mapInstruction">Selecione uma região</p>
+            </div>
 
-                <div id="contentList"
-                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12 pb-32 transition-all duration-300">
-                </div>
 
-                <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
-                    <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>
-                    <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Nenhum resultado</p>
-                </div>
+
+            <div id="contentList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12"></div>
+
+            <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
+                <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>
+                <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Nenhum resultado</p>
             </div>
         </main>
     </div>
@@ -253,7 +247,7 @@
             onclick="closeModal()"></div>
         <div
             class="absolute inset-0 md:inset-y-12 md:inset-x-auto md:w-[70%] md:left-[15%] flex items-end md:items-center justify-center pointer-events-none">
-            <div class="w-full h-[95vh] md:h-full bg-white dark:bg-[#111] shadow-2xl flex flex-col pointer-events-auto rounded-t-[2rem] md:rounded-[2rem] border border-gray-100 dark:border-gray-800 overflow-hidden scale-95 opacity-0 transition-all duration-300"
+            <div class="w-full h-[95vh] md:h-full bg-white dark:bg-[#111] shadow-2xl flex flex-col pointer-events-auto rounded-t-[2rem] md:rounded-[2rem] border border-gray-100 dark:border-gray-800 overflow-hidden"
                 id="modalCard">
                 <div
                     class="flex-none px-10 py-8 border-b border-gray-100 dark:border-gray-900 flex justify-between items-start bg-white dark:bg-[#111]">
@@ -272,20 +266,13 @@
                             #00</span>
                     </div>
                     <div class="flex items-center gap-4">
-                        <div
-                            class="flex items-center gap-1 bg-gray-50 dark:bg-[#222] p-1 rounded-full border border-gray-100 dark:border-gray-800">
-                            <button onclick="changeFontSize('sm')" id="fontSubBtn-sm"
-                                class="w-8 h-8 flex items-center justify-center rounded-full border transition-all bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white">
-                                <span class="text-[10px] font-bold">A-</span>
-                            </button>
-                            <button onclick="changeFontSize('md')" id="fontSubBtn-md"
-                                class="w-8 h-8 flex items-center justify-center rounded-full border transition-all bg-black text-white border-black dark:bg-white dark:text-black">
-                                <span class="text-xs font-bold">A</span>
-                            </button>
-                            <button onclick="changeFontSize('lg')" id="fontSubBtn-lg"
-                                class="w-8 h-8 flex items-center justify-center rounded-full border transition-all bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white">
-                                <span class="text-lg font-bold">A+</span>
-                            </button>
+                        <div class="flex items-center bg-gray-100 dark:bg-[#222] rounded-lg p-1 gap-1">
+                            <button onclick="changeFontSize('sm')"
+                                class="w-8 h-8 flex items-center justify-center text-xs font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A-</button>
+                            <button onclick="changeFontSize('md')"
+                                class="w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A</button>
+                            <button onclick="changeFontSize('lg')"
+                                class="w-8 h-8 flex items-center justify-center text-lg font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A+</button>
                         </div>
                         <button onclick="closeModal()"
                             class="text-3xl hover:opacity-50 transition-opacity font-light font-serif">&times;</button>
@@ -344,15 +331,15 @@
     <script src="js/data.js?v=2"></script>
     <script src="js/search-engine.js?v=1"></script>
     <script src="js/tag-browser.js?v=1"></script>
-    <script src="js/ui.js?v=3"></script>
-    <script src="js/body-map-helpers.js?v=2"></script>
+    <script src="js/ui.js?v=2"></script>
+    <script src="js/body-map-helpers.js?v=1"></script>
     <script src="js/keyboard-shortcuts.js"></script>
 
     <!-- Modular Architecture (Partial) -->
     <script src="js/state.js?v=3"></script>
     <script src="js/apostila.js?v=1"></script>
-    <script src="js/modal.js?v=4"></script>
-    <script src="js/main.js?v=16"></script>
+    <script src="js/modal.js?v=3"></script>
+    <script src="js/main.js?v=14"></script>
 </body>
 
 </html>
