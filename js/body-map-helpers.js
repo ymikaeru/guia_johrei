@@ -40,7 +40,7 @@ function renderBodyPoints(points, viewId) {
         const ry = baseRadius;       // Normal in Y
 
         const glowFilter = isSelected
-            ? 'drop-shadow(0 0 3px rgba(124, 58, 237, 0.6))'
+            ? 'drop-shadow(0 0 3px rgba(59, 130, 246, 0.6))'
             : isPreviewed
                 ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
                 : 'none';
