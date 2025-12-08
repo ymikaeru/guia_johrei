@@ -752,9 +752,12 @@ function applyFilters() {
 
         // Toggle Visibility
         if (!q && !hasActiveFilters) {
-            btn.classList.add('hidden');
+            btn.classList.add('btn-hidden');
+            // Remove from DOM flow after transition? No, it's absolute positioned.
+            // Just ensuring it doesn't block clicks (pointer-events: none in CSS)
         } else {
-            btn.classList.remove('hidden');
+            btn.classList.remove('hidden'); // Ensure legacy hidden is gone
+            btn.classList.remove('btn-hidden');
         }
 
         // Toggle Expansion

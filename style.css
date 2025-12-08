@@ -360,3 +360,14 @@ html {
     margin-left: 0.5rem;
     transform: translateX(0);
 }
+/* Clear Button Visibility Transition */
+.clear-search-btn.btn-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+}
+
+.clear-search-btn {
+    /* Ensure opacity is included in transition */
+    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
