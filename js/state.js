@@ -11,7 +11,8 @@ let STATE = {
     list: [],
     idx: -1,
     isCrossTabMode: false, // True when showing results from multiple tabs
-    selectedBodyPoint: null // Selected body point for filtering
+    selectedBodyPoint: null, // Selected body point for filtering
+    data: {} // Holds loaded content
 };
 
 // Helper to remove accents

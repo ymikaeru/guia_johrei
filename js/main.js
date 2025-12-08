@@ -231,11 +231,17 @@ function setTab(id) {
 
     renderTabs();
     applyFilters();
+    updateMapLayout(id);
 
     // Refresh tag browser with new tab data
     if (typeof initializeTagBrowser === 'function') {
         initializeTagBrowser();
     }
+}
+
+// --- LAYOUT HELPER FOR MAP MODE ---
+function updateMapLayout(activeTab) {
+    // Reverted: User wants specific sidebar scroll, handled in render logic.
 }
 
 function renderTabs() {
@@ -404,7 +410,7 @@ function updateUIForTab(tabId) {
         <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
             
             <!-- Sidebar (Desktop Only) -->
-            <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 h-[600px] overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm">
+            <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm" style="height: 500px; overflow-y: auto !important;">
                  <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
                     <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
                  </div>
@@ -538,21 +544,10 @@ window.autoSwitchMapToPoint = function (pointId) {
 // --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
 // --- FILTERS MOVED TO TAG BROWSER ---
 
-// Get Categories
-const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
-    id: key,
-    label: CONFIG.modes[STATE.mode].cats[key].label
-}));
+// --- FILTROS E ORDENAÇÃO (INTEGRADO COM BODY-MAP) ---
+// --- FILTERS MOVED TO TAG BROWSER ---
 
-// Get Sources (unique from loaded data)
-let allItems = [];
-Object.keys(STATE.data).forEach(key => {
-    if (Array.isArray(STATE.data[key])) {
-        allItems = allItems.concat(STATE.data[key]);
-    }
-});
-
-const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
+// Filters are now handled dynamically in tag-browser.js and applyFilters()
 
 
 function toggleFilter(type, value) {

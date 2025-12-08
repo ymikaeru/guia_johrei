@@ -418,4 +418,32 @@ html {
 .body-point-tooltip {
     border-radius: 0 !important;
     /* Square */
+    position: relative;
+    /* For triangle positioning */
+    background-color: white !important;
+    /* Force white background */
+    color: black !important;
+    /* Force black text */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Tooltip Triangle (Arrow) */
+.body-point-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    /* At the bottom */
+    left: 50%;
+    margin-left: -5px;
+    /* Center (half of width) */
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    /* Match tooltip bg color (white) */
+}
+
+/* Ensure body map animations are not clipped */
+#bodyMapContainer svg,
+#bodyMapContainer div {
+    overflow: visible !important;
 }

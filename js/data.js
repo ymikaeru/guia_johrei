@@ -130,7 +130,7 @@ const BODY_DATA = {
         'regiao_cardiaca_posterior': ['região cardíaca posterior', 'cardíaca costas', 'região cardíaca nas costas'],
         'cardiaca-posterior': ['região cardíaca posterior', 'cardíaca costas', 'região cardíaca nas costas'],
         costas: ['costas', 'dorso'],
-        regiao_omoplatas: ['omoplatas', 'escápulas', 'entre as omoplatas'],
+        regiao_omoplatas: ['omoplatas', 'escápulas', 'entre as omoplatas', 'intercostais', 'espaços intercostais', 'meio das costas', 'parte superior das costas'],
         coluna: ['coluna', 'espinha', 'vértebras', 'a coluna'],
         rins: ['rins', 'renal', 'região renal', 'reativar os rins', 'região renal nas costas', 'paralisia da perna: rins', 'rins. nota: no johrei'],
         'regiao_lombar': ['lombar', 'região lombar'],
