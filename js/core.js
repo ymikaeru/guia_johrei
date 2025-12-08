@@ -94,7 +94,7 @@ function checkUrlForDeepLink() {
             let requiredMode = null;
             if (itemId.startsWith('explicacao_')) {
                 requiredMode = 'explicacoes';
-            } else if (itemId.startsWith('fundamentos_') || itemId.startsWith('curas_') || itemId.startsWith('pontos_')) {
+            } else if (itemId.startsWith('fundamentos_') || itemId.startsWith('curas_') || itemId.startsWith('pontos_') || itemId.startsWith('tecnicas_')) {
                 requiredMode = 'ensinamentos';
             }
 
