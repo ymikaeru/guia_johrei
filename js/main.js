@@ -148,9 +148,12 @@ async function loadData() {
         // Build STATE.data with tabs in desired order
         if (STATE.mode === 'ensinamentos') {
             STATE.data = {};
-            STATE.data['fundamentos'] = tempData['fundamentos'];
-            STATE.data['curas'] = tempData['curas'];
-            STATE.data['pontos_focais'] = tempData['pontos_focais'];
+            // 1. Palavras de Meishu-sama (Default)
+            if (tempData['ensinamentos']) STATE.data['ensinamentos'] = tempData['ensinamentos'];
+            // 2. Especiais (Salmos, Orações)
+            if (tempData['especiais']) STATE.data['especiais'] = tempData['especiais'];
+            // 3. Palestras e Outros
+            if (tempData['palestras']) STATE.data['palestras'] = tempData['palestras'];
         } else {
             // For other modes, just copy all data
             STATE.data = tempData;
@@ -159,6 +162,10 @@ async function loadData() {
         if (!STATE.activeTab) STATE.activeTab = Object.keys(STATE.data)[0];
 
         renderTabs();
+
+        // New: Check URL for Deep Link after data is loaded
+        checkUrlForDeepLink();
+
         renderAlphabet();
         applyFilters();
 
@@ -173,6 +180,16 @@ async function loadData() {
         }
 
     } catch (e) { console.error("Erro load:", e); }
+}
+
+function checkUrlForDeepLink() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const itemId = urlParams.get('item');
+
+    if (itemId && STATE.globalData && STATE.globalData[itemId]) {
+        console.log("Deep link found for:", itemId);
+        openModal(STATE.globalData[itemId]);
+    }
 }
 
 // --- CONTROLE DE MODO ---
