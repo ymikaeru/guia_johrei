@@ -83,69 +83,234 @@ function renderApostilaView() {
         return;
     }
 
-    // Header & Controls
+    // Header (Hybrid Design: Structured but Clean)
+    // Using a subtle card with minimal shadows to give structure without weight.
+    let currentFontSize = STATE.printFontSize || 'medium'; // Default
+
+    // Helper to generate button classes
+    const getBtnClass = (size) => `w-8 h-8 flex items-center justify-center rounded-full border transition-all ${currentFontSize === size ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white'}`;
+
     let html = `
-        <div class="w-full max-w-4xl mx-auto mb-12">
-            <div class="bg-white dark:bg-[#111] p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden group">
-                 <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none group-hover:opacity-10 transition-opacity">
-                    <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm2-4h12v2H6zm3 8h5v2H9zm-5 6h16v2H4zm2 4h12v2H6z"/></svg>
-                 </div>
-
-                 <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Configurar Impressão</h2>
-                 
-                 <div class="flex flex-col md:flex-row gap-6 items-end">
-                    <div class="flex-grow w-full">
-                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Título da Apostila</label>
-                        <input type="text" id="apostilaTitleInput" 
-                            value="${currentApostila.title}" 
-                            oninput="updateApostilaTitle(this.value)"
-                            class="w-full text-2xl md:text-3xl font-serif bg-transparent border-b-2 border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white outline-none py-2 transition-colors placeholder-gray-300 dark:placeholder-gray-700" 
-                            placeholder="Digite um título..."
-                        />
-                    </div>
-                    <button onclick="printApostila()" class="w-full md:w-auto px-8 py-4 bg-black text-white dark:bg-white dark:text-black font-bold uppercase tracking-widest text-xs rounded-lg hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-lg">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                        Imprimir / Gerar PDF
+        <div class="w-full max-w-7xl mx-auto mt-8 mb-16 px-4 md:px-8">
+             <div class="bg-white dark:bg-[#111] rounded-2xl border border-gray-100 dark:border-gray-800 p-8 mb-12 relative group shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+                
+                <!-- Top Right: Clear/Delete Button (Red, Icon Only) -->
+                <div class="absolute top-6 right-6 z-10">
+                     <button onclick="clearApostila()" class="w-8 h-8 flex items-center justify-center rounded-full text-red-500 bg-red-50 hover:bg-red-100 dark:bg-red-900/20 dark:hover:bg-red-900/40 transition-all duration-300" title="Apagar Apostila">
+                        <!-- Trash Icon -->
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                     </button>
-                 </div>
-            </div>
-        </div>
+                </div>
 
-        <div class="grid grid-cols-1 gap-4 max-w-4xl mx-auto">
+                <!-- Title Input -->
+                <div class="w-full relative pr-16 mb-16">
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 font-bold mb-2">Título da Coleção</label>
+                    <input type="text" id="apostilaTitleInput" 
+                        value="${currentApostila.title}" 
+                        oninput="updateApostilaTitle(this.value)"
+                        class="w-full text-3xl md:text-4xl font-serif font-medium bg-transparent border-b border-transparent hover:border-gray-200 focus:border-black dark:focus:border-white outline-none placeholder-gray-300 dark:placeholder-gray-700 text-gray-900 dark:text-white tracking-tight transition-colors py-2" 
+                        placeholder="Sem Título"
+                    />
+                </div>
+
+                <!-- Bottom Right: Font Size + Print -->
+                <div class="absolute bottom-6 right-6 z-10 flex items-center gap-4">
+                     <!-- Font Size Selector -->
+                     <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800 p-1 rounded-full border border-gray-100 dark:border-gray-700">
+                        <button onclick="setPrintFontSize('small')" class="${getBtnClass('small')}" title="Fonte: Ampliada (18px)">
+                            <span class="text-[10px] font-bold">A</span>
+                        </button>
+                        <button onclick="setPrintFontSize('medium')" class="${getBtnClass('medium')}" title="Fonte: Grande (22px)">
+                            <span class="text-xs font-bold">A</span>
+                        </button>
+                        <button onclick="setPrintFontSize('large')" class="${getBtnClass('large')}" title="Fonte: Extra Grande (26px)">
+                            <span class="text-lg font-bold">A</span>
+                        </button>
+                     </div>
+
+                     <!-- Print Button -->
+                     <button onclick="printApostila()" class="flex items-center gap-2 px-4 py-2 bg-black text-white dark:bg-white dark:text-black hover:opacity-80 rounded-lg transition-all duration-300 text-[10px] font-bold uppercase tracking-widest shadow-md">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        IMPRIMIR
+                    </button>
+                </div>
+             </div>
+
+             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
     `;
 
-    // Render Cards in List (Simplified View)
+    // List of Items - using EXACT CARD style from ui.js
+    // We get the color from the category configuration
+    const catConfig = CONFIG.modes[STATE.mode].cats;
+    const activeTags = STATE.activeTags || [];
+
     currentApostila.items.forEach(id => {
-        // Find data in GLOBAL CACHE
         const item = STATE.globalData ? STATE.globalData[id] : null;
 
         if (item) {
-            html += `
-                <div class="flex items-center gap-4 bg-white dark:bg-[#111] p-4 rounded-lg border border-gray-100 dark:border-gray-800 group hover:border-black dark:hover:border-white transition-colors">
-                    <div class="flex-grow">
-                        <h3 class="font-serif text-lg text-gray-900 dark:text-gray-100">${item.title}</h3>
-                        <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">${item.source || 'Fonte desconhecida'}</p>
+            // Configuration for Category
+            const catId = item._cat;
+            const config = catConfig && catConfig[catId] ? catConfig[catId] : null;
+
+            // Badge Styling (Exact match)
+            const catLabel = config ? config.label : (item._cat || 'Geral');
+            // We use the simple badge style from the main list (unless cross-tab, which simple view implies single tab usually, but let's be safe)
+            const categoryBadgeClasses = `text-[10px] px-2 py-1 rounded-md ${config ? `bg-${config.color} text-white dark:bg-${config.color} dark:text-white` : 'bg-gray-400 text-white'}`;
+
+            // Focus Points Logic (if any)
+            const focusPointsHtml = (item.focusPoints && item.focusPoints.length > 0) ? `
+                <div class="mb-3 mt-2">
+                    <div class="flex flex-wrap gap-2">
+                        ${item.focusPoints.map(fp => {
+                return `<span class="text-[9px] font-bold uppercase tracking-widest border border-gray-100 dark:border-gray-800 text-gray-400 px-2 py-1 rounded-md">${fp}</span>`;
+            }).join('')}
                     </div>
-                    <button onclick="toggleApostilaItem('${item.id}', this)" class="p-2 text-gray-300 hover:text-red-500 transition-colors" title="Remover">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                    </button>
                 </div>
-            `;
-        } else {
-            // Fallback if item undefined in cache (shouldn't happen with globalData)
-            console.warn("Item not found in Global Data:", id);
+            ` : '';
+
+            // Footer Tags Logic (reusing safe slice logic)
+            const tags = item.tags || [];
+            const points = item.focusPoints || [];
+            let allItems = [
+                ...tags.map(t => ({ text: t, type: 'tag' })),
+                // ...points.map(p => ({text: p, type: 'point' })) // Points usually handled above, but main UI merges them in footer if not focus tab.
+                // Let's mimic main UI: activeTab !== 'pontos_focais' usually shows them at bottom.
+            ];
+
+            let footerHtml = '';
+            if (allItems.length > 0) {
+                const itemsToShow = allItems.slice(0, 6);
+                footerHtml = `
+                <div class="mt-[0.3rem] border-t border-gray-50 dark:border-gray-900 flex flex-wrap gap-2 pt-3">
+                    ${itemsToShow.map(i => {
+                    return `<span class="tag-btn text-[9px] px-2 py-1 rounded-md uppercase tracking-wider font-bold bg-gray-100 text-gray-500 dark:bg-[#1a1a1a] dark:text-gray-400">${i.text}</span>`;
+                }).join('')}
+                </div>`;
+            }
+
+            html += `
+                <div onclick="openApostilaModal('${item.id}')" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md rounded-none md:rounded-lg">
+
+                    <div class="absolute top-4 right-4 z-20">
+                        <button onclick="toggleApostilaItem('${item.id}', this); event.stopPropagation();" class="w-8 h-8 flex items-center justify-center rounded-full text-red-300 hover:text-red-500 bg-white/10 dark:bg-black/10 backdrop-blur-sm hover:bg-red-50 dark:hover:bg-red-900/40 transition-all duration-300" title="Remover da Apostila">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="mb-2 mr-8">
+                            <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catLabel}</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+
+                        <div class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed mb-4">
+                            ${(item.content || '').substring(0, 150)}...
+                        </div>
+
+                        ${focusPointsHtml}
+                    </div>
+
+                    ${footerHtml}
+                </div>
+                `;
         }
     });
 
-    html += `</div>`;
+    html += `</div></div > `;
     container.innerHTML = html;
 }
 
+/**
+ * Opens the modal for a specific Apostila item.
+ * Duplicates relevant logic from main.js openModal but adapted for direct ID access.
+ */
+function openApostilaModal(id) {
+    const item = STATE.globalData[id];
+    if (!item) return;
+
+    const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
+
+    document.getElementById('modalTitle').textContent = item.title;
+    const catEl = document.getElementById('modalCategory');
+    catEl.textContent = catConfig ? catConfig.label : (item._cat || 'Geral');
+
+    // Reset classes
+    catEl.className = 'text-[10px] font-sans font-bold uppercase tracking-widest block mb-2';
+    if (catConfig) {
+        catEl.classList.add(`text-${catConfig.color}`);
+    } else {
+        catEl.classList.add('text-gray-500');
+    }
+
+    document.getElementById('modalSource').textContent = item.source || "Fonte Original";
+    // In Apostila, we don't have a rigid list index, so we hide or simplify the ref number
+    document.getElementById('modalRef').textContent = '';
+
+    // Generate breadcrumb (Reuse logic)
+    const breadcrumbEl = document.getElementById('modalBreadcrumb');
+    if (breadcrumbEl) {
+        const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
+        const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
+        const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
+        const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
+
+        breadcrumbEl.innerHTML = `
+        <span class="text-gray-500">Apostila</span>
+            <span class="text-gray-600">›</span>
+            <span class="${catColorClass}">${catLabel}</span>
+            ${sourceHtml}
+    `;
+    }
+
+    // Body Text
+    // formatBodyText is global in main.js
+    if (typeof formatBodyText === 'function') {
+        document.getElementById('modalContent').innerHTML = formatBodyText(item.content, '');
+    } else {
+        document.getElementById('modalContent').innerHTML = (item.content || '').replace(/\n/g, '<br>');
+    }
+
+    // Focus Points
+    const fpContainer = document.getElementById('modalFocusContainer');
+    // Always show if available in Apostila view
+    if (item.focusPoints && item.focusPoints.length > 0) {
+        fpContainer.classList.remove('hidden');
+        const html = item.focusPoints.map(p => {
+            const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
+            // Note: filterByFocusPoint is global, will switch tab to map. Acceptable behavior.
+            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass}">${p}</button>`;
+        }).join('');
+        document.getElementById('modalFocusPoints').innerHTML = html;
+    } else {
+        fpContainer.classList.add('hidden');
+    }
+
+    // Disable Navigation for now (Simplify)
+    document.getElementById('prevBtn').disabled = true;
+    document.getElementById('nextBtn').disabled = true;
+
+    // Show Modal
+    const modal = document.getElementById('readModal');
+    const card = document.getElementById('modalCard');
+    const backdrop = document.getElementById('modalBackdrop');
+
+    modal.classList.remove('hidden');
+    void modal.offsetWidth; // Force Reflow
+    card.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+let titleDebounceTimer;
 function updateApostilaTitle(newTitle) {
     if (STATE.apostilas && STATE.apostilas[STATE.mode]) {
         STATE.apostilas[STATE.mode].title = newTitle;
-        // Optionally debounce tab update
-        if (typeof renderTabs === 'function') renderTabs();
+
+        // Debounce the tab update to prevent any focus loss or layout thrashing while typing
+        clearTimeout(titleDebounceTimer);
+        titleDebounceTimer = setTimeout(() => {
+            if (typeof renderTabs === 'function') renderTabs();
+        }, 500);
     }
 }
 /**
@@ -205,65 +370,79 @@ function printApostila() {
     });
 
     // 3. Generate HTML content for Print Window
+    // Font Size Logic
+    const fontSizeMap = {
+        'small': '20px',
+        'medium': '23px',
+        'large': '26px'
+    };
+    const currentFontSize = STATE.printFontSize || 'medium';
+    const bodyFontSize = fontSizeMap[currentFontSize];
+
     const printContent = `
         <!DOCTYPE html>
-        <html>
-        <head>
-            <title>${currentApostila.title}</title>
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700&display=swap');
-                
-                body { font-family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; mx-auto; }
-                h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
-                
-                .cover { text-align: center; margin-top: 200px; page-break-after: always; }
-                .cover h1 { font-size: 48px; margin-bottom: 20px; }
-                .cover p { font-size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; }
-                
-                .item { margin-bottom: 60px; page-break-inside: avoid; }
-                .item h2 { font-size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-                .item .meta { font-size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
-                .item-content { font-size: 14px; line-height: 1.8; text-align: justify; }
-                .item-content p { margin-bottom: 1em; }
+            <html lang="pt-BR">
+                <head>
+                    <title>${currentApostila.title}</title>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700&display=swap');
 
-                .glossary-section { page-break-before: always; border-top: 5px solid #000; padding-top: 40px; }
-                .map-container { position: relative; width: 400px; margin: 0 auto; }
-                .map-container svg { width: 100%; height: auto; }
-                
-                .glossary-list { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
-                .glossary-item { padding: 10px; background: #f9f9f9; border-left: 2px solid #000; }
-                .glossary-item strong { display: block; text-transform: uppercase; margin-bottom: 4px; }
-                
-                @media print {
-                    @page { margin: 2cm; }
-                    body { -webkit-print-color-adjust: exact; }
-                }
-            </style>
-        </head>
-        <body>
-            <div class="cover">
-                <h1>${currentApostila.title}</h1>
-                <p>Guia de Estudos Johrei</p>
-                <p style="margin-top: 40px; font-size: 10px;">Gerado em ${new Date().toLocaleDateString('pt-BR')}</p>
-            </div>
+                        body {font-family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; margin: 0 auto; }
+                        h1, h2, h3 {font-family: 'Cormorant Garamond', serif; }
 
-            ${items.map(item => `
+                        .cover {text-align: center; margin-top: 200px; page-break-after: always; }
+                        .cover h1 {font-size: 48px; margin-bottom: 20px; }
+                        .cover p {font-size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; }
+
+                        .item {margin-bottom: 60px; page-break-inside: avoid; }
+                        .item h2 {font-size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+                        .item .meta {font-size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
+                        .item-content {font-size: ${bodyFontSize}; line-height: 1.8; text-align: justify; hyphens: auto; -webkit-hyphens: auto; word-break: break-word; }
+                        .item-content p {margin-bottom: 1em; }
+
+                        .glossary-section {page-break-before: always; border-top: 5px solid #000; padding-top: 40px; }
+                        .map-container {position: relative; width: 400px; margin: 0 auto; }
+                        .map-container svg {width: 100%; height: auto; }
+
+                        .glossary-list {margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
+                        .glossary-item {padding: 10px; background: #f9f9f9; border-left: 2px solid #000; }
+                        .glossary-item strong {display: block; text-transform: uppercase; margin-bottom: 4px; }
+
+                        @media print {
+                            @page {margin: 2cm; }
+                            body {-webkit-print-color-adjust: exact; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="cover">
+                        <h1>${currentApostila.title}</h1>
+                        <p>Guia de Estudos Johrei</p>
+                        <p style="margin-top: 40px; font-size: 10px;">Gerado em ${new Date().toLocaleDateString('pt-BR')}</p>
+                    </div>
+
+                    ${items.map(item => `
                 <div class="item">
                     <h2>${item.title}</h2>
                     <div class="meta">${item.course ? item.course + ' • ' : ''} ${item.source}</div>
                     <div class="item-content">
                         ${item.content.replace(/\n/g, '<br>')}
                     </div>
+                    ${item.tags && item.tags.length > 0 ? `
+                        <div style="margin-top: 20px; font-size: 10px; color: #666; font-style: italic;">
+                            <strong>Tags:</strong> ${item.tags.join(', ')}
+                        </div>
+                    ` : ''}
                 </div>
             `).join('')}
 
-            ${mentionedPoints.size > 0 ? generateMapsHtml([...mentionedPoints]) : ''}
+                    ${mentionedPoints.size > 0 ? generateMapsHtml([...mentionedPoints]) : ''}
 
-            <script>
-                window.onload = function() { window.print(); }
-            </script>
-        </body>
-        </html>
+                    <script>
+                        window.onload = function() {window.print(); }
+                    </script>
+                </body>
+            </html>
     `;
 
     const win = window.open('', '_blank');
@@ -298,7 +477,7 @@ function generateMapsHtml(pointIds) {
     const allPointsIndexed = [...frontPointsIndexed, ...backPointsIndexed];
 
     return `
-        <div class="glossary-section">
+        < div class="glossary-section" >
             <h2 style="text-align: center; margin-bottom: 40px;">Glossário de Pontos Focais</h2>
             
             <div style="display: flex; justify-content: center; gap: 40px;">
@@ -339,8 +518,8 @@ function generateMapsHtml(pointIds) {
                     </div>
                 `).join('')}
             </div>
-        </div>
-    `;
+        </div >
+        `;
 }
 
 // Helper to show a simple toast notification
@@ -357,4 +536,69 @@ function showToast(msg) {
     setTimeout(() => {
         toast.classList.add('translate-y-20', 'opacity-0');
     }, 2000);
+}
+
+/**
+ * Adds ALL currently visible items (in STATE.list) to the Apostila.
+ */
+function addAllVisibleToApostila() {
+    if (!STATE.list || STATE.list.length === 0) {
+        showToast('Nenhum item visível para adicionar');
+        return;
+    }
+
+    const currentApostila = STATE.apostilas[STATE.mode];
+    let addedCount = 0;
+
+    STATE.list.forEach(item => {
+        if (!currentApostila.items.includes(item.id)) {
+            currentApostila.items.push(item.id);
+            addedCount++;
+        }
+    });
+
+    if (addedCount > 0) {
+        if (currentApostila.items.length === addedCount) {
+            // First time add, maybe prompt for title?
+            setTimeout(() => {
+                const newTitle = prompt("Dê um nome para sua nova apostila:", currentApostila.title);
+                if (newTitle && newTitle.trim() !== "") {
+                    currentApostila.title = newTitle;
+                }
+                renderTabs(); // Update tab if title changed
+            }, 100);
+        }
+
+        showToast(`${addedCount} itens adicionados à Apostila`);
+        renderTabs(); // Refresh UI to show Apostila tab if hidden
+        applyFilters(); // Re-render list to update icons
+    } else {
+        showToast('Todos os itens já estão na Apostila');
+    }
+}
+
+/**
+ * Clears ALL items from the current Apostila.
+ */
+function clearApostila() {
+    if (!confirm('Tem certeza que deseja limpar toda a apostila?')) return;
+
+    const currentApostila = STATE.apostilas[STATE.mode];
+    currentApostila.items = [];
+    currentApostila.title = "Minha Apostila"; // Reset title? Optional. Let's keep title or reset? User asked to "Delete Apostila", implies reset.
+
+    showToast('Apostila limpa');
+    renderTabs();
+    if (STATE.activeTab === 'apostila') {
+        renderApostilaView();
+    }
+}
+
+/**
+ * Sets the font size for the print view.
+ * @param {string} size - 'small', 'medium', 'large'
+ */
+function setPrintFontSize(size) {
+    STATE.printFontSize = size;
+    renderApostilaView(); // Re-render to update active button state
 }

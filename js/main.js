@@ -132,11 +132,12 @@ async function loadData() {
         if (!STATE.globalData) STATE.globalData = {};
 
         // Populate Global Data Cache (Flattened)
-        Object.values(tempData).forEach(categoryItems => {
+        Object.entries(tempData).forEach(([catId, categoryItems]) => {
             if (Array.isArray(categoryItems)) {
                 categoryItems.forEach(item => {
                     if (item && item.id) {
-                        STATE.globalData[item.id] = item;
+                        // Inject category for reference
+                        STATE.globalData[item.id] = { ...item, _cat: catId };
                     }
                 });
             }
@@ -484,15 +485,41 @@ function updateUIForTab(tabId) {
     if (tabId === 'mapa') {
         searchInputs.forEach(input => input.classList.add('input-faded'));
         map.classList.remove('hidden');
-        list.classList.add('hidden');
+
+        // Intelligent Visibility: Only hide list if NO point is selected
+        // We check both legacy STATE.bodyFilter and new STATE.selectedBodyPoint
+        const hasSelection = STATE.bodyFilter || (STATE.selectedBodyPoint && STATE.selectedBodyPoint.length > 0);
+
+        if (hasSelection) {
+            list.classList.remove('hidden');
+        } else {
+            list.classList.add('hidden');
+        }
+
         renderBodyMapViews(); // Ensure this helper exists or inline logic
     } else if (tabId === 'apostila') {
         searchInputs.forEach(input => input.classList.add('input-faded')); // Hide search for Apostila
+
+        // Hide Tag Browser / Add All buttons in Apostila to avoid confusion
+        const tagBrowser = document.getElementById('tagBrowserWrapper');
+        if (tagBrowser) tagBrowser.style.display = 'none';
+
+        // Remove Grid Layout for Apostila (It handles its own layout)
+        list.className = ''; // Reset classes (removes grid/cols/gap)
+
         if (typeof renderApostilaView === 'function') {
             renderApostilaView();
         }
     } else {
         searchInputs.forEach(input => input.classList.remove('input-faded'));
+
+        // Show Tag Browser for normal tabs
+        const tagBrowser = document.getElementById('tagBrowserWrapper');
+        if (tagBrowser) tagBrowser.style.display = 'block';
+
+        // Restore Standard Grid Layout
+        list.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12';
+
         // Standard list view is handled by applyFilters() which is called in setTab
     }
 
@@ -897,6 +924,15 @@ function clearSearch() {
 function renderActiveFilters() {
     const container = document.getElementById('activeFiltersWrapper');
     if (!container) return;
+
+    // HIDE filters if in Apostila view (User request)
+    if (STATE.activeTab === 'apostila') {
+        container.innerHTML = '';
+        container.classList.add('hidden');
+        return;
+    } else {
+        container.classList.remove('hidden');
+    }
 
     let items = [];
 

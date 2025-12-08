@@ -58,7 +58,7 @@ function initializeTagBrowser() {
 
     const allowedModes = ['ensinamentos', 'explicacoes'];
 
-    if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') && !hasActiveFilters) {
+    if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa' || STATE.activeTab === 'apostila') && !hasActiveFilters) {
         wrapper.style.display = 'none';
         return;
     }
