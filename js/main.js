@@ -561,6 +561,7 @@ function toggleFilter(type, value) {
     }
 
     applyFilters();
+    renderActiveFilters();
     // Update Tag Browser UI (if visible) since it now handles filters
     if (typeof initializeTagBrowser === 'function') {
         initializeTagBrowser();
@@ -833,27 +834,45 @@ function renderActiveFilters() {
     let items = [];
 
     // Categories
-    STATE.activeCategories.forEach(catId => {
-        const label = CONFIG.modes[STATE.mode].cats[catId]?.label || catId;
-        items.push({ text: label, onclick: `toggleFilter('category', '${catId}')` });
-    });
+    if (STATE.activeCategories) {
+        STATE.activeCategories.forEach(catId => {
+            const label = CONFIG.modes[STATE.mode].cats[catId]?.label || catId;
+            items.push({ text: label, onclick: `toggleFilter('category', '${catId}')` });
+        });
+    }
 
     // Sources
-    STATE.activeSources.forEach(src => {
-        items.push({ text: src, onclick: `toggleFilter('source', '${src.replace(/'/g, "\\'")}')` });
-    });
+    if (STATE.activeSources) {
+        STATE.activeSources.forEach(src => {
+            items.push({ text: src, onclick: `toggleFilter('source', '${src.replace(/'/g, "\\'")}')` });
+        });
+    }
 
     // Tags
-    STATE.activeTags.forEach(tag => {
-        items.push({ text: '#' + tag, onclick: `filterByTag('${tag.replace(/'/g, "\\'")}')` });
-    });
+    if (STATE.activeTags) {
+        STATE.activeTags.forEach(tag => {
+            items.push({ text: '#' + tag, onclick: `filterByTag('${tag.replace(/'/g, "\\'")}')` });
+        });
+    }
+
+    // Focus Points (New)
+    if (STATE.activeFocusPoints) {
+        STATE.activeFocusPoints.forEach(fp => {
+            items.push({ text: 'Ponto: ' + fp, onclick: `filterByFocusPoint('${fp.replace(/'/g, "\\'")}')` });
+        });
+    }
 
     // Body Filter
     if (STATE.bodyFilter) {
         // Find body point name if possible
-        const point = BODY_DATA && BODY_DATA.points ? BODY_DATA.points.find(p => p.id === STATE.bodyFilter) : null;
+        const point = BODY_DATA && BODY_DATA.points ?
+            (BODY_DATA.points.front.find(p => p.id === STATE.bodyFilter) ||
+                BODY_DATA.points.back.find(p => p.id === STATE.bodyFilter) ||
+                BODY_DATA.points.detail.find(p => p.id === STATE.bodyFilter))
+            : null;
+
         const label = point ? point.name : STATE.bodyFilter;
-        items.push({ text: label, onclick: `toggleBodyPoint('${STATE.bodyFilter}')` });
+        items.push({ text: 'Região: ' + label, onclick: `toggleBodyPoint('${STATE.bodyFilter}')` });
     }
 
     if (items.length === 0) {
@@ -865,7 +884,7 @@ function renderActiveFilters() {
     container.style.display = 'flex';
     // Generate Chips HTML
     const chipsHtml = items.map(item => `
-        <button onclick="${item.onclick}" class="group flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:border-red-400 hover:text-red-500 transition-all shadow-sm">
+        <button onclick="${item.onclick}" class="group flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-lg text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:border-red-400 hover:text-red-500 transition-all shadow-sm">
             <span>${item.text}</span>
             <svg class="w-3 h-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -873,7 +892,7 @@ function renderActiveFilters() {
 
     // Prepend Label
     container.innerHTML = `
-        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 self-center mr-2">Filtros aplicados:</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-300 self-center mr-2">Filtros:</span>
         ${chipsHtml}
     `;
 }
@@ -923,6 +942,7 @@ function filterByTag(tag, event) {
     }
 
     applyFilters();
+    renderActiveFilters();
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -958,6 +978,7 @@ function filterByFocusPoint(point, event) {
     }
 
     applyFilters();
+    renderActiveFilters();
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
