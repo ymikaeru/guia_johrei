@@ -142,9 +142,28 @@ function navModal(dir) {
 }
 
 // Controle de Fonte
+// Controle de Fonte
 window.changeFontSize = function (size) {
     const content = document.getElementById('modalContent');
     content.classList.remove('text-sm-mode', 'text-lg-mode');
+
+    // Update Content Class
     if (size === 'sm') content.classList.add('text-sm-mode');
     if (size === 'lg') content.classList.add('text-lg-mode');
+
+    // Update UI State
+    updateFontSelectorUI(size);
 };
+
+function updateFontSelectorUI(activeSize) {
+    const sizes = ['sm', 'md', 'lg'];
+    const activeClass = 'bg-black text-white border-black dark:bg-white dark:text-black';
+    const inactiveClass = 'bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white';
+
+    sizes.forEach(size => {
+        const btn = document.getElementById(`fontSubBtn-${size}`);
+        if (btn) {
+            btn.className = `w-8 h-8 flex items-center justify-center rounded-full border transition-all ${size === activeSize ? activeClass : inactiveClass}`;
+        }
+    });
+}

@@ -82,10 +82,22 @@ function renderList(list, activeTags, mode, activeTab) {
             ? `text-[10px] px-2 py-1 rounded-md ${catConfig ? `bg-${catConfig.color} text-white dark:bg-${catConfig.color} dark:text-white` : 'bg-gray-400 text-white'}`
             : `text-[9px] ${catConfig ? `text-${catConfig.color}` : 'text-gray-400'}`;
 
+        const currentApostila = STATE.apostilas ? STATE.apostilas[STATE.mode] : null;
+        const isInApostila = currentApostila && currentApostila.items.includes(item.id);
+        const favFill = isInApostila ? 'currentColor' : 'none';
+        const favClass = isInApostila ? 'text-yellow-500' : 'text-gray-300 hover:text-yellow-500';
+
         return `
         <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
+            
+            <div class="absolute top-4 right-4 z-20">
+                <button onclick="event.stopPropagation(); toggleApostilaItem('${item.id}', this)" class="p-2 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full transition-colors ${favClass}" title="Adicionar à Apostila">
+                     <svg class="w-6 h-6" fill="${favFill}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </button>
+            </div>
+
             <div>
-                <div class="mb-2">
+                <div class="mb-2 mr-8">
                     <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catConfig ? catConfig.label : item._cat}</span>
                 </div>
                 <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>

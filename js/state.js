@@ -1,18 +1,22 @@
 // --- ESTADO GLOBAL ---
 let STATE = {
-    activeTab: 'fundamentos', // ou 'curas', 'pontos_focais', 'mapa'
+    activeTab: 'fundamentos', // Default tab
     activeLetter: '',
     activeTags: [], // Changed from activeTag to activeTags array
     activeCategories: [], // Filter by categories (combined)
-    activeSources: [], // Filter by sources
+    activeSources: [], // Add generic support for sources even if not used initially
     activeFocusPoints: [], // Multi-select for focus points
     bodyFilter: null, // Agora suporta array ou null, mas vamos manter simples por enquanto
+    apostilas: {
+        ensinamentos: { items: [], title: "Minha Apostila" },
+        explicacoes: { items: [], title: "Meus Estudos" }
+    },
     mode: 'ensinamentos', // 'ensinamentos' ou 'explicacoes'
     list: [],
     idx: -1,
     isCrossTabMode: false, // True when showing results from multiple tabs
     selectedBodyPoint: null, // Selected body point for filtering
-    data: {} // Holds loaded content
+    globalData: {} // Cache for all loaded data (persists across modes)
 };
 
 // Helper to remove accents
