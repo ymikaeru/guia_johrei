@@ -320,15 +320,18 @@ html {
 
 
 /* Expanded Clear Button Transitions */
+/* Expanded Clear Button Transitions */
 .clear-search-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s ease-in-out;
+    /* Exit: ease-in */
+    transition: all 0.4s ease-in;
 }
 
 .clear-search-btn .icon-wrapper {
-    transition: transform 0.4s ease-in-out;
+    /* Exit: ease-in */
+    transition: transform 0.4s ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -340,7 +343,8 @@ html {
     opacity: 0;
     overflow: hidden;
     white-space: nowrap;
-    transition: all 0.4s ease-in-out;
+    /* Exit: ease-in */
+    transition: all 0.4s ease-in;
     margin-left: 0;
     font-size: 10px;
     font-weight: 700;
@@ -349,25 +353,28 @@ html {
     transform: translateX(20px);
 }
 
+.clear-search-btn.expanded {
+    /* Enter: ease-out */
+    transition: all 0.4s ease-out;
+}
+
 .clear-search-btn.expanded .icon-wrapper {
     transform: rotate(-180deg);
+    /* Enter: ease-out */
+    transition: transform 0.4s ease-out;
 }
 
 .clear-search-btn.expanded .clear-label {
     max-width: 120px;
-    /* Adjust as needed */
     opacity: 1;
     margin-left: 0.5rem;
     transform: translateX(0);
+    /* Enter: ease-out */
+    transition: all 0.4s ease-out;
 }
 
 /* Clear Button Visibility Transition */
 .clear-search-btn.btn-hidden {
     opacity: 0;
     pointer-events: none;
-}
-
-.clear-search-btn {
-    /* Ensure opacity is included in transition */
-    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
