@@ -240,9 +240,22 @@ function setMode(newMode) {
     // Update Active Filters UI
     if (typeof renderActiveFilters === 'function') renderActiveFilters();
 
+    // Update Search Inputs (Clear and Set Placeholder)
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
+    updateSearchPlaceholder();
 
     loadData();
+}
+
+function updateSearchPlaceholder() {
+    const inputs = document.querySelectorAll('.search-input');
+    const placeholder = STATE.mode === 'ensinamentos'
+        ? 'Somente Ensinamentos'
+        : 'Somente Guias';
+
+    inputs.forEach(input => {
+        input.placeholder = placeholder;
+    });
 }
 
 // --- CONTROLE DE ABAS ---
@@ -811,17 +824,23 @@ function applyFilters() {
     const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
 
     // 1. Update Input Result Count (New Permanent Indicator)
+    // 1. Update Input Result Count (New Permanent Indicator)
     const inputCountEl = document.getElementById('inputResultCount');
     if (inputCountEl) {
-        inputCountEl.textContent = `${filtered.length} CARDS`;
-
-        // Optional: Highlight color if filtered
-        if (q || hasActiveFilters) {
-            inputCountEl.classList.remove('text-gray-400');
-            inputCountEl.classList.add('text-gray-900', 'dark:text-white');
+        if (activeTab === 'mapa' || activeTab === 'apostila') {
+            inputCountEl.classList.add('hidden');
         } else {
-            inputCountEl.classList.add('text-gray-400');
-            inputCountEl.classList.remove('text-gray-900', 'dark:text-white');
+            inputCountEl.classList.remove('hidden');
+            inputCountEl.textContent = `${filtered.length} CARDS`;
+
+            // Optional: Highlight color if filtered
+            if (q || hasActiveFilters) {
+                inputCountEl.classList.remove('text-gray-400');
+                inputCountEl.classList.add('text-gray-900', 'dark:text-white');
+            } else {
+                inputCountEl.classList.add('text-gray-400');
+                inputCountEl.classList.remove('text-gray-900', 'dark:text-white');
+            }
         }
     }
 
@@ -1122,6 +1141,9 @@ function filterByFocusPoint(point, event) {
 function setupSearch() {
     const inputs = document.querySelectorAll('.search-input');
     const suggestionsEl = document.getElementById('searchSuggestions');
+
+    // Set initial placeholder
+    updateSearchPlaceholder();
 
     let currentSuggestions = [];
     let selectedIndex = -1;
