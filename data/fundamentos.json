@@ -2151,34 +2151,6 @@
     "order": 44
   },
   {
-    "id": "pf59",
-    "title": "Doenças Femininas",
-    "content": "",
-    "focusPoints": [],
-    "source": "Estudos Específicos 01",
-    "tags": [
-      "Câncer",
-      "Câncer e Outras Doenças"
-    ],
-    "category": "Câncer e Outras Doenças",
-    "system": "Câncer",
-    "order": 32
-  },
-  {
-    "id": "pf67",
-    "title": "Doenças Infantis",
-    "content": "",
-    "focusPoints": [],
-    "source": "Estudos Específicos 01",
-    "tags": [
-      "Câncer",
-      "Câncer e Outras Doenças"
-    ],
-    "category": "Câncer e Outras Doenças",
-    "system": "Câncer",
-    "order": 43
-  },
-  {
     "id": "pf69",
     "title": "Sarampo",
     "content": "Quase ninguém escapa do sarampo. A causa é a eliminação do sangue tóxico herdado dos pais; é algo a se agradecer, mal podendo ser chamado de doença. O único cuidado é não expor a criança ao vento, pois isso interrompe a saída das toxinas pela pele. O ditado antigo \"não pegue vento, cubra-se e durma\" é sábio. Impedir a erupção retém a toxina, causando reincidência ou outras doenças.",
@@ -2195,20 +2167,6 @@
     "type": "Caso Clínico"
   },
   {
-    "id": "pf72",
-    "title": "Doenças Mentais",
-    "content": "",
-    "focusPoints": [],
-    "source": "Estudos Específicos 01",
-    "tags": [
-      "Câncer",
-      "Câncer e Outras Doenças"
-    ],
-    "category": "Câncer e Outras Doenças",
-    "system": "Câncer",
-    "order": 14
-  },
-  {
     "id": "pf75",
     "title": "Epilepsia",
     "content": "Há dois tipos: física e espiritual. A física: acúmulo de pus aquoso perto do bulbo bloqueia o sangue para o cérebro. Se o bloqueio for total, ocorre o ataque. Dissolvendo o pus, cura-se.\n\nA espiritual é muito mais frequente e maligna. Causada pela possessão de \"Espíritos Mortos\", que reproduzem a agonia de sua morte (geralmente morte violenta ou súbita). Muitos são espíritos de mortos por hemorragia cerebral. No ataque, reproduzem a queda do derrame. Como morreram de repente, não se prepararam para a morte e acham que ainda estão vivos, apossando-se de corpos vivos.\n\nCair espumando é a \"Epilepsia da Água\", causada por espíritos de afogados. Cair ao ver água deve-se ao medo que o espírito sentiu ao morrer afogado. A \"Epilepsia do Fogo\" manifesta-se pelo medo do fogo. Tratei um caso que só tinha ataques dormindo: via o fogo aproximar-se até perder a consciência. Era, provavelmente, um espírito morto em incêndio (no terremoto).\n\nAo iniciar o Johrei, os ataques podem piorar temporariamente, mas depois espaçam até a cura.",
@@ -2223,20 +2181,6 @@
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
     "order": 75
-  },
-  {
-    "id": "pf76",
-    "title": "Tórax",
-    "content": "",
-    "focusPoints": [],
-    "source": "Estudos Específicos 01",
-    "tags": [
-      "Câncer",
-      "Câncer e Outras Doenças"
-    ],
-    "category": "Câncer e Outras Doenças",
-    "system": "Câncer",
-    "order": 76
   },
   {
     "id": "pf77",
