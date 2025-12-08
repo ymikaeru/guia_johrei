@@ -129,6 +129,19 @@ async function loadData() {
 
         // Create STATE.data in the desired order
         STATE.data = {};
+        if (!STATE.globalData) STATE.globalData = {};
+
+        // Populate Global Data Cache (Flattened)
+        Object.values(tempData).forEach(categoryItems => {
+            if (Array.isArray(categoryItems)) {
+                categoryItems.forEach(item => {
+                    if (item && item.id) {
+                        STATE.globalData[item.id] = item;
+                    }
+                });
+            }
+        });
+        console.log("Global Data ID Cache Size:", Object.keys(STATE.globalData).length);
 
         // For ensinamentos mode, set specific order
         // Build STATE.data with tabs in desired order
@@ -249,16 +262,19 @@ function renderTabs() {
     const isSearchActive = searchQuery.length > 0 || hasActiveFilters;
 
     // Desktop Tabs
-    let html = Object.keys(STATE.data).map(id => {
-        const active = !isSearchActive && STATE.activeTab === id;
-        const config = catMap[id];
-        const label = config ? config.label : id;
-        const activeClass = active
-            ? `border-${config ? config.color : 'gray-900'} text-${config ? config.color : 'gray-900'}`
-            : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
+    let html = '';
+    if (STATE.data) {
+        html = Object.keys(STATE.data).map(id => {
+            const active = !isSearchActive && STATE.activeTab === id;
+            const config = catMap[id];
+            const label = config ? config.label : id;
+            const activeClass = active
+                ? `border-${config ? config.color : 'gray-900'} text-${config ? config.color : 'gray-900'}`
+                : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
 
-        return `<button onclick="setTab('${id}')" class="tab-btn ${activeClass}">${label}</button>`;
-    }).join('');
+            return `<button onclick="setTab('${id}')" class="tab-btn ${activeClass}">${label}</button>`;
+        }).join('');
+    }
 
     // Adiciona aba Mapa apenas no modo ensinamentos
     if (STATE.mode === 'ensinamentos') {
@@ -267,6 +283,23 @@ function renderTabs() {
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
         html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
+    }
+
+    // Adiciona aba Apostilas se houver itens (Modo Específico)
+    const currentApostila = STATE.apostilas ? STATE.apostilas[STATE.mode] : null;
+    if (currentApostila && currentApostila.items.length > 0) {
+        const active = !isSearchActive && STATE.activeTab === 'apostila';
+        const activeClass = active
+            ? 'border-yellow-500 text-yellow-500' // Gold color for Apostila
+            : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
+
+        let label = currentApostila.title || 'Apostila';
+        if (label.length > 15) label = label.substring(0, 12) + '...';
+
+        html += `<button onclick="setTab('apostila')" class="tab-btn ${activeClass} flex items-center gap-1">
+            ${label}
+            <span class="text-[0.65em] font-bold bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded-full ml-1 ${active ? 'text-yellow-600 bg-yellow-50 dark:bg-yellow-900/30' : ''}">${currentApostila.items.length}</span>
+        </button>`;
     }
 
     container.innerHTML = html;
@@ -294,19 +327,33 @@ function renderTabs() {
     `;
         }).join('');
 
+        // Add Map Option to Mobile
         if (STATE.mode === 'ensinamentos') {
-            const isActive = STATE.activeTab === 'mapa';
-            if (isActive) {
-                if (mobileLabel) mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
-            } else {
+            const isMapActive = STATE.activeTab === 'mapa';
+            if (!isMapActive) {
                 optionsHtml += `
-                <button onclick="selectMobileOption('mapa')"
-                    class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
-                    MAPAS DE APLICAÇÃO
-                </button>
-    `;
+                 <button onclick="selectMobileOption('mapa')" class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">MAPAS DE APLICAÇÃO</button>`;
+            } else if (mobileLabel && STATE.activeTab === 'mapa') {
+                mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
             }
         }
+
+        // Add Apostila Option to Mobile
+        const currentApostila = STATE.apostilas ? STATE.apostilas[STATE.mode] : null;
+        if (currentApostila && currentApostila.items.length > 0) {
+            const isApostilaActive = STATE.activeTab === 'apostila';
+            const label = (currentApostila.title || 'MINHA APOSTILA').toUpperCase();
+            if (!isApostilaActive) {
+                optionsHtml += `
+                 <button onclick="selectMobileOption('apostila')" class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-yellow-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-yellow-600 flex justify-between">
+                    <span>${label}</span>
+                    <span class="bg-yellow-100 text-yellow-800 text-[10px] px-2 py-0.5 rounded-full">${currentApostila.items.length}</span>
+                 </button>`;
+            } else if (mobileLabel && STATE.activeTab === 'apostila') {
+                mobileLabel.innerHTML = `${label} <span class="ml-2 text-[10px] bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-md align-middle">${currentApostila.items.length}</span>`;
+            }
+        }
+
         mobileOptionsContainer.innerHTML = optionsHtml;
     }
 
@@ -319,9 +366,7 @@ function toggleMobileDropdown() {
     const icon = document.getElementById('mobileDropdownIcon');
 
     if (menu.classList.contains('hidden')) {
-        // Open
         menu.classList.remove('hidden');
-
         requestAnimationFrame(() => {
             menu.classList.remove('-translate-y-4', 'opacity-0', 'duration-150', 'ease-in');
             menu.classList.add('translate-y-0', 'opacity-100', 'duration-300', 'ease-out');
@@ -342,7 +387,7 @@ function closeMobileDropdown() {
 
     setTimeout(() => {
         menu.classList.add('hidden');
-    }, 150); // Match transition duration (half of open)
+    }, 150);
 }
 
 function selectMobileOption(id) {
@@ -359,134 +404,100 @@ document.addEventListener('click', (e) => {
     }
 });
 
+function renderBodyMapViews() {
+    const map = document.getElementById('bodyMapContainer');
+    if (!map) return;
+
+    // Render Interactive Body Maps
+    const views = [
+        { id: 'front', img: 'assets/images/mapa_corporal_1.jpg', alt: 'Frente', points: BODY_DATA.points.front },
+        { id: 'detail', img: 'assets/images/mapa_corporal_3.jpg', alt: 'Detalhes', points: BODY_DATA.points.detail },
+        { id: 'back', img: 'assets/images/mapa_corporal_2.jpg', alt: 'Costas', points: BODY_DATA.points.back }
+    ];
+
+    let html = `
+    <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
+        <!-- Sidebar (Desktop Only) -->
+        <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 sticky top-4 rounded-sm shadow-sm" style="height: 500px; overflow-y: auto !important;">
+                <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
+                <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
+                </div>
+                <div id="bodyPointSidebarList">
+                <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
+                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                    -- Todos os pontos --
+                </div>
+                ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+                </div>
+        </div>
+
+        <!-- Mobile Maps Area -->
+            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        ${views.map((view, i) => {
+        const visibilityClass = i === 0 ? 'block' : 'hidden'; // Only first visible on mobile initial
+        return `
+            <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
+                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
+                <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
+                    <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        ${renderBodyPoints(view.points, view.id)}
+                    </svg>
+                </div>
+            </div>`;
+    }).join('')}
+        </div>
+    </div>
+    
+    <!-- Mobile Tabs (Below map for easy access) -->
+    <div class="flex md:hidden justify-center gap-3 mt-6 w-full">
+            ${views.map((v, i) => `
+                <button onclick="switchMobileView('${v.id}')"
+                    id="tab-${v.id}"
+                    class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest border rounded-md transition-all ${i === 0 ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-white dark:bg-black text-gray-400 border-gray-200 dark:border-gray-800'}">
+                    ${v.alt}
+                </button>
+        `).join('')}
+    </div>
+    `;
+
+    map.innerHTML = html;
+}
 
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
     const map = document.getElementById('bodyMapContainer');
     const list = document.getElementById('contentList');
     const empty = document.getElementById('emptyState');
+    const searchInputs = document.querySelectorAll('.search-input');
 
     alpha.classList.add('hidden');
     map.classList.add('hidden');
-    list.classList.remove('hidden'); // Ensure list is visible by default
+    list.classList.remove('hidden'); // Ensure list is visible by default for standard tabs and Apostila
+    if (empty) empty.classList.add('hidden'); // Default hide empty
 
     if (tabId === 'pontos_focais') {
         alpha.classList.remove('hidden');
         renderAlphabet();
     }
-    // Toggle Search Visibility
-    const desktopSearch = document.getElementById('desktopSearchWrapper');
-    const mobileSearch = document.getElementById('mobileSearchWrapper');
-    const searchInputs = document.querySelectorAll('.search-input'); // Select all search inputs
 
     if (tabId === 'mapa') {
-        // Don't hide the wrapper, just fade the input line/text
-        // This keeps the Clear Button visible if it's there
         searchInputs.forEach(input => input.classList.add('input-faded'));
+        map.classList.remove('hidden');
+        list.classList.add('hidden');
+        renderBodyMapViews(); // Ensure this helper exists or inline logic
+    } else if (tabId === 'apostila') {
+        searchInputs.forEach(input => input.classList.add('input-faded')); // Hide search for Apostila
+        if (typeof renderApostilaView === 'function') {
+            renderApostilaView();
+        }
     } else {
         searchInputs.forEach(input => input.classList.remove('input-faded'));
+        // Standard list view is handled by applyFilters() which is called in setTab
     }
 
-    // Hide lists if map
-    if (tabId === 'mapa') {
-        map.classList.remove('hidden');
-        list.classList.add('hidden'); // Hide list for map tab
-        if (empty) empty.classList.add('hidden');
 
-        // Render Interactive Body Maps
-        const views = [
-            { id: 'front', img: 'assets/images/mapa_corporal_1.jpg', alt: 'Frente', points: BODY_DATA.points.front },
-            { id: 'detail', img: 'assets/images/mapa_corporal_3.jpg', alt: 'Detalhes', points: BODY_DATA.points.detail },
-            { id: 'back', img: 'assets/images/mapa_corporal_2.jpg', alt: 'Costas', points: BODY_DATA.points.back }
-        ];
 
-        let html = `
-        <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
-            
-            <!-- Sidebar (Desktop Only) -->
-            <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 h-[600px] overflow-y-auto custom-scrollbar sticky top-4 rounded-sm shadow-sm">
-                 <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
-                    <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
-                 </div>
-                 <div id="bodyPointSidebarList">
-                    <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                        -- Todos os pontos --
-                    </div>
-                    ${generateSidebarOptions()}
-                 </div>
-            </div>
-
-            <!-- Mobile Dropdown Selector (Mobile Only) -->
-            <div class="block lg:hidden w-full mb-8 relative z-30">
-                 <div class="-mx-8 md:-mx-12 px-8 md:px-12 pt-2 pb-0 border-b border-gray-100 dark:border-gray-900">
-                    <div class="relative inline-block w-full text-left" id="customBodyPointDropdown">
-                        <button type="button" onclick="toggleCustomDropdown(event)"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-black dark:hover:text-white transition-colors mb-4">
-                            <span id="customDropdownLabel">Filtrar por Região</span>
-                            <svg id="customDropdownIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-
-                        <div id="customDropdownMenu"
-                        class="hidden absolute left-0 right-0 z-[100] mt-0 w-full bg-white dark:bg-[#111] shadow-2xl border border-gray-200 dark:border-gray-800 max-h-[50vh] overflow-y-auto custom-scrollbar transform transition-all duration-300 origin-top opacity-0 -translate-y-2 rounded-xl">
-                            <div class="py-0">
-                                <div class="px-5 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all flex justify-between items-center bg-white dark:bg-[#111] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
-                                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                                    -- Todos os pontos --
-                                </div>
-                                ${generateSidebarOptions()}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        `;
-
-        // Mobile Tabs
-        const mobileTabs = `
-            <div class="flex md:hidden justify-center gap-3 mb-6 w-full">
-                ${views.map((v, i) => `
-                    <button onclick="switchMobileView('${v.id}')" 
-                        id="tab-${v.id}"
-                        class="px-4 py-2 text-[10px] font-bold uppercase tracking-widest border rounded-md transition-all ${i === 0 ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-white dark:bg-black text-gray-400 border-gray-200 dark:border-gray-800'}">
-                        ${v.alt}
-                    </button>
-                `).join('')
-            }
-            </div>
-            `;
-
-        html += mobileTabs;
-
-        html += `   <!-- Maps Area (Right on Desktop) -->
-            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                `;
-
-        views.forEach((view, i) => {
-            // Mobile: Only first one visible by default. Desktop: All visible.
-            const visibilityClass = i === 0 ? 'block' : 'hidden';
-
-            html += `
-                <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
-                    <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
-                    <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
-                        <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
-                        <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            ${renderBodyPoints(view.points, view.id)}
-                        </svg>
-                    </div>
-                </div>
-                `;
-        });
-
-        html += `   </div>
-        </div > `;
-
-        map.innerHTML = html;
-    }
 }
 
 // --- MOBILE MAP NAVIGATION ---
@@ -495,8 +506,8 @@ window.switchMobileView = function (targetId) {
     STATE.currentMobileView = targetId;
 
     views.forEach(id => {
-        const el = document.getElementById(`view-${id}`);
-        const tab = document.getElementById(`tab-${id}`);
+        const el = document.getElementById(`view - ${id} `);
+        const tab = document.getElementById(`tab - ${id} `);
 
         if (el && tab) {
             if (id === targetId) {
@@ -546,11 +557,13 @@ const categories = Object.keys(CONFIG.modes[STATE.mode].cats).map(key => ({
 
 // Get Sources (unique from loaded data)
 let allItems = [];
-Object.keys(STATE.data).forEach(key => {
-    if (Array.isArray(STATE.data[key])) {
-        allItems = allItems.concat(STATE.data[key]);
-    }
-});
+if (STATE.data) {
+    Object.keys(STATE.data).forEach(key => {
+        if (Array.isArray(STATE.data[key])) {
+            allItems = allItems.concat(STATE.data[key]);
+        }
+    });
+}
 
 const sources = [...new Set(allItems.map(i => i.source).filter(s => s))].sort();
 
@@ -587,6 +600,12 @@ function applyFilters() {
     const q = removeAccents(searchValue); // Normalize for accent-insensitive search
 
     const { activeTab, activeLetter, activeTags, bodyFilter } = STATE;
+
+    // Fix: If in Apostila tab and no search active, do not run applyFilters Logic (prevent overwrite)
+    // The Apostila view is rendered by updateUIForTab called in renderTabs
+    if (activeTab === 'apostila' && !q && activeTags.length === 0 && !bodyFilter) {
+        return;
+    }
 
     let rawItems = [];
     let label = "TODOS";
@@ -756,9 +775,9 @@ function applyFilters() {
                 : originalContent;
 
             btn.innerHTML = `
-                <div class="icon-wrapper">${iconContent}</div>
-                <span class="clear-label text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>
-             `;
+        <div class="icon-wrapper">${iconContent}</div>
+            <span class="clear-label text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>
+    `;
         }
 
         // Toggle Visibility
@@ -794,13 +813,13 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-            <button onclick="toggleBodyPoint('${p.id}')"
-        class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-        style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-        title="${p.name}">
-            <span class="sr-only">${p.name}</span>
+        <button onclick="toggleBodyPoint('${p.id}')"
+    class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
+    style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+    title="${p.name}">
+        <span class="sr-only">${p.name}</span>
         </button>
-            `;
+        `;
     }).join('');
 }
 
@@ -892,7 +911,10 @@ function renderActiveFilters() {
     // Sources
     if (STATE.activeSources) {
         STATE.activeSources.forEach(src => {
-            items.push({ text: src, onclick: `toggleFilter('source', '${src.replace(/'/g, "\\'")}')` });
+            items.push({
+                text: src,
+                onclick: `toggleFilter('source', '${src.replace(/'/g, "\\'")}')`
+            });
         });
     }
 
