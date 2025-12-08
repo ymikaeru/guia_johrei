@@ -1,50 +1,26 @@
-
 // --- MODAL LOGIC ---
 let currentModalIndex = -1;
 
-function openModal(input) {
-    let item;
-
-    if (typeof input === 'number') {
-        currentModalIndex = input;
-        item = STATE.list[input];
-    } else if (typeof input === 'object') {
-        item = input;
-        // Try to find index in current list for navigation context
-        currentModalIndex = STATE.list.findIndex(i => i.id === item.id);
-    } else {
-        console.error("Invalid input for openModal");
-        return;
-    }
-
-    if (!item) return;
-
-    // Update URL for Deep Linking using Title (Slug)
-    updateUrl(item.title);
-
-    // Safe access to config
-    const modeConfig = CONFIG.modes[STATE.mode];
-    if (!modeConfig) {
-        console.error("Invalid mode:", STATE.mode);
-        return;
-    }
-    const catConfig = modeConfig.cats ? (modeConfig.cats[item._cat] || modeConfig.cats[item.category]) : null;
+function openModal(i) {
+    currentModalIndex = i;
+    const item = STATE.list[i];
+    const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
 
     document.getElementById('modalTitle').textContent = item.title;
     const catEl = document.getElementById('modalCategory');
-    catEl.textContent = catConfig ? catConfig.label : (item._cat || item.category);
+    catEl.textContent = catConfig ? catConfig.label : item._cat;
     if (catConfig) {
         catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${item.order || '?'}`; // Use item.order if index not relevant
+    document.getElementById('modalRef').textContent = `#${i + 1}`;
 
     // Generate breadcrumb
     const breadcrumbEl = document.getElementById('modalBreadcrumb');
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
-        const catLabel = catConfig ? catConfig.label : (item._cat || item.category);
+        const catLabel = catConfig ? catConfig.label : item._cat;
         const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
         const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
         const breadcrumbHTML = `
@@ -52,7 +28,7 @@ function openModal(input) {
             <span class="text-gray-600">›</span>
             <span class="${catColorClass}">${catLabel}</span>
             ${sourceHtml}
-`;
+        `;
         breadcrumbEl.innerHTML = breadcrumbHTML;
     }
 
@@ -94,7 +70,7 @@ function openModal(input) {
         }
         const terms = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
         if (terms) {
-            const pattern = useBoundaries ? `\\b(${terms}) \\b` : `(${terms})`;
+            const pattern = useBoundaries ? `\\b(${terms})\\b` : `(${terms})`;
             highlightRegex = new RegExp(pattern, 'gi');
         }
     }
@@ -116,25 +92,19 @@ function openModal(input) {
         fpContainer.classList.add('hidden');
     }
 
-    // Disable buttons if not in context (index -1) or boundaries
-    document.getElementById('prevBtn').disabled = currentModalIndex <= 0;
-    document.getElementById('nextBtn').disabled = currentModalIndex === -1 || currentModalIndex >= STATE.list.length - 1;
+    document.getElementById('prevBtn').disabled = i === 0;
+    document.getElementById('nextBtn').disabled = i === STATE.list.length - 1;
 
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
     const backdrop = document.getElementById('modalBackdrop');
 
     modal.classList.remove('hidden');
-    // Force reflow
     void modal.offsetWidth;
 
-    modal.classList.add('opacity-100');
-
-    // Use .open class to override CSS ID styles
     card.classList.add('open');
     backdrop.classList.add('open');
 
-    // Lock body scroll
     document.body.style.overflow = 'hidden';
 
     if (searchQuery) {
@@ -150,18 +120,13 @@ function closeModal() {
     const card = document.getElementById('modalCard');
     const backdrop = document.getElementById('modalBackdrop');
 
-    card.classList.remove('scale-100', 'opacity-100');
-    card.classList.add('scale-95', 'opacity-0');
-    backdrop.classList.remove('opacity-100');
-    modal.classList.remove('opacity-100');
     card.classList.remove('open');
     backdrop.classList.remove('open');
 
     setTimeout(() => {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
-        clearUrl(); // Clear URL on close
-    }, 300);
+    }, 250);
 }
 
 function navModal(dir) {
@@ -177,28 +142,9 @@ function navModal(dir) {
 }
 
 // Controle de Fonte
-// Controle de Fonte
 window.changeFontSize = function (size) {
     const content = document.getElementById('modalContent');
     content.classList.remove('text-sm-mode', 'text-lg-mode');
-
-    // Update Content Class
     if (size === 'sm') content.classList.add('text-sm-mode');
     if (size === 'lg') content.classList.add('text-lg-mode');
-
-    // Update UI State
-    updateFontSelectorUI(size);
 };
-
-function updateFontSelectorUI(activeSize) {
-    const sizes = ['sm', 'md', 'lg'];
-    const activeClass = 'bg-black text-white border-black dark:bg-white dark:text-black';
-    const inactiveClass = 'bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white';
-
-    sizes.forEach(size => {
-        const btn = document.getElementById(`fontSubBtn - ${size} `);
-        if (btn) {
-            btn.className = `w - 8 h - 8 flex items - center justify - center rounded - full border transition - all ${size === activeSize ? activeClass : inactiveClass} `;
-        }
-    });
-}

@@ -148,14 +148,9 @@ async function loadData() {
         // Build STATE.data with tabs in desired order
         if (STATE.mode === 'ensinamentos') {
             STATE.data = {};
-            // 1. Palavras de Meishu-sama (Fundamentos)
-            if (tempData['fundamentos']) STATE.data['fundamentos'] = tempData['fundamentos'];
-            // 2. Casos e Orientações (Curas)
-            if (tempData['curas']) STATE.data['curas'] = tempData['curas'];
-
-            // Note: pontos_focais is usually handled separately in the map tab logic, 
-            // but if we want it as a searchable tab, we include it.
-            if (tempData['pontos_focais']) STATE.data['pontos_focais'] = tempData['pontos_focais'];
+            STATE.data['fundamentos'] = tempData['fundamentos'];
+            STATE.data['curas'] = tempData['curas'];
+            STATE.data['pontos_focais'] = tempData['pontos_focais'];
         } else {
             // For other modes, just copy all data
             STATE.data = tempData;
@@ -164,8 +159,6 @@ async function loadData() {
         if (!STATE.activeTab) STATE.activeTab = Object.keys(STATE.data)[0];
 
         renderTabs();
-
-
         renderAlphabet();
         applyFilters();
 
