@@ -127,9 +127,8 @@ function selectBodyPoint(pointIds) {
     const contentList = document.getElementById('contentList');
     if (contentList) {
         contentList.classList.remove('hidden');
-        setTimeout(() => {
-            contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300); // Slight delay to allow DOM update
+        // Replace auto-scroll with visual indicator
+        showScrollIndicator();
     }
 
     // Show FAB on mobile
@@ -496,4 +495,54 @@ function matchBodyPoint(item, pointId) {
 
         return false;
     });
+}
+
+// --- SCROLL INDICATOR ---
+
+function showScrollIndicator() {
+    let indicator = document.getElementById('scrollIndicatorArrow');
+    
+    if (!indicator) {
+        indicator = document.createElement('div');
+        indicator.id = 'scrollIndicatorArrow';
+        indicator.className = 'fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 cursor-pointer animate-bounce transition-opacity duration-500';
+        indicator.innerHTML = `
+            <div class="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 opacity-90 hover:opacity-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7"></path>
+                </svg>
+            </div>
+        `;
+        document.body.appendChild(indicator);
+        
+        indicator.onclick = () => {
+             const contentList = document.getElementById('contentList');
+             if (contentList) {
+                 contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 hideScrollIndicator();
+             }
+        };
+    }
+    
+    // Show
+    indicator.classList.remove('opacity-0', 'pointer-events-none');
+    
+    // Auto-hide on scroll
+    const hideOnScroll = () => {
+        // Hide if scrolled down sufficiently or near bottom? 
+        // Just hiding on any significant scroll is good UX to clear clutter
+        if (window.scrollY > (window.innerHeight * 0.2)) { 
+             hideScrollIndicator();
+             window.removeEventListener('scroll', hideOnScroll);
+        }
+    };
+    
+    window.addEventListener('scroll', hideOnScroll, { passive: true });
+}
+
+function hideScrollIndicator() {
+    const indicator = document.getElementById('scrollIndicatorArrow');
+    if (indicator) {
+        indicator.classList.add('opacity-0', 'pointer-events-none');
+    }
 }
