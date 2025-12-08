@@ -129,9 +129,10 @@ function openModal(input) {
     void modal.offsetWidth;
 
     modal.classList.add('opacity-100');
-    card.classList.remove('scale-95', 'opacity-0');
-    card.classList.add('scale-100', 'opacity-100');
-    backdrop.classList.add('opacity-100');
+
+    // Use .open class to override CSS ID styles
+    card.classList.add('open');
+    backdrop.classList.add('open');
 
     // Lock body scroll
     document.body.style.overflow = 'hidden';
@@ -153,6 +154,8 @@ function closeModal() {
     card.classList.add('scale-95', 'opacity-0');
     backdrop.classList.remove('opacity-100');
     modal.classList.remove('opacity-100');
+    card.classList.remove('open');
+    backdrop.classList.remove('open');
 
     setTimeout(() => {
         modal.classList.add('hidden');
