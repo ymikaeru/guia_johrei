@@ -76,8 +76,21 @@ function checkUrlForDeepLink() {
         const itemSlug = urlParams.get('item');
         const itemId = urlParams.get('id');
 
-        // Detect Mode Switch requirement based on ID prefix
-        if (itemId) {
+        // Detect Mode Switch
+        const urlMode = urlParams.get('mode');
+
+        if (urlMode && CONFIG.modes[urlMode]) {
+            if (STATE.mode !== urlMode) {
+                console.log(`Deep Link: Switching mode to ${urlMode}`);
+                if (typeof setMode === 'function') {
+                    setMode(urlMode);
+                    return;
+                }
+            }
+        }
+
+        // Fallback: Detect Mode based on ID prefix if logic exists (Optional, kept for backward compat)
+        if (itemId && !urlMode) {
             let requiredMode = null;
             if (itemId.startsWith('explicacao_')) {
                 requiredMode = 'explicacoes';
@@ -85,15 +98,9 @@ function checkUrlForDeepLink() {
                 requiredMode = 'ensinamentos';
             }
 
-            // If we are in the wrong mode, switch mode and return.
-            // setMode will check if mode is different, update STATE, and call loadData.
-            // loadData will eventually call checkUrlForDeepLink again.
             if (requiredMode && STATE.mode !== requiredMode) {
-                console.log(`Deep Link: Switching mode to ${requiredMode} for id ${itemId}`);
-                if (typeof setMode === 'function') {
-                    setMode(requiredMode);
-                    return; // Stop here, let the reload handle it
-                }
+                setMode(requiredMode);
+                return;
             }
         }
 
