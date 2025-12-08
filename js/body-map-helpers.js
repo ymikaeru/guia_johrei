@@ -15,17 +15,17 @@ function renderBodyPoints(points, viewId) {
         let fillColor, fillOpacity, strokeColor, strokeWidth, baseRadius;
 
         if (isSelected) {
-            fillColor = '#7c3aed';      // Purple
+            fillColor = '#3b82f6';      // Blue
             fillOpacity = '1';
-            strokeColor = '#7c3aed';
-            strokeWidth = '0.4';
+            strokeColor = '#2563eb';
+            strokeWidth = '0.5';
             baseRadius = 1.8;
         } else if (isPreviewed) {
-            fillColor = '#f59e0b';      // Amber/Orange
-            fillOpacity = '0.9';
-            strokeColor = '#f59e0b';
-            strokeWidth = '0.35';
-            baseRadius = 1.6;
+            fillColor = '#9333ea';      // Vibrant Purple (New Suggestion)
+            fillOpacity = '1';
+            strokeColor = '#ffffff';
+            strokeWidth = '0.5';
+            baseRadius = 1.8; // Make slightly larger for visibility
         } else {
             fillColor = '#94a3b8';      // Slate
             fillOpacity = '0.6';
@@ -42,13 +42,13 @@ function renderBodyPoints(points, viewId) {
         const glowFilter = isSelected
             ? 'drop-shadow(0 0 3px rgba(59, 130, 246, 0.6))'
             : isPreviewed
-                ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
+                ? 'drop-shadow(0 0 5px rgba(147, 51, 234, 0.6))' // Purple Glow
                 : 'none';
 
         // Always render a background "ripple" ellipse (hidden by default unless selected/previewed)
         // We set initial state here, but updatePointsVisual handles dynamic updates
         const showRipple = isSelected || isPreviewed;
-        const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#f59e0b' : 'none');
+        const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#9333ea' : 'none');
         const rippleOpacity = showRipple ? '0.5' : '0';
 
         const rippleElement = `
@@ -338,38 +338,39 @@ function updatePointsVisual() {
         const isSelected = selectedIds.includes(pointId);
         const isPreviewed = !isSelected && previewIds.includes(pointId);
 
+        // Elegant color scheme
         let fillColor, fillOpacity, strokeColor, strokeWidth, baseRadius;
 
         if (isSelected) {
-            fillColor = '#3b82f6';
+            fillColor = '#3b82f6';      // Blue
             fillOpacity = '1';
-            strokeColor = '#3b82f6';
-            strokeWidth = '0.4';
+            strokeColor = '#2563eb';
+            strokeWidth = '0.5';
             baseRadius = 1.8;
         } else if (isPreviewed) {
-            fillColor = '#f59e0b';
-            fillOpacity = '0.9';
-            strokeColor = '#f59e0b';
-            strokeWidth = '0.35';
-            baseRadius = 1.6;
+            fillColor = '#9333ea';      // Vibrant Purple
+            fillOpacity = '1';
+            strokeColor = '#ffffff';
+            strokeWidth = '0.5';
+            baseRadius = 1.8;
         } else {
-            fillColor = '#94a3b8';
+            fillColor = '#94a3b8';      // Slate
             fillOpacity = '0.6';
             strokeColor = '#ffffff';
             strokeWidth = '0.25';
             baseRadius = 1.2;
         }
 
-        const rx = baseRadius * 1.5;
+        const rx = baseRadius * 1.5; // Aspect Ratio Compensation
         const ry = baseRadius;
 
-        // --- RIPPLE UPDATE ---
+        // Pulse/Ripple Logic
         const ripple = ellipse.previousElementSibling;
-        if (ripple && ripple.tagName === 'ellipse') { // Simple check, assumindo estrutura
+        if (ripple && ripple.tagName === 'ellipse') {
             if (isSelected || isPreviewed) {
-                const rippleColor = isSelected ? '#3b82f6' : '#f59e0b';
+                const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#9333ea' : 'none');
                 ripple.setAttribute('fill', rippleColor);
-                ripple.setAttribute('fill-opacity', '0.5'); // Ensure opacity is reset
+                ripple.setAttribute('fill-opacity', '0.5');
                 ripple.setAttribute('rx', rx);
                 ripple.setAttribute('ry', ry);
                 ripple.style.display = 'block';
@@ -378,11 +379,12 @@ function updatePointsVisual() {
             }
         }
 
+        // Dynamic Glow/Shadow
         const glowFilter = isSelected
-            ? 'drop-shadow(0 0 3px rgba(59, 130, 246, 0.6))'
+            ? 'drop-shadow(0 0 4px rgba(59, 130, 246, 0.7))'
             : isPreviewed
-                ? 'drop-shadow(0 0 3px rgba(245, 158, 11, 0.6))'
-                : 'none';
+                ? 'drop-shadow(0 0 5px rgba(147, 51, 234, 0.6))' // Purple Glow
+                : 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))';
 
         ellipse.setAttribute('rx', rx);
         ellipse.setAttribute('ry', ry);

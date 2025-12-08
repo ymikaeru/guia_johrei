@@ -207,31 +207,36 @@
         <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a] overflow-y-auto"
             id="mainList">
 
-            <div id="bodyMapContainer"
-                class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900 overflow-visible">
-                <div class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto overflow-visible">
-                    <div class="relative w-[40%] aspect-[3/4] overflow-visible">
-                        <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Frente
-                        </p>
-                        <div id="frontDiagram" class="w-full h-full"></div>
+            <div id="mapViewWrapper" class="flex flex-col h-full w-full relative transition-all duration-300">
+                <div id="bodyMapContainer"
+                    class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900 overflow-visible transition-all duration-300">
+                    <div
+                        class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto overflow-visible">
+                        <div class="relative w-[40%] aspect-[3/4] overflow-visible">
+                            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">
+                                Frente
+                            </p>
+                            <div id="frontDiagram" class="w-full h-full"></div>
+                        </div>
+                        <div class="relative w-[40%] aspect-[3/4] overflow-visible">
+                            <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">
+                                Costas
+                            </p>
+                            <div id="backDiagram" class="w-full h-full"></div>
+                        </div>
                     </div>
-                    <div class="relative w-[40%] aspect-[3/4] overflow-visible">
-                        <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Costas
-                        </p>
-                        <div id="backDiagram" class="w-full h-full"></div>
-                    </div>
+                    <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-16"
+                        id="mapInstruction">Selecione uma região</p>
                 </div>
-                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mt-16"
-                    id="mapInstruction">Selecione uma região</p>
-            </div>
 
+                <div id="contentList"
+                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12 pb-32 transition-all duration-300">
+                </div>
 
-
-            <div id="contentList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12"></div>
-
-            <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
-                <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>
-                <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Nenhum resultado</p>
+                <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
+                    <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Nenhum resultado</p>
+                </div>
             </div>
         </main>
     </div>
@@ -333,7 +338,7 @@
     <!-- Modular Architecture (Partial) -->
     <script src="js/state.js?v=3"></script>
     <script src="js/modal.js?v=3"></script>
-    <script src="js/main.js?v=14"></script>
+    <script src="js/main.js?v=15"></script>
 </body>
 
 </html>
