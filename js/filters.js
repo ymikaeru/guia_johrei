@@ -45,10 +45,17 @@ function applyFilters() {
     let label = "TODOS";
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
+    // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
     if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter) {
-        Object.keys(STATE.data).forEach(cat => {
-            STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
-        });
+        // GLOBAL SEARCH: Use globalData cache if searching, to find items from other modes
+        if (q && STATE.globalData && Object.keys(STATE.globalData).length > 0) {
+            rawItems = Object.values(STATE.globalData);
+        } else {
+            // Local fallback or non-search filter
+            Object.keys(STATE.data).forEach(cat => {
+                STATE.data[cat].forEach(i => rawItems.push({ ...i, _cat: cat }));
+            });
+        }
 
         if (activeTags.length > 0 && bodyFilter) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} + ${document.getElementById('selectedBodyPointName')?.textContent || 'Filtro'} `;
         else if (activeTags.length > 0) label = `TAGS: ${activeTags.map(t => `#${t}`).join(' ')} `;

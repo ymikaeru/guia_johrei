@@ -9,22 +9,32 @@ function formatBodyText(text, searchQuery) {
         let tokens;
         let useBoundaries = false;
 
-        // Check if query uses specific delimiter (for body point keywords)
         if (searchQuery.includes('|')) {
             tokens = searchQuery.split('|').filter(t => t.trim().length > 0);
-            useBoundaries = true; // Use strict word boundaries for predefined keywords
+            useBoundaries = true; // Keep explicit boundaries for pipe-separated keywords
         } else {
-            // Default: Split by space for manual search
+            // Default: Split by space
             tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
         }
 
         const terms = tokens
-            .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // Escape regex special chars
+            .map(t => {
+                const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                // Refined Logic (User Feedback):
+                // - Short words (< 3 chars) match strictly whole words (e.g. "o" won't match "cabelo")
+                // - Longer words allow partial match (e.g. "toxina" matches "toxinas")
+                if (!useBoundaries && t.length < 3) {
+                    return `\\b${escaped}\\b`;
+                }
+                return escaped;
+            })
             .join('|');
 
         if (!terms) return str;
 
-        // Use word boundaries if requested (prevents Axila -> Maxilar)
+        // Use word boundaries if requested OR if we built them manually above
+        // Note: If useBoundaries is true (from |), we wrap everything in \b...\b later.
+        // If false, we use the terms as is (which might contain \b for short words).
         const pattern = useBoundaries ? `\\b(${terms})\\b` : `(${terms})`;
         const regex = new RegExp(pattern, 'gi');
         return str.replace(regex, '<mark class="search-highlight">$1</mark>');
