@@ -21,10 +21,11 @@ function openModal(i) {
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : item._cat;
+        const sourceLabel = item.source ? ` (${item.source})` : '';
         const breadcrumbHTML = `
             <span class="text-gray-500">${modeLabel}</span>
             <span class="text-gray-600">›</span>
-            <span class="text-gray-400">${catLabel}</span>
+            <span class="text-gray-400">${catLabel}${sourceLabel}</span>
         `;
         breadcrumbEl.innerHTML = breadcrumbHTML;
     }
