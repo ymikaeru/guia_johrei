@@ -733,9 +733,20 @@ function applyFilters() {
     });
 
     // Show/Hide Clear Buttons
+    const hasActiveFilters = STATE.activeTags.length > 0 || STATE.activeCategories.length > 0 || STATE.activeSources.length > 0 || STATE.activeFocusPoints.length > 0;
+
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
-        if (q || STATE.activeTags.length > 0) btn.classList.remove('hidden');
-        else btn.classList.add('hidden');
+        if (hasActiveFilters) {
+            btn.classList.remove('hidden');
+            // Show "LIMPAR FILTROS" text
+            btn.innerHTML = `<span class="text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-colors">Limpar Filtros</span>`;
+        } else if (q) {
+            btn.classList.remove('hidden');
+            // Show X Icon
+            btn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+        } else {
+            btn.classList.add('hidden');
+        }
     });
     // Render filtered results
     renderList(filtered, activeTags, STATE.mode, activeTab);
