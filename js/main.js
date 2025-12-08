@@ -224,7 +224,9 @@ function setTab(id) {
         clearBodyFilter();
     }
 
-    STATE.activeTag = null;
+    // STATE.activeTag = null; // Removed to persist tags across tabs
+    // STATE.activeTags is NOT cleared here, so filters persist.
+
     document.querySelectorAll('.search-input').forEach(input => input.value = '');
 
     renderTabs();
