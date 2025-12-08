@@ -164,10 +164,10 @@ function initializeTagBrowser() {
 
         if (isExpanded) {
             content.classList.remove('hidden');
-            document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)';
+            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)'; // No rotation for filter icon
         } else {
             content.classList.add('hidden');
-            document.getElementById('tagBrowserIcon').style.transform = 'rotate(0deg)';
+            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(0deg)';
         }
     }
 }
@@ -180,14 +180,14 @@ function toggleTagBrowser() {
 
     if (isExpanded) {
         content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
+        // icon.style.transform = 'rotate(0deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'false');
 
         // Remove click listener immediately
         document.removeEventListener('click', closeByOutsideClick);
     } else {
         content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
+        // icon.style.transform = 'rotate(180deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'true');
 
         // Add click listener to close when clicking outside
