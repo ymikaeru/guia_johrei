@@ -151,9 +151,9 @@ function renderBodyMapViews() {
                     <svg class="w-4 h-4 transition-transform duration-200" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
-                    style="max-height: 50vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+                    style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
                      <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event); toggleMobileBodyFilter(document.querySelector('#mobileFilterIcon').parentElement);">
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
                         -- Todos os pontos --
                     </div>
                     ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
@@ -202,8 +202,10 @@ function toggleMobileBodyFilter(btn) {
 
     list.classList.toggle('hidden');
 
-    if (!list.classList.contains('hidden')) {
-        // OPENED
+    // Rotate Icon
+    if (list.classList.contains('hidden')) {
+        if (icon) icon.style.transform = 'rotate(0deg)';
+    } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
 
         // Auto-Scroll Logic
@@ -211,20 +213,15 @@ function toggleMobileBodyFilter(btn) {
             const header = document.querySelector('header');
             const headerHeight = header ? header.offsetHeight : 80;
             const elementPosition = btn.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
 
             window.scrollTo({
                 top: offsetPosition,
                 behavior: "smooth"
             });
-        }, 100);
-    } else {
-        // CLOSED
-        if (icon) icon.style.transform = 'rotate(0deg)';
+        }, 100); // Slight delay to ensure DOM update
     }
 }
-
-
 
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
