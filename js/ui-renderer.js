@@ -208,16 +208,16 @@ function toggleMobileBodyFilter(btn) {
     } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
 
-        // Auto-Scroll Logic with Material Easing
-        setTimeout(() => {
+        // Auto-Scroll Logic: Run immediately after layout update
+        requestAnimationFrame(() => {
             const header = document.querySelector('header');
             const headerHeight = header ? header.offsetHeight : 80;
             const elementPosition = btn.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
 
-            // Use custom smooth scroll
-            smoothScrollTo(offsetPosition, 1500); // 1500ms duration (Very Smooth)
-        }, 100);
+            // Use custom smooth scroll (Standard Easing)
+            smoothScrollTo(offsetPosition, 1000); // 1000ms balanced duration
+        });
     }
 }
 
@@ -231,10 +231,9 @@ function smoothScrollTo(targetPosition, duration) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
 
-        // EaseOutQuart (Smoother deceleration, less aggressive than Quint)
-        // 1 - (1 - t) ^ 4
+        // Standard Easing (easeInOutCubic) - Smooth start, smooth end
         const ease = (t) => {
-            return 1 - Math.pow(1 - t, 4);
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
         };
 
         const run = ease(Math.min(timeElapsed / duration, 1));
