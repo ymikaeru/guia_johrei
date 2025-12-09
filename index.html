@@ -281,17 +281,31 @@
                             class="text-[10px] font-sans font-bold uppercase tracking-widest text-gray-300 block">REF
                             #00</span>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <div class="flex items-center bg-gray-100 dark:bg-[#222] rounded-lg p-1 gap-1">
-                            <button onclick="changeFontSize('sm')"
-                                class="w-8 h-8 flex items-center justify-center text-xs font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A-</button>
-                            <button onclick="changeFontSize('md')"
-                                class="w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A</button>
-                            <button onclick="changeFontSize('lg')"
-                                class="w-8 h-8 flex items-center justify-center text-lg font-bold hover:bg-white dark:hover:bg-black rounded transition-colors">A+</button>
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
+                            <!-- Alignment -->
+                            <select onchange="setModalAlignment(this.value)" id="modalAlignSelect"
+                                class="bg-transparent text-[10px] font-bold uppercase tracking-widest outline-none cursor-pointer border-none p-0 w-16 text-right focus:ring-0 text-black dark:text-white">
+                                <option value="justify">Justif.</option>
+                                <option value="left">Esq.</option>
+                                <option value="hyphen">Hifen.</option>
+                            </select>
+
+                            <!-- Divider -->
+                            <div class="w-px h-3 bg-gray-300 dark:bg-gray-600 mx-1"></div>
+
+                            <!-- Slider -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[8px] font-bold uppercase text-gray-400">AA</span>
+                                <input type="range" min="12" max="25" step="1" id="modalFontSlider"
+                                    oninput="setModalFontSize(this.value)"
+                                    class="w-16 md:w-20 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer range-sm accent-black dark:accent-white">
+                                <span id="modalFontSizeDisplay"
+                                    class="text-[10px] font-mono font-bold w-5 text-right text-black dark:text-white">18</span>
+                            </div>
                         </div>
                         <button onclick="closeModal()"
-                            class="text-3xl hover:opacity-50 transition-opacity font-light font-serif">&times;</button>
+                            class="text-3xl hover:opacity-50 transition-opacity font-light font-serif ml-2">&times;</button>
                     </div>
                 </div>
                 <!-- Mobile FAB (Floating Action Button) -->

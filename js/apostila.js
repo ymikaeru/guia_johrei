@@ -87,19 +87,29 @@ function renderApostilaView() {
 
     // Header (Hybrid Design: Structured but Clean)
     // Using a subtle card with minimal shadows to give structure without weight.
-    let currentFontSize = STATE.printFontSize || 'medium'; // Default
+    // Default to numeric 24 if not set or if it was a string (migration)
+    let currentFontSize = parseInt(STATE.printFontSize) || 18;
+    // Migration check: if it was 'small'/'medium'/'large', reset to meaningful defaults
+    if (STATE.printFontSize === 'small') currentFontSize = 14;
+    if (STATE.printFontSize === 'medium') currentFontSize = 18;
+    if (STATE.printFontSize === 'large') currentFontSize = 22;
 
-    // Helper to generate button classes
-    const getBtnClass = (size) => `w-8 h-8 flex items-center justify-center rounded-full border transition-all ${currentFontSize === size ? 'bg-black text-white border-black dark:bg-white dark:text-black' : 'bg-transparent text-gray-400 border-gray-200 hover:border-gray-900 dark:border-gray-800 dark:hover:border-white'}`;
+    // Clamp to new limits
+    if (currentFontSize < 12) currentFontSize = 12;
+    if (currentFontSize > 25) currentFontSize = 25;
+
+    STATE.printFontSize = currentFontSize; // Ensure state is numeric now
+
+    // Default Alignment
+    const currentAlign = STATE.printAlignment || 'justify';
 
     let html = `
         <div class="w-full max-w-7xl mx-auto mt-8 mb-16 px-4 md:px-8">
              <div class="bg-white dark:bg-[#111] rounded-2xl border border-gray-100 dark:border-gray-800 p-8 mb-12 relative group shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                 
-                <!-- Top Right: Clear/Delete Button (Red, Icon Only) -->
+                <!-- Top Right: Clear/Delete Button -->
                 <div class="absolute top-6 right-6 z-10">
                      <button onclick="clearApostila()" class="p-2 bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-full transition-colors text-red-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/40" title="Limpar Apostila">
-                        <!-- X Icon for Clearing Apostila -->
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
                 </div>
@@ -115,23 +125,31 @@ function renderApostilaView() {
                     />
                 </div>
 
-                <!-- Bottom Right: Font Size + Print -->
-                <div class="absolute bottom-6 right-6 z-10 flex items-center gap-4">
-                     <!-- Font Size Selector -->
-                     <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800 p-1 rounded-full border border-gray-100 dark:border-gray-700">
-                        <button onclick="setPrintFontSize('small')" class="${getBtnClass('small')}" title="Fonte: Ampliada (18px)">
-                            <span class="text-[10px] font-bold">A</span>
-                        </button>
-                        <button onclick="setPrintFontSize('medium')" class="${getBtnClass('medium')}" title="Fonte: Grande (22px)">
-                            <span class="text-xs font-bold">A</span>
-                        </button>
-                        <button onclick="setPrintFontSize('large')" class="${getBtnClass('large')}" title="Fonte: Extra Grande (26px)">
-                            <span class="text-lg font-bold">A</span>
-                        </button>
+                <!-- Bottom Right: Controls -->
+                <div class="absolute bottom-6 right-6 z-10 flex flex-wrap items-center gap-4 justify-end">
+                     
+                     <!-- Alignment Selector -->
+                     <div class="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded-lg border border-gray-100 dark:border-gray-700">
+                        <span class="text-[10px] font-bold uppercase text-gray-400 tracking-wider">Texto</span>
+                        <select onchange="setPrintAlignment(this.value)" class="bg-transparent text-xs font-bold uppercase tracking-wider text-black dark:text-white outline-none cursor-pointer border-none p-0 focus:ring-0">
+                            <option value="justify" ${currentAlign === 'justify' ? 'selected' : ''}>Normal</option>
+                            <option value="left" ${currentAlign === 'left' ? 'selected' : ''}>Corrido</option>
+                            <option value="hyphen" ${currentAlign === 'hyphen' ? 'selected' : ''}>Hifenizado</option>
+                        </select>
+                     </div>
+
+                     <!-- Font Size Slider -->
+                     <div class="flex items-center gap-3 bg-gray-50 dark:bg-gray-800 px-4 py-2 rounded-full border border-gray-100 dark:border-gray-700">
+                        <span class="text-[10px] font-bold uppercase text-gray-400 tracking-wider">Tamanho</span>
+                        <input type="range" min="12" max="25" step="1" value="${currentFontSize}" 
+                            oninput="setPrintFontSize(this.value)"
+                            class="w-20 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer range-sm accent-black dark:accent-white"
+                        >
+                        <span id="fontSizeDisplay" class="text-xs font-mono font-bold w-6 text-right">${currentFontSize}</span>
                      </div>
 
                      <!-- Print Button -->
-                     <button onclick="printApostila()" class="flex items-center gap-2 px-4 py-2 bg-black text-white dark:bg-white dark:text-black hover:opacity-80 rounded-lg transition-all duration-300 text-[10px] font-bold uppercase tracking-widest shadow-md">
+                     <button onclick="printApostila()" class="flex items-center gap-2 px-5 py-2.5 bg-black text-white dark:bg-white dark:text-black hover:opacity-80 rounded-lg transition-all duration-300 text-[10px] font-bold uppercase tracking-widest shadow-md">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
                         IMPRIMIR
                     </button>
@@ -239,7 +257,7 @@ function openApostilaModal(id) {
     // Reset classes
     catEl.className = 'text-[10px] font-sans font-bold uppercase tracking-widest block mb-2';
     if (catConfig) {
-        catEl.classList.add(`text - ${catConfig.color} `);
+        catEl.classList.add(`text-${catConfig.color}`);
     } else {
         catEl.classList.add('text-gray-500');
     }
@@ -253,11 +271,11 @@ function openApostilaModal(id) {
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
-        const sourceHtml = item.source ? `< span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2" > ${item.source}</span > ` : '';
-        const catColorClass = catConfig ? `text - ${catConfig.color} ` : 'text-gray-400';
+        const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
+        const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
 
         breadcrumbEl.innerHTML = `
-        < span class="text-gray-500" > Apostila</span >
+        <span class="text-gray-500">Apostila</span>
             <span class="text-gray-600">›</span>
             <span class="${catColorClass}">${catLabel}</span>
             ${sourceHtml}
@@ -280,7 +298,7 @@ function openApostilaModal(id) {
         const html = item.focusPoints.map(p => {
             const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
             // Note: filterByFocusPoint is global, will switch tab to map. Acceptable behavior.
-            return `< button onclick = "filterByFocusPoint('${p}')" class="${baseClass}" > ${p}</button > `;
+            return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass}">${p}</button>`;
         }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
@@ -315,6 +333,11 @@ function updateApostilaTitle(newTitle) {
         }, 1000);
     }
 }
+
+function setPrintAlignment(val) {
+    STATE.printAlignment = val;
+}
+
 /**
  * Generates the print view (using a print window or printing the formatted content).
  */
@@ -344,7 +367,7 @@ function printApostila() {
         });
     }
 
-    // 2. Scan Items for Keywords (Very simplistic text match)
+    // 2. Scan Items for Keywords (Very simplistic search)
     items.forEach(item => {
         // Check item tags
         if (item.tags) {
@@ -360,7 +383,7 @@ function printApostila() {
             });
         }
 
-        // Also check item "searchKeywords" if available
+        // Search tags logic here (simplified)
         if (item.searchKeywords) {
             item.searchKeywords.forEach(sk => {
                 const skLower = sk.toLowerCase();
@@ -373,47 +396,56 @@ function printApostila() {
 
     // 3. Generate HTML content for Print Window
     // Font Size Logic
-    const fontSizeMap = {
-        'small': '18px',  // Was 12px
-        'medium': '22px', // Was 14px
-        'large': '26px'   // Was 18px
-    };
-    const currentFontSize = STATE.printFontSize || 'medium';
-    const bodyFontSize = fontSizeMap[currentFontSize];
+    // Default to numeric or parse
+    const currentFontSize = parseInt(STATE.printFontSize) || 18;
+    const bodyFontSize = `${currentFontSize}px`;
+
+    // Alignment CSS
+    const alignMode = STATE.printAlignment || 'justify';
+    let alignCss = 'text-align: justify;'; // default
+    if (alignMode === 'left') alignCss = 'text-align: left;';
+    if (alignMode === 'hyphen') alignCss = 'text-align: justify; hyphens: auto; -webkit-hyphens: auto;';
 
     const printContent = `
-        < !DOCTYPE html >
-            <html>
+        <!DOCTYPE html>
+            <html lang="pt-BR">
                 <head>
                     <title>${currentApostila.title}</title>
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700&display=swap');
 
-                        body {font - family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; mx-auto; }
-                        h1, h2, h3 {font - family: 'Cormorant Garamond', serif; }
+                        body {font-family: 'Inter', sans-serif; color: #000; padding: 40px; max-width: 800px; margin: 0 auto;}
+                        h1, h2, h3 {font-family: 'Cormorant Garamond', serif;}
 
-                        .cover {text - align: center; margin-top: 200px; page-break-after: always; }
-                        .cover h1 {font - size: 48px; margin-bottom: 20px; }
-                        .cover p {font - size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; }
+                        .cover {text-align: center; margin-top: 200px; page-break-after: always;}
+                        .cover h1 {font-size: 48px; margin-bottom: 20px;}
+                        .cover p {font-size: 14px; text-transform: uppercase; letter-spacing: 0.2em; color: #666;}
 
-                        .item {margin - bottom: 60px; page-break-inside: avoid; }
-                        .item h2 {font - size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-                        .item .meta {font - size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em; }
-                        .item-content {font - size: ${bodyFontSize}; line-height: 1.8; text-align: justify; }
-                        .item-content p {margin - bottom: 1em; }
+                        .index-section {page-break-after: always; margin-top: 60px;}
+                        .index-header {font-size: 24px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 30px;}
+                        .index-list {list-style: none; padding: 0;}
+                        .index-item {display: flex; margin-bottom: 12px; font-size: 14px; font-family: 'Inter', sans-serif; color: #333;}
+                        .index-num {font-weight: bold; width: 30px; flex-shrink: 0;}
+                        .index-title {border-bottom: 1px dotted #ccc; flex-grow: 1; padding-bottom: 2px;}
 
-                        .glossary-section {page -break-before: always; border-top: 5px solid #000; padding-top: 40px; }
-                        .map-container {position: relative; width: 400px; margin: 0 auto; }
-                        .map-container svg {width: 100%; height: auto; }
+                        .item {margin-bottom: 60px; page-break-inside: avoid;}
+                        .item h2 {font-size: 24px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px;}
+                        .item .meta {font-size: 10px; text-transform: uppercase; color: #666; margin-bottom: 20px; letter-spacing: 0.1em;}
+                        .item-content {font-size: ${bodyFontSize}; line-height: 1.8; ${alignCss}}
+                        .item-content p {margin-bottom: 1em;}
 
-                        .glossary-list {margin - top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
-                        .glossary-item {padding: 10px; background: #f9f9f9; border-left: 2px solid #000; }
-                        .glossary-item strong {display: block; text-transform: uppercase; margin-bottom: 4px; }
+                        .glossary-section {page-break-before: always; border-top: 5px solid #000; padding-top: 40px;}
+                        .map-container {position: relative; width: 400px; margin: 0 auto;}
+                        .map-container svg {width: 100%; height: auto;}
+
+                        .glossary-list {margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px;}
+                        .glossary-item {padding: 10px; background: #f9f9f9; border-left: 2px solid #000;}
+                        .glossary-item strong {display: block; text-transform: uppercase; margin-bottom: 4px;}
 
                         @media print {
-                            @page {margin: 2cm; }
-                        body {-webkit - print - color - adjust: exact; }
-                }
+                            @page {margin: 2cm;}
+                            body {-webkit-print-color-adjust: exact;}
+                        }
                     </style>
                 </head>
                 <body>
@@ -421,6 +453,18 @@ function printApostila() {
                         <h1>${currentApostila.title}</h1>
                         <p>Guia de Estudos Johrei</p>
                         <p style="margin-top: 40px; font-size: 10px;">Gerado em ${new Date().toLocaleDateString('pt-BR')}</p>
+                    </div>
+
+                    <div class="index-section">
+                        <div class="index-header">Índice</div>
+                        <ul class="index-list">
+                            ${items.map((item, idx) => `
+                                <li class="index-item">
+                                    <span class="index-num">${String(idx + 1).padStart(2, '0')}</span>
+                                    <span class="index-title">${item.title}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
                     </div>
 
                     ${items.map(item => `
@@ -441,7 +485,7 @@ function printApostila() {
                     ${mentionedPoints.size > 0 ? generateMapsHtml([...mentionedPoints]) : ''}
 
                     <script>
-                        window.onload = function() {window.print(); }
+                        window.onload = function() {window.print();}
                     </script>
                 </body>
             </html>
@@ -479,7 +523,7 @@ function generateMapsHtml(pointIds) {
     const allPointsIndexed = [...frontPointsIndexed, ...backPointsIndexed];
 
     return `
-        < div class="glossary-section" >
+        <div class="glossary-section">
             <h2 style="text-align: center; margin-bottom: 40px;">Glossário de Pontos Focais</h2>
             
             <div style="display: flex; justify-content: center; gap: 40px;">
@@ -610,9 +654,11 @@ function clearApostila() {
 
 /**
  * Sets the font size for the print view.
- * @param {string} size - 'small', 'medium', 'large'
+ * @param {string|number} size - numeric value or old string values (migration handled)
  */
 function setPrintFontSize(size) {
-    STATE.printFontSize = size;
-    renderApostilaView(); // Re-render to update active button state
+    STATE.printFontSize = parseInt(size);
+    // Update live display
+    const label = document.getElementById('fontSizeDisplay');
+    if (label) label.textContent = `${STATE.printFontSize}px`;
 }

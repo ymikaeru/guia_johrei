@@ -123,6 +123,44 @@ function openModal(i) {
 
     document.body.style.overflow = 'hidden';
 
+    // --- APPLY READING SETTINGS ---
+    // define defaults if missing
+    if (!STATE.modalFontSize) STATE.modalFontSize = 18;
+    if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
+
+    // Apply styles
+    const contentEl = document.getElementById('modalContent');
+    const size = STATE.modalFontSize;
+    const align = STATE.modalAlignment;
+
+    contentEl.style.fontSize = `${size}px`;
+    contentEl.style.lineHeight = '1.8';
+
+    // Force children to inherit (fixes issue where P tags have fixed size from CSS)
+    const children = contentEl.querySelectorAll('p, li, div');
+    children.forEach(child => child.style.fontSize = 'inherit');
+
+    if (align === 'hyphen') {
+        contentEl.style.textAlign = 'justify';
+        contentEl.style.hyphens = 'auto';
+        contentEl.style.webkitHyphens = 'auto';
+    } else {
+        contentEl.style.textAlign = align;
+        contentEl.style.hyphens = 'none';
+        contentEl.style.webkitHyphens = 'none';
+    }
+
+    // Sync UI Controls
+    const slider = document.getElementById('modalFontSlider');
+    if (slider) slider.value = size;
+
+    const display = document.getElementById('modalFontSizeDisplay');
+    if (display) display.textContent = size;
+
+    const select = document.getElementById('modalAlignSelect');
+    if (select) select.value = align;
+
+
     if (searchQuery) {
         setTimeout(() => {
             const highlight = document.querySelector('.search-highlight');
@@ -164,10 +202,40 @@ function navModal(dir) {
     }
 }
 
-// Controle de Fonte
-window.changeFontSize = function (size) {
+// --- MODAL CONTROLS ---
+
+window.setModalFontSize = function (size) {
+    size = parseInt(size);
+    if (size < 12) size = 12;
+    if (size > 25) size = 25;
+
+    STATE.modalFontSize = size;
+
     const content = document.getElementById('modalContent');
-    content.classList.remove('text-sm-mode', 'text-lg-mode');
-    if (size === 'sm') content.classList.add('text-sm-mode');
-    if (size === 'lg') content.classList.add('text-lg-mode');
-};
+    if (content) {
+        content.style.fontSize = `${size}px`;
+        // Force children to inherit
+        const children = content.querySelectorAll('p, li, div');
+        children.forEach(child => child.style.fontSize = 'inherit');
+    }
+
+    const display = document.getElementById('modalFontSizeDisplay');
+    if (display) display.textContent = size;
+}
+
+window.setModalAlignment = function (align) {
+    STATE.modalAlignment = align;
+
+    const content = document.getElementById('modalContent');
+    if (content) {
+        if (align === 'hyphen') {
+            content.style.textAlign = 'justify';
+            content.style.hyphens = 'auto';
+            content.style.webkitHyphens = 'auto';
+        } else {
+            content.style.textAlign = align;
+            content.style.hyphens = 'none';
+            content.style.webkitHyphens = 'none';
+        }
+    }
+}
