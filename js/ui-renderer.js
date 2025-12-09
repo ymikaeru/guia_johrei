@@ -231,10 +231,10 @@ function smoothScrollTo(targetPosition, duration) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
 
-        // Material Design Standard Easing Approximation (easeInOutCubic)
-        // t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+        // Material Design EaseOut (Deceleration)
+        // 1 - (1 - t) ^ 3
         const ease = (t) => {
-            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            return 1 - Math.pow(1 - t, 3);
         };
 
         const run = ease(Math.min(timeElapsed / duration, 1));
