@@ -214,8 +214,8 @@ function toggleMobileBodyFilter(btn) {
         const elementPosition = btn.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
 
-        // Use custom smooth scroll (EaseOutCubic) - Fast start, slow end
-        smoothScrollTo(offsetPosition, 1000);
+        // Use custom smooth scroll (EaseOutSine) - iOS-style
+        smoothScrollTo(offsetPosition, 1200);
     }
 }
 
@@ -234,10 +234,10 @@ function smoothScrollTo(targetPosition, duration) {
         if (startTime === null) startTime = currentTime - PRE_START_MS;
         const timeElapsed = currentTime - startTime;
 
-        // EaseOutQuad (Gentler deceleration, less aggressive)
-        // 1 - (1 - t) ^ 2
+        // EaseOutSine (iOS-style, gentlest deceleration)
+        // sin(t * π / 2)
         const ease = (t) => {
-            return 1 - Math.pow(1 - t, 2);
+            return Math.sin(t * Math.PI / 2);
         };
 
         // Ensure we don't overshoots
