@@ -79,7 +79,7 @@ function renderApostilaView() {
         container.innerHTML = `
             <div class="flex flex-col items-center justify-center h-64 opacity-50">
                 <p class="text-xl font-serif italic text-gray-400">Sua apostila está vazia.</p>
-                <p class="text-sm text-gray-500 mt-2 flex items-center gap-1">Adicione cards clicando no ícone <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg> na listagem.</p>
+                <p class="text-sm text-gray-500 mt-2 flex items-center gap-1">Adicione cards clicando no ícone <svg class="w-4 h-4 inline-block text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg> na listagem.</p>
             </div>
         `;
         return;
