@@ -208,19 +208,45 @@ function toggleMobileBodyFilter(btn) {
     } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
 
-        // Auto-Scroll Logic
+        // Auto-Scroll Logic with Material Easing
         setTimeout(() => {
             const header = document.querySelector('header');
             const headerHeight = header ? header.offsetHeight : 80;
             const elementPosition = btn.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }, 100); // Slight delay to ensure DOM update
+            // Use custom smooth scroll
+            smoothScrollTo(offsetPosition, 600); // 600ms duration
+        }, 100);
     }
+}
+
+// Custom Material Easing Scroll Function
+function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+
+        // Material Design Standard Easing Approximation (easeInOutCubic)
+        // t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+        const ease = (t) => {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+
+        const run = ease(Math.min(timeElapsed / duration, 1));
+
+        window.scrollTo(0, startPosition + (distance * run));
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    requestAnimationFrame(animation);
 }
 
 function updateUIForTab(tabId) {
