@@ -142,6 +142,23 @@ function renderBodyMapViews() {
         </div>
 
         <!-- Mobile Maps Area -->
+        <div class="w-full lg:hidden mb-6 px-4">
+             <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg overflow-hidden">
+                <button onclick="const el = document.getElementById('mobileBodyFilterList'); el.classList.toggle('hidden');" 
+                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
+                    <span>Filtrar por Região</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="mobileBodyFilterList" class="hidden border-t border-gray-100 dark:border-gray-800 max-h-64 overflow-y-auto">
+                     <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
+                        -- Todos os pontos --
+                    </div>
+                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+                </div>
+             </div>
+        </div>
+
             <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         ${views.map((view, i) => {
         const visibilityClass = i === 0 ? 'block' : 'hidden'; // Only first visible on mobile initial
