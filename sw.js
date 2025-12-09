@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-johrei-v1';
+const CACHE_NAME = 'guia-johrei-v2';
 
 // Assets that MUST be cached immediately for the app to start
 const CORE_ASSETS = [
