@@ -145,10 +145,10 @@ function renderBodyMapViews() {
         <!-- Mobile Maps Area -->
         <div class="w-full lg:hidden mb-6 px-4 relative z-[60]">
              <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg shadow-sm relative">
-                <button onclick="const el = document.getElementById('mobileBodyFilterList'); el.classList.toggle('hidden');" 
+                <button onclick="toggleMobileBodyFilter(this)" 
                     class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
                     <span>Filtrar por Região</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg class="w-4 h-4 transition-transform duration-200" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
                     style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
@@ -191,6 +191,36 @@ function renderBodyMapViews() {
     `;
 
     map.innerHTML = html;
+}
+
+// New Helper for Mobile Filter Scroll
+function toggleMobileBodyFilter(btn) {
+    const list = document.getElementById('mobileBodyFilterList');
+    const icon = document.getElementById('mobileFilterIcon');
+
+    if (!list) return;
+
+    list.classList.toggle('hidden');
+
+    // Rotate Icon
+    if (list.classList.contains('hidden')) {
+        if (icon) icon.style.transform = 'rotate(0deg)';
+    } else {
+        if (icon) icon.style.transform = 'rotate(180deg)';
+
+        // Auto-Scroll Logic
+        setTimeout(() => {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 80;
+            const elementPosition = btn.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }, 100); // Slight delay to ensure DOM update
+    }
 }
 
 function updateUIForTab(tabId) {
