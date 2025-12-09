@@ -14,7 +14,10 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 4
+    "order": 4,
+    "focusPoints": [
+      "Mãos"
+    ]
   },
   {
     "id": "explicacao_01_5",
@@ -32,7 +35,19 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 5
+    "order": 5,
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Diafragma",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_01_9",
@@ -48,7 +63,10 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 9
+    "order": 9,
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_01_10",
@@ -84,7 +102,17 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 11
+    "order": 11,
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Garganta",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Pernas",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_01_13",
@@ -126,7 +154,10 @@
       "Purificação"
     ],
     "category": "fundamentos",
-    "order": 17
+    "order": 17,
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_01_18",
@@ -143,7 +174,22 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 18
+    "order": 18,
+    "focusPoints": [
+      "Amígdalas",
+      "Bulbo",
+      "Cabeça",
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_01_19",
@@ -159,7 +205,17 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 19
+    "order": 19,
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Nariz",
+      "Occipital",
+      "Pele",
+      "Pernas"
+    ]
   },
   {
     "id": "explicacao_01_20",
@@ -172,7 +228,12 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 20
+    "order": 20,
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Pernas"
+    ]
   },
   {
     "id": "explicacao_01_21",
@@ -187,7 +248,15 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 21
+    "order": 21,
+    "focusPoints": [
+      "Baixo Ventre",
+      "Frontal",
+      "Mãos",
+      "Occipital",
+      "Pele",
+      "Pernas"
+    ]
   },
   {
     "id": "explicacao_01_22",
@@ -213,7 +282,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 23
+    "order": 23,
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "explicacao_01_24",
@@ -226,7 +298,11 @@
       "Purificação"
     ],
     "category": "fundamentos",
-    "order": 24
+    "order": 24,
+    "focusPoints": [
+      "Cabeça",
+      "Pele"
+    ]
   },
   {
     "id": "explicacao_02_24",
@@ -248,7 +324,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 25
+    "order": 25,
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_26",
@@ -262,7 +341,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 26
+    "order": 26,
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_27",
@@ -292,7 +374,25 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 28
+    "order": 28,
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Estômago",
+      "Intestino",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pele",
+      "Peritônio",
+      "Pernas",
+      "Pescoço",
+      "Região Renal",
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "id": "explicacao_02_29",
@@ -305,7 +405,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 29
+    "order": 29,
+    "focusPoints": [
+      "Mãos"
+    ]
   },
   {
     "id": "explicacao_02_30",
@@ -365,7 +468,16 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 33
+    "order": 33,
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_02_34",
@@ -435,7 +547,17 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 38
+    "order": 38,
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Frontal",
+      "Olhos",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_39",
@@ -465,7 +587,11 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 40
+    "order": 40,
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_41",
@@ -507,7 +633,12 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 43
+    "order": 43,
+    "focusPoints": [
+      "Membros",
+      "Mãos",
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_44",
@@ -524,7 +655,17 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 44
+    "order": 44,
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_45",
@@ -540,7 +681,18 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 45
+    "order": 45,
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Glândula Parótida",
+      "Mãos",
+      "Ombros",
+      "Ouvidos",
+      "Pernas",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "id": "explicacao_02_46",
@@ -555,7 +707,13 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 46
+    "order": 46,
+    "focusPoints": [
+      "Baixo Ventre",
+      "Intestino",
+      "Pernas",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_47",
@@ -571,7 +729,10 @@
       "Johrei"
     ],
     "category": "fundamentos",
-    "order": 47
+    "order": 47,
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_48",
@@ -586,7 +747,13 @@
       "Purificação"
     ],
     "category": "fundamentos",
-    "order": 48
+    "order": 48,
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_02_49",
@@ -599,7 +766,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 49
+    "order": 49,
+    "focusPoints": [
+      "Mãos"
+    ]
   },
   {
     "id": "explicacao_02_50",
@@ -613,7 +783,10 @@
       "Espiritual"
     ],
     "category": "fundamentos",
-    "order": 50
+    "order": 50,
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_02_51",
@@ -629,6 +802,9 @@
       "Saúde"
     ],
     "category": "fundamentos",
-    "order": 51
+    "order": 51,
+    "focusPoints": [
+      "Olhos"
+    ]
   }
 ]

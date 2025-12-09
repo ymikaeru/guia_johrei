@@ -40,7 +40,11 @@
       "Saúde"
     ],
     "category": "contexto",
-    "order": 2
+    "order": 2,
+    "focusPoints": [
+      "Fígado",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_01_3",
@@ -57,7 +61,12 @@
       "Saúde"
     ],
     "category": "contexto",
-    "order": 3
+    "order": 3,
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Olhos"
+    ]
   },
   {
     "id": "explicacao_01_6",
@@ -81,7 +90,10 @@
       "Espiritual"
     ],
     "category": "contexto",
-    "order": 7
+    "order": 7,
+    "focusPoints": [
+      "Membros"
+    ]
   },
   {
     "id": "explicacao_01_8",
@@ -97,7 +109,10 @@
       "Johrei"
     ],
     "category": "contexto",
-    "order": 8
+    "order": 8,
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "explicacao_01_12",
@@ -114,7 +129,13 @@
       "Saúde"
     ],
     "category": "contexto",
-    "order": 12
+    "order": 12,
+    "focusPoints": [
+      "Estômago",
+      "Membros",
+      "Olhos",
+      "Pele"
+    ]
   },
   {
     "id": "explicacao_01_15",
@@ -128,7 +149,15 @@
       "Espiritual"
     ],
     "category": "contexto",
-    "order": 15
+    "order": 15,
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ouvidos",
+      "Pele",
+      "Pernas"
+    ]
   },
   {
     "id": "explicacao_01_16",
@@ -145,6 +174,9 @@
       "Saúde"
     ],
     "category": "contexto",
-    "order": 16
+    "order": 16,
+    "focusPoints": [
+      "Pele"
+    ]
   }
 ]

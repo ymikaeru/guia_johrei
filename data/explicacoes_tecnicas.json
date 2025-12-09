@@ -10,7 +10,15 @@
       "Johrei"
     ],
     "category": "tecnicas",
-    "order": 51
+    "order": 51,
+    "focusPoints": [
+      "Cabeça",
+      "Diafragma",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_03_52",
@@ -24,7 +32,11 @@
       "Espiritual"
     ],
     "category": "tecnicas",
-    "order": 52
+    "order": 52,
+    "focusPoints": [
+      "Pescoço",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_03_53",
@@ -38,7 +50,10 @@
       "Espiritual"
     ],
     "category": "tecnicas",
-    "order": 53
+    "order": 53,
+    "focusPoints": [
+      "Fígado"
+    ]
   },
   {
     "id": "explicacao_03_54",
@@ -53,7 +68,10 @@
       "Johrei"
     ],
     "category": "tecnicas",
-    "order": 54
+    "order": 54,
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_55",
@@ -70,7 +88,21 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 55
+    "order": 55,
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Fígado",
+      "Glândula Parótida",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_03_56",
@@ -86,7 +118,14 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 56
+    "order": 56,
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_03_57",
@@ -102,7 +141,21 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 57
+    "order": 57,
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Garganta",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Peritônio",
+      "Pernas",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_03_58",
@@ -118,7 +171,13 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 58
+    "order": 58,
+    "focusPoints": [
+      "Estômago",
+      "Pernas",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_03_59",
@@ -133,7 +192,11 @@
       "Johrei"
     ],
     "category": "tecnicas",
-    "order": 59
+    "order": 59,
+    "focusPoints": [
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_03_60",
@@ -145,7 +208,12 @@
       "Johrei"
     ],
     "category": "tecnicas",
-    "order": 60
+    "order": 60,
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_61",
@@ -156,7 +224,12 @@
       "Toxinas"
     ],
     "category": "tecnicas",
-    "order": 61
+    "order": 61,
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_62",
@@ -171,7 +244,17 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 62
+    "order": 62,
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Intestino",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_03_63",
@@ -182,7 +265,10 @@
       "Purificação"
     ],
     "category": "tecnicas",
-    "order": 63
+    "order": 63,
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_64",
@@ -193,7 +279,10 @@
       "Doenças"
     ],
     "category": "tecnicas",
-    "order": 64
+    "order": 64,
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_65",
@@ -204,7 +293,11 @@
       "Toxinas"
     ],
     "category": "tecnicas",
-    "order": 65
+    "order": 65,
+    "focusPoints": [
+      "Amígdalas",
+      "Ombros"
+    ]
   },
   {
     "id": "explicacao_03_66",
@@ -215,7 +308,15 @@
       "Pontos Vitais"
     ],
     "category": "tecnicas",
-    "order": 66
+    "order": 66,
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "id": "explicacao_03_67",
@@ -228,7 +329,16 @@
       "Doenças"
     ],
     "category": "tecnicas",
-    "order": 67
+    "order": 67,
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_03_68",
@@ -237,7 +347,13 @@
     "source": "Explicação 03",
     "tags": [],
     "category": "tecnicas",
-    "order": 68
+    "order": 68,
+    "focusPoints": [
+      "Glândula Parótida",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
+    ]
   },
   {
     "id": "explicacao_03_69",
@@ -294,7 +410,11 @@
       "Saúde"
     ],
     "category": "tecnicas",
-    "order": 72
+    "order": 72,
+    "focusPoints": [
+      "Estômago",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_03_73",

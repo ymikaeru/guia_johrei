@@ -24,6 +24,9 @@
     "searchKeywords": [
       "Dor",
       "Olhos"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -44,6 +47,9 @@
       "Dor",
       "Olhos",
       "Coração"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -115,6 +121,24 @@
       "Mãos",
       "Intestinos",
       "Desconforto"
+    ],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Estômago",
+      "Intestino",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pele",
+      "Peritônio",
+      "Pernas",
+      "Pescoço",
+      "Região Renal",
+      "Rins",
+      "Útero"
     ]
   },
   {
@@ -132,6 +156,9 @@
       "Mãos",
       "Pés",
       "Dor"
+    ],
+    "focusPoints": [
+      "Mãos"
     ]
   },
   {
@@ -216,6 +243,15 @@
       "Região Occipital",
       "Olhos",
       "Pescoço"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -324,7 +360,17 @@
       "Joelhos",
       "Dor"
     ],
-    "johrei_points": "Locais para Ministração de Johrei: O inchaço tende a ocorrer principalmente devido à atrofia renal. Se for sistêmico, ministra-se principalmente na região renal nas costas; se for localizado, no próprio local. Os suores noturnos ocorrem quando as toxinas são dissolvidas pelo calor, liquefazem-se e exsudam pelos capilares. Pessoas que suam localmente geralmente o fazem apenas de um lado, indicando"
+    "johrei_points": "Locais para Ministração de Johrei: O inchaço tende a ocorrer principalmente devido à atrofia renal. Se for sistêmico, ministra-se principalmente na região renal nas costas; se for localizado, no próprio local. Os suores noturnos ocorrem quando as toxinas são dissolvidas pelo calor, liquefazem-se e exsudam pelos capilares. Pessoas que suam localmente geralmente o fazem apenas de um lado, indicando",
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Frontal",
+      "Olhos",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_15",
@@ -368,6 +414,10 @@
       "Olhos",
       "Cérebro",
       "Mãos"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -426,6 +476,11 @@
       "Vômito",
       "Mãos",
       "Resfriado"
+    ],
+    "focusPoints": [
+      "Membros",
+      "Mãos",
+      "Olhos"
     ]
   },
   {
@@ -465,7 +520,17 @@
       "Dentes",
       "Mãos"
     ],
-    "johrei_points": "Locais para Ministração de Johrei: Para melancolia, ministrar no pescoço, ombros e especialmente na região renal. Para paralisia nos braços/dedos, na base do braço e no local afetado; nas pernas, na região inguinal, coxas e local afetado. Para cãibras nos membros, focar na cabeça, ombros e local afetado. Muitas vezes a causa está nos ombros; dissolvendo a rigidez ali, as cãibras nos membros alivia"
+    "johrei_points": "Locais para Ministração de Johrei: Para melancolia, ministrar no pescoço, ombros e especialmente na região renal. Para paralisia nos braços/dedos, na base do braço e no local afetado; nas pernas, na região inguinal, coxas e local afetado. Para cãibras nos membros, focar na cabeça, ombros e local afetado. Muitas vezes a causa está nos ombros; dissolvendo a rigidez ali, as cãibras nos membros alivia",
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_21",
@@ -499,7 +564,18 @@
       "Testa",
       "Zumbido"
     ],
-    "johrei_points": "Locais para Ministração de Johrei: A tosse funciona como uma bomba para expelir o catarro. Ela pode ser provocada pela dissolução de toxinas localizadas no cérebro, face, dedos das mãos e pés, região inguinal, etc. Dentre esses, o caso mais frequente é a dissolução de toxinas nos gânglios linfáticos do pescoço. O Johrei deve ser aplicado nas causas citadas acima, focando especialmente nos gânglios\n\nJohrei na região inguinal de um discípulo, que era doutor em medicina. A cada vez que o fazia, ele tossia e expectorava. Intrigado, o doutor questionou: \"Supondo que o sangue tóxico seja dissolvido e eliminado, é incompreensível por quais vasos ele passaria para se mover instantaneamente até a faringe, causando a tosse\". Expliquei-lhe da seguinte forma: \"Na ação fisiológica do corpo humano, ao eli"
+    "johrei_points": "Locais para Ministração de Johrei: A tosse funciona como uma bomba para expelir o catarro. Ela pode ser provocada pela dissolução de toxinas localizadas no cérebro, face, dedos das mãos e pés, região inguinal, etc. Dentre esses, o caso mais frequente é a dissolução de toxinas nos gânglios linfáticos do pescoço. O Johrei deve ser aplicado nas causas citadas acima, focando especialmente nos gânglios\n\nJohrei na região inguinal de um discípulo, que era doutor em medicina. A cada vez que o fazia, ele tossia e expectorava. Intrigado, o doutor questionou: \"Supondo que o sangue tóxico seja dissolvido e eliminado, é incompreensível por quais vasos ele passaria para se mover instantaneamente até a faringe, causando a tosse\". Expliquei-lhe da seguinte forma: \"Na ação fisiológica do corpo humano, ao eli",
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Glândula Parótida",
+      "Mãos",
+      "Ombros",
+      "Ouvidos",
+      "Pernas",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "id": "explicacao_02_22",
@@ -525,7 +601,13 @@
       "Dor",
       "Intestinos"
     ],
-    "johrei_points": "Locais para Ministração de Johrei: Para sensibilidade ao frio: nos quadris, foca-se na região renal; no baixo ventre, na região renal e no próprio baixo ventre; nas pernas, na região renal, glândulas inguinais e coxas; no peito do pé, na área afetada, tornozelo e sola do pé; nas pontas dos dedos, ministra-se ao redor do pulso. Para constipação: ministra-se do entorno do umbigo até o baixo ventre."
+    "johrei_points": "Locais para Ministração de Johrei: Para sensibilidade ao frio: nos quadris, foca-se na região renal; no baixo ventre, na região renal e no próprio baixo ventre; nas pernas, na região renal, glândulas inguinais e coxas; no peito do pé, na área afetada, tornozelo e sola do pé; nas pontas dos dedos, ministra-se ao redor do pulso. Para constipação: ministra-se do entorno do umbigo até o baixo ventre.",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Intestino",
+      "Pernas",
+      "Região Renal"
+    ]
   },
   {
     "id": "explicacao_02_23",
@@ -543,6 +625,9 @@
     "order": 23,
     "searchKeywords": [
       "Pressão Alta",
+      "Olhos"
+    ],
+    "focusPoints": [
       "Olhos"
     ]
   },
@@ -570,6 +655,12 @@
       "Coração",
       "Pescoço",
       "Tontura"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -588,6 +679,9 @@
       "Rins",
       "Dor",
       "Coração"
+    ],
+    "focusPoints": [
+      "Mãos"
     ]
   },
   {
@@ -606,6 +700,9 @@
       "Rins",
       "Olhos",
       "Coração"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -625,6 +722,9 @@
     "searchKeywords": [
       "Coração",
       "Dentes",
+      "Olhos"
+    ],
+    "focusPoints": [
       "Olhos"
     ]
   }

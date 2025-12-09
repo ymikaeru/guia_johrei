@@ -52,6 +52,10 @@
       "Tuberculose",
       "Rins",
       "Câncer"
+    ],
+    "focusPoints": [
+      "Fígado",
+      "Rins"
     ]
   },
   {
@@ -79,6 +83,11 @@
       "Diarreia",
       "Resfriado",
       "Garganta"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Olhos"
     ]
   },
   {
@@ -100,6 +109,9 @@
       "Mãos",
       "Rins",
       "Dor"
+    ],
+    "focusPoints": [
+      "Mãos"
     ]
   },
   {
@@ -146,6 +158,18 @@
       "Dor",
       "Mãos",
       "Desconforto"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Diafragma",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -173,6 +197,9 @@
       "Rins",
       "Dentes",
       "Coração"
+    ],
+    "focusPoints": [
+      "Membros"
     ]
   },
   {
@@ -196,6 +223,9 @@
       "Dor",
       "Câncer",
       "Resfriado"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -217,6 +247,9 @@
       "Braços",
       "Olhos",
       "Coração"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -280,6 +313,16 @@
       "Dor",
       "Intestinos",
       "Resfriado"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Garganta",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -311,6 +354,12 @@
       "Mãos",
       "Coração",
       "Testa"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Membros",
+      "Olhos",
+      "Pele"
     ]
   },
   {
@@ -375,6 +424,14 @@
       "Dor",
       "Olhos",
       "Mãos"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ouvidos",
+      "Pele",
+      "Pernas"
     ]
   },
   {
@@ -401,6 +458,9 @@
       "Febre",
       "Dor",
       "Diarreia"
+    ],
+    "focusPoints": [
+      "Pele"
     ]
   },
   {
@@ -420,6 +480,9 @@
       "Febre",
       "Dor",
       "Suor Noturno"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -459,6 +522,21 @@
       "Boca",
       "Dor",
       "Resfriado"
+    ],
+    "focusPoints": [
+      "Amígdalas",
+      "Bulbo",
+      "Cabeça",
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
     ]
   },
   {
@@ -500,6 +578,16 @@
       "Dor",
       "Mãos",
       "Resfriado"
+    ],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Nariz",
+      "Occipital",
+      "Pele",
+      "Pernas"
     ]
   },
   {
@@ -525,6 +613,11 @@
       "Mãos",
       "Resfriado",
       "Zumbido"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Pernas"
     ]
   },
   {
@@ -559,6 +652,14 @@
       "Asma",
       "Resfriado",
       "Edema"
+    ],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Frontal",
+      "Mãos",
+      "Occipital",
+      "Pele",
+      "Pernas"
     ]
   },
   {
@@ -601,6 +702,9 @@
       "Coração",
       "Resfriado",
       "Paralisia"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -623,6 +727,10 @@
       "Cérebro",
       "Pressão Alta",
       "Coração"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pele"
     ]
   }
 ]
