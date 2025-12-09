@@ -235,6 +235,7 @@ function smoothScrollTo(targetPosition, duration) {
             return 1 - Math.pow(1 - t, 3);
         };
 
+        // Ensure we don't overshoots
         const run = ease(Math.min(timeElapsed / duration, 1));
 
         window.scrollTo(0, startPosition + (distance * run));
@@ -244,7 +245,8 @@ function smoothScrollTo(targetPosition, duration) {
         }
     }
 
-    requestAnimationFrame(animation);
+    // Start immediately in the same frame (Synchronous start)
+    animation(performance.now());
 }
 
 function updateUIForTab(tabId) {
