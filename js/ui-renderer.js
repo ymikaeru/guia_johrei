@@ -143,7 +143,7 @@ function renderBodyMapViews() {
 
         <!-- Mobile Maps Area -->
         <!-- Mobile Maps Area -->
-        <div class="w-full lg:hidden mb-6 px-4 relative z-[60]">
+        <div class="w-full lg:hidden mb-6 px-4 relative z-[50]">
              <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg shadow-sm relative">
                 <button onclick="toggleMobileBodyFilter(this)" 
                     class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
