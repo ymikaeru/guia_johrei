@@ -142,7 +142,11 @@
     "id": "pf8",
     "title": "Miopia",
     "content": "Devido à atrofia renal, as toxinas que avançam em direção à cabeça solidificam-se também nas proximidades do bulbo raquidiano, comprimindo os vasos que irrigam o globo ocular, causando anemia no olho. Trata-se, portanto, de uma desnutrição ocular que enfraquece a visão, impedindo que se enxergue ao longe. Eis a causa da miopia.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Bulbo",
+      "Bulbo Raquidiano",
+      "Cabeça"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Interescapular",
@@ -200,7 +204,9 @@
     "id": "pf11",
     "title": "Catarata e Glaucoma",
     "content": "Existem a Catarata (pus branco), o Glaucoma (pus verde/azulado) e a Amaurose (pus negro), sendo esta última considerada a mais grave. A catarata é constituída de pus branco; o glaucoma, de pus verde; e a amaurose, de sangue tóxico.\n\nA catarata é a de cura mais fácil por ser o pus branco o de natureza mais fraca. O verde é mais maligno, e o sangue tóxico é ainda pior. A cegueira ocorre porque as toxinas se acumulam no fundo do olho, bloqueando o nervo óptico.\n\nÉ preciso saber algo sobre os olhos: quando o globo ocular está congestionado e vermelho, isso não é sangue, mas sim pus. Exclusivamente no caso dos olhos, quando o pus branco se acumula, ele apresenta uma cor avermelhada. À medida que o pus é expelido, a vermelhidão desaparece.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Olhos"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
@@ -239,7 +245,11 @@
     "id": "pf13",
     "title": "Conjuntivite",
     "content": "Também conhecida como oftalmia, apresenta o globo ocular extremamente avermelhado, com transbordamento de remela e lágrimas. A causa é a eliminação, através do globo ocular, das toxinas estagnadas na região frontal pela ação purificadora.\n\nTambém conhecida como oftalmia, apresenta o globo ocular extremamente avermelhado, com transbordamento de remela e lágrimas. A causa é a eliminação, através do globo ocular, das toxinas estagnadas na região frontal pela ação purificadora.\n\nPessoas com problemas nasais possuem, invariavelmente, acúmulo de toxinas que se estende da região occipital para baixo, localizando-se exatamente na parte posterior do nariz. Portanto, basta ministrar Johrei nessa área.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Frontal",
+      "Nariz",
+      "Occipital"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Nervoso e Cabeça",
@@ -276,7 +286,9 @@
     "id": "pf16",
     "title": "Rinite Hipertrófica",
     "content": "Ocorre devido às toxinas contidas na secreção nasal, que irritam a mucosa das narinas. Isso gera feridas, dor e febre, causando o ressecamento constante do nariz. Ministrando Johrei focado no nariz e arredores, as toxinas são eliminadas.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Nariz"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Arredores Do Bulbo",
@@ -357,8 +369,9 @@
   {
     "id": "pf21",
     "title": "Amigdalite",
-    "content": "Trata-se de uma ação purificadora extremamente simples: as toxinas próximas às amígdalas acumulam-se e solidificam-se nas próprias amígdalas com o passar do tempo. A febre alta dissolve essas toxinas, que rompem a mucosa e são expelidas.\n\nTornou-se senso comum remover as amígdalas para curar radicalmente a amigdalite. No entanto, teorias acadêmicas recentes reconhecem que as amígdalas são preciosas e que não se deve removê-las, pois constatou-se que sua extração causa efeitos adversos em outras áreas. É gratificante ver que a tese que defendo há anos começa a ser aceita.\n\nExplicarei a causa da amigdalite sob a ótica da função dessas glândulas. Em qualquer ser humano, as toxinas da parte superior do corpo tendem a concentrar-se nas glândulas linfáticas cervicais. Quase não há quem não possua algum acúmulo, grande ou pequeno, nessa região.\n\nEssas toxinas acumuladas buscam uma saída, dissolvendo-se aos poucos e solidificando-se novamente. Como as amígdalas estão ali, ao atingirem certo grau de solidificação, surge a febre alta para dissolvê-las, criando-se orifícios naturais para a eliminação. Portanto, as amígdalas podem ser consideradas o dreno das toxinas da parte superior do corpo. Se elas forem removidas, as toxinas serão forçadas a acumular-se em outros lugares.\n\nIsso se tornará a causa de neurastenia, otite média, dores de dente, doenças nasais, entre outras. No fim, sacrifica-se o todo para resolver um problema local. De fato, nos primeiros anos após a remoção, o paciente parece melhorar, pois não pega resfriados, mas com o passar do tempo, surgem diversas outras enfermidades.\n\nTornou-se senso comum no mundo remover as amígdalas com o objetivo de curar radicalmente a amigdalite. No entanto, teorias acadêmicas recentes passaram a reconhecer que as amígdalas são preciosas e que não se deve removê-las. Constatou-se que sua extração causa efeitos adversos em outras áreas. É gratificante ver que a tese que defendo há anos começa a ser aceita; minha satisfação é imensa.\n\nExplicarei a causa da amigdalite sob a ótica da função dessas glândulas. Em qualquer ser humano, as toxinas da parte superior do corpo tendem a concentrar-se nas glândulas linfáticas do pescoço. Quase não há quem não possua algum acúmulo, grande ou pequeno, nessa região.\n\nEssas toxinas acumuladas buscam uma saída, dissolvendo-se aos poucos e solidificando-se novamente. Como as amígdalas estão ali, ao atingirem certo grau de solidificação, surge a febre alta para dissolvê-las, criando-se orifícios naturais para a eliminação. Portanto, as amígdalas podem ser consideradas o dreno das toxinas da parte superior do corpo. Se elas forem removidas, as toxinas serão forçadas a acumular-se em outros lugares.\n\nIsso se tornará a causa de neurastenia, otite média, dores de dente, doenças nasais, entre outras. No fim, mata-se o inseto pequeno para salvar o grande (sacrifica-se o todo por uma parte). Aparentemente há eficácia, pois nos anos seguintes à remoção não se contraem resfriados, mas com o passar do tempo surgem diversas outras doenças. Como a causa é desconhecida, atribuem-se diagnósticos aleatórios. （文明の創造　扁桃腺炎）\n\n6. Face",
+    "content": "Trata-se de uma ação purificadora extremamente simples: as toxinas próximas às amígdalas acumulam-se e solidificam-se nas próprias amígdalas com o passar do tempo. A febre alta dissolve essas toxinas, que rompem a mucosa e são expelidas.\n\nTornou-se senso comum remover as amígdalas para curar radicalmente a amigdalite. No entanto, teorias acadêmicas recentes reconhecem que as amígdalas são preciosas e que não se deve removê-las, pois constatou-se que sua extração causa efeitos adversos em outras áreas. É gratificante ver que a tese que defendo há anos começa a ser aceita.\n\nExplicarei a causa da amigdalite sob a ótica da função dessas glândulas. Em qualquer ser humano, as toxinas da parte superior do corpo tendem a concentrar-se nas glândulas linfáticas cervicais. Quase não há quem não possua algum acúmulo, grande ou pequeno, nessa região.\n\nEssas toxinas acumuladas buscam uma saída, dissolvendo-se aos poucos e solidificando-se novamente. Como as amígdalas estão ali, ao atingirem certo grau de solidificação, surge a febre alta para dissolvê-las, criando-se orifícios naturais para a eliminação. Portanto, as amígdalas podem ser consideradas o dreno das toxinas da parte superior do corpo. Se elas forem removidas, as toxinas serão forçadas a acumular-se em outros lugares.\n\nIsso se tornará a causa de neurastenia, otite média, dores de dente, doenças nasais, entre outras. No fim, sacrifica-se o todo para resolver um problema local. De fato, nos primeiros anos após a remoção, o paciente parece melhorar, pois não pega resfriados, mas com o passar do tempo, surgem diversas outras enfermidades.\n\nTornou-se senso comum no mundo remover as amígdalas com o objetivo de curar radicalmente a amigdalite. No entanto, teorias acadêmicas recentes passaram a reconhecer que as amígdalas são preciosas e que não se deve removê-las. Constatou-se que sua extração causa efeitos adversos em outras áreas. É gratificante ver que a tese que defendo há anos começa a ser aceita; minha satisfação é imensa.\n\nExplicarei a causa da amigdalite sob a ótica da função dessas glândulas. Em qualquer ser humano, as toxinas da parte superior do corpo tendem a concentrar-se nas glândulas linfáticas do pescoço. Quase não há quem não possua algum acúmulo, grande ou pequeno, nessa região.\n\nEssas toxinas acumuladas buscam uma saída, dissolvendo-se aos poucos e solidificando-se novamente. Como as amígdalas estão ali, ao atingirem certo grau de solidificação, surge a febre alta para dissolvê-las, criando-se orifícios naturais para a eliminação. Portanto, as amígdalas podem ser consideradas o dreno das toxinas da parte superior do corpo. Se elas forem removidas, as toxinas serão forçadas a acumular-se em outros lugares.\n\nIsso se tornará a causa de neurastenia, otite média, dores de dente, doenças nasais, entre outras. No fim, mata-se o inseto pequeno para salvar o grande (sacrifica-se o todo por uma parte). Aparentemente há eficácia, pois nos anos seguintes à remoção não se contraem resfriados, mas com o passar do tempo surgem diversas outras doenças. Como a causa é desconhecida, atribuem-se diagnósticos aleatórios. （文明の創造　扁桃腺炎）",
     "focusPoints": [
+      "Face",
       "Glândulas Linfáticas Cervicais"
     ],
     "source": "Estudos Específicos 01",
@@ -461,7 +474,9 @@
     "id": "pf28",
     "title": "Insuficiência Cardíaca",
     "content": "É o estado em que a ação de bombeamento do coração enfraquece, tornando-se incapaz de enviar a quantidade de sangue necessária aos diversos órgãos.\n\nA insuficiência cardíaca aguda ocorre por infarto do miocárdio e possui alta taxa de mortalidade. A insuficiência cardíaca congestiva desenvolve-se gradualmente devido a doenças valvulares ou hipertensão; a congestão incha o fígado, diminui a urina e causa edemas.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Fígado"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Interescapular",
@@ -557,7 +572,9 @@
     "id": "pf34",
     "title": "Pleurisia",
     "content": "Como diz a medicina, é o acúmulo de água entre as pleuras que envolvem o pulmão (pleurisia úmida). Quando há pus, chama-se pleurisia purulenta (empiema); quando não há líquido, mas as membranas atritam causando dor, chama-se pleurisia seca. A úmida pode ser causada por pancadas no peito ou esforço com os braços erguidos, mas também surge sem causa aparente. A água que se acumula entre as membranas é, evidentemente, urina.\n\nA pleurisia úmida inicia-se com febre alta e dor no peito, que piora ao respirar fundo. Quando a água se acumula em grande quantidade, a dor cessa, pois as membranas deixam de se tocar. A excreção de urina diminui. Características específicas são a sonolência e suores noturnos; estes suores são benéficos, pois representam a água acumulada saindo pela pele.\n\nNa pleurisia purulenta, o pus infiltra-se no pulmão e sai como escarro.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Região Renal Nas Costas",
@@ -575,7 +592,9 @@
     "id": "pf35",
     "title": "Asma",
     "content": "Existem basicamente dois tipos: asma brônquica e asma cardíaca (atualmente chamada de alérgica).\n\nComeçarei pela cardíaca. Inicialmente, toxinas medicamentosas solidificam-se na parte externa do diafragma. Quando ocorre a purificação, a febre leve as dissolve, tornando-as líquidas. Elas tentam infiltrar-se no pulmão para sair como escarro, mas devido à distância entre o diafragma e o pulmão, ou à espessura da pleura, a infiltração é difícil. O pulmão, então, expande-se ao máximo tentando aspirar essas toxinas.\n\nDevido a esse movimento violento, a capacidade fundamental de aspirar o ar fica comprometida, gerando sufocamento. Quando o líquido tóxico consegue entrar no pulmão e sair como escarro junto com a tosse, o ataque alivia temporariamente. Diz-se que ter pneumonia traz alívio temporário à asma porque a febre alta da pneumonia dissolve as solidificações, que saem como escarro.\n\nA prova de que essa teoria está correta é que, invariavelmente, encontra-se solidificação na região do diafragma em asmáticos cardíacos.\n\nQuanto à asma brônquica, as toxinas estão solidificadas próximas às costelas. Ao dissolverem-se pouco a pouco, o pulmão tenta aspirá-las, gerando uma ação de bombeamento violenta: a tosse. Isso expele o escarro e traz alívio. Quanto maior a quantidade de escarro expelida, mais rápida será a cura.",
-    "focusPoints": [],
+    "focusPoints": [
+      "diafragma"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Axilas",
@@ -638,7 +657,9 @@
     "id": "pf40",
     "title": "Gastroptose (Estômago Caído)",
     "content": "A causa é o enfraquecimento do estômago devido à ingestão contínua de digestivos e de alimentos moles. Perdendo a tensão, o estômago relaxa e cai. É uma \"doença de fabricação humana\".",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Digestivo",
@@ -707,7 +728,11 @@
     "id": "pf48",
     "title": "Nefrite e Pielite",
     "content": "O acúmulo de pus aquoso ao redor dos rins gera febre pela ação purificadora. Isso é chamado de nefrite ou pielite. Os sintomas da pielite são dor na região renal, inchaço e febre; caracteristicamente, perde-se a força nas pernas, tornando-se impossível caminhar.\n\nHá dor intensa acima do osso do quadril, em um dos lados, acompanhada de febre alta. Embora haja muita proteína na urina, é relativamente fácil de curar.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pernas",
+      "Região Renal",
+      "Rins"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Ombros",
@@ -801,7 +826,10 @@
     "id": "pf55",
     "title": "Câncer de Estômago",
     "content": "As toxinas do corpo buscam constantemente concentrar-se em algum lugar pela ação de purificação natural. Essa concentração ocorre nas partes de maior atividade nervosa (movimento). Na juventude, a atividade geral dispersa as toxinas pelos membros.\n\nNa velhice, com a falta de exercícios, as toxinas tendem a concentrar-se numa única parte. Como pulmões e coração trabalham menos, a concentração ocorre inevitavelmente no estômago. Sendo essa toxina um pus aquoso, solidifica-se com o tempo e torna-se purulenta. Esse tumor interno corrói a parede gástrica de fora para dentro. Eis a trajetória até o câncer gástrico.\n\nEntretanto, se a pessoa tiver forte poder de purificação, esse pus no estômago será eliminado naturalmente por diarreia. O homem moderno, ao menor desconforto, toma remédio. Os medicamentos enfraquecem a purificação e o estômago, impedindo a eliminação e favorecendo a supuração. Com o avanço da supuração, o estômago perfura-se. A atividade gástrica cessa quase totalmente e, somando-se à eliminação do pus pelo orifício, ocorrem vômitos intensos.\n\nO primeiro sinal de câncer gástrico é dor ou sensação de peso. Vômitos só aparecem em estágios avançados.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago",
+      "Membros"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Purificação",
@@ -838,7 +866,9 @@
     "id": "pf57",
     "title": "Câncer de Intestino Grosso",
     "content": "Ocorre frequentemente no reto, podendo migrar para o intestino grosso e tornar-se bastante volumoso.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Intestino"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Intestinos",
@@ -855,7 +885,9 @@
     "id": "pf58",
     "title": "Câncer de Útero",
     "content": "É uma doença frequente e considerada de difícil cura. Sintomas: dor no útero, hemorragia contínua, corrimento branco com mau cheiro. Causa: Sangue tóxico e pus aquoso acumulados fora do útero aumentam de densidade com o tempo, tornam-se purulentos e invadem a parede interna do útero. O processo é idêntico ao do câncer de estômago.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Rins",
@@ -931,7 +963,9 @@
     "id": "pf63",
     "title": "Cisto no Ovário",
     "content": "Causado pelo acúmulo de pus aquoso dentro do ovário, que incha. Varia do tamanho de um ovo de galinha até o de uma cabeça de criança ou maior.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Nervoso e Cabeça",
@@ -971,7 +1005,9 @@
     "id": "pf65",
     "title": "Rim na Gravidez",
     "content": "O sintoma é o edema (inchaço), que a medicina chama de distúrbio renal ou atrofia. A causa: já existindo solidificação tóxica nas costas (rins), a gravidez pressiona pela frente, deixando o rim \"prensado\" e atrófico. A urina não processada transborda, causando edema. Dissolvendo a toxina nas costas com Johrei, alivia-se a carga renal e a cura é certa.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Rins"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Rins e Sistema Urinário",
@@ -1032,9 +1068,9 @@
     "title": "Paralisia Infantil (Poliomielite)",
     "content": "Existe a causa espiritual e a física. A espiritual é rara; o que se chama geralmente de paralisia infantil é a física, uma \"pseudo-paralisia\". Sintomas: dificuldade de andar, braço inerte, quadril imóvel. A perna é a mais afetada. Causas: toxinas hereditárias e toxinas de remédios aplicados após o nascimento. O veneno solidifica-se em parte da perna, causando dor ao mover-se.",
     "focusPoints": [
-      "membros",
-      "rins",
-      "pernas"
+      "Membros",
+      "Pernas",
+      "Rins"
     ],
     "source": "Estudos Específicos 01",
     "tags": [
@@ -1057,7 +1093,9 @@
     "id": "pf71",
     "title": "Varicela (Catapora)",
     "content": "É um tipo de erupção cutânea que, diferente das vermelhas, tem a mesma cor da pele. Pequenas verrugas contendo líquido surgem pontilhadas. Há febre leve. A causa é a eliminação de um tipo específico de pus aquoso.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Rins",
@@ -1075,7 +1113,11 @@
     "id": "pf73",
     "title": "Insônia",
     "content": "Embora não pareça doença, é causa de muitas, sendo algo sério. A causa é uma espécie de anemia cerebral provocada por solidificação no bulbo raquidiano, que comprime os vasos e impede o sono. Essa solidificação ocorre mais no lado direito. Dissolvendo-a, cura-se.\n\nA anemia cerebral, causa da insônia, limita-se à região frontal. Por que isso impede o sono? Porque facilita a possessão espiritual nessa área. O perigo reside no fato de a insônia frequentemente evoluir para doença mental. O início de qualquer doença mental é sempre precedido por longa privação de sono. Quando o sono normaliza, a cura se inicia.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Bulbo",
+      "Bulbo Raquidiano",
+      "Frontal"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Mundo Espiritual",
@@ -1409,8 +1451,10 @@
   {
     "id": "pf87_2",
     "title": "Tracoma e Conjuntivite Folicular",
-    "content": "Não são contagiosos.\n\nSão purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "content": "Não são contagiosos.\n\nSão purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）",
     "focusPoints": [
+      "Bulbo",
+      "Cabeça",
       "Nuca",
       "Occipital"
     ],
@@ -1430,8 +1474,10 @@
   {
     "id": "pf87_3",
     "title": "Leucoma (Manchas na Córnea/Meboshi)",
-    "content": "Toxinas solidificadas na superfície da pupila. Colírios endurecem a mancha. Sem remédios, cura-se em poucas sessões. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "content": "Toxinas solidificadas na superfície da pupila. Colírios endurecem a mancha. Sem remédios, cura-se em poucas sessões. （明日の医術　眼病）",
     "focusPoints": [
+      "Bulbo",
+      "Cabeça",
       "Nuca",
       "Occipital"
     ],
@@ -1451,8 +1497,10 @@
   {
     "id": "pf87_4",
     "title": "Conjuntivite Olhos vermelhos e secreção.",
-    "content": "Toxinas da região frontal sendo eliminadas pelos olhos. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "content": "Toxinas da região frontal sendo eliminadas pelos olhos. （明日の医術　眼病）",
     "focusPoints": [
+      "Bulbo",
+      "Cabeça",
       "Nuca",
       "Occipital"
     ],
@@ -1550,9 +1598,11 @@
   {
     "id": "pf88_3",
     "title": "Otorreia (Pus no Ouvido)",
-    "content": "Lavagens com remédios apenas introduzem novos venenos e impedem a cura. Deixar sair naturalmente cura em meses. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Linfáticos e parótida.",
+    "content": "Lavagens com remédios apenas introduzem novos venenos e impedem a cura. Deixar sair naturalmente cura em meses. （明日の医術　耳鼻疾患）",
     "focusPoints": [
-      "Glândula Parótida E Linfáticos"
+      "Glândula Parótida",
+      "Glândula Parótida E Linfáticos",
+      "Glândulas Linfáticas"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1568,9 +1618,10 @@
   {
     "id": "pf88_4",
     "title": "Surdez",
-    "content": "Surdez adquirida e física (não espiritual) deve-se a toxinas de remédios solidificadas no nervo auditivo, entre a parótida e o ouvido interno.\n\nO procedimento médico de insuflação de ar é perigoso e pode causar surdez total. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Parótida e ouvido interno.\n\n4. Nariz",
+    "content": "Surdez adquirida e física (não espiritual) deve-se a toxinas de remédios solidificadas no nervo auditivo, entre a parótida e o ouvido interno.\n\nO procedimento médico de insuflação de ar é perigoso e pode causar surdez total. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Parótida e ouvido interno.",
     "focusPoints": [
-      "Glândula Parótida E Linfáticos"
+      "Glândula Parótida E Linfáticos",
+      "Nariz"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1610,7 +1661,10 @@
     "id": "pf92",
     "title": "Mucosa Bucal, Garganta e Língua",
     "content": "O surgimento de erupções na mucosa da boca, sensibilidade ao comer, dor de garganta ou inchaços na língua deve-se à impregnação da mucosa por remédios ingeridos ou gargarejos. Esses medicamentos envelhecem, tornam-se toxinas e o corpo tenta eliminá-los. Se deixados naturalmente, curam-se sem falha.\n\nO câncer de língua, na maioria das vezes, é isso. Se nada for feito, cura-se em oito ou nove de cada dez casos. Porém, os médicos, por dever de ofício, sentem-se obrigados a usar remédios, independentemente do prognóstico, o que acaba agravando o quadro e transformando-o num câncer verdadeiro. Desejo ardentemente que este fato seja conhecido.\n\nUma das práticas mais absurdas é a inalação para aliviar a tosse. Não tem efeito algum. Pense bem: a tosse vem da traqueia, mas o medicamento inalado vai quase todo para o esôfago; é um erro de direção. Como a tosse é uma bomba para expelir o catarro, quanto mais se tosse, melhor. Tentar pará-la é um erro crasso.\n\nOutra prática insensata é o gargarejo com antissépticos. O objetivo seria desinfetar a boca, mas o efeito é o oposto. Originalmente, não há nada com maior poder bactericida do que a saliva humana. Insetos maiores que bactérias morrem ou enfraquecem ao contato com a saliva. Portanto, enquanto se faz o gargarejo, o poder bactericida da boca enfraquece. O mesmo vale para lavar os olhos. É cômico ver quem lava os olhos com água boricada ou panos, quando as lágrimas são um desinfetante perfeito e a mucosa da pálpebra é idealmente suave. Lavar é um erro grave. （文明の創造　「口中の病など」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Garganta",
+      "Olhos"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1628,7 +1682,10 @@
     "id": "pf93",
     "title": "Tuberculose Laríngea",
     "content": "Explicarei sobre a tuberculose laríngea. Ela começa com a tuberculose das glândulas linfáticas, que se expande gradualmente até atingir a laringe e a função vocal. Na época em que eu atendia, curei esses casos definitivamente, embora a medicina os considere incuráveis. Nos casos graves, a garganta fecha-se a ponto de não passar nem água, levando à morte por inanição.\n\nA causa da evolução da tuberculose linfática para a laríngea é a supressão da purificação. Quando surgem solidificações nos linfáticos e a purificação se inicia, tenta-se impedi-la a todo custo, fazendo com que as toxinas voltem a se solidificar. Isso impede que novas toxinas se alojem ali, forçando-as a acumular-se nas áreas adjacentes, invadindo gradualmente a laringe.\n\nInicialmente, quando os linfáticos incham e a purificação começa, se deixados, incham enormemente e ficam vermelhos como um tomate, acompanhados de febre. Nesse momento, os médicos costumam operar. Essa cirurgia é péssima, pois interrompe o acúmulo das toxinas profundas que estavam vindo à tona. O que foi removido não é tudo; sempre sobram resíduos. Prova disso é que, mesmo após a cirurgia e a aparente cura, a dor persiste no local ou surge inchaço nas áreas vizinhas pouco tempo depois. （明日の医術　耳鼻疾患）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Garganta",
+      "Glândulas Linfáticas"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Arredores Da Garganta",
@@ -1666,7 +1723,12 @@
     "id": "pf102",
     "title": "Cálculos (Pedras)",
     "content": "Cálculos formam-se na vesícula biliar. Quando essas pedras tentam fluir para o estômago junto com a bile, encontram dificuldade em passar pelo ducto biliar, causando uma dor atroz e insuportável. Por isso, os cálculos são considerados de tratamento particularmente difícil. Ouvi dizer que recentemente criaram um instrumento semelhante a um fio metálico para capturar as pedras através da garganta até o estômago, mas parece não ter muito efeito.\n\nQuando as pedras são pequenas, conseguem passar e descer, fluindo até os rins. Lá, a ureia adere a elas, fazendo-as crescer gradativamente, transformando-se em cálculos renais. O problema é que, devido à atividade renal, a pedra atrita com a parede do rim, causando ferimentos. A urina penetra nessas lesões, provocando dor e hemorragia; é a isso que a medicina chama de cálculo renal.\n\nA pedra continua crescendo e, se ficar muito grande, pode ser fatal. A medicina recorre à cirurgia para remover o rim afetado. Nessa fase, a pedra já está muito dura; já vi algumas transformadas em anéis ou abotoaduras após serem lapidadas, brilhando tanto que poderiam ser confundidas com pedras preciosas.\n\nSe a pedra ainda for pequena, pode fluir para a bexiga e crescer lá, da mesma forma que nos rins; isso é o cálculo vesical. O maior transtorno ocorre quando a pedra entala na entrada da bexiga ou, se conseguir passar, trava na uretra. Em ambos os casos, a excreção da urina é interrompida. A urina acumula-se gradualmente no baixo ventre, causando inchaço. Os médicos inserem uma sonda (bugia), o que funciona se o bloqueio for apenas na uretra, mas é muito difícil se for na entrada da bexiga, colocando a vida em risco.\n\nDescreverei a causa inicial dos cálculos biliares. Como explicado anteriormente, a toxina urinária exsudada dos rins migra gradualmente para cima e permeia a vesícula biliar pela parte posterior, penetrando em seu interior. Essa toxina combina-se com a bile e solidifica-se, formando a pedra. （文明の創造　肝臓、胆嚢、膀胱の結石）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Estômago",
+      "Garganta",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Região Renal Nas Costas",
@@ -1703,9 +1765,9 @@
     "title": "Diabetes",
     "content": "O diabetes é considerado pela medicina uma doença do pâncreas. Diz-se que a causa é a deficiência de insulina produzida pelo pâncreas. A medicina utiliza injeções de insulina, o que traz algum efeito temporário, mas, por não ser uma cura radical, a doença quase sempre se torna crônica. Além disso, a medicina impõe uma dietoterapia extrema, evitando o fornecimento de açúcar. Isso gera sofrimento e um fardo econômico considerável ao paciente. A proibição do arroz é particularmente penosa para os japoneses.\n\nSegundo esta terapia médica, o diabetes cura-se completamente através da dissolução e excreção das toxinas que se acumulam e comprimem a parte externa do pâncreas. Além disso, o paciente pode manter uma alimentação normal, o que é de grande ajuda. （明日の医術　腎臓病と糖尿病）\n\nEstômago: Doenças do fígado, pâncreas e intestinos diferem das outras: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ15）",
     "focusPoints": [
-      "pancreas",
-      "ombros",
-      "rins"
+      "Ombros",
+      "Rins",
+      "pancreas"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1731,9 +1793,9 @@
     "title": "Tuberculose Intestinal",
     "content": "Na tuberculose intestinal, formam-se inúmeras solidificações por todo o abdômen, tendo o umbigo como centro. Ao pressionar, sente-se dor, o que facilita a identificação, e há sempre alguma febre. Essas solidificações dissolvem-se com o calor e saem como diarreia quase diariamente. Evidentemente, essas solidificações são formadas por toxinas medicamentosas; se o paciente não parar de tomar remédios, a cura é impossível. Como a diarreia debilita o corpo, é uma doença temida também pelos médicos. （文明の創造　肺患と薬毒）\n\nEstômago: Doenças do fígado, pâncreas e intestinos diferem das outras: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ15）",
     "focusPoints": [
-      "intestino",
-      "pescoco",
-      "ombros"
+      "Intestino",
+      "Ombros",
+      "pescoco"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1754,9 +1816,9 @@
     "title": "Febre Tifoide",
     "content": "A causa do tifo é a perfuração do intestino. Os sintomas são febre alta e dor de cabeça. Curiosamente, não há sintomas no intestino em si; não há diarreia ou algo semelhante. Por isso, é chamado de febre tifoide, e chega-se a duvidar por que se diz que o intestino está ruim. As características principais são a febre alta e a dor de cabeça. Os médicos apontam a dissociação entre pulso e temperatura (febre alta sem aumento proporcional da pulsação) como o sinal mais característico do tifo.\n\nQuando diagnosticamos pelo Johrei: se há febre alta e dor de cabeça, e o Johrei na cabeça não baixa a febre (o que normalmente aconteceria), pode-se considerar tifo. Ao suspeitar de tifo, deve-se mudar imediatamente a alimentação para líquidos. Leite ou caldo de arroz (omoyu) servem; o importante é não haver sólidos. E, claro, deve-se ministrar Johrei no abdômen. Focando ao redor do umbigo, se for tifo, a cura ocorre em dois ou três dias. Em casos rápidos, cura-se no dia seguinte. É algo simples.\n\nO processo é o seguinte: toxinas medicamentosas acumulam-se no intestino. O que os médicos chamam de bactérias (vermes) surgem e corroem o local, perfurando a parede intestinal. A toxina torna-se maligna a ponto de furar o intestino e, ao mesmo tempo, dissolve-se pelo calor e sai. À medida que a toxina dissolve, o orifício fica exposto. Se algum alimento sólido bater ali, causa uma fissura. A morte por tifo ocorre devido à hemorragia intestinal. Por isso, os médicos temem tanto a hemorragia no tifo.\n\nContudo, pelo nosso método, a cura é rápida e segue a causa, não havendo o que temer. Com o Johrei, o tifo cura-se sem problemas. Como disse, trate a cabeça primeiro; se a febre não ceder como esperado, considere tifo e trate o centro do intestino, o peritônio. Só isso basta. Mesmo sem saber detalhes, a cura acontece. A dieta líquida por um ou dois dias é suficiente. Baixando a febre, pode-se passar para mingau. Aliás, mesmo sem dieta especial, o Johrei cura; a dieta líquida apenas acelera o processo. （浄霊法講座８　ｐ106 ～10）",
     "focusPoints": [
-      "intestino",
-      "estomago",
-      "occipital"
+      "Estômago",
+      "Intestino",
+      "Occipital"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1776,8 +1838,8 @@
     "title": "Câncer Retal",
     "content": "A dificuldade na evacuação deve-se ao estreitamento do canal retal, dificultando a passagem das fezes. Nesses casos, os médicos usam laxantes ou lavagens (enemas), mas isso não é muito bom. O reto dessas pessoas fica fino como um incenso, o que dá um certo trabalho. Embora chamem de câncer, na maioria das vezes são toxinas que comprimem o reto, causando esse estado. No caso de câncer retal, os médicos operam, cortam a parte afetada e abrem um orifício na lateral da barriga para criar um ânus artificial. Porém, as fezes saem sem aviso prévio, obrigando o uso de fraldas na ponta. Além disso, o intestino exposto tende a necrosar, e o paciente sofre com a saída de gases e o mau cheiro intenso das fezes; é uma situação realmente miserável. Esse é geralmente o resultado da cirurgia.\n\nMesmo que digam ser câncer, o câncer verdadeiro é raro. Essas pessoas certamente têm solidificações (nódulos de toxina) que vão do umbigo até o flanco. Ministrando Johrei ali e tratando bem os rins, a cura é possível. As solidificações abdominais provêm dos rins. Com o Johrei, o câncer retal cura-se na maioria das vezes. （浄霊法講座８ ｐ87）",
     "focusPoints": [
-      "anus",
-      "intestino"
+      "Intestino",
+      "anus"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2016,9 +2078,10 @@
   {
     "id": "pf114_8",
     "title": "Hipoplasia Uterina (Útero Infantil)",
-    "content": "O desenvolvimento insuficiente deve-se à compressão constante por toxinas ao redor do útero. A causa é a atrofia renal. Apalpando o baixo ventre, sente-se rigidez, e há nódulos na região renal. （天国の福音　婦人病）\n\n2. Ovários",
+    "content": "O desenvolvimento insuficiente deve-se à compressão constante por toxinas ao redor do útero. A causa é a atrofia renal. Apalpando o baixo ventre, sente-se rigidez, e há nódulos na região renal. （天国の福音　婦人病）",
     "focusPoints": [
       "Baixo Ventre",
+      "Ovários",
       "Região Renal"
     ],
     "source": "Estudos Específicos 02",
@@ -2040,10 +2103,11 @@
   {
     "id": "pf117",
     "title": "Frigidez",
-    "content": "A causa principal é, inegavelmente, a atrofia renal. Como a medicina afirma, os rins produzem hormônios; atrofiados, a atividade cai e falta hormônio. A causa é a solidificação nas costas (rins); dissolvendo-a, cura-se. Outra causa é o acúmulo constante de toxinas que descem para a região genital e arredores. Se acumularem no baixo ventre, causam os problemas uterinos citados; descendo mais, causam hemorroidas, vaginismo, coceira, catarro na mucosa, problemas uretrais, eczema, feridas, dor, mau cheiro e desconforto. O inchaço ou solidificação na região das glândulas de Bartholin (ou próstata no homem) e nos grandes ou pequenos lábios pode estender-se à virilha, dificultando o andar. Problemas nessas glândulas são graves. O autodiagnóstico é fácil: pressionando, haverá dor ou nódulos. Devido à localização, o auto-Johrei ou a aplicação pelo marido curam muito bem. Demora um tempo, mas com paciência a melhora é progressiva e a cura, certa. Se as mulheres soubessem disso, quão grande seria sua alegria! Não há salvação mais maravilhosa. （文明の創造　婦人病）\n\n4. Estômago (Na Gravidez)",
+    "content": "A causa principal é, inegavelmente, a atrofia renal. Como a medicina afirma, os rins produzem hormônios; atrofiados, a atividade cai e falta hormônio. A causa é a solidificação nas costas (rins); dissolvendo-a, cura-se. Outra causa é o acúmulo constante de toxinas que descem para a região genital e arredores. Se acumularem no baixo ventre, causam os problemas uterinos citados; descendo mais, causam hemorroidas, vaginismo, coceira, catarro na mucosa, problemas uretrais, eczema, feridas, dor, mau cheiro e desconforto. O inchaço ou solidificação na região das glândulas de Bartholin (ou próstata no homem) e nos grandes ou pequenos lábios pode estender-se à virilha, dificultando o andar. Problemas nessas glândulas são graves. O autodiagnóstico é fácil: pressionando, haverá dor ou nódulos. Devido à localização, o auto-Johrei ou a aplicação pelo marido curam muito bem. Demora um tempo, mas com paciência a melhora é progressiva e a cura, certa. Se as mulheres soubessem disso, quão grande seria sua alegria! Não há salvação mais maravilhosa. （文明の創造　婦人病）",
     "focusPoints": [
-      "utero",
-      "baixo-ventre"
+      "Estômago",
+      "baixo-ventre",
+      "Útero"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2061,11 +2125,11 @@
   {
     "id": "pf118",
     "title": "Enjoos Matinais (Hiperêmese Gravídica)",
-    "content": "O maior sofrimento da gravidez. Todos conhecem, mas casos graves põem a vida em risco. A medicina desconhece a causa, mas é simples: ao expandir-se, o útero encontra um obstáculo — o acúmulo de toxinas entre o umbigo e o estômago. Devido à pressão da expansão, o corpo tenta eliminar essas toxinas através dos vômitos frequentes. São toxinas naturais e de remédios; saindo tudo, cura-se completamente. （文明の創造　婦人病）\n\n5. Rins (Na Gravidez)",
+    "content": "O maior sofrimento da gravidez. Todos conhecem, mas casos graves põem a vida em risco. A medicina desconhece a causa, mas é simples: ao expandir-se, o útero encontra um obstáculo — o acúmulo de toxinas entre o umbigo e o estômago. Devido à pressão da expansão, o corpo tenta eliminar essas toxinas através dos vômitos frequentes. São toxinas naturais e de remédios; saindo tudo, cura-se completamente. （文明の創造　婦人病）",
     "focusPoints": [
-      "estomago",
-      "utero",
-      "rins"
+      "Estômago",
+      "Rins",
+      "Útero"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2084,7 +2148,7 @@
     "title": "Indigestão (Dispepsia)",
     "content": "Recém-nascidos frequentemente têm fezes verdes ou espumosas, chamadas de indigestão. Na verdade, são toxinas da mãe misturadas ao leite, sendo purificadas através do bebê. É algo excelente. Deixando sair, cura-se. A medicina chama de beribéri infantil e dá remédios, o que enfraquece a criança e atrapalha o desenvolvimento. Isso gera crianças fracas, propensas à escrófula e, mais tarde, à tuberculose. O aumento da tuberculose deve-se muito a esses erros. （文明の創造　「小児病」）",
     "focusPoints": [
-      "estomago"
+      "Estômago"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2106,8 +2170,8 @@
     "title": "Desenvolvimento Deficiente",
     "content": "Logo após nascer, aplicam-se vacinas e injeções \"para nutrição\". Isso é péssimo. O corpo ainda não está formado; injeções são agressivas. Isso causa atraso no desenvolvimento: pescoço mole após a idade normal, demora para andar e baixa inteligência. Desejo que os médicos pesquisem mais sobre isso. （文明の創造　「小児病」）",
     "focusPoints": [
-      "vertice",
-      "frontal"
+      "Frontal",
+      "vertice"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2129,7 +2193,7 @@
     "title": "Úlcera Gástrica Infantil",
     "content": "Bebês de um ou dois meses que vomitam sangue. Médicos chamam de úlcera, o que é cômico, pois úlcera vem de longos anos de remédios. O bebê está apenas vomitando sangue velho que engoliu da mãe no parto. Depois disso, o apetite aumenta. （文明の創造　「小児病」）",
     "focusPoints": [
-      "estomago"
+      "Estômago"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2151,8 +2215,8 @@
     "title": "Coqueluche",
     "content": "A causa é o bebê ter engolido fluidos impuros da mãe antes do parto. Retidos, são eliminados tempos depois. Caracteriza-se por tosse violenta e, invariavelmente, vômito de espuma. O som de guincho ao inspirar é típico. Chama-se \"tosse de cem dias\" porque leva esse tempo para sair toda a espuma. Com Johrei, cura-se em três semanas (início) ou uma semana (no auge). （文明の創造　「小児病」）\n\nTende a virar pneumonia porque tentam parar a tosse. A espuma dissolvida entra no pulmão para sair com a tosse; parando a tosse, a espuma acumula e solidifica no pulmão, gerando febre alta para dissolver (pneumonia). O tratamento errado adiciona uma nova doença. （文明の創造　「小児病」）",
     "focusPoints": [
-      "pulmoes",
-      "garganta"
+      "Garganta",
+      "pulmoes"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2176,9 +2240,9 @@
     "title": "Meningite",
     "content": "Febre alta como fogo na testa, dor de cabeça rachando, fotofobia e tontura. O paciente não abre os olhos. A causa: crianças com muitas toxinas, ao começarem a usar a mente (escola), concentram toxinas na testa. O problema é o resfriamento com gelo. Isso solidifica as toxinas que estavam derretendo, impedindo a atividade cerebral e causando demência ou deficiência. Pelo Johrei, as toxinas derretem e saem como muito pus e sangue pelos olhos e nariz, limpando a cabeça. A criança fica mais inteligente e melhora na escola. Se parassem com o gelo, muitos seriam salvos. （文明の創造　「小児病」）",
     "focusPoints": [
-      "frontal",
-      "vertice",
-      "pescoco"
+      "Frontal",
+      "pescoco",
+      "vertice"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2203,8 +2267,8 @@
     "title": "Choro Noturno (Manha)",
     "content": "Dizem ser \"vermes\", mas sempre há febre leve na cabeça e nos ombros. Muitos bebês têm ombros rígidos. Com Johrei, a febre some e o choro para. （天国の礎　「大三災と小三災」）",
     "focusPoints": [
-      "frontal",
-      "ombros"
+      "Frontal",
+      "Ombros"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2228,8 +2292,8 @@
     "title": "Escarlatina",
     "content": "Doença simples: sangue tóxico congênito tentando sair pela pele. A pele fica vermelha com erupções finas. Se deixada, cura. Tratamentos médicos prolongam e trazem perigo. Na fase de cura, a pele descama; a medicina teme o contágio, mas com Johrei cura-se em dias, sem problemas. （文明の創造　「小児病」）",
     "focusPoints": [
-      "rins",
-      "garganta"
+      "Garganta",
+      "Rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2251,9 +2315,9 @@
     "title": "Disenteria Infantil (Ekiri)",
     "content": "Muito temida pela alta mortalidade. Sintomas: bocejos frequentes desde o início, falta total de apetite, prostração e sonolência. Causa: toxinas da parte superior concentram-se no estômago, refletindo no cérebro e causando sintomas cerebrais. Com Johrei, cura-se facilmente em um ou dois dias. （文明の創造　「小児病」）",
     "focusPoints": [
-      "estomago",
-      "frontal",
-      "occipital"
+      "Estômago",
+      "Frontal",
+      "Occipital"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2277,9 +2341,9 @@
     "title": "Paralisia Infantil (Poliomielite)",
     "content": "Aumentou muito ultimamente. Tem causa espiritual (rara) e física (comum, pseudo-paralisia), que sempre cura. Sintomas: dificuldade de andar, braço inerte, quadril imóvel. A perna é a mais afetada. Causa: toxinas hereditárias e de remédios aplicados após o nascimento. O veneno solidifica em parte da perna (sola, peito do pé, calcanhar, dedos), causando dor ao mover. Apalpando, acha-se o ponto dolorido; ministrando Johrei, a cura avança. A medicina não remove a toxina e usa métodos paliativos, por isso é temida mundialmente. （文明の創造　「小児病」）",
     "focusPoints": [
-      "membros",
-      "rins",
-      "pernas"
+      "Membros",
+      "Pernas",
+      "Rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2302,8 +2366,8 @@
     "title": "Sarampo",
     "content": "Quase ninguém escapa. É a eliminação de sangue tóxico herdado; algo a agradecer, nem deveria ser chamado de doença. O medo e a prevenção são tolos. Sem tratamento, cura-se bem. Remédios atrapalham. Único cuidado: não pegar vento. O vento impede a saída da toxina pela pele. \"Cubra-se e durma\" é a regra de ouro. Impedir a erupção retém a toxina, causando reincidência ou outras doenças. A pneumonia pós-sarampo é comum porque o resfriamento (gelo) impede a saída externa, forçando a erupção interna nos pulmões. A respiração fica rápida, mas com pouco escarro. Deixando em paz, sara em dois ou três dias. Otite e problemas oculares pós-sarampo são o resto das toxinas saindo por outros lugares. Deixando, curam-se. （文明の創造　「小児病」）",
     "focusPoints": [
-      "pulmoes",
-      "pele"
+      "Pele",
+      "pulmoes"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2326,9 +2390,9 @@
     "title": "Asma Infantil",
     "content": "Causas: as mesmas da asma adulta ou hereditariedade. A maioria é acúmulo de toxinas do diafragma até o exterior do estômago e fígado. Deixando, cura-se naturalmente ao crescer. Pode ser também purificação de toxinas nas costas (rins e coração). （明日の医術　「小児病・喘息」）",
     "focusPoints": [
-      "pulmoes",
+      "Rins",
       "diafragma",
-      "rins"
+      "pulmoes"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2378,9 +2442,9 @@
     "title": "Hérnia (Deslocamento do Intestino)",
     "content": "Comum em crianças e idosos. Casos leves em crianças curam-se ao crescer. Graves exigem cirurgia ou uso de fundas. Causa: toxinas no peritônio pressionam o intestino, que escapa, ou o canal inguinal é congenitamente largo. Em meninos, se o intestino descer até o escroto, é difícil curar. A cirurgia costuma ter bom resultado. Pelo Johrei, dissolvem-se as toxinas do peritônio para fortalecer o intestino; demora, mas cura quase tudo. Fundas ajudam. （明日の医術　「小児病・脱腸」）",
     "focusPoints": [
-      "inguinal",
-      "intestino",
-      "baixo-ventre"
+      "Intestino",
+      "baixo-ventre",
+      "inguinal"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2403,7 +2467,7 @@
     "title": "Difteria",
     "content": "A garganta incha, causando asfixia. É uma purificação aguda. Com Johrei, cura-se em dezenas de minutos. A forma espiritual é difícil de curar (explicarei depois). （天国の福音　「乳幼児及び小児病」）",
     "focusPoints": [
-      "garganta"
+      "Garganta"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2426,9 +2490,9 @@
     "title": "Sarna e Doenças de Pele",
     "content": "Recentemente, surgiu uma epidemia de pústulas brancas (como feijões) ou vermelhas nas mãos e pés, muito dolorosas. A sarna causa coceira insuportável no corpo todo. A causa surpreendente de ambas é o cérebro. Toxinas solidificadas no cérebro dissolvem-se, descem e tentam sair pela pele das mãos e pés. Três tipos de toxinas:\n\nGrânulos vermelhos (Sarna): Sífilis oculta (às vezes misturada com remédios).\n\nGrânulos brancos dolorosos: Toxinas de remédios ocidentais.\n\nSem dor, mas com pele negra (gangrenosa): Toxina da lepra (em pequena quantidade). Acredito que frieiras também sejam isso. （天国の福音　「頭脳の重要性」）",
     "focusPoints": [
-      "membros",
-      "rins",
-      "pele"
+      "Membros",
+      "Pele",
+      "Rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2446,8 +2510,8 @@
     "title": "Beribéri",
     "content": "Doença de intoxicação por arroz branco. Comer farelo de arroz (nuka) ou mais acompanhamentos cura em uma semana. A maioria dos diagnósticos médicos de beribéri está errada. O verdadeiro beribéri amortece três pontos: canela interna, base do polegar e lábio inferior. O resto é pseudo-beribéri (excesso de urina ou remédios). Com Johrei, ambos curam-se em poucas vezes. （天国の福音　「脚気とバセドー氏病」）",
     "focusPoints": [
-      "membros",
-      "rins"
+      "Membros",
+      "Rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2485,8 +2549,8 @@
     "title": "Reumatismo",
     "content": "Articulações vermelhas, inchadas e dolorosas. Toxinas de remédios concentrando-se ali. A medicina imobiliza, o que tira a dor mas enrijece a junta, criando um aleijado. O Johrei cura fácil e rápido. Se usaram gelo ou injeções, demora mais. Sem tratamento médico prévio, cura em menos de uma semana. （文明の創造　「神経痛とリョウマチ」）",
     "focusPoints": [
-      "membros",
-      "rins"
+      "Membros",
+      "Rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2504,9 +2568,9 @@
     "title": "Enurese Noturna (Xixi na Cama)",
     "content": "Pontos: Interior da região frontal, pescoço, virilha (músculo da uretra comprimido por toxinas) e rins. Com paciência, cura. （御教え集８　ｐ39）",
     "focusPoints": [
-      "rins",
-      "baixo-ventre",
-      "frontal"
+      "Frontal",
+      "Rins",
+      "baixo-ventre"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2524,8 +2588,8 @@
     "title": "Ronco",
     "content": "Causa: inchaço (adenoide) entre o nariz e a garganta; o ar vaza pela boca e vibra. Focando o Johrei entre o nariz e a garganta, cura. Resto de sinusite. （浄霊法講座10　ｐ84）",
     "focusPoints": [
-      "nariz",
-      "garganta"
+      "Garganta",
+      "Nariz"
     ],
     "source": "Estudos Específicos 02",
     "tags": [

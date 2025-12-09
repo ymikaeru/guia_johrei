@@ -37,7 +37,15 @@
       "Sistema Digestivo"
     ],
     "order": 2,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ouvidos",
+      "Pele",
+      "Pernas"
+    ]
   },
   {
     "id": "fundamentos_45",
@@ -57,7 +65,10 @@
       "Toxinas",
       "Tuberculose"
     ],
-    "order": 1
+    "order": 1,
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_47",
@@ -75,7 +86,10 @@
       "Toxinas"
     ],
     "order": 3,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_48",
@@ -99,7 +113,14 @@
       "Toxinas"
     ],
     "order": 4,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Pele",
+      "Pés"
+    ]
   },
   {
     "id": "fundamentos_44",
@@ -127,12 +148,19 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
+      "Bulbo",
       "Cabeça",
       "Cérebro",
-      "Bulbo",
-      "Pulmões"
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço",
+      "Pulmões",
+      "Pés"
     ],
     "system": "Pontos Vitais",
     "order": 0,
@@ -151,7 +179,10 @@
       "Purificação"
     ],
     "order": 13,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "id": "fundamentos_14",
@@ -182,9 +213,10 @@
     "order": 12,
     "type": "Caso Clínico",
     "focusPoints": [
+      "Pele",
+      "dentes",
       "pele",
-      "rosto",
-      "dentes"
+      "rosto"
     ]
   },
   {
@@ -220,12 +252,21 @@
       "Sistema Nervoso e Cabeça"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
+      "Bulbo",
       "Cabeça",
       "Cérebro",
+      "Diafragma",
+      "Estômago",
+      "Frontal",
+      "Fígado",
+      "Glândulas Linfáticas",
+      "Mãos",
+      "Nariz",
       "Occipital",
-      "Frontal"
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Rins"
     ],
     "system": "Pontos Vitais",
     "order": 8
@@ -241,7 +282,10 @@
       "Ministração de Johrei",
       "Mundo Espiritual"
     ],
-    "order": 7
+    "order": 7,
+    "focusPoints": [
+      "Mãos"
+    ]
   },
   {
     "id": "tecnicas_13",
@@ -281,12 +325,18 @@
       "Ministração de Johrei"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
+      "Bulbo",
       "Cabeça",
-      "Occipital",
+      "Estômago",
       "Frontal",
-      "Bulbo"
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Rins"
     ],
     "system": "Cabeça",
     "order": 9,
@@ -330,10 +380,11 @@
       "Rins e Sistema Urinário"
     ],
     "focusPoints": [
-      "Ombros",
+      "Baixo Ventre",
       "Cabeça",
+      "Frontal",
       "Occipital",
-      "Frontal"
+      "Ombros"
     ],
     "system": "Cabeça",
     "order": 11,
@@ -479,7 +530,11 @@
       "Arte e Beleza"
     ],
     "order": 15,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos"
+    ]
   },
   {
     "id": "fundamentos_11",
@@ -494,7 +549,10 @@
       "Ministração de Johrei"
     ],
     "order": 36,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_2",
@@ -525,9 +583,12 @@
       "Ministração de Johrei"
     ],
     "focusPoints": [
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Occipital",
       "Ombros",
-      "Pescoço",
-      "Occipital"
+      "Pescoço"
     ],
     "system": "Pontos Vitais",
     "order": 37,
@@ -712,6 +773,9 @@
       "Dentes e Boca",
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -726,7 +790,12 @@
       "Toxinas"
     ],
     "order": 46,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Mãos",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "id": "tecnicas_5",
@@ -791,7 +860,10 @@
       "Arte e Beleza",
       "Ministração de Johrei"
     ],
-    "order": 52
+    "order": 52,
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "id": "fundamentos_21",
@@ -829,7 +901,12 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "order": 49
+    "order": 49,
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Mãos"
+    ]
   },
   {
     "id": "fundamentos_23",
@@ -846,7 +923,12 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "order": 58
+    "order": 58,
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Pele"
+    ]
   },
   {
     "id": "fundamentos_20",
@@ -905,9 +987,11 @@
     "order": 57,
     "type": "Caso Clínico",
     "focusPoints": [
+      "Cabeça",
+      "Pele",
+      "dentes",
       "pele",
-      "rosto",
-      "dentes"
+      "rosto"
     ]
   },
   {
@@ -930,7 +1014,15 @@
       "Ministração de Johrei"
     ],
     "order": 61,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Garganta",
+      "Ombros",
+      "Pleura",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_94",
@@ -955,7 +1047,12 @@
       "Câncer",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Pele"
+    ]
   },
   {
     "id": "fundamentos_93",
@@ -991,12 +1088,18 @@
       "Sistema Nervoso e Cabeça"
     ],
     "focusPoints": [
+      "Bulbo",
       "Cabeça",
       "Cérebro",
+      "Estômago",
       "Frontal",
+      "Garganta",
       "Ombros",
       "Pescoço",
-      "Topo Da Cabeça"
+      "Pleura",
+      "Rins",
+      "Topo Da Cabeça",
+      "Virilha"
     ],
     "order": 59,
     "type": "Q&A"
@@ -1039,7 +1142,12 @@
       "Câncer",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pele",
+      "Pescoço",
+      "Útero"
+    ]
   },
   {
     "id": "tecnicas_30",
@@ -1072,7 +1180,10 @@
       "Febre",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "id": "casos_clinicos_6",
@@ -1088,7 +1199,10 @@
       "Arte e Beleza",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "casos_clinicos_8",
@@ -1107,7 +1221,11 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "id": "casos_clinicos_11",
@@ -1122,7 +1240,11 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "id": "regioes_corpo_3",
@@ -1136,7 +1258,11 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
+    ]
   },
   {
     "id": "pontos_focais_1",
@@ -1181,6 +1307,7 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
+      "Bulbo",
       "Cabeça",
       "Frontal",
       "Occipital",
@@ -1338,6 +1465,7 @@
       "Membros"
     ],
     "focusPoints": [
+      "Pernas",
       "Pescoço"
     ],
     "system": "Membros"
@@ -1456,8 +1584,10 @@
       "Sistema Nervoso e Cabeça"
     ],
     "focusPoints": [
+      "Bochechas",
       "Cabeça",
       "Cérebro",
+      "Maxilar",
       "Ouvidos"
     ],
     "system": "Cabeça",
@@ -1508,7 +1638,10 @@
       "Ministração de Johrei",
       "Purificação"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pernas"
+    ]
   },
   {
     "id": "fundamentos_79",
@@ -1531,7 +1664,10 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_80",
@@ -1558,7 +1694,12 @@
       "Câncer",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "id": "fundamentos_81",
@@ -1574,7 +1715,10 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_82",
@@ -1591,7 +1735,11 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_83",
@@ -1608,7 +1756,10 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_73",
@@ -1632,12 +1783,15 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
-      "Pescoço",
       "Cabeça",
+      "Coluna",
       "Cérebro",
-      "Occipital",
       "Frontal",
-      "Coluna"
+      "Occipital",
+      "Ouvidos",
+      "Pescoço",
+      "Virilha",
+      "Útero"
     ],
     "system": "Sistema Reprodutor",
     "type": "Caso Clínico"
@@ -1662,10 +1816,11 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
-      "Pescoço",
       "Cabeça",
       "Estômago",
-      "Olhos"
+      "Olhos",
+      "Pernas",
+      "Pescoço"
     ],
     "system": "Outros",
     "type": "Caso Clínico"
@@ -1830,7 +1985,10 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "id": "doencas_8",
@@ -1858,7 +2016,11 @@
       "Saúde da Mulher",
       "Sistema Reprodutor"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Estômago",
+      "Útero"
+    ]
   },
   {
     "id": "tecnicas_54",
@@ -1876,7 +2038,10 @@
       "Saúde da Mulher",
       "Tuberculose"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "regioes_corpo_0",
@@ -1888,6 +2053,9 @@
       "Gripe e Resfriado",
       "Febre",
       "Sistema Nervoso e Cabeça"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -1899,6 +2067,10 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça",
       "Dores e Rigidez"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -1910,6 +2082,9 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -1926,7 +2101,11 @@
       "Febre",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Occipital"
+    ]
   },
   {
     "id": "fundamentos_24",
@@ -1939,6 +2118,11 @@
       "Dores e Rigidez",
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital"
     ]
   },
   {
@@ -1954,6 +2138,12 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital"
     ]
   },
   {
@@ -1974,7 +2164,11 @@
       "Cabeça e Pescoço",
       "Dores e Rigidez"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "id": "pontos_focais_5",
@@ -1996,13 +2190,20 @@
     "tags": [
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital"
     ]
   },
   {
     "id": "pf37",
     "title": "Causas das Doenças Gástricas",
     "content": "Como venho explicando, a causa das doenças é quase sempre as toxinas medicamentosas, e isso é particularmente notável nas doenças estomacais, que se pode dizer serem \"fabricadas\" pelos remédios.\n\nQualquer pessoa pode ter, ocasionalmente, indigestão ou azia por comer demais. Se deixasse a natureza agir, sararia. Mas, crendo que deve tomar remédio, ingere-o imediatamente. Melhora na hora e pensa ter resolvido o problema. Mal sabe que essa dose de remédio pode ser a semente de uma futura fatalidade. Pouco tempo depois, o estômago volta a incomodar, toma-se mais remédio e cria-se o vício.\n\nSurgem dores, náuseas, azia, falta de apetite. Toma-se remédio para aliviar. O remédio que funcionava no início deixa de fazer efeito. Troca-se de medicamento, melhora-se momentaneamente, mas logo falha novamente. Assim, a pessoa torna-se uma viciada em remédios estomacais.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Sistema Digestivo"
@@ -2015,7 +2216,12 @@
     "id": "pf47",
     "title": "Sobre a Urina Tóxica",
     "content": "Um estudioso alemão afirmou que \"o ácido úrico é a causa de todas as doenças\", teoria ainda bastante aceita. O reumatismo que não apresenta inchaço vermelho é causado por essa urina tóxica. Chamo-o de \"Reumatismo Renal\"; é muito fácil de curar, pois a ureia é fraca e dissolve-se facilmente.\n\nA urina tóxica transforma-se em todo tipo de doença. Pessoas com rins ruins e ombros rígidos têm, na verdade, urina tóxica acumulada nos ombros. Pernas pesadas e doloridas devem-se à descida e estagnação dessa toxina. O mais comum é a urina tóxica acumular-se e solidificar-se no peritônio.\n\nEssa toxina pode causar pleurisia e asma. Assim, os rins causam asma, e a asma causa doença cardíaca; indiretamente, os rins tornam-se a causa de cardiopatias. Problemas renais podem causar sintomas semelhantes aos do beribéri, como pernas pesadas e inchadas. Chamo isso de \"Beribéri Renal\", diferindo totalmente do beribéri real.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Ombros",
+      "Peritônio",
+      "Pernas",
+      "Rins"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Asma",
@@ -2062,7 +2268,10 @@
     "id": "pf128",
     "title": "Laxantes",
     "content": "Existem o óleo de rícino para disenteria, comprimidos de cáscara para constipação e muitos remédios novos. Funcionam momentaneamente, mas acabam piorando o quadro. Os laxantes enfraquecem a função natural de evacuação, agravando a constipação. Toma-se laxante, prende-se o intestino; toma-se novamente, prende-se mais. Torna-se um ciclo vicioso até a constipação crônica. Além disso, o acúmulo gradual dessas toxinas cria novas doenças, afetando frequentemente os rins.\n\nSobre o clister (lavagem intestinal), devo alertar que também é muito prejudicial. Assim como os laxantes, entorpece a atividade intestinal. Pense bem: o corpo é feito para expelir as fezes naturalmente quando se acumulam. Forçar a saída artificialmente é um ato antinatural e, logicamente, prejudicial. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Intestino",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Sistema Digestivo",
@@ -2078,7 +2287,9 @@
     "id": "pf129",
     "title": "Analgésicos",
     "content": "Analgésicos para dor de cabeça mostram efeito momentâneo, mas tornam-se um vício. Sem que se perceba, suas toxinas acumulam-se, tornando-se causa de diversas outras doenças. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
@@ -2094,7 +2305,9 @@
     "id": "pf130",
     "title": "Colírios",
     "content": "Os colírios são os mais condenáveis. Em casos de leucoma (manchas na córnea), eles solidificam a mancha, dificultando a cura. As pessoas desconhecem, mas colírios podem causar tracoma. Depende do remédio, mas o fato é que a toxina penetra na mucosa da pálpebra e, anos depois, tenta sair como erupção.\n\nPessoas que lacrimejam sem motivo triste estão eliminando colírios antigos transformados em lágrimas; saindo tudo, sara. A medicina diagnostica como obstrução do canal lacrimal, um erro crasso. A remela é a excreção de toxinas da região frontal ou do fundo do olho; é algo excelente. Qualquer doença ocular cura-se quando começa a sair remela. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Frontal"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Olhos e Visão",
@@ -2152,7 +2365,10 @@
     "id": "pf134",
     "title": "Pomadas e Unguentos",
     "content": "Não se deve subestimar as pomadas. Suas toxinas penetram pela pele e causam várias doenças. Tive um paciente que tratou um eczema localizado com pomada forte; em dois ou três anos, espalhou-se pelo corpo todo. Outro caso curioso: um paciente usava constantemente um emplastro famoso para rigidez nos ombros. Após anos, a marca do emplastro ficou estampada nas costas como um desenho geométrico que não saía com lavagem. A toxina penetrou e tingiu a pele. Havia dor constante. Deu trabalho, mas curei em cerca de um ano. Percebi que, embora pareçam inofensivos, os emplastros não devem ser subestimados. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Ombros",
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pele",
@@ -2168,7 +2384,9 @@
     "id": "pf135",
     "title": "Jintan",
     "content": "Há algo que ninguém percebe: as pílulas \"Jintan\". A intoxicação por elas é considerável. Observei em vários casos que usuários habituais de Jintan têm digestão fraca, cor de pele ruim e adoecem facilmente. É como uma forma leve de vício em narcóticos. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pele",
@@ -2182,7 +2400,9 @@
     "id": "pf136",
     "title": "Salvarsan",
     "content": "Eis o \"rei das toxinas medicamentosas\": o Salvarsan (preparado 606), usado contra a sífilis. Feito à base de arsênico, uma quantidade do tamanho de uma colher de ouvido é fatal. Seu poder de paralisar a purificação é imenso, por isso \"funciona\" bem nas erupções da sífilis. Como a erupção é a sífilis sendo expelida, a injeção faz com que ela recolha imediatamente. A pele fica limpa, mas não é cura radical. A própria medicina admite que é temporário e requer outros tratamentos.\n\nFiz uma grande descoberta sobre isso: a toxina do Salvarsan sobe facilmente para o cérebro. Quando sobe, causa frequentemente doenças mentais. Os médicos pensam que a sífilis subiu para o cérebro, mas mal sabem que foi o Salvarsan que atacou o cérebro. （文明の創造　「薬毒の種々相」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Purificação",
@@ -2197,7 +2417,10 @@
     "id": "pf137",
     "title": "Vacinas e Desinfetantes",
     "content": "O efeito nocivo das vacinas manifesta-se mais claramente no surgimento de pequenos furúnculos do joelho para baixo. Se deixados, incham, abrem e o pus da vacina sai, curando-se. A medicina, ignorando isso, usa pomadas ou incisões, prolongando o caso. Injeções podem causar gangrena ou panarício, levando até à amputação de dedos. （文明の創造　「薬毒の種々相」）\n\nSobre os desinfetantes: são os mais temíveis entre os remédios. Por terem fortíssima ação bactericida, causam intoxicação facilmente. Em cirurgias, penetram diretamente nos músculos, causando grande impacto e tornando-se causa de várias doenças. Os médicos deveriam confrontar essa teoria com a realidade. （文明の創造　「薬毒の種々相」）\n\nSeja injeção ou desinfetante, os remédios têm \"peso\". Quanto mais pesados, mais descem, acumulando-se do joelho para baixo e na sola dos pés. Isso causa dor na planta do pé, dificuldade de andar, ou dormência nas pernas, sendo confundido com beribéri. Nevralgias e reumatismos também são causados por toxinas medicamentosas. Desejo, acima de tudo, que os especialistas percebam o terror dos remédios; só isso já traria um bem imensurável à humanidade. （文明の創造　「薬毒の種々相」）\n\nParte Religiosa",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pernas",
+      "Pés"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Membros",
@@ -2244,7 +2467,9 @@
     "id": "pf140",
     "title": "Doenças Causadas por Espíritos",
     "content": "1) Tuberculose Pulmonar A medicina diz que a tuberculose é infecciosa, mas as causas reais são o tratamento errôneo (já explicado) e a ação de espíritos de doença. Em uma família, morre um filho de tuberculose; logo, um irmão adoece e morre, e assim sucessivamente. Ou morre o marido, e depois a esposa adoece. Isso parece contágio, e a descoberta do bacilo de Koch reforçou essa tese, convencendo o mundo. Aponto isso como um grande erro. A causa real: quem morre de tuberculose vai para o Mundo Espiritual e sente uma solidão insuportável. Tenta puxar para si os entes queridos — irmãos, amigos, cônjuge. Para isso, encosta (possui) neles. Como o espírito ainda mantém a doença no além, ao encostar, transmite os sintomas da tuberculose. É terrível. O espírito aguarda o momento em que a pessoa se debilita por resfriado ou estafa para encostar. A medicina confundiu esse processo, achando que a estafa causava a tuberculose. （天国の福音　肺結核）\n\nTratamento e Casos Reais Anos atrás, minha esposa teve febre súbita, tosse e escarro com sangue (sintomas de tuberculose grau 3). O Johrei não surtia efeito. Suspeitei de causa espiritual. Ao investigar, descobri o espírito de um jovem, Suzuki, que eu tratara e que morrera de tuberculose um ano antes. Ele vivia na pobreza com o pai e não teve funeral ou culto adequado. No além, sentia-se solitário e miserável; encostou na minha esposa querendo que eu lhe fizesse um culto. Falou através da boca dela. Prometi fazer o culto na noite seguinte e mandei-o sair. Ele agradeceu e saiu; imediatamente, minha esposa voltou ao normal.\n\nOutro caso: uma senhora do mundo das gueixas sofria de tosse. Ao investigar espiritualmente, ela caiu no chão com gestos de animal. Era um espírito de raposa, servo de um Inari (divindade), que queria comer boa comida e se divertir. Antes, ele possuíra uma gueixa que morrera diagnosticada com pleurisia. Repreendi a raposa e ordenei que saísse. Ela curvou-se e saiu. a mulher curou-se como se tivessem tirado a doença com a mão.\n\nCerta vez, minha esposa teve cãibra estomacal e rolava de dor. Ministrei Johrei, mas a dor subiu para a garganta e ela gritou que ia morrer. Perguntei quem era. Era o espírito de alguém falecido de doença cerebral meses antes. O motivo: eu havia comentado os defeitos dele após sua morte. Ele queria que eu parasse. Pedi desculpas e prometi não falar mais. Ele agradeceu e foi embora; a dor sumiu na hora. Antigamente diziam para não falar mal dos mortos; é a mais pura verdade. Diante de tais fatos, é impossível não crer na íntima relação entre doença e espírito. （天国の福音　「肺結核」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Garganta"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Mundo Espiritual",
@@ -2264,7 +2489,11 @@
     "id": "pf44",
     "title": "Enfermidades dos Rins",
     "content": "Os rins funcionam como \"água que lava objetos\". O coração absorve o calor e queima as toxinas, gerando cinzas. Os rins lavam e escoam essas cinzas. Portanto, em casos de intoxicação, ocorrem diarreia intensa e micção abundante. Essa urina é a água suja lavada pelos rins.\n\nOs rins encarregam-se da purificação pela água; o coração, pela purificação pelo fogo. Assim, coração e rins formam um importante casal. Interessante notar que, em japonês, adicionando-se o sinal de sonorização (dakuten) à sílaba Shi (de Shinzo - Coração), tem-se Ji (de Jinzo - Rim).\n\nPode-se dizer também: Coração é Fogo, Pulmão é Ar, Estômago é Terra, Rim é Água. Ou ainda: Rins e Pulmões agem como Água; Coração e Fígado agem como Fogo. O Coração é Espírito, o Fígado é Matéria; o Pulmão é Espírito, o Rim é Matéria. Há várias doenças renais: Tuberculose renal, Rim atrófico, Pielite, etc.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Rins"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Mundo Espiritual",
@@ -2284,8 +2513,9 @@
     "title": "Sarampo",
     "content": "Quase ninguém escapa do sarampo. A causa é a eliminação do sangue tóxico herdado dos pais; é algo a se agradecer, mal podendo ser chamado de doença. O único cuidado é não expor a criança ao vento, pois isso interrompe a saída das toxinas pela pele. O ditado antigo \"não pegue vento, cubra-se e durma\" é sábio. Impedir a erupção retém a toxina, causando reincidência ou outras doenças.",
     "focusPoints": [
-      "pulmoes",
-      "pele"
+      "Pele",
+      "pele",
+      "pulmoes"
     ],
     "source": "Estudos Específicos 01",
     "tags": [
@@ -2303,7 +2533,9 @@
     "id": "pf75",
     "title": "Epilepsia",
     "content": "Há dois tipos: física e espiritual. A física: acúmulo de pus aquoso perto do bulbo bloqueia o sangue para o cérebro. Se o bloqueio for total, ocorre o ataque. Dissolvendo o pus, cura-se.\n\nA espiritual é muito mais frequente e maligna. Causada pela possessão de \"Espíritos Mortos\", que reproduzem a agonia de sua morte (geralmente morte violenta ou súbita). Muitos são espíritos de mortos por hemorragia cerebral. No ataque, reproduzem a queda do derrame. Como morreram de repente, não se prepararam para a morte e acham que ainda estão vivos, apossando-se de corpos vivos.\n\nCair espumando é a \"Epilepsia da Água\", causada por espíritos de afogados. Cair ao ver água deve-se ao medo que o espírito sentiu ao morrer afogado. A \"Epilepsia do Fogo\" manifesta-se pelo medo do fogo. Tratei um caso que só tinha ataques dormindo: via o fogo aproximar-se até perder a consciência. Era, provavelmente, um espírito morto em incêndio (no terremoto).\n\nAo iniciar o Johrei, os ataques podem piorar temporariamente, mas depois espaçam até a cura.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Bulbo"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Mundo Espiritual",
@@ -2351,7 +2583,17 @@
     "id": "pf79",
     "title": "Pontos Vitais das Doenças da Cabeça",
     "content": "1) Alto da Cabeça, Região Occipital, Bulbo e Ombros Muitas pessoas acumulam toxinas profundamente no alto da cabeça (vértice). As preocupações constantes tendem a concentrar as toxinas nessa região. O uso excessivo do cérebro também as atrai para lá. Conforme descrito nos livros, atividades como memorização, leitura e estudos acadêmicos utilizam o lobo frontal. A região occipital, por sua vez, rege as emoções. Contudo, o ato de preocupar-se envolve tanto o intelecto quanto a emoção, fazendo com que as toxinas se alojem no topo da cabeça. Muitas são as pessoas que sentem peso ou aflição no centro dessa região; a causa está aí. Tratando-se o topo da cabeça, a região occipital e o bulbo, nesta ordem, qualquer doença apresentará melhora. （浄霊法講座２　ｐ19）\n\nQuanto à cabeça, na vida moderna é impossível viver sem utilizá-la intensamente. Não vivemos mais em épocas despreocupadas como antigamente. O uso excessivo da mente atrai solidificações para a cabeça. Geralmente, essas solidificações originam-se nos ombros e sobem devido à atividade cerebral. Portanto, ao amolecer os ombros, a cabeça também se torna mais leve. （浄霊法講座２　ｐ15）\n\nA maioria dos enfermos deve, primeiramente, baixar a cabeça para que se ministre Johrei no centro dela, mais especificamente na parte profunda. Este é o centro vital do ser humano; o que ocorre aqui afeta o corpo inteiro. （浄霊法講座２　ｐ13）\n\nA região mais trabalhosa é, sem dúvida, o bulbo raquidiano. Não existe ninguém que não possua solidificações nessa área. Pode variar em quantidade, mas sempre haverá rigidez, seja como uma barra de ferro ou como pedras. Ninguém possui essa região totalmente flexível; por isso afirmo que, hoje em dia, todos são, em certa medida, enfermos. Atualmente, considera-se longevo quem vive até os setenta ou oitenta anos, mas, eliminando-se essas solidificações, a vida humana ultrapassaria facilmente os cem anos. É algo extraordinário. Prolongar a vida não apresenta dificuldade alguma. Todavia, por parecer uma promessa boa demais, as pessoas acabam duvidando. A chave, portanto, está no bulbo. （浄霊法講座２　ｐ22）\n\n2) Glândulas Linfáticas Quando surge febre nas glândulas linfáticas, ela se transfere imediatamente para a região frontal. Essa febre é a que mais afeta a testa, pois as toxinas das linfas migram continuamente para lá. Pessoas com a cabeça pesada, depressivas, irascíveis ou que sentem mal-estar constante sofrem, na verdade, desse processo. O que se costuma chamar de neurastenia tem, na maioria das vezes, sua causa principal nas glândulas linfáticas. （浄霊法講座２　ｐ38～39）\n\n3) Têmporas Há casos em que a febre se localiza nas têmporas, causando grande aflição. Nessas situações, deve-se ministrar Johrei lateralmente. （御教え集22　ｐ５）\n\n4) Pescoço A exceção é a paralisia (derrame). Pessoas propensas à paralisia costumam ter os ombros macios. Em compensação, possuem solidificações no pescoço que, ao se dissolverem, penetram no cérebro. Quem sofre de paralisia tem, invariavelmente, rigidez ao redor do pescoço, seja no lado direito ou esquerdo. O mesmo ocorre na região occipital. Ou seja, as toxinas que deveriam descer acabam subindo e solidificando-se nessas áreas devido à forma como a pessoa utiliza o corpo em sua profissão. A dissolução súbita dessas toxinas e sua entrada no cérebro constituem a hemorragia cerebral. Se a rigidez for no lado direito, a paralisia ocorrerá nos membros esquerdos. Na paralisia, o ponto crucial não são os ombros, mas as solidificações no pescoço. （浄霊法講座２　ｐ17）\n\n5) Púbis (Região Genital) É necessário compreender o seguinte princípio: o ser humano é um reflexo do Céu e da Terra, onde a parte superior do corpo corresponde ao Céu e a inferior à Terra. O \"Imperador Celestial\" (centro da testa) corresponde, na mulher, à região genital. Aprofundando o assunto, o sentido sexual está intimamente ligado a esta área da região frontal. Isso é observável principalmente nos homens: estímulos visuais, como o strip-tease, estimulam o interior da região frontal através dos olhos. Esse estímulo desce imediatamente para a região inferior. Isso é ciência sexual. O desejo sexual masculino tem sua origem na região frontal. A medicina divina também condiz com a sexologia moderna. Portanto, em pessoas com febre na testa, é fundamental ministrar Johrei na parte inferior. Para aqueles que se queixam de dores de cabeça ou mal-estar cefálico, o tratamento dos pontos vitais inferiores traz a cura. Existe uma correspondência entre o alto e o baixo. Assim como na doença, existem o \"palco\" e os \"bastidores\". A doença manifesta é o palco; a causa oculta são os bastidores. Se não tratarmos os bastidores, a cura radical não será alcançada. （浄霊法講座２　ｐ28～29）\n\nAs mulheres, invariavelmente, apresentam febre na região frontal, o que as torna irritadiças. Essa febre indica a presença de toxinas que ascenderam da parte inferior. Por isso, ao ministrar Johrei na testa, deve-se também ministrar na região genital. Isso fará a febre da testa ceder, trazendo bem-estar. Poucos percebem essa conexão. Como o Johrei é ministrado sem contato físico, não há inconveniente algum. Nestes casos, lembrem-se de tratar tanto a cabeça quanto a região inferior para duplicar a eficácia. （浄霊法講座９　ｐ10）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais - Fundamentos",
@@ -2368,7 +2610,15 @@
     "id": "pf81",
     "title": "Pontos Vitais das Doenças dos Órgãos Internos",
     "content": "1) Ombros Anteriormente mencionei que na tuberculose deve-se focar o Johrei nos ombros, mas isso se aplica não apenas à tuberculose, sendo extremamente eficaz também para doenças cardíacas e gástricas. Cardíacos têm, obrigatoriamente, o ombro esquerdo rígido. A toxina dissolvida dessa região solidifica-se ao redor do coração, comprimindo-o. A asma segue o mesmo princípio, com a solidificação ocorrendo no diafragma — daí o termo médico \"asma cardíaca\". A atividade cardíaca deficiente prejudica a atividade pulmonar. Como sabem, o pulmão é Água e o coração é Fogo; aumentando o Fogo, a Água se movimenta melhor, beneficiando os pulmões. Portanto, amolecer os ombros melhora os pulmões porque melhora o coração. Além disso, ombros macios aumentam o apetite, o que significa uma melhora na atividade gástrica. Assim, manter os ombros flexíveis beneficia a tríade: Pulmões, Coração e Estômago. Se esses três estiverem bem, o resto é secundário. Doenças no fígado também resultam de toxinas que descem dos ombros. Problemas renais, manifestados por acúmulos na região lombar, também provêm da descida de toxinas dos ombros. O diabetes, relacionado ao pâncreas (lado esquerdo), segue a mesma lógica; o fígado afetado pressiona a vesícula, causando icterícia. Em suma, se a trindade Pulmão-Coração-Estômago estiver sã, não haverá grandes problemas. （浄霊法講座２　ｐ15）\n\nIsso é muito eficaz também para indigestão, gastroptose e cãibras estomacais. Portanto, para doenças da parte superior do corpo, saibam que o foco nos ombros é o melhor caminho. （浄霊法講座２　ｐ25）\n\nEm bebês, o choro excessivo, a irritabilidade e o gênio difícil indicam ombros rígidos. A propensão a febres também. A amigdalite, comum em crianças, é causada por toxinas dos ombros que migram para a garganta. Resumindo: na parte superior, foquem nos ombros e ao redor do pescoço. （浄霊法講座２　ｐ19）\n\n2) Estômago A causa da doença raramente está no local onde o sintoma se manifesta. Excetuando-se furúnculos e afins, nas doenças dos órgãos internos a causa não é o local da dor. Como num teatro, o que aparece no palco tem suas causas nos bastidores. （浄霊法講座２　ｐ36）\n\nPorém, doenças do fígado, pâncreas e intestinos têm uma nuance diferente: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ30）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Garganta",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Asma",
@@ -2390,7 +2640,13 @@
     "id": "pf82",
     "title": "Pontos Vitais das Doenças Pulmonares",
     "content": "1) Corpo Inteiro (Principalmente Pescoço) O pulmão é um caso à parte: toxinas de qualquer lugar do corpo, uma vez dissolvidas, dirigem-se a ele para serem expelidas como escarro. Sejam da cabeça, mãos ou pés, se a solidificação derreter, vai para o pulmão. Embora a tuberculose seja chamada de doença do tórax porque os sintomas ali aparecem, ela poderia ser considerada uma doença do corpo todo. Toxinas do pescoço, ombros, abdômen e costas convergem para lá. Contudo, a maior concentração está ao redor do pescoço. Por isso, creio que seria mais correto chamar a tuberculose de uma doença do pescoço. （浄霊法講座２　ｐ37）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Pés"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais - Fundamentos",
@@ -2407,7 +2663,14 @@
     "id": "pf83",
     "title": "Pontos Vitais para Vômitos, Diarreia e Leucorreia",
     "content": "1) Região Occipital, Pescoço, Ombros A cabeça divide-se em frontal e occipital. A região occipital segue a ordem de eliminação via disenteria ou hemorroidas. É preciso saber que, ao ministrar Johrei nos ombros, o paciente pode sentir mal-estar no peito, náuseas leves ou ânsia. Isso ocorre porque as toxinas dissolvidas descem e se acumulam no estômago. Nesses casos, deve-se ministrar Johrei no estômago. Mesmo sem Johrei, a toxina desceria, causando dor de barriga. Portanto, ao tratar ombros e pescoço, saibam que a dissolução das toxinas pode causar enjoo seguido de dor abdominal. Se alguém perguntar por que a barriga dói se o problema era no pescoço, a resposta é que as toxinas dissolvidas desceram para serem eliminadas via diarreia. Isso é comum nos homens; nas mulheres, a eliminação pode ocorrer pela frente, na forma de leucorreia (corrimento branco) ou através das mucosas genitais, causando ardor ou coceira. Nos homens, é exclusivamente diarreia. Compreendendo esse mecanismo, não haverá erros. Em alguns casos, as toxinas podem se alojar na região lombar. （浄霊法講座２　ｐ33）\n\n2) Região Frontal, Tórax, Estômago Para ilustrar, contarei uma experiência própria. Eu tinha um nódulo na região occipital causado por remédios aplicados nos dentes, que migraram e se solidificaram ali. Minha cabeça estava sempre pesada. Percebi isso há dois anos e comecei a fazer o auto-Johrei. O nódulo, duro como osso, foi dissolvendo e reduziu-se à metade. Era estranho ter algo duro como osso ali que não doía ao apertar. Recentemente, ao diminuir pela metade, comecei a sentir tonturas fortes. Procurei a causa e percebi que, ao dissolver a região occipital, ocorreu uma purificação compensatória na região frontal. Ao dissolver a frente, a tontura passou, mas comecei a sentir o peito enjoado. As toxinas da testa desceram para o estômago. Ministrei Johrei no estômago e senti vontade de ir ao banheiro, o que resolveu o problema. Eram fezes moles e com cheiro forte. O processo foi: occipital -> frontal -> estômago -> excreção. Ao dissolver uma parte, ocorre uma equalização da purificação em outras áreas da cabeça, que depois descem. O corpo é feito de forma muito conveniente. （御垂示録８　ｐ１）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais - Fundamentos",
@@ -2426,7 +2689,14 @@
     "id": "pf84",
     "title": "Pontos Vitais das Doenças das Mãos e Pés",
     "content": "1) Rins, Ombros, Lombar, Cóccix As toxinas medicamentosas concentram-se inicialmente nos rins, o local de processamento. O que não é eliminado via urina, migra e solidifica-se nos ombros ou na região lombar. Isso depende da profissão: quem usa muito as mãos ou a mente, acumula nos ombros. Agricultores ou quem trabalha sentado forçando a lombar, acumula nos quadris. O que se acumula na lombar dissolve-se aos poucos e flui para as pernas, causando problemas nelas. O beribéri é um exemplo disso. Cãibras, dormência, fadiga, joelhos fracos; tudo que se refere às pernas vem de acúmulos na lombar que desceram. Portanto, foquem no centro da região lombar e no cóccix, ministrando Johrei pelas costas. As pernas ficarão leves mesmo sem serem tocadas diretamente. Isso também se relaciona com a falta de ar. Quem tem problemas nas pernas e na lombar faz muito esforço ao andar ou subir ladeiras. Esse esforço sobrecarrega o coração. Como o coração (Fogo) precisa trabalhar mais, sobra menos energia térmica para ativar os pulmões (Água), resultando em respiração ofegante. （浄霊法講座２　ｐ35）\n\nO mesmo vale para problemas renais (acúmulos lombares) que vêm dos ombros. （浄霊法講座２　ｐ15）\n\nProblemas nas mãos e braços também vêm dos ombros. Tratando os ombros, os braços melhoram. （浄霊法講座２　ｐ19）\n\n2) Pescoço e Lateral da Coxa Muitas pessoas com problemas nas pernas e na lombar melhoram após receberem Johrei no pescoço. （浄霊法講座２　ｐ26）\n\nPara quem tem dificuldade no movimento das pernas, deve-se verificar a lateral da coxa; se estiver dura, ministre Johrei ali. （浄霊法講座２　ｐ31）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais - Fundamentos",
@@ -2443,7 +2713,11 @@
     "id": "pf85",
     "title": "Pontos Vitais para Distensão Abdominal",
     "content": "1) Rins, Baixo Ventre, Púbis A distensão abdominal deve-se, invariavelmente, aos rins. Além disso, quem sofre de distensão tem má micção; deve-se tratar do umbigo para baixo, no centro do baixo ventre. A urina tóxica converge para lá; tratando esse centro, o abdômen alivia. A região púbica, onde nascem os pelos, é ainda melhor, pois elimina as toxinas da bexiga. （浄霊法講座２　ｐ31）\n\n※ Ponto Vital para o Apetite Falei sobre amolecer os ombros para abrir o apetite. Até que ponto devem ficar macios? Devem ficar fofos ao toque. Mas chegar a esse estado é difícil. Quase todos têm alguma rigidez que julgam normal por estarem acostumados. Quando essa rigidez se dissolve pela metade, o apetite aumenta consideravelmente. （浄霊法講座２　ｐ20）\n\nHavendo apetite, tudo se cura. O Johrei cura qualquer doença, mas o paciente pode sucumbir à debilidade antes da cura. A alimentação combate a debilidade; logo, o apetite é fundamental. （浄霊法講座２　ｐ21）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Ombros",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pontos Vitais",
@@ -2458,7 +2732,9 @@
     "id": "pf94",
     "title": "Tuberculose da Garganta",
     "content": "Relacionada à tuberculose, existe a tuberculose da garganta. Ela surge no estágio final da doença. Suas características são a rouquidão, dor de garganta ao comer e dificuldade de deglutição. A causa é o catarro extremamente tóxico que, ao passar pela garganta, irrita a mucosa da traqueia e laringe, causando inflamação. Esse catarro é o mais antigo e putrefato. Enquanto ele continuar saindo, a cura é difícil e as chances de recuperação são mínimas. （文明の創造　肺患と薬毒）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Garganta"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -2473,7 +2749,9 @@
     "id": "pf96",
     "title": "Paralisia do Nervo Facial",
     "content": "Existe uma doença chamada paralisia do nervo facial. Nela, um dos lados do lábio repuxa ou o olho se contrai, podendo o globo ocular parecer saltar para fora. A aparência torna-se deformada, sendo difícil de olhar nos casos graves. Contudo, se deixada naturalmente, a cura ocorre em algumas dezenas de dias ou alguns meses.\n\nA medicina aplica eletroterapia nesses casos, o que é prejudicial. A causa da doença é o acúmulo de toxinas em uma parte ou em vários pontos da face, impedindo a flexão e extensão muscular. A terapia elétrica solidifica ainda mais essas toxinas. Pela terapia natural, essas toxinas são eliminadas através de uma purificação lenta na forma de secreção nasal, escarro ou remela, resultando na cura. （明日の医術　歯槽膿漏及び顔面麻痺）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Face"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
@@ -2488,7 +2766,9 @@
     "id": "pf97",
     "title": "Nevralgia Facial",
     "content": "Há também a chamada nevralgia facial, onde um dos lados da face dói. No entanto, como isso também é a purificação das toxinas acumuladas no local da dor, cura-se através da terapia natural. （明日の医術　歯槽膿漏及顔面麻痺）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Face"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Purificação",
@@ -2504,7 +2784,13 @@
     "id": "pf98",
     "title": "Atrofia Renal",
     "content": "Os rins desempenham um papel de suma importância nas funções orgânicas, seguindo-se apenas às três grandes funções vitais (coração, pulmões e estômago). Como a própria medicina preconiza, sua função é filtrar os líquidos acumulados no corpo, extraindo deles hormônios preciosos e enviando os resíduos líquidos — a urina — para a bexiga.\n\nEm condições ideais, esse processo ocorreria perfeitamente. Contudo, é comum que a atividade renal decline gradativamente à medida que se avança da infância para a juventude, idade adulta e velhice. A causa desse declínio funcional reside na atrofia dos rins.\n\nQuestiona-se, então: por que ocorre essa atrofia? Como mencionado, ao separarem o necessário do desnecessário, os rins por vezes deparam-se com substâncias estranhas que não se enquadram em nenhuma dessas categorias. Tais substâncias são, inegavelmente, toxinas medicamentosas. Como não podem ser convertidas nem em hormônios e nem em urina, essas toxinas permeiam a epiderme renal e exsudam para a parte posterior do órgão (costas), acumulando-se paulatinamente.\n\nEsse acúmulo solidifica-se e pressiona os rins, provocando sua atrofia gradual. Consequentemente, a produção de hormônios diminui (sendo esta uma causa frequente de frigidez) e o processamento da urina torna-se deficiente. Parte dessa urina não processada também exsuda para o exterior, somando-se às toxinas medicamentosas. A união desses dois venenos resulta em uma solidificação tóxica que, ao aumentar, acumula-se em ambos os lados da coluna vertebral, estendendo-se para cima até atingir a região dos ombros e do pescoço.\n\nA rigidez nos ombros e no pescoço deve-se a isso. É interessante notar que é possível distinguir esses dois tipos de acúmulo: ao pressionar a área afetada, a toxina medicamentosa apresenta-se rígida, causando dor aguda e persistente; já a toxina urinária é levemente macia e quase indolor.\n\nFinalmente, quando essas toxinas penetram no cérebro, desencadeia-se a purificação. Isso se manifesta como peso na cabeça, dores de cabeça, meningite, encefalite japonesa, meningite cerebroespinhal, hemorragia cerebral e todas as demais enfermidades cerebrais. Identificar a presença de toxinas no cérebro é extremamente simples: basta tocar a cabeça. Se houver qualquer calor, é prova da existência de toxinas; quanto mais quente, maior a quantidade. Provavelmente, não há uma única pessoa moderna que não apresente essa febre craniana.\n\nCompreende-se, assim, que as toxinas que se solidificam dos ombros para cima — causa inicial dos resfriados — têm sua origem invariavelmente nos rins. Torna-se evidente que a atrofia renal é a causa de quase todas as doenças: resfriados, tuberculose, pneumonia, pleurisia, peritonite, reumatismo articular, nevralgia, doenças femininas, cárie óssea, doenças hepáticas, icterícia, diabetes, cálculos na vesícula, rins e bexiga, asma, paralisia, poliomielite e doenças mentais.\n\nPortanto, a condição primordial para a saúde é, sem dúvida, evitar a atrofia renal. As doenças citadas serão explicadas sequencialmente, o que tornará a compreensão ainda mais clara. （文明の創造　腎臓病とその他の病）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Asma",
@@ -2530,10 +2816,12 @@
     "title": "Apendicite",
     "content": "Qual seria a causa da apendicite? Para entender, primeiro é preciso explicar a função do apêndice. No processo de purificação contínua do corpo, o apêndice funciona como o local de acúmulo de toxinas da parte inferior do corpo, desempenhando papel semelhante ao das amígdalas na parte superior.\n\nOu seja, pela primeira ação de purificação, as toxinas acumulam-se no apêndice. Ao pressionar essa região com a ponta do dedo, sente-se dor em maior ou menor grau. Dor intensa indica que o acúmulo de toxinas atingiu um nível elevado, sendo um sinal de que a apendicite (a segunda ação de purificação) está próxima. Dor leve indica pouco acúmulo. Se houver dor ao pressionar outras partes do abdômen além do apêndice, indica acúmulo de toxinas também no peritônio, prenunciando uma complicação com peritonite aguda.\n\nUm fato interessante é que a segunda ação de purificação (a crise inflamatória) não ocorre quando o corpo está debilitado; ela só acontece quando há vitalidade. Por isso a apendicite é frequente em jovens e após exercícios intensos. Além disso, como o acúmulo de toxinas leva anos ou até mais de uma década para se formar, é evidente que a doença é quase inexistente em bebês ou crianças pequenas.\n\nBaseando-se nessa teoria, se a apendicite for deixada naturalmente, a cura é fácil. A febre alta liquifaz as toxinas acumuladas e, após dois ou três dias, elas são expelidas via diarreia, resultando na cura. A medicina teme a supuração (formação de pus), mas na verdade a cura ocorre porque há supuração. A supuração é o passo anterior à diarreia; portanto, pode-se considerar que o paciente já está meio curado. Assim, o tratamento ideal na crise é: jejum no primeiro dia; líquidos no segundo e terceiro; mingau no quarto e quinto; e comida normal a partir do sexto dia.\n\nPela terapia natural, a dor intensa dura de meio dia a um dia, seguida de dor leve por uns dois dias; no quarto dia, o paciente já consegue caminhar pelo quarto. Não é uma doença a se temer. A causa fundamental da apendicite é a existência de um acúmulo rígido de toxinas na região do rim direito. A atrofia renal resultante gera urina excedente, que se acumula no apêndice. Portanto, ao dissolver a toxina do rim direito, a reincidência é impossível. A peritonite concomitante não tem relação direta com o apêndice; ocorre porque as toxinas do peritônio entram em purificação simultaneamente.\n\nA medicina às vezes recomenda a cirurgia, mas o prognóstico não é bom. Alguns médicos evitam operar e usam outros métodos para parar a purificação e fazer a toxina retroceder (solidificar novamente). Isso leva muito tempo e, como resultado, as toxinas abdominais endurecem gradualmente, o abdômen fica rígido como uma tábua, causando distúrbios gástricos, falta de apetite e debilidade severa, levando muitos à morte. Pela terapia natural, é preciso suportar a dor intensa por cerca de três dias e jejuar, mas comparado ao risco de vida da cirurgia ou tratamentos errôneos, três ou cinco dias de paciência não são nada, visto que a cura é certa. O resultado final é uma diarreia violenta seguida de cura completa em duas ou três semanas, sem qualquer risco de reincidência. （明日の医術　扁桃腺、盲腸炎と手術）",
     "focusPoints": [
+      "Amígdalas",
+      "Peritônio",
+      "coccix",
       "inguinal",
       "intestino",
-      "rins",
-      "coccix"
+      "rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -2554,7 +2842,10 @@
     "id": "pf112",
     "title": "Hemorroidas (Nódulos)",
     "content": "Existem as hemorroidas internas e externas. As internas ocorrem porque a pessoa é gorda; as externas, porque é magra. Deixando naturalmente, a toxina acumula-se até estourar e ser expelida, curando-se. A hemorragia anal é comum; o sangue tóxico tenta sair, fissura o ânus e sangra constantemente. Embora assuste e seja desagradável, na verdade é excelente para a saúde, pois elimina sangue tóxico. Pessoas com cabeça pesada ou rigidez nos ombros sentem-se aliviadas após a hemorragia. Isso ajuda muito na prevenção de derrames cerebrais. （文明の創造　下半身の病気と痔疾）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Derrame (AVC)",
@@ -2571,7 +2862,10 @@
     "id": "pf113",
     "title": "Doenças Venéreas",
     "content": "A medicina classifica as doenças venéreas em três tipos: Cancro Duro (Sífilis), Cancro Mole e Gonorreia. Recentemente, falam de uma quarta, mas a explicação dessas três basta. （天国の福音　花柳病）\n\n1) Cancro Duro (Sífilis) Diz-se que é causada pela bactéria Spirochaeta através de contato impuro. O tratamento moderno usa injeções de \"preparado 606\" (Salvarsan), mercúrio, pomadas de mercúrio e iodetos. Como já disse, o veneno do 606 é muito pior que a sífilis e seu efeito é temporário, fato admitido pela medicina. As toxinas de mercúrio e iodo manifestam-se anos depois em formas graves, podendo ser fatais. É estranho que a medicina \"avançada\" não tenha descoberto isso. A medicina fala em sífilis hereditária; eu nego, a sífilis não é hereditária. No futuro, a medicina concordará comigo. Com esta terapia, a sífilis cura-se com uma facilidade surpreendente. Deve-se saber que a sífilis, por si só, não causa dor; se houver dor ou coceira, a causa não é apenas a sífilis. Os sintomas progridem de cancro para ínguas, manchas na pele, queda de cabelo, rouquidão e, por fim, afetam o osso do nariz e a fala. （天国の福音　花柳病）\n\n2) Cancro Mole Limita-se a cancro e ínguas, sem progredir mais. Causa febre e dor. Cura-se naturalmente, mas os médicos incentivam a cirurgia, o que prolonga o caso. Com esta terapia, a cura é simples e total. （天国の福音　花柳病）\n\n3) Gonorreia É mais maligna que a sífilis, pois é impossível curar radicalmente. \"Cura\" de gonorreia significa apenas eliminar o risco de reincidência. O gonococo é um organismo vivo; com o aumento da resistência do corpo, ele enfraquece e torna-se inorgânico, como um musgo. Esse musgo, estimulado por álcool, exercícios ou febre, pode voltar a ser orgânico, causando a reincidência. Geralmente cura-se em pouco tempo. Se esse musgo crescer anos depois, pode estreitar a uretra e dificultar a micção. A injeção de remédios na uretra durante o vazamento de pus é perigosa, pois empurra o gonococo para dentro, causando prostatite ou orquite (inflamação nos testículos), com febre e dor. A terapia natural é eficaz: ingerir muita água para urinar frequentemente e lavar a uretra de forma natural e segura. Beber chá de agulhas de pinheiro é ainda melhor, pois a resina do pinheiro bloqueia os ninhos dos gonococos, impedindo sua reprodução. Com esta terapia, gonorreia, prostatite e orquite curam-se facilmente. （天国の福音「花柳病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Nariz",
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Saúde da Mulher",
@@ -2601,7 +2895,9 @@
     "id": "pf116",
     "title": "Leucorreia (Corrimento Branco)",
     "content": "Escreverei apenas sobre a leucorreia, muito comum entre as mulheres. Muitas se afligem com isso, mas, na verdade, é algo muito bom. Significa que várias toxinas estão sendo liquefeitas e expelidas; saindo tudo, o baixo ventre fica muito leve e confortável. Médicos e leigos, por desconhecimento, preocupam-se e tentam parar o fluxo, o que é péssimo, pois equivale a manter a doença dentro do corpo. （文明の創造　婦人病）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Baixo Ventre"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Rins e Sistema Urinário",
@@ -2616,7 +2912,9 @@
     "id": "pf119",
     "title": "Rim na Gravidez",
     "content": "Outro problema comum. O sintoma é o inchaço (edema), chamado de distúrbio ou atrofia renal. A causa: já existindo solidificação tóxica nas costas (rins), a gravidez pressiona pela frente, deixando o rim \"prensado\" e atrófico. Toda a urina não é processada e vaza, causando inchaço. Dissolvendo a toxina nas costas com Johrei, alivia-se a carga renal e a cura é natural. （文明の創造　婦人病）\n\n6. Mamas",
-    "focusPoints": [],
+    "focusPoints": [
+      "Rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Dores e Rigidez",
@@ -2631,7 +2929,9 @@
     "id": "pf120",
     "title": "Hipogalactia (Pouco Leite)",
     "content": "A falta de leite indica algum problema: ou há toxinas pressionando as glândulas mamárias, ou toxinas perto do estômago o comprimem, diminuindo sua capacidade (o estômago encolhe e a mãe só come para si, faltando para o leite). Ambos os casos curam-se rapidamente com Johrei. （文明の創造　小児病）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Sistema Digestivo",
@@ -2646,7 +2946,9 @@
     "id": "pf122",
     "title": "Outras Doenças Infantis",
     "content": "Eczema, doenças de pele, favo (tinha) e feridas faciais curam-se melhor naturalmente. Mesmo que pareça que a ferida no rosto vá cegar a criança, cura-se perfeitamente pela natureza.",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Doenças Infantis",
@@ -2661,7 +2963,13 @@
     "id": "pf123",
     "title": "Câncer",
     "content": "O câncer difere por não ser pus, mas uma toxina específica que se espalha por músculos, ossos e órgãos. É asséptico (sem bactérias). Tipos: Estômago, Esôfago, Laringe, Útero, Mama, Fígado, Pulmão, Intestino, Língua; raros: Bochecha, Maxilar, Ânus. Acredito haver mais tipos do que a medicina diz. Pode ser progressivo (rápido e maligno) ou não progressivo (localizado e fácil de curar, mas pode virar progressivo). Existe o Sarcoma, que parece câncer, mas distingue-se pelo tato. Muitos diagnósticos de câncer são falsos (Pseudocâncer). Com este tratamento, câncer e sarcoma têm 80% de cura; pseudocâncer, 100%. Os que não curaram estavam muito debilitados para aguentar a purificação. Se viessem no início, talvez todos se curassem. （明日の医術　「癌病」）\n\nA carne animal contém uma toxina que, acumulada, forma o Câncer Verdadeiro. A natureza fornece vegetais para neutralizar essa toxina. Comendo carne e vegetais meio a meio, o câncer não surge. Povos vegetarianos não deveriam ter câncer. No Japão é raro comparado aos EUA porque se come pouca carne. O Pseudocâncer é muito mais comum. Sua causa é uma toxina medicamentosa maligna. Parando os remédios e comendo vegetais, cura-se aos poucos. （アメリカを救う　「癌」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Maxilar",
+      "Útero"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -2679,7 +2987,9 @@
     "id": "pf125",
     "title": "Furúnculos",
     "content": "Existem vários tipos de inchaços: carbúnculos, furúnculos comuns, tuberculosos, picadas de insetos venenosos, etc. Todos são processos de purificação onde as impurezas do corpo se transformam em sangue tóxico ou pus, acumulam-se sob a pele causando inchaço, e rompem a pele para serem expelidos. É uma ação fisiológica natural; se deixada em paz, cura-se normalmente.\n\nNo entanto, como esse processo geralmente é doloroso e fomos educados a temer perigos de vida em casos como carbúnculos, as pessoas correm para o médico, crendo que só a cirurgia resolve. O médico tenta dispersar o inchaço com pomadas, gelo ou compressas, mas no fim acaba tendo que usar o bisturi para drenar o pus.\n\nO resultado da cirurgia e do uso de remédios pode levar a um agravamento inesperado, além de atrasar a cura. A causa dos inchaços \"tuberculosos\" é a interrupção da purificação (por resfriamento ou outros métodos) quando o inchaço estava se formando. Isso faz as toxinas retornarem ou se solidificarem, e a reincidência da purificação dessas toxinas endurecidas é muito mais obstinada do que a inicial; por isso, chama-se tuberculosa.\n\nQuanto a ferimentos por animais ou insetos (abelhas, cobras, víboras, ratos, gatos, cães), os sintomas variam conforme a toxina de cada animal. A dor é intensa e, no caso de víboras, ratos ou cães raivosos, há risco de vida. Porém, com esta terapia, picadas de abelha curam-se em minutos, de víbora em horas e de cão raivoso em dias. Quem presencia a eficácia surpreende-se. （天国の福音　「腫物及び火傷、切傷」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Purificação",
@@ -2694,7 +3004,9 @@
     "id": "pf126",
     "title": "Queimaduras e Cortes",
     "content": "Em queimaduras e cortes, geralmente ocorre supuração (formação de pus). Quando uma parte do corpo é ferida, as toxinas próximas (e até as distantes, por indução) concentram-se no local da lesão. Isso é a supuração; portanto, é motivo de grande alegria e, se deixado naturalmente, a cura é certa e perfeita.\n\nToda dor provém de toxinas medicamentosas; a coceira provém de toxinas naturais ou de medicamentos específicos. Doenças de pele tratadas pela medicina deixam cicatrizes feias: cirurgias causam repuxamento e remédios deixam marcas escuras ou roxas. A cura natural não deixa tais marcas. Com esta terapia, mesmo casos graves curam-se facilmente e a dor intensa é aliviada ou removida instantaneamente, causando sempre grande alegria aos pacientes. （天国の福音　「腫物及び火傷、切傷」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "Pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Pele",

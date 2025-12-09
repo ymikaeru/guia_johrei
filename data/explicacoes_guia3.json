@@ -21,6 +21,14 @@
       "Asma",
       "Pescoço",
       "Edema"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Diafragma",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
     ]
   },
   {
@@ -44,6 +52,10 @@
       "Diarreia",
       "Pescoço",
       "Edema"
+    ],
+    "focusPoints": [
+      "Pescoço",
+      "Região Renal"
     ]
   },
   {
@@ -62,6 +74,9 @@
       "Fígado",
       "Rins",
       "Costas"
+    ],
+    "focusPoints": [
+      "Fígado"
     ]
   },
   {
@@ -82,6 +97,9 @@
       "Costas",
       "Dor",
       "Coração"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -130,7 +148,21 @@
       "Intestinos",
       "Resfriado"
     ],
-    "johrei_points": "Johrei na região do cóccix, como mencionei. As pernas ficaram extremamente leves e a falta de ar cessou. Por isso, até hoje, subo muito rápido as muitas ladeiras das montanhas de Hakone.\n\nDo Estômago para as Costas\n\nAo tomar remédios via oral, deita-se de barriga para cima. Assim, não solidifica no estômago, mas nas costas. Não solidifica no estômago. Apenas no fundo do estômago pode haver solidific"
+    "johrei_points": "Johrei na região do cóccix, como mencionei. As pernas ficaram extremamente leves e a falta de ar cessou. Por isso, até hoje, subo muito rápido as muitas ladeiras das montanhas de Hakone.\n\nDo Estômago para as Costas\n\nAo tomar remédios via oral, deita-se de barriga para cima. Assim, não solidifica no estômago, mas nas costas. Não solidifica no estômago. Apenas no fundo do estômago pode haver solidific",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Fígado",
+      "Glândula Parótida",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "id": "explicacao_03_5",
@@ -154,6 +186,13 @@
       "Dor",
       "Desconforto",
       "Pescoço"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Região Renal"
     ]
   },
   {
@@ -187,6 +226,20 @@
       "Pressão Alta",
       "Pescoço",
       "Fígado"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Garganta",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Peritônio",
+      "Pernas",
+      "Pescoço",
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -215,6 +268,12 @@
       "Coluna",
       "Dedos",
       "Câncer"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pernas",
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -238,6 +297,10 @@
       "Dor",
       "Mãos",
       "Pescoço"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -259,6 +322,11 @@
       "Mãos",
       "Coração",
       "Asma"
+    ],
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Ombros"
     ]
   },
   {
@@ -279,6 +347,11 @@
       "Fígado",
       "Mãos",
       "Coração"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Ombros"
     ]
   },
   {
@@ -317,6 +390,16 @@
       "Dor",
       "Mãos",
       "Intestinos"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Intestino",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -333,6 +416,9 @@
       "Tosse",
       "Tuberculose",
       "Febre"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -347,6 +433,9 @@
     "searchKeywords": [
       "Ombros",
       "Febre"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -359,6 +448,10 @@
     ],
     "order": 14,
     "searchKeywords": [
+      "Ombros"
+    ],
+    "focusPoints": [
+      "Amígdalas",
       "Ombros"
     ]
   },
@@ -382,6 +475,14 @@
       "Língua",
       "Mãos",
       "Pescoço"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Nariz",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés"
     ]
   },
   {
@@ -407,6 +508,15 @@
       "Olhos",
       "Mãos",
       "Pescoço"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -422,6 +532,12 @@
       "Medula",
       "Pescoço",
       "Zumbido"
+    ],
+    "focusPoints": [
+      "Glândula Parótida",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
     ]
   },
   {
@@ -490,6 +606,10 @@
       "Rins",
       "Dentes",
       "Coração"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Rins"
     ]
   },
   {

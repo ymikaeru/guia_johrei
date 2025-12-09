@@ -16,7 +16,13 @@
       "Ministração de Johrei"
     ],
     "order": 19,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Pele",
+      "Peritônio",
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "id": "tecnicas_62",
@@ -34,7 +40,10 @@
       "Saúde da Mulher"
     ],
     "order": 27,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "id": "casos_clinicos_16",
@@ -53,7 +62,13 @@
       "Ministração de Johrei"
     ],
     "order": 20,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos",
+      "Útero"
+    ]
   },
   {
     "id": "casos_clinicos_21",
@@ -68,7 +83,10 @@
       "Toxinas"
     ],
     "order": 36,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "tecnicas_58",
@@ -97,7 +115,11 @@
       "Ministração de Johrei"
     ],
     "order": 39,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Útero"
+    ]
   },
   {
     "id": "casos_clinicos_15",
@@ -128,7 +150,10 @@
       "Toxinas"
     ],
     "order": 23,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "tecnicas_64",
@@ -145,7 +170,11 @@
       "Ministração de Johrei"
     ],
     "order": 42,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "id": "tecnicas_65",
@@ -164,7 +193,13 @@
       "Ministração de Johrei"
     ],
     "order": 43,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Estômago",
+      "Fígado",
+      "Rins"
+    ]
   },
   {
     "id": "pontos_focais_18",
@@ -206,7 +241,8 @@
       "Baixo Ventre",
       "Lombar",
       "Ombros",
-      "Rins"
+      "Rins",
+      "Útero"
     ],
     "system": "Sistema Reprodutor",
     "type": "Q&A"
@@ -233,10 +269,12 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
+      "Abdômen",
       "Cabeça",
-      "Abdômen"
+      "Membros",
+      "Ombros",
+      "Pernas",
+      "Pescoço"
     ],
     "system": "Sistema Reprodutor",
     "type": "Caso Clínico"
@@ -255,7 +293,8 @@
       "Arte e Beleza"
     ],
     "focusPoints": [
-      "Abdômen"
+      "Abdômen",
+      "Útero"
     ],
     "system": "Sistema Reprodutor",
     "order": 32,
@@ -276,7 +315,10 @@
       "Ministração de Johrei"
     ],
     "order": 65,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Baixo Ventre"
+    ]
   },
   {
     "id": "fundamentos_70",
@@ -298,7 +340,13 @@
       "Dentes e Boca",
       "Rins e Sistema Urinário"
     ],
-    "order": 89
+    "order": 89,
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Mãos",
+      "Occipital"
+    ]
   },
   {
     "id": "fundamentos_61",
@@ -318,7 +366,11 @@
       "Toxinas"
     ],
     "order": 71,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Ombros"
+    ]
   },
   {
     "id": "fundamentos_67",
@@ -334,7 +386,10 @@
       "Toxinas"
     ],
     "order": 80,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_66",
@@ -385,7 +440,11 @@
       "Sistema Nervoso e Cabeça"
     ],
     "order": 93,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
+    ]
   },
   {
     "id": "fundamentos_72",
@@ -399,7 +458,10 @@
       "Toxinas"
     ],
     "order": 97,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_50",
@@ -418,7 +480,11 @@
       "Ministração de Johrei"
     ],
     "order": 50,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Frontal"
+    ]
   },
   {
     "id": "fundamentos_51",
@@ -439,7 +505,10 @@
       "Toxinas"
     ],
     "order": 52,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "fundamentos_52",
@@ -457,7 +526,10 @@
       "Toxinas"
     ],
     "order": 56,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "fundamentos_54",
@@ -482,7 +554,13 @@
       "Ministração de Johrei"
     ],
     "order": 59,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Garganta",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_55",
@@ -499,7 +577,11 @@
       "Toxinas"
     ],
     "order": 60,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Membros"
+    ]
   },
   {
     "id": "fundamentos_60",
@@ -517,7 +599,11 @@
       "Toxinas"
     ],
     "order": 70,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
+    ]
   },
   {
     "id": "fundamentos_63",
@@ -544,7 +630,14 @@
       "Ministração de Johrei"
     ],
     "order": 75,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Olhos",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_64",
@@ -563,7 +656,12 @@
       "Toxinas"
     ],
     "order": 76,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Estômago",
+      "Intestino"
+    ]
   },
   {
     "id": "fundamentos_65",
@@ -579,7 +677,10 @@
       "Toxinas"
     ],
     "order": 78,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_69",
@@ -594,7 +695,10 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
     ],
-    "order": 87
+    "order": 87,
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_53",
@@ -619,10 +723,12 @@
     ],
     "focusPoints": [
       "Cabeça",
-      "Occipital",
+      "Costas",
       "Estômago",
       "Fígado",
-      "Costas"
+      "Intestino",
+      "Occipital",
+      "Pele"
     ],
     "order": 57,
     "type": "Q&A"
@@ -653,9 +759,10 @@
       "Ministração de Johrei"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
       "Abdômen",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
       "Rins"
     ],
     "order": 64,
@@ -711,11 +818,13 @@
       "Ministração de Johrei"
     ],
     "focusPoints": [
-      "Ombros",
-      "Cabeça",
       "Abdômen",
+      "Cabeça",
       "Estômago",
       "Fígado",
+      "Ombros",
+      "Pernas",
+      "Pleura",
       "Rins"
     ],
     "order": 74,
@@ -739,12 +848,15 @@
       "Rins e Sistema Urinário"
     ],
     "focusPoints": [
-      "Pescoço",
-      "Cabeça",
-      "Occipital",
       "Abdômen",
+      "Baixo Ventre",
+      "Cabeça",
       "Estômago",
-      "Fígado"
+      "Fígado",
+      "Occipital",
+      "Pele",
+      "Pescoço",
+      "Rins"
     ],
     "system": "Rins",
     "order": 67,
@@ -764,7 +876,11 @@
       "Toxinas"
     ],
     "order": 54,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Face"
+    ]
   },
   {
     "id": "tecnicas_38",
@@ -778,7 +894,10 @@
       "Toxinas"
     ],
     "order": 55,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "tecnicas_41",
@@ -796,7 +915,12 @@
       "Ministração de Johrei"
     ],
     "order": 68,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Membros",
+      "Olhos",
+      "Rins"
+    ]
   },
   {
     "id": "casos_clinicos_12",
@@ -814,7 +938,11 @@
       "Ministração de Johrei"
     ],
     "order": 51,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Pescoço"
+    ]
   },
   {
     "id": "tecnicas_47",
@@ -842,7 +970,11 @@
       "Sistema Digestivo"
     ],
     "order": 96,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Fígado"
+    ]
   },
   {
     "id": "tecnicas_51",
@@ -856,7 +988,10 @@
       "Ministração de Johrei"
     ],
     "order": 94,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Intestino"
+    ]
   },
   {
     "id": "tecnicas_52",
@@ -899,7 +1034,12 @@
       "Sistema Digestivo",
       "Toxinas"
     ],
-    "order": 61
+    "order": 61,
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Occipital"
+    ]
   },
   {
     "id": "tecnicas_48",
@@ -911,7 +1051,10 @@
       "Mundo Espiritual",
       "Sistema Nervoso e Cabeça"
     ],
-    "order": 86
+    "order": 86,
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "casos_clinicos_14",
@@ -925,7 +1068,11 @@
       "Toxinas"
     ],
     "order": 90,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Membros"
+    ]
   },
   {
     "id": "tecnicas_35",
@@ -940,7 +1087,10 @@
       "Toxinas"
     ],
     "order": 49,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "tecnicas_36",
@@ -961,7 +1111,12 @@
       "Ministração de Johrei"
     ],
     "order": 53,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Fígado"
+    ]
   },
   {
     "id": "tecnicas_42",
@@ -978,7 +1133,11 @@
       "Ministração de Johrei"
     ],
     "order": 69,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Estômago",
+      "Pernas"
+    ]
   },
   {
     "id": "tecnicas_44",
@@ -996,7 +1155,11 @@
       "Toxinas"
     ],
     "order": 81,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "id": "tecnicas_45",
@@ -1014,7 +1177,12 @@
       "Toxinas"
     ],
     "order": 83,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Fígado",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "id": "tecnicas_46",
@@ -1034,7 +1202,15 @@
       "Ministração de Johrei"
     ],
     "order": 84,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Intestino",
+      "Pele",
+      "Peritônio",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "id": "tecnicas_50",
@@ -1054,7 +1230,12 @@
       "Ministração de Johrei"
     ],
     "order": 92,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Peritônio"
+    ]
   },
   {
     "id": "pontos_focais_16",
@@ -1087,7 +1268,11 @@
       "Ministração de Johrei"
     ],
     "order": 91,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
+    ]
   },
   {
     "id": "casos_clinicos_13",
@@ -1104,7 +1289,10 @@
       "Ministração de Johrei"
     ],
     "order": 58,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "id": "pontos_focais_14",
@@ -1191,9 +1379,12 @@
       "Rins e Sistema Urinário"
     ],
     "focusPoints": [
-      "Pescoço",
+      "Abdômen",
       "Cabeça",
-      "Abdômen"
+      "Membros",
+      "Mãos",
+      "Peritônio",
+      "Pescoço"
     ],
     "system": "Pontos Vitais",
     "order": 88
@@ -1206,7 +1397,11 @@
     "tags": [
       "Arte e Beleza"
     ],
-    "order": 210
+    "order": 210,
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
+    ]
   },
   {
     "id": "fundamentos_120",
@@ -1229,7 +1424,10 @@
       "Mundo Espiritual",
       "Saúde da Criança"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "id": "fundamentos_118",
@@ -1269,7 +1467,12 @@
       "Ouvidos e Audição",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_97",
@@ -1289,7 +1492,12 @@
       "Febre",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Occipital",
+      "Olhos",
+      "Útero"
+    ]
   },
   {
     "id": "fundamentos_113",
@@ -1300,7 +1508,11 @@
       "Pele"
     ],
     "order": 215,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
+    ]
   },
   {
     "id": "fundamentos_111",
@@ -1315,7 +1527,10 @@
       "Pele",
       "Purificação"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Nariz"
+    ]
   },
   {
     "id": "fundamentos_112",
@@ -1328,7 +1543,11 @@
       "Mundo Espiritual"
     ],
     "order": 214,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
+    ]
   },
   {
     "id": "fundamentos_104",
@@ -1343,7 +1562,10 @@
       "Toxinas"
     ],
     "order": 186,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_105",
@@ -1355,7 +1577,11 @@
       "Olhos e Visão",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_96",
@@ -1374,7 +1600,10 @@
       "Toxinas"
     ],
     "order": 168,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_100",
@@ -1390,7 +1619,11 @@
       "Ouvidos e Audição",
       "Purificação"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos",
+      "Pernas"
+    ]
   },
   {
     "id": "fundamentos_101",
@@ -1412,7 +1645,13 @@
       "Ministração de Johrei"
     ],
     "order": 178,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_102",
@@ -1435,7 +1674,12 @@
       "Ministração de Johrei"
     ],
     "order": 179,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_107",
@@ -1450,7 +1694,10 @@
       "Purificação",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Occipital"
+    ]
   },
   {
     "id": "fundamentos_108",
@@ -1473,7 +1720,13 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "id": "fundamentos_109",
@@ -1490,7 +1743,11 @@
       "Rins e Sistema Urinário",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_114",
@@ -1512,7 +1769,10 @@
       "Câncer",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_115",
@@ -1530,7 +1790,12 @@
       "Purificação",
       "Toxinas"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Glândulas Linfáticas",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_117",
@@ -1549,7 +1814,12 @@
       "Toxinas",
       "Tuberculose"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Nariz",
+      "Olhos",
+      "Ouvidos"
+    ]
   },
   {
     "id": "fundamentos_103",
@@ -1663,7 +1933,10 @@
       "Ministração de Johrei",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "id": "tecnicas_76",
@@ -1692,6 +1965,10 @@
       "Cabeça e Pescoço",
       "Dentes e Boca",
       "Rins e Sistema Urinário"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital"
     ]
   },
   {
@@ -1705,6 +1982,10 @@
       "Cabeça e Pescoço",
       "Dentes e Boca",
       "Sistema Nervoso e Cabeça"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -1720,7 +2001,10 @@
       "Ouvidos e Audição",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "tecnicas_72",
@@ -1731,6 +2015,9 @@
       "Gripe e Resfriado",
       "Respiratório",
       "Tuberculose"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -1763,7 +2050,11 @@
       "Ouvidos e Audição",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Garganta"
+    ]
   },
   {
     "id": "tecnicas_71",
@@ -1775,7 +2066,11 @@
       "Ministração de Johrei",
       "Pele"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "id": "tecnicas_73",
@@ -1804,7 +2099,10 @@
       "Pele",
       "Toxinas"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Membros"
+    ]
   },
   {
     "id": "tecnicas_80",
@@ -1906,7 +2204,10 @@
       "Ouvidos e Audição",
       "Pele"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Ouvidos"
+    ]
   },
   {
     "id": "doencas_10",
@@ -1921,7 +2222,14 @@
       "Ouvidos e Audição",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Olhos",
+      "Ouvidos",
+      "Pescoço"
+    ]
   },
   {
     "id": "doencas_12",
@@ -1933,7 +2241,10 @@
       "Dores e Rigidez",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "id": "casos_clinicos_29",
@@ -1952,7 +2263,11 @@
       "Ouvidos e Audição",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Ouvidos"
+    ]
   },
   {
     "id": "casos_clinicos_30",
@@ -1964,7 +2279,12 @@
       "Coração e Circulação",
       "Dores e Rigidez"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Frontal",
+      "Nariz",
+      "Pés"
+    ]
   },
   {
     "id": "medicamentos_0",
@@ -1979,7 +2299,11 @@
       "Ouvidos e Audição",
       "Rins e Sistema Urinário"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "id": "medicamentos_2",
@@ -1998,7 +2322,12 @@
       "Febre",
       "Câncer"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "id": "regioes_corpo_7",
@@ -2017,7 +2346,10 @@
       "Febre",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "tecnicas_68",
@@ -2033,7 +2365,11 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Occipital"
+    ]
   },
   {
     "id": "tecnicas_69",
@@ -2046,7 +2382,10 @@
       "Ouvidos e Audição",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "id": "tecnicas_75",
@@ -2065,7 +2404,13 @@
       "Câncer",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Garganta"
+    ]
   },
   {
     "id": "doencas_11",
@@ -2085,7 +2430,11 @@
       "Rins e Sistema Urinário",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta"
+    ]
   },
   {
     "id": "casos_clinicos_27",
@@ -2100,7 +2449,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "medicamentos_3",
@@ -2114,7 +2466,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "regioes_corpo_6",
@@ -2130,7 +2485,11 @@
       "Ministração de Johrei"
     ],
     "order": 172,
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "id": "tecnicas_66",
@@ -2161,6 +2520,7 @@
       "Cabeça",
       "Cérebro",
       "Occipital",
+      "Olhos",
       "Ombros"
     ]
   },
@@ -2404,7 +2764,10 @@
       "Febre",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_36",
@@ -2423,7 +2786,12 @@
       "Febre",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Ouvidos"
+    ]
   },
   {
     "id": "fundamentos_42",
@@ -2440,7 +2808,11 @@
       "Febre",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_27",
@@ -2456,7 +2828,11 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "id": "casos_clinicos_7",
@@ -2470,7 +2846,10 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "tecnicas_32",
@@ -2484,7 +2863,11 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
+    ]
   },
   {
     "id": "regioes_corpo_1",
@@ -2499,7 +2882,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "casos_clinicos_10",
@@ -2540,7 +2926,13 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "id": "tecnicas_33",
@@ -2553,7 +2945,10 @@
       "Mundo Espiritual",
       "Toxinas"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Frontal"
+    ]
   },
   {
     "id": "casos_clinicos_5",
@@ -2568,7 +2963,10 @@
       "Febre",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "casos_clinicos_9",
@@ -2580,7 +2978,11 @@
       "Sistema Nervoso e Cabeça",
       "Dores e Rigidez"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Membros"
+    ]
   },
   {
     "id": "regioes_corpo_2",
@@ -2593,7 +2995,11 @@
       "Derrame (AVC)",
       "Dores e Rigidez"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
+    ]
   },
   {
     "id": "tecnicas_27",
@@ -2607,7 +3013,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "tecnicas_28",
@@ -2622,7 +3031,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_91",
@@ -2647,12 +3059,15 @@
       "Rins e Sistema Urinário"
     ],
     "focusPoints": [
-      "Pescoço",
+      "Abdômen",
       "Cabeça",
       "Coração",
-      "Abdômen",
       "Estômago",
-      "Rins"
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Rins",
+      "Útero"
     ],
     "system": "Outros",
     "type": "Caso Clínico"
@@ -2671,7 +3086,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_39",
@@ -2686,7 +3104,13 @@
       "Ouvidos e Audição",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_43",
@@ -2697,7 +3121,11 @@
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça",
+      "Pernas"
+    ]
   },
   {
     "id": "fundamentos_29",
@@ -2709,7 +3137,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_31",
@@ -2727,7 +3158,11 @@
       "Ministração de Johrei"
     ],
     "order": 58,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Occipital"
+    ]
   },
   {
     "id": "fundamentos_32",
@@ -2740,7 +3175,10 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Q&A"
+    "type": "Q&A",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "id": "fundamentos_35",
@@ -2754,7 +3192,12 @@
       "Sistema Nervoso e Cabeça",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal"
+    ]
   },
   {
     "id": "fundamentos_38",
@@ -2769,7 +3212,10 @@
       "Ministração de Johrei",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_34",
@@ -2821,9 +3267,11 @@
       "Sistema Nervoso e Cabeça"
     ],
     "focusPoints": [
-      "Pescoço",
       "Cabeça",
-      "Frontal"
+      "Frontal",
+      "Mãos",
+      "Pescoço",
+      "Pés"
     ],
     "system": "Cabeça",
     "type": "Caso Clínico"
@@ -2839,8 +3287,9 @@
       "Dores e Rigidez"
     ],
     "focusPoints": [
-      "Pescoço",
-      "Cabeça"
+      "Cabeça",
+      "Maxilar",
+      "Pescoço"
     ],
     "system": "Membros",
     "type": "Caso Clínico"
@@ -2856,7 +3305,10 @@
       "Dores e Rigidez",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo"
+    ]
   },
   {
     "id": "fundamentos_92",
@@ -2875,7 +3327,11 @@
       "Febre",
       "Ministração de Johrei"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "id": "fundamentos_41",
@@ -2914,7 +3370,13 @@
       "Ministração de Johrei"
     ],
     "order": 7,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Fígado",
+      "Olhos"
+    ]
   },
   {
     "id": "fundamentos_87",
@@ -2929,7 +3391,11 @@
       "Rins e Sistema Urinário",
       "Toxinas"
     ],
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_88",
@@ -2952,7 +3418,15 @@
       "Ministração de Johrei"
     ],
     "order": 22,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Cabeça",
+      "Fígado",
+      "Membros",
+      "Mãos",
+      "Pés",
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_89",
@@ -2970,7 +3444,10 @@
       "Ministração de Johrei"
     ],
     "order": 18,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "id": "fundamentos_85",
@@ -2991,11 +3468,16 @@
       "Rins e Sistema Urinário"
     ],
     "focusPoints": [
-      "Ombros",
-      "Pescoço",
+      "Bulbo",
       "Cabeça",
       "Cérebro",
-      "Bulbo",
+      "Fígado",
+      "Garganta",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Pés",
+      "Rins",
       "Tórax"
     ],
     "system": "Cabeça",
