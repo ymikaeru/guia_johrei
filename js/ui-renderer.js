@@ -208,16 +208,14 @@ function toggleMobileBodyFilter(btn) {
     } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
 
-        // Auto-Scroll Logic: Run immediately after layout update
-        requestAnimationFrame(() => {
-            const header = document.querySelector('header');
-            const headerHeight = header ? header.offsetHeight : 80;
-            const elementPosition = btn.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
+        // Auto-Scroll Logic: Run immediately (Synchronous start)
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        const elementPosition = btn.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
 
-            // Use custom smooth scroll (Standard Easing)
-            smoothScrollTo(offsetPosition, 1000); // 1000ms balanced duration
-        });
+        // Use custom smooth scroll (EaseOutCubic) - Fast start, slow end
+        smoothScrollTo(offsetPosition, 1000);
     }
 }
 
@@ -231,9 +229,10 @@ function smoothScrollTo(targetPosition, duration) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
 
-        // Standard Easing (easeInOutCubic) - Smooth start, smooth end
+        // EaseOutCubic (Standard Deceleration)
+        // 1 - (1 - t) ^ 3
         const ease = (t) => {
-            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            return 1 - Math.pow(1 - t, 3);
         };
 
         const run = ease(Math.min(timeElapsed / duration, 1));
