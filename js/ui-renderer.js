@@ -271,9 +271,31 @@ function updateUIForTab(tabId) {
         renderAlphabet();
     }
 
+    const inputCountEl = document.getElementById('inputResultCount');
+
+    // Reset visibility first
+    if (inputCountEl) {
+        inputCountEl.classList.remove('hidden');
+        inputCountEl.style.display = ''; // Reset inline style
+    }
+    // Reset Mobile Count Visibility
+    document.querySelectorAll('.search-count').forEach(el => {
+        el.style.display = '';
+    });
+
     if (tabId === 'mapa') {
         searchInputs.forEach(input => input.classList.add('input-faded'));
         map.classList.remove('hidden');
+
+        // Hide card counter specifically on mapa tab
+        if (inputCountEl) {
+            inputCountEl.classList.add('hidden');
+            inputCountEl.style.display = 'none'; // Force hide override
+        }
+        // Hide Mobile Count specifically on mapa tab
+        document.querySelectorAll('.search-count').forEach(el => {
+            el.style.display = 'none';
+        });
 
         // Intelligent Visibility: Only hide list if NO point is selected
         // We check both legacy STATE.bodyFilter and new STATE.selectedBodyPoint
