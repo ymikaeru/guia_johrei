@@ -164,27 +164,10 @@
                     </div>
                 </div>
 
-                <!-- Mobile Tabs Dropdown (Custom "Swedish Design") -->
-                <div class="md:hidden px-8 pb-4 z-50">
-                    <div class="relative">
-                        <button onclick="toggleMobileDropdown()" id="mobileDropdownBtn"
-                            class="w-full bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white py-4 px-6 rounded-xl text-xs font-bold uppercase tracking-widest flex justify-between items-center shadow-sm hover:shadow-md transition-all relative z-20">
-                            <span id="mobileDropdownLabel">SELECIONE UMA CATEGORIA</span>
-                            <svg class="w-4 h-4 text-gray-400 transition-transform duration-300" id="mobileDropdownIcon"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7">
-                                </path>
-                            </svg>
-                        </button>
-
-                        <div id="mobileDropdownMenu"
-                            class="hidden absolute top-full left-0 right-0 -mt-[1px] bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-b-xl rounded-t-none shadow-xl overflow-hidden transition-all duration-300 transform -translate-y-4 opacity-0 z-10">
-                            <div id="mobileDropdownOptions" class="flex flex-col max-h-64 overflow-y-auto pt-2">
-                                <!-- Options injected by JS -->
-                            </div>
-                        </div>
-                    </div>
+                <!-- Mobile Tabs (Horizontal Scroll) -->
+                <div id="mobileTabsContainer"
+                    class="md:hidden w-full overflow-x-auto hide-scrollbar px-6 flex items-center gap-8 z-40 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-b border-gray-50 dark:border-gray-900">
+                    <!-- Options injected by JS -->
                 </div>
 
                 <nav class="hidden md:flex px-8 md:px-12 gap-10 overflow-x-auto hide-scrollbar" id="tabsContainer">

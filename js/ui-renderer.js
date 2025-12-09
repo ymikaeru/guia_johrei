@@ -58,60 +58,57 @@ function renderTabs() {
 
     container.innerHTML = html;
 
-    // Mobile Dropdown Options (Custom)
-    const mobileOptionsContainer = document.getElementById('mobileDropdownOptions');
-    const mobileLabel = document.getElementById('mobileDropdownLabel');
+    // Mobile Tabs (Clean Minimalist "Swedish" Design)
+    const mobileContainer = document.getElementById('mobileTabsContainer');
 
-    if (mobileOptionsContainer) {
-        let optionsHtml = Object.keys(STATE.data).map(id => {
+    if (mobileContainer) {
+        let mobileHtml = Object.keys(STATE.data).map(id => {
             const config = catMap[id];
             const label = config ? config.label : id;
-            const isActive = STATE.activeTab === id;
+            const isActive = !isSearchActive && STATE.activeTab === id;
 
-            if (isActive) {
-                if (mobileLabel) mobileLabel.textContent = label;
-                return ''; // Don't show active item in list
-            }
+            // Clean Typography Style
+            const baseClass = "flex-none py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all border-b-2";
+            const activeStyle = "border-black text-black dark:border-white dark:text-white";
+            const inactiveStyle = "border-transparent text-gray-400 hover:text-black dark:hover:text-white";
 
-            return `
-            <button onclick="selectMobileOption('${id}')"
-                class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">
-                ${label}
-            </button>
-    `;
+            const className = `${baseClass} ${isActive ? activeStyle : inactiveStyle}`;
+
+            return `<button onclick="setTab('${id}')" class="${className}">${label}</button>`;
         }).join('');
 
-        // Add Map Option to Mobile
+        // Add Map Option to Mobile (Minimalist)
         if (STATE.mode === 'ensinamentos') {
-            const isMapActive = STATE.activeTab === 'mapa';
-            if (!isMapActive) {
-                optionsHtml += `
-                 <button onclick="selectMobileOption('mapa')" class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-black dark:hover:text-white">MAPAS DE APLICAÇÃO</button>`;
-            } else if (mobileLabel && STATE.activeTab === 'mapa') {
-                mobileLabel.textContent = "MAPAS DE APLICAÇÃO";
-            }
+            const isActive = !isSearchActive && STATE.activeTab === 'mapa';
+            const baseClass = "flex-none py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all border-b-2";
+            const activeStyle = "border-black text-black dark:border-white dark:text-white";
+            const inactiveStyle = "border-transparent text-gray-400 hover:text-black dark:hover:text-white";
+
+            const className = `${baseClass} ${isActive ? activeStyle : inactiveStyle}`;
+
+            mobileHtml += `<button onclick="setTab('mapa')" class="${className}">Mapas</button>`;
         }
 
-        // Add Apostila Option to Mobile
+        // Add Apostila Option to Mobile (Minimalist)
         const currentApostila = STATE.apostilas ? STATE.apostilas[STATE.mode] : null;
         if (currentApostila && currentApostila.items.length > 0) {
-            const isApostilaActive = STATE.activeTab === 'apostila';
-            const label = (currentApostila.title || 'MINHA APOSTILA').toUpperCase();
-            if (!isApostilaActive) {
-                optionsHtml += `
-                 <button onclick="selectMobileOption('apostila')" class="w-full text-left py-4 px-6 text-xs font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-900 last:border-0 transition-colors text-yellow-500 hover:bg-gray-50 dark:hover:bg-gray-900 hover:text-yellow-600 flex justify-between">
-                    <span>${label}</span>
-                    <span class="bg-yellow-100 text-yellow-800 text-[10px] px-2 py-0.5 rounded-full">${currentApostila.items.length}</span>
-                 </button>`;
-            } else if (mobileLabel && STATE.activeTab === 'apostila') {
-                mobileLabel.innerHTML = `${label} <span class="ml-2 text-[10px] bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-md align-middle">${currentApostila.items.length}</span>`;
-            }
+            const isActive = !isSearchActive && STATE.activeTab === 'apostila';
+            const baseClass = "flex-none py-4 text-[10px] font-bold uppercase tracking-[0.2em] transition-all border-b-2 flex items-center gap-2";
+            // Gold Theme for Apostila Active
+            const activeStyle = "border-yellow-500 text-yellow-500";
+            const inactiveStyle = "border-transparent text-yellow-600/70 hover:text-yellow-600";
+
+            const className = `${baseClass} ${isActive ? activeStyle : inactiveStyle}`;
+
+            mobileHtml += `<button onclick="setTab('apostila')" class="${className}">
+                <span>Apostila</span>
+                <span class="${isActive ? 'bg-yellow-500 text-white' : 'bg-yellow-100 text-yellow-800'} text-[9px] px-1.5 py-0.5 rounded-full">${currentApostila.items.length}</span>
+             </button>`;
         }
 
-        mobileOptionsContainer.innerHTML = optionsHtml;
-    }
+        mobileContainer.innerHTML = mobileHtml;
 
-    updateUIForTab(STATE.activeTab);
+    } updateUIForTab(STATE.activeTab);
 }
 
 function renderBodyMapViews() {

@@ -63,48 +63,9 @@
 })();
 
 // --- CUSTOM DROPDOWN LOGIC ---
-function toggleMobileDropdown() {
-    const menu = document.getElementById('mobileDropdownMenu');
-    const icon = document.getElementById('mobileDropdownIcon');
+// --- CUSTOM DROPDOWN LOGIC ---
+// (Removed as replaced by horizontal scroll tabs)
 
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            menu.classList.remove('-translate-y-4', 'opacity-0', 'duration-150', 'ease-in');
-            menu.classList.add('translate-y-0', 'opacity-100', 'duration-300', 'ease-out');
-            icon.style.transform = 'rotate(180deg)';
-        });
-    } else {
-        closeMobileDropdown();
-    }
-}
-
-function closeMobileDropdown() {
-    const menu = document.getElementById('mobileDropdownMenu');
-    const icon = document.getElementById('mobileDropdownIcon');
-
-    menu.classList.remove('translate-y-0', 'opacity-100', 'duration-300', 'ease-out');
-    menu.classList.add('-translate-y-4', 'opacity-0', 'duration-150', 'ease-in');
-    icon.style.transform = 'rotate(0deg)';
-
-    setTimeout(() => {
-        menu.classList.add('hidden');
-    }, 150);
-}
-
-function selectMobileOption(id) {
-    setTab(id);
-    closeMobileDropdown();
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-    const dropdown = document.getElementById('mobileDropdownMenu');
-    const btn = document.getElementById('mobileDropdownBtn');
-    if (dropdown && !dropdown.classList.contains('hidden') && !dropdown.contains(e.target) && !btn.contains(e.target)) {
-        closeMobileDropdown();
-    }
-});
 
 // --- MOBILE MAP NAVIGATION ---
 window.switchMobileView = function (targetId) {
