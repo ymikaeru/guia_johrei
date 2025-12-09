@@ -17,8 +17,45 @@ let STATE = {
     isCrossTabMode: false, // True when showing results from multiple tabs
     selectedBodyPoint: null, // Selected body point for filtering
     globalData: {}, // Cache for all loaded data (persists across modes)
-    data: {} // Holds loaded content
+    data: {}, // Holds loaded content
+
+    // History Feature
+    readingHistory: []
 };
+
+// Initialize History from LocalStorage
+try {
+    const saved = localStorage.getItem('johrei_history');
+    if (saved) {
+        STATE.readingHistory = JSON.parse(saved);
+    }
+} catch (e) {
+    console.error('Error loading history', e);
+}
+
+// Add Item to History
+function addToHistory(item) {
+    if (!item || !item.id) return;
+
+    // Remove if exists (to move to top)
+    STATE.readingHistory = STATE.readingHistory.filter(h => h.id !== item.id);
+
+    // Add to top
+    STATE.readingHistory.unshift({
+        id: item.id,
+        title: item.title,
+        cat: item._cat,
+        time: Date.now()
+    });
+
+    // Limit to 10
+    if (STATE.readingHistory.length > 10) {
+        STATE.readingHistory = STATE.readingHistory.slice(0, 10);
+    }
+
+    // Save
+    localStorage.setItem('johrei_history', JSON.stringify(STATE.readingHistory));
+}
 
 // Helper to remove accents
 function removeAccents(str) {

@@ -228,6 +228,55 @@ window.openRelatedItem = function (id) {
     }
 }
 
+// --- HISTORY SYSTEM ---
+window.toggleHistory = function (e) {
+    e.stopPropagation();
+    const dropdown = document.getElementById('historyDropdown');
+    const listEl = document.getElementById('historyList');
+
+    if (dropdown.classList.contains('hidden')) {
+        // Show
+        renderHistoryList(listEl);
+        dropdown.classList.remove('hidden');
+
+        // Close on click outside
+        const closeFn = (ev) => {
+            if (!dropdown.contains(ev.target)) {
+                dropdown.classList.add('hidden');
+                document.removeEventListener('click', closeFn);
+            }
+        };
+        setTimeout(() => document.addEventListener('click', closeFn), 0);
+    } else {
+        dropdown.classList.add('hidden');
+    }
+}
+
+function renderHistoryList(container) {
+    if (!STATE.readingHistory || STATE.readingHistory.length === 0) {
+        container.innerHTML = '<div class="p-4 text-xs text-gray-400 text-center">Nenhum histórico recente</div>';
+        return;
+    }
+
+    container.innerHTML = STATE.readingHistory.map(h => {
+        // Simple time ago
+        const diff = Math.floor((Date.now() - h.time) / 60000); // mins
+        let timeStr = 'agora';
+        if (diff > 0) timeStr = `${diff}m`;
+        if (diff > 60) timeStr = `${Math.floor(diff / 60)}h`;
+
+        return `
+            <div onclick="openRelatedItem('${h.id}')" class="px-4 py-3 hover:bg-gray-50 dark:hover:bg-[#222] cursor-pointer border-b border-gray-50 dark:border-gray-800 last:border-0 transition-colors group">
+                <div class="flex justify-between items-baseline mb-1">
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-black dark:group-hover:text-gray-300 transition-colors">${h.cat || 'Geral'}</span>
+                    <span class="text-[9px] text-gray-300">${timeStr}</span>
+                </div>
+                <h4 class="font-serif font-medium text-sm text-gray-700 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white line-clamp-1">${h.title}</h4>
+            </div>
+        `;
+    }).join('');
+}
+
 // --- RECOMMENDATION SYSTEM ---
 function renderRelatedItems(currentItem) {
     const container = document.getElementById('modalRelated');
