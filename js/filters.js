@@ -214,7 +214,7 @@ function applyFilters() {
             inputCountEl.classList.add('hidden');
         } else {
             inputCountEl.classList.remove('hidden');
-            inputCountEl.textContent = `${filtered.length} CARDS`;
+            inputCountEl.textContent = `${filtered.length} CARDS DISPLAYED`;
 
             // Optional: Highlight color if filtered
             if (q || hasActiveFilters) {

@@ -149,7 +149,7 @@ function openModal(i, explicitItem = null) {
     const size = STATE.modalFontSize;
     const align = STATE.modalAlignment;
 
-    contentEl.style.fontSize = `${size} px`;
+    contentEl.style.fontSize = `${size}px`;
     contentEl.style.lineHeight = '1.8';
 
     // Force children inheritance
@@ -351,7 +351,7 @@ window.setModalFontSize = function (size) {
 
     const content = document.getElementById('modalContent');
     if (content) {
-        content.style.fontSize = `${size} px`;
+        content.style.fontSize = `${size}px`;
         // Force children to inherit
         const children = content.querySelectorAll('p, li, div');
         children.forEach(child => child.style.fontSize = 'inherit');
