@@ -142,6 +142,25 @@ function renderBodyMapViews() {
         </div>
 
         <!-- Mobile Maps Area -->
+        <!-- Mobile Maps Area -->
+        <div class="w-full lg:hidden mb-6 px-4 relative z-[49]">
+             <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg shadow-sm relative">
+                <button onclick="toggleMobileBodyFilter(this)" 
+                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
+                    <span>Filtrar por Região</span>
+                    <svg class="w-4 h-4" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
+                    style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
+                     <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
+                        -- Todos os pontos --
+                    </div>
+                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+                </div>
+             </div>
+        </div>
+
             <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         ${views.map((view, i) => {
         const visibilityClass = i === 0 ? 'block' : 'hidden'; // Only first visible on mobile initial
@@ -174,6 +193,67 @@ function renderBodyMapViews() {
     map.innerHTML = html;
 }
 
+// New Helper for Mobile Filter Scroll
+function toggleMobileBodyFilter(btn) {
+    const list = document.getElementById('mobileBodyFilterList');
+    const icon = document.getElementById('mobileFilterIcon');
+
+    if (!list) return;
+
+    list.classList.toggle('hidden');
+
+    // Rotate Icon
+    if (list.classList.contains('hidden')) {
+        if (icon) icon.style.transform = 'rotate(0deg)';
+    } else {
+        if (icon) icon.style.transform = 'rotate(180deg)';
+
+        // Auto-Scroll Logic: Run immediately (Synchronous start)
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        const elementPosition = btn.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
+
+        // Use custom smooth scroll (EaseOutSine) - iOS-style
+        smoothScrollTo(offsetPosition, 1200);
+    }
+}
+
+// Custom Material Easing Scroll Function
+function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    // Pre-start: Trick the animation into thinking it's already 20ms in
+    // This ensures the first frame has non-zero movement (~2-3% progress)
+    // solving the "first frame is static" issue.
+    const PRE_START_MS = 20;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime - PRE_START_MS;
+        const timeElapsed = currentTime - startTime;
+
+        // EaseOutSine (iOS-style, gentlest deceleration)
+        // sin(t * π / 2)
+        const ease = (t) => {
+            return Math.sin(t * Math.PI / 2);
+        };
+
+        // Ensure we don't overshoots
+        const run = ease(Math.min(timeElapsed / duration, 1));
+
+        window.scrollTo(0, startPosition + (distance * run));
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    // Start immediately (Synchronous)
+    animation(performance.now());
+}
+
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
     const map = document.getElementById('bodyMapContainer');
@@ -191,9 +271,31 @@ function updateUIForTab(tabId) {
         renderAlphabet();
     }
 
+    const inputCountEl = document.getElementById('inputResultCount');
+
+    // Reset visibility first
+    if (inputCountEl) {
+        inputCountEl.classList.remove('hidden');
+        inputCountEl.style.display = ''; // Reset inline style
+    }
+    // Reset Mobile Count Visibility
+    document.querySelectorAll('.search-count').forEach(el => {
+        el.style.display = '';
+    });
+
     if (tabId === 'mapa') {
         searchInputs.forEach(input => input.classList.add('input-faded'));
         map.classList.remove('hidden');
+
+        // Hide card counter specifically on mapa tab
+        if (inputCountEl) {
+            inputCountEl.classList.add('hidden');
+            inputCountEl.style.display = 'none'; // Force hide override
+        }
+        // Hide Mobile Count specifically on mapa tab
+        document.querySelectorAll('.search-count').forEach(el => {
+            el.style.display = 'none';
+        });
 
         // Intelligent Visibility: Only hide list if NO point is selected
         // We check both legacy STATE.bodyFilter and new STATE.selectedBodyPoint
@@ -206,6 +308,20 @@ function updateUIForTab(tabId) {
         }
 
         renderBodyMapViews(); // Ensure this helper exists or inline logic
+
+        // Auto-scroll to filter button on mobile when entering tab
+        if (window.innerWidth < 1024) { // lg breakpoint
+            setTimeout(() => {
+                const filterBtn = document.querySelector('[onclick*="toggleMobileBodyFilter"]');
+                if (filterBtn) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 80;
+                    const elementPosition = filterBtn.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+                    smoothScrollTo(offsetPosition, 800);
+                }
+            }, 100); // Small delay for render
+        }
     } else if (tabId === 'apostila') {
         searchInputs.forEach(input => input.classList.add('input-faded')); // Hide search for Apostila
 

@@ -85,7 +85,7 @@
             <!-- Title Wrapper (No longer sticky itself on desktop, just a block) -->
             <div class="contents md:block">
                 <header
-                    class="flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none">
+                    class="sticky top-0 z-[120] flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none transition-all">
                     <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
                         <div>
                             <h1
@@ -130,7 +130,7 @@
 
                             <!-- Result Count Indicator (Inside Input) -->
                             <div id="inputResultCount"
-                                class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-[10px] uppercase tracking-widest pointer-events-none">
+                                class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-[10px] uppercase tracking-widest pointer-events-none">
                                 0 CARDS DISPLAYED
                             </div>
 
@@ -428,7 +428,7 @@
 
     <!-- Refactored Modules -->
     <script src="js/core.js?v=108"></script>
-    <script src="js/ui-renderer.js?v=114"></script>
+    <script src="js/ui-renderer.js?v=115"></script>
     <script src="js/filters.js?v=109"></script>
     <script src="js/mobile.js?v=100"></script>
 

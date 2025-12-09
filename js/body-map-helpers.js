@@ -475,6 +475,10 @@ function selectCustomOption(ids, name, event) {
     }
 
     closeCustomDropdown();
+    // Also close Mobile Dropdown if exists
+    const mobileList = document.getElementById('mobileBodyFilterList');
+    if (mobileList) mobileList.classList.add('hidden');
+
     clearBodyPointPreview();
 }
 

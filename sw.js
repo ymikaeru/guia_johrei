@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guia-johrei-v1';
+const CACHE_NAME = 'guia-johrei-v2';
 
 // Assets that MUST be cached immediately for the app to start
 const CORE_ASSETS = [
@@ -81,8 +81,9 @@ self.addEventListener('fetch', (event) => {
         caches.match(event.request).then((cachedResponse) => {
             const networkFetch = fetch(event.request).then((response) => {
                 // Update cache
+                const responseClone = response.clone();
                 caches.open(CACHE_NAME).then((cache) => {
-                    cache.put(event.request, response.clone());
+                    cache.put(event.request, responseClone);
                 });
                 return response;
             });
