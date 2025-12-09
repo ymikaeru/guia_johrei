@@ -11,11 +11,21 @@ const TAG_CATEGORIES = {
         'Dentes e Boca',
         'Olhos e Visão',
         'Ouvidos e Audição',
-        'Digestivo'
+        'Digestivo',
+        'Sistema Nervoso e Cabeça', // Added from enrichment
+        'Sistema Reprodutor'      // Added from enrichment
+    ],
+    'Público e Ciclo de Vida': [ // New Category
+        'Saúde da Criança',
+        'Doenças Infantis',
+        'Saúde da Mulher',
+        'Gravidez e Saúde da Mulher',
+        'Doenças Femininas'
     ],
     'Condições e Sintomas': [
         'Dores e Rigidez',
         'Gripe e Resfriado',
+        'Febre',
         'Febre e Gripe',
         'Tuberculose',
         'Diabetes',
@@ -34,14 +44,44 @@ const TAG_CATEGORIES = {
         'Pontos Vitais'
     ],
     'Outros': [
-        'Saúde da Criança',
-        'Gravidez e Saúde da Mulher',
-        'Saúde da Mulher',
         'Arte e Beleza',
         'Agricultura e Alimentação',
         'Caso Clínico'
     ]
 };
+
+const ICON_MAP = {
+    'Coração e Circulação': '❤️',
+    'Rins e Sistema Urinário': '💧',
+    'Respiratório': '🫁',
+    'Sistema Respiratório': '🫁',
+    'Cabeça e Pescoço': '🧠',
+    'Sistema Nervoso e Cabeça': '🧠',
+    'Sistema Digestivo': '🍽️',
+    'Digestivo': '🍽️',
+    'Olhos e Visão': '👁️',
+    'Ouvidos e Audição': '👂',
+    'Dentes e Boca': '🦷',
+    'Pele': '🖐️',
+    'Sistema Reprodutor': '♀️',
+    'Saúde da Mulher': '👩',
+    'Gravidez e Saúde da Mulher': '🤰',
+    'Saúde da Criança': '👶',
+    'Doenças Infantis': '👶',
+    'Mundo Espiritual': '👻',
+    'Purificação': '✨',
+    'Ministração de Johrei': '✋'
+};
+
+function formatSourceLabel(src) {
+    if (src.includes('Johrei Hõ Kõza')) {
+        return src.replace('Johrei Hõ Kõza ', 'Vol. ');
+    }
+    if (src.includes('Estudos Específicos')) {
+        return src.replace('Estudos Específicos ', 'Estudos ');
+    }
+    return src;
+}
 
 function initializeTagBrowser() {
     const wrapper = document.getElementById('tagBrowserWrapper');
@@ -97,10 +137,11 @@ function initializeTagBrowser() {
                     ${validSources.map(src => {
             const count = sourceCounts[src];
             const isActive = STATE.activeSources.includes(src);
+            const label = formatSourceLabel(src);
             return `
                             <button onclick="toggleFilter('source', '${src.replace(/'/g, "\\'")}')" 
-                                class="tag-pill ${isActive ? 'tag-pill-active' : ''}">
-                                <span>${src}</span>
+                                class="tag-pill ${isActive ? 'tag-pill-active' : ''} text-xs">
+                                <span>${label}</span>
                                 <span class="tag-count">${count}</span>
                             </button>
                         `;
@@ -119,15 +160,17 @@ function initializeTagBrowser() {
 
         html += `
             <div class="tag-category">
-                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3">${category}</div>
+                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3 mt-4">${category}</div>
                 <div class="flex flex-wrap gap-2">
                     ${availableTags.map(tag => {
             const count = tagCounts[tag] || 0;
             const isActive = STATE.activeTags.includes(tag);
+            const icon = ICON_MAP[tag] ? `<span class="mr-1 opacity-70">${ICON_MAP[tag]}</span>` : '';
             return `
                             <button onclick="toggleTag('${tag.replace(/'/g, "\\'")}', event)" 
                                 class="tag-pill ${isActive ? 'tag-pill-active' : ''}"
                                 data-tag="${tag}">
+                                ${icon}
                                 <span>${tag}</span>
                                 <span class="tag-count">${count}</span>
                             </button>
@@ -141,57 +184,38 @@ function initializeTagBrowser() {
     content.innerHTML = html;
 
 
-    // Restore collapsed state from localStorage
-    // BUT if we are showing because of active filters (and arguably normally hidden), maybe default to hidden?
-    // Actually, keep logic simple: check localStorage.
-
     // Logic for toggle button visibility: HIDE toggle if not in allowed modes
     const toggleBtn = document.getElementById('tagBrowserToggle');
-    // allowedModes is already defined above.
-
 
     if (!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') {
         if (toggleBtn) toggleBtn.style.display = 'none';
-        // content should be hidden if button hidden? No, content is toggled.
-        // If button hidden, user can't toggle. Content should be hidden.
         content.classList.add('hidden');
     } else {
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // const isExpanded = localStorage.getItem('tagBrowserExpanded') === 'true'; 
         // Force closed by default as per user request
         const isExpanded = false;
 
         if (isExpanded) {
             content.classList.remove('hidden');
-            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(180deg)'; // No rotation for filter icon
         } else {
             content.classList.add('hidden');
-            // document.getElementById('tagBrowserIcon').style.transform = 'rotate(0deg)';
         }
     }
 }
 
 function toggleTagBrowser() {
     const content = document.getElementById('tagBrowserContent');
-    const icon = document.getElementById('tagBrowserIcon');
 
     const isExpanded = !content.classList.contains('hidden');
 
     if (isExpanded) {
         content.classList.add('hidden');
-        // icon.style.transform = 'rotate(0deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'false');
-
-        // Remove click listener immediately
         document.removeEventListener('click', closeByOutsideClick);
     } else {
         content.classList.remove('hidden');
-        // icon.style.transform = 'rotate(180deg)'; // No rotation
         localStorage.setItem('tagBrowserExpanded', 'true');
-
-        // Add click listener to close when clicking outside
-        // Delay slightly to prevent the current click from closing it immediately
         setTimeout(() => {
             document.addEventListener('click', closeByOutsideClick);
         }, 10);
@@ -201,7 +225,6 @@ function toggleTagBrowser() {
 function closeByOutsideClick(event) {
     const wrapper = document.getElementById('tagBrowserWrapper');
     if (wrapper && !wrapper.contains(event.target)) {
-        // Toggle (Close)
         toggleTagBrowser();
     }
 }
@@ -212,17 +235,12 @@ function toggleTag(tag, event) {
     const index = STATE.activeTags.indexOf(tag);
 
     if (index > -1) {
-        // Remove tag
         STATE.activeTags.splice(index, 1);
     } else {
-        // Add tag
         STATE.activeTags.push(tag);
     }
 
-    // Update UI
     updateTagPillStates();
-
-    // Apply filters
     applyFilters();
 }
 
@@ -237,6 +255,5 @@ function updateTagPillStates() {
     });
 }
 
-// Export functions to global scope
 window.toggleTagBrowser = toggleTagBrowser;
 window.toggleTag = toggleTag;
