@@ -131,11 +131,12 @@ function renderList(list, activeTags, mode, activeTab) {
         return `
         <div onclick="openModal(${i})" class="group p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#111] hover:border-black dark:hover:border-white transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-md">
             
-            <div class="absolute top-3 right-3 z-20">
+            <!-- Add to Apostila Button (Hidden on Mobile, Visible on Desktop per user request) -->
+            <div class="absolute top-3 right-3 z-20 hidden md:block">
                 <button onclick="event.stopPropagation(); toggleApostilaItem('${item.id}', this)" 
                     class="w-8 h-8 flex items-center justify-center rounded-full transition-colors shadow-sm ${isInApostila ? 'bg-yellow-50 text-yellow-600 border border-yellow-200' : 'bg-white text-gray-300 border border-gray-100 hover:text-yellow-600 hover:bg-yellow-50 hover:border-yellow-200'}" 
                     title="Adicionar à Apostila">
-                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
                 </button>
             </div>
 
