@@ -142,7 +142,7 @@ function checkUrlForDeepLink() {
                     // We could set STATE.selectedCategory... but let's just use filterList default
                 }
 
-                filterList(); // Re-run filter to be sure (init state)
+                applyFilters(); // Re-run filter to be sure (init state)
 
                 const newIndex = STATE.list.findIndex(listItem => listItem.id === foundId);
                 if (newIndex !== -1) {

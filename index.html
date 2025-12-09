@@ -282,6 +282,33 @@
                             #00</span>
                     </div>
                     <div class="flex items-center gap-3">
+                        <!-- History Button -->
+                        <div class="relative">
+                            <button onclick="toggleHistory(event)"
+                                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-[#222] transition-colors"
+                                title="Histórico de Leitura">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </button>
+                            <!-- History Dropdown -->
+                            <div id="historyDropdown"
+                                class="hidden absolute top-full right-0 mt-2 w-64 bg-white dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-gray-800 shadow-xl z-50 overflow-hidden">
+                                <div
+                                    class="px-4 py-3 border-b border-gray-50 dark:border-gray-800 bg-gray-50/50 dark:bg-[#222]/50">
+                                    <span
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Recentes</span>
+                                </div>
+                                <div id="historyList" class="max-h-64 overflow-y-auto">
+                                    <!-- Items injected via JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
+
                         <div class="flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
                             <!-- Alignment -->
                             <select onchange="setModalAlignment(this.value)" id="modalAlignSelect"
@@ -376,9 +403,9 @@
     <script src="js/keyboard-shortcuts.js?v=102"></script>
 
     <!-- Modular Architecture (Partial) -->
-    <script src="js/state.js?v=100"></script>
-    <script src="js/apostila.js?v=107"></script>
-    <script src="js/modal.js?v=118"></script>
+    <script src="js/state.js?v=101"></script>
+    <script src="js/apostila.js?v=108"></script>
+    <script src="js/modal.js?v=119"></script>
 
     <!-- Refactored Modules -->
     <script src="js/core.js?v=108"></script>
