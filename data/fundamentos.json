@@ -176,7 +176,12 @@
       "Toxinas"
     ],
     "order": 12,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "pele",
+      "rosto",
+      "dentes"
+    ]
   },
   {
     "id": "fundamentos_15",
@@ -868,7 +873,12 @@
       "Toxinas"
     ],
     "order": 57,
-    "type": "Caso Clínico"
+    "type": "Caso Clínico",
+    "focusPoints": [
+      "pele",
+      "rosto",
+      "dentes"
+    ]
   },
   {
     "id": "fundamentos_95",
@@ -2154,7 +2164,10 @@
     "id": "pf69",
     "title": "Sarampo",
     "content": "Quase ninguém escapa do sarampo. A causa é a eliminação do sangue tóxico herdado dos pais; é algo a se agradecer, mal podendo ser chamado de doença. O único cuidado é não expor a criança ao vento, pois isso interrompe a saída das toxinas pela pele. O ditado antigo \"não pegue vento, cubra-se e durma\" é sábio. Impedir a erupção retém a toxina, causando reincidência ou outras doenças.",
-    "focusPoints": [],
+    "focusPoints": [
+      "pulmoes",
+      "pele"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Câncer e Outras Doenças",
@@ -2366,7 +2379,12 @@
     "id": "pf108",
     "title": "Apendicite",
     "content": "Qual seria a causa da apendicite? Para entender, primeiro é preciso explicar a função do apêndice. No processo de purificação contínua do corpo, o apêndice funciona como o local de acúmulo de toxinas da parte inferior do corpo, desempenhando papel semelhante ao das amígdalas na parte superior.\n\nOu seja, pela primeira ação de purificação, as toxinas acumulam-se no apêndice. Ao pressionar essa região com a ponta do dedo, sente-se dor em maior ou menor grau. Dor intensa indica que o acúmulo de toxinas atingiu um nível elevado, sendo um sinal de que a apendicite (a segunda ação de purificação) está próxima. Dor leve indica pouco acúmulo. Se houver dor ao pressionar outras partes do abdômen além do apêndice, indica acúmulo de toxinas também no peritônio, prenunciando uma complicação com peritonite aguda.\n\nUm fato interessante é que a segunda ação de purificação (a crise inflamatória) não ocorre quando o corpo está debilitado; ela só acontece quando há vitalidade. Por isso a apendicite é frequente em jovens e após exercícios intensos. Além disso, como o acúmulo de toxinas leva anos ou até mais de uma década para se formar, é evidente que a doença é quase inexistente em bebês ou crianças pequenas.\n\nBaseando-se nessa teoria, se a apendicite for deixada naturalmente, a cura é fácil. A febre alta liquifaz as toxinas acumuladas e, após dois ou três dias, elas são expelidas via diarreia, resultando na cura. A medicina teme a supuração (formação de pus), mas na verdade a cura ocorre porque há supuração. A supuração é o passo anterior à diarreia; portanto, pode-se considerar que o paciente já está meio curado. Assim, o tratamento ideal na crise é: jejum no primeiro dia; líquidos no segundo e terceiro; mingau no quarto e quinto; e comida normal a partir do sexto dia.\n\nPela terapia natural, a dor intensa dura de meio dia a um dia, seguida de dor leve por uns dois dias; no quarto dia, o paciente já consegue caminhar pelo quarto. Não é uma doença a se temer. A causa fundamental da apendicite é a existência de um acúmulo rígido de toxinas na região do rim direito. A atrofia renal resultante gera urina excedente, que se acumula no apêndice. Portanto, ao dissolver a toxina do rim direito, a reincidência é impossível. A peritonite concomitante não tem relação direta com o apêndice; ocorre porque as toxinas do peritônio entram em purificação simultaneamente.\n\nA medicina às vezes recomenda a cirurgia, mas o prognóstico não é bom. Alguns médicos evitam operar e usam outros métodos para parar a purificação e fazer a toxina retroceder (solidificar novamente). Isso leva muito tempo e, como resultado, as toxinas abdominais endurecem gradualmente, o abdômen fica rígido como uma tábua, causando distúrbios gástricos, falta de apetite e debilidade severa, levando muitos à morte. Pela terapia natural, é preciso suportar a dor intensa por cerca de três dias e jejuar, mas comparado ao risco de vida da cirurgia ou tratamentos errôneos, três ou cinco dias de paciência não são nada, visto que a cura é certa. O resultado final é uma diarreia violenta seguida de cura completa em duas ou três semanas, sem qualquer risco de reincidência. （明日の医術　扁桃腺、盲腸炎と手術）",
-    "focusPoints": [],
+    "focusPoints": [
+      "inguinal",
+      "intestino",
+      "rins",
+      "coccix"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",

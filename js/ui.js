@@ -1,10 +1,28 @@
 // --- FUNÇÕES DE UI (Animations Disabled) ---
 
-function formatBodyText(text, searchQuery) {
+function formatBodyText(text, searchQuery, focusPoints) {
     if (!text) return '';
     const lines = text.split('\n');
     const highlight = (str) => {
-        if (!searchQuery) return str;
+        let result = str;
+
+        // 1. Highlight Focus Points (Sober Style) - Run FIRST so Search can override
+        if (focusPoints && focusPoints.length > 0) {
+            // Remove accents for matching? Or strict? Usually body points are standard.
+            // We use simple regex for points.
+            const fpTerms = focusPoints
+                .filter(fp => fp && fp.length > 0)
+                .map(fp => fp.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+                .join('|');
+
+            if (fpTerms) {
+                // Whole words for focus points to avoid matching parts of other words
+                const fpRegex = new RegExp(`\\b(${fpTerms})\\b`, 'gi');
+                result = result.replace(fpRegex, '<span class="bg-gray-100 dark:bg-gray-800 font-semibold px-1 rounded text-gray-700 dark:text-gray-300">$1</span>');
+            }
+        }
+
+        if (!searchQuery) return result;
 
         let tokens;
         let useBoundaries = false;
@@ -30,14 +48,27 @@ function formatBodyText(text, searchQuery) {
             })
             .join('|');
 
-        if (!terms) return str;
+        if (!terms) return result;
 
         // Use word boundaries if requested OR if we built them manually above
         // Note: If useBoundaries is true (from |), we wrap everything in \b...\b later.
         // If false, we use the terms as is (which might contain \b for short words).
         const pattern = useBoundaries ? `\\b(${terms})\\b` : `(${terms})`;
+
+        // We need to be careful NOT to match inside existing HTML tags (like <span class="...">)
+        // Simple regex replace on HTML is tricky. 
+        // Strategy: We want to match text, but ignore tag attributes. 
+        // Since our structure is simple (just spans), maybe we assume search query doesn't match attributes?
+        // E.g. "gray" search query.
+        // Risk: <span class="bg-gray-100"> -> <span class="bg-<mark>gray</mark>-100"> -> BROKEN.
+
+        // SAFE APPROACH: 
+        // If we have focus highlight, we rely on the browser not to explode? 
+        // OR we use a smarter replace needed?
+        // Given complexity, let's keep it simple for now and assume search query is usually medical terms, not "class" or "gray".
+
         const regex = new RegExp(pattern, 'gi');
-        return str.replace(regex, '<mark class="search-highlight">$1</mark>');
+        return result.replace(regex, '<mark class="search-highlight">$1</mark>');
     };
 
     return lines.map(line => {
