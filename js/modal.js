@@ -67,11 +67,11 @@ function openModal(i) {
         // Use | as delimiter to preserve phrases (handled in formatBodyText)
         searchQuery = Array.from(keywords).join('|');
     }
-    document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery);
+    document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery, item.focusPoints);
 
     const fpContainer = document.getElementById('modalFocusContainer');
-    // Hide focus points for Fundamentos and Casos e Orientações (curas)
-    const showFocusPoints = !['fundamentos', 'curas'].includes(STATE.activeTab);
+    // Always show if data exists (Don't hide for Fundamentos anymore)
+    const showFocusPoints = true;
 
     // Build Highlight Regex (same logic as formatBodyText)
     let highlightRegex = null;

@@ -958,7 +958,11 @@
     "id": "pf70",
     "title": "Paralisia Infantil (Poliomielite)",
     "content": "Existe a causa espiritual e a física. A espiritual é rara; o que se chama geralmente de paralisia infantil é a física, uma \"pseudo-paralisia\". Sintomas: dificuldade de andar, braço inerte, quadril imóvel. A perna é a mais afetada. Causas: toxinas hereditárias e toxinas de remédios aplicados após o nascimento. O veneno solidifica-se em parte da perna, causando dor ao mover-se.",
-    "focusPoints": [],
+    "focusPoints": [
+      "membros",
+      "rins",
+      "pernas"
+    ],
     "source": "Estudos Específicos 01",
     "tags": [
       "Cabeça e Pescoço",
@@ -1221,7 +1225,9 @@
     "title": "Diabetes",
     "content": "O diabetes é considerado pela medicina uma doença do pâncreas. Diz-se que a causa é a deficiência de insulina produzida pelo pâncreas. A medicina utiliza injeções de insulina, o que traz algum efeito temporário, mas, por não ser uma cura radical, a doença quase sempre se torna crônica. Além disso, a medicina impõe uma dietoterapia extrema, evitando o fornecimento de açúcar. Isso gera sofrimento e um fardo econômico considerável ao paciente. A proibição do arroz é particularmente penosa para os japoneses.\n\nSegundo esta terapia médica, o diabetes cura-se completamente através da dissolução e excreção das toxinas que se acumulam e comprimem a parte externa do pâncreas. Além disso, o paciente pode manter uma alimentação normal, o que é de grande ajuda. （明日の医術　腎臓病と糖尿病）\n\nEstômago: Doenças do fígado, pâncreas e intestinos diferem das outras: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ15）",
     "focusPoints": [
-      "Estômago"
+      "pancreas",
+      "ombros",
+      "rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1245,7 +1251,11 @@
     "id": "pf105",
     "title": "Tuberculose Intestinal",
     "content": "Na tuberculose intestinal, formam-se inúmeras solidificações por todo o abdômen, tendo o umbigo como centro. Ao pressionar, sente-se dor, o que facilita a identificação, e há sempre alguma febre. Essas solidificações dissolvem-se com o calor e saem como diarreia quase diariamente. Evidentemente, essas solidificações são formadas por toxinas medicamentosas; se o paciente não parar de tomar remédios, a cura é impossível. Como a diarreia debilita o corpo, é uma doença temida também pelos médicos. （文明の創造　肺患と薬毒）\n\nEstômago: Doenças do fígado, pâncreas e intestinos diferem das outras: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ15）",
-    "focusPoints": [],
+    "focusPoints": [
+      "intestino",
+      "pescoco",
+      "ombros"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1262,7 +1272,9 @@
     "title": "Febre Tifoide",
     "content": "A causa do tifo é a perfuração do intestino. Os sintomas são febre alta e dor de cabeça. Curiosamente, não há sintomas no intestino em si; não há diarreia ou algo semelhante. Por isso, é chamado de febre tifoide, e chega-se a duvidar por que se diz que o intestino está ruim. As características principais são a febre alta e a dor de cabeça. Os médicos apontam a dissociação entre pulso e temperatura (febre alta sem aumento proporcional da pulsação) como o sinal mais característico do tifo.\n\nQuando diagnosticamos pelo Johrei: se há febre alta e dor de cabeça, e o Johrei na cabeça não baixa a febre (o que normalmente aconteceria), pode-se considerar tifo. Ao suspeitar de tifo, deve-se mudar imediatamente a alimentação para líquidos. Leite ou caldo de arroz (omoyu) servem; o importante é não haver sólidos. E, claro, deve-se ministrar Johrei no abdômen. Focando ao redor do umbigo, se for tifo, a cura ocorre em dois ou três dias. Em casos rápidos, cura-se no dia seguinte. É algo simples.\n\nO processo é o seguinte: toxinas medicamentosas acumulam-se no intestino. O que os médicos chamam de bactérias (vermes) surgem e corroem o local, perfurando a parede intestinal. A toxina torna-se maligna a ponto de furar o intestino e, ao mesmo tempo, dissolve-se pelo calor e sai. À medida que a toxina dissolve, o orifício fica exposto. Se algum alimento sólido bater ali, causa uma fissura. A morte por tifo ocorre devido à hemorragia intestinal. Por isso, os médicos temem tanto a hemorragia no tifo.\n\nContudo, pelo nosso método, a cura é rápida e segue a causa, não havendo o que temer. Com o Johrei, o tifo cura-se sem problemas. Como disse, trate a cabeça primeiro; se a febre não ceder como esperado, considere tifo e trate o centro do intestino, o peritônio. Só isso basta. Mesmo sem saber detalhes, a cura acontece. A dieta líquida por um ou dois dias é suficiente. Baixando a febre, pode-se passar para mingau. Aliás, mesmo sem dieta especial, o Johrei cura; a dieta líquida apenas acelera o processo. （浄霊法講座８　ｐ106 ～10）",
     "focusPoints": [
-      "Intestino"
+      "intestino",
+      "estomago",
+      "occipital"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1279,7 +1291,8 @@
     "title": "Câncer Retal",
     "content": "A dificuldade na evacuação deve-se ao estreitamento do canal retal, dificultando a passagem das fezes. Nesses casos, os médicos usam laxantes ou lavagens (enemas), mas isso não é muito bom. O reto dessas pessoas fica fino como um incenso, o que dá um certo trabalho. Embora chamem de câncer, na maioria das vezes são toxinas que comprimem o reto, causando esse estado. No caso de câncer retal, os médicos operam, cortam a parte afetada e abrem um orifício na lateral da barriga para criar um ânus artificial. Porém, as fezes saem sem aviso prévio, obrigando o uso de fraldas na ponta. Além disso, o intestino exposto tende a necrosar, e o paciente sofre com a saída de gases e o mau cheiro intenso das fezes; é uma situação realmente miserável. Esse é geralmente o resultado da cirurgia.\n\nMesmo que digam ser câncer, o câncer verdadeiro é raro. Essas pessoas certamente têm solidificações (nódulos de toxina) que vão do umbigo até o flanco. Ministrando Johrei ali e tratando bem os rins, a cura é possível. As solidificações abdominais provêm dos rins. Com o Johrei, o câncer retal cura-se na maioria das vezes. （浄霊法講座８ ｐ87）",
     "focusPoints": [
-      "Rins"
+      "anus",
+      "intestino"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1296,7 +1309,7 @@
     "title": "Fístula Anal",
     "content": "① Causa das Toxinas Medicamentosas Entre as doenças hemorroidais, a mais problemática é a fístula anal. Inicialmente, uma forte toxina medicamentosa solidifica-se em uma parte do ânus, causando muita dor. Ao procurar o médico, este realiza invariavelmente uma incisão cirúrgica. Há um alívio momentâneo, mas, sem exceção, a área adjacente incha novamente. Corta-se de novo, incha de novo, e assim sucessivamente, até que a região fica parecendo um favo de mel, com dores insuportáveis. Isso ocorre porque a cada cirurgia infiltram-se novos medicamentos, aumentando a matéria-prima da dor; é algo intolerável.\n\nPortanto, se desde o início não se fizesse nada e deixasse a natureza agir, ocorreria a drenagem natural do pus e a cura seria certa. Costuma-se dizer que curar a fístula leva à tuberculose; isso ocorre porque, se a cirurgia tem \"sucesso\" e a drenagem cessa, a toxina perde sua via de saída e tenta sair pelos pulmões. （文明の創造　下半身の病気と痔疾）\n\n② Causa dos Pecados e Impurezas dos Antepassados A fístula anal difere das outras hemorroidas devido à dor intensa e à grande quantidade de pus expelido, exigindo longo tempo de cura. Os médicos perfuram para drenar o pus no início, mas, como expliquei sobre a tuberculose laríngea, isso causa novo inchaço ao lado. Com cirurgias repetidas, os orifícios da fístula aumentam até parecer um favo de mel. Se deixada naturalmente no início, perfura-se sozinha e, expelindo o pus acumulado, cura-se totalmente. Com este tratamento, mesmo casos graves curam-se em pouco tempo. Diz-se que a cura da fístula leva à tuberculose porque, ao impedir a drenagem pelo ânus (via cirurgia), o pus invade os pulmões para sair como escarro. É mais seguro e menos doloroso deixar sair pela fístula anal. O pus da fístula tem a mesma origem da cárie vertebral, descendo pela coluna vertebral. （明日の医術　痔疾患）",
     "focusPoints": [
-      "Ânus"
+      "anus"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1312,7 +1325,7 @@
     "title": "Prurido Anal",
     "content": "Outra condição desagradável é o prurido anal (coceira no ânus). A causa são toxinas de varíola e de medicamentos. Deixando naturalmente, pode levar décadas para curar; mesmo com Johrei, leva alguns anos. （文明の創造　下半身の病気と痔疾）",
     "focusPoints": [
-      "Ânus"
+      "anus"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1328,7 +1341,9 @@
     "id": "pf111",
     "title": "Prolapso Retal",
     "content": "Dentre as hemorroidas, a mais comum é o prolapso retal, onde uma carne esponjosa sai para fora. No início, é fácil recolocá-la, mas com o tempo ela aumenta e torna-se difícil de empurrar de volta. A sensação é muito desagradável e, como não sara por meios comuns, muitos sofrem em segredo. É comum em mulheres devido ao esforço do parto, sendo ainda mais penoso por ser um local íntimo.\n\nA causa original das hemorroidas é a descida e concentração de uma mistura de duas ou três toxinas: toxinas medicamentosas congênitas, toxinas urinárias e toxinas medicamentosas adquiridas, que se acumulam ao redor do ânus. Isso causa o prolapso. Há os que doem e os que não doem; a dor deve-se à presença de toxinas medicamentosas adquiridas.\n\nDiz-se que é comum entre os japoneses devido à má estrutura das latrinas (agachamento). Outra causa é o hábito de ler no banheiro, o que prolonga o tempo sentado; quem tem hemorroidas deve evitar isso. Eu sofri muito com isso na juventude, mas decidi limitar o tempo a cinco minutos, saindo mesmo que não tivesse terminado; assim, curei-me naturalmente. （文明の創造　下半身の病気と痔疾）",
-    "focusPoints": [],
+    "focusPoints": [
+      "anus"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
@@ -1367,7 +1382,10 @@
     "id": "pf117",
     "title": "Frigidez",
     "content": "A causa principal é, inegavelmente, a atrofia renal. Como a medicina afirma, os rins produzem hormônios; atrofiados, a atividade cai e falta hormônio. A causa é a solidificação nas costas (rins); dissolvendo-a, cura-se. Outra causa é o acúmulo constante de toxinas que descem para a região genital e arredores. Se acumularem no baixo ventre, causam os problemas uterinos citados; descendo mais, causam hemorroidas, vaginismo, coceira, catarro na mucosa, problemas uretrais, eczema, feridas, dor, mau cheiro e desconforto. O inchaço ou solidificação na região das glândulas de Bartholin (ou próstata no homem) e nos grandes ou pequenos lábios pode estender-se à virilha, dificultando o andar. Problemas nessas glândulas são graves. O autodiagnóstico é fácil: pressionando, haverá dor ou nódulos. Devido à localização, o auto-Johrei ou a aplicação pelo marido curam muito bem. Demora um tempo, mas com paciência a melhora é progressiva e a cura, certa. Se as mulheres soubessem disso, quão grande seria sua alegria! Não há salvação mais maravilhosa. （文明の創造　婦人病）\n\n4. Estômago (Na Gravidez)",
-    "focusPoints": [],
+    "focusPoints": [
+      "utero",
+      "baixo-ventre"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Dores e Rigidez",
@@ -1384,7 +1402,11 @@
     "id": "pf118",
     "title": "Enjoos Matinais (Hiperêmese Gravídica)",
     "content": "O maior sofrimento da gravidez. Todos conhecem, mas casos graves põem a vida em risco. A medicina desconhece a causa, mas é simples: ao expandir-se, o útero encontra um obstáculo — o acúmulo de toxinas entre o umbigo e o estômago. Devido à pressão da expansão, o corpo tenta eliminar essas toxinas através dos vômitos frequentes. São toxinas naturais e de remédios; saindo tudo, cura-se completamente. （文明の創造　婦人病）\n\n5. Rins (Na Gravidez)",
-    "focusPoints": [],
+    "focusPoints": [
+      "estomago",
+      "utero",
+      "rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Sistema Digestivo",
@@ -1399,7 +1421,9 @@
     "id": "pf_child_1",
     "title": "Indigestão (Dispepsia)",
     "content": "Recém-nascidos frequentemente têm fezes verdes ou espumosas, chamadas de indigestão. Na verdade, são toxinas da mãe misturadas ao leite, sendo purificadas através do bebê. É algo excelente. Deixando sair, cura-se. A medicina chama de beribéri infantil e dá remédios, o que enfraquece a criança e atrapalha o desenvolvimento. Isso gera crianças fracas, propensas à escrófula e, mais tarde, à tuberculose. O aumento da tuberculose deve-se muito a esses erros. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "estomago"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1419,7 +1443,10 @@
     "id": "pf_child_2",
     "title": "Desenvolvimento Deficiente",
     "content": "Logo após nascer, aplicam-se vacinas e injeções \"para nutrição\". Isso é péssimo. O corpo ainda não está formado; injeções são agressivas. Isso causa atraso no desenvolvimento: pescoço mole após a idade normal, demora para andar e baixa inteligência. Desejo que os médicos pesquisem mais sobre isso. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "vertice",
+      "frontal"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1439,7 +1466,9 @@
     "id": "pf_child_3",
     "title": "Úlcera Gástrica Infantil",
     "content": "Bebês de um ou dois meses que vomitam sangue. Médicos chamam de úlcera, o que é cômico, pois úlcera vem de longos anos de remédios. O bebê está apenas vomitando sangue velho que engoliu da mãe no parto. Depois disso, o apetite aumenta. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "estomago"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1459,7 +1488,10 @@
     "id": "pf_child_4",
     "title": "Coqueluche",
     "content": "A causa é o bebê ter engolido fluidos impuros da mãe antes do parto. Retidos, são eliminados tempos depois. Caracteriza-se por tosse violenta e, invariavelmente, vômito de espuma. O som de guincho ao inspirar é típico. Chama-se \"tosse de cem dias\" porque leva esse tempo para sair toda a espuma. Com Johrei, cura-se em três semanas (início) ou uma semana (no auge). （文明の創造　「小児病」）\n\nTende a virar pneumonia porque tentam parar a tosse. A espuma dissolvida entra no pulmão para sair com a tosse; parando a tosse, a espuma acumula e solidifica no pulmão, gerando febre alta para dissolver (pneumonia). O tratamento errado adiciona uma nova doença. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "pulmoes",
+      "garganta"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1479,7 +1511,11 @@
     "id": "pf_child_5",
     "title": "Meningite",
     "content": "Febre alta como fogo na testa, dor de cabeça rachando, fotofobia e tontura. O paciente não abre os olhos. A causa: crianças com muitas toxinas, ao começarem a usar a mente (escola), concentram toxinas na testa. O problema é o resfriamento com gelo. Isso solidifica as toxinas que estavam derretendo, impedindo a atividade cerebral e causando demência ou deficiência. Pelo Johrei, as toxinas derretem e saem como muito pus e sangue pelos olhos e nariz, limpando a cabeça. A criança fica mais inteligente e melhora na escola. Se parassem com o gelo, muitos seriam salvos. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "frontal",
+      "vertice",
+      "pescoco"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1499,7 +1535,10 @@
     "id": "pf_child_6",
     "title": "Choro Noturno (Manha)",
     "content": "Dizem ser \"vermes\", mas sempre há febre leve na cabeça e nos ombros. Muitos bebês têm ombros rígidos. Com Johrei, a febre some e o choro para. （天国の礎　「大三災と小三災」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "frontal",
+      "ombros"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1519,7 +1558,10 @@
     "id": "pf_child_7",
     "title": "Escarlatina",
     "content": "Doença simples: sangue tóxico congênito tentando sair pela pele. A pele fica vermelha com erupções finas. Se deixada, cura. Tratamentos médicos prolongam e trazem perigo. Na fase de cura, a pele descama; a medicina teme o contágio, mas com Johrei cura-se em dias, sem problemas. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "rins",
+      "garganta"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1539,7 +1581,11 @@
     "id": "pf_child_8",
     "title": "Disenteria Infantil (Ekiri)",
     "content": "Muito temida pela alta mortalidade. Sintomas: bocejos frequentes desde o início, falta total de apetite, prostração e sonolência. Causa: toxinas da parte superior concentram-se no estômago, refletindo no cérebro e causando sintomas cerebrais. Com Johrei, cura-se facilmente em um ou dois dias. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "estomago",
+      "frontal",
+      "occipital"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1559,7 +1605,11 @@
     "id": "pf_child_9",
     "title": "Paralisia Infantil (Poliomielite)",
     "content": "Aumentou muito ultimamente. Tem causa espiritual (rara) e física (comum, pseudo-paralisia), que sempre cura. Sintomas: dificuldade de andar, braço inerte, quadril imóvel. A perna é a mais afetada. Causa: toxinas hereditárias e de remédios aplicados após o nascimento. O veneno solidifica em parte da perna (sola, peito do pé, calcanhar, dedos), causando dor ao mover. Apalpando, acha-se o ponto dolorido; ministrando Johrei, a cura avança. A medicina não remove a toxina e usa métodos paliativos, por isso é temida mundialmente. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "membros",
+      "rins",
+      "pernas"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1579,7 +1629,10 @@
     "id": "pf_child_10",
     "title": "Sarampo",
     "content": "Quase ninguém escapa. É a eliminação de sangue tóxico herdado; algo a agradecer, nem deveria ser chamado de doença. O medo e a prevenção são tolos. Sem tratamento, cura-se bem. Remédios atrapalham. Único cuidado: não pegar vento. O vento impede a saída da toxina pela pele. \"Cubra-se e durma\" é a regra de ouro. Impedir a erupção retém a toxina, causando reincidência ou outras doenças. A pneumonia pós-sarampo é comum porque o resfriamento (gelo) impede a saída externa, forçando a erupção interna nos pulmões. A respiração fica rápida, mas com pouco escarro. Deixando em paz, sara em dois ou três dias. Otite e problemas oculares pós-sarampo são o resto das toxinas saindo por outros lugares. Deixando, curam-se. （文明の創造　「小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "pulmoes",
+      "pele"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1599,7 +1652,11 @@
     "id": "pf_child_11",
     "title": "Asma Infantil",
     "content": "Causas: as mesmas da asma adulta ou hereditariedade. A maioria é acúmulo de toxinas do diafragma até o exterior do estômago e fígado. Deixando, cura-se naturalmente ao crescer. Pode ser também purificação de toxinas nas costas (rins e coração). （明日の医術　「小児病・喘息」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "pulmoes",
+      "diafragma",
+      "rins"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1619,7 +1676,9 @@
     "id": "pf_child_12",
     "title": "Pneumonia Infantil",
     "content": "Causas: coqueluche suprimida, sarampo ou purificação violenta de toxinas ao redor do pulmão. A respiração difícil e o chiado assustam os pais. Tratamentos médicos que param a purificação trazem maus resultados. Deixar naturalmente é melhor. Com Johrei, cura-se em menos de uma semana. O alivio vem com a saída do escarro. （明日の医術　「小児病・肺炎」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "pulmoes"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1639,7 +1698,11 @@
     "id": "pf_child_13",
     "title": "Hérnia (Deslocamento do Intestino)",
     "content": "Comum em crianças e idosos. Casos leves em crianças curam-se ao crescer. Graves exigem cirurgia ou uso de fundas. Causa: toxinas no peritônio pressionam o intestino, que escapa, ou o canal inguinal é congenitamente largo. Em meninos, se o intestino descer até o escroto, é difícil curar. A cirurgia costuma ter bom resultado. Pelo Johrei, dissolvem-se as toxinas do peritônio para fortalecer o intestino; demora, mas cura quase tudo. Fundas ajudam. （明日の医術　「小児病・脱腸」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "inguinal",
+      "intestino",
+      "baixo-ventre"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1659,7 +1722,9 @@
     "id": "pf_child_14",
     "title": "Difteria",
     "content": "A garganta incha, causando asfixia. É uma purificação aguda. Com Johrei, cura-se em dezenas de minutos. A forma espiritual é difícil de curar (explicarei depois). （天国の福音　「乳幼児及び小児病」）",
-    "focusPoints": [],
+    "focusPoints": [
+      "garganta"
+    ],
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
@@ -1680,7 +1745,9 @@
     "title": "Sarna e Doenças de Pele",
     "content": "Recentemente, surgiu uma epidemia de pústulas brancas (como feijões) ou vermelhas nas mãos e pés, muito dolorosas. A sarna causa coceira insuportável no corpo todo. A causa surpreendente de ambas é o cérebro. Toxinas solidificadas no cérebro dissolvem-se, descem e tentam sair pela pele das mãos e pés. Três tipos de toxinas:\n\nGrânulos vermelhos (Sarna): Sífilis oculta (às vezes misturada com remédios).\n\nGrânulos brancos dolorosos: Toxinas de remédios ocidentais.\n\nSem dor, mas com pele negra (gangrenosa): Toxina da lepra (em pequena quantidade). Acredito que frieiras também sejam isso. （天国の福音　「頭脳の重要性」）",
     "focusPoints": [
-      "O Nariz"
+      "membros",
+      "rins",
+      "pele"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1697,7 +1764,8 @@
     "title": "Beribéri",
     "content": "Doença de intoxicação por arroz branco. Comer farelo de arroz (nuka) ou mais acompanhamentos cura em uma semana. A maioria dos diagnósticos médicos de beribéri está errada. O verdadeiro beribéri amortece três pontos: canela interna, base do polegar e lábio inferior. O resto é pseudo-beribéri (excesso de urina ou remédios). Com Johrei, ambos curam-se em poucas vezes. （天国の福音　「脚気とバセドー氏病」）",
     "focusPoints": [
-      "O Nariz"
+      "membros",
+      "rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1714,7 +1782,9 @@
     "title": "Nevralgia",
     "content": "Dor nos nervos externos, sem lesão interna (exceto osteomielite). A \"nevralgia intercostal\" é, na verdade, toxina nas costelas tentando entrar no pulmão. Dói muito, mas cura fácil. Algumas vêm da gonorreia (braços). A causa geral são injeções. Suportando a dor, a toxina junta-se, forma um inchaço, fura e sai pus, curando-se. A intoxicação por injeções de Papinal causa dor na pele do corpo todo. Deixando, sara; injetando mais, piora. （文明の創造　「神経痛とリュウマチ」）",
     "focusPoints": [
-      "O Nariz"
+      "torax",
+      "bracos",
+      "regiao_omoplatas"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1731,7 +1801,8 @@
     "title": "Reumatismo",
     "content": "Articulações vermelhas, inchadas e dolorosas. Toxinas de remédios concentrando-se ali. A medicina imobiliza, o que tira a dor mas enrijece a junta, criando um aleijado. O Johrei cura fácil e rápido. Se usaram gelo ou injeções, demora mais. Sem tratamento médico prévio, cura em menos de uma semana. （文明の創造　「神経痛とリョウマチ」）",
     "focusPoints": [
-      "O Nariz"
+      "membros",
+      "rins"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1748,7 +1819,9 @@
     "title": "Enurese Noturna (Xixi na Cama)",
     "content": "Pontos: Interior da região frontal, pescoço, virilha (músculo da uretra comprimido por toxinas) e rins. Com paciência, cura. （御教え集８　ｐ39）",
     "focusPoints": [
-      "O Nariz"
+      "rins",
+      "baixo-ventre",
+      "frontal"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
@@ -1765,7 +1838,8 @@
     "title": "Ronco",
     "content": "Causa: inchaço (adenoide) entre o nariz e a garganta; o ar vaza pela boca e vibra. Focando o Johrei entre o nariz e a garganta, cura. Resto de sinusite. （浄霊法講座10　ｐ84）",
     "focusPoints": [
-      "O Nariz"
+      "nariz",
+      "garganta"
     ],
     "source": "Estudos Específicos 02",
     "tags": [
