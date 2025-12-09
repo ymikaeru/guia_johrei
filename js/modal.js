@@ -1,4 +1,3 @@
-```javascript
 // --- MODAL LOGIC ---
 let currentModalIndex = -1;
 
@@ -25,13 +24,13 @@ function openModal(i, explicitItem = null) {
     // Reset classes
     catEl.className = 'text-[10px] font-sans font-bold uppercase tracking-widest block mb-2';
     if (catConfig) {
-        catEl.classList.add(`text - ${ catConfig.color } `);
+        catEl.classList.add('text-' + catConfig.color);
     } else {
         catEl.classList.add('text-gray-500');
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = (i >= 0) ? `#${ i + 1 } ` : '';
+    document.getElementById('modalRef').textContent = (i >= 0) ? '#' + (i + 1) : '';
 
     // Generate breadcrumb (moved up for context if needed, but keeping flow)
 
@@ -54,14 +53,13 @@ function openModal(i, explicitItem = null) {
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
         const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
-        const sourceHtml = item.source ? `< span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2" > ${ item.source }</span > ` : '';
-        const catColorClass = catConfig ? `text - ${ catConfig.color } ` : 'text-gray-400';
-        const breadcrumbHTML = `
-    < span class="text-gray-500" > ${ modeLabel }</span >
-            <span class="text-gray-600">›</span>
-            <span class="${catColorClass}">${catLabel}</span>
-            ${ sourceHtml }
-`;
+        const sourceHtml = item.source ? '<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">' + item.source + '</span>' : '';
+        const catColorClass = catConfig ? 'text-' + catConfig.color : 'text-gray-400';
+        const breadcrumbHTML =
+            '<span class="text-gray-500">' + modeLabel + '</span>' +
+            '<span class="text-gray-600 px-2">›</span>' +
+            '<span class="' + catColorClass + '">' + catLabel + '</span>' +
+            sourceHtml;
         breadcrumbEl.innerHTML = breadcrumbHTML;
     }
 
@@ -101,7 +99,7 @@ function openModal(i, explicitItem = null) {
         }
         const terms = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
         if (terms) {
-            const pattern = useBoundaries ? `\\b(${ terms }) \\b` : `(${ terms })`;
+            const pattern = useBoundaries ? `\\b(${terms}) \\b` : `(${terms})`;
             highlightRegex = new RegExp(pattern, 'gi');
         }
     }
@@ -115,7 +113,7 @@ function openModal(i, explicitItem = null) {
                 ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100"
                 : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
 
-            return `< button onclick = "filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}" > ${ p }</button > `;
+            return '<button onclick="filterByFocusPoint(\'' + p + '\')" class="' + baseClass + ' ' + colorClass + '">' + p + '</button>';
         }).join('');
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
@@ -151,7 +149,7 @@ function openModal(i, explicitItem = null) {
     const size = STATE.modalFontSize;
     const align = STATE.modalAlignment;
 
-    contentEl.style.fontSize = `${ size } px`;
+    contentEl.style.fontSize = `${size} px`;
     contentEl.style.lineHeight = '1.8';
 
     // Force children inheritance
@@ -270,18 +268,18 @@ function renderHistoryList(container) {
         // Simple time ago
         const diff = Math.floor((Date.now() - h.time) / 60000); // mins
         let timeStr = 'agora';
-        if (diff > 0) timeStr = `${ diff } m`;
-        if (diff > 60) timeStr = `${ Math.floor(diff / 60) } h`;
+        if (diff > 0) timeStr = `${diff} m`;
+        if (diff > 60) timeStr = `${Math.floor(diff / 60)} h`;
 
         return `
-    < div onclick = "openRelatedItem('${h.id}')" class="px-4 py-3 hover:bg-gray-50 dark:hover:bg-[#222] cursor-pointer border-b border-gray-50 dark:border-gray-800 last:border-0 transition-colors group" >
+            <div onclick="openRelatedItem('${h.id}')" class="px-4 py-3 hover:bg-gray-50 dark:hover:bg-[#222] cursor-pointer border-b border-gray-50 dark:border-gray-800 last:border-0 transition-colors group">
                 <div class="flex justify-between items-baseline mb-1">
                     <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-black dark:group-hover:text-gray-300 transition-colors">${h.cat || 'Geral'}</span>
                     <span class="text-[9px] text-gray-300">${timeStr}</span>
                 </div>
                 <h4 class="font-serif font-medium text-sm text-gray-700 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white line-clamp-1">${h.title}</h4>
-            </div >
-    `;
+            </div>
+        `;
     }).join('');
 }
 
@@ -331,11 +329,11 @@ function renderRelatedItems(currentItem) {
         const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
 
         return `
-    < div onclick = "openRelatedItem('${item.id}')" class="group cursor-pointer p-4 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all transform hover:-translate-y-1" >
+            <div onclick="openRelatedItem('${item.id}')" class="group cursor-pointer p-4 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all transform hover:-translate-y-1">
                 <span class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">${catLabel}</span>
                 <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white transition-colors line-clamp-2">${item.title}</h4>
-            </div >
-    `;
+            </div>
+        `;
     }).join('');
 
     listEl.innerHTML = html;
@@ -353,7 +351,7 @@ window.setModalFontSize = function (size) {
 
     const content = document.getElementById('modalContent');
     if (content) {
-        content.style.fontSize = `${ size } px`;
+        content.style.fontSize = `${size} px`;
         // Force children to inherit
         const children = content.querySelectorAll('p, li, div');
         children.forEach(child => child.style.fontSize = 'inherit');
