@@ -1,20 +1,29 @@
 // --- MODAL LOGIC ---
 let currentModalIndex = -1;
 
-function openModal(i) {
+// Refactored to accept direct Item (for recommendations outside current list)
+function openModal(i, explicitItem = null) {
     currentModalIndex = i;
-    const item = STATE.list[i];
+    const item = explicitItem || STATE.list[i];
+
+    if (!item) return;
+
     const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
 
     document.getElementById('modalTitle').textContent = item.title;
     const catEl = document.getElementById('modalCategory');
-    catEl.textContent = catConfig ? catConfig.label : item._cat;
+    catEl.textContent = catConfig ? catConfig.label : (item._cat || 'Geral');
+
+    // Reset classes
+    catEl.className = 'text-[10px] font-sans font-bold uppercase tracking-widest block mb-2';
     if (catConfig) {
-        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-${catConfig.color}`;
+        catEl.classList.add(`text-${catConfig.color}`);
+    } else {
+        catEl.classList.add('text-gray-500');
     }
 
     document.getElementById('modalSource').textContent = item.source || "Fonte Original";
-    document.getElementById('modalRef').textContent = `#${i + 1}`;
+    document.getElementById('modalRef').textContent = (i >= 0) ? `#${i + 1}` : '';
 
     // Generate breadcrumb (moved up for context if needed, but keeping flow)
 
@@ -32,11 +41,11 @@ function openModal(i) {
         window.history.pushState({ path: newUrl.href }, '', newUrl.href);
     }
 
-    // Generate breadcrumb
+    // Breadcrumb
     const breadcrumbEl = document.getElementById('modalBreadcrumb');
     if (breadcrumbEl) {
         const modeLabel = CONFIG.modes[STATE.mode]?.label || STATE.mode;
-        const catLabel = catConfig ? catConfig.label : item._cat;
+        const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
         const sourceHtml = item.source ? `<span class="bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold ml-2">${item.source}</span>` : '';
         const catColorClass = catConfig ? `text-${catConfig.color}` : 'text-gray-400';
         const breadcrumbHTML = `
@@ -51,7 +60,7 @@ function openModal(i) {
     const inputs = document.querySelectorAll('.search-input');
     let searchQuery = inputs.length > 0 ? inputs[0].value.trim() : '';
 
-    // Highlight body point keywords if filtering by body point
+    // Highlight body point keywords
     if (!searchQuery && STATE.selectedBodyPoint && STATE.activeTab === 'mapa') {
         const pointIds = STATE.selectedBodyPoint.split(',');
         const keywords = new Set();
@@ -64,16 +73,14 @@ function openModal(i) {
                 keywords.add(pid);
             }
         });
-        // Use | as delimiter to preserve phrases (handled in formatBodyText)
         searchQuery = Array.from(keywords).join('|');
     }
     document.getElementById('modalContent').innerHTML = formatBodyText(item.content, searchQuery, item.focusPoints);
 
     const fpContainer = document.getElementById('modalFocusContainer');
-    // Always show if data exists (Don't hide for Fundamentos anymore)
     const showFocusPoints = true;
 
-    // Build Highlight Regex (same logic as formatBodyText)
+    // Highlight Regex
     let highlightRegex = null;
     if (searchQuery) {
         let tokens;
@@ -95,11 +102,10 @@ function openModal(i) {
         fpContainer.classList.remove('hidden');
         const html = item.focusPoints.map(p => {
             const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
-            // Highlighting style if matched
             const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors";
             const colorClass = isMatch
-                ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100" // Highlighted
-                : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"; // Normal
+                ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100"
+                : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
 
             return `<button onclick="filterByFocusPoint('${p}')" class="${baseClass} ${colorClass}">${p}</button>`;
         }).join('');
@@ -108,8 +114,14 @@ function openModal(i) {
         fpContainer.classList.add('hidden');
     }
 
-    document.getElementById('prevBtn').disabled = i === 0;
-    document.getElementById('nextBtn').disabled = i === STATE.list.length - 1;
+    // Disable Navigation if standalone (i === -1)
+    if (i === -1) {
+        document.getElementById('prevBtn').disabled = true;
+        document.getElementById('nextBtn').disabled = true;
+    } else {
+        document.getElementById('prevBtn').disabled = i === 0;
+        document.getElementById('nextBtn').disabled = i === STATE.list.length - 1;
+    }
 
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
@@ -124,11 +136,9 @@ function openModal(i) {
     document.body.style.overflow = 'hidden';
 
     // --- APPLY READING SETTINGS ---
-    // define defaults if missing
     if (!STATE.modalFontSize) STATE.modalFontSize = 18;
     if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
 
-    // Apply styles
     const contentEl = document.getElementById('modalContent');
     const size = STATE.modalFontSize;
     const align = STATE.modalAlignment;
@@ -136,9 +146,8 @@ function openModal(i) {
     contentEl.style.fontSize = `${size}px`;
     contentEl.style.lineHeight = '1.8';
 
-    // Force children to inherit (fixes issue where P tags have fixed size from CSS)
-    const children = contentEl.querySelectorAll('p, li, div');
-    children.forEach(child => child.style.fontSize = 'inherit');
+    // Force children inheritance
+    contentEl.querySelectorAll('p, li, div').forEach(child => child.style.fontSize = 'inherit');
 
     if (align === 'hyphen') {
         contentEl.style.textAlign = 'justify';
@@ -150,13 +159,11 @@ function openModal(i) {
         contentEl.style.webkitHyphens = 'none';
     }
 
-    // Sync UI Controls
+    // Sync Controls
     const slider = document.getElementById('modalFontSlider');
     if (slider) slider.value = size;
-
     const display = document.getElementById('modalFontSizeDisplay');
     if (display) display.textContent = size;
-
     const select = document.getElementById('modalAlignSelect');
     if (select) select.value = align;
 
@@ -167,6 +174,9 @@ function openModal(i) {
             if (highlight) highlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 400);
     }
+
+    // Render Related (Recursion safety handled by renderRelatedItems)
+    renderRelatedItems(item);
 }
 
 function closeModal() {
@@ -200,6 +210,79 @@ function navModal(dir) {
             content.style.opacity = '1';
         }, 200);
     }
+}
+
+// Helper for Recommendation Clicks
+window.openRelatedItem = function (id) {
+    // 1. Check if in current list
+    const index = STATE.list.findIndex(i => i.id === id);
+    if (index !== -1) {
+        // Open with context
+        openModal(index);
+    } else {
+        // Open standalone (from Global Data)
+        const item = STATE.globalData ? STATE.globalData[id] : null;
+        if (item) {
+            openModal(-1, item);
+        }
+    }
+}
+
+// --- RECOMMENDATION SYSTEM ---
+function renderRelatedItems(currentItem) {
+    const container = document.getElementById('modalRelated');
+    const listEl = document.getElementById('modalRelatedList');
+    if (!container || !listEl) return;
+
+    if (!currentItem) {
+        container.classList.add('hidden');
+        return;
+    }
+
+    const scores = [];
+    const currentTags = new Set(currentItem.tags || []);
+    const currentPoints = new Set(currentItem.focusPoints || []);
+    const currentCat = currentItem._cat;
+
+    // Use Global Data
+    let sourceList = STATE.list;
+    if (STATE.globalData && Object.keys(STATE.globalData).length > 0) {
+        sourceList = Object.values(STATE.globalData);
+    }
+
+    sourceList.forEach((item) => {
+        if (item.id === currentItem.id) return;
+
+        let score = 0;
+        if (item.tags) item.tags.forEach(t => { if (currentTags.has(t)) score += 5; });
+        if (item.focusPoints) item.focusPoints.forEach(p => { if (currentPoints.has(p)) score += 10; });
+        if (item._cat === currentCat) score += 2;
+
+        if (score > 0) scores.push({ score, item });
+    });
+
+    scores.sort((a, b) => b.score - a.score);
+    const topItems = scores.slice(0, 3);
+
+    if (topItems.length === 0) {
+        container.classList.add('hidden');
+        return;
+    }
+
+    const html = topItems.map(({ item }) => {
+        const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
+        const catLabel = catConfig ? catConfig.label : (item._cat || 'Geral');
+
+        return `
+            <div onclick="openRelatedItem('${item.id}')" class="group cursor-pointer p-4 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all transform hover:-translate-y-1">
+                <span class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">${catLabel}</span>
+                <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white transition-colors line-clamp-2">${item.title}</h4>
+            </div>
+        `;
+    }).join('');
+
+    listEl.innerHTML = html;
+    container.classList.remove('hidden');
 }
 
 // --- MODAL CONTROLS ---
