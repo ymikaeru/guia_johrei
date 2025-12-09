@@ -225,14 +225,19 @@ function smoothScrollTo(targetPosition, duration) {
     const distance = targetPosition - startPosition;
     let startTime = null;
 
+    // Pre-start: Trick the animation into thinking it's already 20ms in
+    // This ensures the first frame has non-zero movement (~2-3% progress)
+    // solving the "first frame is static" issue.
+    const PRE_START_MS = 20;
+
     function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
+        if (startTime === null) startTime = currentTime - PRE_START_MS;
         const timeElapsed = currentTime - startTime;
 
-        // EaseOutCubic (Standard Deceleration)
-        // 1 - (1 - t) ^ 3
+        // EaseOutQuart (Stronger initial burst than Cubic)
+        // 1 - (1 - t) ^ 4
         const ease = (t) => {
-            return 1 - Math.pow(1 - t, 3);
+            return 1 - Math.pow(1 - t, 4);
         };
 
         // Ensure we don't overshoots
@@ -245,7 +250,7 @@ function smoothScrollTo(targetPosition, duration) {
         }
     }
 
-    // Start immediately in the same frame (Synchronous start)
+    // Start immediately (Synchronous)
     animation(performance.now());
 }
 
