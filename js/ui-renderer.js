@@ -234,10 +234,10 @@ function smoothScrollTo(targetPosition, duration) {
         if (startTime === null) startTime = currentTime - PRE_START_MS;
         const timeElapsed = currentTime - startTime;
 
-        // EaseOutQuart (Stronger initial burst than Cubic)
-        // 1 - (1 - t) ^ 4
+        // EaseOutQuad (Gentler deceleration, less aggressive)
+        // 1 - (1 - t) ^ 2
         const ease = (t) => {
-            return 1 - Math.pow(1 - t, 4);
+            return 1 - Math.pow(1 - t, 2);
         };
 
         // Ensure we don't overshoots
