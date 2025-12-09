@@ -229,8 +229,13 @@ function applyFilters() {
 
     // 2. Legacy Floating Bubble (Disabled/Hidden)
     // We removed the active usage of .clear-search-btn as a bubble in favor of the input indicator.
+    // 2. Clear Button Visibility (Updated: specific user request)
     document.querySelectorAll('.clear-search-btn').forEach(btn => {
-        btn.classList.add('hidden');
+        if (q || hasActiveFilters || STATE.bodyFilter) {
+            btn.classList.remove('hidden');
+        } else {
+            btn.classList.add('hidden');
+        }
     });
 
     // 3. Toggle Header "Limpar Filtros" Button (Only for Tags)
