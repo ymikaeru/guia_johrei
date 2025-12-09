@@ -85,20 +85,20 @@
             <!-- Title Wrapper (No longer sticky itself on desktop, just a block) -->
             <div class="contents md:block">
                 <header
-                    class="sticky top-0 z-[120] flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none transition-all">
-                    <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
+                    class="sticky top-0 z-[120] flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none transition-all border-b border-transparent">
+                    <div class="px-6 md:px-12 pt-8 md:pt-12 pb-2 flex justify-between items-end mb-2 md:mb-4">
                         <div>
                             <h1
-                                class="text-4xl md:text-5xl font-serif font-bold tracking-wide leading-none mb-3 text-gray-900 dark:text-gray-50">
-                                JOHREI: O GUIA PRÁTICO</h1>
+                                class="text-[2.75rem] md:text-5xl font-serif font-medium tracking-tight leading-none mb-1 text-gray-900 dark:text-gray-50">
+                                JOHREI</h1>
                             <p id="modeDescription"
-                                class="text-[10px] md:text-xs text-gray-400 font-sans font-medium tracking-[0.2em] uppercase transition-all">
-                                Escritos sagrados</p>
+                                class="text-[10px] md:text-xs text-gray-400 font-sans font-bold tracking-[0.2em] uppercase transition-all pl-1">
+                                O Guia Prático</p>
                         </div>
                         <!-- Controls: Install + Theme -->
                         <div class="flex items-center gap-4">
                             <button id="installAppBtn"
-                                class="hidden group items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
+                                class="hidden group items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -152,15 +152,24 @@
             <div
                 class="sticky top-0 md:static z-50 bg-white/95 dark:bg-[#0a0a0a]/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-gray-100 dark:border-gray-900 md:border-none">
                 <!-- Mobile Search (Visible only on Mobile) -->
-                <div id="mobileSearchWrapper" class="md:hidden px-8 pb-4 relative">
-                    <input type="text" placeholder="BUSCAR..."
-                        class="search-input w-full bg-transparent py-4 pl-0 pr-24 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
-                    <div class="absolute right-8 top-1/2 -translate-y-1/2 flex items-center gap-4">
-                        <span
-                            class="search-count text-[10px] font-sans font-bold text-gray-400 uppercase tracking-widest">0
-                            Itens</span>
-                        <button onclick="clearSearch()"
-                            class="clear-search-btn hidden text-gray-400 hover:text-black dark:hover:text-white text-2xl">×</button>
+                <div id="mobileSearchWrapper" class="md:hidden px-6 pb-2 relative">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="Pesquisar..."
+                            class="search-input w-full bg-transparent py-3 pr-24 text-lg font-serif font-normal placeholder-gray-300 dark:placeholder-gray-700 text-black dark:text-gray-100 focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-colors tracking-wide">
+
+                        <div class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-3">
+                            <span
+                                class="search-count text-[9px] font-sans font-bold text-gray-300 uppercase tracking-[0.2em] hidden">0</span>
+
+                            <!-- Minimalist Clear Button -->
+                            <button onclick="clearSearch()"
+                                class="clear-search-btn hidden text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -250,7 +259,7 @@
 
 
 
-            <div id="contentList" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12"></div>
+            <div id="contentList" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-20 md:gap-y-16 pt-12"></div>
 
             <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
                 <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>

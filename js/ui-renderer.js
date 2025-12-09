@@ -339,8 +339,8 @@ function updateUIForTab(tabId) {
         const tagBrowser = document.getElementById('tagBrowserWrapper');
         if (tagBrowser) tagBrowser.style.display = 'block';
 
-        // Restore Standard Grid Layout
-        list.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 pt-12';
+        // Restore Standard Grid Layout (Max 2 Columns for Nordic Layout)
+        list.className = 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-20 md:gap-y-16 pt-12';
 
         // Standard list view is handled by applyFilters() which is called in setTab
     }
