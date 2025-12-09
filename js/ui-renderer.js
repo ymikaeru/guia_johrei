@@ -286,6 +286,20 @@ function updateUIForTab(tabId) {
         }
 
         renderBodyMapViews(); // Ensure this helper exists or inline logic
+
+        // Auto-scroll to filter button on mobile when entering tab
+        if (window.innerWidth < 1024) { // lg breakpoint
+            setTimeout(() => {
+                const filterBtn = document.querySelector('[onclick*="toggleMobileBodyFilter"]');
+                if (filterBtn) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header ? header.offsetHeight : 80;
+                    const elementPosition = filterBtn.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+                    smoothScrollTo(offsetPosition, 800);
+                }
+            }, 100); // Small delay for render
+        }
     } else if (tabId === 'apostila') {
         searchInputs.forEach(input => input.classList.add('input-faded')); // Hide search for Apostila
 
