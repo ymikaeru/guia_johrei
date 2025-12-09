@@ -150,10 +150,10 @@ function renderBodyMapViews() {
                     <span>Filtrar por Região</span>
                     <svg class="w-4 h-4 transition-transform duration-200" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
-                    style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
+                <div id="mobileBodyFilterList" class="max-h-0 opacity-0 relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden"
+                    style="-webkit-overflow-scrolling: touch;">
                      <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event); toggleMobileBodyFilter(document.querySelector('#mobileFilterIcon').parentElement);">
                         -- Todos os pontos --
                     </div>
                     ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
@@ -200,28 +200,48 @@ function toggleMobileBodyFilter(btn) {
 
     if (!list) return;
 
-    list.classList.toggle('hidden');
+    // Toggle State
+    const isClosed = list.classList.contains('max-h-0');
 
-    // Rotate Icon
-    if (list.classList.contains('hidden')) {
-        if (icon) icon.style.transform = 'rotate(0deg)';
-    } else {
+    if (isClosed) {
+        // OPEN IT
+        list.classList.remove('max-h-0', 'opacity-0');
+        // Add max-height via style strictly for the transition target or rely on class removal if there's a base class?
+        // Actually, removing max-h-0 makes it expand to fit content? No, we need a target height.
+        // We will set a class 'max-h-[50vh]' or style.
+        list.style.maxHeight = '50vh';
+
         if (icon) icon.style.transform = 'rotate(180deg)';
+
+        // Enable scroll after animation
+        setTimeout(() => {
+            list.style.overflowY = 'auto'; // Enable scroll only after expansion
+        }, 500);
 
         // Auto-Scroll Logic
         setTimeout(() => {
             const header = document.querySelector('header');
             const headerHeight = header ? header.offsetHeight : 80;
             const elementPosition = btn.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
 
             window.scrollTo({
                 top: offsetPosition,
                 behavior: "smooth"
             });
-        }, 100); // Slight delay to ensure DOM update
+        }, 300);
+
+    } else {
+        // CLOSE IT
+        list.style.overflowY = 'hidden'; // Hide scrollbar immediately
+        list.style.maxHeight = '0px';
+        list.classList.add('max-h-0', 'opacity-0');
+
+        if (icon) icon.style.transform = 'rotate(0deg)';
     }
 }
+
+
 
 function updateUIForTab(tabId) {
     const alpha = document.getElementById('alphabetWrapper');
