@@ -8,14 +8,16 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
+      "Febre",
+      "Glândulas Linfáticas Cervicais",
+      "Ombros",
+      "Gripe e Resfriado",
       "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
+      "Cabeça e Pescoço",
+      "Glândula Parótida",
       "Anemia",
       "Cabeça (Topo)",
-      "Glândula Parótida",
-      "Glândulas Linfáticas Cervicais",
-      "Ombros"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -30,12 +32,13 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Bulbo (Direito)",
       "Glândulas Linfáticas Cervicais",
-      "Ombros"
+      "Bulbo (Direito)",
+      "Ombros",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -51,12 +54,14 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Cabeça (Topo)",
-      "Occipital",
+      "Febre",
+      "Purificação",
+      "Pescoço",
       "Ombros",
-      "Pescoço"
+      "Occipital",
+      "Cabeça e Pescoço",
+      "Cabeça (Topo)",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -73,14 +78,15 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Hipertensão",
+      "Febre",
+      "Rins",
       "Derrame (AVC)",
-      "Cabeça (Topo)",
-      "Glúteos",
       "Occipital",
-      "Rins"
+      "Hipertensão",
+      "Glúteos",
+      "Cabeça e Pescoço",
+      "Cabeça (Topo)",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -96,16 +102,17 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Derrame (AVC)",
       "Laterais Do Pescoço",
-      "Occipital",
-      "Ombros",
       "Paralisia Cerebral: Alto Da Cabeça",
+      "Rins",
+      "Purificação",
+      "Derrame (AVC)",
+      "Ombros",
+      "Occipital",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
       "Raiz Do Braço",
-      "Rins"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -121,9 +128,11 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Nervoso e Cabeça",
+      "Purificação",
+      "Dores e Rigidez",
       "Cabeça e Pescoço",
-      "Anemia"
+      "Anemia",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -136,14 +145,15 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Anemia",
-      "A Coluna",
-      "Arredores Do Bulbo",
       "Interescapular",
+      "Arredores Do Bulbo",
+      "A Coluna",
+      "Rins e Sistema Urinário",
+      "Ombros",
       "Occipital",
-      "Ombros"
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -174,12 +184,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
+      "Purificação",
+      "Ombros",
       "Bulbo",
       "Occipital",
-      "Ombros"
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -213,11 +224,12 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Ombros",
+      "Occipital",
+      "Dores e Rigidez",
       "Cabeça e Pescoço",
       "Sistema Nervoso e Cabeça",
-      "Nuca",
-      "Occipital",
-      "Ombros"
+      "Nuca"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -249,11 +261,12 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
-      "Bulbo",
       "Ombros",
-      "Parte Posterior Do Nariz"
+      "Parte Posterior Do Nariz",
+      "Bulbo",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -266,12 +279,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Nervoso e Cabeça",
       "Arredores Do Bulbo",
+      "Sistema Nervoso e Cabeça",
       "Arredores Do Nariz",
-      "Frontal",
-      "Ombros"
+      "Ombros",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Febre",
+      "Frontal"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -286,13 +301,14 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Nervoso e Cabeça",
-      "Cabeça e Pescoço",
       "Mundo Espiritual",
       "Bulbo (Lado Direito)",
-      "Frontal",
+      "Sistema Nervoso e Cabeça",
+      "Purificação",
+      "Testa",
       "Ombros",
-      "Testa"
+      "Cabeça e Pescoço",
+      "Frontal"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -307,10 +323,12 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Ouvidos",
-      "Sistema Nervoso e Cabeça",
       "Arredores Da Parótida",
-      "Ombros"
+      "Ouvidos",
+      "Ombros",
+      "Dores e Rigidez",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Ouvidos",
@@ -326,10 +344,11 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
+      "Purificação",
+      "Ombros",
       "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Ombros"
+      "Cabeça e Pescoço",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -344,11 +363,13 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Dores e Rigidez",
-      "Sistema Nervoso e Cabeça",
-      "Boca e Garganta",
       "Arredores Das Glândulas Linfáticas Cervicais",
-      "Ombros"
+      "Boca e Garganta",
+      "Ombros",
+      "Gripe e Resfriado",
+      "Dores e Rigidez",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Boca e Garganta",
@@ -365,10 +386,12 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Nervoso e Cabeça",
-      "Cabeça e Pescoço",
       "Boca e Garganta",
-      "Neuralgia"
+      "Neuralgia",
+      "Purificação",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -387,10 +410,15 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Boca e Garganta",
-      "Coração e Circulação",
       "Mundo Espiritual",
-      "Sistema Nervoso e Cabeça"
+      "Boca e Garganta",
+      "Sistema Nervoso e Cabeça",
+      "Purificação",
+      "Sistema Digestivo",
+      "Sistema Respiratório",
+      "Coração e Circulação",
+      "Febre",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Boca e Garganta",
@@ -403,9 +431,10 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Coração e Circulação",
       "Interescapular",
-      "Ombros"
+      "Ombros",
+      "Sistema Respiratório",
+      "Coração e Circulação"
     ],
     "category": "Sistema Cardiovascular",
     "system": "Coração",
@@ -435,10 +464,11 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Coração e Circulação",
-      "Hipertensão",
       "Interescapular",
-      "Ombros"
+      "Sistema Digestivo",
+      "Ombros",
+      "Hipertensão",
+      "Coração e Circulação"
     ],
     "category": "Sistema Cardiovascular",
     "system": "Coração",
@@ -505,13 +535,19 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Sistema Respiratório",
       "Axilas",
-      "Bulbo",
-      "Cabeça (Topo)",
+      "Sistema Nervoso e Cabeça",
+      "Região Inguinal",
+      "Febre",
       "Costas",
-      "Região Inguinal"
+      "Purificação",
+      "Sistema Respiratório",
+      "Sistema Digestivo",
+      "Gripe e Resfriado",
+      "Bulbo",
+      "Cabeça e Pescoço",
+      "Cabeça (Topo)",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Respiratório",
     "system": "Cabeça",
@@ -524,10 +560,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Pulmões",
+      "Região Renal Nas Costas",
       "Sistema Respiratório",
       "Ombros",
-      "Região Renal Nas Costas"
+      "Dores e Rigidez",
+      "Pulmões",
+      "Febre"
     ],
     "category": "Sistema Respiratório",
     "system": "Pulmões",
@@ -540,18 +578,21 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Respiratório",
-      "Dores e Rigidez",
-      "Sistema Digestivo",
-      "Pulmões",
-      "Asma",
       "Axilas",
-      "Borda Inferior Do Diafragma",
+      "Asma",
+      "Região Cardíaca Nas Costas",
       "Costas",
+      "Purificação",
+      "Sistema Digestivo",
+      "Sistema Respiratório",
+      "Borda Inferior Do Diafragma",
       "Ombros (Principalmente O Esquerdo)",
       "Pescoço",
-      "Região Cardíaca Nas Costas",
-      "Tórax"
+      "Dores e Rigidez",
+      "Tórax",
+      "Pulmões",
+      "Coração e Circulação",
+      "Febre"
     ],
     "category": "Sistema Respiratório",
     "system": "Pulmões",
@@ -566,9 +607,10 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Digestivo",
+      "Purificação",
+      "Coluna Vertebral (T9 A T12)",
       "Dores e Rigidez",
-      "Coluna Vertebral (T9 A T12)"
+      "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Estômago",
@@ -583,9 +625,10 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Dores e Rigidez",
+      "Ombros",
       "Sistema Digestivo",
-      "A Coluna",
-      "Ombros"
+      "A Coluna"
     ],
     "category": "Sistema Digestivo",
     "system": "Estômago",
@@ -614,10 +657,11 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Sistema Urinário",
       "Sistema Digestivo",
+      "Ombros",
       "Abdômen",
-      "Ombros"
+      "Sistema Urinário",
+      "Dores e Rigidez"
     ],
     "category": "Sistema Digestivo",
     "system": "Estômago",
@@ -633,9 +677,11 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Ombros",
       "Sistema Urinário",
-      "Rins e Sistema Urinário",
-      "Ombros"
+      "Dores e Rigidez",
+      "Febre",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
@@ -664,9 +710,11 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
+      "Ombros",
       "Sistema Urinário",
-      "Ombros"
+      "Dores e Rigidez",
+      "Febre",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
@@ -682,12 +730,14 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Rins e Sistema Urinário",
       "Mundo Espiritual",
-      "Câncer e Outras Doenças",
+      "Região Renal Nas Costas",
+      "Purificação",
+      "Rins e Sistema Urinário",
       "Sistema Urinário",
       "Dores e Rigidez",
-      "Região Renal Nas Costas"
+      "Febre",
+      "Câncer e Outras Doenças"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
@@ -717,12 +767,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Cabeça",
+      "Purificação",
       "Costas Do Pulmão",
+      "Pescoço",
       "Ombros",
-      "Pescoço"
+      "Sistema Respiratório",
+      "Cabeça",
+      "Cabeça e Pescoço",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -752,9 +804,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer e Outras Doenças",
+      "Purificação",
       "Sistema Digestivo",
-      "Ombros"
+      "Sistema Respiratório",
+      "Ombros",
+      "Dores e Rigidez",
+      "Coração e Circulação",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Estômago",
@@ -769,8 +825,9 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer e Outras Doenças",
       "Sistema Digestivo",
+      "Dores e Rigidez",
+      "Câncer e Outras Doenças",
       "Ombros"
     ],
     "category": "Câncer e Outras Doenças",
@@ -784,10 +841,11 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer e Outras Doenças",
       "Intestinos",
       "Baixo Ventre",
-      "Ombros"
+      "Sistema Digestivo",
+      "Ombros",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Intestinos",
@@ -800,11 +858,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
+      "Rins",
       "Câncer e Outras Doenças",
-      "Frontal",
+      "Sistema Digestivo",
       "Ombros",
-      "Rins"
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Sistema Reprodutor",
+      "Frontal"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -817,12 +878,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Anemia",
+      "Doenças Femininas",
       "Baixo Ventre",
+      "Ombros",
       "Cabeça",
-      "Ombros"
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -836,11 +898,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Cabeça",
+      "Rins",
       "Ombros",
-      "Rins"
+      "Cabeça",
+      "Cabeça e Pescoço",
+      "Sistema Reprodutor",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -853,11 +916,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer",
-      "Câncer e Outras Doenças",
-      "Dores e Rigidez",
+      "Rins",
+      "Purificação",
       "Ombros",
-      "Rins"
+      "Dores e Rigidez",
+      "Câncer",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Câncer",
@@ -870,11 +934,14 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Rins",
+      "Doenças Infantis",
       "Ombros",
-      "Rins"
+      "Saúde da Criança",
+      "Cabeça e Pescoço",
+      "Sistema Reprodutor",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -889,10 +956,12 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
+      "Sistema Digestivo",
+      "Cabeça",
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
       "Saúde da Mulher",
-      "Cabeça"
+      "Sistema Reprodutor",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -905,12 +974,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Dores e Rigidez",
-      "Saúde da Mulher",
+      "Rins e Sistema Urinário",
+      "Ombros",
       "Cabeça",
-      "Ombros"
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Saúde da Mulher",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -923,11 +993,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer e Outras Doenças",
-      "Saúde da Mulher",
+      "Rins",
       "Baixo Ventre",
       "Ombros",
-      "Rins"
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Sistema Reprodutor",
@@ -941,13 +1012,15 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Câncer e Outras Doenças",
+      "Estômago (Costas)",
+      "Purificação",
+      "Doenças Infantis",
       "Sistema Digestivo",
       "Saúde da Criança",
-      "Saúde da Mulher",
+      "Ombros",
       "Diafragma",
-      "Estômago (Costas)",
-      "Ombros"
+      "Saúde da Mulher",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Estômago",
@@ -965,14 +1038,16 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Mundo Espiritual",
-      "Saúde da Criança",
       "Axilas",
-      "Ombros",
+      "Mundo Espiritual",
       "Paralisia Da Perna: Rins",
-      "Região Inguinal"
+      "Região Inguinal",
+      "Doenças Infantis",
+      "Saúde da Criança",
+      "Ombros",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -985,11 +1060,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Cabeça",
+      "Rins",
       "Ombros",
-      "Rins"
+      "Cabeça",
+      "Cabeça e Pescoço",
+      "Febre",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1002,14 +1078,15 @@
     "focusPoints": [],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Dores e Rigidez",
       "Mundo Espiritual",
-      "Anemia",
       "Cérebro",
+      "Sistema Nervoso e Cabeça",
       "Lado Direito Do Bulbo",
-      "Ombros"
+      "Ombros",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1024,23 +1101,24 @@
     ],
     "source": "Estudos Específicos 01",
     "tags": [
-      "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
       "Mundo Espiritual",
-      "Anemia",
+      "Sistema Nervoso e Cabeça",
       "Centro Da Cabeça",
+      "Rins. Nota: No Johrei",
       "Frontal",
       "Ombros",
-      "Rins. Nota: No Johrei"
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
     "order": 59
   },
   {
-    "id": "pf80",
-    "title": "Pontos Vitais das Doenças dos Olhos e Ouvidos",
-    "content": "1) Região Occipital Doenças oculares como miopia e tracoma têm, sem exceção, sua origem em solidificações na região occipital. Dissolvendo-as, até mesmo um cego voltará a ver. Essas solidificações provêm dos ombros. Ocorrem acúmulos que sobem dos ombros para a nuca. Há muitos casos de cegueira causados por essa rigidez. Nesses casos, existe um ponto central logo atrás dos olhos; dissolvendo o nódulo nesse cruzamento de nervos, a visão se restabelece. Contudo, essa dissolução leva tempo considerável. Deve-se ministrar Johrei relaxando a força, focando no centro, para que a dissolução ocorra gradativamente. Curar a cegueira não é, em si, algo difícil. （浄霊法講座２　ｐ26～27）\n\n2) Bulbo e Músculos do Pescoço Quanto aos ouvidos, o zumbido é muito comum e sua causa reside sempre em solidificações no bulbo e nos músculos do pescoço. Já a dificuldade auditiva decorrente de otite média está relacionada à glândula parótida. Como ela é o canal da otite, restam solidificações nessa área que precisam ser dissolvidas. （浄霊法講座２　ｐ27）\n\n※ Ponto Vital da Febre Sobre a febre: seja na cabeça ou em outras partes, ao ministrar Johrei nos ombros, ela geralmente cede. Para um diagnóstico de saúde, nada melhor do que verificar os ombros. Se estiverem macios, a pessoa certamente é saudável. （浄霊法講座２　ｐ20）\n\n※ A Toxina dos Ombros vem dos Rins As toxinas acumuladas nos ombros originam-se, em sua maioria, nos rins. Toxinas medicamentosas e outras substâncias impuras ingeridas vão primeiramente para os rins para serem processadas e eliminadas através da urina. O que os rins não conseguem processar — como os venenos dos remédios e substâncias não naturais — sobra no organismo. Esse excedente migra gradualmente para os ombros. O homem sofre de rigidez nos ombros porque usa pouco os braços em movimentos amplos, ao contrário das pernas, que estão sempre caminhando e por isso não enrijecem tanto. Manter-se estático usando apenas as mãos causa a rigidez nos ombros. （浄霊法講座２　ｐ29～30）",
+    "id": "pf80_1",
+    "title": "Região Occipital Doenças oculares como miopia e tracoma têm, sem exceção, sua origem em solidificações na região occipital. Dissolvendo-as, até mesmo um cego voltará a ver. Essas solidificações provêm dos ombros. Ocorrem acúmulos que sobem dos ombros para a nuca. Há muitos casos de cegueira causados por essa rigidez. Nesses casos, existe um ponto central logo atrás dos olhos; dissolvendo o nódulo nesse cruzamento de nervos, a visão se restabelece. Contudo, essa dissolução leva tempo considerável. Deve-se ministrar Johrei relaxando a força, focando no centro, para que a dissolução ocorra gradativamente. Curar a cegueira não é, em si, algo difícil. （浄霊法講座２　ｐ26～27）",
+    "content": "",
     "focusPoints": [
       "Rins"
     ],
@@ -1048,16 +1126,64 @@
     "tags": [
       "Cabeça e Pescoço",
       "Dores e Rigidez",
-      "Pontos Vitais - Fundamentos"
+      "Pontos Vitais - Fundamentos",
+      "Pontos Vitais das Doenças dos Olhos e Ouvidos"
     ],
     "category": "Pontos Vitais - Fundamentos",
     "system": "Cabeça",
     "order": 95
   },
   {
-    "id": "pf86",
-    "title": "Cérebro",
-    "content": "1) Hemorragia Cerebral (Derrame) A causa da hemorragia cerebral é a solidificação no pescoço, especificamente o sangue tóxico acumulado durante anos no bulbo raquidiano (lado direito ou esquerdo). Identificar a predisposição é simples: apalpando a região, percebe-se a presença de nódulos. Um dos lados estará proeminente e dolorido ao toque. Quando ocorre a purificação súbita, essa solidificação derrete, rompe os vasos e inunda o cérebro. O sangue cruza o cérebro, desce pelo lado oposto e solidifica-se nas extremidades, causando a hemiplegia (paralisia de um lado). Em casos graves, braços e mãos retorcem-se para dentro, com o polegar preso sob os outros dedos. Curiosamente, a perna não retrai, mas fica flácida e esticada. Sintomas severos incluem língua presa, fala enrolada, demência e olhar vago, transformando a pessoa num cadáver vivo. O maior erro da medicina é resfriar a cabeça com gelo imediatamente após o derrame. Isso contrai os vasos, mas solidifica o sangue tóxico que ainda está no cérebro, paralisando as funções cerebrais e agravando a demência. A hemorragia cessa naturalmente em minutos se deixada fluir. （文明の創造　「上半身の病気と中風」）\n\nPontos Vitais do Johrei: O derrame pode originar-se de nódulos na lateral do pescoço ou no bulbo. Antes do derrame, esses locais apresentam rigidez óbvia, como uma barra. （浄霊法講座２　ｐ39）\n\nPessoas com tendência a derrame têm rigidez no pescoço (esquerda ou direita) e na região occipital. A toxina que deveria descer sobe e solidifica-se ali. A dissolução súbita causa o derrame. O foco não é o ombro, mas o pescoço. （浄霊法講座２　ｐ17）\n\nA hemorragia ocorre no bulbo. No início, trate o bulbo e a região frontal. O sangue cruza a cabeça e vai para o ombro oposto; trate o ombro para aliviar a mão. （浄霊法講座９　ｐ55）\n\nNão é só o pé; mão direita e pé direito são afetados juntos. O problema principal é a mão. Se a mão está ruim, o pé também está. （浄霊法講座９　ｐ54）\n\nCabeça e pescoço. O foco na cabeça é porque a toxina tende a solidificar lá dentro. Gelo na cabeça é proibido, pois solidifica o sangue no cérebro. （浄霊法講座９　ｐ57～58）\n\nPara fala enrolada pós-derrame: tratar da cabeça até as orelhas e maxilar. （浄霊法講座９　ｐ71）\n\n2) Arteriosclerose A arteriosclerose ocorre quando toxinas medicamentosas se solidificam ao redor das artérias, comprimindo-as, ou quando o sangue tóxico se acumula na própria artéria, causando aneurismas. A causa é o remédio e a impureza do sangue pelo consumo de carne. Suspender remédios e adotar dieta vegetariana acelera a cura. （アメリカを救う「動脈硬化及び高血圧」）\n\nPontos Vitais do Johrei: Bulbo, pescoço, ombros, costas. （アメリカを救う、動脈硬化及び高血圧の事例より）\n\n3) Hipertensão Comum após a meia-idade, não é necessariamente um prelúdio do derrame como dizem os médicos; hipotensos têm mais chances de ter derrame. A causa é o acúmulo de toxinas na parte anterior do pescoço, logo abaixo das amígdalas, pressionando a artéria carótida, o que reflete na medição da pressão no braço. （天国の福音　「心臓及び高血圧」）\n\nPontos Vitais do Johrei: Região ântero-lateral do pescoço, logo abaixo das amígdalas. (Idem acima)\n\n4) Paralisia Reversa (Gyakuchubu) Existe um tipo de paralisia onde a solidificação nas glândulas linfáticas cervicais se dissolve e desce pelo mesmo lado do corpo, sem cruzar o cérebro. Causa sintomas similares ao derrame, mas não envolve o cérebro e é mais leve. A medicina, ao tratar como derrame, acaba piorando o quadro. （文明の創造　「上半身の病気と中風」）\n\nPontos Vitais do Johrei: Paralisia Reversa. Focar no pescoço atrás e abaixo da orelha (linfáticos). Dissolvendo aqui, e tratando a raiz do braço e os locais doloridos ou febris no membro afetado, a cura ocorre. （浄霊法講座９　ｐ51）\n\n5) Meningite É a purificação intensa de toxinas na região frontal. Comum em crianças devido à sua força vital. Causa febre alta, dor frontal e fotofobia. Se deixada naturalmente, as toxinas saem como lágrima e secreção nasal, e a criança fica mais inteligente depois. O resfriamento médico solidifica as toxinas, gerando sequelas e demência. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Meningite é fácil. O foco é o centro da região frontal. Não aplicar força. （御教え集８　ｐ16）\n\n6) Encefalite Japonesa Ocorre no verão. O sol forte na cabeça sem chapéu faz as toxinas das costas e ombros subirem, acumulando-se no bulbo. Ao dissolverem com febre alta e entrarem no cérebro posterior, causam sonolência profunda. O resfriamento médico causa a morte ou sequelas. Sem interferência médica, cura-se em uma semana com a eliminação de pus sanguinolento pelos olhos e nariz. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Região occipital e Bulbo. （浄霊法講座９　ｐ41）\n\nA solidificação retorna rapidamente. Deve-se ministrar muitas vezes ao dia (a cada 20 ou 30 minutos). （浄霊法講座９　ｐ43）\n\n7) Meningite Cerebroespinhal Similar à Encefalite, mas ocorre no inverno. As toxinas no bulbo formam uma barra rígida, impedindo o pescoço de mover-se. O tratamento é o mesmo. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Idem à Encefalite Japonesa.\n\n8) Anemia Cerebral e Neurastenia Oposto da hemorragia: falta de sangue no cérebro devido à compressão dos vasos pelas toxinas do pescoço. Causa tontura, dor de cabeça, náusea e intolerância a ruídos. Ao colocar a mão na testa, sente-se a pele fria e suor oleoso. A neurastenia moderna é, basicamente, anemia cerebral. （文明の創造　「脳貧血其他」）\n\nPontos Vitais do Johrei: Pescoço. A purificação gera calor que sobe, causando tontura. Tratar pescoço (linfáticos) e garganta. （浄霊法講座９　ｐ69）\n\nAnemia Cerebral e Garganta. Às vezes a causa está na garganta e no bulbo. （浄霊法講座９　ｐ69）\n\n9) Insônia Causada por anemia cerebral decorrente de solidificação no bulbo (geralmente lado direito), que comprime os vasos. A anemia na região frontal facilita a possessão espiritual, levando a doenças mentais. （文明の創造　「睡眠不足」）\n\nPontos Vitais do Johrei: Lado direito do bulbo, região frontal e centro do cérebro. （教修要綱　病気症状の解剖　ｐ12）",
+    "id": "pf80_2",
+    "title": "Bulbo e Músculos do Pescoço Quanto aos ouvidos, o zumbido é muito comum e sua causa reside sempre em solidificações no bulbo e nos músculos do pescoço. Já a dificuldade auditiva decorrente de otite média está relacionada à glândula parótida.",
+    "content": "Como ela é o canal da otite, restam solidificações nessa área que precisam ser dissolvidas. （浄霊法講座２　ｐ27）\n\n※ Ponto Vital da Febre Sobre a febre: seja na cabeça ou em outras partes, ao ministrar Johrei nos ombros, ela geralmente cede. Para um diagnóstico de saúde, nada melhor do que verificar os ombros. Se estiverem macios, a pessoa certamente é saudável. （浄霊法講座２　ｐ20）\n\n※ A Toxina dos Ombros vem dos Rins As toxinas acumuladas nos ombros originam-se, em sua maioria, nos rins. Toxinas medicamentosas e outras substâncias impuras ingeridas vão primeiramente para os rins para serem processadas e eliminadas através da urina. O que os rins não conseguem processar — como os venenos dos remédios e substâncias não naturais — sobra no organismo. Esse excedente migra gradualmente para os ombros. O homem sofre de rigidez nos ombros porque usa pouco os braços em movimentos amplos, ao contrário das pernas, que estão sempre caminhando e por isso não enrijecem tanto. Manter-se estático usando apenas as mãos causa a rigidez nos ombros. （浄霊法講座２　ｐ29～30）",
+    "focusPoints": [
+      "Rins"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Sistema Nervoso e Cabeça",
+      "Pontos Vitais - Fundamentos",
+      "Pontos Vitais das Doenças dos Olhos e Ouvidos",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Febre",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Pontos Vitais - Fundamentos",
+    "system": "Cabeça",
+    "order": 95
+  },
+  {
+    "id": "pf86_1",
+    "title": "Hemorragia Cerebral (Derrame)",
+    "content": "A causa da hemorragia cerebral é a solidificação no pescoço, especificamente o sangue tóxico acumulado durante anos no bulbo raquidiano (lado direito ou esquerdo). Identificar a predisposição é simples: apalpando a região, percebe-se a presença de nódulos. Um dos lados estará proeminente e dolorido ao toque. Quando ocorre a purificação súbita, essa solidificação derrete, rompe os vasos e inunda o cérebro. O sangue cruza o cérebro, desce pelo lado oposto e solidifica-se nas extremidades, causando a hemiplegia (paralisia de um lado). Em casos graves, braços e mãos retorcem-se para dentro, com o polegar preso sob os outros dedos. Curiosamente, a perna não retrai, mas fica flácida e esticada. Sintomas severos incluem língua presa, fala enrolada, demência e olhar vago, transformando a pessoa num cadáver vivo. O maior erro da medicina é resfriar a cabeça com gelo imediatamente após o derrame. Isso contrai os vasos, mas solidifica o sangue tóxico que ainda está no cérebro, paralisando as funções cerebrais e agravando a demência. A hemorragia cessa naturalmente em minutos se deixada fluir. （文明の創造　「上半身の病気と中風」）\n\nPontos Vitais do Johrei: O derrame pode originar-se de nódulos na lateral do pescoço ou no bulbo. Antes do derrame, esses locais apresentam rigidez óbvia, como uma barra. （浄霊法講座２　ｐ39）\n\nPessoas com tendência a derrame têm rigidez no pescoço (esquerda ou direita) e na região occipital. A toxina que deveria descer sobe e solidifica-se ali. A dissolução súbita causa o derrame. O foco não é o ombro, mas o pescoço. （浄霊法講座２　ｐ17）\n\nA hemorragia ocorre no bulbo. No início, trate o bulbo e a região frontal. O sangue cruza a cabeça e vai para o ombro oposto; trate o ombro para aliviar a mão. （浄霊法講座９　ｐ55）\n\nNão é só o pé; mão direita e pé direito são afetados juntos. O problema principal é a mão. Se a mão está ruim, o pé também está. （浄霊法講座９　ｐ54）\n\nCabeça e pescoço. O foco na cabeça é porque a toxina tende a solidificar lá dentro. Gelo na cabeça é proibido, pois solidifica o sangue no cérebro. （浄霊法講座９　ｐ57～58）\n\nPara fala enrolada pós-derrame: tratar da cabeça até as orelhas e maxilar. （浄霊法講座９　ｐ71）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Mundo Espiritual",
+      "Cérebro",
+      "Purificação",
+      "Derrame (AVC)",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Hipertensão",
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_2",
+    "title": "Arteriosclerose",
+    "content": "A arteriosclerose ocorre quando toxinas medicamentosas se solidificam ao redor das artérias, comprimindo-as, ou quando o sangue tóxico se acumula na própria artéria, causando aneurismas. A causa é o remédio e a impureza do sangue pelo consumo de carne. Suspender remédios e adotar dieta vegetariana acelera a cura. （アメリカを救う「動脈硬化及び高血圧」）\n\nPontos Vitais do Johrei: Bulbo, pescoço, ombros, costas. （アメリカを救う、動脈硬化及び高血圧の事例より）",
     "focusPoints": [
       "Bulbo",
       "Pescoço"
@@ -1071,7 +1197,8 @@
       "Sistema Nervoso e Cabeça",
       "Hipertensão",
       "Derrame (AVC)",
-      "Anemia"
+      "Anemia",
+      "Cérebro"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
@@ -1079,9 +1206,189 @@
     "type": "Caso Clínico"
   },
   {
-    "id": "pf87",
-    "title": "Olhos",
-    "content": "1) Miopia e Astigmatismo Devido ao rim atrófico, toxinas sobem e solidificam-se no bulbo, causando anemia ocular e enfraquecendo a visão. Dissolvendo essa solidificação, a miopia cura-se. No astigmatismo, a solidificação oscila, alterando a pressão nos vasos e a visão. Crianças que não têm secreção nasal (nariz escorrendo) tendem a ser míopes, pois as toxinas ficam retidas. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Nuca e região occipital. O centro da visão está na nuca, logo abaixo da região occipital. Para o olho direito, o bloqueio pode estar no lado esquerdo da nuca (cruzamento dos nervos). （御教え集21　ｐ６）\n\nMiopia e Tracoma sempre têm solidificação na região occipital. Dissolvendo-a, até cegos enxergam. As toxinas vêm dos ombros. Foque no centro atrás dos olhos, relaxando a força. （御教え集24　ｐ49）\n\n2) Tracoma e Conjuntivite Folicular Não são contagiosos. São purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.\n\n3) Leucoma (Manchas na Córnea/Meboshi) Toxinas solidificadas na superfície da pupila. Colírios endurecem a mancha. Sem remédios, cura-se em poucas sessões. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.\n\n4) Conjuntivite Olhos vermelhos e secreção. Toxinas da região frontal sendo eliminadas pelos olhos. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.\n\n5) Catarata, Glaucoma e Amaurose Catarata é pus branco; Glaucoma é pus verde; Amaurose é sangue tóxico no fundo do olho. Todas são toxinas do cérebro descendo para os olhos. （文明の創造　「腎臓病とその他の疾患」）\n\nCatarata é pus branco; Glaucoma é pus verde (mais grave); Amaurose é sangue tóxico (muito grave). Sem remédios, a cura é possível. （明日の医術　「眼病」）\n\nPontos Vitais do Johrei: Focar atrás dos olhos (região occipital/bulbo) e acima dos olhos (sobrancelhas). As toxinas vêm de trás, passam pelo topo ou lateral e descem pela testa até os olhos. Se a região das sobrancelhas esquentar durante o Johrei, é um ótimo sinal. （浄霊法講座10　ｐ19）\n\nCatarata: pus na parte preta do olho. A origem é o bulbo e a região frontal. Demora um pouco, mas a saída de lágrima e remela indica cura progressiva. （浄霊法講座10　ｐ20）\n\nGlaucoma: pus acumulado atrás do olho. Tratar atrás do olho. As toxinas vêm do pescoço, passam pela cabeça e descem. Onde estiver quente, foque ali. Johrei pela frente mirando o fundo do olho. （浄霊法講座10　ｐ24）\n\n6) Outras Doenças Oculares\n\n① Injeção no Globo Ocular É extremamente prejudicial. O remédio sairá como remela anos depois. （御教え集６　ｐ64）\n\n② Olheiras Escuras É sangue tóxico estagnado. Ministrar Johrei no local escuro e no bulbo. （浄霊法講座10　ｐ55）",
+    "id": "pf86_3",
+    "title": "Hipertensão Comum após a meia-idade, não é necessariamente um prelúdio do derrame como dizem os médicos; hipotensos têm mais chances de ter derrame.",
+    "content": "A causa é o acúmulo de toxinas na parte anterior do pescoço, logo abaixo das amígdalas, pressionando a artéria carótida, o que reflete na medição da pressão no braço. （天国の福音　「心臓及び高血圧」）\n\nPontos Vitais do Johrei: Região ântero-lateral do pescoço, logo abaixo das amígdalas. (Idem acima)",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Hipertensão",
+      "Derrame (AVC)",
+      "Anemia",
+      "Cérebro"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_4",
+    "title": "Paralisia Reversa (Gyakuchubu) Existe um tipo de paralisia onde a solidificação nas glândulas linfáticas cervicais se dissolve e desce pelo mesmo lado do corpo, sem cruzar o cérebro.",
+    "content": "Causa sintomas similares ao derrame, mas não envolve o cérebro e é mais leve.\n\nA medicina, ao tratar como derrame, acaba piorando o quadro. （文明の創造　「上半身の病気と中風」）\n\nPontos Vitais do Johrei: Paralisia Reversa. Focar no pescoço atrás e abaixo da orelha (linfáticos). Dissolvendo aqui, e tratando a raiz do braço e os locais doloridos ou febris no membro afetado, a cura ocorre. （浄霊法講座９　ｐ51）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Hipertensão",
+      "Derrame (AVC)",
+      "Anemia",
+      "Cérebro"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_5",
+    "title": "Meningite",
+    "content": "É a purificação intensa de toxinas na região frontal. Comum em crianças devido à sua força vital. Causa febre alta, dor frontal e fotofobia. Se deixada naturalmente, as toxinas saem como lágrima e secreção nasal, e a criança fica mais inteligente depois. O resfriamento médico solidifica as toxinas, gerando sequelas e demência. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Meningite é fácil. O foco é o centro da região frontal. Não aplicar força. （御教え集８　ｐ16）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Mundo Espiritual",
+      "Cérebro",
+      "Purificação",
+      "Doenças Infantis",
+      "Derrame (AVC)",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Hipertensão",
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_6",
+    "title": "Encefalite Japonesa",
+    "content": "Ocorre no verão. O sol forte na cabeça sem chapéu faz as toxinas das costas e ombros subirem, acumulando-se no bulbo. Ao dissolverem com febre alta e entrarem no cérebro posterior, causam sonolência profunda. O resfriamento médico causa a morte ou sequelas. Sem interferência médica, cura-se em uma semana com a eliminação de pus sanguinolento pelos olhos e nariz. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Região occipital e Bulbo. （浄霊法講座９　ｐ41）\n\nA solidificação retorna rapidamente. Deve-se ministrar muitas vezes ao dia (a cada 20 ou 30 minutos). （浄霊法講座９　ｐ43）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Mundo Espiritual",
+      "Cérebro",
+      "Derrame (AVC)",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Hipertensão",
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_7",
+    "title": "Meningite Cerebroespinhal",
+    "content": "Similar à Encefalite, mas ocorre no inverno.\n\nAs toxinas no bulbo formam uma barra rígida, impedindo o pescoço de mover-se. O tratamento é o mesmo. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Idem à Encefalite Japonesa.",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Hipertensão",
+      "Derrame (AVC)",
+      "Anemia",
+      "Cérebro"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_8",
+    "title": "Anemia Cerebral e Neurastenia",
+    "content": "Oposto da hemorragia: falta de sangue no cérebro devido à compressão dos vasos pelas toxinas do pescoço. Causa tontura, dor de cabeça, náusea e intolerância a ruídos. Ao colocar a mão na testa, sente-se a pele fria e suor oleoso.\n\nA neurastenia moderna é, basicamente, anemia cerebral. （文明の創造　「脳貧血其他」）\n\nPontos Vitais do Johrei: Pescoço. A purificação gera calor que sobe, causando tontura. Tratar pescoço (linfáticos) e garganta. （浄霊法講座９　ｐ69）\n\nAnemia Cerebral e Garganta. Às vezes a causa está na garganta e no bulbo. （浄霊法講座９　ｐ69）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Mundo Espiritual",
+      "Cérebro",
+      "Purificação",
+      "Derrame (AVC)",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Hipertensão",
+      "Cabeça e Pescoço",
+      "Anemia",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf86_9",
+    "title": "Insônia",
+    "content": "Causada por anemia cerebral decorrente de solidificação no bulbo (geralmente lado direito), que comprime os vasos.\n\nA anemia na região frontal facilita a possessão espiritual, levando a doenças mentais. （文明の創造　「睡眠不足」）\n\nPontos Vitais do Johrei: Lado direito do bulbo, região frontal e centro do cérebro. （教修要綱　病気症状の解剖　ｐ12）",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Hipertensão",
+      "Derrame (AVC)",
+      "Anemia",
+      "Cérebro"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 122,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf87_1",
+    "title": "Miopia e Astigmatismo",
+    "content": "Devido ao rim atrófico, toxinas sobem e solidificam-se no bulbo, causando anemia ocular e enfraquecendo a visão. Dissolvendo essa solidificação, a miopia cura-se. No astigmatismo, a solidificação oscila, alterando a pressão nos vasos e a visão. Crianças que não têm secreção nasal (nariz escorrendo) tendem a ser míopes, pois as toxinas ficam retidas. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Nuca e região occipital. O centro da visão está na nuca, logo abaixo da região occipital. Para o olho direito, o bloqueio pode estar no lado esquerdo da nuca (cruzamento dos nervos). （御教え集21　ｐ６）\n\nMiopia e Tracoma sempre têm solidificação na região occipital. Dissolvendo-a, até cegos enxergam. As toxinas vêm dos ombros. Foque no centro atrás dos olhos, relaxando a força. （御教え集24　ｐ49）",
     "focusPoints": [
       "Nuca",
       "Occipital"
@@ -1092,16 +1399,176 @@
       "Dores e Rigidez",
       "Saúde da Criança",
       "Sistema Nervoso e Cabeça",
-      "Anemia"
+      "Anemia",
+      "Olhos"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Cabeça",
     "order": 148
   },
   {
-    "id": "pf88",
-    "title": "Ouvidos",
-    "content": "1) Otite Média Dor causada pelo pus perfurando o tímpano para sair. Vem das glândulas linfáticas e parótidas. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Glândula parótida e linfáticos. （浄霊法講座２　ｐ27）\n\n2) Zumbido Considerado incurável pela medicina, cura-se com Johrei. Causa: solidificação no ouvido interno, têmporas, bulbo ou parótida. O som é a dissolução lenta dessas toxinas. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Bulbo, músculos do pescoço e parótida. （浄霊法講座２　ｐ27）\n\n3) Otorreia (Pus no Ouvido) Lavagens com remédios apenas introduzem novos venenos e impedem a cura. Deixar sair naturalmente cura em meses. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Linfáticos e parótida.\n\n4) Surdez Surdez adquirida e física (não espiritual) deve-se a toxinas de remédios solidificadas no nervo auditivo, entre a parótida e o ouvido interno. O procedimento médico de insuflação de ar é perigoso e pode causar surdez total. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Parótida e ouvido interno.\n\n4. Nariz",
+    "id": "pf87_2",
+    "title": "Tracoma e Conjuntivite Folicular",
+    "content": "Não são contagiosos.\n\nSão purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "focusPoints": [
+      "Nuca",
+      "Occipital"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Anemia",
+      "Olhos"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 148
+  },
+  {
+    "id": "pf87_3",
+    "title": "Leucoma (Manchas na Córnea/Meboshi)",
+    "content": "Toxinas solidificadas na superfície da pupila. Colírios endurecem a mancha. Sem remédios, cura-se em poucas sessões. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "focusPoints": [
+      "Nuca",
+      "Occipital"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Anemia",
+      "Olhos"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 148
+  },
+  {
+    "id": "pf87_4",
+    "title": "Conjuntivite Olhos vermelhos e secreção.",
+    "content": "Toxinas da região frontal sendo eliminadas pelos olhos. （明日の医術　眼病）\n\nPontos Vitais do Johrei: Mesmos da Miopia.",
+    "focusPoints": [
+      "Nuca",
+      "Occipital"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Anemia",
+      "Olhos"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 148
+  },
+  {
+    "id": "pf87_5",
+    "title": "Catarata, Glaucoma e Amaurose Catarata é pus branco; Glaucoma é pus verde; Amaurose é sangue tóxico no fundo do olho. Todas são toxinas do cérebro descendo para os olhos. （文明の創造　「腎臓病とその他の疾患」）",
+    "content": "Catarata é pus branco; Glaucoma é pus verde (mais grave); Amaurose é sangue tóxico (muito grave). Sem remédios, a cura é possível. （明日の医術　「眼病」）\n\nPontos Vitais do Johrei: Focar atrás dos olhos (região occipital/bulbo) e acima dos olhos (sobrancelhas). As toxinas vêm de trás, passam pelo topo ou lateral e descem pela testa até os olhos. Se a região das sobrancelhas esquentar durante o Johrei, é um ótimo sinal. （浄霊法講座10　ｐ19）\n\nCatarata: pus na parte preta do olho. A origem é o bulbo e a região frontal. Demora um pouco, mas a saída de lágrima e remela indica cura progressiva. （浄霊法講座10　ｐ20）\n\nGlaucoma: pus acumulado atrás do olho. Tratar atrás do olho. As toxinas vêm do pescoço, passam pela cabeça e descem. Onde estiver quente, foque ali. Johrei pela frente mirando o fundo do olho. （浄霊法講座10　ｐ24）",
+    "focusPoints": [
+      "Nuca",
+      "Occipital"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Anemia",
+      "Olhos"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 148
+  },
+  {
+    "id": "pf87_6",
+    "title": "Outras Doenças Oculares",
+    "content": "① Injeção no Globo Ocular É extremamente prejudicial. O remédio sairá como remela anos depois. （御教え集６　ｐ64）\n\n② Olheiras Escuras É sangue tóxico estagnado. Ministrar Johrei no local escuro e no bulbo. （浄霊法講座10　ｐ55）",
+    "focusPoints": [
+      "Nuca",
+      "Occipital"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Cabeça e Pescoço",
+      "Dores e Rigidez",
+      "Saúde da Criança",
+      "Sistema Nervoso e Cabeça",
+      "Anemia",
+      "Olhos"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Cabeça",
+    "order": 148
+  },
+  {
+    "id": "pf88_1",
+    "title": "Otite Média",
+    "content": "Dor causada pelo pus perfurando o tímpano para sair. Vem das glândulas linfáticas e parótidas. （文明の創造　「腎臓病とその他の疾患」）\n\nPontos Vitais do Johrei: Glândula parótida e linfáticos. （浄霊法講座２　ｐ27）",
+    "focusPoints": [
+      "Glândula Parótida E Linfáticos"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Ouvidos",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Ouvidos",
+    "order": 166
+  },
+  {
+    "id": "pf88_2",
+    "title": "Zumbido Considerado incurável pela medicina, cura-se com Johrei. Causa: solidificação no ouvido interno, têmporas, bulbo ou parótida.",
+    "content": "O som é a dissolução lenta dessas toxinas. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Bulbo, músculos do pescoço e parótida. （浄霊法講座２　ｐ27）",
+    "focusPoints": [
+      "Glândula Parótida E Linfáticos"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Ouvidos",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Ouvidos",
+    "order": 166
+  },
+  {
+    "id": "pf88_3",
+    "title": "Otorreia (Pus no Ouvido)",
+    "content": "Lavagens com remédios apenas introduzem novos venenos e impedem a cura. Deixar sair naturalmente cura em meses. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Linfáticos e parótida.",
+    "focusPoints": [
+      "Glândula Parótida E Linfáticos"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Dores e Rigidez",
+      "Mundo Espiritual",
+      "Ouvidos",
+      "Sistema Nervoso e Cabeça"
+    ],
+    "category": "Sistema Nervoso e Cabeça",
+    "system": "Ouvidos",
+    "order": 166
+  },
+  {
+    "id": "pf88_4",
+    "title": "Surdez Surdez adquirida e física (não espiritual) deve-se a toxinas de remédios solidificadas no nervo auditivo, entre a parótida e o ouvido interno.",
+    "content": "O procedimento médico de insuflação de ar é perigoso e pode causar surdez total. （明日の医術　耳鼻疾患）\n\nPontos Vitais do Johrei: Parótida e ouvido interno.\n\n4. Nariz",
     "focusPoints": [
       "Glândula Parótida E Linfáticos"
     ],
@@ -1130,6 +1597,8 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
+      "Febre",
+      "Dores e Rigidez",
       "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
@@ -1145,10 +1614,11 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Boca e Garganta",
-      "Sistema Nervoso e Cabeça",
-      "A Solidificação Na Garganta Reflete-Se Na Língua",
       "Sem Fazer O Longo Trajeto Pelos Pulmões",
-      "É A Garganta"
+      "A Solidificação Na Garganta Reflete-Se Na Língua",
+      "É A Garganta",
+      "Dores e Rigidez",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Boca e Garganta",
@@ -1161,10 +1631,13 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Sistema Nervoso e Cabeça",
       "Arredores Da Garganta",
-      "Glândulas Linfáticas Cervicais"
+      "Boca e Garganta",
+      "Glândulas Linfáticas Cervicais",
+      "Purificação",
+      "Dores e Rigidez",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Nervoso e Cabeça",
     "system": "Boca e Garganta",
@@ -1179,8 +1652,10 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Rins e Sistema Urinário",
-      "Sistema Urinário"
+      "Sistema Urinário",
+      "Febre",
+      "Dores e Rigidez",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Rins",
@@ -1194,10 +1669,12 @@
     "focusPoints": [],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Região Renal Nas Costas",
       "Sistema Digestivo",
       "Sistema Urinário",
+      "Dores e Rigidez",
       "Reativar Os Rins",
-      "Região Renal Nas Costas"
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Urinário",
     "system": "Estômago",
@@ -1212,8 +1689,9 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
+      "Rins e Sistema Urinário",
       "Dores e Rigidez",
+      "Sistema Digestivo",
       "Ombros"
     ],
     "category": "Sistema Digestivo",
@@ -1231,16 +1709,17 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Coração e Circulação",
       "Diabetes",
-      "Sistema Digestivo",
       "Assim Como A Compressão Do Fígado Afeta A Vesícula",
-      "Coração",
-      "Fígado (Costas)",
+      "Se A Trindade Pulmão-Coração-Estômago Estiver Bem",
       "O Diabetes Refere-Se Ao Pâncreas",
+      "Fígado (Costas)",
+      "Coração",
+      "Sistema Digestivo",
       "Ombros",
       "Pâncreas (Costas)",
-      "Se A Trindade Pulmão-Coração-Estômago Estiver Bem"
+      "Coração e Circulação",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Digestivo",
     "system": "Coração",
@@ -1258,9 +1737,12 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Região Renal Nas Costas",
       "Boca e Garganta",
       "Sistema Digestivo",
-      "Região Renal Nas Costas"
+      "Dores e Rigidez",
+      "Febre",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Digestivo",
     "system": "Boca e Garganta",
@@ -1278,8 +1760,11 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Sistema Digestivo",
+      "Dores e Rigidez",
       "Cabeça e Pescoço",
-      "Sistema Digestivo"
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Sistema Digestivo",
     "system": "Cabeça",
@@ -1296,9 +1781,10 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Dores e Rigidez",
+      "Sistema Digestivo",
+      "Rins e Sistema Urinário",
       "Intestinos",
-      "Sistema Digestivo"
+      "Dores e Rigidez"
     ],
     "category": "Sistema Digestivo",
     "system": "Intestinos",
@@ -1313,8 +1799,10 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Sistema Digestivo",
-      "Ânus"
+      "Dores e Rigidez",
+      "Sistema Respiratório",
+      "Ânus",
+      "Sistema Digestivo"
     ],
     "category": "Sistema Digestivo",
     "system": "Ânus",
@@ -1346,11 +1834,12 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Cabeça e Pescoço",
-      "Saúde da Mulher",
-      "Sistema Digestivo",
       "A Cabeça Fica Mais Leve Após A Hemorragia",
-      "Ministrar Johrei Na Cabeça Cura"
+      "Ministrar Johrei Na Cabeça Cura",
+      "Sistema Digestivo",
+      "Dores e Rigidez",
+      "Cabeça e Pescoço",
+      "Saúde da Mulher"
     ],
     "category": "Sistema Digestivo",
     "system": "Cabeça",
@@ -1358,9 +1847,33 @@
     "type": "Caso Clínico"
   },
   {
-    "id": "pf114",
-    "title": "Útero e Trompas",
-    "content": "1) Cólica Menstrual e Irregularidade Menstrual Dentre as muitas doenças femininas, as uterinas são as principais. As funções do útero são menstruação e gravidez. Quanto à menstruação, temos a cólica e a irregularidade. A cólica ocorre porque a entrada das trompas de falópio está estreitada, e o sangue menstrual força a passagem, causando dor por um ou vários dias. O estreitamento deve-se à compressão por toxinas solidificadas nessa região do baixo ventre. Dissolvendo-as, cura-se facilmente. A medicina não resolve isso, e muitas mulheres sofrem anos a fio, o que é lamentável.\n\nA irregularidade menstrual inclui atrasos, ciclos incertos e fluxo excessivo ou escasso. A causa é quase sempre anemia e sangue impuro. Com a saúde verdadeira, regulariza-se. É vital saber sobre a anomalia menstrual em tuberculosas: enquanto a menstruação for normal, a doença é leve. Conforme avança, surge a anemia, o fluxo diminui, atrasa e, no fim, cessa (amenorreia). A menstruação é o barômetro mais preciso da gravidade da tuberculose em mulheres. （文明の創造　婦人病）\n\n2) Amenorreia Muitas mulheres adultas têm amenorreia devido ao bloqueio severo das trompas. Removendo a causa, a cura é certa. （明日の医術　婦人病）\n\n3) Infertilidade A causa é a mesma acima: bloqueio das trompas, como diz a medicina. O ditado \"mulher de barriga dura não tem filhos\" é verdadeiro. A retroversão ou anteversão do útero deve-se à pressão de toxinas acumuladas na frente ou atrás do órgão. Isso causa infertilidade, mas cura-se em pouco tempo com esta terapia. （明日の医術　婦人病）\n\n4) Mioma Uterino É uma solidificação em parte dos ligamentos que sustentam o útero. A dor vem da purificação dessa massa. A cirurgia remove, mas frequentemente reincide perto. O Johrei cura radicalmente, embora demore um pouco. （文明の創造　婦人病）\n\nHá também erros de diagnóstico: confundem toxinas na virilha, pielite, toxinas no peritônio inferior ou sangue menstrual coagulado com mioma. Tratando isso, as toxinas saem como corrimento branco e o sangue coagulado sai na menstruação, curando rapidamente. （明日の医術　婦人病）\n\nPontos Vitais para Doenças Uterinas: Endometrite, miomas e cistos têm origem em toxinas da cabeça. Na mulher, a toxina da cabeça desce para a região lombar e daí vai para a frente. No homem, tende a virar hemorroida; por isso homens têm mais hemorroidas. Para curar hemorroidas no homem, trata-se a cabeça (occipital). A toxina da frente da cabeça vai para trás, e de trás desce. O corpo humano é um reflexo do Céu e da Terra. O ponto crucial, em homens e mulheres, é a região do cóccix, para onde a toxina desce. Tratando ali, a maioria das doenças do baixo ventre cura. （御教え集22　ｐ15～16）\n\nQuando a toxina da cabeça desce, no homem vai para o ânus (pela coluna). Na mulher, acumula-se no cóccix e vai para a frente. Essa é a diferença. Corrimento, coceira ou erupções na mucosa feminina são toxinas da cabeça que foram para a lombar e depois para a frente. （御教え22　ｐ３）\n\n5) Câncer de Útero O câncer verdadeiro é raro. Mesmo com diagnóstico médico, quase sempre é um acúmulo de sangue sujo fora do útero. A medicina diz para suspeitar de câncer em sangramentos após a menopausa, mas minha experiência nega isso. Tratei várias diagnosticadas assim; tiveram grande hemorragia e a massa sumiu. Pode-se assumir que quase todo diagnóstico de câncer uterino é, na verdade, sangue menstrual velho coagulado. （文明の創造　婦人病）\n\n6) Endometrite É um catarro na parede interna do útero. Toxinas descem e tentam sair pela parede interna (como um eczema) ou irritam a mucosa causando inflamação. Deixando com paciência, cura-se sempre. （文明の創造　婦人病）\n\n7) Metrite (Inflamação do Parênquima Uterino) Toxinas acumulam-se ao redor do útero e a purificação causa febre leve, dor e desconforto. Sara sozinho, mas com Johrei a cura é rápida. （文明の創造　婦人病）\n\n8) Hipoplasia Uterina (Útero Infantil) O desenvolvimento insuficiente deve-se à compressão constante por toxinas ao redor do útero. A causa é a atrofia renal. Apalpando o baixo ventre, sente-se rigidez, e há nódulos na região renal. （天国の福音　婦人病）\n\n2. Ovários",
+    "id": "pf114_1",
+    "title": "Cólica Menstrual e Irregularidade Menstrual",
+    "content": "Dentre as muitas doenças femininas, as uterinas são as principais. As funções do útero são menstruação e gravidez. Quanto à menstruação, temos a cólica e a irregularidade. A cólica ocorre porque a entrada das trompas de falópio está estreitada, e o sangue menstrual força a passagem, causando dor por um ou vários dias. O estreitamento deve-se à compressão por toxinas solidificadas nessa região do baixo ventre. Dissolvendo-as, cura-se facilmente. A medicina não resolve isso, e muitas mulheres sofrem anos a fio, o que é lamentável.\n\nA irregularidade menstrual inclui atrasos, ciclos incertos e fluxo excessivo ou escasso. A causa é quase sempre anemia e sangue impuro. Com a saúde verdadeira, regulariza-se. É vital saber sobre a anomalia menstrual em tuberculosas: enquanto a menstruação for normal, a doença é leve. Conforme avança, surge a anemia, o fluxo diminui, atrasa e, no fim, cessa (amenorreia). A menstruação é o barômetro mais preciso da gravidade da tuberculose em mulheres. （文明の創造　婦人病）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Doenças Femininas",
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_2",
+    "title": "Amenorreia",
+    "content": "Muitas mulheres adultas têm amenorreia devido ao bloqueio severo das trompas. Removendo a causa, a cura é certa. （明日の医術　婦人病）",
     "focusPoints": [
       "Baixo Ventre",
       "Região Renal"
@@ -1371,7 +1884,153 @@
       "Rins e Sistema Urinário",
       "Saúde da Criança",
       "Saúde da Mulher",
-      "Anemia"
+      "Anemia",
+      "Útero e Trompas"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_3",
+    "title": "Infertilidade",
+    "content": "A causa é a mesma acima: bloqueio das trompas, como diz a medicina. O ditado \"mulher de barriga dura não tem filhos\" é verdadeiro. A retroversão ou anteversão do útero deve-se à pressão de toxinas acumuladas na frente ou atrás do órgão. Isso causa infertilidade, mas cura-se em pouco tempo com esta terapia. （明日の医術　婦人病）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_4",
+    "title": "Mioma Uterino",
+    "content": "É uma solidificação em parte dos ligamentos que sustentam o útero. A dor vem da purificação dessa massa. A cirurgia remove, mas frequentemente reincide perto. O Johrei cura radicalmente, embora demore um pouco. （文明の創造　婦人病）\n\nHá também erros de diagnóstico: confundem toxinas na virilha, pielite, toxinas no peritônio inferior ou sangue menstrual coagulado com mioma. Tratando isso, as toxinas saem como corrimento branco e o sangue coagulado sai na menstruação, curando rapidamente. （明日の医術　婦人病）\n\nPontos Vitais para Doenças Uterinas: Endometrite, miomas e cistos têm origem em toxinas da cabeça. Na mulher, a toxina da cabeça desce para a região lombar e daí vai para a frente. No homem, tende a virar hemorroida; por isso homens têm mais hemorroidas. Para curar hemorroidas no homem, trata-se a cabeça (occipital). A toxina da frente da cabeça vai para trás, e de trás desce. O corpo humano é um reflexo do Céu e da Terra. O ponto crucial, em homens e mulheres, é a região do cóccix, para onde a toxina desce. Tratando ali, a maioria das doenças do baixo ventre cura. （御教え集22　ｐ15～16）\n\nQuando a toxina da cabeça desce, no homem vai para o ânus (pela coluna). Na mulher, acumula-se no cóccix e vai para a frente. Essa é a diferença. Corrimento, coceira ou erupções na mucosa feminina são toxinas da cabeça que foram para a lombar e depois para a frente. （御教え22　ｐ３）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Doenças Femininas",
+      "Sistema Nervoso e Cabeça",
+      "Purificação",
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_5",
+    "title": "Câncer de Útero",
+    "content": "O câncer verdadeiro é raro. Mesmo com diagnóstico médico, quase sempre é um acúmulo de sangue sujo fora do útero. A medicina diz para suspeitar de câncer em sangramentos após a menopausa, mas minha experiência nega isso. Tratei várias diagnosticadas assim; tiveram grande hemorragia e a massa sumiu. Pode-se assumir que quase todo diagnóstico de câncer uterino é, na verdade, sangue menstrual velho coagulado. （文明の創造　婦人病）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Doenças Femininas",
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_6",
+    "title": "Endometrite",
+    "content": "É um catarro na parede interna do útero. Toxinas descem e tentam sair pela parede interna (como um eczema) ou irritam a mucosa causando inflamação. Deixando com paciência, cura-se sempre. （文明の創造　婦人病）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_7",
+    "title": "Metrite (Inflamação do Parênquima Uterino)",
+    "content": "Toxinas acumulam-se ao redor do útero e a purificação causa febre leve, dor e desconforto. Sara sozinho, mas com Johrei a cura é rápida. （文明の創造　婦人病）",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Purificação",
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Febre",
+      "Rins e Sistema Urinário"
+    ],
+    "category": "Sistema Reprodutor",
+    "system": "Rins",
+    "order": 210,
+    "type": "Caso Clínico"
+  },
+  {
+    "id": "pf114_8",
+    "title": "Hipoplasia Uterina (Útero Infantil)",
+    "content": "O desenvolvimento insuficiente deve-se à compressão constante por toxinas ao redor do útero. A causa é a atrofia renal. Apalpando o baixo ventre, sente-se rigidez, e há nódulos na região renal. （天国の福音　婦人病）\n\n2. Ovários",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Região Renal"
+    ],
+    "source": "Estudos Específicos 02",
+    "tags": [
+      "Doenças Infantis",
+      "Saúde da Criança",
+      "Útero e Trompas",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Sistema Reprodutor",
+      "Anemia",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Reprodutor",
     "system": "Rins",
@@ -1388,11 +2047,12 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Dores e Rigidez",
-      "Rins e Sistema Urinário",
-      "Saúde da Mulher",
+      "Região Renal Nas Costas",
+      "Sistema Digestivo",
       "Costas Do Útero (Sacro)",
-      "Região Renal Nas Costas"
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Reprodutor",
     "system": "Rins",
@@ -1410,8 +2070,10 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Sistema Digestivo",
+      "Costas Da Região Entre O Umbigo",
       "Saúde da Mulher",
-      "Costas Da Região Entre O Umbigo"
+      "Sistema Reprodutor",
+      "Rins e Sistema Urinário"
     ],
     "category": "Sistema Reprodutor",
     "system": "Estômago",
@@ -1494,13 +2156,15 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
+      "Asma",
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Sistema Respiratório",
       "Saúde da Criança",
       "Saúde da Mulher",
-      "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Febre"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1518,13 +2182,16 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Saúde da Mulher",
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1541,13 +2208,15 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
+      "Asma",
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
       "Saúde da Criança",
       "Saúde da Mulher",
-      "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Febre",
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1588,13 +2257,15 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
+      "Asma",
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Sistema Digestivo",
       "Saúde da Criança",
       "Saúde da Mulher",
-      "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Sistema Nervoso e Cabeça"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1612,13 +2283,14 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Saúde da Criança",
+      "Dores e Rigidez",
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1635,13 +2307,14 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Sistema Respiratório",
+      "Saúde da Criança",
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1659,13 +2332,17 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Purificação",
+      "Doenças Infantis",
+      "Sistema Digestivo",
+      "Saúde da Criança",
+      "Coração e Circulação",
+      "Saúde da Mulher",
+      "Rins e Sistema Urinário"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1681,13 +2358,15 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Purificação",
+      "Doenças Infantis",
+      "Sistema Respiratório",
+      "Saúde da Criança",
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1705,13 +2384,14 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Doenças Infantis",
+      "Sistema Digestivo",
+      "Saúde da Criança",
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1727,13 +2407,14 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
-      "Boca e Garganta",
-      "Doenças Infantis",
       "Mundo Espiritual",
-      "Saúde da Criança",
-      "Saúde da Mulher",
       "Asma",
-      "Focar No Cruzamento Entre A Garganta"
+      "Boca e Garganta",
+      "Focar No Cruzamento Entre A Garganta",
+      "Purificação",
+      "Doenças Infantis",
+      "Saúde da Criança",
+      "Saúde da Mulher"
     ],
     "category": "Doenças Infantis",
     "system": "Boca e Garganta",
@@ -1752,8 +2433,9 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Entre A Garganta"
+      "Dores e Rigidez",
+      "Entre A Garganta",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1788,9 +2470,11 @@
     ],
     "source": "Estudos Específicos 02",
     "tags": [
+      "Sistema Respiratório",
+      "Entre A Garganta",
+      "Dores e Rigidez",
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Entre A Garganta"
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1807,8 +2491,9 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Entre A Garganta"
+      "Dores e Rigidez",
+      "Entre A Garganta",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
@@ -1826,8 +2511,9 @@
     "source": "Estudos Específicos 02",
     "tags": [
       "Cabeça e Pescoço",
-      "Câncer e Outras Doenças",
-      "Entre A Garganta"
+      "Rins e Sistema Urinário",
+      "Entre A Garganta",
+      "Câncer e Outras Doenças"
     ],
     "category": "Câncer e Outras Doenças",
     "system": "Cabeça",
