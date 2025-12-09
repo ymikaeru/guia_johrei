@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Johrei: O Guia Prático</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -75,60 +77,76 @@
     <div id="appContent"
         class="hidden w-full max-w-[1600px] min-h-screen flex-col bg-white dark:bg-[#0a0a0a] shadow-2xl border-x border-gray-100 dark:border-gray-900">
 
-        <!-- Sticky Header Wrapper -->
+        <!-- MAIN DESKTOP STICKY WRAPPER: Title + Tabs/Search -->
+        <!-- "contents" on mobile (so it vanishes and children flow normally), "sticky" on desktop -->
         <div
-            class="contents md:block md:sticky md:top-0 z-50 md:bg-white/95 md:dark:bg-[#0a0a0a]/95 md:backdrop-blur-md md:border-b md:border-gray-100 md:dark:border-gray-900">
-            <header
-                class="flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none">
-                <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
-                    <div>
-                        <h1
-                            class="text-4xl md:text-5xl font-serif font-bold tracking-wide leading-none mb-3 text-gray-900 dark:text-gray-50">
-                            JOHREI: O GUIA PRÁTICO</h1>
-                        <p id="modeDescription"
-                            class="text-[10px] md:text-xs text-gray-400 font-sans font-medium tracking-[0.2em] uppercase transition-all">
-                            Escritos sagrados</p>
-                    </div>
-                </div>
+            class="contents md:block md:sticky md:top-0 z-[90] md:bg-white/95 md:dark:bg-[#0a0a0a]/95 md:backdrop-blur-md md:border-b md:border-gray-100 md:dark:border-gray-900 shadow-sm">
 
-                <div class="px-8 md:px-12 pb-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end">
-                    <div class="md:col-span-5 lg:col-span-4">
-                        <div class="flex bg-gray-50 dark:bg-[#111] p-2 rounded-xl">
-                            <button onclick="setMode('ensinamentos')" id="switch-ens"
-                                class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active">Escritos
-                                Sagrados</button>
-                            <button onclick="setMode('explicacoes')" id="switch-guia"
-                                class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive">Guias
-                                de Estudo</button>
+            <!-- Title Wrapper (No longer sticky itself on desktop, just a block) -->
+            <div class="contents md:block">
+                <header
+                    class="flex-none bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none">
+                    <div class="px-8 md:px-12 pt-12 pb-0 flex justify-between items-end mb-4">
+                        <div>
+                            <h1
+                                class="text-4xl md:text-5xl font-serif font-bold tracking-wide leading-none mb-3 text-gray-900 dark:text-gray-50">
+                                JOHREI: O GUIA PRÁTICO</h1>
+                            <p id="modeDescription"
+                                class="text-[10px] md:text-xs text-gray-400 font-sans font-medium tracking-[0.2em] uppercase transition-all">
+                                Escritos sagrados</p>
+                        </div>
+                        <!-- Controls: Install + Theme -->
+                        <div class="flex items-center gap-4">
+                            <button id="installAppBtn"
+                                class="hidden group items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-lg">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                <span>Instalar</span>
+                            </button>
                         </div>
                     </div>
-                    <!-- Desktop Search (Hidden on Mobile) -->
-                    <div id="desktopSearchWrapper" class="hidden md:block md:col-span-7 lg:col-span-8 relative">
-                        <div class="relative flex-grow flex items-center gap-4">
-                            <div class="relative flex-grow">
-                                <input type="text" placeholder="PESQUISAR..." id="searchInput"
-                                    class="search-input w-full bg-white dark:bg-[#111] py-4 pl-0 pr-32 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
+                </header>
+            </div>
 
-                                <!-- Result Count Indicator (Inside Input) -->
-                                <div id="inputResultCount"
-                                    class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-[10px] uppercase tracking-widest pointer-events-none">
-                                    0 CARDS
-                                </div>
+            <div class="px-8 md:px-12 pb-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-end">
+                <div class="md:col-span-5 lg:col-span-4">
+                    <div class="flex bg-gray-50 dark:bg-[#111] p-2 rounded-xl">
+                        <button onclick="setMode('ensinamentos')" id="switch-ens"
+                            class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active">Escritos
+                            Sagrados</button>
+                        <button onclick="setMode('explicacoes')" id="switch-guia"
+                            class="flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive">Guias
+                            de Estudo</button>
+                    </div>
+                </div>
+                <!-- Desktop Search (Hidden on Mobile) -->
+                <div id="desktopSearchWrapper" class="hidden md:block md:col-span-7 lg:col-span-8 relative">
+                    <div class="relative flex-grow flex items-center gap-4">
+                        <div class="relative flex-grow">
+                            <input type="text" placeholder="PESQUISAR..." id="searchInput"
+                                class="search-input w-full bg-white dark:bg-[#111] py-4 pl-0 pr-32 text-xl font-serif font-medium focus:outline-none border-b border-gray-200 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
 
-                                <button onclick="clearSearch()"
-                                    class="clear-search-btn hidden absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black dark:hover:text-white">
-                                    <!-- Old clear button kept hidden for legacy JS ref safety if needed, or we just remove it fully if code updated -->
-                                </button>
+                            <!-- Result Count Indicator (Inside Input) -->
+                            <div id="inputResultCount"
+                                class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-[10px] uppercase tracking-widest pointer-events-none">
+                                0 CARDS
+                            </div>
 
-                                <div id="searchSuggestions"
-                                    class="hidden animate-fade-down absolute top-full left-0 right-0 mt-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-2xl overflow-hidden z-50 max-h-96 overflow-y-auto">
-                                </div>
+                            <button onclick="clearSearch()"
+                                class="clear-search-btn hidden absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black dark:hover:text-white">
+                                <!-- Old clear button kept hidden for legacy JS ref safety if needed, or we just remove it fully if code updated -->
+                            </button>
+
+                            <div id="searchSuggestions"
+                                class="hidden animate-fade-down absolute top-full left-0 right-0 mt-2 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-2xl overflow-hidden z-[100] max-h-96 overflow-y-auto">
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </header>
+            </div>
 
             <!-- Mobile Search + Tabs + Alphabet -->
             <div
@@ -177,51 +195,52 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tag Browser Section -->
-        <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900 relative"
-            style="display: none;">
-            <div class="px-8 md:px-12 pt-[1.1rem] pb-0 flex flex-col items-start bg-transparent">
-                <div class="relative flex flex-row items-center gap-2 mb-[0.4rem] w-full">
-                    <button onclick="toggleTagBrowser()" id="tagBrowserToggle"
-                        class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all border border-gray-200 dark:border-gray-800 rounded-sm px-6 py-2 hover:border-gray-900 dark:hover:border-white">
-                        <svg id="tagBrowserIcon" class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
-                            </path>
-                        </svg>
-                        <span>FILTROS</span>
-                    </button>
+            <!-- Tag Browser Section -->
+            <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900 relative"
+                style="display: none;">
+                <div class="px-8 md:px-12 pt-[1.1rem] pb-0 flex flex-col items-start bg-transparent">
+                    <div class="relative flex flex-row items-center gap-2 mb-[0.4rem] w-full">
+                        <button onclick="toggleTagBrowser()" id="tagBrowserToggle"
+                            class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all border border-gray-200 dark:border-gray-800 rounded-sm px-6 py-2 hover:border-gray-900 dark:hover:border-white">
+                            <svg id="tagBrowserIcon" class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                                </path>
+                            </svg>
+                            <span>FILTROS</span>
+                        </button>
 
-                    <button onclick="clearSearch()" id="headerClearFiltersBtn"
-                        class="hidden flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-red-500 hover:text-red-700 transition-all border border-red-200 bg-red-50 rounded-sm px-4 py-2 hover:border-red-300 ml-2">
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                        <span>LIMPAR FILTROS</span>
-                    </button>
+                        <button onclick="clearSearch()" id="headerClearFiltersBtn"
+                            class="hidden flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-red-500 hover:text-red-700 transition-all border border-red-200 bg-red-50 rounded-sm px-4 py-2 hover:border-red-300 ml-2">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12">
+                                </path>
+                            </svg>
+                            <span>LIMPAR FILTROS</span>
+                        </button>
 
-                    <button onclick="addAllVisibleToApostila()" id="addAllBtn"
-                        class="ml-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 transition-all border border-yellow-200 dark:border-yellow-800 bg-yellow-50 hover:bg-yellow-100 dark:bg-yellow-900/20 dark:hover:bg-yellow-900/40 rounded-sm px-6 py-2"
-                        title="Imprimir visualização atual">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
-                            </path>
-                        </svg>
-                        <span>Add All</span>
-                    </button>
-                    <div id="tagBrowserContent"
-                        class="hidden absolute left-0 top-full mt-0 z-50 bg-white dark:bg-[#111] shadow-2xl rounded-sm border border-gray-100 dark:border-gray-800 p-6 w-[80vw] md:w-[600px] max-h-[60vh] overflow-y-auto custom-scrollbar">
-                        <!-- Tag categories will be injected here by JavaScript -->
+                        <button onclick="addAllVisibleToApostila()" id="addAllBtn"
+                            class="hidden md:flex ml-auto items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 transition-all border border-yellow-200 dark:border-yellow-800 bg-yellow-50 hover:bg-yellow-100 dark:bg-yellow-900/20 dark:hover:bg-yellow-900/40 rounded-sm px-6 py-2"
+                            title="Adicionar todos os itens visíveis à apostila">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z">
+                                </path>
+                            </svg>
+                            <span>Add All</span>
+                        </button>
+                        <div id="tagBrowserContent"
+                            class="hidden absolute left-0 top-full mt-0 z-50 bg-white dark:bg-[#111] shadow-2xl rounded-sm border border-gray-100 dark:border-gray-800 p-6 w-[80vw] md:w-[600px] max-h-[60vh] overflow-y-auto custom-scrollbar">
+                            <!-- Tag categories will be injected here by JavaScript -->
+                        </div>
                     </div>
-                </div>
 
-                <!-- Active Filters -->
-                <div id="activeFiltersWrapper" class="pb-4 flex flex-wrap gap-2 empty:hidden">
+                    <!-- Active Filters -->
+                    <div id="activeFiltersWrapper" class="pb-4 flex flex-wrap gap-2 empty:hidden">
+                    </div>
                 </div>
             </div>
         </div>
@@ -257,31 +276,31 @@
         </main>
     </div>
 
-    <div id="readModal" class="fixed inset-0 z-50 hidden">
+    <div id="readModal" class="fixed inset-0 z-[200] hidden">
         <div id="modalBackdrop"
             class="absolute inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300"
             onclick="closeModal()"></div>
         <div
             class="absolute inset-0 md:inset-y-12 md:inset-x-auto md:w-[70%] md:left-[15%] flex items-end md:items-center justify-center pointer-events-none">
-            <div class="w-full h-[95vh] md:h-full bg-white dark:bg-[#111] shadow-2xl flex flex-col pointer-events-auto rounded-t-[2rem] md:rounded-[2rem] border border-gray-100 dark:border-gray-800 overflow-hidden"
+            <div class="w-full h-full md:h-full bg-white dark:bg-[#111] shadow-2xl flex flex-col pointer-events-auto rounded-none md:rounded-[2rem] border border-gray-100 dark:border-gray-800 overflow-hidden"
                 id="modalCard">
                 <div
-                    class="flex-none px-10 py-8 border-b border-gray-100 dark:border-gray-900 flex justify-between items-start bg-white dark:bg-[#111]">
+                    class="relative flex-none px-6 py-6 md:px-10 md:py-8 border-b border-gray-100 dark:border-gray-900 flex justify-between items-start bg-white dark:bg-[#111]">
                     <div>
                         <div id="modalCategory"
-                            class="text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 text-gray-400">
+                            class="text-[10px] font-sans font-bold uppercase tracking-widest mb-1 text-gray-400 h-8 flex items-center">
                         </div>
                         <nav id="modalBreadcrumb"
                             class="text-[10px] font-sans tracking-wide text-gray-400 mb-3 flex items-center gap-2">
                         </nav>
                         <h2 id="modalTitle"
-                            class="text-2xl md:text-3xl font-medium mb-8 leading-snug text-black dark:text-white">
+                            class="text-2xl md:text-3xl font-medium mb-2 md:mb-8 leading-snug text-black dark:text-white">
                             Título</h2>
                         <span id="modalRef"
-                            class="text-[10px] font-sans font-bold uppercase tracking-widest text-gray-300 block">REF
+                            class="hidden text-[10px] font-sans font-bold uppercase tracking-widest text-gray-300 block">REF
                             #00</span>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="absolute top-6 right-6 md:static flex items-center gap-3">
                         <!-- History Button -->
                         <div class="relative">
                             <button onclick="toggleHistory(event)"
@@ -307,9 +326,9 @@
                         </div>
 
                         <!-- Divider -->
-                        <div class="w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
+                        <div class="hidden md:block w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
 
-                        <div class="flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
+                        <div class="hidden md:flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
                             <!-- Alignment -->
                             <select onchange="setModalAlignment(this.value)" id="modalAlignSelect"
                                 class="bg-transparent text-[10px] font-bold uppercase tracking-widest outline-none cursor-pointer border-none p-0 w-16 text-right focus:ring-0 text-black dark:text-white">
@@ -348,10 +367,10 @@
                 </div>
 
                 <!-- Modals -->
-                <div class="flex-grow overflow-y-auto p-10 md:p-20 bg-white dark:bg-[#111]">
+                <div class="flex-grow overflow-y-auto p-6 md:p-20 bg-white dark:bg-[#111]">
 
                     <div id="modalFocusContainer"
-                        class="hidden mb-16 p-10 bg-gray-50 dark:bg-[#161616] rounded-xl border border-gray-100 dark:border-gray-800">
+                        class="hidden mb-6 md:mb-16 p-6 md:p-10 bg-gray-50 dark:bg-[#161616] rounded-xl border border-gray-100 dark:border-gray-800">
                         <h3 class="text-[10px] font-sans font-bold uppercase tracking-widest mb-6 text-gray-400">Pontos
                             Focais</h3>
                         <div id="modalFocusPoints" class="flex flex-wrap gap-3"></div>

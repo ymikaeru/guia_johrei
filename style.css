@@ -48,7 +48,7 @@ html {
 /* --- ABAS (Underline Style) --- */
 .tab-btn {
     transition: all 0.3s ease;
-    padding-bottom: 1.25rem;
+    padding-bottom: 0.35rem;
     font-size: 0.75rem;
     font-weight: 800;
     text-transform: uppercase;
