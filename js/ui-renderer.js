@@ -216,13 +216,14 @@ function toggleMobileBodyFilter(btn) {
             list.style.maxHeight = `${maxHeight}px`;
         }, 10);
 
-        // Auto-Scroll to beginning of images (not to button)
+        // Auto-Scroll to beginning of images (touch header exactly)
         const mapContainer = document.getElementById('mobile-map-container');
         if (mapContainer) {
             const header = document.querySelector('header');
             const headerHeight = header ? header.offsetHeight : 80;
             const elementPosition = mapContainer.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
+            // No offset - make image touch the header exactly
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
             // Use custom smooth scroll (EaseOutSine) - iOS-style
             smoothScrollTo(offsetPosition, 1200);
