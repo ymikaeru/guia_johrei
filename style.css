@@ -447,3 +447,24 @@ html {
 #bodyMapContainer div {
     overflow: visible !important;
 }
+
+/* Tablet and Desktop: Use desktop layout for body maps (768px+) */
+/* Tablet (768px+) Layout Adjustments */
+@media (min-width: 768px) {
+
+    /* Grid Structure for Tablet Body Map */
+    #mobile-map-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 1.5rem;
+        /* System spacing: gap-6 */
+    }
+
+    /* Helper Utilities */
+    .tablet-show {
+        display: block !important;
+    }
+
+}
+
+/* Tablet Only (768px - 1023px) specific layouts if needed */
+/* Handled by Tailwind arbitrary variants in ui-renderer.js now (min-[768px]) */

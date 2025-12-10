@@ -123,7 +123,7 @@ function renderBodyMapViews() {
     ];
 
     let html = `
-    <div class="flex flex-col lg:flex-row gap-8 mb-12 max-w-[100rem] mx-auto items-start">
+    <div class="flex flex-col-reverse min-[768px]:flex-col lg:flex-row gap-6 lg:gap-12 w-full max-w-7xl mx-auto items-start">
         <!-- Sidebar (Desktop Only) -->
         <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 sticky top-4 rounded-sm shadow-sm" style="height: 500px; overflow-y: auto !important;">
                 <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
@@ -138,32 +138,12 @@ function renderBodyMapViews() {
                 </div>
         </div>
 
-        <!-- Mobile Maps Area -->
-        <!-- Mobile Maps Area -->
-        <div class="w-full lg:hidden mb-6 px-4 relative z-[49]">
-             <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg shadow-sm relative">
-                <button onclick="toggleMobileBodyFilter(this)" 
-                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
-                    <span>Filtrar por Região</span>
-                    <svg class="w-4 h-4" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
-                    style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
-                     <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
-                        -- Todos os pontos --
-                    </div>
-                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
-                </div>
-             </div>
-        </div>
-
-            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 min-[768px]:grid-cols-3 gap-6 w-full">
         ${views.map((view, i) => {
-        const visibilityClass = i === 0 ? 'block' : 'hidden'; // Only first visible on mobile initial
+        const visibilityClass = i === 0 ? 'block' : 'hidden tablet-show'; // tablet-show will override hidden at 768px+
         return `
-            <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
-                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
+            <div id="view-${view.id}" class="${visibilityClass} relative group transition-all duration-300">
+                <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 min-[768px]:hidden">${view.alt}</p>
                 <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
                     <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
                     <svg class="absolute inset-0 w-full h-full pointer-events-none" id="${view.id}_svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -173,10 +153,32 @@ function renderBodyMapViews() {
             </div>`;
     }).join('')}
         </div>
+
+        <!-- Mobile Filter Dropdown - ABOVE images via flex-col-reverse, hidden on tablet+ -->
+        <div class="w-full min-[768px]:hidden px-4 relative z-[40]">
+             <div class="bg-white dark:bg-[#111] rounded-lg relative">
+                <button onclick="openBodyFilterModal()" 
+                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
+                    <span>Filtrar por Região</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+             </div>
+        </div>
+
+        <!-- Tablet Filter Dropdown - BELOW images, visible only on tablet (768px-1024px) -->
+        <div class="hidden min-[768px]:block lg:hidden w-full px-4 relative z-[40] mt-6">
+             <div class="bg-white dark:bg-[#111] rounded-lg border border-gray-100 dark:border-gray-800 relative">
+                <button onclick="openBodyFilterModal()" 
+                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
+                    <span>Filtrar por Região</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+             </div>
+        </div>
     </div>
     
     <!-- Mobile Tabs (Below map for easy access) -->
-    <div class="flex md:hidden justify-center gap-3 mt-6 w-full">
+    <div class="flex min-[768px]:hidden justify-center gap-3 mt-6 w-full">
             ${views.map((v, i) => `
                 <button onclick="switchMobileView('${v.id}')"
                     id="tab-${v.id}"
@@ -190,30 +192,84 @@ function renderBodyMapViews() {
     map.innerHTML = html;
 }
 
-// New Helper for Mobile Filter Scroll
-function toggleMobileBodyFilter(btn) {
-    const list = document.getElementById('mobileBodyFilterList');
-    const icon = document.getElementById('mobileFilterIcon');
 
-    if (!list) return;
 
-    list.classList.toggle('hidden');
+// --- TABLET FILTER MODAL ---
+function openBodyFilterModal() {
+    // 1. Check if modal already exists
+    let modal = document.getElementById('bodyFilterModal');
 
-    // Rotate Icon
-    if (list.classList.contains('hidden')) {
-        if (icon) icon.style.transform = 'rotate(0deg)';
-    } else {
-        if (icon) icon.style.transform = 'rotate(180deg)';
-
-        // Auto-Scroll Logic: Run immediately (Synchronous start)
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 80;
-        const elementPosition = btn.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
-
-        // Use custom smooth scroll (EaseOutSine) - iOS-style
-        smoothScrollTo(offsetPosition, 1200);
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'bodyFilterModal';
+        modal.className = 'fixed inset-0 z-[9999] hidden';
+        modal.innerHTML = `
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
+            
+            <!-- Modal Card (Centered) -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white dark:bg-[#111] rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
+                
+                <!-- Header -->
+                <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500">Filtrar por Região</h3>
+                    <button onclick="closeBodyFilterModal()" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                
+                <!-- List -->
+                <div class="overflow-y-auto flex-1 p-0" id="filterModalList">
+                    <!-- Dynamic Content -->
+                     <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
+                        onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                        -- Todos os pontos --
+                    </div>
+                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
     }
+
+    // 2. Open Modal Animation
+    modal.classList.remove('hidden');
+
+    // Prevent background scroll
+    document.body.style.overflow = 'hidden';
+
+    // Animation
+    requestAnimationFrame(() => {
+        const backdrop = document.getElementById('filterModalBackdrop');
+        const card = document.getElementById('filterModalCard');
+        if (backdrop) backdrop.classList.remove('opacity-0');
+        if (card) {
+            card.classList.remove('scale-95', 'opacity-0');
+            card.classList.add('scale-100', 'opacity-100');
+        }
+    });
+}
+
+function closeBodyFilterModal() {
+    const modal = document.getElementById('bodyFilterModal');
+    if (!modal) return;
+
+    const backdrop = document.getElementById('filterModalBackdrop');
+    const card = document.getElementById('filterModalCard');
+
+    // Close Animation
+    if (backdrop) backdrop.classList.add('opacity-0');
+    if (card) {
+        card.classList.remove('scale-100', 'opacity-100');
+        card.classList.add('scale-95', 'opacity-0');
+    }
+
+    // Restore Scroll
+    document.body.style.overflow = '';
+
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 200);
 }
 
 // Custom Material Easing Scroll Function
@@ -282,6 +338,23 @@ function updateUIForTab(tabId) {
 
     if (tabId === 'mapa') {
         searchInputs.forEach(input => input.classList.add('input-faded'));
+
+        // Hide Search Wrappers to remove gap
+        const mobileSearch = document.getElementById('mobileSearchWrapper');
+        const desktopSearch = document.getElementById('desktopSearchWrapper');
+        if (mobileSearch) mobileSearch.classList.add('hidden');
+        if (desktopSearch) desktopSearch.classList.add('invisible'); // Use invisible for desktop to maintain header height if needed, or hidden? 
+        // Actually, for desktop, the search is in the header grid. Hiding it might shift the title?
+        // Let's check the HTML structure. #desktopSearchWrapper is col-span-7. 
+        // If we hide it, the grid space remains but empty? Or content shifts?
+        // User asked to "remove the gaps". On mobile it's a vertical stack block.
+        // On desktop, it's a grid cell.
+        // Let's try 'hidden' for mobile wrapper (vertical gap).
+        // For desktop, maybe 'visibility: hidden' is safer to keep layout stable, or if user wants that gap gone too?
+        // User specifically mentioned "search bar we hide on the 'Maps'" -> referring to previous behavior.
+        // If I hide the mobile one, that definitely fixes the mobile/tablet vertical gap.
+        if (desktopSearch) desktopSearch.classList.add('opacity-0', 'pointer-events-none'); // Keep layout, hide visual
+
         map.classList.remove('hidden');
 
         // Hide card counter specifically on mapa tab
@@ -306,8 +379,8 @@ function updateUIForTab(tabId) {
 
         renderBodyMapViews(); // Ensure this helper exists or inline logic
 
-        // Auto-scroll to filter button on mobile when entering tab
-        if (window.innerWidth < 1024) { // lg breakpoint
+        // Auto-scroll to filter button on mobile only (not tablets)
+        if (window.innerWidth < 768) {
             setTimeout(() => {
                 const filterBtn = document.querySelector('[onclick*="toggleMobileBodyFilter"]');
                 if (filterBtn) {
@@ -334,6 +407,16 @@ function updateUIForTab(tabId) {
         }
     } else {
         searchInputs.forEach(input => input.classList.remove('input-faded'));
+
+        // Restore Search Wrappers
+        const mobileSearch = document.getElementById('mobileSearchWrapper');
+        const desktopSearch = document.getElementById('desktopSearchWrapper');
+        // Note: mobileWrapper has 'md:hidden' by default in HTML. We just remove the explicit 'hidden' we added.
+        if (mobileSearch) mobileSearch.classList.remove('hidden');
+        if (desktopSearch) desktopSearch.classList.remove('opacity-0', 'pointer-events-none');
+
+        // Reset body overflow when leaving mapa tab
+        document.body.style.overflow = '';
 
         // Show Tag Browser for normal tabs
         const tagBrowser = document.getElementById('tagBrowserWrapper');

@@ -390,7 +390,7 @@ function toggleBodyPoint(id) {
     } else {
         STATE.bodyFilter = id;
         // Show FAB on mobile if point selected
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1024) {
             const fab = document.getElementById('mobileFab');
             fab.classList.remove('hidden');
             // Update FAB count if possible? For now just visual cue.
@@ -407,8 +407,19 @@ function toggleBodyPoint(id) {
     // Update list
     applyFilters();
 
+    // Control page scroll on tablets in map tab: allow when point selected
+    if (STATE.activeTab === 'mapa' && window.innerWidth >= 768) {
+        if (STATE.bodyFilter) {
+            // Has selection - allow scrolling to see results
+            document.body.style.overflow = '';
+        } else {
+            // No selection - block scrolling
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
     // Scroll behavior - simplified: use FAB for explicit action on mobile, auto-scroll on desktop
-    if (window.innerWidth >= 768 && STATE.bodyFilter) {
+    if (window.innerWidth >= 1024 && STATE.bodyFilter) {
         const list = document.getElementById('contentList');
         list.classList.remove('hidden');
         setTimeout(() => {
