@@ -461,13 +461,22 @@ html {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     }
 
-    /* Hide mobile body filter dropdown (sidebar is visible instead) */
-    #bodyMapContainer .lg\:hidden {
+    /* Hide mobile view switcher buttons (all views visible, no need to switch) */
+    #bodyMapContainer div.md\:hidden {
         display: none !important;
     }
 
-    /* Hide mobile view switcher buttons (all views visible, no need to switch) */
-    #bodyMapContainer~div.md\:hidden {
-        display: none !important;
+    /* Reduce top padding to fill space where search input is faded */
+    #bodyMapContainer {
+        padding-top: 1rem !important;
+    }
+}
+
+/* Mobile and Tablet: Keep mobile dropdown visible for body part filtering */
+@media (max-width: 1279px) {
+
+    /* Show the mobile body filter dropdown below the map on tablets */
+    #bodyMapContainer .lg\:hidden {
+        display: block !important;
     }
 }
