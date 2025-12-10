@@ -205,10 +205,10 @@ function openBodyFilterModal() {
         modal.className = 'fixed inset-0 z-[9999] hidden';
         modal.innerHTML = `
             <!-- Backdrop -->
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
+            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
             
             <!-- Modal Card (Centered) -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white dark:bg-[#111] rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
                 
                 <!-- Header -->
                 <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
