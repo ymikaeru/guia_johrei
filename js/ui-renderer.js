@@ -535,8 +535,8 @@ function renderActiveFilters() {
 function updateSearchPlaceholder() {
     const inputs = document.querySelectorAll('.search-input');
     const placeholder = STATE.mode === 'ensinamentos'
-        ? 'Somente Ensinamentos'
-        : 'Somente Guias';
+        ? 'Click for search (Ensinamentos)'
+        : 'Click for search (Guias)';
 
     inputs.forEach(input => {
         input.placeholder = placeholder;

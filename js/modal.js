@@ -1,10 +1,12 @@
 // --- MODAL LOGIC ---
 let currentModalIndex = -1;
+let currentModalItem = null; // Track current item object for robust referencing
 
 // Refactored to accept direct Item (for recommendations outside current list)
 function openModal(i, explicitItem = null) {
     currentModalIndex = i;
     const item = explicitItem || STATE.list[i];
+    currentModalItem = item;
 
     if (!item) return;
 
@@ -29,7 +31,19 @@ function openModal(i, explicitItem = null) {
         catEl.classList.add('text-gray-500');
     }
 
-    document.getElementById('modalSource').textContent = item.source || "Fonte Original";
+    const sourceEl = document.getElementById('modalSource');
+    const sourceText = item.source || "Fonte Original";
+    sourceEl.textContent = sourceText;
+
+    if (item.source) {
+        sourceEl.classList.add('cursor-pointer', 'hover:opacity-70', 'transition-opacity', 'underline', 'decoration-dotted', 'underline-offset-4');
+        sourceEl.onclick = () => filterBySourceFromModal(item.source);
+        sourceEl.title = "Filtrar por esta fonte";
+    } else {
+        sourceEl.classList.remove('cursor-pointer', 'hover:opacity-70', 'transition-opacity', 'underline', 'decoration-dotted', 'underline-offset-4');
+        sourceEl.onclick = null;
+        sourceEl.title = "";
+    }
     document.getElementById('modalRef').textContent = (i >= 0) ? '#' + (i + 1) : '';
 
     // Generate breadcrumb (moved up for context if needed, but keeping flow)
@@ -120,14 +134,8 @@ function openModal(i, explicitItem = null) {
         fpContainer.classList.add('hidden');
     }
 
-    // Disable Navigation if standalone (i === -1)
-    if (i === -1) {
-        document.getElementById('prevBtn').disabled = true;
-        document.getElementById('nextBtn').disabled = true;
-    } else {
-        document.getElementById('prevBtn').disabled = i === 0;
-        document.getElementById('nextBtn').disabled = i === STATE.list.length - 1;
-    }
+    // Check for "Read Next" button visibility or state if needed
+    // logic moved to readNextInSequence
 
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
@@ -140,6 +148,10 @@ function openModal(i, explicitItem = null) {
     backdrop.classList.add('open');
 
     document.body.style.overflow = 'hidden';
+
+    // Re-check scroll position (Reset)
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    if (scrollContainer) scrollContainer.scrollTop = 0;
 
     // --- APPLY READING SETTINGS ---
     if (!STATE.modalFontSize) STATE.modalFontSize = 18;
@@ -373,7 +385,167 @@ window.setModalAlignment = function (align) {
         } else {
             content.style.textAlign = align;
             content.style.hyphens = 'none';
-            content.style.webkitHyphens = 'none';
         }
     }
+}
+
+window.toggleAppearanceMenu = function (e) {
+    if (e) e.stopPropagation();
+    const menu = document.getElementById('appearanceMenu');
+    menu.classList.toggle('hidden');
+
+    // Close on outside click
+    if (!menu.classList.contains('hidden')) {
+        const closeFn = (ev) => {
+            if (!menu.contains(ev.target) && !ev.target.closest('[onclick="toggleAppearanceMenu(event)"]')) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeFn);
+            }
+        };
+        setTimeout(() => document.addEventListener('click', closeFn), 0);
+    }
+}
+
+window.copyDeepLink = function () {
+    // Ensure URL is up to date (should be already from openModal)
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        showToast("Link Copiado!");
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        showToast("Erro ao copiar");
+    });
+}
+
+window.copyCardContent = function () {
+    if (!currentModalItem) return;
+
+    // Create plain text representation
+    // Strip HTML tags for content
+    const tmp = document.createElement("DIV");
+    tmp.innerHTML = currentModalItem.content;
+    const cleanContent = tmp.textContent || tmp.innerText || "";
+
+    const text = `${currentModalItem.title}\n\n${cleanContent}\n\nFonte: ${currentModalItem.source || 'Johrei: Guia Prático'}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        showToast("Texto Copiado!");
+    }).catch(err => {
+        console.error('Failed to copy', err);
+        showToast("Erro ao copiar");
+    });
+}
+
+// --- SEQUENTIAL READING (Ignore Filters) ---
+window.readPrevInSequence = function () {
+    if (!currentModalItem || !currentModalItem._cat) return;
+
+    const cat = currentModalItem._cat;
+    let sourceArray = [];
+
+    // Determine source array (Original Full List)
+    if (cat && STATE.data[cat]) {
+        sourceArray = STATE.data[cat];
+    } else {
+        // Fallback: Global
+        Object.values(STATE.data).forEach(arr => sourceArray.push(...arr));
+    }
+
+    // Find index by ID
+    const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
+
+    if (idx > 0) {
+        // Prepare PREV item
+        const prevItem = sourceArray[idx - 1];
+        if (!prevItem._cat) prevItem._cat = cat;
+
+        // Transition
+        const scrollC = document.getElementById('modalScrollContainer');
+        if (scrollC) scrollC.style.opacity = '0';
+
+        setTimeout(() => {
+            openModal(-1, prevItem);
+            if (scrollC) {
+                scrollC.scrollTop = 0;
+                scrollC.style.opacity = '1';
+            }
+        }, 200);
+
+    } else {
+        showToast("Início da sequência");
+    }
+}
+
+window.readNextInSequence = function () {
+    if (!currentModalItem || !currentModalItem._cat) return;
+
+    const cat = currentModalItem._cat;
+    let sourceArray = [];
+
+    // Determine source array (Original Full List)
+    if (cat && STATE.data[cat]) {
+        sourceArray = STATE.data[cat];
+    } else {
+        // Fallback: search in all categories (Global)
+        Object.values(STATE.data).forEach(arr => sourceArray.push(...arr));
+    }
+
+    // Find index by ID
+    const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
+
+    if (idx !== -1 && idx < sourceArray.length - 1) {
+        // Prepare next item
+        const nextItem = sourceArray[idx + 1];
+        // Ensure it has category property for rendering
+        if (!nextItem._cat) nextItem._cat = cat;
+
+        // UI Transition
+        const scrollC = document.getElementById('modalScrollContainer');
+        if (scrollC) scrollC.style.opacity = '0';
+
+        setTimeout(() => {
+            openModal(-1, nextItem);
+            if (scrollC) {
+                scrollC.scrollTop = 0;
+                scrollC.style.opacity = '1';
+            }
+        }, 200);
+
+    } else {
+        showToast("Fim da sequência");
+    }
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    if (!toast || !msgEl) return;
+
+    msgEl.textContent = msg;
+    toast.classList.remove('opacity-0', 'scale-90');
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'scale-90');
+    }, 2000);
+}
+
+window.filterBySourceFromModal = function (source) {
+    closeModal();
+    // Small delay to allow modal close animation to start/finish smoothly
+    setTimeout(() => {
+        // Ensure the source is added as a filter
+        if (!STATE.activeSources.includes(source)) {
+            toggleFilter('source', source);
+        } else {
+            // Even if already active, just apply to be safe (though toggle would remove it if we just called toggle)
+            // But if user clicks "Filter by this", they expect it to be filtered.
+            // If it is ALREADY active, do we remove it?
+            // "Filter by source" usually means "Ensure this filter is on".
+            // Since `toggleFilter` toggles, we check first.
+            applyFilters();
+        }
+
+        // Scroll to top to see results
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
 }
