@@ -484,7 +484,7 @@ html {
 
     /* Reduce spacing between dropdown and results in map tab */
     #contentList {
-        padding-top: 1rem !important;
+        padding-top: 0 !important;
     }
 
     /* Reduce gap in body map container */
