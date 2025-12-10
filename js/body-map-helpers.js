@@ -143,7 +143,7 @@ function selectBodyPoint(pointIds) {
     }
 
     // Show FAB on mobile
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
         const fab = document.getElementById('mobileFab');
         if (fab) {
             fab.classList.remove('hidden');

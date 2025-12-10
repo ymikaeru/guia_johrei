@@ -390,7 +390,7 @@ function toggleBodyPoint(id) {
     } else {
         STATE.bodyFilter = id;
         // Show FAB on mobile if point selected
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1024) {
             const fab = document.getElementById('mobileFab');
             fab.classList.remove('hidden');
             // Update FAB count if possible? For now just visual cue.
@@ -408,7 +408,7 @@ function toggleBodyPoint(id) {
     applyFilters();
 
     // Scroll behavior - simplified: use FAB for explicit action on mobile, auto-scroll on desktop
-    if (window.innerWidth >= 768 && STATE.bodyFilter) {
+    if (window.innerWidth >= 1024 && STATE.bodyFilter) {
         const list = document.getElementById('contentList');
         list.classList.remove('hidden');
         setTimeout(() => {
