@@ -17,6 +17,7 @@
             darkMode: 'class',
             theme: {
                 screens: {
+                    'sm': '640px',
                     'md': '1024px',
                     'lg': '1280px',
                 },
@@ -323,9 +324,9 @@
                         </div>
 
                         <!-- Divider -->
-                        <div class="hidden md:block w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
+                        <div class="hidden sm:block w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
 
-                        <div class="hidden md:flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
+                        <div class="hidden sm:flex items-center gap-3 bg-gray-100 dark:bg-[#222] rounded-lg p-2">
                             <!-- Alignment -->
                             <select onchange="setModalAlignment(this.value)" id="modalAlignSelect"
                                 class="bg-transparent text-[10px] font-bold uppercase tracking-widest outline-none cursor-pointer border-none p-0 w-16 text-right focus:ring-0 text-black dark:text-white">
