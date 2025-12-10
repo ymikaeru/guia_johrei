@@ -448,41 +448,25 @@ html {
     overflow: visible !important;
 }
 
-/* Tablet-specific body map sizing - iPad Air and similar (768px-900px) */
-@media (min-width: 768px) and (max-width: 900px) {
-    #bodyMapContainer .relative {
-        width: 45% !important;
-    }
-
-    /* Reduce gap between front and back diagrams */
-    #bodyMapContainer .flex {
-        gap: 0.5rem !important;
-    }
-
-    /* Reduce top/bottom padding */
-    #bodyMapContainer {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-    }
-}
-
-/* Custom class to show elements on tablet+ (768px+), overriding Tailwind's hidden */
+/* Tablet and Desktop: Use desktop layout for body maps (768px+) */
 @media (min-width: 768px) {
+
+    /* Show all body map views simultaneously */
     .tablet-show {
         display: block !important;
     }
 
-    /* Force grid-cols-3 for body map on tablets */
+    /* Force grid-cols-3 for body map */
     #mobile-map-container {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     }
 
-    /* Hide mobile body filter dropdown on tablets (sidebar is visible instead) */
+    /* Hide mobile body filter dropdown (sidebar is visible instead) */
     #bodyMapContainer .lg\:hidden {
         display: none !important;
     }
 
-    /* Hide mobile view switcher buttons (Frente/Detalhes/Costas) on tablets */
+    /* Hide mobile view switcher buttons (all views visible, no need to switch) */
     #bodyMapContainer~div.md\:hidden {
         display: none !important;
     }
