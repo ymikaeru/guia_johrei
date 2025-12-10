@@ -142,8 +142,8 @@ function selectBodyPoint(pointIds) {
         showScrollIndicator();
     }
 
-    // Show FAB on mobile
-    if (window.innerWidth < 1024) {
+    // Show FAB on mobile only (not tablets)
+    if (window.innerWidth < 768) {
         const fab = document.getElementById('mobileFab');
         if (fab) {
             fab.classList.remove('hidden');

@@ -94,7 +94,7 @@ window.switchMobileView = function (targetId) {
 
 // Global helper to switch view based on point
 window.autoSwitchMapToPoint = function (pointId) {
-    if (window.innerWidth >= 1024) return; // Desktop doesn't need switching
+    if (window.innerWidth >= 768) return; // Tablets and desktop use full map view
 
     // Find which map contains the point
     let targetView = 'front'; // Default
