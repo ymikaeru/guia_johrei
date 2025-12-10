@@ -481,6 +481,11 @@ html {
     #bodyMapContainer {
         margin-top: 0 !important;
     }
+
+    /* Reduce spacing between dropdown and results in map tab */
+    #contentList {
+        padding-top: 1rem !important;
+    }
 }
 
 /* Mobile and Tablet: Keep mobile dropdown visible for body part filtering */
