@@ -480,6 +480,7 @@ html {
     /* Remove extra spacing in map tab on tablets */
     #bodyMapContainer {
         margin-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     /* Reduce spacing between dropdown and results in map tab */
