@@ -451,18 +451,18 @@ html {
 /* Tablet-specific body map sizing - iPad Air and similar (768px-900px) */
 @media (min-width: 768px) and (max-width: 900px) {
     #bodyMapContainer .relative {
-        width: 38% !important;
+        width: 45% !important;
     }
 
     /* Reduce gap between front and back diagrams */
     #bodyMapContainer .flex {
-        gap: 1rem !important;
+        gap: 0.5rem !important;
     }
 
     /* Reduce top/bottom padding */
     #bodyMapContainer {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
     }
 }
 
@@ -475,5 +475,15 @@ html {
     /* Force grid-cols-3 for body map on tablets */
     #mobile-map-container {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    /* Hide mobile body filter dropdown on tablets (sidebar is visible instead) */
+    #bodyMapContainer .lg\:hidden {
+        display: none !important;
+    }
+
+    /* Hide mobile view switcher buttons (Frente/Detalhes/Costas) on tablets */
+    #bodyMapContainer~div.md\:hidden {
+        display: none !important;
     }
 }
