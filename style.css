@@ -465,3 +465,10 @@ html {
         padding-bottom: 0.5rem !important;
     }
 }
+
+/* Custom class to show elements on tablet+ (768px+), overriding Tailwind's hidden */
+@media (min-width: 768px) {
+    .tablet-show {
+        display: block !important;
+    }
+}

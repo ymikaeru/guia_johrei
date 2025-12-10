@@ -160,9 +160,9 @@ function renderBodyMapViews() {
 
             <div id="mobile-map-container" class="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         ${views.map((view, i) => {
-        const visibilityClass = i === 0 ? 'block' : 'hidden'; // Only first visible on mobile initial
+        const visibilityClass = i === 0 ? 'block' : 'hidden tablet-show'; // tablet-show will override hidden at 768px+
         return `
-            <div id="view-${view.id}" class="${visibilityClass} md:block relative group transition-all duration-300">
+            <div id="view-${view.id}" class="${visibilityClass} relative group transition-all duration-300">
                 <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4">${view.alt}</p>
                 <div class="relative inline-block w-full bg-white dark:bg-[#111] rounded-lg p-2">
                     <img src="${view.img}" alt="${view.alt}" class="w-full h-auto object-contain" id="${view.id}_img" />
