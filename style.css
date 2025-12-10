@@ -486,6 +486,11 @@ html {
     #contentList {
         padding-top: 1rem !important;
     }
+
+    /* Reduce gap in body map container */
+    #bodyMapContainer>div:first-child {
+        gap: 0.5rem !important;
+    }
 }
 
 /* Mobile and Tablet: Keep mobile dropdown visible for body part filtering */
