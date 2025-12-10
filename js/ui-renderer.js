@@ -306,8 +306,8 @@ function updateUIForTab(tabId) {
 
         renderBodyMapViews(); // Ensure this helper exists or inline logic
 
-        // Auto-scroll to filter button on mobile when entering tab
-        if (window.innerWidth < 1024) { // lg breakpoint
+        // Auto-scroll to filter button on mobile only (not tablets)
+        if (window.innerWidth < 768) {
             setTimeout(() => {
                 const filterBtn = document.querySelector('[onclick*="toggleMobileBodyFilter"]');
                 if (filterBtn) {
