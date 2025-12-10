@@ -474,6 +474,12 @@ html {
     /* Reduce mobile search wrapper padding on tablets */
     #mobileSearchWrapper {
         padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Remove extra spacing in map tab on tablets */
+    #bodyMapContainer {
+        margin-top: 0 !important;
     }
 }
 
