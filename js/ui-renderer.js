@@ -140,14 +140,14 @@ function renderBodyMapViews() {
 
         <!-- Mobile Maps Area -->
         <!-- Mobile Maps Area -->
-        <div class="w-full lg:hidden mb-6 px-4 relative z-[49]">
-             <div class="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-lg shadow-sm relative">
+        <div class="w-full lg:hidden mb-0 px-4 relative z-[49]">
+             <div class="bg-white dark:bg-[#111] rounded-lg relative">
                 <button onclick="toggleMobileBodyFilter(this)" 
                     class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
                     <span>Filtrar por Região</span>
                     <svg class="w-4 h-4" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
+                <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] rounded-b-lg w-full"
                     style="max-height: 35vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
                      <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
                         onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
