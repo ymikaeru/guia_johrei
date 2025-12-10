@@ -202,8 +202,19 @@ function toggleMobileBodyFilter(btn) {
     // Rotate Icon
     if (list.classList.contains('hidden')) {
         if (icon) icon.style.transform = 'rotate(0deg)';
+        list.style.maxHeight = ''; // Reset
     } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
+
+        // Calculate dynamic max-height based on available space
+        setTimeout(() => {
+            const rect = list.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const spaceBelow = viewportHeight - rect.top;
+            const padding = 20; // Buffer space from bottom
+            const maxHeight = Math.max(200, spaceBelow - padding); // Minimum 200px
+            list.style.maxHeight = `${maxHeight}px`;
+        }, 10);
 
         // Auto-Scroll to beginning of images (not to button)
         const mapContainer = document.getElementById('mobile-map-container');
