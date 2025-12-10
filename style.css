@@ -471,4 +471,9 @@ html {
     .tablet-show {
         display: block !important;
     }
+
+    /* Force grid-cols-3 for body map on tablets */
+    #mobile-map-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
 }
