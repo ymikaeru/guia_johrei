@@ -475,9 +475,12 @@ function selectCustomOption(ids, name, event) {
     }
 
     closeCustomDropdown();
-    // Also close Mobile Dropdown if exists
+    // Also close Mobile/Tablet Dropdown if exists
     const mobileList = document.getElementById('mobileBodyFilterList');
     if (mobileList) mobileList.classList.add('hidden');
+
+    // Close Modal filter (Tablet)
+    if (typeof closeBodyFilterModal === 'function') closeBodyFilterModal();
 
     clearBodyPointPreview();
 }

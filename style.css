@@ -449,101 +449,22 @@ html {
 }
 
 /* Tablet and Desktop: Use desktop layout for body maps (768px+) */
+/* Tablet (768px+) Layout Adjustments */
 @media (min-width: 768px) {
 
-    /* Show all body map views simultaneously */
+    /* Grid Structure for Tablet Body Map */
+    #mobile-map-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 1.5rem;
+        /* System spacing: gap-6 */
+    }
+
+    /* Helper Utilities */
     .tablet-show {
         display: block !important;
     }
 
-    /* Force grid-cols-3 for body map */
-    #mobile-map-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    }
-
-    /* Hide mobile view switcher buttons (all views visible, no need to switch) */
-    #bodyMapContainer div.md\:hidden {
-        display: none !important;
-    }
-
-    /* Reduce top padding to fill space where search input is faded */
-    #bodyMapContainer {
-        padding-top: 1rem !important;
-    }
-
-    /* Reduce mobile search wrapper padding on tablets */
-    #mobileSearchWrapper {
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
-}
 }
 
-/* Mobile: Remove extra spacing and double border */
-@media (max-width: 767px) {
-    #bodyMapContainer {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* Reduce vertical gap between cards on mobile */
-    #contentList {
-        row-gap: 0 !important;
-    }
-}
-
-/* Tablet (768px - 1024px): Reduce row-gap for cards */
-@media (min-width: 768px) and (max-width: 1024px) {
-    #contentList {
-        row-gap: 0 !important;
-    }
-}
-
-@media (max-width: 1279px) {
-
-    /* Remove extra spacing in map tab on tablets */
-    #bodyMapContainer {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-        border-bottom: none !important;
-    }
-
-    /* Reduce gap in body map container */
-    #bodyMapContainer>div:first-child {
-        gap: 0.5rem !important;
-    }
-}
-
-/* Mobile and Tablet: Keep mobile dropdown visible for body part filtering */
-@media (max-width: 1279px) {
-
-    /* Show the mobile body filter dropdown below the map on tablets */
-    #bodyMapContainer .lg\:hidden {
-        display: block !important;
-    }
-}
-
-/* Tablet only: Position dropdown BELOW the maps using flexbox order */
-@media (min-width: 768px) and (max-width: 1279px) {
-
-    /* Make parent container flex to enable order */
-    #bodyMapContainer>div:first-child {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    /* Dropdown appears first in HTML, but show it last visually */
-    #bodyMapContainer .lg\:hidden {
-        order: 2 !important;
-        margin-top: 1.5rem !important;
-        margin-bottom: 0 !important;
-    }
-
-    /* Maps container should appear first visually */
-    #mobile-map-container {
-        order: 1 !important;
-    }
-}
+/* Tablet Only (768px - 1023px) specific layouts if needed */
+/* Handled by Tailwind arbitrary variants in ui-renderer.js now (min-[768px]) */

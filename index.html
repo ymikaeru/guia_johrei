@@ -156,7 +156,7 @@
             <div
                 class="sticky top-0 md:static z-50 bg-white/95 dark:bg-[#0a0a0a]/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-gray-100 dark:border-gray-900 md:border-none">
                 <!-- Mobile Search (Visible only on Mobile) -->
-                <div id="mobileSearchWrapper" class="md:hidden px-6 pb-2 relative">
+                <div id="mobileSearchWrapper" class="md:hidden px-8 pb-4 relative">
                     <div class="">
                         <input type="text" placeholder="Pesquisar..."
                             class="search-input w-full bg-transparent py-3 pr-24 text-lg font-serif font-normal placeholder-gray-300 dark:placeholder-gray-700 text-black dark:text-gray-100 focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-colors tracking-wide">
@@ -243,8 +243,7 @@
 
         <main class="flex-grow px-8 md:px-12 pb-32 scroll-smooth bg-white dark:bg-[#0a0a0a]" id="mainList">
 
-            <div id="bodyMapContainer"
-                class="hidden pt-[0.2rem] pb-6 lg:py-20 border-b border-gray-100 dark:border-gray-900">
+            <div id="bodyMapContainer" class="hidden pt-4 pb-2 md:pt-6 md:pb-4 lg:py-16">
                 <div class="flex flex-row justify-center items-center gap-12 w-full max-w-7xl mx-auto">
                     <div class="relative w-[40%] aspect-[3/4]">
                         <p class="text-center text-[10px] font-bold uppercase tracking-widest text-gray-300 mb-8">Frente
@@ -263,7 +262,9 @@
 
 
 
-            <div id="contentList" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-20 md:gap-y-16 pt-12"></div>
+            <div id="contentList"
+                class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 pt-4 md:pt-8 w-full max-w-7xl mx-auto">
+            </div>
 
             <div id="emptyState" class="hidden h-96 flex flex-col items-center justify-center opacity-30">
                 <p class="font-serif text-8xl text-gray-200 dark:text-gray-800 mb-6 font-normal italic">∅</p>
@@ -282,7 +283,7 @@
                 id="modalCard">
                 <div
                     class="relative flex-none px-6 py-6 md:px-10 md:py-8 border-b border-gray-100 dark:border-gray-900 flex justify-between items-start bg-white dark:bg-[#111]">
-                    <div>
+                    <div class="pr-20 md:pr-0">
                         <div id="modalCategory"
                             class="text-[10px] font-sans font-bold uppercase tracking-widest mb-1 text-gray-400 h-8 flex items-center">
                         </div>
@@ -296,11 +297,11 @@
                             class="hidden text-[10px] font-sans font-bold uppercase tracking-widest text-gray-300 block">REF
                             #00</span>
                     </div>
-                    <div class="absolute top-2 right-6 md:static flex items-center gap-3">
+                    <div class="absolute top-4 right-6 md:static md:-mt-2 flex items-center gap-3">
                         <!-- History Button -->
                         <div class="relative">
                             <button onclick="toggleHistory(event)"
-                                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-[#222] transition-colors"
+                                class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-[#222] transition-colors"
                                 title="Histórico de Leitura">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -347,7 +348,13 @@
                             </div>
                         </div>
                         <button onclick="closeModal()"
-                            class="w-8 h-8 flex items-center justify-center bg-red-300 hover:bg-red-400 rounded-full transition-colors text-red-600 text-xl font-light -mt-3">&times;</button>
+                            class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#222] rounded-full transition-colors"
+                            title="Fechar">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <!-- Mobile FAB (Floating Action Button) -->
