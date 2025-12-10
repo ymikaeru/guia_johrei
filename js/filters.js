@@ -238,10 +238,10 @@ function applyFilters() {
         }
     });
 
-    // 3. Toggle Header "Limpar Filtros" Button (Only for Tags)
+    // 3. Toggle Header "Limpar Filtros" Button (Universal)
     const headerClearBtn = document.getElementById('headerClearFiltersBtn');
     if (headerClearBtn) {
-        if (activeTags.length > 0) {
+        if (hasActiveFilters || q) {
             headerClearBtn.classList.remove('hidden');
         } else {
             headerClearBtn.classList.add('hidden');

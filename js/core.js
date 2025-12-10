@@ -122,35 +122,25 @@ function checkUrlForDeepLink() {
 
             if (foundId) {
                 console.log("Deep link found for:", foundId);
-                // Ensure list is filtered/ready? 
-                // Currently filterList filters based on STATE.selectedCategory etc.
-                // If the item is in globalData but not in list (due to filters), openModal might fail if it relies on index in STATE.list.
-                // We should force a "Global Search" state or reset filters to ensure item is in list.
 
-                // For safety, clear filters to ensure item appears in list
-                // But blindly clearing filters might be annoying. 
-                // Better: find index in global list, or just ensure it's in render list.
-
-                // Existing logic used filterList(), then findIndex in STATE.list.
-                // Let's reset filters to ensure visibility.
-                if (typeof clearSearch === 'function') clearSearch(); // This might be too aggressive?
-
-                // Alternative: just ensure the category of the item is active?
-                // The item has `_cat`.
-                const item = STATE.globalData[foundId];
-                if (item && item._cat) {
-                    // We could set STATE.selectedCategory... but let's just use filterList default
-                }
-
-                applyFilters(); // Re-run filter to be sure (init state)
+                // Ensure fresh state
+                applyFilters();
 
                 const newIndex = STATE.list.findIndex(listItem => listItem.id === foundId);
+
                 if (newIndex !== -1) {
+                    // Item is in the current filtered list
                     openModal(newIndex);
                 } else {
-                    console.error("Deep-linked item not found in filtered list:", foundId);
-                    // Fallback: If not in list, maybe force add it? (Complicated)
-                    // If we cleared search/filters, it SHOULD be in list unless logic is weird.
+                    // Item exists in global data but is hidden by current filters/tabs
+                    // Open in "Standalone Mode" (like related items)
+                    console.log("Opening deep-linked item in standalone mode:", foundId);
+                    const item = STATE.globalData[foundId];
+                    if (item) {
+                        openModal(-1, item);
+                    } else {
+                        console.error("Deep-linked item data missing:", foundId);
+                    }
                 }
             }
         }
