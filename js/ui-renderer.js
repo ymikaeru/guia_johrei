@@ -320,17 +320,6 @@ function updateUIForTab(tabId) {
             list.classList.add('hidden');
         }
 
-        // Control page scroll on tablets: block when no results, allow when there are results
-        if (window.innerWidth >= 768) {
-            if (hasSelection) {
-                // Has results - allow scrolling
-                document.body.style.overflow = '';
-            } else {
-                // No results - block scrolling on tablets
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
         renderBodyMapViews(); // Ensure this helper exists or inline logic
 
         // Auto-scroll to filter button on mobile only (not tablets)
