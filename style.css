@@ -470,6 +470,11 @@ html {
     #bodyMapContainer {
         padding-top: 1rem !important;
     }
+
+    /* Reduce mobile search wrapper padding on tablets */
+    #mobileSearchWrapper {
+        padding-bottom: 0 !important;
+    }
 }
 
 /* Mobile and Tablet: Keep mobile dropdown visible for body part filtering */
@@ -478,5 +483,27 @@ html {
     /* Show the mobile body filter dropdown below the map on tablets */
     #bodyMapContainer .lg\:hidden {
         display: block !important;
+    }
+}
+
+/* Tablet only: Position dropdown BELOW the maps using flexbox order */
+@media (min-width: 768px) and (max-width: 1279px) {
+
+    /* Make parent container flex to enable order */
+    #bodyMapContainer>div:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Dropdown appears first in HTML, but show it last visually */
+    #bodyMapContainer .lg\:hidden {
+        order: 2 !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Maps container should appear first visually */
+    #mobile-map-container {
+        order: 1 !important;
     }
 }
