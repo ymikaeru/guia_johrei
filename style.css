@@ -447,3 +447,10 @@ html {
 #bodyMapContainer div {
     overflow: visible !important;
 }
+
+/* Tablet-specific body map sizing (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #bodyMapContainer .relative {
+        width: 30% !important;
+    }
+}
