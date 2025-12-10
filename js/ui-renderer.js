@@ -148,7 +148,7 @@ function renderBodyMapViews() {
                     <svg class="w-4 h-4" id="mobileFilterIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="mobileBodyFilterList" class="hidden relative top-0 bg-white dark:bg-[#111] border-t border-gray-100 dark:border-gray-800 rounded-b-lg w-full"
-                    style="max-height: 50vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
+                    style="max-height: 35vh; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
                      <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white"
                         onclick="selectCustomOption('', '-- Todos os pontos --', event); document.getElementById('mobileBodyFilterList').classList.add('hidden');">
                         -- Todos os pontos --
@@ -205,14 +205,17 @@ function toggleMobileBodyFilter(btn) {
     } else {
         if (icon) icon.style.transform = 'rotate(180deg)';
 
-        // Auto-Scroll Logic: Run immediately (Synchronous start)
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 80;
-        const elementPosition = btn.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10; // 10px buffer
+        // Auto-Scroll to beginning of images (not to button)
+        const mapContainer = document.getElementById('mobile-map-container');
+        if (mapContainer) {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 80;
+            const elementPosition = mapContainer.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 10;
 
-        // Use custom smooth scroll (EaseOutSine) - iOS-style
-        smoothScrollTo(offsetPosition, 1200);
+            // Use custom smooth scroll (EaseOutSine) - iOS-style
+            smoothScrollTo(offsetPosition, 1200);
+        }
     }
 }
 
