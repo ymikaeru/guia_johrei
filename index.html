@@ -340,6 +340,28 @@
                         </button>
                     </div>
 
+                    <!-- History Toggle -->
+                    <button onclick="toggleHistory(event)"
+                        class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
+                        title="Histórico">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- History Dropdown -->
+                    <div id="historyDropdown"
+                        class="hidden absolute top-16 right-16 w-64 bg-white dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden z-[60] animate-fade-down">
+                        <div class="p-3 border-b border-gray-50 dark:border-gray-800 bg-gray-50 dark:bg-[#222]">
+                            <h3 class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Histórico Recente
+                            </h3>
+                        </div>
+                        <div id="historyList" class="max-h-64 overflow-y-auto custom-scrollbar">
+                            <!-- JS Injected -->
+                        </div>
+                    </div>
+
                     <!-- Appearance Popover -->
                     <div id="appearanceMenu"
                         class="hidden absolute top-16 right-4 w-64 bg-white dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-gray-800 shadow-xl p-4 z-50 animate-fade-down">
