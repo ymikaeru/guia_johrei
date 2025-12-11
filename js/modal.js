@@ -421,50 +421,139 @@ window.setModalTheme = function (theme) {
 
     // Reset classes first
     scrollContainer.className = 'flex-grow overflow-y-auto scroll-smooth relative transition-colors duration-300';
-    content.className = 'rich-text font-serif leading-loose transition-colors duration-300';
+    content.className = 'rich-text leading-loose transition-colors duration-300'; // font-serif handled by theme or default?
 
-    // Default / Auto
-    let bgClass = 'bg-white dark:bg-[#111]';
-    let textClass = 'text-gray-800 dark:text-gray-200';
-    let titleClass = 'text-black dark:text-white';
-    let interfaceBg = 'bg-white/95 dark:bg-[#111]/95'; // Header/Footer
-    let interfaceBorder = 'border-gray-100 dark:border-gray-900';
+    // Default Variables
+    let bgClass = '';
+    let textClass = '';
+    let titleClass = '';
+    let interfaceBg = '';
+    let interfaceBorder = '';
+    let cardBg = '';
+    let fontClass = 'font-serif';
 
-    if (theme === 'light') {
-        bgClass = 'bg-white';
-        textClass = 'text-gray-900';
-        titleClass = 'text-black';
-        interfaceBg = 'bg-white/95';
-        interfaceBorder = 'border-gray-100';
-        if (card) card.style.backgroundColor = '#ffffff';
-    } else if (theme === 'sepia') {
-        bgClass = 'bg-[#F4ECD8]';
-        textClass = 'text-[#5b4636]';
-        titleClass = 'text-[#433]';
-        interfaceBg = 'bg-[#F4ECD8]/95';
-        interfaceBorder = 'border-[#e0d6b8]';
-        if (card) card.style.backgroundColor = '#F4ECD8';
-    } else if (theme === 'dark') {
-        bgClass = 'bg-[#111]';
-        textClass = 'text-[#e5e5e5]';
-        titleClass = 'text-white';
-        interfaceBg = 'bg-[#111]/95';
-        interfaceBorder = 'border-[#222]';
-        if (card) card.style.backgroundColor = '#111';
-    } else {
-        // Auto: Reset inline styles
-        if (card) card.style.backgroundColor = '';
+    // Highlight Variables
+    let highlightBg = '#fef08a';
+    let highlightText = '#000000';
+    // Focus Point Variables
+    let focusPointBg = '#f3f4f6';
+    let focusPointText = '#1f2937';
+
+    switch (theme) {
+        case 'quiet':
+            // user: bg #4A494E text #ABAAAE
+            bgClass = 'bg-[#4A494E]';
+            textClass = 'text-[#ABAAAE]';
+            titleClass = 'text-[#d4d4d4]'; // lighter for title
+            interfaceBg = 'bg-[#4A494E]/95';
+            interfaceBorder = 'border-[#5A595E]';
+            cardBg = '#4A494E';
+            // Custom Highlight for Dark Mode (Muted Olive/Gold)
+            highlightBg = '#635F40';
+            highlightText = '#E0E0E0';
+            // Custom Focus for Quiet
+            focusPointBg = '#5c5c61';
+            focusPointText = '#ffffff';
+            break;
+        case 'paper':
+            // user: bg #EDEDED text #1D1D1D
+            bgClass = 'bg-[#EDEDED]';
+            textClass = 'text-[#1D1D1D]';
+            titleClass = 'text-[#000000]';
+            interfaceBg = 'bg-[#EDEDED]/95';
+            interfaceBorder = 'border-[#DEDEDE]';
+            cardBg = '#EDEDED';
+            highlightBg = '#E3DEB3'; // Muted Paper Yellow
+            highlightText = '#1D1D1D';
+            // Custom Focus for Paper
+            focusPointBg = '#d6d3c9';
+            focusPointText = '#1D1D1D';
+            break;
+        case 'calm':
+            // user: bg #EEE2CC text #362D25
+            bgClass = 'bg-[#EEE2CC]';
+            textClass = 'text-[#362D25]';
+            titleClass = 'text-[#2b241e]';
+            interfaceBg = 'bg-[#EEE2CC]/95';
+            interfaceBorder = 'border-[#E0D4BE]';
+            cardBg = '#EEE2CC';
+            highlightBg = '#E6CEA8'; // Warm Sepia Highlight
+            highlightText = '#362D25';
+            // Custom Focus for Calm
+            focusPointBg = '#dbc8a4';
+            focusPointText = '#2b241e';
+            break;
+        case 'focus':
+            // user: bg #FFFCF5 text #141205
+            bgClass = 'bg-[#FFFCF5]';
+            textClass = 'text-[#141205]';
+            titleClass = 'text-[#000000]';
+            interfaceBg = 'bg-[#FFFCF5]/95';
+            interfaceBorder = 'border-[#EBE5D5]';
+            cardBg = '#FFFCF5';
+            highlightBg = '#fff59d'; // Light Yellow
+            highlightText = '#000000';
+            // Custom Focus for Focus Theme
+            focusPointBg = '#e8e8e8'; // Very subtle gray
+            focusPointText = '#000000';
+            break;
+        case 'bold':
+            // Semibold logic
+            bgClass = 'bg-white';
+            textClass = 'text-black font-semibold'; // Apply semibold here
+            titleClass = 'text-black font-bold';
+            interfaceBg = 'bg-white/95';
+            interfaceBorder = 'border-gray-200';
+            cardBg = '#ffffff';
+            // Custom font weight handling might be needed if classes clash, but 'font-semibold' should work.
+            highlightBg = '#fef08a';
+            highlightText = '#000000';
+            // Custom Focus for Bold (Standard)
+            focusPointBg = '#f3f4f6';
+            focusPointText = '#1f2937';
+            break;
+        case 'original':
+        default: // White (Standard)
+            bgClass = 'bg-white';
+            textClass = 'text-gray-900';
+            titleClass = 'text-black';
+            interfaceBg = 'bg-white/95';
+            interfaceBorder = 'border-gray-100';
+            cardBg = '#ffffff';
+            highlightBg = '#fef08a';
+            highlightText = '#000000';
+            // Custom Focus for Original (Standard)
+            focusPointBg = '#f3f4f6';
+            focusPointText = '#1f2937';
+            break;
     }
 
+    // Apply Styles
     scrollContainer.classList.add(...bgClass.split(' '));
-    content.classList.add(...textClass.split(' '));
+    content.classList.add(...textClass.split(' '), fontClass);
+
+    // Apply Highlight Variables
+    content.style.setProperty('--highlight-bg', highlightBg);
+    content.style.setProperty('--highlight-text', highlightText);
+
+    // Apply Focus Point Variables
+    content.style.setProperty('--focus-point-bg', focusPointBg);
+    content.style.setProperty('--focus-point-text', focusPointText);
+
+    if (card) card.style.backgroundColor = cardBg;
+
+    // Force color inheritance to override specific .rich-text CSS rules
+    content.querySelectorAll('p, li, div, h1, h2, h3, h4, h5, h6, strong, span, em').forEach(child => {
+        child.style.color = 'inherit';
+    });
 
     if (title) {
-        title.className = `text-3xl md:text-4xl font-serif font-medium mb-8 md:mb-12 leading-[1.2] text-center transition-colors duration-300 ${titleClass}`;
+        title.className = `text-3xl md:text-4xl ${fontClass} font-medium mb-8 md:mb-12 leading-[1.2] text-center transition-colors duration-300 ${titleClass}`;
     }
 
     if (source) {
         source.className = `text-xs font-sans font-bold uppercase tracking-widest text-center transition-colors duration-300 ${titleClass}`;
+        source.style.opacity = theme === 'quiet' ? '0.6' : '1';
     }
 
     // Apply to Header & Footer
@@ -474,6 +563,10 @@ window.setModalTheme = function (theme) {
     if (footer) {
         footer.className = `flex-none p-4 md:p-6 border-t z-20 transition-colors duration-300 ${interfaceBg} ${interfaceBorder}`;
     }
+
+    // Update active state in menu (Visual feedback)
+    // We can't easily access the buttons here without IDs or complex selectors, 
+    // but the logic works.
 }
 
 window.toggleAppearanceMenu = function (e) {
