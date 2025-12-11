@@ -122,7 +122,7 @@ function renderList(list, activeTags, mode, activeTab) {
         const isInApostila = currentApostila && currentApostila.items.includes(item.id);
 
         return `
-        <article onclick="openModal(${i})" class="group py-8 px-8 border-t border-gray-100 dark:border-gray-900 cursor-pointer relative flex flex-col gap-6 hover:bg-gray-50/50 dark:hover:bg-[#1a1a1a]/30 transition-colors">
+        <article onclick="openModal(${i})" class="group py-8 px-8 border-t border-gray-100 dark:border-gray-900 cursor-pointer relative flex flex-col gap-6 hover:bg-gray-50 dark:hover:bg-[#111] transition-colors">
             
             <!-- Category Label -->
             <div class="flex justify-between items-start">
@@ -130,16 +130,16 @@ function renderList(list, activeTags, mode, activeTab) {
                     ${catConfig ? catConfig.label : item._cat}
                 </span>
 
-                <!-- Add to Apostila (Subtle Icon) -->
+                <!-- Add to Apostila (Subtle Icon with larger touch target) -->
                 <button onclick="event.stopPropagation(); toggleApostilaItem('${item.id}', this)" 
-                    class="w-6 h-6 flex items-center justify-center rounded-full transition-colors ${isInApostila ? 'text-yellow-500' : 'text-gray-300 hover:text-yellow-500'}" 
+                    class="w-10 h-10 -mr-2 -mt-2 flex items-center justify-center rounded-full transition-colors ${isInApostila ? 'text-yellow-600' : 'text-gray-300 hover:text-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/10'}" 
                     title="Adicionar à Apostila">
-                     <svg class="w-4 h-4" fill="${isInApostila ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                     <svg class="w-5 h-5" fill="${isInApostila ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
                 </button>
             </div>
 
-            <!-- Title -->
-            <h3 class="font-serif font-medium text-3xl md:text-4xl leading-[1.1] text-gray-900 dark:text-gray-100 group-hover:text-black dark:group-hover:text-white transition-colors max-w-2xl">
+            <!--Title -->
+            <h3 class="font-serif font-medium text-3xl md:text-3xl leading-[1.1] text-gray-900 dark:text-gray-100 group-hover:text-black dark:group-hover:text-white transition-colors max-w-2xl">
                 ${item.title}
             </h3>
 
@@ -150,11 +150,12 @@ function renderList(list, activeTags, mode, activeTab) {
                     ${item.focusPoints.join('<span class="mx-2 text-gray-300 dark:text-gray-700">&middot;</span>')}
                 </p>
             </div>
-            ` : ''}
+            ` : ''
+            }
 
             ${activeTab !== 'pontos_focais' ? `
             <!-- Tags & Metadata (Minimalist) -->
-            <div class="flex flex-wrap gap-3 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
+            <div class="flex flex-wrap gap-2 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
                  ${(() => {
                     const tags = item.tags || [];
                     const points = item.focusPoints || [];
@@ -179,11 +180,13 @@ function renderList(list, activeTags, mode, activeTab) {
                     }).join('');
                 })()}
             </div>
-            ` : ''}
+            ` : ''
+            }
         </article>`
     }).join('');
 }
 
+// --- CORREÇÃO DO DIAGRAMA (TEXTO CENTRALIZADO ACIMA) ---
 // --- CORREÇÃO DO DIAGRAMA (TEXTO CENTRALIZADO ACIMA) ---
 function createDiagram(view, points) {
     const isBack = view === 'back';
@@ -208,6 +211,7 @@ function createDiagram(view, points) {
                       style="pointer-events: none;">
                     ${p.name}
                 </text>
-            </g>`).join('')}
-    </svg>`;
+            </g>`).join('')
+        }
+    </svg > `;
 }

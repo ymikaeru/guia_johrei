@@ -213,6 +213,9 @@ function openModal(i, explicitItem = null) {
 
     // Render Related (Recursion safety handled by renderRelatedItems)
     renderRelatedItems(item);
+
+    // --- IMMERSIVE MODE INIT ---
+    initImmersiveMode();
 }
 
 function closeModal() {
@@ -230,10 +233,92 @@ function closeModal() {
     card.classList.remove('open');
     backdrop.classList.remove('open');
 
+    // Stop Immersive Timer
+    destroyImmersiveMode();
+
     setTimeout(() => {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
     }, 250);
+}
+
+// --- IMMERSIVE READING MODE ---
+let immersiveTimer = null;
+let isControlsVisible = true;
+
+function initImmersiveMode() {
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    if (!scrollContainer) return;
+
+    // Reset State
+    showControls();
+
+    // Listeners
+    scrollContainer.addEventListener('scroll', resetImmersiveTimer);
+    scrollContainer.addEventListener('click', toggleImmersiveControls);
+    scrollContainer.addEventListener('touchstart', resetImmersiveTimer);
+
+    // Start Timer
+    resetImmersiveTimer();
+}
+
+function destroyImmersiveMode() {
+    clearTimeout(immersiveTimer);
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', resetImmersiveTimer);
+        scrollContainer.removeEventListener('click', toggleImmersiveControls);
+        scrollContainer.removeEventListener('touchstart', resetImmersiveTimer);
+    }
+}
+
+function resetImmersiveTimer() {
+    showControls();
+    clearTimeout(immersiveTimer);
+    // Hide after 3 seconds of inactivity
+    immersiveTimer = setTimeout(hideControls, 3000);
+}
+
+function hideControls() {
+    isControlsVisible = false;
+    const footer = document.getElementById('modalFooter');
+
+    // User Request: Hide ONLY the bottom bar (footer)
+    // Header remains visible
+
+    if (footer) {
+        footer.style.opacity = '0';
+        footer.style.pointerEvents = 'none';
+        footer.style.transform = 'translateY(100%)';
+    }
+}
+
+function showControls() {
+    // Check if footer is already visible (optimization)
+    const footer = document.getElementById('modalFooter');
+    if (isControlsVisible && footer && footer.style.opacity === '1') return;
+
+    isControlsVisible = true;
+
+    if (footer) {
+        footer.style.opacity = '1';
+        footer.style.pointerEvents = 'auto';
+        footer.style.transform = 'translateY(0)';
+    }
+}
+
+function toggleImmersiveControls(e) {
+    // Ignore clicks on interactive elements inside the content
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
+        return;
+    }
+
+    if (isControlsVisible) {
+        clearTimeout(immersiveTimer);
+        hideControls();
+    } else {
+        resetImmersiveTimer();
+    }
 }
 
 function navModal(dir) {
@@ -558,10 +643,17 @@ window.setModalTheme = function (theme) {
 
     // Apply to Header & Footer
     if (header) {
-        header.className = `flex-none px-6 py-4 border-b flex justify-between items-center backdrop-blur-md z-20 relative transition-colors duration-300 ${interfaceBg} ${interfaceBorder}`;
+        header.className = `flex-none px-6 py-4 border-b flex justify-between items-center backdrop-blur-md z-20 relative transition-all duration-500 ease-in-out ${interfaceBg} ${interfaceBorder}`;
     }
     if (footer) {
-        footer.className = `flex-none p-4 md:p-6 border-t z-20 transition-colors duration-300 ${interfaceBg} ${interfaceBorder}`;
+        // Absolute positioning so content fills full height behind it
+        footer.className = `absolute bottom-0 w-full p-3 md:p-6 border-t z-20 transition-all duration-500 ease-in-out ${interfaceBg} ${interfaceBorder}`;
+    }
+
+    // Apply Scroll Container Padding to prevent content being hidden behind absolute footer
+    if (scrollContainer) {
+        // Ensure enough padding at bottom for the footer
+        scrollContainer.classList.add('pb-24', 'md:pb-32');
     }
 
     // Update active state in menu (Visual feedback)
