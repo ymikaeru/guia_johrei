@@ -154,26 +154,15 @@ function renderBodyMapViews() {
     }).join('')}
         </div>
 
-        <!-- Mobile Filter Dropdown - ABOVE images via flex-col-reverse, hidden on tablet+ -->
-        <div class="w-full min-[768px]:hidden px-4 relative z-[40]">
-             <div class="bg-white dark:bg-[#111] rounded-lg relative">
-                <button onclick="openBodyFilterModal()" 
-                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
-                    <span>Filtrar por Região</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-             </div>
-        </div>
-
-        <!-- Tablet Filter Dropdown - BELOW images, visible only on tablet (768px-1024px) -->
-        <div class="hidden min-[768px]:block lg:hidden w-full px-4 relative z-[40] mt-6">
-             <div class="bg-white dark:bg-[#111] rounded-lg border border-gray-100 dark:border-gray-800 relative">
-                <button onclick="openBodyFilterModal()" 
-                    class="w-full px-4 py-3 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:bg-gray-50 dark:hover:bg-[#151515]">
-                    <span>Filtrar por Região</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-             </div>
+        <!-- Unified Filter (Pill) - Visible on Mobile/Tablet (lg:hidden) -->
+        <!-- Mobile: flex-col-reverse makes logic-last appear Visual-Top. -->
+        <!-- Tablet: flex-col makes logic-first appear Visual-Top. We use order-first to make it logic-first. -->
+        <div class="w-full lg:hidden flex justify-center px-4 relative z-[40] transition-all min-[768px]:order-first min-[768px]:mb-8 mb-4">
+             <button onclick="openBodyFilterModal()" 
+                 class="group flex items-center gap-2 px-6 py-3 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full shadow-sm hover:shadow-md hover:border-black dark:hover:border-white transition-all">
+                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors">Filtrar por Região</span>
+                 <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
+             </button>
         </div>
     </div>
     
@@ -437,7 +426,7 @@ function updateTabStyle(activeId) {
 function renderPoints(points, prefix) {
     return points.map(p => {
         const isSelected = STATE.bodyFilter === p.id;
-        const activeClass = isSelected ? 'bg-black text-white dark:bg-white dark:text-black scale-125 z-10' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
+        const activeClass = isSelected ? 'bg-johrei-murasaki text-white scale-125 z-10 shadow-lg ring-2 ring-white dark:ring-black' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
         <button onclick="toggleBodyPoint('${p.id}')"

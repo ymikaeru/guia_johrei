@@ -15,13 +15,13 @@ function renderBodyPoints(points, viewId) {
         let fillColor, fillOpacity, strokeColor, strokeWidth, baseRadius;
 
         if (isSelected) {
-            fillColor = '#3b82f6';      // Blue
+            fillColor = '#7c3aed';      // Purple
             fillOpacity = '1';
-            strokeColor = '#2563eb';
+            strokeColor = '#ffffff';
             strokeWidth = '0.5';
             baseRadius = 1.8;
         } else if (isPreviewed) {
-            fillColor = '#9333ea';      // Vibrant Purple (New Suggestion)
+            fillColor = '#9333ea';      // Valid Purple
             fillOpacity = '1';
             strokeColor = '#ffffff';
             strokeWidth = '0.5';
@@ -40,7 +40,7 @@ function renderBodyPoints(points, viewId) {
         const ry = baseRadius;       // Normal in Y
 
         const glowFilter = isSelected
-            ? 'drop-shadow(0 0 3px rgba(59, 130, 246, 0.6))'
+            ? 'drop-shadow(0 0 3px rgba(124, 58, 237, 0.6))'
             : isPreviewed
                 ? 'drop-shadow(0 0 5px rgba(147, 51, 234, 0.6))' // Purple Glow
                 : 'none';
@@ -48,7 +48,7 @@ function renderBodyPoints(points, viewId) {
         // Always render a background "ripple" ellipse (hidden by default unless selected/previewed)
         // We set initial state here, but updatePointsVisual handles dynamic updates
         const showRipple = isSelected || isPreviewed;
-        const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#9333ea' : 'none');
+        const rippleColor = isSelected ? '#7c3aed' : (isPreviewed ? '#9333ea' : 'none');
         const rippleOpacity = showRipple ? '0.5' : '0';
 
         const rippleElement = `
@@ -342,9 +342,9 @@ function updatePointsVisual() {
         let fillColor, fillOpacity, strokeColor, strokeWidth, baseRadius;
 
         if (isSelected) {
-            fillColor = '#3b82f6';      // Blue
+            fillColor = '#7c3aed';      // Purple (Johrei Murasaki)
             fillOpacity = '1';
-            strokeColor = '#2563eb';
+            strokeColor = '#ffffff';    // White stroke for contrast
             strokeWidth = '0.5';
             baseRadius = 1.8;
         } else if (isPreviewed) {
@@ -368,7 +368,7 @@ function updatePointsVisual() {
         const ripple = ellipse.previousElementSibling;
         if (ripple && ripple.tagName === 'ellipse') {
             if (isSelected || isPreviewed) {
-                const rippleColor = isSelected ? '#3b82f6' : (isPreviewed ? '#9333ea' : 'none');
+                const rippleColor = isSelected ? '#7c3aed' : (isPreviewed ? '#9333ea' : 'none');
                 ripple.setAttribute('fill', rippleColor);
                 ripple.setAttribute('fill-opacity', '0.5');
                 ripple.setAttribute('rx', rx);
@@ -381,7 +381,7 @@ function updatePointsVisual() {
 
         // Dynamic Glow/Shadow
         const glowFilter = isSelected
-            ? 'drop-shadow(0 0 4px rgba(59, 130, 246, 0.7))'
+            ? 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.7))'
             : isPreviewed
                 ? 'drop-shadow(0 0 5px rgba(147, 51, 234, 0.6))' // Purple Glow
                 : 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))';
