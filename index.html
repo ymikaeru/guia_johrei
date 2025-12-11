@@ -379,15 +379,44 @@
                             <!-- Themes -->
                             <div>
                                 <p class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Tema</p>
-                                <div class="grid grid-cols-4 gap-1 bg-gray-50 dark:bg-[#222] rounded-lg p-1">
-                                    <button onclick="setModalTheme('auto')"
-                                        class="py-2 rounded text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-[#333] transition-all">Auto</button>
-                                    <button onclick="setModalTheme('light')"
-                                        class="py-2 rounded text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-[#333] transition-all">Claro</button>
-                                    <button onclick="setModalTheme('sepia')"
-                                        class="py-2 rounded text-[10px] font-bold uppercase tracking-wider text-[#8B5A2B] hover:bg-[#F4ECD8] transition-all">Sépia</button>
-                                    <button onclick="setModalTheme('dark')"
-                                        class="py-2 rounded text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-white hover:bg-black transition-all">Dark</button>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <!-- Original -->
+                                    <button onclick="setModalTheme('original')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-gray-100 hover:border-gray-300 transition-all bg-white text-black">
+                                        <span class="font-serif text-lg">Aa</span>
+                                        <span
+                                            class="text-[8px] font-bold uppercase tracking-widest mt-1">Original</span>
+                                    </button>
+                                    <!-- Quiet -->
+                                    <button onclick="setModalTheme('quiet')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#3e3e42] hover:border-[#555] transition-all bg-[#4A494E] text-[#ABAAAE]">
+                                        <span class="font-serif text-lg">Aa</span>
+                                        <span class="text-[8px] font-bold uppercase tracking-widest mt-1">Quiet</span>
+                                    </button>
+                                    <!-- Paper -->
+                                    <button onclick="setModalTheme('paper')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#e0e0e0] hover:border-[#ccc] transition-all bg-[#EDEDED] text-[#1D1D1D]">
+                                        <span class="font-serif text-lg">Aa</span>
+                                        <span class="text-[8px] font-bold uppercase tracking-widest mt-1">Paper</span>
+                                    </button>
+                                    <!-- Calm -->
+                                    <button onclick="setModalTheme('calm')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#daceb5] hover:border-[#c5b595] transition-all bg-[#EEE2CC] text-[#362D25]">
+                                        <span class="font-serif text-lg">Aa</span>
+                                        <span class="text-[8px] font-bold uppercase tracking-widest mt-1">Calm</span>
+                                    </button>
+                                    <!-- Focus -->
+                                    <button onclick="setModalTheme('focus')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-[#EBE5D5] hover:border-[#dcd0b0] transition-all bg-[#FFFCF5] text-[#141205]">
+                                        <span class="font-serif text-lg">Aa</span>
+                                        <span class="text-[8px] font-bold uppercase tracking-widest mt-1">Focus</span>
+                                    </button>
+                                    <!-- Bold (Semibold) -->
+                                    <button onclick="setModalTheme('bold')"
+                                        class="flex flex-col items-center justify-center p-2 rounded-lg border border-gray-200 hover:border-black transition-all bg-white text-black">
+                                        <span class="font-serif text-lg font-bold px-1">Aa</span>
+                                        <span class="text-[8px] font-bold uppercase tracking-widest mt-1">Bold</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>

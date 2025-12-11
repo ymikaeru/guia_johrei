@@ -18,7 +18,7 @@ function formatBodyText(text, searchQuery, focusPoints) {
             if (fpTerms) {
                 // Whole words for focus points to avoid matching parts of other words
                 const fpRegex = new RegExp(`\\b(${fpTerms})\\b`, 'gi');
-                result = result.replace(fpRegex, '<span class="bg-gray-100 dark:bg-gray-800 font-semibold px-1 rounded text-gray-700 dark:text-gray-300">$1</span>');
+                result = result.replace(fpRegex, '<span class="focus-point-span">$1</span>');
             }
         }
 
