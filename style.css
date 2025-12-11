@@ -21,7 +21,8 @@ html {
 .btn-mode-active {
     background-color: #000;
     color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Nordic: Lighter, more diffuse shadow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .dark .btn-mode-active {
@@ -214,9 +215,10 @@ html {
 
 /* --- ANIMAÇÃO MODAL (Fade + Scale) --- */
 #modalCard {
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.98);
+    /* Less movement */
 }
 
 #modalCard.open {
@@ -432,7 +434,8 @@ html {
     /* Force white background */
     color: black !important;
     /* Force black text */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    /* Nordic: Crisp border, minimal shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Tooltip Triangle (Arrow) */
