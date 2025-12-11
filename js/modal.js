@@ -120,15 +120,27 @@ function openModal(i, explicitItem = null) {
 
     if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
         fpContainer.classList.remove('hidden');
+        // Clean style: Remove heavy background box
+        fpContainer.className = "mb-8 p-0 md:p-6 transition-colors duration-300";
+
         const html = item.focusPoints.map(p => {
             const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
-            const baseClass = "text-[10px] font-bold uppercase tracking-widest border px-2 py-1 transition-colors";
+
+            // Clean buttons: transparent bg, thin border or no border
+            // Active match: keeps yellow highlight but subtler?
+            const baseClass = "text-[10px] font-bold uppercase tracking-widest border transition-colors rounded-full px-3 py-1";
+
             const colorClass = isMatch
-                ? "border-yellow-500 bg-yellow-100 text-black dark:bg-yellow-900 dark:text-yellow-100"
-                : "border-black dark:border-white bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black";
+                ? "border-yellow-500 bg-yellow-400/20 text-yellow-700 dark:text-yellow-300"
+                : "border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white bg-transparent";
 
             return '<button onclick="filterByFocusPoint(\'' + p + '\')" class="' + baseClass + ' ' + colorClass + '">' + p + '</button>';
         }).join('');
+
+        // Update Title Color to match theme indirectly (using opacity/inheritance)
+        const fpTitle = fpContainer.querySelector('h3');
+        if (fpTitle) fpTitle.className = "text-[10px] font-sans font-bold uppercase tracking-widest mb-4 opacity-50";
+
         document.getElementById('modalFocusPoints').innerHTML = html;
     } else {
         fpContainer.classList.add('hidden');
@@ -156,6 +168,12 @@ function openModal(i, explicitItem = null) {
     // --- APPLY READING SETTINGS ---
     if (!STATE.modalFontSize) STATE.modalFontSize = 18;
     if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
+    if (!STATE.modalTheme) STATE.modalTheme = 'auto';
+
+    // Apply Theme
+    if (typeof setModalTheme === 'function') {
+        setModalTheme(STATE.modalTheme);
+    }
 
     const contentEl = document.getElementById('modalContent');
     const size = STATE.modalFontSize;
@@ -386,6 +404,75 @@ window.setModalAlignment = function (align) {
             content.style.textAlign = align;
             content.style.hyphens = 'none';
         }
+    }
+}
+
+window.setModalTheme = function (theme) {
+    STATE.modalTheme = theme;
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    const content = document.getElementById('modalContent');
+    const title = document.getElementById('modalTitle');
+    const source = document.getElementById('modalSource');
+    const header = document.getElementById('modalHeader');
+    const footer = document.getElementById('modalFooter');
+    const card = document.getElementById('modalCard');
+
+    if (!scrollContainer || !content) return;
+
+    // Reset classes first
+    scrollContainer.className = 'flex-grow overflow-y-auto scroll-smooth relative transition-colors duration-300';
+    content.className = 'rich-text font-serif leading-loose transition-colors duration-300';
+
+    // Default / Auto
+    let bgClass = 'bg-white dark:bg-[#111]';
+    let textClass = 'text-gray-800 dark:text-gray-200';
+    let titleClass = 'text-black dark:text-white';
+    let interfaceBg = 'bg-white/95 dark:bg-[#111]/95'; // Header/Footer
+    let interfaceBorder = 'border-gray-100 dark:border-gray-900';
+
+    if (theme === 'light') {
+        bgClass = 'bg-white';
+        textClass = 'text-gray-900';
+        titleClass = 'text-black';
+        interfaceBg = 'bg-white/95';
+        interfaceBorder = 'border-gray-100';
+        if (card) card.style.backgroundColor = '#ffffff';
+    } else if (theme === 'sepia') {
+        bgClass = 'bg-[#F4ECD8]';
+        textClass = 'text-[#5b4636]';
+        titleClass = 'text-[#433]';
+        interfaceBg = 'bg-[#F4ECD8]/95';
+        interfaceBorder = 'border-[#e0d6b8]';
+        if (card) card.style.backgroundColor = '#F4ECD8';
+    } else if (theme === 'dark') {
+        bgClass = 'bg-[#111]';
+        textClass = 'text-[#e5e5e5]';
+        titleClass = 'text-white';
+        interfaceBg = 'bg-[#111]/95';
+        interfaceBorder = 'border-[#222]';
+        if (card) card.style.backgroundColor = '#111';
+    } else {
+        // Auto: Reset inline styles
+        if (card) card.style.backgroundColor = '';
+    }
+
+    scrollContainer.classList.add(...bgClass.split(' '));
+    content.classList.add(...textClass.split(' '));
+
+    if (title) {
+        title.className = `text-3xl md:text-4xl font-serif font-medium mb-8 md:mb-12 leading-[1.2] text-center transition-colors duration-300 ${titleClass}`;
+    }
+
+    if (source) {
+        source.className = `text-xs font-sans font-bold uppercase tracking-widest text-center transition-colors duration-300 ${titleClass}`;
+    }
+
+    // Apply to Header & Footer
+    if (header) {
+        header.className = `flex-none px-6 py-4 border-b flex justify-between items-center backdrop-blur-md z-20 relative transition-colors duration-300 ${interfaceBg} ${interfaceBorder}`;
+    }
+    if (footer) {
+        footer.className = `flex-none p-4 md:p-6 border-t z-20 transition-colors duration-300 ${interfaceBg} ${interfaceBorder}`;
     }
 }
 
