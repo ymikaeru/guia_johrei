@@ -375,7 +375,7 @@ function renderRelatedItems(currentItem) {
 window.setModalFontSize = function (size) {
     size = parseInt(size);
     if (size < 12) size = 12;
-    if (size > 25) size = 25;
+    if (size > 32) size = 32;
 
     STATE.modalFontSize = size;
 
