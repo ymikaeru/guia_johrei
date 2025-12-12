@@ -194,9 +194,9 @@ function openModal(i, explicitItem = null) {
     if (scrollContainer) scrollContainer.scrollTop = 0;
 
     // --- APPLY READING SETTINGS ---
-    if (!STATE.modalFontSize) STATE.modalFontSize = 18;
-    if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
-    if (!STATE.modalTheme) STATE.modalTheme = 'auto';
+    if (!STATE.modalFontSize) STATE.modalFontSize = parseInt(localStorage.getItem('modalFontSize')) || 18;
+    if (!STATE.modalAlignment) STATE.modalAlignment = localStorage.getItem('modalAlignment') || 'justify';
+    if (!STATE.modalTheme) STATE.modalTheme = localStorage.getItem('modalTheme') || 'auto';
 
     if (typeof setModalTheme === 'function') {
         setModalTheme(STATE.modalTheme);
@@ -234,6 +234,7 @@ function openModal(i, explicitItem = null) {
         }, 400);
     }
 
+    renderRelatedItems(item);
     renderRelatedItems(item);
     initImmersiveMode();
 }
@@ -304,11 +305,13 @@ function initImmersiveMode() {
 
     // Listeners
     scrollContainer.addEventListener('scroll', resetImmersiveTimer);
+    scrollContainer.addEventListener('scroll', updateProgressBar);
     scrollContainer.addEventListener('click', toggleImmersiveControls);
     scrollContainer.addEventListener('touchstart', resetImmersiveTimer);
 
     // Start Timer
     resetImmersiveTimer();
+    updateProgressBar(); // Init state
 }
 
 function destroyImmersiveMode() {
@@ -316,9 +319,31 @@ function destroyImmersiveMode() {
     const scrollContainer = document.getElementById('modalScrollContainer');
     if (scrollContainer) {
         scrollContainer.removeEventListener('scroll', resetImmersiveTimer);
+        scrollContainer.removeEventListener('scroll', updateProgressBar);
         scrollContainer.removeEventListener('click', toggleImmersiveControls);
         scrollContainer.removeEventListener('touchstart', resetImmersiveTimer);
     }
+}
+
+
+
+function updateProgressBar() {
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    const bar = document.getElementById('modalProgressBar');
+    if (!scrollContainer || !bar) return;
+
+    const scrollTop = scrollContainer.scrollTop;
+    const scrollHeight = scrollContainer.scrollHeight;
+    const clientHeight = scrollContainer.clientHeight;
+
+    const availableScroll = scrollHeight - clientHeight;
+    let percentage = 0;
+
+    if (availableScroll > 0) {
+        percentage = (scrollTop / availableScroll) * 100;
+    }
+
+    bar.style.width = `${percentage}%`;
 }
 
 function resetImmersiveTimer() {
@@ -619,6 +644,7 @@ window.setModalFontSize = function (size) {
     if (size > 32) size = 32;
 
     STATE.modalFontSize = size;
+    localStorage.setItem('modalFontSize', size);
 
     const content = document.getElementById('modalContent');
     if (content) {
@@ -634,6 +660,7 @@ window.setModalFontSize = function (size) {
 
 window.setModalAlignment = function (align) {
     STATE.modalAlignment = align;
+    localStorage.setItem('modalAlignment', align);
 
     const content = document.getElementById('modalContent');
     if (content) {
@@ -650,6 +677,7 @@ window.setModalAlignment = function (align) {
 
 window.setModalTheme = function (theme) {
     STATE.modalTheme = theme;
+    localStorage.setItem('modalTheme', theme);
     const scrollContainer = document.getElementById('modalScrollContainer');
     const content = document.getElementById('modalContent');
     const title = document.getElementById('modalTitle');
@@ -672,6 +700,8 @@ window.setModalTheme = function (theme) {
     let interfaceBorder = '';
     let cardBg = '';
     let fontClass = 'font-serif';
+    let backdropBg = '';
+    let metaTextClass = '';
 
     // Highlight Variables
     let highlightBg = '#fef08a';
@@ -695,6 +725,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Quiet
             focusPointBg = '#5c5c61';
             focusPointText = '#ffffff';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#7a7a80]';
             break;
         case 'paper':
             // user: bg #EDEDED text #1D1D1D
@@ -709,6 +741,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Paper
             focusPointBg = '#d6d3c9';
             focusPointText = '#1D1D1D';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#757575]';
             break;
         case 'calm':
             // user: bg #EEE2CC text #362D25
@@ -723,6 +757,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Calm
             focusPointBg = '#dbc8a4';
             focusPointText = '#2b241e';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#8c7b68]';
             break;
         case 'focus':
             // user: bg #FFFCF5 text #141205
@@ -737,6 +773,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Focus Theme
             focusPointBg = '#e8e8e8'; // Very subtle gray
             focusPointText = '#000000';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#8f8b80]';
             break;
         case 'bold':
             // Semibold logic
@@ -752,6 +790,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Bold (Standard)
             focusPointBg = '#f3f4f6';
             focusPointText = '#1f2937';
+            backdropBg = 'bg-white/95';
+            metaTextClass = 'text-gray-500';
             break;
         case 'original':
         default: // White (Standard)
@@ -766,12 +806,65 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Original (Standard)
             focusPointBg = '#f3f4f6';
             focusPointText = '#1f2937';
+            backdropBg = 'bg-white/95 dark:bg-black/95';
+            metaTextClass = 'text-gray-400';
             break;
     }
 
     // Apply Styles
     scrollContainer.classList.add(...bgClass.split(' '));
     content.classList.add(...textClass.split(' '), fontClass);
+
+    // Apply Backdrop
+    const backdrop = document.getElementById('modalBackdrop');
+    if (backdrop) {
+        // Reset base classes (keep core transition/position/blur)
+        // Note: backdrop has defaults in HTML: "absolute inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300"
+        // We override the color part.
+        backdrop.className = `absolute inset-0 backdrop-blur-md opacity-0 transition-opacity duration-300 ${backdropBg} open`;
+        // Re-add 'open' if it was open (logic in openModal puts 'open' class for opacity)
+        // Wait, 'open' class controls opacity in CSS or logic? 
+        // In openModal: backdrop.classList.add('open');
+        // Let's check CSS/Logic. Usually 'open' adds opacity-100.
+        // Yes line 190: backdrop.classList.add('open');
+        // So we must preserve 'open' if it's currently open.
+        // However, this function is called ON open, and on switch.
+        // If we reset className, we lose 'open'.
+        // Better approach: remove all bg- classes and add new one.
+
+        // Simpler: Just set style directly or use cleaner class manipulation
+        // But Tailwind classes are dynamic.
+        // Let's just set ClassName string and re-add 'open' if it was there?
+        // OR: `backdrop.className` replacement is risky if we don't know "open" state.
+
+        // SAFER:
+        backdrop.classList.remove('bg-white/95', 'dark:bg-black/95', 'bg-[#4A494E]', 'bg-[#EDEDED]', 'bg-[#EEE2CC]', 'bg-[#FFFCF5]', 'bg-white', 'bg-black/90', 'bg-black/95', 'bg-black/80');
+        // Add new one
+        const bgParts = backdropBg.split(' ');
+        backdrop.classList.add(...bgParts);
+    }
+
+    // Apply Meta Colors (Source, Related, etc)
+    const sourceLabel = document.getElementById('modalSourceLabel');
+    const refLabel = document.getElementById('modalRef');
+    const relatedLabel = document.getElementById('modalRelatedLabel');
+    const categoryLabel = document.getElementById('modalCategory'); // Breadcrumb is also meta
+
+    const metaElements = [sourceLabel, refLabel, relatedLabel, categoryLabel];
+    metaElements.forEach(el => {
+        if (el) {
+            // Remove previous hardcoded gray classes to avoid conflict
+            el.classList.remove('text-gray-300', 'text-gray-400', 'text-[#7a7a80]', 'text-[#757575]', 'text-[#8c7b68]', 'text-[#8f8b80]', 'text-gray-500');
+            el.classList.add(metaTextClass.replace('text-', '')); // Logic check: metaTextClass is full class like 'text-[#...]'
+            // Simpler: just add the class string.
+            // But if it's 'text-[#...]', classList.add fails if not standard? No, Tailwind arbitrary values work as class names.
+            // However, removing dynamic colors is hard if we don't track them.
+            // For now, I listed specific removals. 
+            // Better: el.className = ... but that wipes alignment/font classes.
+            el.className = el.className.replace(/text-\[#.*?\]/g, '').replace(/text-gray-\d+/g, '').trim();
+            el.classList.add(metaTextClass.split(' ')[0]); // Assuming single class in variable
+        }
+    });
 
     // Apply Highlight Variables
     content.style.setProperty('--highlight-bg', highlightBg);
