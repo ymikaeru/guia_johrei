@@ -12,6 +12,10 @@
         if (!spinner) return;
 
         document.addEventListener('touchstart', (e) => {
+            // Disable PTR if modal is open
+            const modal = document.getElementById('readModal');
+            if (modal && !modal.classList.contains('hidden')) return;
+
             if (window.scrollY === 0) {
                 ptrStart = e.touches[0].screenY;
             }

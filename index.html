@@ -298,14 +298,14 @@
 
                     <div class="flex items-center gap-1 md:gap-2">
                         <!-- Appearance Toggle -->
-                        <button onclick="toggleAppearanceMenu(event)"
+                        <button onclick="toggleAppearanceMenu(event)" id="btnHeaderAppearance"
                             class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
                             title="Aparência">
                             <span class="font-serif italic font-bold text-lg">Aa</span>
                         </button>
 
                         <!-- Copy Text -->
-                        <button onclick="copyCardContent()"
+                        <button onclick="copyCardContent()" id="btnHeaderCopyText"
                             class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
                             title="Copiar Texto">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,7 +316,7 @@
                         </button>
 
                         <!-- Share Link -->
-                        <button onclick="copyDeepLink()"
+                        <button onclick="copyDeepLink()" id="btnHeaderCopyLink"
                             class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
                             title="Copiar Link">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -327,7 +327,7 @@
                         </button>
 
                         <!-- History Toggle -->
-                        <button onclick="toggleHistory(event)"
+                        <button onclick="toggleHistory(event)" id="btnHeaderHistory"
                             class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
                             title="Histórico">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -340,7 +340,7 @@
                         <div class="w-px h-6 bg-gray-100 dark:bg-gray-800 mx-1 md:mx-2"></div>
 
                         <!-- Close -->
-                        <button onclick="closeModal()"
+                        <button onclick="closeModal()" id="btnHeaderClose"
                             class="w-10 h-10 flex items-center justify-center text-red-400 hover:text-red-600 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                             title="Fechar">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -495,7 +495,7 @@
                         </button>
 
                         <!-- CLOSE -->
-                        <button onclick="closeModal()"
+                        <button onclick="closeModal()" id="btnFooterClose"
                             class="py-2 md:py-4 rounded-lg text-lg font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:hover:text-white hover:bg-red-50 dark:hover:bg-[#1a1a1a] transition-colors">
                             ✕
                         </button>
