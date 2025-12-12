@@ -334,18 +334,41 @@ function navModal(dir) {
 }
 
 // Helper for Recommendation Clicks
+// Helper for Recommendation Clicks
+// Helper for Recommendation Clicks
 window.openRelatedItem = function (id) {
-    // 1. Check if in current list
-    const index = STATE.list.findIndex(i => i.id === id);
-    if (index !== -1) {
-        // Open with context
-        openModal(index);
-    } else {
-        // Open standalone (from Global Data)
-        const item = STATE.globalData ? STATE.globalData[id] : null;
-        if (item) {
+    const item = STATE.globalData ? STATE.globalData[id] : null;
+
+    if (item) {
+        // 1. Sync Tab if needed
+        if (item._cat && item._cat !== STATE.activeTab) {
+            setTab(item._cat);
+        }
+
+        // 2. Sync Source Filter (User Request: Contextualize background list)
+        // STRICT: Clear ALL other filters to show full source context
+        if (item.source) {
+            STATE.activeTags = [];
+            STATE.activeFocusPoints = [];
+            STATE.bodyFilter = null;
+            STATE.activeSources = [item.source];
+
+            applyFilters();
+            renderActiveFilters();
+        }
+
+        // 3. Find index in the NEWLY filtered list
+        const index = STATE.list.findIndex(i => i.id === id);
+
+        if (index !== -1) {
+            // Open with context of the new list
+            openModal(index);
+        } else {
+            // Should be rare if we just filtered by its source, but possible if other filters block it
             openModal(-1, item);
         }
+    } else {
+        console.error("Related item not found:", id);
     }
 }
 
@@ -875,7 +898,7 @@ window.readPrevInSequence = function () {
     if (cat && STATE.data[cat]) {
         sourceArray = STATE.data[cat];
     } else {
-        // Fallback: Global
+        // Fallback: Global (Current Mode Context)
         Object.values(STATE.data).forEach(arr => sourceArray.push(...arr));
     }
 
@@ -883,24 +906,33 @@ window.readPrevInSequence = function () {
     const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
 
     if (idx > 0) {
-        // Prepare PREV item
+        // Normal Previous
         const prevItem = sourceArray[idx - 1];
         if (!prevItem._cat) prevItem._cat = cat;
+        transitionModal(prevItem);
 
-        // Transition
-        const scrollC = document.getElementById('modalScrollContainer');
-        if (scrollC) scrollC.style.opacity = '0';
+    } else if (idx === 0) {
+        // Start of Category -> Go to LAST item of PREVIOUS Category
+        const categories = Object.keys(STATE.data);
+        const currentCatIndex = categories.indexOf(cat);
 
-        setTimeout(() => {
-            openModal(-1, prevItem);
-            if (scrollC) {
-                scrollC.scrollTop = 0;
-                scrollC.style.opacity = '1';
+        if (currentCatIndex > 0) {
+            const prevCat = categories[currentCatIndex - 1];
+            const prevList = STATE.data[prevCat];
+            if (prevList && prevList.length > 0) {
+                const prevItem = prevList[prevList.length - 1]; // Last item
+                // Ensure category for rendering context
+                if (!prevItem._cat) prevItem._cat = prevCat;
+
+                showToast(`Retornando para ${CONFIG.modes[STATE.mode].cats[prevCat].label}`);
+                transitionModal(prevItem);
             }
-        }, 200);
-
+        } else {
+            showToast("Início da sequência");
+        }
     } else {
-        showToast("Início da sequência");
+        // Not found in list?
+        showToast("Item fora de sequência");
     }
 }
 
@@ -922,26 +954,46 @@ window.readNextInSequence = function () {
     const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
 
     if (idx !== -1 && idx < sourceArray.length - 1) {
-        // Prepare next item
+        // Normal Next
         const nextItem = sourceArray[idx + 1];
-        // Ensure it has category property for rendering
         if (!nextItem._cat) nextItem._cat = cat;
+        transitionModal(nextItem);
 
-        // UI Transition
-        const scrollC = document.getElementById('modalScrollContainer');
-        if (scrollC) scrollC.style.opacity = '0';
+    } else if (idx === sourceArray.length - 1) {
+        // End of Category -> Go to FIRST item of NEXT Category
+        const categories = Object.keys(STATE.data);
+        const currentCatIndex = categories.indexOf(cat);
 
-        setTimeout(() => {
-            openModal(-1, nextItem);
-            if (scrollC) {
-                scrollC.scrollTop = 0;
-                scrollC.style.opacity = '1';
+        if (currentCatIndex !== -1 && currentCatIndex < categories.length - 1) {
+            const nextCat = categories[currentCatIndex + 1];
+            const nextList = STATE.data[nextCat];
+            if (nextList && nextList.length > 0) {
+                const nextItem = nextList[0]; // First item
+                if (!nextItem._cat) nextItem._cat = nextCat;
+
+                showToast(`Avançando para ${CONFIG.modes[STATE.mode].cats[nextCat].label}`);
+                transitionModal(nextItem);
             }
-        }, 200);
-
+        } else {
+            showToast("Fim da sequência");
+        }
     } else {
-        showToast("Fim da sequência");
+        showToast("Fim da sequência ou item não encontrado");
     }
+}
+
+// Helper for smooth transition
+function transitionModal(item) {
+    const scrollC = document.getElementById('modalScrollContainer');
+    if (scrollC) scrollC.style.opacity = '0';
+
+    setTimeout(() => {
+        openModal(-1, item);
+        if (scrollC) {
+            scrollC.scrollTop = 0;
+            scrollC.style.opacity = '1';
+        }
+    }, 200);
 }
 
 function showToast(msg) {
