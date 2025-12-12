@@ -122,7 +122,7 @@ function renderList(list, activeTags, mode, activeTab) {
         const isInApostila = currentApostila && currentApostila.items.includes(item.id);
 
         return `
-        <article onclick="openModal(${i})" class="group py-8 px-8 border-t border-gray-100 dark:border-gray-900 cursor-pointer relative flex flex-col gap-6 hover:bg-gray-50 dark:hover:bg-[#111] transition-colors">
+        <article id="card-${i}" onclick="openModal(${i})" class="group py-8 px-8 border-t border-gray-100 dark:border-gray-900 cursor-pointer relative flex flex-col gap-6 hover:bg-gray-50 dark:hover:bg-[#111] transition-colors">
             
             <!-- Category Label -->
             <div class="flex justify-between items-start">
