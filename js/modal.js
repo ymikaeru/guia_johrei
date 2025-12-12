@@ -636,6 +636,22 @@ window.setModalTheme = function (theme) {
         title.className = `text-3xl md:text-4xl ${fontClass} font-medium mb-8 md:mb-12 leading-[1.2] text-center transition-colors duration-300 ${titleClass}`;
     }
 
+    // Update Category Color matches Theme
+    const catEl = document.getElementById('modalCategory');
+    if (catEl) {
+        let catColor = '';
+        switch (theme) {
+            case 'quiet': catColor = 'text-[#ABAAAE]'; break;
+            case 'paper': catColor = 'text-[#555]'; break; // Dark gray
+            case 'calm': catColor = 'text-[#8c7b6c]'; break; // Muted brown
+            case 'focus': catColor = 'text-[#666]'; break;
+            case 'bold': catColor = 'text-black'; break;
+            case 'original': default: catColor = 'text-gray-500'; break;
+        }
+        // Reset base classes and add theme color
+        catEl.className = `text-[10px] font-sans font-bold uppercase tracking-widest block mb-2 ${catColor}`;
+    }
+
     if (source) {
         source.className = `text-xs font-sans font-bold uppercase tracking-widest text-center transition-colors duration-300 ${titleClass}`;
         source.style.opacity = theme === 'quiet' ? '0.6' : '1';
@@ -654,6 +670,146 @@ window.setModalTheme = function (theme) {
     if (scrollContainer) {
         // Ensure enough padding at bottom for the footer
         scrollContainer.classList.add('pb-24', 'md:pb-32');
+    }
+
+    // Update Navigation Buttons (Arrows) Colors
+    const btnPrev = document.getElementById('btnReadPrev');
+    const btnNext = document.getElementById('btnReadNext');
+
+    // Define button styles based on theme
+    let arrowBg = '';
+    let arrowText = '';
+    let iconColor = '';
+
+    switch (theme) {
+        case 'quiet':
+            arrowBg = 'bg-[#5A595E] hover:bg-[#6A696E]';
+            arrowText = 'text-[#E0E0E0]';
+            iconColor = 'text-[#ABAAAE] hover:text-[#E0E0E0]';
+            break;
+        case 'paper':
+            arrowBg = 'bg-white hover:bg-gray-100 border border-[#DEDEDE]';
+            arrowText = 'text-[#1D1D1D]';
+            iconColor = 'text-gray-400 hover:text-black';
+            break;
+        case 'calm':
+            arrowBg = 'bg-[#E0D4BE] hover:bg-[#D4C4A8]';
+            arrowText = 'text-[#2b241e]';
+            iconColor = 'text-[#8c7b6c] hover:text-[#2b241e]';
+            break;
+        case 'focus':
+            arrowBg = 'bg-[#EBE5D5] hover:bg-[#DCD0B0]';
+            arrowText = 'text-[#141205]';
+            iconColor = 'text-[#999] hover:text-black';
+            break;
+        case 'bold':
+            arrowBg = 'bg-gray-100 dark:bg-[#1a1a1a] hover:bg-gray-200 dark:hover:bg-[#252525] border border-gray-200';
+            arrowText = 'text-black dark:text-gray-100';
+            iconColor = 'text-gray-400 hover:text-black dark:hover:text-white';
+            break;
+        case 'original':
+        default:
+            arrowBg = 'bg-gray-100 dark:bg-[#1a1a1a] hover:bg-gray-200 dark:hover:bg-[#252525]';
+            arrowText = 'text-gray-900 dark:text-gray-100';
+            iconColor = 'text-gray-400 hover:text-black dark:hover:text-white';
+            break;
+    }
+
+    const arrowBaseClass = "py-2 md:py-4 rounded-lg text-lg font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-2 flex-1";
+
+    if (btnPrev) {
+        btnPrev.className = `${arrowBaseClass} ${arrowBg} ${arrowText}`;
+    }
+    if (btnNext) {
+        btnNext.className = `${arrowBaseClass} ${arrowBg} ${arrowText}`;
+    }
+
+    // Update Header Icons
+    const headerBtns = [
+        'btnHeaderAppearance', 'btnHeaderCopyText', 'btnHeaderCopyLink', 'btnHeaderHistory', 'btnHeaderClose'
+    ];
+    headerBtns.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            const base = "w-10 h-10 flex items-center justify-center rounded-full transition-colors";
+            // Hover bg depends on theme too? Standardizing hover bg to be subtle
+            const hoverBg = theme === 'quiet' ? 'hover:bg-white/10' : 'hover:bg-black/5 dark:hover:bg-white/10';
+            btn.className = `${base} ${iconColor} ${hoverBg}`;
+        }
+    });
+
+    // Update Footer Close Button
+    const btnFooterClose = document.getElementById('btnFooterClose');
+    if (btnFooterClose) {
+        const baseFooterClose = "py-2 md:py-4 rounded-lg text-lg font-bold uppercase tracking-widest transition-colors";
+        // e.g. "hover:bg-red-50" might clash, so let's simplify to standard theme toggle
+        const hoverBg = theme === 'quiet' ? 'hover:bg-white/10' : 'hover:bg-black/5 dark:hover:bg-white/10';
+        btnFooterClose.className = `${baseFooterClose} ${iconColor} ${hoverBg}`;
+    }
+
+    // Update Focus Points Section (Container & Buttons)
+    const fpContainer = document.getElementById('modalFocusContainer');
+    if (fpContainer) {
+        const fpTitle = fpContainer.querySelector('h3');
+        const fpButtons = fpContainer.querySelectorAll('button');
+
+        // Define Theme Styles
+        let fpBg = '', fpTitleColor = '', fpBtnNormal = '';
+
+        switch (theme) {
+            case 'quiet':
+                fpBg = 'bg-[#535257] border-l-4 border-[#888]';
+                fpTitleColor = 'text-[#E0E0E0] opacity-90';
+                fpBtnNormal = 'border-[#999] text-[#E0E0E0] hover:bg-white/10 hover:border-white';
+                break;
+            case 'paper':
+                fpBg = 'bg-[#F9F9F9] border-l-4 border-[#DEDEDE]';
+                fpTitleColor = 'text-[#555]';
+                fpBtnNormal = 'border-[#ccc] text-[#333] hover:bg-black/5 hover:border-[#999]';
+                break;
+            case 'calm':
+                fpBg = 'bg-[#E6CEA8]/20 border-l-4 border-[#C5B595]';
+                fpTitleColor = 'text-[#5C4D3D]';
+                fpBtnNormal = 'border-[#C5B595] text-[#362D25] hover:bg-[#362D25]/5 hover:border-[#8C7B6C]';
+                break;
+            case 'focus':
+                fpBg = 'bg-[#FFF9C4]/20 border-l-4 border-[#EBE5D5]';
+                fpTitleColor = 'text-[#5D4037] opacity-80';
+                fpBtnNormal = 'border-[#D7CCC8] text-[#5D4037] hover:bg-black/5 hover:border-[#A1887F]';
+                break;
+            case 'bold':
+                fpBg = 'bg-gray-50 border-l-4 border-black';
+                fpTitleColor = 'text-black font-bold';
+                fpBtnNormal = 'border-black text-black hover:bg-black hover:text-white';
+                break;
+            default: // original
+                fpBg = 'bg-gray-50 dark:bg-[#1C1C1E] border-l-4 border-gray-200 dark:border-gray-700';
+                fpTitleColor = 'text-gray-400';
+                fpBtnNormal = 'border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white hover:border-gray-400';
+                break;
+        }
+
+        // Apply Container Styles
+        // Note: we preserve layout classes but update colors
+        const fpBase = "mb-8 p-6 rounded-r-xl transition-colors duration-300";
+        fpContainer.className = `${fpBase} ${fpBg}`;
+
+        if (fpTitle) fpTitle.className = `text-[10px] font-sans font-bold uppercase tracking-widest mb-4 ${fpTitleColor}`;
+
+        // Update Buttons
+        fpButtons.forEach(btn => {
+            if (btn.classList.contains('border-yellow-500')) {
+                // Keep match (highlighted) logic, but maybe tune text color for dark themes
+                if (theme === 'quiet' || theme === 'original') { // Darkish contexts
+                    // Ensure yellow text pops
+                    btn.classList.remove('text-yellow-700');
+                    btn.classList.add('text-yellow-600', 'dark:text-yellow-300');
+                }
+            } else {
+                const btnBase = "text-[10px] font-bold uppercase tracking-widest border transition-colors rounded-full px-3 py-1 bg-transparent";
+                btn.className = `${btnBase} ${fpBtnNormal}`;
+            }
+        });
     }
 
     // Update active state in menu (Visual feedback)
