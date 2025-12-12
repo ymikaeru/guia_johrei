@@ -1,14 +1,60 @@
 // --- MODAL LOGIC ---
 let currentModalIndex = -1;
-let currentModalItem = null; // Track current item object for robust referencing
+let currentModalItem = null;
+STATE.readingMode = 'filtered'; // 'filtered' or 'book'
 
-// Refactored to accept direct Item (for recommendations outside current list)
+// Helper for Background Sync (Book Mode)
+function syncBackgroundContext(item) {
+    if (!item) return;
+
+    let needsUpdate = false;
+
+    // 1. Sync Tab
+    if (item._cat && item._cat !== STATE.activeTab) {
+        setTab(item._cat);
+        // setTab already calls applyFilters, but we might need to override filters next
+        needsUpdate = false; // setTab handles render
+    }
+
+    // 2. Sync Source Filter if in Book Mode
+    if (item.source) {
+        const currentSource = STATE.activeSources && STATE.activeSources.length > 0 ? STATE.activeSources[0] : null;
+        if (currentSource !== item.source) {
+            // STRICT: Clear ALL filters for clean book context
+            STATE.activeTags = [];
+            STATE.activeFocusPoints = [];
+            STATE.bodyFilter = null;
+            STATE.activeSources = [item.source];
+            needsUpdate = true;
+        }
+    }
+
+    if (needsUpdate) {
+        applyFilters();
+        renderActiveFilters();
+    }
+}
+
+// Refactored to accept direct Item
 function openModal(i, explicitItem = null) {
     currentModalIndex = i;
     const item = explicitItem || STATE.list[i];
     currentModalItem = item;
 
     if (!item) return;
+
+    // Determine Reading Mode
+    // If opened via index from list -> Filtered Mode
+    // If opened via explicit item (i = -1) -> Book Mode
+    if (i >= 0) {
+        STATE.readingMode = 'filtered';
+    } else {
+        STATE.readingMode = 'book';
+        // Ensure background is synced when entering book mode
+        syncBackgroundContext(item);
+    }
+
+    // ... (rest of function remains same)
 
     // Add to History IMMEDIATELY (Safety First)
     if (typeof addToHistory === 'function') {
@@ -46,19 +92,13 @@ function openModal(i, explicitItem = null) {
     }
     document.getElementById('modalRef').textContent = (i >= 0) ? '#' + (i + 1) : '';
 
-    // Generate breadcrumb (moved up for context if needed, but keeping flow)
-
     // Update URL with deep link (Slug + Mode)
     if (item.title) {
         const newUrl = new URL(window.location);
         const slug = typeof toSlug === 'function' ? toSlug(item.title) : item.id;
-
-        // Clear ID if present to prefer Item/Mode
         newUrl.searchParams.delete('id');
-
         newUrl.searchParams.set('item', slug);
         newUrl.searchParams.set('mode', STATE.mode);
-
         window.history.pushState({ path: newUrl.href }, '', newUrl.href);
     }
 
@@ -120,24 +160,17 @@ function openModal(i, explicitItem = null) {
 
     if (showFocusPoints && item.focusPoints && item.focusPoints.length > 0) {
         fpContainer.classList.remove('hidden');
-        // Clean style: Remove heavy background box
         fpContainer.className = "mb-8 p-0 md:p-6 transition-colors duration-300";
 
         const html = item.focusPoints.map(p => {
             const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
-
-            // Clean buttons: transparent bg, thin border or no border
-            // Active match: keeps yellow highlight but subtler?
             const baseClass = "text-[10px] font-bold uppercase tracking-widest border transition-colors rounded-full px-3 py-1";
-
             const colorClass = isMatch
                 ? "border-yellow-500 bg-yellow-400/20 text-yellow-700 dark:text-yellow-300"
                 : "border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white bg-transparent";
-
             return '<button onclick="filterByFocusPoint(\'' + p + '\')" class="' + baseClass + ' ' + colorClass + '">' + p + '</button>';
         }).join('');
 
-        // Update Title Color to match theme indirectly (using opacity/inheritance)
         const fpTitle = fpContainer.querySelector('h3');
         if (fpTitle) fpTitle.className = "text-[10px] font-sans font-bold uppercase tracking-widest mb-4 opacity-50";
 
@@ -145,9 +178,6 @@ function openModal(i, explicitItem = null) {
     } else {
         fpContainer.classList.add('hidden');
     }
-
-    // Check for "Read Next" button visibility or state if needed
-    // logic moved to readNextInSequence
 
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
@@ -158,10 +188,8 @@ function openModal(i, explicitItem = null) {
 
     card.classList.add('open');
     backdrop.classList.add('open');
-
     document.body.style.overflow = 'hidden';
 
-    // Re-check scroll position (Reset)
     const scrollContainer = document.getElementById('modalScrollContainer');
     if (scrollContainer) scrollContainer.scrollTop = 0;
 
@@ -170,7 +198,6 @@ function openModal(i, explicitItem = null) {
     if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
     if (!STATE.modalTheme) STATE.modalTheme = 'auto';
 
-    // Apply Theme
     if (typeof setModalTheme === 'function') {
         setModalTheme(STATE.modalTheme);
     }
@@ -181,8 +208,6 @@ function openModal(i, explicitItem = null) {
 
     contentEl.style.fontSize = `${size}px`;
     contentEl.style.lineHeight = '1.8';
-
-    // Force children inheritance
     contentEl.querySelectorAll('p, li, div').forEach(child => child.style.fontSize = 'inherit');
 
     if (align === 'hyphen') {
@@ -195,14 +220,12 @@ function openModal(i, explicitItem = null) {
         contentEl.style.webkitHyphens = 'none';
     }
 
-    // Sync Controls
     const slider = document.getElementById('modalFontSlider');
     if (slider) slider.value = size;
     const display = document.getElementById('modalFontSizeDisplay');
     if (display) display.textContent = size;
     const select = document.getElementById('modalAlignSelect');
     if (select) select.value = align;
-
 
     if (searchQuery) {
         setTimeout(() => {
@@ -211,10 +234,7 @@ function openModal(i, explicitItem = null) {
         }, 400);
     }
 
-    // Render Related (Recursion safety handled by renderRelatedItems)
     renderRelatedItems(item);
-
-    // --- IMMERSIVE MODE INIT ---
     initImmersiveMode();
 }
 
@@ -888,31 +908,42 @@ window.copyCardContent = function () {
 }
 
 // --- SEQUENTIAL READING (Ignore Filters) ---
+// Navigation: Previous
 window.readPrevInSequence = function () {
+    // Mode 1: Filtered Navigation (Search Results)
+    if (STATE.readingMode === 'filtered') {
+        const idx = currentModalIndex;
+        if (idx > 0) {
+            transitionModal(STATE.list[idx - 1]);
+        } else {
+            showToast("Início dos resultados");
+        }
+        return;
+    }
+
+    // Mode 2: Book Navigation (Sequence)
+    // Fallback
     if (!currentModalItem || !currentModalItem._cat) return;
 
     const cat = currentModalItem._cat;
     let sourceArray = [];
-
-    // Determine source array (Original Full List)
     if (cat && STATE.data[cat]) {
         sourceArray = STATE.data[cat];
     } else {
-        // Fallback: Global (Current Mode Context)
         Object.values(STATE.data).forEach(arr => sourceArray.push(...arr));
     }
 
-    // Find index by ID
     const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
 
     if (idx > 0) {
-        // Normal Previous
         const prevItem = sourceArray[idx - 1];
         if (!prevItem._cat) prevItem._cat = cat;
+
+        syncBackgroundContext(prevItem); // Sync Background
         transitionModal(prevItem);
 
     } else if (idx === 0) {
-        // Start of Category -> Go to LAST item of PREVIOUS Category
+        // Jump to Previous Category
         const categories = Object.keys(STATE.data);
         const currentCatIndex = categories.indexOf(cat);
 
@@ -920,47 +951,56 @@ window.readPrevInSequence = function () {
             const prevCat = categories[currentCatIndex - 1];
             const prevList = STATE.data[prevCat];
             if (prevList && prevList.length > 0) {
-                const prevItem = prevList[prevList.length - 1]; // Last item
-                // Ensure category for rendering context
+                const prevItem = prevList[prevList.length - 1];
                 if (!prevItem._cat) prevItem._cat = prevCat;
 
                 showToast(`Retornando para ${CONFIG.modes[STATE.mode].cats[prevCat].label}`);
+                syncBackgroundContext(prevItem); // Sync Background
                 transitionModal(prevItem);
             }
         } else {
             showToast("Início da sequência");
         }
     } else {
-        // Not found in list?
-        showToast("Item fora de sequência");
+        showToast("Início da sequência");
     }
 }
 
+// Navigation: Next
 window.readNextInSequence = function () {
+    // Mode 1: Filtered Navigation (Search Results)
+    if (STATE.readingMode === 'filtered') {
+        const idx = currentModalIndex;
+        if (idx !== -1 && idx < STATE.list.length - 1) {
+            transitionModal(STATE.list[idx + 1]);
+        } else {
+            showToast("Fim dos resultados");
+        }
+        return;
+    }
+
+    // Mode 2: Book Navigation (Sequence)
     if (!currentModalItem || !currentModalItem._cat) return;
 
     const cat = currentModalItem._cat;
     let sourceArray = [];
-
-    // Determine source array (Original Full List)
     if (cat && STATE.data[cat]) {
         sourceArray = STATE.data[cat];
     } else {
-        // Fallback: search in all categories (Global)
         Object.values(STATE.data).forEach(arr => sourceArray.push(...arr));
     }
 
-    // Find index by ID
     const idx = sourceArray.findIndex(i => i.id === currentModalItem.id);
 
     if (idx !== -1 && idx < sourceArray.length - 1) {
-        // Normal Next
         const nextItem = sourceArray[idx + 1];
         if (!nextItem._cat) nextItem._cat = cat;
+
+        syncBackgroundContext(nextItem); // Sync Background
         transitionModal(nextItem);
 
     } else if (idx === sourceArray.length - 1) {
-        // End of Category -> Go to FIRST item of NEXT Category
+        // Jump to Next Category
         const categories = Object.keys(STATE.data);
         const currentCatIndex = categories.indexOf(cat);
 
@@ -968,17 +1008,18 @@ window.readNextInSequence = function () {
             const nextCat = categories[currentCatIndex + 1];
             const nextList = STATE.data[nextCat];
             if (nextList && nextList.length > 0) {
-                const nextItem = nextList[0]; // First item
+                const nextItem = nextList[0];
                 if (!nextItem._cat) nextItem._cat = nextCat;
 
                 showToast(`Avançando para ${CONFIG.modes[STATE.mode].cats[nextCat].label}`);
+                syncBackgroundContext(nextItem); // Sync Background
                 transitionModal(nextItem);
             }
         } else {
             showToast("Fim da sequência");
         }
     } else {
-        showToast("Fim da sequência ou item não encontrado");
+        showToast("Fim da sequência");
     }
 }
 
@@ -988,7 +1029,18 @@ function transitionModal(item) {
     if (scrollC) scrollC.style.opacity = '0';
 
     setTimeout(() => {
-        openModal(-1, item);
+        // Pass -1 to force Book Mode if we are in Book Mode?
+        // Wait, if we are in 'filtered' mode, we usually pass index.
+        // But transitionModal usually takes an item.
+        // If we are in 'filtered' mode, we should pass the index to openModal to maintain 'filtered' state.
+
+        if (STATE.readingMode === 'filtered') {
+            const listIdx = STATE.list.findIndex(i => i.id === item.id);
+            openModal(listIdx); // Passing index maintains 'filtered' mode
+        } else {
+            openModal(-1, item); // Passing -1 maintains (or sets) 'book' mode
+        }
+
         if (scrollC) {
             scrollC.scrollTop = 0;
             scrollC.style.opacity = '1';
