@@ -1244,7 +1244,20 @@ function resetSpeechIcon() {
         btn.classList.add('text-gray-400');
     }
     currentUtterance = null;
+}
 
+function getBestVoice() {
+    const voices = window.speechSynthesis.getVoices();
+    // Priority List for Natural Voices
+    const preferences = ['Luciana', 'Daniel', 'Joana', 'Google Português do Brasil'];
+
+    for (const name of preferences) {
+        const voice = voices.find(v => v.name.includes(name));
+        if (voice) return voice;
+    }
+
+    // Fallback: Any PT-BR
+    return voices.find(v => v.lang === 'pt-BR' || v.lang === 'pt_BR');
 }
 
 // --- SEQUENTIAL READING (Ignore Filters) ---
