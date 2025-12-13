@@ -1037,10 +1037,11 @@ window.setModalTheme = function (theme) {
     headerBtns.forEach(id => {
         const btn = document.getElementById(id);
         if (btn) {
+            const isHidden = btn.classList.contains('hidden');
             const base = "w-10 h-10 flex items-center justify-center rounded-full transition-colors";
             // Hover bg depends on theme too? Standardizing hover bg to be subtle
             const hoverBg = theme === 'quiet' ? 'hover:bg-white/10' : 'hover:bg-black/5 dark:hover:bg-white/10';
-            btn.className = `${base} ${iconColor} ${hoverBg}`;
+            btn.className = `${base} ${iconColor} ${hoverBg} ${isHidden ? 'hidden' : ''}`;
         }
     });
 
@@ -1193,7 +1194,16 @@ window.toggleSpeech = function () {
 
     // Create Utterance
     const utterance = new SpeechSynthesisUtterance(fullText);
-    utterance.lang = 'pt-BR';
+
+    // Select Best Voice (iOS/Mac High Quality)
+    const bestVoice = getBestVoice();
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+        utterance.lang = bestVoice.lang; // Ensure lang matches voice
+    } else {
+        utterance.lang = 'pt-BR'; // Fallback
+    }
+
     utterance.rate = 1.0;
     utterance.pitch = 1.0;
 
