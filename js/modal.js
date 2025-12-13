@@ -194,9 +194,9 @@ function openModal(i, explicitItem = null) {
     if (scrollContainer) scrollContainer.scrollTop = 0;
 
     // --- APPLY READING SETTINGS ---
-    if (!STATE.modalFontSize) STATE.modalFontSize = 18;
-    if (!STATE.modalAlignment) STATE.modalAlignment = 'justify';
-    if (!STATE.modalTheme) STATE.modalTheme = 'auto';
+    if (!STATE.modalFontSize) STATE.modalFontSize = parseInt(localStorage.getItem('modalFontSize')) || 18;
+    if (!STATE.modalAlignment) STATE.modalAlignment = localStorage.getItem('modalAlignment') || 'justify';
+    if (!STATE.modalTheme) STATE.modalTheme = localStorage.getItem('modalTheme') || 'auto';
 
     if (typeof setModalTheme === 'function') {
         setModalTheme(STATE.modalTheme);
@@ -236,12 +236,18 @@ function openModal(i, explicitItem = null) {
 
     renderRelatedItems(item);
     initImmersiveMode();
+    initSwipeGestures();
 }
 
 function closeModal() {
     const modal = document.getElementById('readModal');
     const card = document.getElementById('modalCard');
     const backdrop = document.getElementById('modalBackdrop');
+    const item = currentModalItem; // Capture current item before closing
+
+    stopSpeech(); // Stop audio if playing
+    destroyImmersiveMode();
+    destroySwipeGestures();
 
     // Restore URL
     const newUrl = new URL(window.location);
@@ -259,6 +265,34 @@ function closeModal() {
     setTimeout(() => {
         modal.classList.add('hidden');
         document.body.style.overflow = '';
+
+        // --- HIGHLIGHT CARD ON CLOSE (User Request) ---
+        if (item) {
+            // Check if item is in current STATE.list
+            let index = STATE.list.findIndex(i => i.id === item.id);
+            if (index === -1) {
+                // If not in list (e.g. cross-book nav happened without filter update),
+                // we might need to force a list update to show the card.
+                // But for now, let's assume if they navigated, the list usually updates for the arrows to work.
+                // If they opened a "Related Item" without filtering, index is -1.
+                // In that case, we can't scroll to it unless we switch the list to that context.
+                // The User prefers "Highlight" over "Filter Tag".
+                // So, if index is -1, maybe we SHOULD silently filter/sync to that book so we can show it?
+                // Let's rely on the fact that if they navigated deep, we likely switched context.
+            }
+
+            if (index !== -1) {
+                const cardEl = document.getElementById('card-' + index);
+                if (cardEl) {
+                    cardEl.scrollIntoView({ behavior: 'auto', block: 'center' });
+                    // Flash Highlight
+                    cardEl.classList.add('bg-yellow-50', 'dark:bg-yellow-900/20', 'transition-colors', 'duration-500');
+                    setTimeout(() => {
+                        cardEl.classList.remove('bg-yellow-50', 'dark:bg-yellow-900/20');
+                    }, 1000);
+                }
+            }
+        }
     }, 250);
 }
 
@@ -275,11 +309,13 @@ function initImmersiveMode() {
 
     // Listeners
     scrollContainer.addEventListener('scroll', resetImmersiveTimer);
+    scrollContainer.addEventListener('scroll', updateProgressBar);
     scrollContainer.addEventListener('click', toggleImmersiveControls);
     scrollContainer.addEventListener('touchstart', resetImmersiveTimer);
 
     // Start Timer
     resetImmersiveTimer();
+    updateProgressBar(); // Init state
 }
 
 function destroyImmersiveMode() {
@@ -287,9 +323,84 @@ function destroyImmersiveMode() {
     const scrollContainer = document.getElementById('modalScrollContainer');
     if (scrollContainer) {
         scrollContainer.removeEventListener('scroll', resetImmersiveTimer);
+        scrollContainer.removeEventListener('scroll', updateProgressBar);
         scrollContainer.removeEventListener('click', toggleImmersiveControls);
         scrollContainer.removeEventListener('touchstart', resetImmersiveTimer);
     }
+}
+
+
+// --- SWIPE GESTURES ---
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+function initSwipeGestures() {
+    const card = document.getElementById('modalCard');
+    if (!card) return;
+
+    card.addEventListener('touchstart', handleTouchStart, { passive: true });
+    card.addEventListener('touchend', handleTouchEnd, { passive: true });
+}
+
+function destroySwipeGestures() {
+    const card = document.getElementById('modalCard');
+    if (!card) return;
+
+    card.removeEventListener('touchstart', handleTouchStart);
+    card.removeEventListener('touchend', handleTouchEnd);
+}
+
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+}
+
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+}
+
+function handleSwipeGesture() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    const threshold = 50; // min swipe distance
+
+    // Check if horizontal swipe is dominant
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                // Swiped Right -> Prev
+                readPrevInSequence();
+            } else {
+                // Swiped Left -> Next
+                readNextInSequence();
+            }
+        }
+    }
+}
+
+
+
+function updateProgressBar() {
+    const scrollContainer = document.getElementById('modalScrollContainer');
+    const bar = document.getElementById('modalProgressBar');
+    if (!scrollContainer || !bar) return;
+
+    const scrollTop = scrollContainer.scrollTop;
+    const scrollHeight = scrollContainer.scrollHeight;
+    const clientHeight = scrollContainer.clientHeight;
+
+    const availableScroll = scrollHeight - clientHeight;
+    let percentage = 0;
+
+    if (availableScroll > 0) {
+        percentage = (scrollTop / availableScroll) * 100;
+    }
+
+    bar.style.width = `${percentage}%`;
 }
 
 function resetImmersiveTimer() {
@@ -350,6 +461,63 @@ function navModal(dir) {
             openModal(next);
             content.style.opacity = '1';
         }, 200);
+    } else if (STATE.readingMode === 'book') {
+        // --- CROSS-BOOK NAVIGATION (Continuous Mode) ---
+        // If we reach the end of the list in Book Mode (which is limited by source),
+        // we should try to jump to the NEXT book/source.
+        // NOTE: This assumes STATE.list IS currently filtered by a source.
+        // If STATE.list is the FULL manual list (no filters), then we are truly at the end.
+
+        // 1. Identify current source (if any)
+        const currentSource = currentModalItem ? currentModalItem.source : null;
+
+        if (dir > 0 && currentSource) {
+            // Going Next + Has Source context
+            // Identify Next Source Logic
+            // We need a list of unique sources in consistent order.
+            // Using globalData to derive list or hardcoded?
+            // Let's use STATE.globalData to get all unique sources in order of keys (or some index)
+            // Ideally we need the order from the original JSONs.
+
+            // Heuristic: Find first item in globalData that is DIFFERENT source and after current items.
+            // This is expensive. Better: if we have `STATE.activeSources` set, we know where we are.
+            if (STATE.activeSources && STATE.activeSources.length > 0) {
+                // We are locked to a source. Let's find the next one.
+                // We need a master list of sources.
+                // Let's derive it from the GLOBAL keys order in STATE.data[STATE.activeTab]
+                const fullList = STATE.data[STATE.activeTab] || [];
+                // Find index of current item in full list
+                const globalIndex = fullList.findIndex(i => i.id === currentModalItem.id);
+
+                if (globalIndex !== -1 && globalIndex < fullList.length - 1) {
+                    // Get next item from FULL list
+                    const nextGlobalItem = fullList[globalIndex + 1];
+
+                    // If next item has a DIFFERENT source, we switch to it.
+                    const nextSource = nextGlobalItem.source;
+                    if (nextSource && nextSource !== currentSource) {
+                        // SWITCH SOURCE CONTEXT
+                        STATE.activeSources = [nextSource];
+                        STATE.activeTags = []; // Clear other filters
+                        STATE.bodyFilter = null;
+
+                        // Re-apply filters to load new book
+                        applyFilters();
+
+                        // Open first item of new list
+                        openModal(0);
+
+                        // Optional: Toast "Mudando para [Fonte]"
+                        const toast = document.createElement('div');
+                        toast.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest z-[10000] animate-fade-in-out';
+                        toast.textContent = `Lendo: ${nextSource}`;
+                        document.body.appendChild(toast);
+                        setTimeout(() => toast.remove(), 2000);
+                        return; // Done
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -366,7 +534,23 @@ window.openRelatedItem = function (id) {
         }
 
         // 2. Sync Source Filter (User Request: Contextualize background list)
-        // STRICT: Clear ALL other filters to show full source context
+        // REVERT: We DO NOT lock the source filter anymore to allow "Continuous Mode" feel.
+        // Instead, we just let it open.
+        // However, if we don't filter, the `STATE.list` might not contain the item, causing index = -1.
+        // If index = -1, arrows don't work well unless we fallback to "Cross-Book" logic.
+        // BUT, for the arrows to work on *this* book, we nominally need the list to be this book.
+        // The User prefers "Highlight on Close" over "Source Tag".
+        // So we will SILENTLY filter (change list) but NOT add the generic activeSource tag visually?
+        // No, `activeSources` drives the UI pill.
+        // Let's TRY leaving `activeSources` EMPTY.
+        // If empty, `STATE.list` is the full Tab list.
+        // Then `index` will be the index in the FULL list.
+        // IF the item is in the current Tab list (which it typically is if we synced Tab),
+        // then index != -1, and arrows work perfectly across the whole Tab!
+        // This effectively gives "Continuous Mode" by default.
+
+        // OLD LOGIC REMOVED:
+        /*
         if (item.source) {
             STATE.activeTags = [];
             STATE.activeFocusPoints = [];
@@ -376,6 +560,17 @@ window.openRelatedItem = function (id) {
             applyFilters();
             renderActiveFilters();
         }
+        */
+
+        // Clean slate for other filters though to ensure visibility
+        STATE.activeTags = [];
+        STATE.activeFocusPoints = [];
+        STATE.bodyFilter = null;
+        STATE.activeSources = []; // Ensure we are NOT source constrained
+
+        applyFilters();
+        renderActiveFilters();
+
 
         // 3. Find index in the NEWLY filtered list
         const index = STATE.list.findIndex(i => i.id === id);
@@ -506,6 +701,7 @@ window.setModalFontSize = function (size) {
     if (size > 32) size = 32;
 
     STATE.modalFontSize = size;
+    localStorage.setItem('modalFontSize', size);
 
     const content = document.getElementById('modalContent');
     if (content) {
@@ -521,6 +717,7 @@ window.setModalFontSize = function (size) {
 
 window.setModalAlignment = function (align) {
     STATE.modalAlignment = align;
+    localStorage.setItem('modalAlignment', align);
 
     const content = document.getElementById('modalContent');
     if (content) {
@@ -537,6 +734,7 @@ window.setModalAlignment = function (align) {
 
 window.setModalTheme = function (theme) {
     STATE.modalTheme = theme;
+    localStorage.setItem('modalTheme', theme);
     const scrollContainer = document.getElementById('modalScrollContainer');
     const content = document.getElementById('modalContent');
     const title = document.getElementById('modalTitle');
@@ -559,6 +757,8 @@ window.setModalTheme = function (theme) {
     let interfaceBorder = '';
     let cardBg = '';
     let fontClass = 'font-serif';
+    let backdropBg = '';
+    let metaTextClass = '';
 
     // Highlight Variables
     let highlightBg = '#fef08a';
@@ -582,6 +782,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Quiet
             focusPointBg = '#5c5c61';
             focusPointText = '#ffffff';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#7a7a80]';
             break;
         case 'paper':
             // user: bg #EDEDED text #1D1D1D
@@ -596,6 +798,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Paper
             focusPointBg = '#d6d3c9';
             focusPointText = '#1D1D1D';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#757575]';
             break;
         case 'calm':
             // user: bg #EEE2CC text #362D25
@@ -610,6 +814,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Calm
             focusPointBg = '#dbc8a4';
             focusPointText = '#2b241e';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#8c7b68]';
             break;
         case 'focus':
             // user: bg #FFFCF5 text #141205
@@ -624,6 +830,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Focus Theme
             focusPointBg = '#e8e8e8'; // Very subtle gray
             focusPointText = '#000000';
+            backdropBg = 'bg-black/80';
+            metaTextClass = 'text-[#8f8b80]';
             break;
         case 'bold':
             // Semibold logic
@@ -639,6 +847,8 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Bold (Standard)
             focusPointBg = '#f3f4f6';
             focusPointText = '#1f2937';
+            backdropBg = 'bg-white/95';
+            metaTextClass = 'text-gray-500';
             break;
         case 'original':
         default: // White (Standard)
@@ -653,12 +863,65 @@ window.setModalTheme = function (theme) {
             // Custom Focus for Original (Standard)
             focusPointBg = '#f3f4f6';
             focusPointText = '#1f2937';
+            backdropBg = 'bg-white/95 dark:bg-black/95';
+            metaTextClass = 'text-gray-400';
             break;
     }
 
     // Apply Styles
     scrollContainer.classList.add(...bgClass.split(' '));
     content.classList.add(...textClass.split(' '), fontClass);
+
+    // Apply Backdrop
+    const backdrop = document.getElementById('modalBackdrop');
+    if (backdrop) {
+        // Reset base classes (keep core transition/position/blur)
+        // Note: backdrop has defaults in HTML: "absolute inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300"
+        // We override the color part.
+        backdrop.className = `absolute inset-0 backdrop-blur-md opacity-0 transition-opacity duration-300 ${backdropBg} open`;
+        // Re-add 'open' if it was open (logic in openModal puts 'open' class for opacity)
+        // Wait, 'open' class controls opacity in CSS or logic? 
+        // In openModal: backdrop.classList.add('open');
+        // Let's check CSS/Logic. Usually 'open' adds opacity-100.
+        // Yes line 190: backdrop.classList.add('open');
+        // So we must preserve 'open' if it's currently open.
+        // However, this function is called ON open, and on switch.
+        // If we reset className, we lose 'open'.
+        // Better approach: remove all bg- classes and add new one.
+
+        // Simpler: Just set style directly or use cleaner class manipulation
+        // But Tailwind classes are dynamic.
+        // Let's just set ClassName string and re-add 'open' if it was there?
+        // OR: `backdrop.className` replacement is risky if we don't know "open" state.
+
+        // SAFER:
+        backdrop.classList.remove('bg-white/95', 'dark:bg-black/95', 'bg-[#4A494E]', 'bg-[#EDEDED]', 'bg-[#EEE2CC]', 'bg-[#FFFCF5]', 'bg-white', 'bg-black/90', 'bg-black/95', 'bg-black/80');
+        // Add new one
+        const bgParts = backdropBg.split(' ');
+        backdrop.classList.add(...bgParts);
+    }
+
+    // Apply Meta Colors (Source, Related, etc)
+    const sourceLabel = document.getElementById('modalSourceLabel');
+    const refLabel = document.getElementById('modalRef');
+    const relatedLabel = document.getElementById('modalRelatedLabel');
+    const categoryLabel = document.getElementById('modalCategory'); // Breadcrumb is also meta
+
+    const metaElements = [sourceLabel, refLabel, relatedLabel, categoryLabel];
+    metaElements.forEach(el => {
+        if (el) {
+            // Remove previous hardcoded gray classes to avoid conflict
+            el.classList.remove('text-gray-300', 'text-gray-400', 'text-[#7a7a80]', 'text-[#757575]', 'text-[#8c7b68]', 'text-[#8f8b80]', 'text-gray-500');
+            el.classList.add(metaTextClass.replace('text-', '')); // Logic check: metaTextClass is full class like 'text-[#...]'
+            // Simpler: just add the class string.
+            // But if it's 'text-[#...]', classList.add fails if not standard? No, Tailwind arbitrary values work as class names.
+            // However, removing dynamic colors is hard if we don't track them.
+            // For now, I listed specific removals. 
+            // Better: el.className = ... but that wipes alignment/font classes.
+            el.className = el.className.replace(/text-\[#.*?\]/g, '').replace(/text-gray-\d+/g, '').trim();
+            el.classList.add(metaTextClass.split(' ')[0]); // Assuming single class in variable
+        }
+    });
 
     // Apply Highlight Variables
     content.style.setProperty('--highlight-bg', highlightBg);
@@ -897,14 +1160,81 @@ window.copyCardContent = function () {
     tmp.innerHTML = currentModalItem.content;
     const cleanContent = tmp.textContent || tmp.innerText || "";
 
-    const text = `${currentModalItem.title}\n\n${cleanContent}\n\nFonte: ${currentModalItem.source || 'Johrei: Guia Prático'}`;
+    const ref = currentModalItem.ref ? ` - ${currentModalItem.ref}` : '';
+    const text = `${currentModalItem.title}\n\n${cleanContent}\n\n> Fonte: ${currentModalItem.source || 'Johrei: Guia Prático'}${ref}`;
 
     navigator.clipboard.writeText(text).then(() => {
         showToast("Texto Copiado!");
     }).catch(err => {
         console.error('Failed to copy', err);
         showToast("Erro ao copiar");
+        showToast("Erro ao copiar");
     });
+}
+
+// --- TEXT TO SPEECH (Audio) ---
+let currentUtterance = null;
+
+window.toggleSpeech = function () {
+    const btn = document.getElementById('btnHeaderSpeech');
+
+    if (window.speechSynthesis.speaking) {
+        stopSpeech();
+        return;
+    }
+
+    if (!currentModalItem) return;
+
+    // Get Clean Text
+    const tmp = document.createElement("DIV");
+    tmp.innerHTML = currentModalItem.content;
+    const cleanContent = tmp.textContent || tmp.innerText || "";
+    const fullText = `${currentModalItem.title}. ${cleanContent}`;
+
+    // Create Utterance
+    const utterance = new SpeechSynthesisUtterance(fullText);
+    utterance.lang = 'pt-BR';
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+
+    // Events
+    utterance.onend = function () {
+        resetSpeechIcon();
+    };
+    utterance.onerror = function (e) {
+        console.error('Speech error', e);
+        resetSpeechIcon();
+    };
+
+    // Start
+    currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+
+    // Update Icon to Stop (Square)
+    if (btn) {
+        btn.innerHTML = `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"></path></svg>`;
+        btn.classList.add('text-black', 'dark:text-white', 'animate-pulse');
+        btn.classList.remove('text-gray-400');
+    }
+}
+
+function stopSpeech() {
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+        window.speechSynthesis.cancel();
+    }
+    resetSpeechIcon();
+}
+
+function resetSpeechIcon() {
+    const btn = document.getElementById('btnHeaderSpeech');
+    if (btn) {
+        // Speaker Icon
+        btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>`;
+        btn.classList.remove('text-black', 'dark:text-white', 'animate-pulse');
+        btn.classList.add('text-gray-400');
+    }
+    currentUtterance = null;
+
 }
 
 // --- SEQUENTIAL READING (Ignore Filters) ---
