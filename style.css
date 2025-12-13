@@ -477,5 +477,24 @@ html {
 
 }
 
+
 /* Tablet Only (768px - 1023px) specific layouts if needed */
 /* Handled by Tailwind arbitrary variants in ui-renderer.js now (min-[768px]) */
+
+/* --- TTS HIGHLIGHT (Karaoke Mode) --- */
+.highlight-speaking {
+    background-color: #fef9c3;
+    /* Yellow-100 */
+    color: #000;
+    border-radius: 4px;
+    box-shadow: 0 0 0 4px #fef9c3;
+    /* Expand highlight slightly */
+    transition: background-color 0.2s ease;
+}
+
+.dark .highlight-speaking {
+    background-color: #451a03;
+    /* Amber-950/Brown */
+    color: #fff;
+    box-shadow: 0 0 0 4px #451a03;
+}
