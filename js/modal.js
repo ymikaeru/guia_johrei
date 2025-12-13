@@ -237,6 +237,7 @@ function openModal(i, explicitItem = null) {
     renderRelatedItems(item);
     initImmersiveMode();
     initSwipeGestures();
+    updateSpeechRateUI();
 }
 
 function closeModal() {
@@ -245,9 +246,10 @@ function closeModal() {
     const backdrop = document.getElementById('modalBackdrop');
     const item = currentModalItem; // Capture current item before closing
 
-    stopSpeech(); // Stop audio if playing
+    stopSpeech(true); // Stop audio if playing
     destroyImmersiveMode();
     destroySwipeGestures();
+
 
     // Restore URL
     const newUrl = new URL(window.location);
@@ -295,6 +297,13 @@ function closeModal() {
         }
     }, 250);
 }
+
+function preloadVoices() {
+    // Force browser to load voices early
+    window.speechSynthesis.getVoices();
+}
+// Call on load
+preloadVoices();
 
 // --- IMMERSIVE READING MODE ---
 let immersiveTimer = null;
@@ -684,7 +693,7 @@ function renderRelatedItems(currentItem) {
         return `
             <div onclick="openRelatedItem('${item.id}')" class="group cursor-pointer p-4 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all transform hover:-translate-y-1">
                 <span class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">${catLabel}</span>
-                <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white transition-colors line-clamp-2">${item.title}</h4>
+                <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white line-clamp-2">${item.title}</h4>
             </div>
         `;
     }).join('');
@@ -1174,66 +1183,198 @@ window.copyCardContent = function () {
 }
 
 // --- TEXT TO SPEECH (Audio) ---
+// --- TEXT TO SPEECH (Audio) ---
 let currentUtterance = null;
+let currentSpeechRate = parseFloat(localStorage.getItem('johrei_speech_rate')) || 0.9;
+const availableRates = [0.6, 0.8, 0.9, 1.0, 1.2, 1.5]; // Added 0.6
+let speechBlocks = [];
+let currentSpeechIndex = 0;
 
-window.toggleSpeech = function () {
+window.toggleSpeechRate = function () {
+    // Find next rate
+    let idx = availableRates.indexOf(currentSpeechRate);
+    idx = (idx + 1) % availableRates.length;
+    currentSpeechRate = availableRates[idx];
+
+    // Save
+    localStorage.setItem('johrei_speech_rate', currentSpeechRate);
+
+    // Update UI
+    updateSpeechRateUI();
+
+    // If speaking, restart with new rate
+    if (window.speechSynthesis.speaking) {
+        stopSpeech(false); // Pause (don't reset index)
+        setTimeout(speakNextBlock, 200); // Resume (Increased delay to prevent silence glitch)
+    }
+}
+
+function updateSpeechRateUI() {
+    const btn = document.getElementById('btnHeaderSpeechRate');
+    if (btn) {
+        btn.textContent = `${currentSpeechRate}x`;
+    }
+}
+
+window.toggleSpeech = async function () {
     const btn = document.getElementById('btnHeaderSpeech');
 
     if (window.speechSynthesis.speaking) {
-        stopSpeech();
+        stopSpeech(true);
         return;
     }
 
     if (!currentModalItem) return;
 
-    // Get Clean Text
-    const tmp = document.createElement("DIV");
-    tmp.innerHTML = currentModalItem.content;
-    const cleanContent = tmp.textContent || tmp.innerText || "";
-    const fullText = `${currentModalItem.title}. ${cleanContent}`;
-
-    // Create Utterance
-    const utterance = new SpeechSynthesisUtterance(fullText);
-
-    // Select Best Voice (iOS/Mac High Quality)
-    const bestVoice = getBestVoice();
-    if (bestVoice) {
-        utterance.voice = bestVoice;
-        utterance.lang = bestVoice.lang; // Ensure lang matches voice
-    } else {
-        utterance.lang = 'pt-BR'; // Fallback
+    // Ensure voices are loaded (prevents robotic start)
+    if (window.speechSynthesis.getVoices().length === 0) {
+        // Show loading state on button?
+        await waitForVoices();
     }
 
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
+    // Get Text Blocks (Karaoke Mode)
+    const contentContainer = document.getElementById('modalContent');
+    if (!contentContainer) return; // Should allow fallback if container missing?
 
-    // Events
-    utterance.onend = function () {
-        resetSpeechIcon();
-    };
-    utterance.onerror = function (e) {
-        console.error('Speech error', e);
-        resetSpeechIcon();
-    };
+    // Prepare content for granular highlighting (Sentence Level)
+    prepareContentForKaraoke(contentContainer);
 
-    // Start
-    currentUtterance = utterance;
-    window.speechSynthesis.speak(utterance);
+    // Select readable blocks (Sentences and Headings)
+    speechBlocks = Array.from(contentContainer.querySelectorAll('.reading-segment, h1, h2, h3, h4, h5, h6, blockquote'));
 
-    // Update Icon to Stop (Square)
+    // Filter empty blocks
+    speechBlocks = speechBlocks.filter(el => el.innerText.trim().length > 0);
+
+    if (speechBlocks.length === 0) {
+        // Fallback to title if no blocks found
+        const title = currentModalItem.title;
+        const msg = new SpeechSynthesisUtterance(title);
+        msg.lang = 'pt-BR';
+        window.speechSynthesis.speak(msg);
+        return;
+    }
+
+    // Add Title as first block (virtual or actual element)
+    // Actually, title is typically in #modalTitle, separate from content.
+    // Let's just read content for highlighting simplicity, or we'd need to select #modalTitle too.
+    const titleEl = document.getElementById('modalTitle');
+    if (titleEl) speechBlocks.unshift(titleEl);
+
+    currentSpeechIndex = 0;
+
+    // Update Icon to Stop
     if (btn) {
         btn.innerHTML = `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"></path></svg>`;
         btn.classList.add('text-black', 'dark:text-white', 'animate-pulse');
         btn.classList.remove('text-gray-400');
     }
+
+    setSpeedButtonVisibility(true); // Show Speed Button
+    speakNextBlock();
 }
 
-function stopSpeech() {
-    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-        window.speechSynthesis.cancel();
+function speakNextBlock() {
+    if (currentSpeechIndex >= speechBlocks.length) {
+        stopSpeech(); // Finished
+        return;
     }
-    resetSpeechIcon();
+
+    const el = speechBlocks[currentSpeechIndex];
+    if (!el) {
+        currentSpeechIndex++;
+        speakNextBlock();
+        return;
+    }
+
+    // Prepare Text
+    const text = el.innerText || el.textContent;
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    // Voice Config
+    const bestVoice = getBestVoice();
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+        utterance.lang = bestVoice.lang;
+    } else {
+        utterance.lang = 'pt-BR';
+    }
+    utterance.rate = currentSpeechRate;
+
+    // Events
+    utterance.onstart = function () {
+        // Highlight
+        el.classList.add('highlight-speaking');
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    utterance.onend = function () {
+        // Remove Highlight
+        el.classList.remove('highlight-speaking');
+        currentSpeechIndex++;
+        speakNextBlock(); // Next
+    };
+
+    utterance.onerror = function (e) {
+        if (e.error === 'interrupted' || e.error === 'canceled') {
+            // Expected when changing speed or clicking items. Do nothing.
+            return;
+        }
+        console.error('Speech error', e);
+        el.classList.remove('highlight-speaking');
+        stopSpeech();
+    };
+
+    currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
 }
+
+function stopSpeech(reset = true) {
+    window.speechSynthesis.cancel();
+
+    // Clear Highlights
+    if (speechBlocks) {
+        speechBlocks.forEach(el => el.classList.remove('highlight-speaking'));
+    }
+
+    if (reset) {
+        speechBlocks = [];
+        currentSpeechIndex = 0;
+        resetSpeechIcon();
+        setSpeedButtonVisibility(false); // Hide Speed Button
+    }
+}
+
+function setSpeedButtonVisibility(visible) {
+    const btn = document.getElementById('btnHeaderSpeechRate');
+    if (!btn) return;
+
+    if (visible) {
+        // Expand
+        btn.classList.remove('w-0', 'opacity-0', 'ml-0', 'scale-90');
+        btn.classList.add('w-10', 'opacity-100', 'ml-2', 'scale-100');
+    } else {
+        // Collapse
+        btn.classList.remove('w-10', 'opacity-100', 'ml-2', 'scale-100');
+        btn.classList.add('w-0', 'opacity-0', 'ml-0', 'scale-90');
+    }
+}
+
+function waitForVoices() {
+    return new Promise((resolve) => {
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+            resolve(voices);
+            return;
+        }
+        window.speechSynthesis.onvoiceschanged = () => {
+            resolve(window.speechSynthesis.getVoices());
+        };
+        // Timeout fallback
+        setTimeout(() => resolve([]), 2000);
+    });
+}
+
+// Removed duplicate definition to avoid conflict
 
 function resetSpeechIcon() {
     const btn = document.getElementById('btnHeaderSpeech');
@@ -1258,6 +1399,70 @@ function getBestVoice() {
 
     // Fallback: Any PT-BR
     return voices.find(v => v.lang === 'pt-BR' || v.lang === 'pt_BR');
+}
+
+function prepareContentForKaraoke(container) {
+    if (!container) return;
+
+    // Check if Intl.Segmenter is supported
+    if (typeof Intl.Segmenter === 'undefined') return;
+
+    const segmenter = new Intl.Segmenter('pt-BR', { granularity: 'sentence' });
+    const blocks = container.querySelectorAll('p, li'); // Targets for splitting
+
+    blocks.forEach(block => {
+        // Skip if already processed
+        if (block.querySelector('.reading-segment')) return;
+
+        const text = block.innerText;
+        const segments = segmenter.segment(text);
+        let newHTML = '';
+
+        for (const segment of segments) {
+            const trimmed = segment.segment.trim();
+            if (trimmed.length > 0) {
+                newHTML += `<span class="reading-segment hover:bg-black/5 dark:hover:bg-white/10 rounded cursor-pointer transition-colors" onclick="playSegment(this)">${segment.segment}</span>`;
+            } else {
+                newHTML += segment.segment; // Preserve whitespace
+            }
+        }
+
+        block.innerHTML = newHTML;
+    });
+}
+
+// Allow clicking a sentence to read it
+window.playSegment = function (el) {
+    if (!el) return;
+
+    // Stop current
+    stopSpeech();
+
+    // Find index of this element in global speechBlocks
+    // (Need to re-select blocks to handle dynamically added spans if strictly necessary, 
+    // but toggleSpeech usually initializes speechBlocks. If we are just reading one, we just read one.)
+
+    // For simplicity, let's just read this one segment immediately
+    const text = el.innerText;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const bestVoice = getBestVoice();
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+        utterance.lang = bestVoice.lang;
+    } else {
+        utterance.lang = 'pt-BR';
+    }
+
+    utterance.rate = currentSpeechRate; // use current rate
+
+    utterance.onstart = function () {
+        el.classList.add('highlight-speaking');
+    };
+    utterance.onend = function () {
+        el.classList.remove('highlight-speaking');
+    };
+
+    window.speechSynthesis.speak(utterance);
 }
 
 // --- SEQUENTIAL READING (Ignore Filters) ---
