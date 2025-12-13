@@ -237,6 +237,7 @@ function openModal(i, explicitItem = null) {
     renderRelatedItems(item);
     initImmersiveMode();
     initSwipeGestures();
+    updateSpeechRateUI();
 }
 
 function closeModal() {
@@ -1175,6 +1176,34 @@ window.copyCardContent = function () {
 
 // --- TEXT TO SPEECH (Audio) ---
 let currentUtterance = null;
+let currentSpeechRate = parseFloat(localStorage.getItem('johrei_speech_rate')) || 0.9;
+const availableRates = [0.8, 0.9, 1.0, 1.2, 1.5];
+
+window.toggleSpeechRate = function () {
+    // Find next rate
+    let idx = availableRates.indexOf(currentSpeechRate);
+    idx = (idx + 1) % availableRates.length;
+    currentSpeechRate = availableRates[idx];
+
+    // Save
+    localStorage.setItem('johrei_speech_rate', currentSpeechRate);
+
+    // Update UI
+    updateSpeechRateUI();
+
+    // If speaking, restart with new rate
+    if (window.speechSynthesis.speaking) {
+        stopSpeech();
+        setTimeout(toggleSpeech, 50); // Restart
+    }
+}
+
+function updateSpeechRateUI() {
+    const btn = document.getElementById('btnHeaderSpeechRate');
+    if (btn) {
+        btn.textContent = `${currentSpeechRate}x`;
+    }
+}
 
 window.toggleSpeech = function () {
     const btn = document.getElementById('btnHeaderSpeech');
@@ -1204,7 +1233,7 @@ window.toggleSpeech = function () {
         utterance.lang = 'pt-BR'; // Fallback
     }
 
-    utterance.rate = 1.0;
+    utterance.rate = currentSpeechRate;
     utterance.pitch = 1.0;
 
     // Events

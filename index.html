@@ -319,6 +319,13 @@
                             </svg>
                         </button>
 
+                        <!-- Audio Speed (Hidden by default, shown via JS if speech capable) -->
+                        <button onclick="toggleSpeechRate()" id="btnHeaderSpeechRate"
+                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors text-xs font-bold"
+                            title="Velocidade da Voz">
+                            0.9x
+                        </button>
+
                         <!-- Copy Text (Hidden per user request) -->
                         <button onclick="copyCardContent()" id="btnHeaderCopyText"
                             class="hidden w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
