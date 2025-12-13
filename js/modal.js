@@ -235,8 +235,8 @@ function openModal(i, explicitItem = null) {
     }
 
     renderRelatedItems(item);
-    renderRelatedItems(item);
     initImmersiveMode();
+    initSwipeGestures();
 }
 
 function closeModal() {
@@ -244,6 +244,10 @@ function closeModal() {
     const card = document.getElementById('modalCard');
     const backdrop = document.getElementById('modalBackdrop');
     const item = currentModalItem; // Capture current item before closing
+
+    stopSpeech(); // Stop audio if playing
+    destroyImmersiveMode();
+    destroySwipeGestures();
 
     // Restore URL
     const newUrl = new URL(window.location);
@@ -322,6 +326,59 @@ function destroyImmersiveMode() {
         scrollContainer.removeEventListener('scroll', updateProgressBar);
         scrollContainer.removeEventListener('click', toggleImmersiveControls);
         scrollContainer.removeEventListener('touchstart', resetImmersiveTimer);
+    }
+}
+
+
+// --- SWIPE GESTURES ---
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+function initSwipeGestures() {
+    const card = document.getElementById('modalCard');
+    if (!card) return;
+
+    card.addEventListener('touchstart', handleTouchStart, { passive: true });
+    card.addEventListener('touchend', handleTouchEnd, { passive: true });
+}
+
+function destroySwipeGestures() {
+    const card = document.getElementById('modalCard');
+    if (!card) return;
+
+    card.removeEventListener('touchstart', handleTouchStart);
+    card.removeEventListener('touchend', handleTouchEnd);
+}
+
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+}
+
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+}
+
+function handleSwipeGesture() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    const threshold = 50; // min swipe distance
+
+    // Check if horizontal swipe is dominant
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                // Swiped Right -> Prev
+                readPrevInSequence();
+            } else {
+                // Swiped Left -> Next
+                readNextInSequence();
+            }
+        }
     }
 }
 
@@ -1103,14 +1160,81 @@ window.copyCardContent = function () {
     tmp.innerHTML = currentModalItem.content;
     const cleanContent = tmp.textContent || tmp.innerText || "";
 
-    const text = `${currentModalItem.title}\n\n${cleanContent}\n\nFonte: ${currentModalItem.source || 'Johrei: Guia Prático'}`;
+    const ref = currentModalItem.ref ? ` - ${currentModalItem.ref}` : '';
+    const text = `${currentModalItem.title}\n\n${cleanContent}\n\n> Fonte: ${currentModalItem.source || 'Johrei: Guia Prático'}${ref}`;
 
     navigator.clipboard.writeText(text).then(() => {
         showToast("Texto Copiado!");
     }).catch(err => {
         console.error('Failed to copy', err);
         showToast("Erro ao copiar");
+        showToast("Erro ao copiar");
     });
+}
+
+// --- TEXT TO SPEECH (Audio) ---
+let currentUtterance = null;
+
+window.toggleSpeech = function () {
+    const btn = document.getElementById('btnHeaderSpeech');
+
+    if (window.speechSynthesis.speaking) {
+        stopSpeech();
+        return;
+    }
+
+    if (!currentModalItem) return;
+
+    // Get Clean Text
+    const tmp = document.createElement("DIV");
+    tmp.innerHTML = currentModalItem.content;
+    const cleanContent = tmp.textContent || tmp.innerText || "";
+    const fullText = `${currentModalItem.title}. ${cleanContent}`;
+
+    // Create Utterance
+    const utterance = new SpeechSynthesisUtterance(fullText);
+    utterance.lang = 'pt-BR';
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+
+    // Events
+    utterance.onend = function () {
+        resetSpeechIcon();
+    };
+    utterance.onerror = function (e) {
+        console.error('Speech error', e);
+        resetSpeechIcon();
+    };
+
+    // Start
+    currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+
+    // Update Icon to Stop (Square)
+    if (btn) {
+        btn.innerHTML = `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"></path></svg>`;
+        btn.classList.add('text-black', 'dark:text-white', 'animate-pulse');
+        btn.classList.remove('text-gray-400');
+    }
+}
+
+function stopSpeech() {
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+        window.speechSynthesis.cancel();
+    }
+    resetSpeechIcon();
+}
+
+function resetSpeechIcon() {
+    const btn = document.getElementById('btnHeaderSpeech');
+    if (btn) {
+        // Speaker Icon
+        btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>`;
+        btn.classList.remove('text-black', 'dark:text-white', 'animate-pulse');
+        btn.classList.add('text-gray-400');
+    }
+    currentUtterance = null;
+
 }
 
 // --- SEQUENTIAL READING (Ignore Filters) ---
