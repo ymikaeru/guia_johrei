@@ -75,6 +75,16 @@ function formatBodyText(text, searchQuery, focusPoints) {
         const cleanLine = line.trim();
         if (!cleanLine) return '<br>';
 
+        // Markdown Headers Support (User Request)
+        // Convert ##, ###, #### to H3 (or similar)
+        if (cleanLine.startsWith('#')) {
+            const match = cleanLine.match(/^(#{2,6})\s+(.*)/);
+            if (match) {
+                // We use h3 for all for now to match visual consistency
+                return `<h3>${highlight(match[2])}</h3>`;
+            }
+        }
+
         const qaMatch = cleanLine.match(/^(Pergunta|Resposta|P|R|P\.|R\.)(\s*[:\-\.]\s*)(.*)/i);
 
         if (qaMatch) {
