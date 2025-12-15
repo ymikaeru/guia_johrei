@@ -667,6 +667,29 @@ function renderRelatedItems(currentItem) {
         sourceList = Object.values(STATE.globalData);
     }
 
+    // --- NEW SCOPING LOGIC ---
+    // User wants suggestions to be within "Ensinamentos" (Fund, Curas, PF) OR "Guia" (Entender, Aprofundar, Praticar)
+    // We need to find which MODE the current item belongs to, then allow any cat from that mode.
+    let allowedCats = new Set();
+
+    // Find mode for current item
+    // We iterate CONFIG.modes to see which one contains currentItem._cat
+    for (const modeKey in CONFIG.modes) {
+        const modeConfig = CONFIG.modes[modeKey];
+        if (modeConfig.cats && modeConfig.cats[currentCat]) {
+            // Found the mode! Add all its cats to allowed list
+            Object.keys(modeConfig.cats).forEach(cat => allowedCats.add(cat));
+            break;
+        }
+    }
+
+    // Fallback: If not found (shouldn't happen), just allow current cat
+    if (allowedCats.size === 0) allowedCats.add(currentCat);
+
+    // Filter sourceList
+    sourceList = sourceList.filter(item => allowedCats.has(item._cat));
+    // -------------------------
+
     sourceList.forEach((item) => {
         if (item.id === currentItem.id) return;
 
