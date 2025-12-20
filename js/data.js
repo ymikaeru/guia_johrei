@@ -6,9 +6,8 @@ const CONFIG = {
             file: 'index.json', path: 'data/',
             cats: {
                 fundamentos: { label: 'Fundamentos', color: 'cat-blue' },
-                testemunhos: { label: 'Testemunhos', color: 'cat-green' },
                 qa: { label: 'Q&A', color: 'cat-green' },
-                pontos_focais: { label: 'Pontos Focais', color: 'cat-purple' }
+                pontos_focais: { label: 'Casos Específicos', color: 'cat-purple' }
             }
         }
     }

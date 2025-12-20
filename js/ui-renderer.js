@@ -35,7 +35,7 @@ function renderTabs() {
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
-        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
+        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Pontos Focais</button>`;
     }
 
     // Adiciona aba Apostilas se houver itens (Modo Específico)
@@ -86,7 +86,7 @@ function renderTabs() {
 
             const className = `${baseClass} ${isActive ? activeStyle : inactiveStyle}`;
 
-            mobileHtml += `<button onclick="setTab('mapa')" class="${className}">Mapas</button>`;
+            mobileHtml += `<button onclick="setTab('mapa')" class="${className}">Pontos Focais</button>`;
         }
 
         // Add Apostila Option to Mobile (Minimalist)
@@ -107,8 +107,11 @@ function renderTabs() {
         }
 
         mobileContainer.innerHTML = mobileHtml;
+    }
 
-    } updateUIForTab(STATE.activeTab);
+    if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+
+    updateUIForTab(STATE.activeTab);
 }
 
 function renderBodyMapViews() {
@@ -123,22 +126,9 @@ function renderBodyMapViews() {
     ];
 
     let html = `
-    <div class="flex flex-col-reverse min-[768px]:flex-col lg:flex-row gap-6 lg:gap-12 w-full max-w-7xl mx-auto items-start">
-        <!-- Sidebar (Desktop Only) -->
-        <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 sticky top-4 rounded-sm shadow-sm" style="height: 500px; overflow-y: auto !important;">
-                <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
-                <p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Filtrar por Região</p>
-                </div>
-                <div id="bodyPointSidebarList">
-                <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-gray-400"
-                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                    -- Todos os pontos --
-                </div>
-                ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
-                </div>
-        </div>
-
-            <div id="mobile-map-container" class="flex-grow grid grid-cols-1 min-[768px]:grid-cols-3 gap-6 w-full">
+    <div class="flex flex-col gap-12 w-full max-w-7xl mx-auto items-center">
+        <!-- Maps Container (Top) -->
+        <div id="mobile-map-container" class="w-full grid grid-cols-1 min-[768px]:grid-cols-3 gap-6">
         ${views.map((view, i) => {
         const visibilityClass = i === 0 ? 'block' : 'hidden tablet-show'; // tablet-show will override hidden at 768px+
         return `
@@ -154,15 +144,12 @@ function renderBodyMapViews() {
     }).join('')}
         </div>
 
-        <!-- Unified Filter (Pill) - Visible on Mobile/Tablet (lg:hidden) -->
-        <!-- Mobile: flex-col-reverse makes logic-last appear Visual-Top. -->
-        <!-- Tablet: flex-col makes logic-first appear Visual-Top. We use order-first to make it logic-first. -->
-        <div class="w-full lg:hidden flex justify-center px-4 relative z-[40] transition-all min-[768px]:order-first min-[768px]:mb-8 mb-4">
-             <button onclick="openBodyFilterModal()" 
-                 class="group flex items-center gap-2 px-6 py-3 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full shadow-sm hover:shadow-md hover:border-black dark:hover:border-white transition-all">
-                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors">Filtrar por Região</span>
-                 <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-             </button>
+        <!-- Glossary Grid (Bottom) -->
+        <div class="w-full mt-8">
+            <h3 class="text-center text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-8">Glossário de Pontos</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                ${typeof generateGlossaryGrid === 'function' ? generateGlossaryGrid() : ''}
+            </div>
         </div>
     </div>
     
@@ -193,31 +180,31 @@ function openBodyFilterModal() {
         modal.id = 'bodyFilterModal';
         modal.className = 'fixed inset-0 z-[9999] hidden';
         modal.innerHTML = `
-            <!-- Backdrop -->
+        < !--Backdrop -->
             <div class="absolute inset-0 bg-white/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
             
-            <!-- Modal Card (Centered) -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
-                
-                <!-- Header -->
-                <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500">Filtrar por Região</h3>
-                    <button onclick="closeBodyFilterModal()" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
-                
-                <!-- List -->
-                <div class="overflow-y-auto flex-1 p-0" id="filterModalList">
-                    <!-- Dynamic Content -->
-                     <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                        -- Todos os pontos --
-                    </div>
-                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
-                </div>
+            <!--Modal Card(Centered)-- >
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
+
+            <!-- Header -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500">Filtrar por Região</h3>
+                <button onclick="closeBodyFilterModal()" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
-        `;
+
+            <!-- List -->
+            <div class="overflow-y-auto flex-1 p-0" id="filterModalList">
+                <!-- Dynamic Content -->
+                <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
+                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                    -- Todos os pontos --
+                </div>
+                ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+            </div>
+        </div>
+    `;
         document.body.appendChild(modal);
     }
 
@@ -429,12 +416,12 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-johrei-murasaki text-white scale-125 z-10 shadow-lg ring-2 ring-white dark:ring-black' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-        <button onclick="toggleBodyPoint('${p.id}')"
+        < button onclick = "toggleBodyPoint('${p.id}')"
     class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-    style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-    title="${p.name}">
+    style = "left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+    title = "${p.name}" >
         <span class="sr-only">${p.name}</span>
-        </button>
+        </button >
         `;
     }).join('');
 }

@@ -11,3 +11,13 @@ function toSlug(str) {
         .replace(/^-+/, '') // Trim - from start
         .replace(/-+$/, ''); // Trim - from end
 }
+
+function cleanTitle(title) {
+    if (!title) return '';
+    return title
+        .replace(/^\s*#+\s*/, '') // Remove markdown headers (###)
+        .replace(/^\s*\*+\s*/, '') // Remove bold markers at start if any
+        .replace(/\s*\*+\s*$/, '') // Remove bold markers at end
+        .replace(/^\s*(?:[IVX]+\.|[0-9]+\.)\s*/, '') // Remove Roman (I.) or Decimal (1.) prefixes
+        .trim();
+}

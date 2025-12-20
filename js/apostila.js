@@ -221,10 +221,10 @@ function renderApostilaView() {
                         <div class="mb-2 mr-8">
                             <span class="${categoryBadgeClasses} font-bold uppercase tracking-widest">${catLabel}</span>
                         </div>
-                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title}</h3>
+                        <h3 class="font-serif font-bold text-[1.525rem] leading-tight mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">${item.title_pt || item.title}</h3>
 
                         <div class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 leading-relaxed mb-4">
-                            ${(item.content || '').substring(0, 150)}...
+                            ${(item.content_pt || item.content || '').substring(0, 150)}...
                         </div>
 
                         ${focusPointsHtml}
@@ -250,7 +250,7 @@ function openApostilaModal(id) {
 
     const catConfig = CONFIG.modes[STATE.mode].cats[item._cat];
 
-    document.getElementById('modalTitle').textContent = item.title;
+    document.getElementById('modalTitle').textContent = item.title_pt || item.title;
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : (item._cat || 'Geral');
 
@@ -285,9 +285,9 @@ function openApostilaModal(id) {
     // Body Text
     // formatBodyText is global in main.js
     if (typeof formatBodyText === 'function') {
-        document.getElementById('modalContent').innerHTML = formatBodyText(item.content, '');
+        document.getElementById('modalContent').innerHTML = formatBodyText(item.content_pt || item.content, '');
     } else {
-        document.getElementById('modalContent').innerHTML = (item.content || '').replace(/\n/g, '<br>');
+        document.getElementById('modalContent').innerHTML = (item.content_pt || item.content || '').replace(/\n/g, '<br>');
     }
 
     // Focus Points
@@ -461,7 +461,7 @@ function printApostila() {
                             ${items.map((item, idx) => `
                                 <li class="index-item">
                                     <span class="index-num">${String(idx + 1).padStart(2, '0')}</span>
-                                    <span class="index-title">${item.title}</span>
+                                    <span class="index-title">${item.title_pt || item.title}</span>
                                 </li>
                             `).join('')}
                         </ul>
@@ -469,10 +469,10 @@ function printApostila() {
 
                     ${items.map(item => `
                 <div class="item">
-                    <h2>${item.title}</h2>
+                    <h2>${item.title_pt || item.title}</h2>
                     <div class="meta">${item.course ? item.course + ' • ' : ''} ${item.source}</div>
                     <div class="item-content">
-                        ${item.content.replace(/\n/g, '<br>')}
+                        ${(item.content_pt || item.content || '').replace(/\n/g, '<br>')}
                     </div>
                     ${item.tags && item.tags.length > 0 ? `
                         <div style="margin-top: 20px; font-size: 10px; color: #666; font-style: italic;">

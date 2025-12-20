@@ -7,84 +7,103 @@ function unlockApp() {
 }
 
 // --- CARREGAMENTO DE DADOS ---
-// --- CARREGAMENTO DE DADOS ---
+// Nova estrutura: carrega volumes individuais e agrupa por tabs via index.json
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
-        // 1. Fetch Main Index (Ensinamentos)
+        // 1. Fetch Main Index
         const idxRes = await fetch(`${cfg.path}${cfg.file}?t=${Date.now()}`);
         const idxData = await idxRes.json();
 
-        // 2. Fetch Explicações Index (to merge into Fundamentos)
-        const expRes = await fetch(`${cfg.path}explicacoes_index.json?t=${Date.now()}`);
-        const expData = await expRes.json();
+        // 2. Fetch Explicações Index (opcional - pode estar vazio)
+        let explicacoesItems = [];
+        try {
+            const expRes = await fetch(`${cfg.path}explicacoes_index.json?t=${Date.now()}`);
+            const expData = await expRes.json();
 
-        const tempData = {};
+            // Load Explicacoes Content if exists
+            if (expData.categories && expData.categories.length > 0) {
+                await Promise.all(expData.categories.map(async cat => {
+                    const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
+                    const items = await res.json();
+                    items.forEach(item => {
+                        item.tags = item.tags || [];
+                        item.tags.push("Guia de Estudo");
+                    });
+                    explicacoesItems.push(...items);
+                }));
+            }
+        } catch (e) {
+            console.log("Explicações not available:", e.message);
+        }
 
-        // 3. Load Main Content (Fundamentos, Curas, Pontos Focais)
-        await Promise.all(idxData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
-            tempData[cat.id] = await res.json();
+        // 3. Load all volumes and group by tab
+        const volumesByTab = {};
+
+        // Process each category in index
+        await Promise.all(idxData.categories.map(async category => {
+            // Each category has volumes with tab metadata
+            await Promise.all(category.volumes.map(async volInfo => {
+                // Use _site.json instead of _bilingual.json for site compatibility
+                const fileName = volInfo.file.replace('_bilingual.json', '_site.json');
+                const res = await fetch(`${cfg.path}${fileName}?t=${Date.now()}`);
+                const items = await res.json();
+
+                // Get tab from volume info
+                const tabId = volInfo.tab;
+
+                // Initialize tab array if needed
+                if (!volumesByTab[tabId]) {
+                    volumesByTab[tabId] = [];
+                }
+
+                // Add all items to this tab, filtering out empty titles
+                const validItems = items.filter(i => (i.title_pt || i.title) && (i.title_pt || i.title).trim().length > 0);
+                volumesByTab[tabId].push(...validItems);
+            }));
         }));
 
-        // 4. Load Explicacoes Content
-        const explicacoesItems = [];
-        await Promise.all(expData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
-            const items = await res.json();
-            items.forEach(item => {
-                // Add tag/category metadata if needed to distinguish
-                item.tags = item.tags || [];
-                item.tags.push("Guia de Estudo");
-            });
-            explicacoesItems.push(...items);
-        }));
-
-        // 5. Construct STATE.data with 4 Keys
+        // 4. Construct STATE.data
         STATE.data = {};
 
-        // Tab 1: Fundamentos (Original Fundamentos + Explicações)
+        // Map new tab IDs to old structure
+        // fundamentos -> fundamentos
+        // cases_qa -> qa (all items, no split)
+        // pontos_focais -> pontos_focais
+
         STATE.data['fundamentos'] = [
-            ...(tempData['fundamentos'] || []),
+            ...(volumesByTab['fundamentos'] || []),
             ...explicacoesItems
         ];
 
-        // Process Curas (Casos e Orientações) into Testemunhos and Q&A
-        const curasItems = tempData['curas'] || [];
+        // All cases_qa items go to qa tab (no testemunhos split)
+        STATE.data['qa'] = volumesByTab['cases_qa'] || [];
 
-        // Tab 2: Testemunhos (Type: "Caso Clínico" OR "Testemunho" if exists)
-        STATE.data['testemunhos'] = curasItems.filter(item =>
-            item.type === 'Caso Clínico' || item.type === 'Testemunho'
-        );
+        STATE.data['pontos_focais'] = volumesByTab['pontos_focais'] || [];
 
-        // Tab 3: Q&A (Type: "Q&A" OR "Pergunta e Resposta")
-        STATE.data['qa'] = curasItems.filter(item =>
-            item.type === 'Q&A' || item.type === 'Pergunta e Resposta'
-        );
-
-        // Tab 4: Pontos Focais
-        STATE.data['pontos_focais'] = tempData['pontos_focais'] || [];
-
-
-        // Populate Global Cached Data
+        // 5. Populate Global Cached Data
         STATE.globalData = {};
         Object.entries(STATE.data).forEach(([tabId, items]) => {
             items.forEach(item => {
                 if (item && item.id) {
                     STATE.globalData[item.id] = { ...item, _cat: tabId };
-                    // Note: _cat is now the TAB ID, which helps renderList know which label to use.
-                    // But wait, mappings in CONFIG are for these new keys? Yes.
                 }
             });
         });
 
+        console.log("Loaded volumes by tab:", Object.keys(volumesByTab));
         console.log("Global Data ID Cache Size:", Object.keys(STATE.globalData).length);
+        console.log("Tabs:", Object.keys(STATE.data).map(k => `${k}: ${STATE.data[k].length}`));
 
         if (!STATE.activeTab) STATE.activeTab = 'fundamentos';
 
         renderTabs();
         renderAlphabet();
         applyFilters();
+
+        // Refresh filters dropdowns for the initial tab
+        if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+        if (typeof populateSourceDropdown === 'function') populateSourceDropdown();
 
         // Initialize tag browser if available
         if (typeof initializeTagBrowser === 'function') {
@@ -96,7 +115,7 @@ async function loadData() {
             setTimeout(renderBodyMaps, 100);
         }
 
-        // New: Check URL for Deep Link AFTER UI is fully rendered
+        // Check URL for Deep Link AFTER UI is fully rendered
         checkUrlForDeepLink();
 
     } catch (e) { console.error("Erro load:", e); }
@@ -134,9 +153,6 @@ function checkUrlForDeepLink() {
                 if (STATE.activeTab !== 'fundamentos') { setTab('fundamentos'); return; }
             } else if (itemId.startsWith('curas_') && itemId.includes('q&a')) {
                 if (STATE.activeTab !== 'qa') { setTab('qa'); return; }
-            } else if (itemId.startsWith('curas_')) {
-                // Default curas -> testemunhos
-                if (STATE.activeTab !== 'testemunhos') { setTab('testemunhos'); return; }
             } else if (itemId.startsWith('pontos_')) {
                 if (STATE.activeTab !== 'pontos_focais') { setTab('pontos_focais'); return; }
             }
@@ -154,7 +170,7 @@ function checkUrlForDeepLink() {
             if (!foundId && itemSlug) {
                 foundId = Object.keys(STATE.globalData).find(key => {
                     const item = STATE.globalData[key];
-                    return item && item.title && toSlug(item.title) === itemSlug;
+                    return item && (item.title_pt || item.title) && toSlug(item.title_pt || item.title) === itemSlug;
                 });
             }
 
@@ -262,6 +278,10 @@ function setTab(id) {
     renderTabs();
     applyFilters();
     updateMapLayout(id);
+
+    // Refresh filters dropdowns for the new tab
+    if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+    if (typeof populateSourceDropdown === 'function') populateSourceDropdown();
 
     // Refresh tag browser with new tab data
     if (typeof initializeTagBrowser === 'function') {

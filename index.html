@@ -43,6 +43,34 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/tag-browser.css">
+
+    <style>
+        /* Language Toggle Styles */
+        .lang-toggle-btn {
+            background: transparent;
+            color: #9ca3af;
+        }
+
+        .lang-toggle-btn.active {
+            background: #000;
+            color: #fff;
+        }
+
+        .dark .lang-toggle-btn.active {
+            background: #fff;
+            color: #000;
+        }
+
+        .lang-toggle-btn:hover:not(.active) {
+            background: #f3f4f6;
+            color: #000;
+        }
+
+        .dark .lang-toggle-btn:hover:not(.active) {
+            background: #262626;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body
@@ -119,6 +147,38 @@
                 <!-- Desktop Search (Hidden on Mobile) -->
                 <div id="desktopSearchWrapper" class="hidden md:block md:col-span-12 relative">
                     <div class="relative flex-grow flex items-center gap-4">
+                        <!-- Category Filter -->
+                        <div class="relative min-w-[220px] hidden" id="categoryFilterContainer">
+                            <select id="groupFilter"
+                                onchange="if(typeof setCategoryFilter === 'function') setCategoryFilter(this.value)"
+                                class="category-filter-select w-full bg-white dark:bg-[#111] py-4 pl-0 pr-8 text-xs md:text-sm font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
+                                <option value="">CATEGORIAS</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Source Filter -->
+                        <div class="relative min-w-[150px] hidden" id="sourceFilterContainer">
+                            <select id="sourceFilterSelect"
+                                onchange="if(typeof setSourceFilter === 'function') setSourceFilter(this.value)"
+                                class="source-filter-select w-full bg-white dark:bg-[#111] py-4 pl-0 pr-8 text-xs md:text-sm font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
+                                <option value="">FONTES</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
                         <div class="relative flex-grow">
                             <input type="text" placeholder="PESQUISAR..." id="searchInput"
                                 class="search-input w-full bg-white dark:bg-[#111] py-4 pl-0 pr-32 text-xl font-serif font-medium focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
@@ -149,6 +209,35 @@
                 <!-- Mobile Search (Visible only on Mobile) -->
                 <div id="mobileSearchWrapper" class="md:hidden px-8 pb-4 relative">
                     <div class="">
+                        <!-- Mobile Category Filter -->
+                        <div class="relative w-full hidden mb-2" id="mobileCategoryFilterContainer">
+                            <select onchange="if(typeof setCategoryFilter === 'function') setCategoryFilter(this.value)"
+                                class="category-filter-select w-full bg-transparent py-2 pl-0 pr-8 text-xs font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
+                                <option value="">CATEGORIAS</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Source Filter -->
+                        <div class="relative w-full hidden mb-2" id="mobileSourceFilterContainer">
+                            <select onchange="if(typeof setSourceFilter === 'function') setSourceFilter(this.value)"
+                                class="source-filter-select w-full bg-transparent py-2 pl-0 pr-8 text-xs font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
+                                <option value="">FONTES</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
                         <input type="text" placeholder="Pesquisar..."
                             class="search-input w-full bg-transparent py-3 pr-24 text-lg font-serif font-normal placeholder-gray-300 dark:placeholder-gray-700 text-black dark:text-gray-100 focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-colors tracking-wide">
 
@@ -473,8 +562,50 @@
                             <div id="modalFocusPoints" class="flex flex-wrap gap-2"></div>
                         </div>
 
-                        <div id="modalContent"
-                            class="rich-text font-serif leading-loose text-gray-800 dark:text-gray-200"></div>
+                        <!-- Language Toggle Bar -->
+                        <div id="languageToggle"
+                            class="flex justify-center gap-2 mb-8 p-2 bg-gray-50 dark:bg-[#161616] rounded-lg border border-gray-200 dark:border-gray-800">
+                            <button onclick="switchLanguageView('pt')" data-lang="pt"
+                                class="lang-toggle-btn active flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
+                                Português
+                            </button>
+                            <button onclick="switchLanguageView('jp')" data-lang="jp"
+                                class="lang-toggle-btn flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
+                                Original (JP)
+                            </button>
+                            <button onclick="switchLanguageView('compare')" data-lang="compare"
+                                class="lang-toggle-btn flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
+                                Comparar
+                            </button>
+                        </div>
+
+                        <!-- Content Containers -->
+                        <div id="contentPT"
+                            class="content-view rich-text font-serif leading-loose text-gray-800 dark:text-gray-200">
+                        </div>
+                        <div id="contentJP"
+                            class="content-view hidden rich-text font-serif leading-loose text-gray-800 dark:text-gray-200">
+                        </div>
+                        <div id="contentCompare" class="content-view hidden">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="border-r-0 md:border-r border-gray-200 dark:border-gray-800 pr-0 md:pr-6">
+                                    <h4
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 sticky top-0 bg-white dark:bg-[#111] py-2">
+                                        Português</h4>
+                                    <div id="contentComparePT"
+                                        class="rich-text font-serif leading-loose text-gray-800 dark:text-gray-200">
+                                    </div>
+                                </div>
+                                <div class="pl-0 md:pl-6">
+                                    <h4
+                                        class="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-4 sticky top-0 bg-white dark:bg-[#111] py-2">
+                                        Original (Japonês)</h4>
+                                    <div id="contentCompareJP"
+                                        class="rich-text font-serif leading-loose text-gray-800 dark:text-gray-200">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div
                             class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-900 flex flex-col items-center">

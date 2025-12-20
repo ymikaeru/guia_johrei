@@ -78,7 +78,7 @@ function formatBodyText(text, searchQuery, focusPoints) {
         // Markdown Headers Support (User Request)
         // Convert ##, ###, #### to H3 (or similar)
         if (cleanLine.startsWith('#')) {
-            const match = cleanLine.match(/^(#{2,6})\s+(.*)/);
+            const match = cleanLine.match(/^(#{1,6})\s*(.*)/);
             if (match) {
                 // We use h3 for all for now to match visual consistency
                 return `<h3>${highlight(match[2])}</h3>`;
@@ -97,11 +97,22 @@ function formatBodyText(text, searchQuery, focusPoints) {
             return `<p class="${indentClass}"><strong class="qa-label">${label}${separator}</strong>${highlight(content)}</p>`;
         }
 
-        if (cleanLine.length < 80 && cleanLine === cleanLine.toUpperCase() && !cleanLine.endsWith('.')) {
+        // Check for Uppercase Headers (legacy format)
+        // Must ensure it actually has case (diff from lowercase) to avoid matching Japanese/Chinese/Numbers
+        if (cleanLine.length < 80 && cleanLine === cleanLine.toUpperCase() && cleanLine !== cleanLine.toLowerCase() && !cleanLine.endsWith('.')) {
             return `<h3>${highlight(cleanLine)}</h3>`;
         }
 
-        return `<p>${highlight(cleanLine)}</p>`;
+        // Apply formatting (Highlight first, then Markdown to avoid highlighting HTML tags)
+        let processed = highlight(cleanLine);
+
+        // Markdown Bold: **text**
+        processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // Markdown Italic: *text* 
+        processed = processed.replace(/\*([^\s*].*?)\*/g, '<em>$1</em>');
+
+        return `<p>${processed}</p>`;
     }).join('');
 }
 
@@ -150,48 +161,35 @@ function renderList(list, activeTags, mode, activeTab) {
 
             <!--Title -->
             <h3 class="font-serif font-medium text-3xl md:text-3xl leading-[1.1] text-gray-900 dark:text-gray-100 group-hover:text-black dark:group-hover:text-white transition-colors max-w-2xl">
-                ${item.title}
+                ${item.title_pt || item.title}
             </h3>
 
-            ${activeTab === 'pontos_focais' && item.focusPoints && item.focusPoints.length > 0 ? `
-            <!-- Focus Points (Editorial Subtitle Style) -->
-            <div class="mt-1">
-                <p class="text-xs md:text-sm font-sans font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest leading-relaxed">
-                    ${item.focusPoints.join('<span class="mx-2 text-gray-300 dark:text-gray-700">&middot;</span>')}
-                </p>
-            </div>
-            ` : ''
-            }
-
-            ${activeTab !== 'pontos_focais' ? `
             <!-- Tags & Metadata (Minimalist) -->
             <div class="flex flex-wrap gap-2 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
                  ${(() => {
-                    const tags = item.tags || [];
-                    const points = item.focusPoints || [];
+                const tags = item.tags || [];
+                const points = item.focusPoints || [];
 
-                    // Combine items: Tags first, then Points
-                    let allItems = [
-                        ...tags.map(t => ({ text: t, type: 'tag' })),
-                        ...points.map(p => ({ text: p, type: 'point' }))
-                    ];
+                // Combine items: Tags first, then Points
+                let allItems = [
+                    ...tags.map(t => ({ text: t, type: 'tag' })),
+                    ...points.map(p => ({ text: p, type: 'point' }))
+                ];
 
-                    if (allItems.length === 0) return '';
+                if (allItems.length === 0) return '';
 
-                    let itemsToShow = allItems.slice(0, 4); // Minimalist: Show fewer items
+                let itemsToShow = allItems.slice(0, 6); // Slightly increased limit
 
-                    return itemsToShow.map(i => {
-                        const isActive = activeTags && activeTags.includes(i.text);
-                        const activeClass = isActive
-                            ? 'text-black dark:text-white underline decoration-2 opacity-100'
-                            : 'text-gray-400 hover:text-black dark:hover:text-white hover:underline opacity-100'; // Make inactive always visible but gray
+                return itemsToShow.map(i => {
+                    const isActive = activeTags && activeTags.includes(i.text);
+                    const activeClass = isActive
+                        ? 'text-black dark:text-white underline decoration-2 opacity-100'
+                        : 'text-gray-400 hover:text-black dark:hover:text-white hover:underline opacity-100'; // Make inactive always visible but gray
 
-                        return `<button onclick="filterByTag('${i.text.replace(/'/g, "\\'")}', event)" class="text-[10px] font-bold uppercase tracking-widest transition-colors before:content-['#'] before:mr-0.5 before:opacity-50 text-left ${activeClass}">${i.text}</button>`;
-                    }).join('');
-                })()}
+                    return `<button onclick="filterByTag('${i.text.replace(/'/g, "\\'")}', event)" class="text-[10px] font-bold uppercase tracking-widest transition-colors before:content-['#'] before:mr-0.5 before:opacity-50 text-left ${activeClass}">${i.text}</button>`;
+                }).join('');
+            })()}
             </div>
-            ` : ''
-            }
         </article>`
     }).join('');
 }
