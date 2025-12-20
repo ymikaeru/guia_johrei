@@ -2,21 +2,13 @@ const CONFIG = {
     password: '567',
     modes: {
         ensinamentos: {
-            description: 'Escritos sagrados originais de Meishu-Sama',
+            description: 'Ensinamentos de Meishu-Sama',
             file: 'index.json', path: 'data/',
             cats: {
                 fundamentos: { label: 'Fundamentos', color: 'cat-blue' },
-                curas: { label: 'Casos e Orientações', color: 'cat-green' },
+                testemunhos: { label: 'Testemunhos', color: 'cat-green' },
+                qa: { label: 'Q&A', color: 'cat-green' },
                 pontos_focais: { label: 'Pontos Focais', color: 'cat-purple' }
-            }
-        },
-        explicacoes: {
-            description: 'Conteúdos didáticos explicativos',
-            file: 'explicacoes_index.json', path: 'data/',
-            cats: {
-                guia1: { label: 'Entender', color: 'cat-blue' },
-                guia2: { label: 'Aprofundar', color: 'cat-green' },
-                guia3: { label: 'Praticar', color: 'cat-purple' }
             }
         }
     }

@@ -7,48 +7,80 @@ function unlockApp() {
 }
 
 // --- CARREGAMENTO DE DADOS ---
+// --- CARREGAMENTO DE DADOS ---
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
+        // 1. Fetch Main Index (Ensinamentos)
         const idxRes = await fetch(`${cfg.path}${cfg.file}?t=${Date.now()}`);
         const idxData = await idxRes.json();
+
+        // 2. Fetch Explicações Index (to merge into Fundamentos)
+        const expRes = await fetch(`${cfg.path}explicacoes_index.json?t=${Date.now()}`);
+        const expData = await expRes.json();
+
         const tempData = {};
 
+        // 3. Load Main Content (Fundamentos, Curas, Pontos Focais)
         await Promise.all(idxData.categories.map(async cat => {
             const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
             tempData[cat.id] = await res.json();
         }));
 
-        // Create STATE.data in the desired order
-        STATE.data = {};
-        if (!STATE.globalData) STATE.globalData = {};
+        // 4. Load Explicacoes Content
+        const explicacoesItems = [];
+        await Promise.all(expData.categories.map(async cat => {
+            const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
+            const items = await res.json();
+            items.forEach(item => {
+                // Add tag/category metadata if needed to distinguish
+                item.tags = item.tags || [];
+                item.tags.push("Guia de Estudo");
+            });
+            explicacoesItems.push(...items);
+        }));
 
-        // Populate Global Data Cache (Flattened)
-        Object.entries(tempData).forEach(([catId, categoryItems]) => {
-            if (Array.isArray(categoryItems)) {
-                categoryItems.forEach(item => {
-                    if (item && item.id) {
-                        // Inject category for reference
-                        STATE.globalData[item.id] = { ...item, _cat: catId };
-                    }
-                });
-            }
+        // 5. Construct STATE.data with 4 Keys
+        STATE.data = {};
+
+        // Tab 1: Fundamentos (Original Fundamentos + Explicações)
+        STATE.data['fundamentos'] = [
+            ...(tempData['fundamentos'] || []),
+            ...explicacoesItems
+        ];
+
+        // Process Curas (Casos e Orientações) into Testemunhos and Q&A
+        const curasItems = tempData['curas'] || [];
+
+        // Tab 2: Testemunhos (Type: "Caso Clínico" OR "Testemunho" if exists)
+        STATE.data['testemunhos'] = curasItems.filter(item =>
+            item.type === 'Caso Clínico' || item.type === 'Testemunho'
+        );
+
+        // Tab 3: Q&A (Type: "Q&A" OR "Pergunta e Resposta")
+        STATE.data['qa'] = curasItems.filter(item =>
+            item.type === 'Q&A' || item.type === 'Pergunta e Resposta'
+        );
+
+        // Tab 4: Pontos Focais
+        STATE.data['pontos_focais'] = tempData['pontos_focais'] || [];
+
+
+        // Populate Global Cached Data
+        STATE.globalData = {};
+        Object.entries(STATE.data).forEach(([tabId, items]) => {
+            items.forEach(item => {
+                if (item && item.id) {
+                    STATE.globalData[item.id] = { ...item, _cat: tabId };
+                    // Note: _cat is now the TAB ID, which helps renderList know which label to use.
+                    // But wait, mappings in CONFIG are for these new keys? Yes.
+                }
+            });
         });
+
         console.log("Global Data ID Cache Size:", Object.keys(STATE.globalData).length);
 
-        // For ensinamentos mode, set specific order
-        // Build STATE.data with tabs in desired order
-        if (STATE.mode === 'ensinamentos') {
-            STATE.data = {};
-            STATE.data['fundamentos'] = tempData['fundamentos'];
-            STATE.data['curas'] = tempData['curas'];
-            STATE.data['pontos_focais'] = tempData['pontos_focais'];
-        } else {
-            // For other modes, just copy all data
-            STATE.data = tempData;
-        }
-
-        if (!STATE.activeTab) STATE.activeTab = Object.keys(STATE.data)[0];
+        if (!STATE.activeTab) STATE.activeTab = 'fundamentos';
 
         renderTabs();
         renderAlphabet();
@@ -93,14 +125,20 @@ function checkUrlForDeepLink() {
         if (itemId && !urlMode) {
             let requiredMode = null;
             if (itemId.startsWith('explicacao_')) {
-                requiredMode = 'explicacoes';
-            } else if (itemId.startsWith('fundamentos_') || itemId.startsWith('curas_') || itemId.startsWith('pontos_') || itemId.startsWith('tecnicas_')) {
-                requiredMode = 'ensinamentos';
-            }
-
-            if (requiredMode && STATE.mode !== requiredMode) {
-                setMode(requiredMode);
-                return;
+                // Legacy explicacoes maps to fundamentos tab (merged)
+                if (STATE.activeTab !== 'fundamentos') {
+                    setTab('fundamentos');
+                    return;
+                }
+            } else if (itemId.startsWith('fundamentos_')) {
+                if (STATE.activeTab !== 'fundamentos') { setTab('fundamentos'); return; }
+            } else if (itemId.startsWith('curas_') && itemId.includes('q&a')) {
+                if (STATE.activeTab !== 'qa') { setTab('qa'); return; }
+            } else if (itemId.startsWith('curas_')) {
+                // Default curas -> testemunhos
+                if (STATE.activeTab !== 'testemunhos') { setTab('testemunhos'); return; }
+            } else if (itemId.startsWith('pontos_')) {
+                if (STATE.activeTab !== 'pontos_focais') { setTab('pontos_focais'); return; }
             }
         }
 
@@ -159,12 +197,14 @@ function setMode(newMode) {
     const activeClass = 'flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active';
     const inactiveClass = 'flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive';
 
-    if (newMode === 'ensinamentos') {
-        btnEns.className = activeClass;
-        btnGuia.className = inactiveClass;
-    } else {
-        btnEns.className = inactiveClass;
-        btnGuia.className = activeClass;
+    if (btnEns && btnGuia) {
+        if (newMode === 'ensinamentos') {
+            btnEns.className = activeClass;
+            btnGuia.className = inactiveClass;
+        } else {
+            btnEns.className = inactiveClass;
+            btnGuia.className = activeClass;
+        }
     }
 
     const descEl = document.getElementById('modeDescription');
