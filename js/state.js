@@ -2,6 +2,7 @@
 let STATE = {
     activeTab: 'fundamentos', // Default tab
     activeLetter: '',
+    activeCategory: '', // Single category filter for Q&A alphabet replacement
     activeTags: [], // Changed from activeTag to activeTags array
     activeCategories: [], // Filter by categories (combined)
     activeSources: [], // Add generic support for sources even if not used initially

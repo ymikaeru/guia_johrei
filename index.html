@@ -147,8 +147,8 @@
                 <!-- Desktop Search (Hidden on Mobile) -->
                 <div id="desktopSearchWrapper" class="hidden md:block md:col-span-12 relative">
                     <div class="relative flex-grow flex items-center gap-4">
-                        <!-- Category Filter -->
-                        <div class="relative min-w-[220px] hidden" id="categoryFilterContainer">
+                        <!-- Category Filter - Moved to Tag Browser -->
+                        <div class="relative min-w-[220px] hidden" id="categoryFilterContainer" style="display: none;">
                             <select id="groupFilter"
                                 onchange="if(typeof setCategoryFilter === 'function') setCategoryFilter(this.value)"
                                 class="category-filter-select w-full bg-white dark:bg-[#111] py-4 pl-0 pr-8 text-xs md:text-sm font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
@@ -163,8 +163,8 @@
                             </div>
                         </div>
 
-                        <!-- Source Filter -->
-                        <div class="relative min-w-[150px] hidden" id="sourceFilterContainer">
+                        <!-- Source Filter - Moved to Tag Browser -->
+                        <div class="relative min-w-[150px] hidden" id="sourceFilterContainer" style="display: none;">
                             <select id="sourceFilterSelect"
                                 onchange="if(typeof setSourceFilter === 'function') setSourceFilter(this.value)"
                                 class="source-filter-select w-full bg-white dark:bg-[#111] py-4 pl-0 pr-8 text-xs md:text-sm font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
@@ -405,6 +405,17 @@
                             0.9x
                         </button>
 
+                        <!-- Language Toggle Button -->
+                        <button onclick="toggleLanguageBar()" id="btnHeaderLanguage"
+                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
+                            title="Idioma">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                                </path>
+                            </svg>
+                        </button>
+
                         <!-- Copy Text (Hidden per user request) -->
                         <button onclick="copyCardContent()" id="btnHeaderCopyText"
                             class="hidden w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
@@ -564,7 +575,7 @@
 
                         <!-- Language Toggle Bar -->
                         <div id="languageToggle"
-                            class="flex justify-center gap-2 mb-8 p-2 bg-gray-50 dark:bg-[#161616] rounded-lg border border-gray-200 dark:border-gray-800">
+                            class="hidden flex justify-center gap-2 mb-8 p-2 bg-gray-50 dark:bg-[#161616] rounded-lg border border-gray-200 dark:border-gray-800">
                             <button onclick="switchLanguageView('pt')" data-lang="pt"
                                 class="lang-toggle-btn active flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
                                 Português

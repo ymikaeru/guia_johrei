@@ -42,23 +42,31 @@ async function loadData() {
 
         // Process each category in index
         await Promise.all(idxData.categories.map(async category => {
+            // Get tab ID from category (not from individual volumes)
+            const tabId = category.tab;
+
             // Each category has volumes with tab metadata
             await Promise.all(category.volumes.map(async volInfo => {
-                // Use _site.json instead of _bilingual.json for site compatibility
+                //Use _site.json instead of _bilingual.json for site compatibility
                 const fileName = volInfo.file.replace('_bilingual.json', '_site.json');
                 const res = await fetch(`${cfg.path}${fileName}?t=${Date.now()}`);
                 const items = await res.json();
 
-                // Get tab from volume info
-                const tabId = volInfo.tab;
+                // Extract source name from category and volume number from filename
+                const categoryName = category.name || fileName.replace('_site.json', '');
+                const volMatch = fileName.match(/vol(\d+)/i);
+                const volNumber = volMatch ? ` Vol.${volMatch[1].padStart(2, '0')}` : '';
+                const sourceName = categoryName + volNumber;
 
                 // Initialize tab array if needed
                 if (!volumesByTab[tabId]) {
                     volumesByTab[tabId] = [];
                 }
 
-                // Add all items to this tab, filtering out empty titles
-                const validItems = items.filter(i => (i.title_pt || i.title) && (i.title_pt || i.title).trim().length > 0);
+                // Add all items to this tab, filtering out empty titles and adding source
+                const validItems = items
+                    .filter(i => (i.title_pt || i.title) && (i.title_pt || i.title).trim().length > 0)
+                    .map(i => ({ ...i, source: sourceName }));
                 volumesByTab[tabId].push(...validItems);
             }));
         }));

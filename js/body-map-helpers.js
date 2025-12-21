@@ -3,7 +3,17 @@
 function renderBodyPoints(points, viewId) {
     if (!points || points.length === 0) return '';
 
+    // Get current filtered data - for mapa tab, use pontos_focais data
+    const dataKey = STATE.activeTab === 'mapa' ? 'pontos_focais' : STATE.activeTab;
+    const currentData = STATE.data[dataKey] || [];
+
     return points.map(point => {
+        // Count items matching this point
+        const count = currentData.filter(item => matchBodyPoint(item, point.id)).length;
+
+        // Skip rendering if count is 0 (hide empty points)
+        if (count === 0) return '';
+
         // Check if this point is in the selected IDs (comma-separated)
         const selectedIds = STATE.selectedBodyPoint ? STATE.selectedBodyPoint.split(',') : [];
         const isSelected = selectedIds.includes(point.id);
@@ -138,30 +148,22 @@ function selectBodyPointFromDropdown(pointIds) {
 }
 
 function filterByBodyPoint(pointId, pointName) {
-    // Collect all items
-    let allItems = [];
-    Object.keys(STATE.data).forEach(tabId => {
-        if (STATE.data[tabId]) {
-            STATE.data[tabId].forEach(item => {
-                allItems.push({ ...item, _cat: tabId });
-            });
-        }
-    });
-
-    // Filter items using the robust matchBodyPoint function
-    const filtered = allItems.filter(item => matchBodyPoint(item, pointId));
-
-    if (typeof openGlossaryModal === 'function') {
-        openGlossaryModal(pointName || 'Ponto Focal', filtered, pointId);
-    } else {
-        // Fallback to legacy filtering if modal not loaded
-        STATE.list = filtered;
-        renderList(filtered, STATE.activeTags, STATE.mode, STATE.activeTab);
-
-        // Update counter
-        document.querySelectorAll('.search-count').forEach(el => {
-            el.textContent = `${filtered.length} Itens`;
-        });
+    // Set bodyFilter state
+    STATE.bodyFilter = pointId;
+    
+    // Update selected point name display
+    const nameEl = document.getElementById('selectedBodyPointName');
+    if (nameEl) nameEl.textContent = pointName || 'Ponto Focal';
+    
+    // Apply filters to show cards below
+    applyFilters();
+    
+    // Scroll to results on mobile
+    const contentList = document.getElementById('contentList');
+    if (contentList && window.innerWidth < 1024) {
+        setTimeout(() => {
+            contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
     }
 }
 
@@ -211,7 +213,7 @@ function highlightBodyPoint(element, name, event) {
         // User complaint: "tooltip scrolls with the page". Usually means it stays fixed on screen relative to viewport, effectively sliding over content.
         // Or it means "It moves UP with the page" (absolute). 
         // If we want it to DISAPPEAR on scroll, we add a listener.
-        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
+        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-2 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-3 whitespace-nowrap';
 
         document.body.appendChild(tooltip);
 
@@ -456,11 +458,30 @@ function selectCustomOption(ids, name, event) {
     const style = document.createElement('style');
     style.innerHTML = `
         @keyframes blink-purple {
-            0%, 100% { fill-opacity: 0.6; stroke-width: 0.5; }
-            50% { fill-opacity: 1; fill: #7c3aed; stroke: #fff; stroke-width: 2; filter: drop-shadow(0 0 8px #7c3aed); }
+            0%, 100% { fill-opacity: 0.6; }
+            50% { fill-opacity: 1; fill: #7c3aed; filter: drop-shadow(0 0 8px #7c3aed); }
         }
         .blinking-highlight {
             animation: blink-purple 1s ease-in-out infinite;
+        }
+        
+        /* Tooltip with centered triangle arrow at bottom */
+        .body-point-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid white;
+        }
+        
+        /* Dark mode triangle */
+        .dark .body-point-tooltip::after {
+            border-top-color: #111;
         }
     `;
     document.head.appendChild(style);
@@ -479,9 +500,23 @@ function blinkBodyPoint(pointIds) {
 
     if (elements.length === 0) return;
 
-    // Scroll to first element if needed? 
-    // Maybe better to scroll the MAP container into view if it's far? 
-    // For now, just blink.
+    // Auto-switch to correct view on mobile (< 768px)
+    if (window.innerWidth < 768 && elements.length > 0) {
+        // Find which view contains the first element
+        const firstEl = elements[0];
+        const svg = firstEl.closest('svg');
+        if (svg) {
+            const viewId = svg.id.replace('_svg', ''); // e.g., 'front_svg' -> 'front'
+
+            // Switch to that view
+            if (typeof switchMobileView === 'function') {
+                switchMobileView(viewId);
+            }
+        }
+    }
+
+    // Scroll to top of page when clicking glossary
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     elements.forEach(el => {
         el.classList.add('blinking-highlight');

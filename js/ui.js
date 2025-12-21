@@ -161,7 +161,7 @@ function renderList(list, activeTags, mode, activeTab) {
 
             <!--Title -->
             <h3 class="font-serif font-medium text-3xl md:text-3xl leading-[1.1] text-gray-900 dark:text-gray-100 group-hover:text-black dark:group-hover:text-white transition-colors max-w-2xl">
-                ${item.title_pt || item.title}
+                ${typeof cleanTitle === 'function' ? cleanTitle(item.title_pt || item.title || '') : (item.title_pt || item.title || '')}
             </h3>
 
             <!-- Tags & Metadata (Minimalist) -->

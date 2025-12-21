@@ -258,6 +258,11 @@ function applyFilters() {
             if (!item.category_pt || !STATE.activeCategories.includes(item.category_pt)) return false;
         }
 
+        // 1.8 Filtro de CATEGORIA (single category for Q&A alphabet replacement)
+        if (STATE.activeCategory && STATE.activeCategory !== '') {
+            if (!item.category_pt || item.category_pt !== STATE.activeCategory) return false;
+        }
+
         // 2. Filtro do MAPA (Integração)
         // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
         if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
@@ -892,3 +897,14 @@ function setupSearch() {
         });
     }
 }
+
+// Filter by category (body part) for Q&A tab
+function filterByCategory(category) {
+    STATE.activeCategory = category;
+    STATE.activeLetter = ''; // Clear letter filter
+    applyFilters();
+    renderAlphabet(); // Update button states
+}
+
+// Make it globally available
+window.filterByCategory = filterByCategory;

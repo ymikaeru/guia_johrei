@@ -18,6 +18,24 @@ function splitContent(content) {
     };
 }
 
+// Toggle language bar visibility
+window.toggleLanguageBar = function () {
+    const languageBar = document.getElementById('languageToggle');
+    const btn = document.getElementById('btnHeaderLanguage');
+
+    if (languageBar.classList.contains('hidden')) {
+        languageBar.classList.remove('hidden');
+        // Highlight button when active
+        btn.classList.add('text-black', 'dark:text-white');
+        btn.classList.remove('text-gray-400');
+    } else {
+        languageBar.classList.add('hidden');
+        // Reset button color
+        btn.classList.remove('text-black', 'dark:text-white');
+        btn.classList.add('text-gray-400');
+    }
+}
+
 // Switch language view
 window.switchLanguageView = function (mode) {
     STATE.languageView = mode;
@@ -219,11 +237,11 @@ function openModal(i, explicitItem = null) {
 
         const html = item.focusPoints.map(p => {
             const isMatch = highlightRegex && highlightRegex.test(removeAccents(p));
-            const baseClass = "text-[10px] font-bold uppercase tracking-widest border transition-colors rounded-full px-3 py-1";
+            const baseClass = "text-xs font-medium uppercase tracking-wide py-2 px-3 transition-colors rounded cursor-pointer";
             const colorClass = isMatch
-                ? "border-yellow-500 bg-yellow-400/20 text-yellow-700 dark:text-yellow-300"
-                : "border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white bg-transparent";
-            return '<button onclick="filterByFocusPoint(\'' + p + '\')" class="' + baseClass + ' ' + colorClass + '">' + p + '</button>';
+                ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300"
+                : "bg-white dark:bg-[#1a1a1a] text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#222]";
+            return '<div onclick="filterByFocusPoint(\'' + p + '\')" class="' + baseClass + ' ' + colorClass + '">' + p + '</div>';
         }).join('');
 
         const fpTitle = fpContainer.querySelector('h3');
@@ -757,7 +775,7 @@ function renderRelatedItems(currentItem) {
         return `
             <div onclick="openRelatedItem('${item.id}')" class="group cursor-pointer p-4 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all transform hover:-translate-y-1">
                 <span class="text-[8px] font-bold uppercase tracking-widest text-gray-400 mb-2 block">${catLabel}</span>
-                <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white line-clamp-2">${typeof cleanTitle === 'function' ? cleanTitle(item.title) : item.title}</h4>
+                <h4 class="font-serif font-bold text-sm leading-tight text-gray-800 dark:text-gray-200 group-hover:text-black dark:group-hover:text-white line-clamp-2">${typeof cleanTitle === 'function' ? cleanTitle(item.title_pt || item.title_jp || item.title || '') : (item.title_pt || item.title_jp || item.title || '')}</h4>
             </div>
         `;
     }).join('');
