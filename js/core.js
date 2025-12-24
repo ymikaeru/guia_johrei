@@ -7,52 +7,93 @@ function unlockApp() {
 }
 
 // --- CARREGAMENTO DE DADOS ---
+// Nova estrutura: carrega volumes individuais e agrupa por tabs via index.json
 async function loadData() {
     const cfg = CONFIG.modes[STATE.mode];
     try {
+        // 1. Fetch Main Index
         const idxRes = await fetch(`${cfg.path}${cfg.file}?t=${Date.now()}`);
         const idxData = await idxRes.json();
-        const tempData = {};
 
-        await Promise.all(idxData.categories.map(async cat => {
-            const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
-            tempData[cat.id] = await res.json();
+        // 2. Fetch Explicações Index (opcional - pode estar vazio)
+        let explicacoesItems = [];
+        // Dependency removed to avoid 404 on explicacoes_index.json
+
+        // 3. Load all volumes and group by tab
+        const volumesByTab = {};
+
+        // Process each category in index
+        await Promise.all(idxData.categories.map(async category => {
+            // Get tab ID from category (not from individual volumes)
+            const tabId = category.tab;
+
+            // Each category has volumes with tab metadata
+            await Promise.all(category.volumes.map(async volInfo => {
+                // Use file defined in index.json directly
+                const fileName = volInfo.file;
+                const res = await fetch(`${cfg.path}${fileName}?t=${Date.now()}`);
+                const items = await res.json();
+
+                // Extract source name from category and volume number from filename
+                const categoryName = category.name || fileName.replace('_bilingual.json', '').replace('_site.json', '');
+                const volMatch = fileName.match(/vol(\d+)/i);
+                const volNumber = volMatch ? ` Vol.${volMatch[1].padStart(2, '0')}` : '';
+                const sourceName = categoryName + volNumber;
+
+                // Initialize tab array if needed
+                if (!volumesByTab[tabId]) {
+                    volumesByTab[tabId] = [];
+                }
+
+                // Add all items to this tab, filtering out empty titles and adding source
+                const validItems = items
+                    .filter(i => (i.title_pt || i.title) && (i.title_pt || i.title).trim().length > 0)
+                    .map(i => ({ ...i, source: sourceName }));
+                volumesByTab[tabId].push(...validItems);
+            }));
         }));
 
-        // Create STATE.data in the desired order
+        // 4. Construct STATE.data
         STATE.data = {};
-        if (!STATE.globalData) STATE.globalData = {};
 
-        // Populate Global Data Cache (Flattened)
-        Object.entries(tempData).forEach(([catId, categoryItems]) => {
-            if (Array.isArray(categoryItems)) {
-                categoryItems.forEach(item => {
-                    if (item && item.id) {
-                        // Inject category for reference
-                        STATE.globalData[item.id] = { ...item, _cat: catId };
-                    }
-                });
-            }
+        // Map new tab IDs to old structure
+        // fundamentos -> fundamentos
+        // cases_qa -> qa (all items, no split)
+        // pontos_focais -> pontos_focais
+
+        STATE.data['fundamentos'] = [
+            ...(volumesByTab['fundamentos'] || []),
+            ...explicacoesItems
+        ];
+
+        // All cases_qa items go to qa tab (no testemunhos split)
+        STATE.data['qa'] = volumesByTab['cases_qa'] || [];
+
+        STATE.data['pontos_focais'] = volumesByTab['pontos_focais'] || [];
+
+        // 5. Populate Global Cached Data
+        STATE.globalData = {};
+        Object.entries(STATE.data).forEach(([tabId, items]) => {
+            items.forEach(item => {
+                if (item && item.id) {
+                    STATE.globalData[item.id] = { ...item, _cat: tabId };
+                }
+            });
         });
+
+        console.log("Loaded volumes by tab:", Object.keys(volumesByTab));
         console.log("Global Data ID Cache Size:", Object.keys(STATE.globalData).length);
+        console.log("Tabs:", Object.keys(STATE.data).map(k => `${k}: ${STATE.data[k].length}`));
 
-        // For ensinamentos mode, set specific order
-        // Build STATE.data with tabs in desired order
-        if (STATE.mode === 'ensinamentos') {
-            STATE.data = {};
-            STATE.data['fundamentos'] = tempData['fundamentos'];
-            STATE.data['curas'] = tempData['curas'];
-            STATE.data['pontos_focais'] = tempData['pontos_focais'];
-        } else {
-            // For other modes, just copy all data
-            STATE.data = tempData;
-        }
-
-        if (!STATE.activeTab) STATE.activeTab = Object.keys(STATE.data)[0];
+        if (!STATE.activeTab) STATE.activeTab = 'fundamentos';
 
         renderTabs();
         renderAlphabet();
         applyFilters();
+
+        // Refresh filters dropdowns for the initial tab
+        if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+        if (typeof populateSourceDropdown === 'function') populateSourceDropdown();
 
         // Initialize tag browser if available
         if (typeof initializeTagBrowser === 'function') {
@@ -64,7 +105,7 @@ async function loadData() {
             setTimeout(renderBodyMaps, 100);
         }
 
-        // New: Check URL for Deep Link AFTER UI is fully rendered
+        // Check URL for Deep Link AFTER UI is fully rendered
         checkUrlForDeepLink();
 
     } catch (e) { console.error("Erro load:", e); }
@@ -93,14 +134,17 @@ function checkUrlForDeepLink() {
         if (itemId && !urlMode) {
             let requiredMode = null;
             if (itemId.startsWith('explicacao_')) {
-                requiredMode = 'explicacoes';
-            } else if (itemId.startsWith('fundamentos_') || itemId.startsWith('curas_') || itemId.startsWith('pontos_') || itemId.startsWith('tecnicas_')) {
-                requiredMode = 'ensinamentos';
-            }
-
-            if (requiredMode && STATE.mode !== requiredMode) {
-                setMode(requiredMode);
-                return;
+                // Legacy explicacoes maps to fundamentos tab (merged)
+                if (STATE.activeTab !== 'fundamentos') {
+                    setTab('fundamentos');
+                    return;
+                }
+            } else if (itemId.startsWith('fundamentos_')) {
+                if (STATE.activeTab !== 'fundamentos') { setTab('fundamentos'); return; }
+            } else if (itemId.startsWith('curas_') && itemId.includes('q&a')) {
+                if (STATE.activeTab !== 'qa') { setTab('qa'); return; }
+            } else if (itemId.startsWith('pontos_')) {
+                if (STATE.activeTab !== 'pontos_focais') { setTab('pontos_focais'); return; }
             }
         }
 
@@ -116,7 +160,7 @@ function checkUrlForDeepLink() {
             if (!foundId && itemSlug) {
                 foundId = Object.keys(STATE.globalData).find(key => {
                     const item = STATE.globalData[key];
-                    return item && item.title && toSlug(item.title) === itemSlug;
+                    return item && (item.title_pt || item.title) && toSlug(item.title_pt || item.title) === itemSlug;
                 });
             }
 
@@ -159,12 +203,14 @@ function setMode(newMode) {
     const activeClass = 'flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-active';
     const inactiveClass = 'flex-1 py-4 text-[10px] md:text-xs font-sans font-bold uppercase tracking-wider rounded-lg transition-all btn-mode-inactive';
 
-    if (newMode === 'ensinamentos') {
-        btnEns.className = activeClass;
-        btnGuia.className = inactiveClass;
-    } else {
-        btnEns.className = inactiveClass;
-        btnGuia.className = activeClass;
+    if (btnEns && btnGuia) {
+        if (newMode === 'ensinamentos') {
+            btnEns.className = activeClass;
+            btnGuia.className = inactiveClass;
+        } else {
+            btnEns.className = inactiveClass;
+            btnGuia.className = activeClass;
+        }
     }
 
     const descEl = document.getElementById('modeDescription');
@@ -222,6 +268,10 @@ function setTab(id) {
     renderTabs();
     applyFilters();
     updateMapLayout(id);
+
+    // Refresh filters dropdowns for the new tab
+    if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+    if (typeof populateSourceDropdown === 'function') populateSourceDropdown();
 
     // Refresh tag browser with new tab data
     if (typeof initializeTagBrowser === 'function') {

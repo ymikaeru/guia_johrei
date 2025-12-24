@@ -3,7 +3,17 @@
 function renderBodyPoints(points, viewId) {
     if (!points || points.length === 0) return '';
 
+    // Get current filtered data - for mapa tab, use pontos_focais data
+    const dataKey = STATE.activeTab === 'mapa' ? 'pontos_focais' : STATE.activeTab;
+    const currentData = STATE.data[dataKey] || [];
+
     return points.map(point => {
+        // Count items matching this point
+        const count = currentData.filter(item => matchBodyPoint(item, point.id)).length;
+
+        // Skip rendering if count is 0 (hide empty points)
+        if (count === 0) return '';
+
         // Check if this point is in the selected IDs (comma-separated)
         const selectedIds = STATE.selectedBodyPoint ? STATE.selectedBodyPoint.split(',') : [];
         const isSelected = selectedIds.includes(point.id);
@@ -123,82 +133,38 @@ function selectBodyPoint(pointIds) {
     }
 
     // Filter content based on body point keywords (use first ID for keywords)
-    filterByBodyPoint(idArray[0]);
+    filterByBodyPoint(idArray[0], pointName);
 
-    // Re-render maps to update selected point visualization
-    updatePointsVisual(); // FAST UPDATE instead of re-render
-    // Note: We used to call renderBodyMaps() here, but updatePointsVisual is enough now that we persist ripple elements.
-    // However, for the very first selection, we might need render if ripples weren't there?
-    // Actually, since we changed renderBodyPoints to ALWAYS render ripples, a full re-render is safer needed?
-    // No, updatePointsVisual should be enough IF the maps were rendered with the new code.
-    // Let's keep it safe: updatesVisual is fast, if it fails we might need re-render.
-    // But since `renderBodyPoints` is only called when mounting the tab, we effectively just update classes now.
+    // Re-render maps to update selected point visualization (Kept for visual feedback on map)
+    updatePointsVisual();
 
-    // Scroll to results (Mobile & Desktop)
-    const contentList = document.getElementById('contentList');
-    if (contentList) {
-        contentList.classList.remove('hidden');
-        // Replace auto-scroll with visual indicator
-        showScrollIndicator();
-    }
-
-    // Show FAB on mobile only (not tablets)
-    if (window.innerWidth < 768) {
-        const fab = document.getElementById('mobileFab');
-        if (fab) {
-            fab.classList.remove('hidden');
-            // Pulse animation
-            fab.firstElementChild.classList.add('scale-110');
-            setTimeout(() => fab.firstElementChild.classList.remove('scale-110'), 200);
-        }
-
-        // Auto-switch view if needed
-        if (window.autoSwitchMapToPoint) {
-            window.autoSwitchMapToPoint(idArray[0]); // Use the first point ID for auto-switching
-        }
-    }
+    // NO SCROLL or LIST update needed for Modal Mode
+    // But we might want to ensure the list is hidden or reset?
+    // Actually, sticking to "Glossary Mode" means we don't change the underlying list state necessarily.
 }
-
-
 
 function selectBodyPointFromDropdown(pointIds) {
     selectBodyPoint(pointIds);
 }
 
-function filterByBodyPoint(pointId) {
-    // Get keywords for this body point
-    const keywords = BODY_DATA.keywords[pointId] || [];
-
-    if (keywords.length === 0) {
-        // Fallback or explicit no results
-        // Just show all? Or clear?
-        // Let's defer to applyFilters but with a warning or empty list?
-        // User reports "no results", which is correct behavior if keywords are missing.
-        // We will maintain this behavior but ensure main.js knows about it.
-        applyFilters();
-        return;
+function filterByBodyPoint(pointId, pointName) {
+    // Set bodyFilter state
+    STATE.bodyFilter = pointId;
+    
+    // Update selected point name display
+    const nameEl = document.getElementById('selectedBodyPointName');
+    if (nameEl) nameEl.textContent = pointName || 'Ponto Focal';
+    
+    // Apply filters to show cards below
+    applyFilters();
+    
+    // Scroll to results on mobile
+    const contentList = document.getElementById('contentList');
+    if (contentList && window.innerWidth < 1024) {
+        setTimeout(() => {
+            contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
     }
-
-    // Collect all items
-    let allItems = [];
-    Object.keys(STATE.data).forEach(tabId => {
-        if (STATE.data[tabId]) {
-            STATE.data[tabId].forEach(item => {
-                allItems.push({ ...item, _cat: tabId });
-            });
-        }
-    });
-
-    // Filter items using the robust matchBodyPoint function
-    const filtered = allItems.filter(item => matchBodyPoint(item, pointId));
-
-    STATE.list = filtered;
-    renderList(filtered, STATE.activeTags, STATE.mode, STATE.activeTab);
-
-    // Update counter
-    document.querySelectorAll('.search-count').forEach(el => {
-        el.textContent = `${filtered.length} Itens`;
-    });
 }
 
 function highlightBodyPoint(element, name, event) {
@@ -247,7 +213,7 @@ function highlightBodyPoint(element, name, event) {
         // User complaint: "tooltip scrolls with the page". Usually means it stays fixed on screen relative to viewport, effectively sliding over content.
         // Or it means "It moves UP with the page" (absolute). 
         // If we want it to DISAPPEAR on scroll, we add a listener.
-        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-lg border border-gray-100 dark:border-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-2 whitespace-nowrap';
+        tooltip.className = 'body-point-tooltip absolute z-[1000] bg-white dark:bg-[#111] text-black dark:text-white text-[10px] font-bold uppercase tracking-widest px-3 py-2 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 pointer-events-none transform -translate-x-1/2 -translate-y-full mb-3 whitespace-nowrap';
 
         document.body.appendChild(tooltip);
 
@@ -483,6 +449,123 @@ function selectCustomOption(ids, name, event) {
     if (typeof closeBodyFilterModal === 'function') closeBodyFilterModal();
 
     clearBodyPointPreview();
+}
+
+// --- GLOSSARY MODE HELPERS ---
+
+// Inject Styles for Blink Animation
+(function () {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes blink-purple {
+            0%, 100% { fill-opacity: 0.6; }
+            50% { fill-opacity: 1; fill: #7c3aed; filter: drop-shadow(0 0 8px #7c3aed); }
+        }
+        .blinking-highlight {
+            animation: blink-purple 1s ease-in-out infinite;
+        }
+        
+        /* Tooltip with centered triangle arrow at bottom */
+        .body-point-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid white;
+        }
+        
+        /* Dark mode triangle */
+        .dark .body-point-tooltip::after {
+            border-top-color: #111;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
+function blinkBodyPoint(pointIds) {
+    if (!pointIds) return;
+    const ids = pointIds.split(',');
+
+    // Find elements
+    const elements = [];
+    ids.forEach(id => {
+        const el = document.querySelector(`.body-map-point[data-point-id="${id}"]`);
+        if (el) elements.push(el);
+    });
+
+    if (elements.length === 0) return;
+
+    // Auto-switch to correct view on mobile (< 768px)
+    if (window.innerWidth < 768 && elements.length > 0) {
+        // Find which view contains the first element
+        const firstEl = elements[0];
+        const svg = firstEl.closest('svg');
+        if (svg) {
+            const viewId = svg.id.replace('_svg', ''); // e.g., 'front_svg' -> 'front'
+
+            // Switch to that view
+            if (typeof switchMobileView === 'function') {
+                switchMobileView(viewId);
+            }
+        }
+    }
+
+    // Scroll to top of page when clicking glossary
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    elements.forEach(el => {
+        el.classList.add('blinking-highlight');
+        // Force style override for duration
+        el.style.fill = '#7c3aed';
+        el.style.fillOpacity = '1';
+    });
+
+    // Stop after 3 seconds
+    setTimeout(() => {
+        elements.forEach(el => {
+            el.classList.remove('blinking-highlight');
+            // Reset inline styles (revert to default or hover logic handle handling)
+            el.style.fill = '';
+            el.style.fillOpacity = '';
+        });
+    }, 3000);
+}
+
+function generateGlossaryGrid() {
+    const allPoints = [
+        ...BODY_DATA.points.front,
+        ...BODY_DATA.points.back,
+        ...BODY_DATA.points.detail
+    ];
+
+    const pointsByName = {};
+    allPoints.forEach(point => {
+        if (!pointsByName[point.name]) {
+            pointsByName[point.name] = [];
+        }
+        pointsByName[point.name].push(point.id);
+    });
+
+    const sortedNames = Object.keys(pointsByName).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+
+    return sortedNames.map(name => {
+        const ids = pointsByName[name].join(',');
+        return `
+            <button 
+                class="text-left px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-gray-800 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-white dark:hover:bg-[#222] transition-all group"
+                onclick="blinkBodyPoint('${ids}')"
+                onmouseenter="previewBodyPoints('${ids}')"
+                onmouseleave="clearBodyPointPreview()"
+            >
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-purple-600 dark:text-gray-400 dark:group-hover:text-purple-400 transition-colors">${name}</span>
+            </button>
+        `;
+    }).join('');
 }
 
 function clearBodyFilter() {

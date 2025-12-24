@@ -2,21 +2,12 @@ const CONFIG = {
     password: '567',
     modes: {
         ensinamentos: {
-            description: 'Escritos sagrados originais de Meishu-Sama',
+            description: 'Ensinamentos de Meishu-Sama',
             file: 'index.json', path: 'data/',
             cats: {
                 fundamentos: { label: 'Fundamentos', color: 'cat-blue' },
-                curas: { label: 'Casos e Orientações', color: 'cat-green' },
-                pontos_focais: { label: 'Pontos Focais', color: 'cat-purple' }
-            }
-        },
-        explicacoes: {
-            description: 'Conteúdos didáticos explicativos',
-            file: 'explicacoes_index.json', path: 'data/',
-            cats: {
-                guia1: { label: 'Entender', color: 'cat-blue' },
-                guia2: { label: 'Aprofundar', color: 'cat-green' },
-                guia3: { label: 'Praticar', color: 'cat-purple' }
+                qa: { label: 'Q&A', color: 'cat-green' },
+                pontos_focais: { label: 'Casos Específicos', color: 'cat-purple' }
             }
         }
     }
@@ -46,7 +37,9 @@ const BODY_DATA = {
             { id: 'estomago', name: 'Estômago', x: 57, y: 65 },
             { id: 'pancreas', name: 'Pâncreas', x: 52, y: 67 },
             { id: 'intestino', name: 'Intestino', x: 50, y: 74 }, // Novo
+            { id: 'umbigo', name: 'Umbigo', x: 50, y: 76 },
             { id: 'baixo-ventre', name: 'Baixo ventre', x: 50, y: 78 },
+            { id: 'bexiga', name: 'Bexiga', x: 50, y: 80 },
             { id: 'inguinal', name: 'Região inguinal', x: 63, y: 84 },
             { id: 'virilha', name: 'Virilha', x: 42, y: 89 },
             { id: 'membros', name: 'Membros e Extremidades', x: 72, y: 92 }
@@ -63,7 +56,8 @@ const BODY_DATA = {
             { id: 'rins', name: 'Rins - Região renal', x: 37, y: 66 },
             { id: 'sacro', name: 'Sacro', x: 55, y: 80.5 },
             { id: 'gluteos', name: 'Glúteos', x: 65, y: 86.5 },
-            { id: 'anus', name: 'Ânus', x: 50, y: 92 }
+            { id: 'anus', name: 'Ânus', x: 50, y: 92 },
+            { id: 'coccix', name: 'Cóccix', x: 50, y: 95 }
         ],
 
         detail: [
@@ -118,6 +112,8 @@ const BODY_DATA = {
         inguinal: ['inguinal', 'virilha'],
         virilha: ['virilha'],
         membros: ['membros', 'extremidades', 'braços', 'pernas'],
+        umbigo: ['umbigo'],
+        bexiga: ['bexiga'],
 
         // Back view keywords
         'centro_cabeca': ['centro cabeça'],
@@ -137,6 +133,7 @@ const BODY_DATA = {
         sacro: ['sacro', 'costas do útero (sacro)'],
         gluteos: ['glúteos', 'nádegas'],
         anus: ['ânus'],
+        coccix: ['cóccix'],
 
         // Detail view keywords
         ouvidos: ['ouvidos', 'orelha'],

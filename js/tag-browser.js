@@ -2,75 +2,88 @@
 
 const TAG_CATEGORIES = {
     'Corpo e Sistemas': [
-        'Sistema Digestivo',
-        'Coração e Circulação',
-        'Rins e Sistema Urinário',
-        'Respiratório',
-        'Cabeça e Pescoço',
-        'Pele',
-        'Dentes e Boca',
-        'Olhos e Visão',
-        'Ouvidos e Audição',
-        'Digestivo',
-        'Sistema Nervoso e Cabeça', // Added from enrichment
-        'Sistema Reprodutor'      // Added from enrichment
+        'estômago',
+        'intestinos',
+        'fígado',
+        'coração',
+        'pulmões',
+        'rins',
+        'cabeça',
+        'pescoço',
+        'ombros',
+        'coluna',
+        'pele',
+        'olhos',
+        'ouvidos',
+        'nariz',
+        'garganta',
+        'dentes',
+        'boca'
     ],
-    'Público e Ciclo de Vida': [ // New Category
-        'Saúde da Criança',
-        'Doenças Infantis',
-        'Saúde da Mulher',
-        'Gravidez e Saúde da Mulher',
-        'Doenças Femininas'
+    'Público e Ciclo de Vida': [
+        'criança',
+        'bebê',
+        'mulher',
+        'gravidez',
+        'idoso'
     ],
     'Condições e Sintomas': [
-        'Dores e Rigidez',
-        'Gripe e Resfriado',
-        'Febre',
-        'Febre e Gripe',
-        'Tuberculose',
-        'Diabetes',
-        'Asma',
-        'Hipertensão',
-        'Derrame (AVC)',
-        'Neuralgia',
-        'Artrite',
-        'Anemia'
+        'dor',
+        'rigidez',
+        'febre',
+        'tosse',
+        'catarro',
+        'gripe',
+        'resfriado',
+        'tuberculose',
+        'diabetes',
+        'asma',
+        'hipertensão',
+        'derrame',
+        'paralisia',
+        'neuralgia',
+        'anemia',
+        'induração'
     ],
     'Conceitos Johrei': [
-        'Ministração de Johrei',
-        'Toxinas e Medicamentos',
-        'Purificação',
-        'Mundo Espiritual',
-        'Pontos Vitais'
+        'johrei',
+        'purificação',
+        'toxinas',
+        'toxinas_medicamentosas',
+        'pontos_vitais',
+        'mundo_espiritual'
     ],
     'Outros': [
-        'Arte e Beleza',
-        'Agricultura e Alimentação',
-        'Caso Clínico'
+        'arte',
+        'beleza',
+        'agricultura',
+        'alimentação'
     ]
 };
 
 const ICON_MAP = {
-    'Coração e Circulação': '❤️',
-    'Rins e Sistema Urinário': '💧',
-    'Respiratório': '🫁',
-    'Sistema Respiratório': '🫁',
-    'Cabeça e Pescoço': '🧠',
-    'Sistema Nervoso e Cabeça': '🧠',
-    'Sistema Digestivo': '🍽️',
-    'Digestivo': '🍽️',
-    'Olhos e Visão': '👁️',
-    'Ouvidos e Audição': '👂',
-    'Dentes e Boca': '🦷',
-    'Pele': '🖐️',
-    'Sistema Reprodutor': '♀️',
-    'Saúde da Mulher': '👩',
-    'Gravidez e Saúde da Mulher': '🤰',
-    'Saúde da Criança': '👶',
-    'Doenças Infantis': '👶',
-    'Mundo Espiritual': '👻',
-    'Purificação': '✨',
-    'Ministração de Johrei': '✋'
+    'coração': '❤️',
+    'rins': '💧',
+    'pulmões': '🫁',
+    'cabeça': '🧠',
+    'pescoço': '🧠',
+    'estômago': '🍽️',
+    'intestinos': '🍽️',
+    'fígado': '🍽️',
+    'olhos': '👁️',
+    'ouvidos': '👂',
+    'dentes': '🦷',
+    'boca': '🦷',
+    'pele': '🖐️',
+    'mulher': '👩',
+    'gravidez': '🤰',
+    'criança': '👶',
+    'bebê': '👶',
+    'mundo_espiritual': '👻',
+    'purificação': '✨',
+    'johrei': '✋',
+    'toxinas': '⚠️',
+    'toxinas_medicamentosas': '💊'
 };
 
 function formatSourceLabel(src) {
@@ -137,7 +150,8 @@ function initializeTagBrowser() {
                     ${validSources.map(src => {
             const count = sourceCounts[src];
             const isActive = STATE.activeSources.includes(src);
-            const label = formatSourceLabel(src);
+            let label = formatSourceLabel(src);
+            label = typeof cleanTitle === 'function' ? cleanTitle(label) : label;
             return `
                             <button onclick="toggleFilter('source', '${src.replace(/'/g, "\\'")}')" 
                                 class="tag-pill ${isActive ? 'tag-pill-active' : ''} text-xs">

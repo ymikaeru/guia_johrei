@@ -89,7 +89,7 @@ const SearchEngine = {
         const searchTerms = this.getRelatedTerms(query);
 
         // Title matches (highest weight)
-        const title = removeAccents(item.title || '').toLowerCase();
+        const title = removeAccents(item.title_pt || item.title || '').toLowerCase();
         if (title === q) score += 100; // Exact match
         else if (title.startsWith(q)) score += 80; // Starts with
         else if (title.includes(q)) score += 60; // Contains
@@ -142,8 +142,8 @@ const SearchEngine = {
         }
 
         // Content matches (lower weight, but still valuable)
-        if (item.content) {
-            const content = removeAccents(item.content.toLowerCase());
+        if (item.content_pt || item.content) {
+            const content = removeAccents((item.content_pt || item.content).toLowerCase());
             const matches = content.split(q).length - 1;
             score += Math.min(matches * 12, 50); // Higher weight to catch single mentions
 

@@ -1,0 +1,37 @@
+Parsing Parsed: /Users/michael/Documents/Ensinamentos/guia_johrei/Markdown/MD_Portugues/Pontos Focais 01_Prompt v5.md
+Updating JSON: /Users/michael/Documents/Ensinamentos/guia_johrei/data/pontos_focais_vol01_bilingual.json
+  WARNING: No match for 'Meningite' (Best score: 0.30 with 'Doenças Cerebrais e a Função dos Rins')
+  WARNING: No match for 'Paralisia (Acidente Vascular)' (Best score: 0.30 with 'Doenças Cerebrais e a Função dos Rins')
+  WARNING: No match for 'Enjoo na Gravidez (Hiperêmese Gravídica)' (Best score: 0.20 with 'Doenças Cerebrais e a Função dos Rins')
+  WARNING: No match for 'Rim na Gravidez (Toxemia Gravídica)' (Best score: 0.19 with 'Doenças Cerebrais e a Função dos Rins')
+  WARNING: No match for 'Coqueluche (Tosse Comprida)' (Best score: 0.33 with 'Doenças Cerebrais e a Função dos Rins')
+  Updated 30 items in /Users/michael/Documents/Ensinamentos/guia_johrei/data/pontos_focais_vol01_bilingual.json
+Parsing Parsed: /Users/michael/Documents/Ensinamentos/guia_johrei/Markdown/MD_Portugues/Pontos Focais 02_Prompt v5.md
+Updating JSON: /Users/michael/Documents/Ensinamentos/guia_johrei/data/pontos_focais_vol02_bilingual.json
+  WARNING: No match for 'Gânglios Linfáticos' (Best score: 0.22 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Meningite Cerebrospinal' (Best score: 0.40 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Mancha na Córnea (Meboshi)' (Best score: 0.26 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Efeitos colaterais da injeção no globo ocular' (Best score: 0.18 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Doença que causa olheiras (manchas escuras ao redor dos olhos)' (Best score: 0.18 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Otorreia (Jisui)' (Best score: 0.38 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Pleurisia (Pleurite)' (Best score: 0.34 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Valvulopatia (Doença Valvular)' (Best score: 0.27 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Paralisia Cardíaca' (Best score: 0.37 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Cárie da Costela (Tuberculose Óssea)' (Best score: 0.28 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Febre Tifoide (Tifo Intestinal)' (Best score: 0.38 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Causa das Toxinas de Remédios (Fístula Anal)' (Best score: 0.28 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Causa dos Pecados e Impurezas dos Antepassados (Fístula Anal)' (Best score: 0.33 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Dores Menstruais e Irregularidade Menstrual' (Best score: 0.30 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Esterilidade' (Best score: 0.20 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Metrite Parenquimatosa' (Best score: 0.28 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Deficiência de Lactação' (Best score: 0.26 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Déficit de Desenvolvimento' (Best score: 0.32 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Coqueluche (Tosse Convulsa)' (Best score: 0.28 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Bebê Chorão (Irritabilidade)' (Best score: 0.16 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Hérnia (Deslocamento Intestinal)' (Best score: 0.31 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Enurese Noturna (Xixi na Cama)' (Best score: 0.34 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Ronco' (Best score: 0.40 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Tumores e Inchaços' (Best score: 0.27 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Sofrimento' (Best score: 0.31 with '1. Locais com febre e dor são os pontos vitais')
+  WARNING: No match for 'Visita a Templos e Oração' (Best score: 0.26 with '1. Locais com febre e dor são os pontos vitais')
+  Updated 115 items in /Users/michael/Documents/Ensinamentos/guia_johrei/data/pontos_focais_vol02_bilingual.json

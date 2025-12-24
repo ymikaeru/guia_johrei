@@ -19,11 +19,231 @@ function toggleFilter(type, value) {
 
     applyFilters();
     renderActiveFilters();
-    // Update Tag Browser UI (if visible) since it now handles filters
     if (typeof initializeTagBrowser === 'function') {
         initializeTagBrowser();
     }
 }
+
+function setCategoryFilter(value) {
+    if (!value) {
+        STATE.activeCategories = [];
+    } else {
+        STATE.activeCategories = [value];
+    }
+    applyFilters();
+    renderActiveFilters();
+}
+
+function populateCategoryDropdown() {
+    const selects = document.querySelectorAll('.category-filter-select');
+    if (selects.length === 0) return;
+
+    // Determine relevant data source: Current Active Tab Items
+    let itemsToScan = [];
+
+    if (STATE.activeTab && STATE.data[STATE.activeTab]) {
+        itemsToScan = STATE.data[STATE.activeTab];
+    } else {
+        // Fallback: If no specific tab data or "search" mode across all tabs?
+        // For now, default to empty or maybe accumulate all if search mode?
+        // Let's stick to active tab context.
+    }
+
+    // Special Case: "Mapa" might rely on "Pontos Focais". 
+    // But currently Mapa is just an entry point to Modal. 
+    // If we are IN the "Pontos Focais" tab, we want its categories.
+
+    if (!itemsToScan || itemsToScan.length === 0) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    const categories = new Set();
+    itemsToScan.forEach(item => {
+        // Use 'category_pt' field which is the specific sub-chapter/category
+        // Ignore generic '_cat' if it's just the volume ID (which it is for current STATE.data structure)
+        if (item.category_pt && typeof item.category_pt === 'string' && item.category_pt.length > 0) {
+            categories.add(item.category_pt.trim());
+        }
+    });
+
+    const sortedCats = Array.from(categories).sort();
+
+    // Preserve current selection if valid
+    const currentVal = STATE.activeCategories.length > 0 ? STATE.activeCategories[0] : "";
+
+    // Build Options
+    let html = '<option value="">TODAS AS CATEGORIAS</option>';
+    sortedCats.forEach(cat => {
+        const selected = cat === currentVal ? 'selected' : '';
+        html += `<option value="${cat}" ${selected}>${cat}</option>`;
+    });
+
+    selects.forEach(select => {
+        select.innerHTML = html;
+
+        // Visibility Logic: Hide if no categories found (<= 0 options besides default?)
+        // Actually if only default exists (sortedCats.length === 0), usually hide.
+        if (sortedCats.length === 0) {
+            select.parentElement.classList.add('hidden');
+        } else {
+            select.parentElement.classList.remove('hidden');
+        }
+
+        // Ensure event listener is attached? It's done in HTML usually (onchange="setCategoryFilter(this.value)")
+    });
+}
+// --- SOURCE FILTER LOGIC ---
+function setSourceFilter(value) {
+    if (!value) {
+        STATE.activeSources = [];
+    } else {
+        STATE.activeSources = [value];
+    }
+    applyFilters();
+    renderActiveFilters();
+}
+
+function populateSourceDropdown() {
+    const selects = document.querySelectorAll('.source-filter-select');
+    if (selects.length === 0) return;
+
+    // Determine relevant data source: Current Active Tab Items
+    let itemsToScan = [];
+    if (STATE.activeTab && STATE.data[STATE.activeTab]) {
+        itemsToScan = STATE.data[STATE.activeTab];
+    }
+
+    if (!itemsToScan || itemsToScan.length === 0) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    const sources = new Set();
+    const sourceRegex = /Fonte:\s*(.*?)[\)\n]/i; // Simple regex to capture source name
+
+    itemsToScan.forEach(item => {
+        // 1. Prefer explicit 'source' field
+        if (item.source) {
+            sources.add(item.source.trim());
+        }
+        // 2. Fallback: Parse from content_pt
+        else if (item.content_pt) {
+            const match = item.content_pt.match(sourceRegex);
+            if (match && match[1]) {
+                // Clean up source name: remove page numbers, etc if simpler
+                // E.g. "Shinkō Zatsuwa 2, p. 11–12" -> "Shinkō Zatsuwa 2"
+                // Maybe split by comma?
+                let cleanSource = match[1].split(',')[0].trim();
+                sources.add(cleanSource);
+
+                // Temp: Tag item with parsed source for filtering
+                item._tempSource = cleanSource;
+            }
+        }
+    });
+
+    const sortedSources = Array.from(sources).sort();
+
+    // Preserve selection
+    const currentVal = STATE.activeSources.length > 0 ? STATE.activeSources[0] : "";
+
+    let html = '<option value="">FONTES</option>';
+    sortedSources.forEach(src => {
+        const selected = src === currentVal ? 'selected' : '';
+        html += `<option value="${src}" ${selected}>${src}</option>`;
+    });
+
+    selects.forEach(select => {
+        select.innerHTML = html;
+        if (sortedSources.length === 0) {
+            select.parentElement.classList.add('hidden');
+        } else {
+            select.parentElement.classList.remove('hidden');
+        }
+    });
+}
+
+// Call this when tab changes
+// Hooking into updateUIForTab or similar might be needed.
+// For now, renderTabs calls renderList, maybe we add it there or where populateCategoryDropdown is called.
+
+
+// --- SUBJECT FILTER LOGIC (TITULO MESTRE) ---
+function setSubjectFilter(value) {
+    if (!value) {
+        STATE.activeSubject = null;
+    } else {
+        STATE.activeSubject = value;
+    }
+    applyFilters();
+    renderActiveFilters();
+}
+
+function populateSubjectDropdown() {
+    const selects = document.querySelectorAll('.subject-filter-select');
+    if (selects.length === 0) return;
+
+    // Check if we are in Q&A tab
+    // Adjust 'cases_qa' or 'qa' based on your actual tab ID. 
+    // Usually 'cases_qa' for "Casos e Respostas" or similar.
+    // Usually 'cases_qa' for "Casos e Respostas" or similar.
+    const allowedTabs = ['cases_qa', 'qa', 'casos_especificos', 'pontos_focais'];
+    if (!STATE.activeTab || !allowedTabs.includes(STATE.activeTab)) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    // Determine relevant data source: Current Active Tab Items
+    let itemsToScan = [];
+    if (STATE.activeTab && STATE.data[STATE.activeTab]) {
+        itemsToScan = STATE.data[STATE.activeTab];
+    }
+
+    if (!itemsToScan || itemsToScan.length === 0) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    const subjects = new Set();
+
+    // Scan for Master_Title
+    itemsToScan.forEach(item => {
+        // Use standard 'Master_Title' key
+        if (item.Master_Title) {
+            subjects.add(item.Master_Title.trim());
+        } else if (item.Master_title) {
+            subjects.add(item.Master_title.trim());
+        }
+        // Fallback for legacy key if script hasn't run fully or cache issues
+        else if (item.titulo_mestre) {
+            subjects.add(item.titulo_mestre.trim());
+        }
+    });
+
+    const sortedSubjects = Array.from(subjects).sort();
+
+    // Preserve selection
+    const currentVal = STATE.activeSubject || "";
+
+    let html = '<option value="">ASSUNTO</option>';
+    sortedSubjects.forEach(subj => {
+        const selected = subj === currentVal ? 'selected' : '';
+        html += `<option value="${subj}" ${selected}>${subj}</option>`;
+    });
+
+    selects.forEach(select => {
+        select.innerHTML = html;
+        // Hide if no subjects found
+        if (sortedSubjects.length === 0) {
+            select.parentElement.classList.add('hidden');
+        } else {
+            select.parentElement.classList.remove('hidden');
+            select.parentElement.style.display = ''; // Ensure inline style is cleared
+        }
+    });
+}
+
 
 function applyFilters() {
     // Get value from any search input (they should be synced)
@@ -33,11 +253,11 @@ function applyFilters() {
     const searchValue = inputs.length > 0 ? inputs[0].value : '';
     const q = removeAccents(searchValue); // Normalize for accent-insensitive search
 
-    const { activeTab, activeLetter, activeTags, bodyFilter } = STATE;
+    const { activeTab, activeLetter, activeTags, bodyFilter, activeSubject } = STATE;
 
     // Fix: If in Apostila tab and no search active, do not run applyFilters Logic (prevent overwrite)
     // The Apostila view is rendered by updateUIForTab called in renderTabs
-    if (activeTab === 'apostila' && !q && activeTags.length === 0 && !bodyFilter) {
+    if (activeTab === 'apostila' && !q && activeTags.length === 0 && !bodyFilter && !activeSubject) {
         return;
     }
 
@@ -46,7 +266,7 @@ function applyFilters() {
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
-    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter) {
+    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter || activeSubject) {
         // GLOBAL SEARCH: Use globalData cache if searching, to find items from other modes
         if (q && STATE.globalData && Object.keys(STATE.globalData).length > 0) {
             rawItems = Object.values(STATE.globalData);
@@ -73,8 +293,8 @@ function applyFilters() {
         // ONLY valid if SearchEngine is NOT used. If SearchEngine is used, we skip this strict check to allow synonyms.
         if (q.length > 0 && typeof SearchEngine === 'undefined') {
             const searchableText = removeAccents((
-                (item.title || '') + ' ' +
-                (item.content || '') + ' ' +
+                (item.title_pt || item.title || '') + ' ' +
+                (item.content_pt || item.content || '') + ' ' +
                 (item.tags ? item.tags.join(' ') : '') + ' ' +
                 (item.focusPoints ? item.focusPoints.join(' ') : '')
             ).toLowerCase());
@@ -103,15 +323,27 @@ function applyFilters() {
 
         // 1.6 Filtro de FONTE (OR Logic for list of sources)
         if (STATE.activeSources.length > 0) {
-            if (!item.source || !STATE.activeSources.includes(item.source)) return false;
+            const itemSource = item.source || item._tempSource;
+            if (!itemSource || !STATE.activeSources.includes(itemSource)) return false;
+        }
+
+        // 1.7 Filtro de CATEGORIA (OR logic) - Added for Category Filtering
+        if (STATE.activeCategories.length > 0) {
+            // Check category_pt first, then fallback to implicit categories logic if needed
+            // But strict matching to category_pt is best for the dropdown.
+            if (!item.category_pt || !STATE.activeCategories.includes(item.category_pt)) return false;
+        }
+
+        // 1.8 Filtro de CATEGORIA (single category for Q&A alphabet replacement)
+        if (STATE.activeCategory && STATE.activeCategory !== '') {
+            if (!item.category_pt || item.category_pt !== STATE.activeCategory) return false;
         }
 
         // 2. Filtro do MAPA (Integração)
         // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
         if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
 
-        // Na aba mapa, mostrar apenas itens com pontos focais
-        if (activeTab === 'mapa' && !item.focusPoints) return false;
+
 
         // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
         if (bodyFilter && typeof matchBodyPoint === 'function') {
@@ -119,7 +351,27 @@ function applyFilters() {
         }
 
         // 3. Filtro de LETRA (Alfabeto)
-        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter && !item.title.toUpperCase().startsWith(activeLetter)) return false;
+        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter) {
+            const t = item.title_pt || item.title || '';
+            // Normalize exactly as UI renderer
+            let cleanTitle;
+            if (typeof toSlug === 'function') {
+                cleanTitle = toSlug(t).toUpperCase();
+            } else {
+                cleanTitle = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, '').toUpperCase();
+            }
+
+            if (!cleanTitle.startsWith(activeLetter)) return false;
+        }
+
+        // 3.5. Filtro de ASSUNTO (Master_Title for Q&A)
+        if (activeSubject) {
+            // Check all variants: Master_Title (Legacy/Manual), Master_title (Script generated), titulo_mestre (Legacy)
+            const itemSubject = item.Master_Title || item.Master_title || item.titulo_mestre;
+            if (!itemSubject || itemSubject.trim() !== activeSubject) {
+                return false;
+            }
+        }
 
         // 4. Filtro de BUSCA TEXTUAL - Now handled by SearchEngine below
         // Keep this for non-search filters only
@@ -148,15 +400,14 @@ function applyFilters() {
         } else {
             // Fallback to basic search if SearchEngine not loaded
             filtered = filtered.filter(item => {
-                const content = removeAccents(item.content || '');
-                const title = removeAccents(item.title);
-                const tags = item.tags || [];
-                const fps = item.focusPoints || [];
-
-                return title.includes(q) ||
-                    content.includes(q) ||
-                    tags.some(t => removeAccents(t).includes(q)) ||
-                    fps.some(fp => removeAccents(fp).includes(q));
+                // Normalize item text for search
+                const searchableText = removeAccents((
+                    (item.title_pt || item.title || '') + ' ' +
+                    (item.content_pt || item.content || '') + ' ' +
+                    (item.tags ? item.tags.join(' ') : '')
+                ).toLowerCase());
+                const terms = q.split(/\s+/).filter(t => t.length > 0);
+                return terms.every(term => searchableText.includes(term));
             });
         }
     } else {
@@ -429,6 +680,17 @@ function toggleBodyPoint(id) {
 }
 
 // --- SETUP ---
+function updateSearchPlaceholder() {
+    const inputs = document.querySelectorAll('.search-input');
+    const modeConfig = CONFIG.modes[STATE.mode];
+    const catConfig = modeConfig.cats[STATE.activeTab];
+    const label = catConfig ? catConfig.label : 'Ensinamento';
+
+    inputs.forEach(input => {
+        input.placeholder = `Pesquisar em ${label}...`;
+    });
+}
+
 function setupSearch() {
     const inputs = document.querySelectorAll('.search-input');
     const suggestionsEl = document.getElementById('searchSuggestions');
@@ -517,10 +779,10 @@ function setupSearch() {
                     // Check if query itself has matches in data
                     const queryHasResults = allData.some(item => {
                         const searchable = removeAccents((
-                            (item.title || '') + ' ' +
+                            (item.title_pt || item.title || '') + ' ' +
                             (item.tags ? item.tags.join(' ') : '') + ' ' +
                             (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
-                            (item.content || '')
+                            (item.content_pt || item.content || '')
                         ).toLowerCase());
                         return searchable.includes(q);
                     });
@@ -535,10 +797,10 @@ function setupSearch() {
                             const synNorm = removeAccents(syn.toLowerCase());
                             const synHasResults = allData.some(item => {
                                 const searchable = removeAccents((
-                                    (item.title || '') + ' ' +
+                                    (item.title_pt || item.title || '') + ' ' +
                                     (item.tags ? item.tags.join(' ') : '') + ' ' +
                                     (item.focusPoints ? item.focusPoints.join(' ') : '') + ' ' +
-                                    (item.content || '')
+                                    (item.content_pt || item.content || '')
                                 ).toLowerCase());
                                 return searchable.includes(synNorm);
                             });
@@ -730,3 +992,14 @@ function setupSearch() {
         });
     }
 }
+
+// Filter by category (body part) for Q&A tab
+function filterByCategory(category) {
+    STATE.activeCategory = category;
+    STATE.activeLetter = ''; // Clear letter filter
+    applyFilters();
+    renderAlphabet(); // Update button states
+}
+
+// Make it globally available
+window.filterByCategory = filterByCategory;

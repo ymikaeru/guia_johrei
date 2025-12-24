@@ -95,8 +95,8 @@ def apply_points():
                     continue
                 
                 # Check text content
-                title = item.get('title', '')
-                content = item.get('content', '')
+                title = item.get('title', '') or item.get('title_pt', '') or item.get('tituloconteudo', '')
+                content = item.get('content', '') or item.get('content_pt', '') or item.get('conteudo', '')
                 full_text = (title + " " + content).lower()
                 
                 # Find points

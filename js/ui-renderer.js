@@ -35,7 +35,7 @@ function renderTabs() {
         const activeClass = active
             ? `border-cat-dark text-cat-dark dark:border-white dark:text-white`
             : 'border-transparent hover:text-black dark:hover:text-white text-gray-400';
-        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapas de Aplicação</button>`;
+        html += `<button onclick="setTab('mapa')" class="tab-btn ${activeClass}">Mapa</button>`;
     }
 
     // Adiciona aba Apostilas se houver itens (Modo Específico)
@@ -86,7 +86,7 @@ function renderTabs() {
 
             const className = `${baseClass} ${isActive ? activeStyle : inactiveStyle}`;
 
-            mobileHtml += `<button onclick="setTab('mapa')" class="${className}">Mapas</button>`;
+            mobileHtml += `<button onclick="setTab('mapa')" class="${className}">Mapa</button>`;
         }
 
         // Add Apostila Option to Mobile (Minimalist)
@@ -107,8 +107,22 @@ function renderTabs() {
         }
 
         mobileContainer.innerHTML = mobileHtml;
+    }
 
-    } updateUIForTab(STATE.activeTab);
+    // Populate Category Dropdown whenever tab changes
+    if (typeof populateCategoryDropdown === 'function') {
+        populateCategoryDropdown();
+    }
+    // Populate Source Dropdown
+    if (typeof populateSourceDropdown === 'function') {
+        populateSourceDropdown();
+    }
+    // Populate Subject Dropdown (New)
+    if (typeof populateSubjectDropdown === 'function') {
+        populateSubjectDropdown();
+    }
+
+    updateUIForTab(STATE.activeTab);
 }
 
 function renderBodyMapViews() {
@@ -123,7 +137,7 @@ function renderBodyMapViews() {
     ];
 
     let html = `
-    <div class="flex flex-col-reverse min-[768px]:flex-col lg:flex-row gap-6 lg:gap-12 w-full max-w-7xl mx-auto items-start">
+    <div class="flex flex-col-reverse min-[768px]:flex-col lg:flex-row gap-6 lg:gap-12 w-full max-w-full px-4 lg:px-8 mx-auto items-start">
         <!-- Sidebar (Desktop Only) -->
         <div class="hidden lg:block w-72 flex-shrink-0 bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 sticky top-4 rounded-sm shadow-sm" style="height: 500px; overflow-y: auto !important;">
                 <div class="p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515]">
@@ -193,31 +207,31 @@ function openBodyFilterModal() {
         modal.id = 'bodyFilterModal';
         modal.className = 'fixed inset-0 z-[9999] hidden';
         modal.innerHTML = `
-            <!-- Backdrop -->
+        < !--Backdrop -->
             <div class="absolute inset-0 bg-white/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
             
-            <!-- Modal Card (Centered) -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
-                
-                <!-- Header -->
-                <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500">Filtrar por Região</h3>
-                    <button onclick="closeBodyFilterModal()" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
-                
-                <!-- List -->
-                <div class="overflow-y-auto flex-1 p-0" id="filterModalList">
-                    <!-- Dynamic Content -->
-                     <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
-                        onclick="selectCustomOption('', '-- Todos os pontos --', event)">
-                        -- Todos os pontos --
-                    </div>
-                    ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
-                </div>
+            <!--Modal Card(Centered)-- >
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
+
+            <!-- Header -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-100 dark:border-gray-800">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500">Filtrar por Região</h3>
+                <button onclick="closeBodyFilterModal()" class="text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
-        `;
+
+            <!-- List -->
+            <div class="overflow-y-auto flex-1 p-0" id="filterModalList">
+                <!-- Dynamic Content -->
+                <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
+                    onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                    -- Todos os pontos --
+                </div>
+                ${typeof generateSidebarOptions === 'function' ? generateSidebarOptions() : ''}
+            </div>
+        </div>
+    `;
         document.body.appendChild(modal);
     }
 
@@ -402,7 +416,9 @@ function updateUIForTab(tabId) {
         const desktopSearch = document.getElementById('desktopSearchWrapper');
         // Note: mobileWrapper has 'md:hidden' by default in HTML. We just remove the explicit 'hidden' we added.
         if (mobileSearch) mobileSearch.classList.remove('hidden');
-        if (desktopSearch) desktopSearch.classList.remove('opacity-0', 'pointer-events-none');
+        if (desktopSearch) {
+            desktopSearch.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
+        }
 
         // Reset body overflow when leaving mapa tab
         document.body.style.overflow = '';
@@ -429,12 +445,12 @@ function renderPoints(points, prefix) {
         const activeClass = isSelected ? 'bg-johrei-murasaki text-white scale-125 z-10 shadow-lg ring-2 ring-white dark:ring-black' : 'bg-white dark:bg-black border border-gray-200 dark:border-gray-800 hover:scale-110';
 
         return `
-        <button onclick="toggleBodyPoint('${p.id}')"
+        < button onclick = "toggleBodyPoint('${p.id}')"
     class="absolute w-3 h-3 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center group ${activeClass}"
-    style="left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
-    title="${p.name}">
+    style = "left: ${p.x - 1.5}px; top: ${p.y - 1.5}px;"
+    title = "${p.name}" >
         <span class="sr-only">${p.name}</span>
-        </button>
+        </button >
         `;
     }).join('');
 }
@@ -533,21 +549,65 @@ function updateSearchPlaceholder() {
 }
 
 function renderAlphabet() {
-    const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     const container = document.getElementById('alphabetContainer');
     const currentData = STATE.data[STATE.activeTab] || [];
-    const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
 
-    // Clear container
-    container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
+    // For Q&A tab, show body parts instead of alphabet
+    if (STATE.activeTab === 'qa') {
+        // Extract all categories from current data
+        const allCategories = new Set();
+        currentData.forEach(item => {
+            if (item.category_pt) {
+                allCategories.add(item.category_pt);
+            }
+        });
 
-    abc.forEach(l => {
-        if (availableLetters.has(l)) {
-            const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
-            const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
+        // Sort alphabetically
+        const bodyParts = Array.from(allCategories).sort();
+
+        // Clear container and add "All" button
+        container.innerHTML = `<button onclick="filterByCategory('')" class="flex-none px-4 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all whitespace-nowrap ${STATE.activeCategory === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-category-all">Todos</button>`;
+
+        // Add body part buttons (cleaned without numbers)
+        bodyParts.forEach(cat => {
+            const cleanCat = typeof cleanTitle === 'function' ? cleanTitle(cat) : cat;
+            const active = STATE.activeCategory === cat ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
+            const html = `<button onclick="filterByCategory('${cat.replace(/'/g, "\\'")}')" class="flex-none px-4 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all whitespace-nowrap ${active}">${cleanCat}</button>`;
             container.insertAdjacentHTML('beforeend', html);
-        }
-    });
+        });
+    } else {
+        // Standard alphabet for other tabs
+        const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        const availableLetters = new Set(currentData.map(i => {
+            const t = i.title_pt || i.title || '';
+            if (!t) return '';
+
+            // Normalize the ENTIRE string first to match filter logic
+            // This handles cases like " A" (slug: a) or "(O) bs" (slug: o-bs)
+            let clean;
+            if (typeof toSlug === 'function') {
+                clean = toSlug(t); // returns lowercase slug
+            } else {
+                clean = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+
+            if (!clean || clean.length === 0) return '';
+
+            // Return first character as uppercase
+            return clean.charAt(0).toUpperCase();
+        }));
+
+        // Clear container
+        container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;
+
+        abc.forEach(l => {
+            if (availableLetters.has(l)) {
+                const active = STATE.activeLetter === l ? 'btn-swiss-active' : 'bg-white dark:bg-black hover:border-black dark:hover:border-white';
+                const html = `<button onclick="filterByLetter('${l}')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${active}">${l}</button>`;
+                container.insertAdjacentHTML('beforeend', html);
+            }
+        });
+    }
 }
 
 function toggleSearch(type, forceState = null) {

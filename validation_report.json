@@ -1,0 +1,4071 @@
+[
+  {
+    "file": "curas.json",
+    "total": 173,
+    "with_ja": 44,
+    "aligned": 1,
+    "misaligned": 43,
+    "missing_ja": 129,
+    "misaligned_items": [
+      {
+        "id": "tecnicas_53",
+        "title": "O Método para Engravidar",
+        "pt_para": 12,
+        "ja_para": 102
+      },
+      {
+        "id": "fundamentos_120",
+        "title": "Usar sal para escovar os dentes é bom?\n\n(Orientação) É excelente",
+        "pt_para": 2,
+        "ja_para": 44
+      },
+      {
+        "id": "fundamentos_116",
+        "title": "A desafinação ou falta de tom em crianças é espiritual?\n\n(Orientação) É uma questão de calibre",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "fundamentos_111",
+        "title": "Câncer e Johrei",
+        "pt_para": 2,
+        "ja_para": 24
+      },
+      {
+        "id": "fundamentos_96",
+        "title": "(3) Causa da \"Nuvem nos Olhos\" (Opacidade Corneana/Catarata)",
+        "pt_para": 4,
+        "ja_para": 55
+      },
+      {
+        "id": "fundamentos_107",
+        "title": "Dor Ocular e Região Occipital",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "fundamentos_115",
+        "title": "Câncer e Johrei",
+        "pt_para": 2,
+        "ja_para": 24
+      },
+      {
+        "id": "fundamentos_103",
+        "title": "Esposa (54 anos) tratou tracoma por 10 anos e perdeu a visão do olho esquerdo",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_78",
+        "title": "Uma criança de quatro anos",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_76",
+        "title": "Dor de dente, quase invariavelmente, tiveram o apêndice remo",
+        "pt_para": 1,
+        "ja_para": 44
+      },
+      {
+        "id": "tecnicas_79",
+        "title": "Isso em livros antigos; é remédio de dente",
+        "pt_para": 1,
+        "ja_para": 44
+      },
+      {
+        "id": "regioes_corpo_10",
+        "title": "A dor nos dentes inferiores vem daqui (gânglios linfáticos do pescoço) em direção ao dente",
+        "pt_para": 1,
+        "ja_para": 44
+      },
+      {
+        "id": "regioes_corpo_8",
+        "title": "(Pergunta) Bebê de 7 meses. Tinha uma \"nuvem\" nos olhos ao nascer. Após a vacina",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_72",
+        "title": "Sobre Tuberculose",
+        "pt_para": 1,
+        "ja_para": 130
+      },
+      {
+        "id": "casos_clinicos_26",
+        "title": "Febre e Purificação",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_70",
+        "title": "Otite e Johrei",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_71",
+        "title": "Sinusite e Johrei",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_73",
+        "title": "Johrei, a ferida não melhora e está se alastrando; no local",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_77",
+        "title": "Membros, ao extrair dentes, não uso remédios",
+        "pt_para": 2,
+        "ja_para": 44
+      },
+      {
+        "id": "tecnicas_80",
+        "title": "Extração do Dente do Siso e Complicações",
+        "pt_para": 2,
+        "ja_para": 44
+      },
+      {
+        "id": "casos_clinicos_23",
+        "title": "(4) Causas Espirituais e Físicas do Estrabismo",
+        "pt_para": 2,
+        "ja_para": 44
+      },
+      {
+        "id": "casos_clinicos_28",
+        "title": "Olheiras pretas na primavera e verão",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "regioes_corpo_9",
+        "title": "Otite e Johrei",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "doencas_10",
+        "title": "O zumbido cura-se certamente tratando o bulbo raquidiano",
+        "pt_para": 4,
+        "ja_para": 130
+      },
+      {
+        "id": "casos_clinicos_30",
+        "title": "Suco gástrico) diariamente",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "medicamentos_0",
+        "title": "Conjuntivite e Johrei",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "medicamentos_2",
+        "title": "Câncer e Johrei",
+        "pt_para": 2,
+        "ja_para": 24
+      },
+      {
+        "id": "regioes_corpo_7",
+        "title": "Febre e Purificação",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_69",
+        "title": "Sinusite e Johrei",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "doencas_11",
+        "title": "Duas cavidades no pulmão direito",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "casos_clinicos_27",
+        "title": "Johrei, tem dor de cabeça forte e olho inchado",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "medicamentos_3",
+        "title": "Tratamento Dentário com Johrei",
+        "pt_para": 1,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_66",
+        "title": "Aproveito o ensejo para esclarecer que a causa das enfermidades oculares resi...",
+        "pt_para": 5,
+        "ja_para": 130
+      },
+      {
+        "id": "pontos_focais_26",
+        "title": "\"olho de gato\" (retinoblastoma/glaucoma congênito) e cegueir",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "pontos_focais_27",
+        "title": "Sobre Dor de cabeça",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "pontos_focais_28",
+        "title": "Solidificação de Toxinas na Região Occipital",
+        "pt_para": 1,
+        "ja_para": 130
+      },
+      {
+        "id": "casos_clinicos_25",
+        "title": "Febre e Purificação",
+        "pt_para": 2,
+        "ja_para": 130
+      },
+      {
+        "id": "tecnicas_27",
+        "title": "Mulher de 50 anos",
+        "pt_para": 2,
+        "ja_para": 167
+      },
+      {
+        "id": "fundamentos_34",
+        "title": "Criança surda",
+        "pt_para": 2,
+        "ja_para": 167
+      },
+      {
+        "id": "fundamentos_86",
+        "title": "II. Doenças das Costas",
+        "pt_para": 6,
+        "ja_para": 21
+      },
+      {
+        "id": "fundamentos_88",
+        "title": "IV. Doenças das Mãos e Pés",
+        "pt_para": 15,
+        "ja_para": 13
+      },
+      {
+        "id": "fundamentos_89",
+        "title": "V. Doenças do Aparelho Urinário",
+        "pt_para": 6,
+        "ja_para": 32
+      },
+      {
+        "id": "fundamentos_85",
+        "title": "I. Doenças da Cabeça",
+        "pt_para": 23,
+        "ja_para": 6
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_contexto.json",
+    "total": 10,
+    "with_ja": 10,
+    "aligned": 0,
+    "misaligned": 10,
+    "missing_ja": 0,
+    "misaligned_items": [
+      {
+        "id": "explicacao_01_0",
+        "title": "Prefácio",
+        "pt_para": 1,
+        "ja_para": 9
+      },
+      {
+        "id": "explicacao_01_1",
+        "title": "Capítulo 1 - A Saúde e a Doença na Atualidade",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_2",
+        "title": "Seção 1 - Sobre os Problemas de Saúde Modernos",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_01_3",
+        "title": "Seção 2 - Sobre a Definição de Saúde",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_01_6",
+        "title": "Capítulo 2 - A Transição da Noite para o Dia e a \"Arte Médica Japonesa - Johrei\"",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_7",
+        "title": "Seção 1 - Sobre a Transição da Noite para o Dia",
+        "pt_para": 1,
+        "ja_para": 11
+      },
+      {
+        "id": "explicacao_01_8",
+        "title": "Seção 2 - O Mundo do Dia e o Aumento do Elemento Fogo",
+        "pt_para": 1,
+        "ja_para": 8
+      },
+      {
+        "id": "explicacao_01_12",
+        "title": "Seção 1 - Motivação para a Descoberta do Princípio do Johrei",
+        "pt_para": 1,
+        "ja_para": 11
+      },
+      {
+        "id": "explicacao_01_15",
+        "title": "Seção 1 - A Verdadeira Essência da Saúde é a Adaptação à Natureza",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "explicacao_01_16",
+        "title": "Seção 2 - Sobre a Capacidade Natural de Recuperação",
+        "pt_para": 1,
+        "ja_para": 6
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_fundamentos.json",
+    "total": 43,
+    "with_ja": 0,
+    "aligned": 0,
+    "misaligned": 0,
+    "missing_ja": 43,
+    "misaligned_items": []
+  },
+  {
+    "file": "explicacoes_guia1.json",
+    "total": 25,
+    "with_ja": 18,
+    "aligned": 2,
+    "misaligned": 16,
+    "missing_ja": 7,
+    "misaligned_items": [
+      {
+        "id": "explicacao_01_1",
+        "title": "Capítulo 1 - A Saúde e a Doença na Atualidade",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_2",
+        "title": "Seção 1 - Sobre os Problemas de Saúde Modernos",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_3",
+        "title": "Seção 2 - Sobre a Definição de Saúde",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_4",
+        "title": "Seção 3 - Características da \"Arte Médica Japonesa - Johrei\"",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "explicacao_01_5",
+        "title": "[Anexo] A Prática do Johrei",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "explicacao_01_6",
+        "title": "Capítulo 2 - A Transição da Noite para o Dia e a \"Arte Médica Japonesa - Johrei\"",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "explicacao_01_10",
+        "title": "Seção 4 - A \"Arte Médica Japonesa - Johrei\" criando a Verdadeira Civilização",
+        "pt_para": 1,
+        "ja_para": 8
+      },
+      {
+        "id": "explicacao_01_11",
+        "title": "Capítulo 3 - As Leis da Grande Natureza e o Princípio da \"Arte Médica Japonesa - Johrei\"",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "explicacao_01_12",
+        "title": "Seção 1 - Motivação para a Descoberta do Princípio do Johrei",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "explicacao_01_15",
+        "title": "Seção 1 - A Verdadeira Essência da Saúde é a Adaptação à Natureza",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "explicacao_01_16",
+        "title": "Seção 2 - Sobre a Capacidade Natural de Recuperação",
+        "pt_para": 1,
+        "ja_para": 14
+      },
+      {
+        "id": "explicacao_01_19",
+        "title": "Seção 5 - Sobre a Febre Baixa",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "explicacao_01_20",
+        "title": "Seção 5 - Sobre a Febre Baixa (Binetsu)",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "explicacao_01_22",
+        "title": "II. Sobre os Sintomas das Doenças",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_01_23",
+        "title": "1) Febre",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "explicacao_01_24",
+        "title": "2) Dor",
+        "pt_para": 1,
+        "ja_para": 9
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_guia2.json",
+    "total": 28,
+    "with_ja": 19,
+    "aligned": 3,
+    "misaligned": 16,
+    "missing_ja": 9,
+    "misaligned_items": [
+      {
+        "id": "explicacao_02_0",
+        "title": "Primeira Seção: A Pesquisa Divina de Meishu-Sama",
+        "pt_para": 1,
+        "ja_para": 19
+      },
+      {
+        "id": "explicacao_02_1",
+        "title": "Segunda Seção: O Vínculo Divino entre Meishu-Sama e Kannon (観音)",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "explicacao_02_2",
+        "title": "Terceira Seção: A Revelação da Verdade Baseada no \"Kenshinjitsu (見真実)\"",
+        "pt_para": 1,
+        "ja_para": 13
+      },
+      {
+        "id": "explicacao_02_4",
+        "title": "Quinta Seção: Poder Divino e Johrei como Prova do Salvador",
+        "pt_para": 1,
+        "ja_para": 13
+      },
+      {
+        "id": "explicacao_02_5",
+        "title": "Capítulo 2: Sobre o Johrei como Ciência Espiritual",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "explicacao_02_6",
+        "title": "Primeira Seção: A \"Arte Médica Japonesa e Johrei\" é uma Terapia da Ciência Espiritual",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "explicacao_02_9",
+        "title": "Quarta Seção: Sobre o Ritmo Espiritual de \"Avanço pela Esquerda e Recuo pela Direita\" (Sashin Utai)",
+        "pt_para": 1,
+        "ja_para": 13
+      },
+      {
+        "id": "explicacao_02_15",
+        "title": "Primeira Seção: O Íntimo do Corpo Espiritual e a Geração de Nuvens",
+        "pt_para": 1,
+        "ja_para": 19
+      },
+      {
+        "id": "explicacao_02_17",
+        "title": "Terceira Seção: A \"Arte Médica Japonesa e Johrei\" que Promove o Despertar da Alma",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "explicacao_02_20",
+        "title": "Sexta Seção: Sobre a Alma Humana (Deus Guardião Primário) e Outros Guardiões",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_02_21",
+        "title": "2) Tosse, Afluxo de Sangue à Cabeça e Zumbido",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "explicacao_02_23",
+        "title": "Capítulo 4: Sobre a Formação do Verdadeiro Ser Humano",
+        "pt_para": 1,
+        "ja_para": 13
+      },
+      {
+        "id": "explicacao_02_24",
+        "title": "Primeira Seção: Toxinas Corporais e a Situação Social Infeliz",
+        "pt_para": 1,
+        "ja_para": 9
+      },
+      {
+        "id": "explicacao_02_25",
+        "title": "Segunda Seção: Sobre o Plano do Deus Supremo",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "explicacao_02_26",
+        "title": "Terceira Seção: A Causa Fundamental do Surgimento do Coração Maligno",
+        "pt_para": 1,
+        "ja_para": 14
+      },
+      {
+        "id": "explicacao_02_27",
+        "title": "Quarta Seção: O Caminho para a Felicidade",
+        "pt_para": 1,
+        "ja_para": 6
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_guia3.json",
+    "total": 27,
+    "with_ja": 18,
+    "aligned": 0,
+    "misaligned": 18,
+    "missing_ja": 9,
+    "misaligned_items": [
+      {
+        "id": "explicacao_03_1",
+        "title": "Suprimir a Força Física no Johrei",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_03_2",
+        "title": "Não é Espiritual, é Yakudoku",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_03_4",
+        "title": "Locais de Acúmulo de Toxinas e Ordem de Eliminação",
+        "pt_para": 1,
+        "ja_para": 15
+      },
+      {
+        "id": "explicacao_03_5",
+        "title": "Epidemias de Causa Desconhecida pela Medicina (Casos causados por Atrofia Renal)",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_03_7",
+        "title": "O Método de Aplicação desta Arte Médica",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_03_8",
+        "title": "Ombros e Apetite",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_9",
+        "title": "Ombros, Pulmão, Coração, Estômago e Asma",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_10",
+        "title": "Ombros, Fígado, Pâncreas e Vesícula Biliar",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_11",
+        "title": "Ombros e Cabeça",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_12",
+        "title": "Ombros e Esportistas",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_13",
+        "title": "Ombros e Crianças",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_14",
+        "title": "Ombros e Amígdalas",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_15",
+        "title": "Ombros, Mãos, Pés e Lombar",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_16",
+        "title": "Ombros e Olhos",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_17",
+        "title": "Ombros e Ouvidos",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "explicacao_03_22",
+        "title": "Princípio do Johrei",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "explicacao_03_23",
+        "title": "Sucesso no Método de Dissolução e Eliminação de Toxinas",
+        "pt_para": 1,
+        "ja_para": 15
+      },
+      {
+        "id": "explicacao_03_24",
+        "title": "Retorno ao Estado Anterior à Segunda Ação de Purificação",
+        "pt_para": 1,
+        "ja_para": 15
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_tecnicas.json",
+    "total": 27,
+    "with_ja": 0,
+    "aligned": 0,
+    "misaligned": 0,
+    "missing_ja": 27,
+    "misaligned_items": []
+  },
+  {
+    "file": "explicacoes_vol01.json",
+    "total": 35,
+    "with_ja": 34,
+    "aligned": 1,
+    "misaligned": 33,
+    "missing_ja": 1,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Explicação Ensinamentos 01",
+        "pt_para": 0,
+        "ja_para": 9
+      },
+      {
+        "id": "item_002",
+        "title": "Prefácio",
+        "pt_para": 9,
+        "ja_para": 2
+      },
+      {
+        "id": "item_003",
+        "title": "Capítulo 1 \\- A Saúde e a Doença na Atualidade",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "item_004",
+        "title": "Seção 1 \\- Sobre os Problemas de Saúde Modernos",
+        "pt_para": 4,
+        "ja_para": 10
+      },
+      {
+        "id": "item_005",
+        "title": "Seção 2 \\- Sobre a Definição de Saúde",
+        "pt_para": 10,
+        "ja_para": 6
+      },
+      {
+        "id": "item_006",
+        "title": "Seção 3 \\- Características da \"Arte Médica Japonesa \\- Johrei\"",
+        "pt_para": 7,
+        "ja_para": 16
+      },
+      {
+        "id": "item_007",
+        "title": "\\[Anexo\\] A Prática do Johrei",
+        "pt_para": 27,
+        "ja_para": 5
+      },
+      {
+        "id": "item_008",
+        "title": "Capítulo 2 \\- A Transição da Noite para o Dia e a \"Arte Médica Japonesa \\- Johrei\"",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_009",
+        "title": "Seção 1 \\- Sobre a Transição da Noite para o Dia",
+        "pt_para": 10,
+        "ja_para": 2
+      },
+      {
+        "id": "item_010",
+        "title": "Seção 2 \\- O Mundo do Dia e o Aumento do Elemento Fogo",
+        "pt_para": 6,
+        "ja_para": 11
+      },
+      {
+        "id": "item_011",
+        "title": "Seção 3 \\- Como encarar a \"Transição da Noite para o Dia\"",
+        "pt_para": 6,
+        "ja_para": 8
+      },
+      {
+        "id": "item_013",
+        "title": "Capítulo 3 \\- As Leis da Grande Natureza e o Princípio da \"Arte Médica Japonesa \\- Johrei\"",
+        "pt_para": 2,
+        "ja_para": 8
+      },
+      {
+        "id": "item_014",
+        "title": "1\\) O que é a Ação de Purificação",
+        "pt_para": 5,
+        "ja_para": 8
+      },
+      {
+        "id": "item_015",
+        "title": "2\\) O Acúmulo de Toxinas e o Uso dos Nervos",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_016",
+        "title": "3\\) Exemplos Concretos da Ação de Purificação",
+        "pt_para": 7,
+        "ja_para": 3
+      },
+      {
+        "id": "item_017",
+        "title": "Seção 1 \\- Motivação para a Descoberta do Princípio do Johrei",
+        "pt_para": 10,
+        "ja_para": 3
+      },
+      {
+        "id": "item_018",
+        "title": "1\\) Sobre a Constituição da Grande Natureza",
+        "pt_para": 14,
+        "ja_para": 11
+      },
+      {
+        "id": "item_019",
+        "title": "2\\) A Trindade das Vísceras e o Johrei",
+        "pt_para": 6,
+        "ja_para": 14
+      },
+      {
+        "id": "item_020",
+        "title": "3\\) A Atividade da Grande Natureza \\- A Lei \"Espírito Precede a Matéria\"",
+        "pt_para": 16,
+        "ja_para": 14
+      },
+      {
+        "id": "item_021",
+        "title": "3\\) O Ser Humano é uma Existência Espiritual",
+        "pt_para": 7,
+        "ja_para": 5
+      },
+      {
+        "id": "item_022",
+        "title": "I. Sobre a Importância do Cérebro e da Medula Espinhal",
+        "pt_para": 10,
+        "ja_para": 16
+      },
+      {
+        "id": "item_023",
+        "title": "Capítulo 4 \\- Sobre a Ação de Purificação",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "item_024",
+        "title": "Seção 1 \\- A Verdadeira Essência da Saúde é a Adaptação à Natureza",
+        "pt_para": 6,
+        "ja_para": 7
+      },
+      {
+        "id": "item_025",
+        "title": "Seção 2 \\- Sobre a Capacidade Natural de Recuperação",
+        "pt_para": 6,
+        "ja_para": 1
+      },
+      {
+        "id": "item_026",
+        "title": "Seção 3 \\- Sobre a Ação de Purificação",
+        "pt_para": 2,
+        "ja_para": 5
+      },
+      {
+        "id": "item_027",
+        "title": "Seção 4 \\- Sobre o Resfriado (Gripe)",
+        "pt_para": 10,
+        "ja_para": 6
+      },
+      {
+        "id": "item_028",
+        "title": "Seção 5 \\- Sobre a Febre Baixa",
+        "pt_para": 7,
+        "ja_para": 2
+      },
+      {
+        "id": "item_029",
+        "title": "I. Sobre a Importância do Cérebro",
+        "pt_para": 12,
+        "ja_para": 10
+      },
+      {
+        "id": "item_030",
+        "title": "II. Sobre os Sintomas das Doenças",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "item_031",
+        "title": "Seção 5 \\- Sobre a Febre Baixa (Binetsu)",
+        "pt_para": 7,
+        "ja_para": 14
+      },
+      {
+        "id": "item_032",
+        "title": "I. Sobre a Importância do Cérebro",
+        "pt_para": 12,
+        "ja_para": 1
+      },
+      {
+        "id": "item_033",
+        "title": "II. Sobre os Sintomas das Doenças",
+        "pt_para": 1,
+        "ja_para": 14
+      },
+      {
+        "id": "item_034",
+        "title": "1\\) Febre",
+        "pt_para": 13,
+        "ja_para": 9
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_vol02.json",
+    "total": 39,
+    "with_ja": 33,
+    "aligned": 2,
+    "misaligned": 31,
+    "missing_ja": 6,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Explicação Ensinamentos 02",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_002",
+        "title": "Capítulo 1: O Significado Fundamental da Criação da \"Arte Médica Japonesa e Johrei\"",
+        "pt_para": 0,
+        "ja_para": 13
+      },
+      {
+        "id": "item_003",
+        "title": "Primeira Seção: A Pesquisa Divina de Meishu-Sama",
+        "pt_para": 3,
+        "ja_para": 7
+      },
+      {
+        "id": "item_004",
+        "title": "Segunda Seção: O Vínculo Divino entre Meishu-Sama e Kannon (観音)",
+        "pt_para": 3,
+        "ja_para": 13
+      },
+      {
+        "id": "item_005",
+        "title": "Terceira Seção: A Revelação da Verdade Baseada no \"Kenshinjitsu (見真実)\"",
+        "pt_para": 14,
+        "ja_para": 19
+      },
+      {
+        "id": "item_006",
+        "title": "Quarta Seção: A Manifestação do Poder Divino Supremo pela \"Shinjin Goitsu (神人合一)\"",
+        "pt_para": 7,
+        "ja_para": 4
+      },
+      {
+        "id": "item_007",
+        "title": "Quinta Seção: Poder Divino e Johrei como Prova do Salvador",
+        "pt_para": 13,
+        "ja_para": 10
+      },
+      {
+        "id": "item_008",
+        "title": "1\\. Como receber a força do Johrei",
+        "pt_para": 25,
+        "ja_para": 9
+      },
+      {
+        "id": "item_009",
+        "title": "2\\. Como Meishu-Sama obteve o vasto conhecimento sobre Johrei",
+        "pt_para": 4,
+        "ja_para": 7
+      },
+      {
+        "id": "item_010",
+        "title": "3\\. O Processo de Acúmulo de Toxinas e a Ordem de Eliminação",
+        "pt_para": 4,
+        "ja_para": 3
+      },
+      {
+        "id": "item_011",
+        "title": "4\\. Sobre Sintomas de Purificação",
+        "pt_para": 18,
+        "ja_para": 12
+      },
+      {
+        "id": "item_012",
+        "title": "Capítulo 2: Sobre o Johrei como Ciência Espiritual",
+        "pt_para": 3,
+        "ja_para": 13
+      },
+      {
+        "id": "item_013",
+        "title": "Primeira Seção: A \"Arte Médica Japonesa e Johrei\" é uma Terapia da Ciência Espiritual",
+        "pt_para": 12,
+        "ja_para": 6
+      },
+      {
+        "id": "item_014",
+        "title": "Segunda Seção: Sobre Elos Espirituais (Reisen) e Radiação",
+        "pt_para": 12,
+        "ja_para": 8
+      },
+      {
+        "id": "item_015",
+        "title": "Terceira Seção: Sobre as Nuvens Espirituais e sua Incineração",
+        "pt_para": 6,
+        "ja_para": 8
+      },
+      {
+        "id": "item_016",
+        "title": "Quarta Seção: Sobre o Ritmo Espiritual de \"Avanço pela Esquerda e Recuo pela Direita\" (Sashin Utai)",
+        "pt_para": 10,
+        "ja_para": 1
+      },
+      {
+        "id": "item_017",
+        "title": "Quinta Seção: Sobre a Força do Yugen (Yugen-ryoku \\- Força Sutil/Mística)",
+        "pt_para": 8,
+        "ja_para": 2
+      },
+      {
+        "id": "item_018",
+        "title": "1\\. Sobre a Purificação Prolongada",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "item_019",
+        "title": "2\\. Sobre a Racionalidade",
+        "pt_para": 4,
+        "ja_para": 12
+      },
+      {
+        "id": "item_020",
+        "title": "3\\. Sobre a Purificação Compensatória",
+        "pt_para": 1,
+        "ja_para": 16
+      },
+      {
+        "id": "item_021",
+        "title": "4\\. Sobre os Sintomas de Purificação",
+        "pt_para": 0,
+        "ja_para": 11
+      },
+      {
+        "id": "item_022",
+        "title": "1\\) Edema e Suores Noturnos",
+        "pt_para": 9,
+        "ja_para": 2
+      },
+      {
+        "id": "item_023",
+        "title": "2\\) Tontura e Insônia",
+        "pt_para": 5,
+        "ja_para": 4
+      },
+      {
+        "id": "item_024",
+        "title": "Capítulo 3: Sobre o Poder Super-religioso da \"Arte Médica Japonesa e Johrei\"",
+        "pt_para": 0,
+        "ja_para": 12
+      },
+      {
+        "id": "item_025",
+        "title": "Primeira Seção: O Íntimo do Corpo Espiritual e a Geração de Nuvens",
+        "pt_para": 8,
+        "ja_para": 10
+      },
+      {
+        "id": "item_026",
+        "title": "Segunda Seção: Sobre Pecados e Impurezas",
+        "pt_para": 8,
+        "ja_para": 13
+      },
+      {
+        "id": "item_027",
+        "title": "Terceira Seção: A \"Arte Médica Japonesa e Johrei\" que Promove o Despertar da Alma",
+        "pt_para": 3,
+        "ja_para": 9
+      },
+      {
+        "id": "item_029",
+        "title": "Quinta Seção: Em Relação a Pecados e Impurezas",
+        "pt_para": 12,
+        "ja_para": 3
+      },
+      {
+        "id": "item_031",
+        "title": "1\\. Sobre a Repurificação",
+        "pt_para": 3,
+        "ja_para": 9
+      },
+      {
+        "id": "item_032",
+        "title": "2\\. Sobre Sintomas de Purificação (Melancolia, Paralisia e Cãibras)",
+        "pt_para": 5,
+        "ja_para": 14
+      },
+      {
+        "id": "item_033",
+        "title": "2\\) Tosse, Afluxo de Sangue à Cabeça e Zumbido",
+        "pt_para": 7,
+        "ja_para": 6
+      }
+    ]
+  },
+  {
+    "file": "explicacoes_vol03.json",
+    "total": 52,
+    "with_ja": 41,
+    "aligned": 15,
+    "misaligned": 26,
+    "missing_ja": 11,
+    "misaligned_items": [
+      {
+        "id": "item_002",
+        "title": "Ao Ministrar o Johrei",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_003",
+        "title": "Sobre a Importância dos Pontos Vitais",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_004",
+        "title": "Suprimir a Força Física no Johrei",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_005",
+        "title": "Não é Espiritual, é Yakudoku",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_007",
+        "title": "Locais de Acúmulo de Toxinas e Ordem de Eliminação",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_009",
+        "title": "Dos Rins para os Ombros e Pescoço",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_010",
+        "title": "O Occipital vem das Costas",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_013",
+        "title": "Acúmulo no Occipital e Medula Oblonga",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_017",
+        "title": "Relação entre Rins, Lombar e Pernas",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_021",
+        "title": "Sobre Mioma Uterino, Cisto Ovariano, Endometrite e Parenquimatose",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_023",
+        "title": "A Importância dos Rins",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_024",
+        "title": "Epidemias de Causa Desconhecida pela Medicina (Casos causados por Atrofia Renal)",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_025",
+        "title": "A Arte Médica dos Rins",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_027",
+        "title": "A Importância dos Ombros",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_028",
+        "title": "Ombros e Apetite",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_029",
+        "title": "Ombros, Pulmão, Coração, Estômago e Asma",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_030",
+        "title": "Ombros, Fígado, Pâncreas e Vesícula Biliar",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_031",
+        "title": "Ombros e Cabeça",
+        "pt_para": 9,
+        "ja_para": 1
+      },
+      {
+        "id": "item_033",
+        "title": "Ombros e Crianças",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_035",
+        "title": "Ombros, Mãos, Pés e Lombar",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_036",
+        "title": "Ombros e Olhos",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_038",
+        "title": "Em Relação à Medicina",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_039",
+        "title": "Sobre a Compreensão dos Médicos",
+        "pt_para": 7,
+        "ja_para": 1
+      },
+      {
+        "id": "item_040",
+        "title": "Desafios Futuros da Medicina",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_041",
+        "title": "Prefácio de \"A Medicina do Amanhã\"",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_042",
+        "title": "Sobre a Arte Médica Japonesa",
+        "pt_para": 0,
+        "ja_para": 1
+      }
+    ]
+  },
+  {
+    "file": "fundamentos.json",
+    "total": 162,
+    "with_ja": 109,
+    "aligned": 27,
+    "misaligned": 82,
+    "missing_ja": 53,
+    "misaligned_items": [
+      {
+        "id": "fundamentos_49",
+        "title": "A Ineficácia dos Medicamentos",
+        "pt_para": 4,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_45",
+        "title": "A Origem das Bactérias",
+        "pt_para": 11,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_48",
+        "title": "O Princípio do Johrei",
+        "pt_para": 18,
+        "ja_para": 22
+      },
+      {
+        "id": "fundamentos_17",
+        "title": "8\\. A Beleza Natural e o Ganho Triplo",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "fundamentos_14",
+        "title": "Curso de Johrei (II)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "fundamentos_16",
+        "title": "7\\. Intoxicação por Cosméticos",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "fundamentos_15",
+        "title": "3\\. A Ordem do Johrei e os Pontos Vitais",
+        "pt_para": 18,
+        "ja_para": 23
+      },
+      {
+        "id": "tecnicas_15",
+        "title": "4\\. O Processo de Acúmulo e Eliminação de Toxinas",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "tecnicas_16",
+        "title": "5\\. O Funcionamento Cerebral e as Toxinas",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_0",
+        "title": "6\\. A Mulher e o Calor na Região Frontal",
+        "pt_para": 3,
+        "ja_para": 4
+      },
+      {
+        "id": "fundamentos_1",
+        "title": "2\\. A Urgência em Formar Ministrantes de Johrei Capazes para Quebrar a Superstição dos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 17
+      },
+      {
+        "id": "fundamentos_0",
+        "title": "1\\. O Plano de Expansão de Nossa Religião e a Missão dos Fiéis",
+        "pt_para": 3,
+        "ja_para": 8
+      },
+      {
+        "id": "tecnicas_10",
+        "title": "De agora em diante",
+        "pt_para": 2,
+        "ja_para": 20
+      },
+      {
+        "id": "fundamentos_19",
+        "title": "I. Medicamentos da Medicina Chinesa (Kampo)",
+        "pt_para": 5,
+        "ja_para": 16
+      },
+      {
+        "id": "fundamentos_21",
+        "title": "IV. Novos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_18",
+        "title": "I. A Ausência de Cientificidade na Medicina Moderna",
+        "pt_para": 11,
+        "ja_para": 25
+      },
+      {
+        "id": "fundamentos_20",
+        "title": "III. Antissépticos e Desinfetantes",
+        "pt_para": 1,
+        "ja_para": 11
+      },
+      {
+        "id": "tecnicas_17",
+        "title": "O Maior Estelionato é a Indústria Farmacêutica",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_18",
+        "title": "II. O Composto 606 (Salvarsan)",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_19",
+        "title": "VI. Intoxicação por Cosméticos",
+        "pt_para": 1,
+        "ja_para": 19
+      },
+      {
+        "id": "fundamentos_95",
+        "title": "IV. Doenças Cardíacas",
+        "pt_para": 6,
+        "ja_para": 22
+      },
+      {
+        "id": "fundamentos_94",
+        "title": "Asma - Causas e Tratamento",
+        "pt_para": 4,
+        "ja_para": 170
+      },
+      {
+        "id": "fundamentos_93",
+        "title": "Sobre o Johrei em Pacientes com Tuberculose",
+        "pt_para": 30,
+        "ja_para": 119
+      },
+      {
+        "id": "fundamentos_84",
+        "title": "Os Medicamentos Geram o Infortúnio",
+        "pt_para": 5,
+        "ja_para": 7
+      },
+      {
+        "id": "fundamentos_90",
+        "title": "VI. Doenças Ginecológicas",
+        "pt_para": 9,
+        "ja_para": 20
+      },
+      {
+        "id": "tecnicas_30",
+        "title": "Suor, mas ela volta",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_34",
+        "title": "Sangue, febre de 40 graus, dor no peito e costas",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "casos_clinicos_6",
+        "title": "Homem de 34 anos",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "casos_clinicos_8",
+        "title": "Febre e Purificação",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "casos_clinicos_11",
+        "title": "Criança que Parou de Falar Após Queda",
+        "pt_para": 2,
+        "ja_para": 5
+      },
+      {
+        "id": "regioes_corpo_3",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pontos_focais_1",
+        "title": "No que tange à cabeça, vivemos em uma era onde o uso intenso do intelecto",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "pontos_focais_13",
+        "title": "A causa da língua presa pode estar no fundo do nariz (região da adenoide)",
+        "pt_para": 1,
+        "ja_para": 176
+      },
+      {
+        "id": "tecnicas_21",
+        "title": "Priorização de Ombros e Pescoço no Johrei",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "tecnicas_26",
+        "title": "Febre e Purificação",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_31",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pontos_focais_2",
+        "title": "Exame do Bulbo Raquidiano",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_3",
+        "title": "Diferença entre Lobo Frontal e Occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_4",
+        "title": "O ponto crucial é a região occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_6",
+        "title": "Febre na Região Frontal e Anemia Cerebral",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_7",
+        "title": "Tosse Originada na Testa",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_8",
+        "title": "\"cabeça ruim\", deprimidas, irascíveis ou com mal",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_9",
+        "title": "Problemas nas Pernas e Tratamento do Pescoço",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_11",
+        "title": "Derrame e Johrei",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_12",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 7
+      },
+      {
+        "id": "regioes_corpo_5",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "fundamentos_73",
+        "title": "1\\. Patologia das Doenças Femininas",
+        "pt_para": 10,
+        "ja_para": 115
+      },
+      {
+        "id": "tecnicas_54",
+        "title": "Gravidez com Pelve Estreita",
+        "pt_para": 6,
+        "ja_para": 19
+      },
+      {
+        "id": "regioes_corpo_0",
+        "title": "Ao tocar a testa",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "regioes_corpo_4",
+        "title": "Se o lado direito está paralisado",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_20",
+        "title": "Johrei no Centro do Crânio",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "tecnicas_22",
+        "title": "Solidificação de Medicamentos na Região Occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "fundamentos_24",
+        "title": "O centro da cabeça é um local propenso ao acúmulo de toxinas",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "fundamentos_26",
+        "title": "O tempo, migraram e se solidificaram ali",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_25",
+        "title": "Para tratar os gânglios linfáticos",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "tecnicas_23",
+        "title": "O pescoço rígido como um bastão ou com nódulos duros como pe",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pontos_focais_5",
+        "title": "Ao tratar doenças, sempre toco a testa do paciente; pela temperatura, consigo...",
+        "pt_para": 1,
+        "ja_para": 8
+      },
+      {
+        "id": "doencas_1",
+        "title": "Basicamente, se purificarmos estes pontos (Occipital, Gânglios Linfáticos, Fr...",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf37",
+        "title": "Causas das Doenças Gástricas",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf47",
+        "title": "Sobre a Urina Tóxica",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf51",
+        "title": "Causas do Câncer",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "pf128",
+        "title": "Laxantes",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf130",
+        "title": "Colírios",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf136",
+        "title": "Salvarsan",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf138",
+        "title": "Doenças Causadas por Pecados e Impurezas",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "pf140",
+        "title": "Doenças Causadas por Espíritos",
+        "pt_para": 4,
+        "ja_para": 3
+      },
+      {
+        "id": "pf44",
+        "title": "Enfermidades dos Rins",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf75",
+        "title": "Epilepsia",
+        "pt_para": 4,
+        "ja_para": 2
+      },
+      {
+        "id": "pf78",
+        "title": "O Ponto Vital: Onde há Febre e Dor",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "pf85",
+        "title": "Pontos Vitais para Distensão Abdominal",
+        "pt_para": 3,
+        "ja_para": 30
+      },
+      {
+        "id": "pf94",
+        "title": "Tuberculose da Garganta",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf97",
+        "title": "Nevralgia Facial",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf98",
+        "title": "Atrofia Renal",
+        "pt_para": 8,
+        "ja_para": 2
+      },
+      {
+        "id": "pf112",
+        "title": "Hemorroidas (Nódulos)",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pf113",
+        "title": "Doenças Venéreas",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "pf115",
+        "title": "Cisto de Ovário e Hidropisia Ovariana",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf119",
+        "title": "Rim na Gravidez",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf120",
+        "title": "Hipogalactia (Pouco Leite)",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pf122",
+        "title": "Outras Doenças Infantis",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf123",
+        "title": "Câncer",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf125",
+        "title": "Furúnculos",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "pf126",
+        "title": "Queimaduras e Cortes",
+        "pt_para": 2,
+        "ja_para": 1
+      }
+    ]
+  },
+  {
+    "file": "fundamentos_ptJp.json",
+    "total": 162,
+    "with_ja": 109,
+    "aligned": 27,
+    "misaligned": 82,
+    "missing_ja": 53,
+    "misaligned_items": [
+      {
+        "id": "fundamentos_49",
+        "title": "A Ineficácia dos Medicamentos",
+        "pt_para": 4,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_45",
+        "title": "A Origem das Bactérias",
+        "pt_para": 11,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_48",
+        "title": "O Princípio do Johrei",
+        "pt_para": 18,
+        "ja_para": 22
+      },
+      {
+        "id": "fundamentos_17",
+        "title": "8\\. A Beleza Natural e o Ganho Triplo",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "fundamentos_14",
+        "title": "Curso de Johrei (II)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "fundamentos_16",
+        "title": "7\\. Intoxicação por Cosméticos",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "fundamentos_15",
+        "title": "3\\. A Ordem do Johrei e os Pontos Vitais",
+        "pt_para": 18,
+        "ja_para": 23
+      },
+      {
+        "id": "tecnicas_15",
+        "title": "4\\. O Processo de Acúmulo e Eliminação de Toxinas",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "tecnicas_16",
+        "title": "5\\. O Funcionamento Cerebral e as Toxinas",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_0",
+        "title": "6\\. A Mulher e o Calor na Região Frontal",
+        "pt_para": 3,
+        "ja_para": 4
+      },
+      {
+        "id": "fundamentos_1",
+        "title": "2\\. A Urgência em Formar Ministrantes de Johrei Capazes para Quebrar a Superstição dos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 17
+      },
+      {
+        "id": "fundamentos_0",
+        "title": "1\\. O Plano de Expansão de Nossa Religião e a Missão dos Fiéis",
+        "pt_para": 3,
+        "ja_para": 8
+      },
+      {
+        "id": "tecnicas_10",
+        "title": "De agora em diante",
+        "pt_para": 2,
+        "ja_para": 20
+      },
+      {
+        "id": "fundamentos_19",
+        "title": "I. Medicamentos da Medicina Chinesa (Kampo)",
+        "pt_para": 5,
+        "ja_para": 16
+      },
+      {
+        "id": "fundamentos_21",
+        "title": "IV. Novos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 9
+      },
+      {
+        "id": "fundamentos_18",
+        "title": "I. A Ausência de Cientificidade na Medicina Moderna",
+        "pt_para": 11,
+        "ja_para": 25
+      },
+      {
+        "id": "fundamentos_20",
+        "title": "III. Antissépticos e Desinfetantes",
+        "pt_para": 1,
+        "ja_para": 11
+      },
+      {
+        "id": "tecnicas_17",
+        "title": "O Maior Estelionato é a Indústria Farmacêutica",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_18",
+        "title": "II. O Composto 606 (Salvarsan)",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_19",
+        "title": "VI. Intoxicação por Cosméticos",
+        "pt_para": 1,
+        "ja_para": 19
+      },
+      {
+        "id": "fundamentos_95",
+        "title": "IV. Doenças Cardíacas",
+        "pt_para": 6,
+        "ja_para": 22
+      },
+      {
+        "id": "fundamentos_94",
+        "title": "Asma - Causas e Tratamento",
+        "pt_para": 4,
+        "ja_para": 170
+      },
+      {
+        "id": "fundamentos_93",
+        "title": "Sobre o Johrei em Pacientes com Tuberculose",
+        "pt_para": 30,
+        "ja_para": 119
+      },
+      {
+        "id": "fundamentos_84",
+        "title": "Os Medicamentos Geram o Infortúnio",
+        "pt_para": 5,
+        "ja_para": 7
+      },
+      {
+        "id": "fundamentos_90",
+        "title": "VI. Doenças Ginecológicas",
+        "pt_para": 9,
+        "ja_para": 20
+      },
+      {
+        "id": "tecnicas_30",
+        "title": "Suor, mas ela volta",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "tecnicas_34",
+        "title": "Sangue, febre de 40 graus, dor no peito e costas",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "casos_clinicos_6",
+        "title": "Homem de 34 anos",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "casos_clinicos_8",
+        "title": "Febre e Purificação",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "casos_clinicos_11",
+        "title": "Criança que Parou de Falar Após Queda",
+        "pt_para": 2,
+        "ja_para": 5
+      },
+      {
+        "id": "regioes_corpo_3",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pontos_focais_1",
+        "title": "No que tange à cabeça, vivemos em uma era onde o uso intenso do intelecto",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "pontos_focais_13",
+        "title": "A causa da língua presa pode estar no fundo do nariz (região da adenoide)",
+        "pt_para": 1,
+        "ja_para": 176
+      },
+      {
+        "id": "tecnicas_21",
+        "title": "Priorização de Ombros e Pescoço no Johrei",
+        "pt_para": 1,
+        "ja_para": 6
+      },
+      {
+        "id": "tecnicas_26",
+        "title": "Febre e Purificação",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_31",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pontos_focais_2",
+        "title": "Exame do Bulbo Raquidiano",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_3",
+        "title": "Diferença entre Lobo Frontal e Occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_4",
+        "title": "O ponto crucial é a região occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_6",
+        "title": "Febre na Região Frontal e Anemia Cerebral",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_7",
+        "title": "Tosse Originada na Testa",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_8",
+        "title": "\"cabeça ruim\", deprimidas, irascíveis ou com mal",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_9",
+        "title": "Problemas nas Pernas e Tratamento do Pescoço",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pontos_focais_11",
+        "title": "Derrame e Johrei",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pontos_focais_12",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 7
+      },
+      {
+        "id": "regioes_corpo_5",
+        "title": "Derrame e Johrei",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "fundamentos_73",
+        "title": "1\\. Patologia das Doenças Femininas",
+        "pt_para": 10,
+        "ja_para": 115
+      },
+      {
+        "id": "tecnicas_54",
+        "title": "Gravidez com Pelve Estreita",
+        "pt_para": 6,
+        "ja_para": 19
+      },
+      {
+        "id": "regioes_corpo_0",
+        "title": "Ao tocar a testa",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "regioes_corpo_4",
+        "title": "Se o lado direito está paralisado",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_20",
+        "title": "Johrei no Centro do Crânio",
+        "pt_para": 1,
+        "ja_para": 7
+      },
+      {
+        "id": "tecnicas_22",
+        "title": "Solidificação de Medicamentos na Região Occipital",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "fundamentos_24",
+        "title": "O centro da cabeça é um local propenso ao acúmulo de toxinas",
+        "pt_para": 1,
+        "ja_para": 10
+      },
+      {
+        "id": "fundamentos_26",
+        "title": "O tempo, migraram e se solidificaram ali",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "tecnicas_25",
+        "title": "Para tratar os gânglios linfáticos",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "tecnicas_23",
+        "title": "O pescoço rígido como um bastão ou com nódulos duros como pe",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pontos_focais_5",
+        "title": "Ao tratar doenças, sempre toco a testa do paciente; pela temperatura, consigo...",
+        "pt_para": 1,
+        "ja_para": 8
+      },
+      {
+        "id": "doencas_1",
+        "title": "Basicamente, se purificarmos estes pontos (Occipital, Gânglios Linfáticos, Fr...",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf37",
+        "title": "Causas das Doenças Gástricas",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf47",
+        "title": "Sobre a Urina Tóxica",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf51",
+        "title": "Causas do Câncer",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "pf128",
+        "title": "Laxantes",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf130",
+        "title": "Colírios",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf136",
+        "title": "Salvarsan",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf138",
+        "title": "Doenças Causadas por Pecados e Impurezas",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "pf140",
+        "title": "Doenças Causadas por Espíritos",
+        "pt_para": 4,
+        "ja_para": 3
+      },
+      {
+        "id": "pf44",
+        "title": "Enfermidades dos Rins",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "pf75",
+        "title": "Epilepsia",
+        "pt_para": 4,
+        "ja_para": 2
+      },
+      {
+        "id": "pf78",
+        "title": "O Ponto Vital: Onde há Febre e Dor",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "pf85",
+        "title": "Pontos Vitais para Distensão Abdominal",
+        "pt_para": 3,
+        "ja_para": 30
+      },
+      {
+        "id": "pf94",
+        "title": "Tuberculose da Garganta",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf97",
+        "title": "Nevralgia Facial",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf98",
+        "title": "Atrofia Renal",
+        "pt_para": 8,
+        "ja_para": 2
+      },
+      {
+        "id": "pf112",
+        "title": "Hemorroidas (Nódulos)",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pf113",
+        "title": "Doenças Venéreas",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "pf115",
+        "title": "Cisto de Ovário e Hidropisia Ovariana",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf119",
+        "title": "Rim na Gravidez",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf120",
+        "title": "Hipogalactia (Pouco Leite)",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pf122",
+        "title": "Outras Doenças Infantis",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf123",
+        "title": "Câncer",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf125",
+        "title": "Furúnculos",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "pf126",
+        "title": "Queimaduras e Cortes",
+        "pt_para": 2,
+        "ja_para": 1
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol01.json",
+    "total": 7,
+    "with_ja": 6,
+    "aligned": 3,
+    "misaligned": 3,
+    "missing_ja": 1,
+    "misaligned_items": [
+      {
+        "id": "item_003",
+        "title": "A Origem das Bactérias",
+        "pt_para": 11,
+        "ja_para": 9
+      },
+      {
+        "id": "item_006",
+        "title": "O Princípio do Johrei",
+        "pt_para": 18,
+        "ja_para": 22
+      },
+      {
+        "id": "item_007",
+        "title": "A Ineficácia dos Medicamentos",
+        "pt_para": 4,
+        "ja_para": 9
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol02.json",
+    "total": 9,
+    "with_ja": 9,
+    "aligned": 2,
+    "misaligned": 7,
+    "missing_ja": 0,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (II)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_004",
+        "title": "3\\. A Ordem do Johrei e os Pontos Vitais",
+        "pt_para": 18,
+        "ja_para": 23
+      },
+      {
+        "id": "item_005",
+        "title": "4\\. O Processo de Acúmulo e Eliminação de Toxinas",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "item_006",
+        "title": "5\\. O Funcionamento Cerebral e as Toxinas",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "item_007",
+        "title": "6\\. A Mulher e o Calor na Região Frontal",
+        "pt_para": 3,
+        "ja_para": 4
+      },
+      {
+        "id": "item_008",
+        "title": "7\\. Intoxicação por Cosméticos",
+        "pt_para": 4,
+        "ja_para": 5
+      },
+      {
+        "id": "item_009",
+        "title": "8\\. A Beleza Natural e o Ganho Triplo",
+        "pt_para": 2,
+        "ja_para": 3
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol03.json",
+    "total": 36,
+    "with_ja": 4,
+    "aligned": 0,
+    "misaligned": 4,
+    "missing_ja": 32,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (III)",
+        "pt_para": 0,
+        "ja_para": 12
+      },
+      {
+        "id": "item_002",
+        "title": "1\\. O Objetivo do Ensino da Medicina Espiritual",
+        "pt_para": 0,
+        "ja_para": 64
+      },
+      {
+        "id": "item_003",
+        "title": "1\\. O Plano de Expansão de Nossa Religião e a Missão dos Fiéis",
+        "pt_para": 3,
+        "ja_para": 8
+      },
+      {
+        "id": "item_004",
+        "title": "2\\. A Urgência em Formar Ministrantes de Johrei Capazes para Quebrar a Superstição dos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 17
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol04.json",
+    "total": 11,
+    "with_ja": 10,
+    "aligned": 0,
+    "misaligned": 10,
+    "missing_ja": 1,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (IV)  Sobre a Superstição Farmacêutica",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_002",
+        "title": "I. A Ausência de Cientificidade na Medicina Moderna",
+        "pt_para": 11,
+        "ja_para": 25
+      },
+      {
+        "id": "item_003",
+        "title": "O Maior Estelionato é a Indústria Farmacêutica",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_004",
+        "title": "Sobre as Toxinas Medicamentosas (Yakudoku)",
+        "pt_para": 0,
+        "ja_para": 22
+      },
+      {
+        "id": "item_005",
+        "title": "I. Medicamentos da Medicina Chinesa (Kampo)",
+        "pt_para": 5,
+        "ja_para": 16
+      },
+      {
+        "id": "item_006",
+        "title": "II. O Composto 606 (Salvarsan)",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_007",
+        "title": "III. Antissépticos e Desinfetantes",
+        "pt_para": 1,
+        "ja_para": 11
+      },
+      {
+        "id": "item_008",
+        "title": "IV. Novos Medicamentos",
+        "pt_para": 1,
+        "ja_para": 9
+      },
+      {
+        "id": "item_009",
+        "title": "V. A Vacina BCG",
+        "pt_para": 1,
+        "ja_para": 5
+      },
+      {
+        "id": "item_010",
+        "title": "VI. Intoxicação por Cosméticos",
+        "pt_para": 1,
+        "ja_para": 19
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol05.json",
+    "total": 4,
+    "with_ja": 4,
+    "aligned": 0,
+    "misaligned": 4,
+    "missing_ja": 0,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (V)",
+        "pt_para": 0,
+        "ja_para": 23
+      },
+      {
+        "id": "item_002",
+        "title": "Sobre o Johrei em Pacientes com Tuberculose",
+        "pt_para": 30,
+        "ja_para": 119
+      },
+      {
+        "id": "item_003",
+        "title": "III. Asma",
+        "pt_para": 4,
+        "ja_para": 27
+      },
+      {
+        "id": "item_004",
+        "title": "IV. Doenças Cardíacas",
+        "pt_para": 6,
+        "ja_para": 22
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol06.json",
+    "total": 10,
+    "with_ja": 8,
+    "aligned": 1,
+    "misaligned": 7,
+    "missing_ja": 2,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (VI)",
+        "pt_para": 0,
+        "ja_para": 42
+      },
+      {
+        "id": "item_002",
+        "title": "Os Medicamentos Geram o Infortúnio",
+        "pt_para": 5,
+        "ja_para": 7
+      },
+      {
+        "id": "item_003",
+        "title": "I. Doenças da Cabeça",
+        "pt_para": 23,
+        "ja_para": 6
+      },
+      {
+        "id": "item_004",
+        "title": "II. Doenças das Costas",
+        "pt_para": 6,
+        "ja_para": 21
+      },
+      {
+        "id": "item_006",
+        "title": "IV. Doenças das Mãos e Pés",
+        "pt_para": 15,
+        "ja_para": 13
+      },
+      {
+        "id": "item_007",
+        "title": "V. Doenças do Aparelho Urinário",
+        "pt_para": 6,
+        "ja_para": 32
+      },
+      {
+        "id": "item_008",
+        "title": "VI. Doenças Ginecológicas",
+        "pt_para": 9,
+        "ja_para": 20
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol07.json",
+    "total": 39,
+    "with_ja": 2,
+    "aligned": 0,
+    "misaligned": 2,
+    "missing_ja": 37,
+    "misaligned_items": [
+      {
+        "id": "item_002",
+        "title": "Primeira Parte",
+        "pt_para": 0,
+        "ja_para": 102
+      },
+      {
+        "id": "item_003",
+        "title": "1\\. Patologia das Doenças Femininas",
+        "pt_para": 10,
+        "ja_para": 115
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol08.json",
+    "total": 52,
+    "with_ja": 1,
+    "aligned": 0,
+    "misaligned": 1,
+    "missing_ja": 51,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (VIII)",
+        "pt_para": 0,
+        "ja_para": 269
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol09.json",
+    "total": 68,
+    "with_ja": 2,
+    "aligned": 0,
+    "misaligned": 2,
+    "missing_ja": 66,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Curso de Johrei (IX)",
+        "pt_para": 0,
+        "ja_para": 29
+      },
+      {
+        "id": "item_002",
+        "title": "I. Sobre o Johrei na Região da Cabeça",
+        "pt_para": 0,
+        "ja_para": 167
+      }
+    ]
+  },
+  {
+    "file": "johrei_vol10.json",
+    "total": 78,
+    "with_ja": 72,
+    "aligned": 72,
+    "misaligned": 0,
+    "missing_ja": 6,
+    "misaligned_items": []
+  },
+  {
+    "file": "pontos_focais.json",
+    "total": 256,
+    "with_ja": 61,
+    "aligned": 5,
+    "misaligned": 56,
+    "missing_ja": 195,
+    "misaligned_items": [
+      {
+        "id": "pf128",
+        "title": "1. O Ponto Vital: Onde há Febre e Dor",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "pf130",
+        "title": "1) Alto da Cabeça, Região Occipital, Bulbo e Ombros Muitas pessoas acumulam toxinas profundamente no alto da cabeça (vértice). As preocupações constantes tendem a concentrar as toxinas nessa região. O uso excessivo do cérebro também as atrai para lá. Conforme descrito nos livros, atividades como memorização, leitura e estudos acadêmicos utilizam o lobo frontal. A região occipital, por sua vez, rege as emoções. Contudo, o ato de preocupar-se envolve tanto o intelecto quanto a emoção, fazendo com que as toxinas se alojem no topo da cabeça. Muitas são as pessoas que sentem peso ou aflição no centro dessa região; a causa está aí. Tratando-se o topo da cabeça, a região occipital e o bulbo, nesta ordem, qualquer doença apresentará melhora. （浄霊法講座２　ｐ19）",
+        "pt_para": 3,
+        "ja_para": 4
+      },
+      {
+        "id": "pf131",
+        "title": "2) Glândulas Linfáticas Quando surge febre nas glândulas linfáticas, ela se transfere imediatamente para a região frontal. Essa febre é a que mais afeta a testa, pois as toxinas das linfas migram continuamente para lá. Pessoas com a cabeça pesada, depressivas, irascíveis ou que sentem mal-estar constante sofrem, na verdade, desse processo. O que se costuma chamar de neurastenia tem, na maioria das vezes, sua causa principal nas glândulas linfáticas. （浄霊法講座２　ｐ38～39）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf135",
+        "title": "3. Pontos Vitais das Doenças dos Olhos e Ouvidos",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf145",
+        "title": "1) Região Occipital, Pescoço, Ombros A cabeça divide-se em frontal e occipital. A região occipital segue a ordem de eliminação via disenteria ou hemorroidas. É preciso saber que, ao ministrar Johrei nos ombros, o paciente pode sentir mal-estar no peito, náuseas leves ou ânsia. Isso ocorre porque as toxinas dissolvidas descem e se acumulam no estômago. Nesses casos, deve-se ministrar Johrei no estômago. Mesmo sem Johrei, a toxina desceria, causando dor de barriga. Portanto, ao tratar ombros e pescoço, saibam que a dissolução das toxinas pode causar enjoo seguido de dor abdominal. Se alguém perguntar por que a barriga dói se o problema era no pescoço, a resposta é que as toxinas dissolvidas desceram para serem eliminadas via diarreia. Isso é comum nos homens; nas mulheres, a eliminação pode ocorrer pela frente, na forma de leucorreia (corrimento branco) ou através das mucosas genitais, causando ardor ou coceira. Nos homens, é exclusivamente diarreia. Compreendendo esse mecanismo, não haverá erros. Em alguns casos, as toxinas podem se alojar na região lombar. （浄霊法講座２　ｐ33）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf146",
+        "title": "2) Região Frontal, Tórax, Estômago Para ilustrar, contarei uma experiência própria. Eu tinha um nódulo na região occipital causado por remédios aplicados nos dentes, que migraram e se solidificaram ali. Minha cabeça estava sempre pesada. Percebi isso há dois anos e comecei a fazer o auto-Johrei. O nódulo, duro como osso, foi dissolvendo e reduziu-se à metade. Era estranho ter algo duro como osso ali que não doía ao apertar. Recentemente, ao diminuir pela metade, comecei a sentir tonturas fortes. Procurei a causa e percebi que, ao dissolver a região occipital, ocorreu uma purificação compensatória na região frontal. Ao dissolver a frente, a tontura passou, mas comecei a sentir o peito enjoado. As toxinas da testa desceram para o estômago. Ministrei Johrei no estômago e senti vontade de ir ao banheiro, o que resolveu o problema. Eram fezes moles e com cheiro forte. O processo foi: occipital -> frontal -> estômago -> excreção. Ao dissolver uma parte, ocorre uma equalização da purificação em outras áreas da cabeça, que depois descem. O corpo é feito de forma muito conveniente. （御垂示録８　ｐ１）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf148",
+        "title": "1) Rins, Ombros, Lombar, Cóccix As toxinas medicamentosas concentram-se inicialmente nos rins, o local de processamento. O que não é eliminado via urina, migra e solidifica-se nos ombros ou na região lombar. Isso depende da profissão: quem usa muito as mãos ou a mente, acumula nos ombros. Agricultores ou quem trabalha sentado forçando a lombar, acumula nos quadris. O que se acumula na lombar dissolve-se aos poucos e flui para as pernas, causando problemas nelas. O beribéri é um exemplo disso. Cãibras, dormência, fadiga, joelhos fracos; tudo que se refere às pernas vem de acúmulos na lombar que desceram. Portanto, foquem no centro da região lombar e no cóccix, ministrando Johrei pelas costas. As pernas ficarão leves mesmo sem serem tocadas diretamente. Isso também se relaciona com a falta de ar. Quem tem problemas nas pernas e na lombar faz muito esforço ao andar ou subir ladeiras. Esse esforço sobrecarrega o coração. Como o coração (Fogo) precisa trabalhar mais, sobra menos energia térmica para ativar os pulmões (Água), resultando em respiração ofegante. （浄霊法講座２　ｐ35）",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf149",
+        "title": "2) Pescoço e Lateral da Coxa Muitas pessoas com problemas nas pernas e na lombar melhoram após receberem Johrei no pescoço. （浄霊法講座２　ｐ26）",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf151",
+        "title": "1) Rins, Baixo Ventre, Púbis A distensão abdominal deve-se, invariavelmente, aos rins. Além disso, quem sofre de distensão tem má micção; deve-se tratar do umbigo para baixo, no centro do baixo ventre. A urina tóxica converge para lá; tratando esse centro, o abdômen alivia. A região púbica, onde nascem os pelos, é ainda melhor, pois elimina as toxinas da bexiga. （浄霊法講座２　ｐ31）",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "pf152",
+        "title": "II. Cabeça",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf155",
+        "title": "Pontos Vitais do Johrei: O derrame pode originar-se de nódulos na lateral do pescoço ou no bulbo. Antes do derrame, esses locais apresentam rigidez óbvia, como uma barra. （浄霊法講座２　ｐ39）",
+        "pt_para": 5,
+        "ja_para": 7
+      },
+      {
+        "id": "pf156",
+        "title": "2) Arteriosclerose A arteriosclerose ocorre quando toxinas medicamentosas se solidificam ao redor das artérias, comprimindo-as, ou quando o sangue tóxico se acumula na própria artéria, causando aneurismas. A causa é o remédio e a impureza do sangue pelo consumo de carne. Suspender remédios e adotar dieta vegetariana acelera a cura. （アメリカを救う「動脈硬化及び高血圧」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf157",
+        "title": "Pontos Vitais do Johrei: Bulbo, pescoço, ombros, costas. （アメリカを救う、動脈硬化及び高血圧の事例より）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf158",
+        "title": "3) Hipertensão Comum após a meia-idade, não é necessariamente um prelúdio do derrame como dizem os médicos; hipotensos têm mais chances de ter derrame. A causa é o acúmulo de toxinas na parte anterior do pescoço, logo abaixo das amígdalas, pressionando a artéria carótida, o que reflete na medição da pressão no braço. （天国の福音　「心臓及び高血圧」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf159",
+        "title": "Pontos Vitais do Johrei: Região ântero-lateral do pescoço, logo abaixo das amígdalas. (Idem acima)",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf160",
+        "title": "4) Paralisia Reversa (Gyakuchubu) Existe um tipo de paralisia onde a solidificação nas glândulas linfáticas cervicais se dissolve e desce pelo mesmo lado do corpo, sem cruzar o cérebro. Causa sintomas similares ao derrame, mas não envolve o cérebro e é mais leve. A medicina, ao tratar como derrame, acaba piorando o quadro. （文明の創造　「上半身の病気と中風」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf161",
+        "title": "Pontos Vitais do Johrei: Paralisia Reversa. Focar no pescoço atrás e abaixo da orelha (linfáticos). Dissolvendo aqui, e tratando a raiz do braço e os locais doloridos ou febris no membro afetado, a cura ocorre. （浄霊法講座９　ｐ51）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf162",
+        "title": "5) Meningite É a purificação intensa de toxinas na região frontal. Comum em crianças devido à sua força vital. Causa febre alta, dor frontal e fotofobia. Se deixada naturalmente, as toxinas saem como lágrima e secreção nasal, e a criança fica mais inteligente depois. O resfriamento médico solidifica as toxinas, gerando sequelas e demência. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf163",
+        "title": "Pontos Vitais do Johrei: Meningite é fácil. O foco é o centro da região frontal. Não aplicar força. （御教え集８　ｐ16）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf173",
+        "title": "1) Miopia e Astigmatismo Devido ao rim atrófico, toxinas sobem e solidificam-se no bulbo, causando anemia ocular e enfraquecendo a visão. Dissolvendo essa solidificação, a miopia cura-se. No astigmatismo, a solidificação oscila, alterando a pressão nos vasos e a visão. Crianças que não têm secreção nasal (nariz escorrendo) tendem a ser míopes, pois as toxinas ficam retidas. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "pf174",
+        "title": "Pontos Vitais do Johrei: Nuca e região occipital. O centro da visão está na nuca, logo abaixo da região occipital. Para o olho direito, o bloqueio pode estar no lado esquerdo da nuca (cruzamento dos nervos). （御教え集21　ｐ６）",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf175",
+        "title": "2) Tracoma e Conjuntivite Folicular Não são contagiosos. São purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf176",
+        "title": "Pontos Vitais do Johrei: Mesmos da Miopia.",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf178",
+        "title": "Pontos Vitais do Johrei: Mesmos da Miopia.",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf180",
+        "title": "Pontos Vitais do Johrei: Mesmos da Miopia.",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf182",
+        "title": "Pontos Vitais do Johrei: Focar atrás dos olhos (região occipital/bulbo) e acima dos olhos (sobrancelhas). As toxinas vêm de trás, passam pelo topo ou lateral e descem pela testa até os olhos. Se a região das sobrancelhas esquentar durante o Johrei, é um ótimo sinal. （浄霊法講座10　ｐ19）",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf184",
+        "title": "3. Ouvidos",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf185",
+        "title": "1) Otite Média Dor causada pelo pus perfurando o tímpano para sair. Vem das glândulas linfáticas e parótidas. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf186",
+        "title": "Pontos Vitais do Johrei: Glândula parótida e linfáticos. （浄霊法講座２　ｐ27）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf187",
+        "title": "2) Zumbido Considerado incurável pela medicina, cura-se com Johrei. Causa: solidificação no ouvido interno, têmporas, bulbo ou parótida. O som é a dissolução lenta dessas toxinas. （明日の医術　耳鼻疾患）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf202",
+        "title": "6. Face",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf203",
+        "title": "1) Paralisia do Nervo Facial",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "pf221",
+        "title": "1) Fístula Anal",
+        "pt_para": 5,
+        "ja_para": 2
+      },
+      {
+        "id": "pf224",
+        "title": "4) Hemorroidas (Nódulos)",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf225",
+        "title": "V. Órgãos Reprodutores",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "pf226",
+        "title": "1. Doenças Venéreas",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pf227",
+        "title": ") Cancro Duro (Sífilis) Diz-se que é causada pela bactéria *Spirochaeta* através de contato impuro. O tratamento moderno usa injeções de \"preparado 606\" (Salvarsan), mercúrio, pomadas de mercúrio e iodetos. Como já disse, o veneno do 606 é muito pior que a sífilis e seu efeito é temporário, fato admitido pela medicina. As toxinas de mercúrio e iodo manifestam-se anos depois em formas graves, podendo ser fatais. É estranho que a medicina \"avançada\" não tenha descoberto isso. A medicina fala em sífilis hereditária; eu nego, a sífilis não é hereditária. No futuro, a medicina concordará comigo. Com esta terapia, a sífilis cura-se com uma facilidade surpreendente. Deve-se saber que a sífilis, por si só, não causa dor; se houver dor ou coceira, a causa não é apenas a sífilis. Os sintomas progridem de cancro para ínguas, manchas na pele, queda de cabelo, rouquidão e, por fim, afetam o osso do nariz e a fala. （天国の福音　花柳病）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf228",
+        "title": ") Cancro Mole Limita-se a cancro e ínguas, sem progredir mais. Causa febre e dor. Cura-se naturalmente, mas os médicos incentivam a cirurgia, o que prolonga o caso. Com esta terapia, a cura é simples e total. （天国の福音　花柳病）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf229",
+        "title": ") Gonorreia É mais maligna que a sífilis, pois é impossível curar radicalmente. \"Cura\" de gonorreia significa apenas eliminar o risco de reincidência. O gonococo é um organismo vivo; com o aumento da resistência do corpo, ele enfraquece e torna-se inorgânico, como um musgo. Esse musgo, estimulado por álcool, exercícios ou febre, pode voltar a ser orgânico, causando a reincidência. Geralmente cura-se em pouco tempo. Se esse musgo crescer anos depois, pode estreitar a uretra e dificultar a micção. A injeção de remédios na uretra durante o vazamento de pus é perigosa, pois empurra o gonococo para dentro, causando prostatite ou orquite (inflamação nos testículos), com febre e dor. A terapia natural é eficaz: ingerir muita água para urinar frequentemente e lavar a uretra de forma natural e segura. Beber chá de agulhas de pinheiro é ainda melhor, pois a resina do pinheiro bloqueia os ninhos dos gonococos, impedindo sua reprodução. Com esta terapia, gonorreia, prostatite e orquite curam-se facilmente. （天国の福音「花柳病」）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf230",
+        "title": "VI. Doenças Femininas",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "pf231",
+        "title": "1. Útero e Trompas",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf241",
+        "title": "1) Cisto de Ovário e Hidropisia Ovariana",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf246",
+        "title": "1) Enjoos Matinais (Hiperêmese Gravídica)",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf247",
+        "title": "5. Rins (Na Gravidez)",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf248",
+        "title": "1) Rim na Gravidez",
+        "pt_para": 2,
+        "ja_para": 4
+      },
+      {
+        "id": "pf249",
+        "title": "6. Mamas",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "pf268",
+        "title": "VIII. Câncer e Outras Doenças",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf270",
+        "title": "2. Outras Doenças",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "pf271",
+        "title": ") Sarna e Doenças de Pele Recentemente, surgiu uma epidemia de pústulas brancas (como feijões) ou vermelhas nas mãos e pés, muito dolorosas. A sarna causa coceira insuportável no corpo todo. A causa surpreendente de ambas é o cérebro. Toxinas solidificadas no cérebro dissolvem-se, descem e tentam sair pela pele das mãos e pés. Três tipos de toxinas:",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "pf272",
+        "title": ") Beribéri Doença de intoxicação por arroz branco. Comer farelo de arroz (nuka) ou mais acompanhamentos cura em uma semana. A maioria dos diagnósticos médicos de beribéri está errada. O verdadeiro beribéri amortece três pontos: canela interna, base do polegar e lábio inferior. O resto é pseudo-beribéri (excesso de urina ou remédios). Com Johrei, ambos curam-se em poucas vezes. （天国の福音　「脚気とバセドー氏病」）",
+        "pt_para": 1,
+        "ja_para": 3
+      },
+      {
+        "id": "pf288",
+        "title": "8. Pomadas e Unguentos",
+        "pt_para": 1,
+        "ja_para": 4
+      },
+      {
+        "id": "pf289",
+        "title": "9. Jintan",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "pf291",
+        "title": "11. Vacinas e Desinfetantes",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "pf294",
+        "title": "1. Doenças Causadas por Pecados e Impurezas",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf295",
+        "title": ") Tipos de Pecados e a Doença Pecados dos antepassados, pecados de vidas passadas e pecados individuais. As doenças de origem espiritual decorrentes de pecados e impurezas são difíceis de curar e requerem longo tempo. A maioria dos casos obstinados de tuberculose, cárie óssea e câncer enquadra-se nesta categoria. 『天国の礎』（罪穢と病気）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "pf297",
+        "title": "2. Métodos para Dissipar Pecados e Impurezas",
+        "pt_para": 0,
+        "ja_para": 1
+      }
+    ]
+  },
+  {
+    "file": "pontos_focais_vol01.json",
+    "total": 79,
+    "with_ja": 68,
+    "aligned": 4,
+    "misaligned": 64,
+    "missing_ja": 11,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Pontos Focais do Johrei 01",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_002",
+        "title": "Doenças Cerebrais e a Função Renal",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_003",
+        "title": "Dores de Cabeça",
+        "pt_para": 7,
+        "ja_para": 1
+      },
+      {
+        "id": "item_004",
+        "title": "Tonturas e Vertigens",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_005",
+        "title": "Meningite e Encefalite",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_006",
+        "title": "Hemorragia e Derrame Cerebral",
+        "pt_para": 6,
+        "ja_para": 1
+      },
+      {
+        "id": "item_007",
+        "title": "Paralisia (Paresia)",
+        "pt_para": 7,
+        "ja_para": 4
+      },
+      {
+        "id": "item_008",
+        "title": "Anemia Cerebral",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_009",
+        "title": "Doenças dos Olhos",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_010",
+        "title": "Miopia",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_011",
+        "title": "Hipermetropia",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_012",
+        "title": "Astigmatismo",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_013",
+        "title": "Catarata e Glaucoma",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_014",
+        "title": "Tracoma",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_015",
+        "title": "Conjuntivite",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_017",
+        "title": "Sinusite",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_018",
+        "title": "Rinite Hipertrófica",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_019",
+        "title": "Pólipos Nasais",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_021",
+        "title": "Otite Média",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_023",
+        "title": "Amigdalite",
+        "pt_para": 6,
+        "ja_para": 1
+      },
+      {
+        "id": "item_024",
+        "title": "Doenças dos Dentes",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_025",
+        "title": "Dor de Dente",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_026",
+        "title": "Piorreia Alveolar",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_027",
+        "title": "Doenças Cardíacas",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_028",
+        "title": "Angina de Peito",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_029",
+        "title": "Infarto do Miocárdio",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_030",
+        "title": "Insuficiência Cardíaca",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_031",
+        "title": "Valvulopatia",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_032",
+        "title": "Hipertrofia Cardíaca",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_033",
+        "title": "Neurose Cardíaca",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_034",
+        "title": "Doenças Pulmonares",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_035",
+        "title": "Tuberculose Pulmonar",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_036",
+        "title": "Pleurisia",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_037",
+        "title": "Asma",
+        "pt_para": 6,
+        "ja_para": 1
+      },
+      {
+        "id": "item_038",
+        "title": "Doenças do Estômago",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_040",
+        "title": "Cãibra Estomacal",
+        "pt_para": 4,
+        "ja_para": 3
+      },
+      {
+        "id": "item_041",
+        "title": "Dor de Estômago",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_042",
+        "title": "Gastroptose (Estômago Caído)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_043",
+        "title": "Úlcera Gástrica",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_044",
+        "title": "Doenças do Fígado",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_045",
+        "title": "Doenças Renais",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_046",
+        "title": "Enfermidades dos Rins",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "item_047",
+        "title": "Tuberculose Renal",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_048",
+        "title": "Rim Atrófico",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_049",
+        "title": "Sobre a Urina Tóxica",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_050",
+        "title": "Nefrite e Pielite",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_051",
+        "title": "Doença Renal Crônica",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_052",
+        "title": "O Câncer",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_053",
+        "title": "Causas do Câncer",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_055",
+        "title": "Câncer de Pulmão",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_056",
+        "title": "Câncer de Esôfago",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_057",
+        "title": "Câncer de Estômago",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_058",
+        "title": "Câncer de Fígado",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_059",
+        "title": "Câncer de Intestino Grosso",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_060",
+        "title": "Câncer de Útero",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_061",
+        "title": "Doenças Femininas",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_062",
+        "title": "Irregularidade Menstrual",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_063",
+        "title": "Endometrite",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_064",
+        "title": "Mioma Uterino",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_065",
+        "title": "Cisto no Ovário",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_066",
+        "title": "Enjoos da Gravidez (Mal-estar Matinal)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_067",
+        "title": "Rim na Gravidez",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_068",
+        "title": "Infertilidade",
+        "pt_para": 3,
+        "ja_para": 2
+      },
+      {
+        "id": "item_069",
+        "title": "Doenças Infantis",
+        "pt_para": 0,
+        "ja_para": 1
+      }
+    ]
+  },
+  {
+    "file": "pontos_focais_vol02.json",
+    "total": 171,
+    "with_ja": 128,
+    "aligned": 8,
+    "misaligned": 120,
+    "missing_ja": 43,
+    "misaligned_items": [
+      {
+        "id": "item_001",
+        "title": "Pontos Focais do Johrei 02",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_002",
+        "title": "Parte Científica",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_004",
+        "title": "1\\. O Ponto Vital: Onde há Febre e Dor",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_005",
+        "title": "Em qualquer empreitada, identificar o ponto vital é primordial. No Johrei, não é diferente: o segredo reside em localizar esse ponto crucial. Compreendendo o princípio que exporei a seguir, tal localização torna-se extremamente simples.",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_006",
+        "title": "## Ao realizar um autodiagnóstico, deve-se apalpar todo o corpo. Onde houver febre, haverá toxina. Se ao toque a região estiver fria, está tudo bem; contudo, invariavelmente haverá algum local febril, e é aí que reside o ponto vital. Além disso, ao pressionar, certamente haverá um local dolorido.",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_007",
+        "title": "## Existem pessoas que afirmam não sentir dor alguma. Não é que não possuam toxinas, mas sim que estas se solidificaram de tal maneira que não ocorre a mínima purificação. A dor é o sinal de que a rigidez está passando por algum processo de dissolução; onde não há purificação, não há dor. Portanto, a ausência de dor é, na verdade, um sinal de perigo. Quando tais pessoas ingressam na fé, frequentemente passam a sentir dores que antes inexistiam, indicando que a atividade purificadora teve início naquela região.",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_008",
+        "title": "## No entanto, esses casos de insensibilidade são raros; a maioria das pessoas sente dor em algum lugar. Ao ministrar Johrei a si mesmo nesses pontos, ou solicitar que outra pessoa o faça nas áreas inalcançáveis, a saúde será restabelecida. （浄霊法講座２　ｐ11～12）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_010",
+        "title": "**1\\) Alto da Cabeça, Região Occipital, Bulbo e Ombros** Muitas pessoas acumulam toxinas profundamente no alto da cabeça (vértice). As preocupações constantes tendem a concentrar as toxinas nessa região. O uso excessivo do cérebro também as atrai para lá. Conforme descrito nos livros, atividades como memorização, leitura e estudos acadêmicos utilizam o lobo frontal. A região occipital, por sua vez, rege as emoções. Contudo, o ato de preocupar-se envolve tanto o intelecto quanto a emoção, fazendo com que as toxinas se alojem no topo da cabeça. Muitas são as pessoas que sentem peso ou aflição no centro dessa região; a causa está aí. Tratando-se o topo da cabeça, a região occipital e o bulbo, nesta ordem, qualquer doença apresentará melhora. （浄霊法講座２　ｐ19）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_011",
+        "title": "## Quanto à cabeça, na vida moderna é impossível viver sem utilizá-la intensamente. Não vivemos mais em épocas despreocupadas como antigamente. O uso excessivo da mente atrai solidificações para a cabeça. Geralmente, essas solidificações originam-se nos ombros e sobem devido à atividade cerebral. Portanto, ao amolecer os ombros, a cabeça também se torna mais leve. （浄霊法講座２　ｐ15）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_013",
+        "title": "## A região mais trabalhosa é, sem dúvida, o bulbo raquidiano. Não existe ninguém que não possua solidificações nessa área. Pode variar em quantidade, mas sempre haverá rigidez, seja como uma barra de ferro ou como pedras. Ninguém possui essa região totalmente flexível; por isso afirmo que, hoje em dia, todos são, em certa medida, enfermos. Atualmente, considera-se longevo quem vive até os setenta ou oitenta anos, mas, eliminando-se essas solidificações, a vida humana ultrapassaria facilmente os cem anos. É algo extraordinário. Prolongar a vida não apresenta dificuldade alguma. Todavia, por parecer uma promessa boa demais, as pessoas acabam duvidando. A chave, portanto, está no bulbo. （浄霊法講座２　ｐ22）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_014",
+        "title": "## **2\\) Glândulas Linfáticas** Quando surge febre nas glândulas linfáticas, ela se transfere imediatamente para a região frontal. Essa febre é a que mais afeta a testa, pois as toxinas das linfas migram continuamente para lá. Pessoas com a cabeça pesada, depressivas, irascíveis ou que sentem mal-estar constante sofrem, na verdade, desse processo. O que se costuma chamar de neurastenia tem, na maioria das vezes, sua causa principal nas glândulas linfáticas. （浄霊法講座２　ｐ38～39）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_016",
+        "title": "## **4\\) Pescoço** A exceção é a paralisia (derrame). Pessoas propensas à paralisia costumam ter os ombros macios. Em compensação, possuem solidificações no pescoço que, ao se dissolverem, penetram no cérebro. Quem sofre de paralisia tem, invariavelmente, rigidez ao redor do pescoço, seja no lado direito ou esquerdo. O mesmo ocorre na região occipital. Ou seja, as toxinas que deveriam descer acabam subindo e solidificando-se nessas áreas devido à forma como a pessoa utiliza o corpo em sua profissão. A dissolução súbita dessas toxinas e sua entrada no cérebro constituem a hemorragia cerebral. Se a rigidez for no lado direito, a paralisia ocorrerá nos membros esquerdos. Na paralisia, o ponto crucial não são os ombros, mas as solidificações no pescoço. （浄霊法講座２　ｐ17）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_018",
+        "title": "## As mulheres, invariavelmente, apresentam febre na região frontal, o que as torna irritadiças. Essa febre indica a presença de toxinas que ascenderam da parte inferior. Por isso, ao ministrar Johrei na testa, deve-se também ministrar na região genital. Isso fará a febre da testa ceder, trazendo bem-estar. Poucos percebem essa conexão. Como o Johrei é ministrado sem contato físico, não há inconveniente algum. Nestes casos, lembrem-se de tratar tanto a cabeça quanto a região inferior para duplicar a eficácia. （浄霊法講座９　ｐ10）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_019",
+        "title": "3\\. Pontos Vitais das Doenças dos Olhos e Ouvidos",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_021",
+        "title": "## **2\\) Bulbo e Músculos do Pescoço** Quanto aos ouvidos, o zumbido é muito comum e sua causa reside sempre em solidificações no bulbo e nos músculos do pescoço. Já a dificuldade auditiva decorrente de otite média está relacionada à glândula parótida. Como ela é o canal da otite, restam solidificações nessa área que precisam ser dissolvidas. （浄霊法講座２　ｐ27）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_022",
+        "title": "## **※ Ponto Vital da Febre** Sobre a febre: seja na cabeça ou em outras partes, ao ministrar Johrei nos ombros, ela geralmente cede. Para um diagnóstico de saúde, nada melhor do que verificar os ombros. Se estiverem macios, a pessoa certamente é saudável. （浄霊法講座２　ｐ20）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_024",
+        "title": "4\\. Pontos Vitais das Doenças dos Órgãos Internos",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_026",
+        "title": "## Isso é muito eficaz também para indigestão, gastroptose e cãibras estomacais. Portanto, para doenças da parte superior do corpo, saibam que o foco nos ombros é o melhor caminho. （浄霊法講座２　ｐ25）",
+        "pt_para": 0,
+        "ja_para": 7
+      },
+      {
+        "id": "item_027",
+        "title": "## Em bebês, o choro excessivo, a irritabilidade e o gênio difícil indicam ombros rígidos. A propensão a febres também. A amigdalite, comum em crianças, é causada por toxinas dos ombros que migram para a garganta. Resumindo: na parte superior, foquem nos ombros e ao redor do pescoço. （浄霊法講座２　ｐ19）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_028",
+        "title": "## **2\\) Estômago** A causa da doença raramente está no local onde o sintoma se manifesta. Excetuando-se furúnculos e afins, nas doenças dos órgãos internos a causa não é o local da dor. Como num teatro, o que aparece no palco tem suas causas nos bastidores. （浄霊法講座２　ｐ36）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_029",
+        "title": "## Porém, doenças do fígado, pâncreas e intestinos têm uma nuance diferente: substâncias que entram no estômago, antes de chegarem aos rins, permeiam as áreas adjacentes e ali se solidificam. （浄霊法講座２　ｐ30）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_030",
+        "title": "5\\. Pontos Vitais das Doenças Pulmonares",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_031",
+        "title": "**1\\) Corpo Inteiro (Principalmente Pescoço)** O pulmão é um caso à parte: toxinas de qualquer lugar do corpo, uma vez dissolvidas, dirigem-se a ele para serem expelidas como escarro. Sejam da cabeça, mãos ou pés, se a solidificação derreter, vai para o pulmão. Embora a tuberculose seja chamada de doença do tórax porque os sintomas ali aparecem, ela poderia ser considerada uma doença do corpo todo. Toxinas do pescoço, ombros, abdômen e costas convergem para lá. Contudo, a maior concentração está ao redor do pescoço. Por isso, creio que seria mais correto chamar a tuberculose de uma doença do pescoço. （浄霊法講座２　ｐ37）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_032",
+        "title": "6\\. Pontos Vitais para Vômitos, Diarreia e Leucorreia",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_033",
+        "title": "**1\\) Região Occipital, Pescoço, Ombros** A cabeça divide-se em frontal e occipital. A região occipital segue a ordem de eliminação via disenteria ou hemorroidas. É preciso saber que, ao ministrar Johrei nos ombros, o paciente pode sentir mal-estar no peito, náuseas leves ou ânsia. Isso ocorre porque as toxinas dissolvidas descem e se acumulam no estômago. Nesses casos, deve-se ministrar Johrei no estômago. Mesmo sem Johrei, a toxina desceria, causando dor de barriga. Portanto, ao tratar ombros e pescoço, saibam que a dissolução das toxinas pode causar enjoo seguido de dor abdominal. Se alguém perguntar por que a barriga dói se o problema era no pescoço, a resposta é que as toxinas dissolvidas desceram para serem eliminadas via diarreia. Isso é comum nos homens; nas mulheres, a eliminação pode ocorrer pela frente, na forma de leucorreia (corrimento branco) ou através das mucosas genitais, causando ardor ou coceira. Nos homens, é exclusivamente diarreia. Compreendendo esse mecanismo, não haverá erros. Em alguns casos, as toxinas podem se alojar na região lombar. （浄霊法講座２　ｐ33）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_034",
+        "title": "## **2\\) Região Frontal, Tórax, Estômago** Para ilustrar, contarei uma experiência própria. Eu tinha um nódulo na região occipital causado por remédios aplicados nos dentes, que migraram e se solidificaram ali. Minha cabeça estava sempre pesada. Percebi isso há dois anos e comecei a fazer o auto-Johrei. O nódulo, duro como osso, foi dissolvendo e reduziu-se à metade. Era estranho ter algo duro como osso ali que não doía ao apertar. Recentemente, ao diminuir pela metade, comecei a sentir tonturas fortes. Procurei a causa e percebi que, ao dissolver a região occipital, ocorreu uma purificação compensatória na região frontal. Ao dissolver a frente, a tontura passou, mas comecei a sentir o peito enjoado. As toxinas da testa desceram para o estômago. Ministrei Johrei no estômago e senti vontade de ir ao banheiro, o que resolveu o problema. Eram fezes moles e com cheiro forte. O processo foi: occipital \\-\\> frontal \\-\\> estômago \\-\\> excreção. Ao dissolver uma parte, ocorre uma equalização da purificação em outras áreas da cabeça, que depois descem. O corpo é feito de forma muito conveniente. （御垂示録８　ｐ１）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_036",
+        "title": "**1\\) Rins, Ombros, Lombar, Cóccix** As toxinas medicamentosas concentram-se inicialmente nos rins, o local de processamento. O que não é eliminado via urina, migra e solidifica-se nos ombros ou na região lombar. Isso depende da profissão: quem usa muito as mãos ou a mente, acumula nos ombros. Agricultores ou quem trabalha sentado forçando a lombar, acumula nos quadris. O que se acumula na lombar dissolve-se aos poucos e flui para as pernas, causando problemas nelas. O beribéri é um exemplo disso. Cãibras, dormência, fadiga, joelhos fracos; tudo que se refere às pernas vem de acúmulos na lombar que desceram. Portanto, foquem no centro da região lombar e no cóccix, ministrando Johrei pelas costas. As pernas ficarão leves mesmo sem serem tocadas diretamente. Isso também se relaciona com a falta de ar. Quem tem problemas nas pernas e na lombar faz muito esforço ao andar ou subir ladeiras. Esse esforço sobrecarrega o coração. Como o coração (Fogo) precisa trabalhar mais, sobra menos energia térmica para ativar os pulmões (Água), resultando em respiração ofegante. （浄霊法講座２　ｐ35）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_037",
+        "title": "## O mesmo vale para problemas renais (acúmulos lombares) que vêm dos ombros. （浄霊法講座２　ｐ15）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_038",
+        "title": "## Problemas nas mãos e braços também vêm dos ombros. Tratando os ombros, os braços melhoram. （浄霊法講座２　ｐ19）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_039",
+        "title": "## **2\\) Pescoço e Lateral da Coxa** Muitas pessoas com problemas nas pernas e na lombar melhoram após receberem Johrei no pescoço. （浄霊法講座２　ｐ26）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_040",
+        "title": "## Para quem tem dificuldade no movimento das pernas, deve-se verificar a lateral da coxa; se estiver dura, ministre Johrei ali. （浄霊法講座２　ｐ31）",
+        "pt_para": 0,
+        "ja_para": 5
+      },
+      {
+        "id": "item_041",
+        "title": "8\\. Pontos Vitais para Distensão Abdominal",
+        "pt_para": 0,
+        "ja_para": 8
+      },
+      {
+        "id": "item_043",
+        "title": "## **※ Ponto Vital para o Apetite** Falei sobre amolecer os ombros para abrir o apetite. Até que ponto devem ficar macios? Devem ficar fofos ao toque. Mas chegar a esse estado é difícil. Quase todos têm alguma rigidez que julgam normal por estarem acostumados. Quando essa rigidez se dissolve pela metade, o apetite aumenta consideravelmente. （浄霊法講座２　ｐ20）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_044",
+        "title": "## Havendo apetite, tudo se cura. O Johrei cura qualquer doença, mas o paciente pode sucumbir à debilidade antes da cura. A alimentação combate a debilidade; logo, o apetite é fundamental. （浄霊法講座２　ｐ21）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_045",
+        "title": "II. Cabeça",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_046",
+        "title": "1\\. Cérebro",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_048",
+        "title": "## **Pontos Vitais do Johrei:** O derrame pode originar-se de nódulos na lateral do pescoço ou no bulbo. Antes do derrame, esses locais apresentam rigidez óbvia, como uma barra. （浄霊法講座２　ｐ39）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_050",
+        "title": "## A hemorragia ocorre no bulbo. No início, trate o bulbo e a região frontal. O sangue cruza a cabeça e vai para o ombro oposto; trate o ombro para aliviar a mão. （浄霊法講座９　ｐ55）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_051",
+        "title": "## Não é só o pé; mão direita e pé direito são afetados juntos. O problema principal é a mão. Se a mão está ruim, o pé também está. （浄霊法講座９　ｐ54）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_052",
+        "title": "## Cabeça e pescoço. O foco na cabeça é porque a toxina tende a solidificar lá dentro. Gelo na cabeça é proibido, pois solidifica o sangue no cérebro. （浄霊法講座９　ｐ57～58）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_053",
+        "title": "## Para fala enrolada pós-derrame: tratar da cabeça até as orelhas e maxilar. （浄霊法講座９　ｐ71）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_054",
+        "title": "## **2\\) Arteriosclerose** A arteriosclerose ocorre quando toxinas medicamentosas se solidificam ao redor das artérias, comprimindo-as, ou quando o sangue tóxico se acumula na própria artéria, causando aneurismas. A causa é o remédio e a impureza do sangue pelo consumo de carne. Suspender remédios e adotar dieta vegetariana acelera a cura. （アメリカを救う「動脈硬化及び高血圧」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_055",
+        "title": "## **Pontos Vitais do Johrei:** Bulbo, pescoço, ombros, costas. （アメリカを救う、動脈硬化及び高血圧の事例より）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_057",
+        "title": "## **Pontos Vitais do Johrei:** Região ântero-lateral do pescoço, logo abaixo das amígdalas. (Idem acima)",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_058",
+        "title": "## **4\\) Paralisia Reversa (Gyakuchubu)** Existe um tipo de paralisia onde a solidificação nas glândulas linfáticas cervicais se dissolve e desce pelo mesmo lado do corpo, sem cruzar o cérebro. Causa sintomas similares ao derrame, mas não envolve o cérebro e é mais leve. A medicina, ao tratar como derrame, acaba piorando o quadro. （文明の創造　「上半身の病気と中風」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_060",
+        "title": "## **5\\) Meningite** É a purificação intensa de toxinas na região frontal. Comum em crianças devido à sua força vital. Causa febre alta, dor frontal e fotofobia. Se deixada naturalmente, as toxinas saem como lágrima e secreção nasal, e a criança fica mais inteligente depois. O resfriamento médico solidifica as toxinas, gerando sequelas e demência. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_062",
+        "title": "## **6\\) Encefalite Japonesa** Ocorre no verão. O sol forte na cabeça sem chapéu faz as toxinas das costas e ombros subirem, acumulando-se no bulbo. Ao dissolverem com febre alta e entrarem no cérebro posterior, causam sonolência profunda. O resfriamento médico causa a morte ou sequelas. Sem interferência médica, cura-se em uma semana com a eliminação de pus sanguinolento pelos olhos e nariz. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_063",
+        "title": "## **Pontos Vitais do Johrei:** Região occipital e Bulbo. （浄霊法講座９　ｐ41）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_064",
+        "title": "## A solidificação retorna rapidamente. Deve-se ministrar muitas vezes ao dia (a cada 20 ou 30 minutos). （浄霊法講座９　ｐ43）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_065",
+        "title": "## **7\\) Meningite Cerebroespinhal** Similar à Encefalite, mas ocorre no inverno. As toxinas no bulbo formam uma barra rígida, impedindo o pescoço de mover-se. O tratamento é o mesmo. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_066",
+        "title": "## **Pontos Vitais do Johrei:** Idem à Encefalite Japonesa.",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_067",
+        "title": "## **8\\) Anemia Cerebral e Neurastenia** Oposto da hemorragia: falta de sangue no cérebro devido à compressão dos vasos pelas toxinas do pescoço. Causa tontura, dor de cabeça, náusea e intolerância a ruídos. Ao colocar a mão na testa, sente-se a pele fria e suor oleoso. A neurastenia moderna é, basicamente, anemia cerebral. （文明の創造　「脳貧血其他」）",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_068",
+        "title": "## **Pontos Vitais do Johrei:** Pescoço. A purificação gera calor que sobe, causando tontura. Tratar pescoço (linfáticos) e garganta. （浄霊法講座９　ｐ69）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_069",
+        "title": "## Anemia Cerebral e Garganta. Às vezes a causa está na garganta e no bulbo. （浄霊法講座９　ｐ69）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_071",
+        "title": "## **Pontos Vitais do Johrei:** Lado direito do bulbo, região frontal e centro do cérebro. （教修要綱　病気症状の解剖　ｐ12）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_072",
+        "title": "2\\. Olhos",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_073",
+        "title": "**1\\) Miopia e Astigmatismo** Devido ao rim atrófico, toxinas sobem e solidificam-se no bulbo, causando anemia ocular e enfraquecendo a visão. Dissolvendo essa solidificação, a miopia cura-se. No astigmatismo, a solidificação oscila, alterando a pressão nos vasos e a visão. Crianças que não têm secreção nasal (nariz escorrendo) tendem a ser míopes, pois as toxinas ficam retidas. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_074",
+        "title": "## **Pontos Vitais do Johrei:** Nuca e região occipital. O centro da visão está na nuca, logo abaixo da região occipital. Para o olho direito, o bloqueio pode estar no lado esquerdo da nuca (cruzamento dos nervos). （御教え集21　ｐ６）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_076",
+        "title": "## **2\\) Tracoma e Conjuntivite Folicular** Não são contagiosos. São purificações onde toxinas tentam sair pela pálpebra. Cirurgias e colírios apenas solidificam as toxinas, tornando a doença crônica e dolorosa. （明日の医術　眼病）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_078",
+        "title": "## **3\\) Leucoma (Manchas na Córnea/Meboshi)** Toxinas solidificadas na superfície da pupila. Colírios endurecem a mancha. Sem remédios, cura-se em poucas sessões. （明日の医術　眼病）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_079",
+        "title": "## **Pontos Vitais do Johrei:** Mesmos da Miopia.",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_080",
+        "title": "## **4\\) Conjuntivite** Olhos vermelhos e secreção. Toxinas da região frontal sendo eliminadas pelos olhos. （明日の医術　眼病）",
+        "pt_para": 0,
+        "ja_para": 4
+      },
+      {
+        "id": "item_081",
+        "title": "## **Pontos Vitais do Johrei:** Mesmos da Miopia.",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_083",
+        "title": "## Catarata é pus branco; Glaucoma é pus verde (mais grave); Amaurose é sangue tóxico (muito grave). Sem remédios, a cura é possível. （明日の医術　「眼病」）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_084",
+        "title": "## **Pontos Vitais do Johrei:** Focar atrás dos olhos (região occipital/bulbo) e acima dos olhos (sobrancelhas). As toxinas vêm de trás, passam pelo topo ou lateral e descem pela testa até os olhos. Se a região das sobrancelhas esquentar durante o Johrei, é um ótimo sinal. （浄霊法講座10　ｐ19）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_085",
+        "title": "## Catarata: pus na parte preta do olho. A origem é o bulbo e a região frontal. Demora um pouco, mas a saída de lágrima e remela indica cura progressiva. （浄霊法講座10　ｐ20）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_086",
+        "title": "## Glaucoma: pus acumulado atrás do olho. Tratar atrás do olho. As toxinas vêm do pescoço, passam pela cabeça e descem. Onde estiver quente, foque ali. Johrei pela frente mirando o fundo do olho. （浄霊法講座10　ｐ24）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_087",
+        "title": "## **6\\) Outras Doenças Oculares**",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_089",
+        "title": "## **② Olheiras Escuras** É sangue tóxico estagnado. Ministrar Johrei no local escuro e no bulbo. （浄霊法講座10　ｐ55）",
+        "pt_para": 0,
+        "ja_para": 5
+      },
+      {
+        "id": "item_091",
+        "title": "**1\\) Otite Média** Dor causada pelo pus perfurando o tímpano para sair. Vem das glândulas linfáticas e parótidas. （文明の創造　「腎臓病とその他の疾患」）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_093",
+        "title": "## **2\\) Zumbido** Considerado incurável pela medicina, cura-se com Johrei. Causa: solidificação no ouvido interno, têmporas, bulbo ou parótida. O som é a dissolução lenta dessas toxinas. （明日の医術　耳鼻疾患）",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_094",
+        "title": "## **Pontos Vitais do Johrei:** Bulbo, músculos do pescoço e parótida. （浄霊法講座２　ｐ27）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_095",
+        "title": "## **3\\) Otorreia (Pus no Ouvido)** Lavagens com remédios apenas introduzem novos venenos e impedem a cura. Deixar sair naturalmente cura em meses. （明日の医術　耳鼻疾患）",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_096",
+        "title": "## **Pontos Vitais do Johrei:** Linfáticos e parótida.",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_098",
+        "title": "## **Pontos Vitais do Johrei:** Parótida e ouvido interno.",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_100",
+        "title": "1\\) Sinusite, Rinite Hipertrófica, Pólipos Nasais e Anosmia",
+        "pt_para": 8,
+        "ja_para": 4
+      },
+      {
+        "id": "item_101",
+        "title": "5\\. Boca",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_102",
+        "title": "1\\) Dor de Dente",
+        "pt_para": 6,
+        "ja_para": 2
+      },
+      {
+        "id": "item_103",
+        "title": "2\\) Piorreia Alveolar",
+        "pt_para": 2,
+        "ja_para": 3
+      },
+      {
+        "id": "item_104",
+        "title": "3\\) Mucosa Bucal, Garganta e Língua",
+        "pt_para": 5,
+        "ja_para": 1
+      },
+      {
+        "id": "item_105",
+        "title": "4\\) Tuberculose Laríngea",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_106",
+        "title": "5\\) Tuberculose da Garganta",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_107",
+        "title": "6\\) Amigdalite",
+        "pt_para": 5,
+        "ja_para": 2
+      },
+      {
+        "id": "item_109",
+        "title": "1\\) Paralisia do Nervo Facial",
+        "pt_para": 3,
+        "ja_para": 1
+      },
+      {
+        "id": "item_111",
+        "title": "2\\. Rins",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_112",
+        "title": "1\\) Atrofia Renal",
+        "pt_para": 9,
+        "ja_para": 4
+      },
+      {
+        "id": "item_114",
+        "title": "3\\) Doença Renal Crônica",
+        "pt_para": 4,
+        "ja_para": 2
+      },
+      {
+        "id": "item_115",
+        "title": "4\\) Tuberculose Renal",
+        "pt_para": 4,
+        "ja_para": 2
+      },
+      {
+        "id": "item_116",
+        "title": "5\\) Cálculos (Pedras)",
+        "pt_para": 6,
+        "ja_para": 2
+      },
+      {
+        "id": "item_118",
+        "title": "1\\) Doença Hepática e Icterícia",
+        "pt_para": 5,
+        "ja_para": 2
+      },
+      {
+        "id": "item_120",
+        "title": "1\\) Diabetes",
+        "pt_para": 4,
+        "ja_para": 2
+      },
+      {
+        "id": "item_121",
+        "title": "5\\. Intestinos",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_123",
+        "title": "2\\) Febre Tifoide",
+        "pt_para": 5,
+        "ja_para": 2
+      },
+      {
+        "id": "item_125",
+        "title": "4\\) Apendicite",
+        "pt_para": 7,
+        "ja_para": 2
+      },
+      {
+        "id": "item_127",
+        "title": "1\\) Fístula Anal",
+        "pt_para": 5,
+        "ja_para": 3
+      },
+      {
+        "id": "item_129",
+        "title": "3\\) Prolapso Retal",
+        "pt_para": 4,
+        "ja_para": 1
+      },
+      {
+        "id": "item_130",
+        "title": "4\\) Hemorroidas (Nódulos)",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_131",
+        "title": "V. Órgãos Reprodutores",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_132",
+        "title": "1\\. Doenças Venéreas",
+        "pt_para": 4,
+        "ja_para": 3
+      },
+      {
+        "id": "item_133",
+        "title": "VI. Doenças Femininas",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_134",
+        "title": "1\\. Útero e Trompas",
+        "pt_para": 18,
+        "ja_para": 2
+      },
+      {
+        "id": "item_135",
+        "title": "2\\. Ovários",
+        "pt_para": 0,
+        "ja_para": 1
+      },
+      {
+        "id": "item_137",
+        "title": "3\\. Vagina",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_139",
+        "title": "2\\) Frigidez",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_140",
+        "title": "4\\. Estômago (Na Gravidez)",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_142",
+        "title": "5\\. Rins (Na Gravidez)",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_144",
+        "title": "6\\. Mamas",
+        "pt_para": 0,
+        "ja_para": 3
+      },
+      {
+        "id": "item_146",
+        "title": "VII. Crianças",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_147",
+        "title": "1\\. Doenças Infantis",
+        "pt_para": 24,
+        "ja_para": 2
+      },
+      {
+        "id": "item_148",
+        "title": "2\\. Outras Doenças Infantis",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "item_149",
+        "title": "VIII. Câncer e Outras Doenças",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_151",
+        "title": "2\\. Outras Doenças",
+        "pt_para": 12,
+        "ja_para": 2
+      },
+      {
+        "id": "item_152",
+        "title": "X. Furúnculos, Queimaduras e Cortes",
+        "pt_para": 0,
+        "ja_para": 2
+      },
+      {
+        "id": "item_153",
+        "title": "1\\. Furúnculos",
+        "pt_para": 4,
+        "ja_para": 13
+      },
+      {
+        "id": "item_154",
+        "title": "2\\. Queimaduras e Cortes",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_157",
+        "title": "2\\. Laxantes",
+        "pt_para": 2,
+        "ja_para": 1
+      },
+      {
+        "id": "item_159",
+        "title": "4\\. Colírios",
+        "pt_para": 2,
+        "ja_para": 10
+      },
+      {
+        "id": "item_160",
+        "title": "5\\. Remédios Nasais",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "item_161",
+        "title": "6\\. Gargarejos",
+        "pt_para": 1,
+        "ja_para": 2
+      },
+      {
+        "id": "item_163",
+        "title": "8\\. Pomadas e Unguentos",
+        "pt_para": 1,
+        "ja_para": 3
+      }
+    ]
+  }
+]
