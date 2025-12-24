@@ -148,7 +148,7 @@ Primeiramente, se fizer apenas isto (Região Occipital, Gânglios Linfáticos, R
 
 ### 7\. Homem incapaz de trabalhar devido à extrema onerosidade na cabeça
 
-*(Gokyōkaishū 7-gō, pág. 25\)*
+*(Mioshiekaishū 7-gō, pág. 25\)*
 
 **(Pergunta)** Homem de 44 anos. Sente a cabeça pesada, tem aversão a conversar com as pessoas e tornou-se incapaz de segurar objetos ou trabalhar. Tratou-se com um médico por um mês, recebendo cerca de vinte injeções de conteúdo desconhecido, mas não obteve melhora. Recebeu aplicação de acupuntura na cabeça cerca de dez vezes e moxa nos quadris e pernas. Ingressou na fé em outubro do ano 23 (1948).
 
@@ -188,7 +188,7 @@ Eu também passei por essa experiência; antigas toxinas de medicamentos dentár
 
 ### 10\. Jovem diagnosticada com câncer cerebral
 
-*(Gokyōkaishū 4-gō, pág. 84\)*
+*(Mioshiekaishū 4-gō, pág. 84\)*
 
 **(Pergunta)** Minha irmã (19 anos) frequentava o hospital desde fevereiro do ano 26 (1951) com diagnóstico de otite média. Por volta de abril, começou a cambalear e a cair. Em agosto, sua visão escurecia repentinamente várias vezes ao dia. O médico diagnosticou câncer cerebral e propôs cirurgia, mas ela retornou para casa. Desde setembro, vem recebendo Johrei e, graças a Deus, o edema e o inchaço no pescoço daquela época desapareceram.
 
@@ -228,7 +228,7 @@ Nesses casos, há uma plenitude de toxinas. Existem aqueles onde o acúmulo é m
 
 ### 13\. Jovem que teve meningite aos seis meses e permanece acamada há mais de dez anos, imóvel como um boneco Daruma
 
-*(Gokyōkaishū 8-gō, pág. 16\)*
+*(Mioshiekaishū 8-gō, pág. 16\)*
 
 **(Pergunta)** Moça de 17 anos. Aos seis meses de vida, após contrair um resfriado, teve febre alta contínua e foi diagnosticada com meningite, recebendo injeções e medicamentos continuamente. Desde então, por quinze ou dezesseis anos, submeteu-se a todo tipo de tratamento e orações. Fez cirurgia ortopédica e tomou seis injeções na medula espinhal, mas sem nenhum efeito; permanece deitada há anos, imóvel como um boneco Daruma. Começou a receber Johrei no verão do ano 26 (1951), e eu (o pai) ingressei na fé e estou ministrando-lhe o Johrei. Peço orientação sobre os pontos vitais.
 
@@ -246,7 +246,7 @@ Desejo muito que ela seja curada. O ponto vital é dentro disto (região frontal
 
 ### 14\. Olhos congestionados na meningite indicam que o pico foi ultrapassado
 
-*(Gokyōkaishū 4-gō, pág. 47\)*
+*(Mioshiekaishū 4-gō, pág. 47\)*
 
 **(Pergunta)** Menino de 11 anos. Queixou-se de dor de cabeça a partir de 7 de novembro. Após uma sessão de Johrei, teve febre em todo o corpo e a dor de cabeça intensificou-se; fora a dor de cabeça, sente alívio em pouco tempo. O centro da cabeça, após seis sessões de Johrei, baixou a febre para cerca de 37 graus, mas ainda resta uma dor leve. Três dias e noites após o início da purificação, apresentou forte debilidade, ambos os olhos ficaram congestionados (vermelhos) e começou a sair remela amarela.
 
@@ -268,7 +268,7 @@ Mais do que uma relação espiritual, trata-se de hereditariedade. Se fizer a cr
 
 ### 16\. Criança que passou a ter ataques epilépticos após meningite aos quatro anos
 
-*(Gokyōkaishū 4-gō, pág. 95\)*
+*(Mioshiekaishū 4-gō, pág. 95\)*
 
 **(Pergunta)** Menino de 10 anos. Aos quatro anos teve gastrite aguda e meningite; foi salvo pelos médicos quando estava em estado desenganado. Contudo, a partir de setembro do mesmo ano, começou a ter convulsões, sendo diagnosticado com epilepsia adquirida. Uma vez por mês, infalivelmente antes do amanhecer, tem ataques; os sintomas são convulsões intensas e incontinência urinária. Após o ataque, queixa-se inconscientemente de dor de cabeça. O desempenho escolar é ruim, é travesso e causa problemas à família. Dizem que quando o estômago não está bem, os ataques ocorrem mais facilmente. Qual seria a causa disto? A solidificação da meningite também pode causar tais sintomas? Como proceder para salvá-lo?
 
@@ -284,11 +284,11 @@ Ademais, "quando o estômago não está bem, tem ataques"... isto se dá porque 
 
 ### 17\. Sobre a Encefalite Japonesa
 
-*(Gokyōkaishū 25-gō, pág. 43\)*
+*(Mioshiekaishū 25-gō, pág. 43\)*
 
-Este ano (1953) a Encefalite Japonesa está grassando intensamente, diz-se que muitas vezes mais que no ano passado (1952), mas, sob a ótica dos fiéis, a Encefalite Japonesa é algo muito bom. *(Gokyōkaishū 25-gō, pág. 36\)*
+Este ano (1953) a Encefalite Japonesa está grassando intensamente, diz-se que muitas vezes mais que no ano passado (1952), mas, sob a ótica dos fiéis, a Encefalite Japonesa é algo muito bom. *(Mioshiekaishū 25-gō, pág. 36\)*
 
-Como sempre digo, as toxinas concentram-se na região occipital porque o Sol incide sobre a cabeça. Essas toxinas vêm, em grande parte, das costas . O ser humano possui muito mais toxinas nas costas. E por que há tantas toxinas nas costas? Porque o ser humano não dorme de bruços, mas sim de barriga para cima, o que faz com que as toxinas se acumulem nas costas. Assim, as toxinas de todas as costas e ombros sobem porque a cabeça é iluminada. O corpo humano é bem feito: quando as toxinas chegam à região occipital, estão destinadas a serem expelidas para fora. Elas atravessam o cérebro, partindo da nuca, e saem como remela ou secreção nasal. Quando saem, misturam-se invariavelmente com sangue. É o sangue tóxico daqui que sai. Se sair tudo o que tem para sair, a cura é certa. *(Gokyōkaishū 25-gō, pág. 43\)*
+Como sempre digo, as toxinas concentram-se na região occipital porque o Sol incide sobre a cabeça. Essas toxinas vêm, em grande parte, das costas . O ser humano possui muito mais toxinas nas costas. E por que há tantas toxinas nas costas? Porque o ser humano não dorme de bruços, mas sim de barriga para cima, o que faz com que as toxinas se acumulem nas costas. Assim, as toxinas de todas as costas e ombros sobem porque a cabeça é iluminada. O corpo humano é bem feito: quando as toxinas chegam à região occipital, estão destinadas a serem expelidas para fora. Elas atravessam o cérebro, partindo da nuca, e saem como remela ou secreção nasal. Quando saem, misturam-se invariavelmente com sangue. É o sangue tóxico daqui que sai. Se sair tudo o que tem para sair, a cura é certa. *(Mioshiekaishū 25-gō, pág. 43\)*
 
 Nesse momento, a medicina utiliza resfriamento, o que faz solidificar em algum lugar da cabeça. Então, a pessoa fica com sequelas, como se fosse aleijada. Se solidificar aqui (região frontal), perde-se a visão; se solidificar nas laterais, perde-se a audição; se solidificar no pescoço, as mãos ficam dormentes, e assim por diante. Portanto, se não se fizer nada, sairá o que tiver de sair e a cura é certa.
 
@@ -300,7 +300,7 @@ Frequentemente aparece nos relatos de graças: "Provavelmente foi Encefalite Jap
 
 ### 18\. Evolução da purificação de uma criança com Encefalite Japonesa e consulta a respeito
 
-*(Gokyōkaishū 2-gō, pág. 41\)*
+*(Mioshiekaishū 2-gō, pág. 41\)*
 
 **(Pergunta)** Por volta de 27 de agosto, minha segunda filha (14 anos) teve febre baixa. Ao ir para a escola em 1º de setembro, teve tontura durante a reunião matinal. Desde a tarde desse dia, caiu de cama com febre alta de 40,2 graus, queixando-se de dor de cabeça terrível, debatendo-se com mãos e pés, num estado alarmante. O professor (da Igreja) ministrou Johrei imediatamente. Nesse ínterim, sentia náuseas ocasionalmente, mas não vomitava nada. Os olhos não apresentavam congestão. Ela dizia que o hálito que saía de sua boca e nariz era muito fétido.
 
@@ -318,7 +318,7 @@ Além disso, não há relação espiritual. Portanto, ministre bastante Johrei n
 
 ### 19\. Idoso com rigidez na nuca, olhos congestionados e febre alta
 
-*(Gokyōkaishū 1-gō, pág. 17\)*
+*(Mioshiekaishū 1-gō, pág. 17\)*
 
 **(Pergunta)** Homem de mais de 60 anos (fiel). Desde 28 de julho apresenta febre altíssima, sofrendo com violentas dores de cabeça e rigidez na nuca; chegou a ter a consciência turva em alguns momentos. Dias depois, a febre cedeu um pouco e a consciência retornou, mas a temperatura permanece em torno de 39,5 graus, sem grandes alterações entre manhã e tarde. O pescoço move-se com facilidade para os lados, mas ele ainda sente dor ao movê-lo para frente e para trás, e suas respostas verbais por vezes carecem de sentido. Ambos os olhos estão congestionados, saindo lágrimas e remela especialmente do olho esquerdo. Não há secreção nasal.
 
@@ -344,15 +344,15 @@ Todavia, a partir de setembro, a purificação intensificou-se novamente; os mem
 
 ### 21\. Sobre a Hemorragia Cerebral e a Paralisia (Chūfū)
 
-*(Gokyōkaishū 24-gō, pág. 3\)*
+*(Mioshiekaishū 24-gō, pág. 3\)*
 
 A Paralisia (*Chūfū*) ocorre justamente nas pessoas mais saudáveis. Não ocorre em pessoas debilitadas. A paralisia jamais ocorre em pessoas magras devido à tuberculose; ela acomete pessoas de boa compleição, coradas e cheias de vitalidade.
 
-*(Gokyōkaishū 24-gō, pág. 14\)* As pessoas propensas à paralisia têm, na verdade, os ombros macios. Nesses indivíduos, as toxinas do corpo ultrapassam os ombros e acumulam-se no pescoço. Por terem os ombros macios, são extremamente saudáveis.
+*(Mioshiekaishū 24-gō, pág. 14\)* As pessoas propensas à paralisia têm, na verdade, os ombros macios. Nesses indivíduos, as toxinas do corpo ultrapassam os ombros e acumulam-se no pescoço. Por terem os ombros macios, são extremamente saudáveis.
 
-*(Gokyōkaishū 24-gō, pág. 3\)* Em compensação, as pessoas com paralisia têm, invariavelmente, indurações ao redor do pescoço. Estão do lado direito ou esquerdo. E também na região occipital (nuca), seja na direita ou na esquerda. Ou seja, as toxinas que deveriam descer, sobem e solidificam-se ali. Quando isso se dissolve repentinamente e penetra no interior da cabeça, ocorre a Hemorragia Cerebral (*Nō-ikketsu*). E se a pessoa tem o nódulo do lado direito, ficará com as mãos e pernas do lado esquerdo "penduradas" (moles/paralisadas). Apenas na paralisia (*Chūfū*) a causa não está nos ombros, mas sim, como disse, nessas indurações no pescoço.
+*(Mioshiekaishū 24-gō, pág. 3\)* Em compensação, as pessoas com paralisia têm, invariavelmente, indurações ao redor do pescoço. Estão do lado direito ou esquerdo. E também na região occipital (nuca), seja na direita ou na esquerda. Ou seja, as toxinas que deveriam descer, sobem e solidificam-se ali. Quando isso se dissolve repentinamente e penetra no interior da cabeça, ocorre a Hemorragia Cerebral (*Nō-ikketsu*). E se a pessoa tem o nódulo do lado direito, ficará com as mãos e pernas do lado esquerdo "penduradas" (moles/paralisadas). Apenas na paralisia (*Chūfū*) a causa não está nos ombros, mas sim, como disse, nessas indurações no pescoço.
 
-*(Gokyōkaishū 24-gō, pág. 41\)* Na paralisia, também existem casos onde a induração está na lateral do pescoço e outros na região occipital (bulbo raquidiano), ou em ambos. A dissolução dessas indurações resulta na Hemorragia Cerebral. Essas pessoas, obviamente quando já estão com paralisia, mas mesmo antes de tê-la, possuem indurações semelhantes a bastões, o que torna o diagnóstico imediato.
+*(Mioshiekaishū 24-gō, pág. 41\)* Na paralisia, também existem casos onde a induração está na lateral do pescoço e outros na região occipital (bulbo raquidiano), ou em ambos. A dissolução dessas indurações resulta na Hemorragia Cerebral. Essas pessoas, obviamente quando já estão com paralisia, mas mesmo antes de tê-la, possuem indurações semelhantes a bastões, o que torna o diagnóstico imediato.
 
 *(Minie)* **(Pergunta)** A dieta de um paciente com paralisia deve ser vegetariana? **(Meishu-sama)** A dieta vegetariana é melhor. A paralisia ocorre muito em carnívoros. Inevitavelmente, ao comer carne, o sangue torna-se denso e impuro.
 
@@ -414,7 +414,7 @@ A cabeça, lábios e pontas dos dedos têm espasmos; a pressão é baixa; pesco�
 
 ### 26\. Pontos vitais de Johrei em casos urgentes de Hemorragia Cerebral
 
-*(Gokyōkaishū 3-gō, pág. 2\)*
+*(Mioshiekaishū 3-gō, pág. 2\)*
 
 **(Pergunta)** Em caso de urgência por Hemorragia Cerebral, onde são os pontos vitais do Johrei?
 
@@ -470,13 +470,13 @@ A paralisia (*Chūki*) ocorre quando o sangue solidificado nessa região do mús
 
 ### 31\. Causas da reincidência da Hemorragia Cerebral
 
-*(Gokyōkaishū 3-gō, pág. 61\)*
+*(Mioshiekaishū 3-gō, pág. 61\)*
 
 Quando o lado direito do corpo está paralisado, existe uma induração aqui no lado esquerdo (pescoço); portanto, deve-se ministrar bem o Johrei ali. Vai curar. Não é tão terrível... não é grave. Melhora aos poucos. Se não dissolver a induração da esquerda, haverá reincidência. A hemorragia vem dessa forma (da direita, passa por cima da cabeça para o lado esquerdo \- *Nota do tradutor: ou vice-versa, o texto original diz "vem assim" indicando o trajeto cruzado*). Se não reincidir, a melhora será progressiva. Basta continuar com paciência.
 
 ### 32\. Re-purificação da Hemorragia Cerebral e a atitude mental na fé
 
-*(Gokyōkaishū 4-gō, pág. 27\)*
+*(Mioshiekaishū 4-gō, pág. 27\)*
 
 **(Pergunta)** Fiel de 55 anos. Em dezembro do ano 25 (1950), enquanto ouvia as palestras, caiu com sintomas de hemorragia cerebral e ficou inconsciente por alguns dias, mas graças à proteção divina, recuperou-se. Em julho do ano 26 (1951), teve uma re-purificação e vem recebendo Johrei em dias alternados (nos outros dias, a família ministra). Até o momento não houve muita mudança, e tanto ela quanto a família estão um pouco ansiosos.
 
@@ -502,7 +502,7 @@ O foco do Johrei é a cabeça. Como há muitas toxinas na cabeça, deve-se focar
 
 ### 34\. Homem que caiu com anemia cerebral e, ao continuar com tratamentos médicos, desenvolveu palpitações, tontura, peso na cabeça, rigidez nos ombros e vive num estado de sonho constante
 
-*(Gokyōkaishū 5-gō, pág. 11\)*
+*(Mioshiekaishū 5-gō, pág. 11\)*
 
 **(Pergunta)** Meu marido (policial, 25 anos) desmaiou no banho em 18 de fevereiro do ano 20 (1945); depois, teve mais dois episódios no trabalho. A partir de 25 de fevereiro, passou a ter peso na cabeça e tonturas, sentindo o corpo mole. Consultou um médico, que disse ser apenas uma leve fraqueza cardíaca, nada grave. Ele continuou trabalhando forçadamente, mas no final do mês piorou e caiu de cama.
 
@@ -540,7 +540,7 @@ A causa é a soma das antigas toxinas de medicamentos com as novas. Basta dissol
 
 ### 36\. Causa do repuxamento da língua e fala enrolada
 
-*(Gokyōkaishū 24-gō, pág. 65\)*
+*(Mioshiekaishū 24-gō, pág. 65\)*
 
 Outro dia aconteceu algo interessante. Uma pessoa com a língua repuxada e fala enrolada; a causa disto está no fundo do nariz. O repuxamento da língua, normalmente, ocorre aqui (embaixo do queixo) ou pelas laterais, mas há casos de repuxamento vertical. Isso repuxa a partir da região que a medicina chama de Adenoides
 
@@ -570,7 +570,7 @@ Outro dia aconteceu algo interessante. Uma pessoa com a língua repuxada e fala 
 
 ### 39\. Mulher com braço direito imóvel, diagnosticada com "doença de enrijecimento dos nervos cerebrais"
 
-*(Gokyōkaishū 3-gō, pág. 100\)*
+*(Mioshiekaishū 3-gō, pág. 100\)*
 
 **(Pergunta)** Mulher de 31 anos. Há cinco anos, o movimento da mão direita começou a piorar progressivamente. O diagnóstico médico (na Universidade de Tóquio \- Todai) foi "doença em que os nervos do cérebro se enrijecem"; disseram ser de causa desconhecida e deram-lhe cinco anos de vida. Fez vários tratamentos sem efeito e piorou gradualmente. Com um mês de Johrei, sente-se muito bem e os movimentos melhoraram, mas como o bulbo raquidiano e os ombros estão muito rígidos, a melhora ainda não é nítida. Peço a causa e os locais de Johrei.
 
@@ -584,7 +584,7 @@ Portanto, a dificuldade progressiva de movimento deve-se a indurações nos linf
 
 ### 40\. Mulher com obstrução na faringe e febre alta contínua após expelir catarro com sangue
 
-*(Gokyōkaishū 7-gō, pág. 80\)*
+*(Mioshiekaishū 7-gō, pág. 80\)*
 
 **(Pergunta)** Mulher de 43 anos. Teve febre em novembro do ano 25 (1950); formou-se uma induração no abdômen que subiu do bulbo raquidiano para a região occipital, com forte rigidez. Não conseguia ingerir nada, mas passou mais de meio ano muito saudável. A partir do outono, ao deitar de lado, sentia como se a faringe obstruísse e a rigidez fosse para a cabeça. Em novembro do ano 26 (no mesmo dia do início da doença no ano anterior), expeliu cerca de 90ml de catarro com sangue e, desde então, mantém febre diária de quase 40 graus. Parece que o problema maior é ao redor da faringe. Sente dores intercostais, nas costas e nos quadris, e sai uma saliva viscosa incessantemente. Urina e fezes são escassas e há constipação.
 
@@ -596,7 +596,7 @@ Quem está ministrando o Johrei? Estão errando o alvo. Isso é, sem dúvida, to
 
 ### 41\. Jovem que sente aflição no peito, dor de cabeça e no pescoço, e diarreia ao deitar
 
-*(Gokyōkaishū 4-gō, pág. 31\)*
+*(Mioshiekaishū 4-gō, pág. 31\)*
 
 **(Pergunta)** Jovem de 15 anos. Teve febre em 12 de setembro, dor de cabeça e no pescoço, e diarreia. Dois médicos diagnosticaram doença cardíaca e a desenganaram. Desde então, não consegue deitar-se, permanecendo sentada. Se deita, sente aflição no peito; a família se reveza para massagear seu corpo, o que causa transtorno a todos. Recebe Johrei duas vezes ao dia. Peço orientação sobre os locais.
 

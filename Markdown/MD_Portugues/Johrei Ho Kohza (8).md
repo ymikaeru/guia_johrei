@@ -1,6 +1,6 @@
 ## I. Enfermidades Gástricas
 
-### 1\. Homem de meia-idade com pressão constante e dor surda na região gástrica, e inapetência *(Gokyō)*
+### 1\. Homem de meia-idade com pressão constante e dor surda na região gástrica, e inapetência *(Mioshie)*
 
 **(Pergunta)** Homem de 59 anos. Desde o ano passado, sente certa dor quando está com o estômago vazio e, habitualmente, apresenta sensação de pressão e dor surda na região gástrica; ultimamente, permanece quase o tempo todo acamado. Antes do almoço, sente invariavelmente dores no estômago e, por vezes, vomita em grande quantidade um líquido incolor, inodoro e insípido, semelhante à água. Por volta das quatro horas da tarde, volta a sentir dores gástricas, que cessam ao ingerir alimentos. Inicialmente, a dor desaparecia ao comer, mas recentemente, mesmo tentando ingerir algo nesses horários, não tem apetite e o alimento não passa, o que o deixa em grande aflição. À noite, por vezes, sente dores após as nove horas, quando o estômago está vazio. Ao deitar-se em decúbito dorsal (barriga para cima) durante as crises, a dor geralmente cessa em vinte ou trinta minutos; contudo, se não se deitar, a dor persiste. O período entre uma da manhã e o amanhecer é o momento em que se sente melhor, sendo raras as dores nesse intervalo.
 
@@ -8,7 +8,7 @@
 
 ---
 
-### 2\. Jovem com induração abdominal, acidez, vômito de mucosidade e debilidade extrema *(Gokyō)*
+### 2\. Jovem com induração abdominal, acidez, vômito de mucosidade e debilidade extrema *(Mioshie)*
 
 **(Pergunta)** Jovem de 17 anos. Adoeceu em novembro do ano retrasado. Recebeu tratamento médico e, a partir de 25 de julho do ano passado, vem recebendo Johrei. No início, estava emaciado, sem apetite, com induração e rigidez muscular no abdômen; vomitava várias vezes ao dia uma mucosidade pálida e ácida. Com o Johrei, houve recuperação temporária do apetite e melhora do bem-estar. Em setembro, sua mãe ingressou na Fé e passou a ministrar-lhe Johrei três vezes ao dia. Contudo, desde o final de outubro, embora tenha apetite, ao tentar comer, sente o estômago distendido e não consegue ingerir nada. Se forçar a alimentação, vomita, sente o corpo pesado e a debilidade torna-se extrema. Ademais, chega a ficar mais de dez dias sem evacuar.
 
@@ -16,7 +16,7 @@
 
 ---
 
-### 3\. Jovem com gastroptose, febre, dor gástrica, inapetência e diarreia contínua, sentindo-se exausto *(Gokyōshu-shū, Vol. 6, pág. 64\)*
+### 3\. Jovem com gastroptose, febre, dor gástrica, inapetência e diarreia contínua, sentindo-se exausto *(Mioshieshu-shū, Vol. 6, pág. 64\)*
 
 **(Pergunta)** Jovem de 18 anos. Devido a uma gastroptose, recebeu medicamentos e injeções durante dois anos, o que causou debilidade progressiva. A partir do verão do ano 26 da Era Showa (1951), começou a receber Johrei, sentiu-se muito melhor e obteve a permissão de ingressar na Fé. Posteriormente, seu pai também ingressou e o jovem passou a receber Johrei do pai em casa. No dia 1º de janeiro do ano 27 da Era Showa (1952), foi ao Templo orar; à tarde, sentiu calafrios a partir do baixo-ventre e mal-estar. A partir dessa noite, teve febre, inapetência e dores gástricas, sofrendo por cerca de quatro horas. Tem diarreia diariamente, dores abdominais várias vezes ao dia, falta de disposição e sente-se cansado por qualquer coisa. Solicito orientação a respeito.
 
@@ -32,7 +32,7 @@
 
 ---
 
-### 5\. Senhora idosa que vomita matéria marrom-escura de 15 a 16 vezes a cada Johrei, com visível debilidade e inapetência *(Gokyōshu-shū, Vol. 7, pág. 14\)*
+### 5\. Senhora idosa que vomita matéria marrom-escura de 15 a 16 vezes a cada Johrei, com visível debilidade e inapetência *(Mioshieshu-shū, Vol. 7, pág. 14\)*
 
 **(Pergunta)** Senhora de 56 anos, não membro. A partir de 12 de dezembro do ano 26 da Era Showa (1951), iniciou purificação e passou a receber Johrei a cada dois ou três dias. Durante todo o mês de dezembro, ficou de cama e levantava-se alternadamente devido ao mal-estar. A partir do dia 21, a purificação intensificou-se e ela acamou-se de vez. Ao receber Johrei, vomitou cerca de cinco *go* (aprox. 0,9 litros) de uma matéria marrom-escura. Desde então, a cada sessão de Johrei, vomita de três a cinco *go*, de 15 a 16 vezes ao dia. Embora fosse corpulenta, debilitou-se a olhos vistos. Havia duas grandes indurações, uma na boca do estômago (epigástrio) e outra um pouco abaixo, mas atualmente resta apenas um pouco na boca do estômago. Quando ministro Johrei nas costas, ela vomita. Não tem apetite, aceitando apenas pequena quantidade de mingau de arroz (*okayu*) e mingau de araruta (*kuzuyu*). Não sente dores no estômago, mas ocasionalmente sente dor no lado esquerdo do umbigo. Não utiliza medicamentos, mas fez muito uso de acupuntura e moxa. Solicito orientação.
 
@@ -40,7 +40,7 @@
 
 ---
 
-### 6\. Idosa diagnosticada com câncer gástrico, gastroptose e úlcera, com hematêmese, seguida de diarreia, náuseas, inapetência, constipação e debilidade *(Gokyōshu-shū, Vol. 6, pág. 85\)*
+### 6\. Idosa diagnosticada com câncer gástrico, gastroptose e úlcera, com hematêmese, seguida de diarreia, náuseas, inapetência, constipação e debilidade *(Mioshieshu-shū, Vol. 6, pág. 85\)*
 
 **(Pergunta)** Minha sogra (62 anos) começou a ter problemas estomacais por volta de fevereiro do ano 26 da Era Showa (1951). Realizava os afazeres domésticos mesmo indisposta, mas gradualmente passou a sentir dores e perdeu o apetite. Em abril, foi ao hospital e, após raio-X, disseram haver sinais de câncer gástrico incipiente; afirmaram que, se operasse, sararia em um mês. Devido à idade avançada, recusamos a cirurgia. Ela tomou remédios e injeções por um mês, mas não houve a menor melhora. Usou também medicamentos da Fitoterapia Oriental (Kanpo \[漢方\]). Outro médico diagnosticou gastroptose; tratou-se por um mês, sem melhora alguma. Consultando um especialista em estômago, foi diagnosticada com úlcera gástrica e feridas na entrada do estômago; continuou tomando remédios e injeções ambulatoriais. Havia uma induração do tamanho de uma ameixa no lado direito do estômago; a dor não passava e o sofrimento só aumentava. Em 24 de agosto, teve grande hematêmese (vômito de sangue), expelindo também muitos coágulos; depois disso, debilitou-se completamente, não conseguindo mais se levantar.
 
@@ -60,7 +60,7 @@ Posteriormente, a partir de 1º de outubro, começou a receber Johrei. Após um 
 
 ## II. Enfermidades Abdominais
 
-### 1\. Jovem com febre, inchaço abdominal, dor generalizada, vômitos ocasionais, inapetência e debilidade severa, após nova purificação dos rins e peritônio *(Gokyōshu-shū, Vol. 3, pág. 84\)*
+### 1\. Jovem com febre, inchaço abdominal, dor generalizada, vômitos ocasionais, inapetência e debilidade severa, após nova purificação dos rins e peritônio *(Mioshieshu-shū, Vol. 3, pág. 84\)*
 
 **(Pergunta)** Moça de 20 anos. Em meados de abril do ano 26 da Era Showa (1951), teve purificação nos rins e peritônio. Durante cerca de dois meses correu tudo bem, o abdômen diminuiu, o edema cedeu e ela ficou muito feliz. Contudo, depois disso, passou a ter febre de 38 a 39 graus diariamente ao entardecer; a partir daí, seus ombros e pescoço ficaram muito macios. No momento, a febre não é tão alta, mas desde o início da febre houve diminuição do apetite; ao comer, o abdômen distende e ocasionalmente ela vomita. Ademais, sente dor contínua em todo o abdômen e tal estado persiste até hoje. Por isso, a debilidade é intensa e, atualmente, manter-se levantada tornou-se um sofrimento. A paciente quase não adoeceu na infância, mas sempre teve menstruação irregular; após a purificação, teve um pouco no início de junho e, desde então, nada mais. Ela quase não tomou remédios, mas dizem que, no parto, sua mãe sofreu de "rim na gravidez" e esteve à beira da morte. Solicito orientação sobre essa purificação.
 
@@ -74,7 +74,7 @@ Desde que consultei Meishu-Sama em fevereiro do ano 26 da Era Showa (1951), venh
 
 **(Meishu-sama)**O fato de a induração ter aumentado um pouco é excelente. Normalmente, ela cresce, abre-se um orifício, sai pus e sara; mas, se correr bem, pode inchar até certo ponto e sarar através de diarreia. Como essa pessoa tem uma induração na região do rim direito, deve-se ministrar bastante Johrei ali. No caso do Johrei, se procurar relaxar a força o máximo possível, embora demore, curará infalivelmente.
 
-### 3\. Idosa com peritonite, inchada no abdômen como em final de gestação devido ao uso contínuo de Fitoterapia Oriental (Kanpo) *(Gokyōshu-shū, Vol. 1, pág. 8\)*
+### 3\. Idosa com peritonite, inchada no abdômen como em final de gestação devido ao uso contínuo de Fitoterapia Oriental (Kanpo) *(Mioshieshu-shū, Vol. 1, pág. 8\)*
 
 **(Pergunta)** Mulher de 61 anos. Desde jovem sofria constantemente de dores abdominais, com menstruação escassa e dores no baixo-ventre. Aos 37 anos, fez jejum por dezenas de dias devido a doença gastrointestinal, chegando a ficar em estado crítico. Por volta dos 46 anos, desenvolveu peritonite crônica e, até ingressar na Fé, fez uso contínuo de infusões medicinais. Vem recebendo Johrei desde janeiro do ano 24 da Era Showa (1949).
 
@@ -84,7 +84,7 @@ O pulso fica constantemente entre 30 e 40 batimentos, mas durante o dia ela cons
 
 **(Meishu-sama)**Não existe ponto vital nem mistério algum. É toxina medicinal. Entrou muita toxina, viu? Fitoterapia Oriental (Kanpo \[漢方\]), não é? É por causa disso. Não há outra causa. Muitas pessoas perderam a vida com a Fitoterapia Oriental. Se tiver que forçosamente apontar um ponto vital, são os rins.
 
-### 4\. Pessoa com peritonite, que sente apetite mas não consegue comer, com induração abdominal que se move e desaparece *(Gokyōshu-shū, Vol. 5, pág. 31\)*
+### 4\. Pessoa com peritonite, que sente apetite mas não consegue comer, com induração abdominal que se move e desaparece *(Mioshieshu-shū, Vol. 5, pág. 31\)*
 
 **(Pergunta)** Mulher de 39 anos. Desde a primavera do ano 26 da Era Showa (1951), sentia-se indisposta, com o corpo pesado, sem apetite e com sinais de debilidade. A partir de maio, o baixo-ventre ficou rígido e distendido; após cerca de um mês, amoleceu um pouco, mas então o abdômen todo distendeu, apresentando sintomas de peritonite. No final de agosto diminuiu, mas o apetite não surgiu e sentia dores abdominais ocasionais. Entrando em setembro, teve febre alta repentina, peso no corpo, inapetência e ficou em estado de "pele e osso". Recentemente sente apetite, mas ao tentar comer, a barriga fica cheia e a comida não entra. Se forçar a comer, a barriga dói e ela sofre. Ao receber Johrei, a dor para, mas se parar o Johrei, dói por três ou quatro horas. Há três indurações alongadas, grandes e pequenas, no abdômen, que se movem e desaparecem. Desde moça, cerca de cinco vértebras da coluna, na altura das costas do estômago, projetam-se para fora; não sente dor, mas às vezes sente uma lassidão dilacerante e um sofrimento indescritível. O Johrei é ministrado principalmente nas costas do estômago, na coluna saliente, na região do rim esquerdo, no pescoço e na parótida. A família toda ingressou na Fé e consagrou a Imagem da Luz Divina e a Imagem de Kannon no biombo. Solicito orientação sobre os pontos de Johrei, as indurações abdominais e o fato de sentir apetite e não conseguir comer.
 
@@ -100,7 +100,7 @@ O Johrei era ministrado por mim a cada dez dias e, nos demais, várias vezes ao 
 
 ---
 
-### 6\. Pessoa com dormência em ambas as pernas e abdômen distendido e doloroso após comer *(Gokyōshu-shū, Vol. 2, pág. 40\)*
+### 6\. Pessoa com dormência em ambas as pernas e abdômen distendido e doloroso após comer *(Mioshieshu-shū, Vol. 2, pág. 40\)*
 
 **(Pergunta)** Homem de 26 anos. Por volta de janeiro do ano 26 da Era Showa (1951), teve purificações de toxinas medicinais como tosse, expectoração, dor abdominal, diarreia e hemorroidas. Graças a Deus, a evolução foi satisfatória, mas, a partir do final de julho, começou a sentir dormência em ambas as pernas. Desde o final de agosto, isso se agravou, e atualmente a paralisia é tal que ele quase não sente nada ao ser beliscado na região coberta pelo sapato, dizendo ser muito perigoso ir ao banheiro. Além das pernas, o abdômen está rígido e, após as refeições, sente-se distendido e aflito. A debilidade aumentou consideravelmente. A febre é leve e o pulso está entre 80 e 90\. A dormência nas pernas deve-se à descida de toxinas medicinais pesadas para essa região? Ou haveria outro significado? O paciente usou cerca de 40 ampolas de cálcio, 30 de Salbro e remédios orais por cerca de 30 dias. O pai ministra o Johrei.
 
@@ -108,7 +108,7 @@ O Johrei era ministrado por mim a cada dez dias e, nos demais, várias vezes ao 
 
 ---
 
-### 7\. Pessoa que urina pouco mais de dez vezes ao dia, com dor nos rins, constipação e diagnosticada com disenteria amebiana *(Gokyō)*
+### 7\. Pessoa que urina pouco mais de dez vezes ao dia, com dor nos rins, constipação e diagnosticada com disenteria amebiana *(Mioshie)*
 
 **(Pergunta)** Homem de 34 anos. Há sete anos, sente dores leves na região do estômago ao caminhar e urina em pequenas quantidades, mais de dez vezes ao dia. O fígado também começou a doer gradativamente e passou a ter constipação. O médico diagnosticou invasão de "Ameba da disenteria" (Ameba sekiri \[アミーバー赤痢\]) no fígado e aplicou muitas injeções, sem efeito. Ingressou na Fé em novembro do ano 22 da Era Showa (1947), mas atualmente sente dores nas escápulas esquerda e direita, em ambos os lados da coluna vertebral e no fígado. Ao receber Johrei, todo o abdômen se distende e sente náuseas, provocando vômito artificialmente. Pergunto sobre a causa da rápida distensão abdominal.
 
@@ -116,7 +116,7 @@ O Johrei era ministrado por mim a cada dez dias e, nos demais, várias vezes ao 
 
 ---
 
-### 8\. Pessoa que usou Albasil, Gennoshoko, etc., e recentemente teve forte purificação, com náuseas e dor abdominal contínua *(Gokyōshu-shū, Vol. 3, pág. 18\)*
+### 8\. Pessoa que usou Albasil, Gennoshoko, etc., e recentemente teve forte purificação, com náuseas e dor abdominal contínua *(Mioshieshu-shū, Vol. 3, pág. 18\)*
 
 **(Pergunta)** Consulto a respeito da purificação de meu pai. Até os 54 ou 55 anos, tinha apenas resfriados ocasionais e nunca faltou à escola \[trabalho\]. Há cerca de três anos, começou a sentir dor no estômago quando ficava com fome, que passava ao comer; na época, tomava "Wakamoto", "Normozan", "Tomosan", etc. Também tomou remédios comerciais como Albasil \[アルバジル\] e Jiseptal para piorreia alveolar. Posteriormente, temendo muito a diarreia como purificação, tomou "Gennoshoko" \[ゲンノショウコ\] concentrado continuamente para pará-la; a diarreia cessou, mas sua cor ficou ruim, perdeu o apetite e, percebendo o terror dos remédios, recebeu o Ohikari em janeiro do ano 24 da Era Showa (1949). Desde então, por três anos até hoje, recebe Johrei diariamente. Nesse período, a purificação foi lenta, mas não houve dia sem dor. Atualmente, sente-se muito aliviado com o Johrei. Desde o dia 27 de setembro passado, a dor abdominal tornou-se intensa e, a partir de 1º de outubro, teve uma purificação especialmente forte; desde o dia 2, sente náuseas e geme com dor abdominal quase contínua, vomitando grande quantidade de água marrom-clara quatro ou cinco vezes ao dia. Como não come, mesmo ingerindo suco de maçã ou arroz sagrado, vomita tudo. Na tarde do dia 4, vomitou uma água barrenta marrom-escuro e a urina também ficou marrom. Atualmente, sente forte azia e uma aflição indescritível em todo o abdômen.
 
@@ -124,7 +124,7 @@ O Johrei era ministrado por mim a cada dez dias e, nos demais, várias vezes ao 
 
 ---
 
-### 9\. Mulher que fez cirurgia abdominal, com dores ocasionais no púbis, incontinência urinária e constipação *(Gokyō)*
+### 9\. Mulher que fez cirurgia abdominal, com dores ocasionais no púbis, incontinência urinária e constipação *(Mioshie)*
 
 **(Pergunta)** Uma senhora que veio com neuralgia no quadril esquerdo teve a neuralgia curada, mas a constipação antiga não mudou; recentemente, piorou, e ela relata dores intensas ocasionais na região púbica e escape de urina. Fez uma cirurgia abdominal no passado, com uso de quantidade considerável de anestesia geral. Solicito a causa desta constipação.
 
@@ -132,13 +132,13 @@ O Johrei era ministrado por mim a cada dez dias e, nos demais, várias vezes ao 
 
 ---
 
-### 10\. Ponto vital do Johrei para dor abdominal *(Gokyōshu-shū, Vol. 3, pág. 50\)*
+### 10\. Ponto vital do Johrei para dor abdominal *(Mioshieshu-shū, Vol. 3, pág. 50\)*
 
 Quando o abdômen dói, há uma induração nas costas, um pouco acima da região lombar. Fica em ambos os lados. Um dos lados estará mais inchado. Geralmente é o esquerdo. Em algumas pessoas é o direito, mas deve-se ministrar Johrei no lado que estiver mais inchado. Isso requer paciência. Irá melhorar gradativamente.
 
 ---
 
-### 11\. Pessoa que usava Tonpuku e Tokuhon, internada por dor gástrica, com dor intensa, debilitada por injeções, agora com edema nas costas e debilidade extrema *(Gokyōshu-shū, Vol. 1, pág. 24\)*
+### 11\. Pessoa que usava Tonpuku e Tokuhon, internada por dor gástrica, com dor intensa, debilitada por injeções, agora com edema nas costas e debilidade extrema *(Mioshieshu-shū, Vol. 1, pág. 24\)*
 
 **(Pergunta)** Consulto sobre um homem de 52 anos, não membro, que passa atualmente por grande purificação abdominal. Desde antes sofria de dores nos ombros e cabeça; a cada dor, tomava "Tompuku" \[トンプク\] (analgésico em pó) e aplicava "Tokuhon" \[トクホン\] (adesivo analgésico). Por volta de novembro do ano 24 da Era Showa (1949), teve violentos espasmos gástricos e passou um ano sem grandes alterações. A partir de dezembro do ano 25 (1950), a parte superior esquerda do estômago começou a doer (pontadas); em abril do ano 26 (1951), a dor aumentou dia a dia e ele foi internado no final de maio. O médico disse haver água na pleura e aplicou 14 injeções de Estreptomicina, mas como não houve mudança, teve alta em 7 de junho e, no dia seguinte, internou-se em certo Hospital Nacional. Nessa época, começou a sentir dores gástricas violentas cerca de uma vez ao dia; a partir do início de julho, tornaram-se dores intensas de cinco a seis vezes ao dia, chegando a um estado em que só restava anestesiar com injeções. A causa da doença era desconhecida e, sem outros recursos, o médico passava os dias aplicando injeções para dor; ele foi se debilitando gradualmente e, no início de julho, recebeu o prognóstico de apenas um mês de vida. A partir de 7 de julho, começou a receber Johrei diariamente e, desde esse dia, as dores intensas se afastaram. Muito felizes, a esposa e a sobrinha ingressaram na Fé. Cerca de dez dias depois, ele teve alta, ainda em estado grave de debilidade. Desde então, continuamos o Johrei diário, mas a debilidade é extrema. Atualmente, as indurações na parte superior esquerda do estômago, na boca do estômago e no fígado (direita) foram bastante dissolvidas, mas recentemente, ao ingerir qualquer pouco de água ou alimento, o abdômen distende imediatamente a ponto de quase estourar, e por vezes ele regurgita o alimento com arrotos. Quando o abdômen incha, ele sente alívio ao receber Johrei, mas não há outra purificação clara. Atualmente, as costas e as laterais, especialmente o lado esquerdo, apresentam inchaço localizado; o peito, no pulmão esquerdo, está tão inchado que quase não se move ao respirar. O sofrimento da distensão gástrica, graças à proteção recebida, ocorre dia sim, dia não, tornando-se um pouco mais suportável, o que alegra o paciente. A família toda se entrega de coração. Rogamos por proteção.
 
@@ -146,7 +146,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 12\. Homem que fez cirurgia ocular, teve doença cerebral, cirurgia intestinal, pneumonia, tomou muitos remédios e, após ingressar na Fé, teve hemorroidas sangrentas, anemia e agora tem pernas bambas e rosto inchado *(Gokyōshu-shū, Vol. 4, pág. 49\)*
+### 12\. Homem que fez cirurgia ocular, teve doença cerebral, cirurgia intestinal, pneumonia, tomou muitos remédios e, após ingressar na Fé, teve hemorroidas sangrentas, anemia e agora tem pernas bambas e rosto inchado *(Mioshieshu-shū, Vol. 4, pág. 49\)*
 
 **(Pergunta)** Homem de 52 anos. Aos 13, operou o olho direito e, desde então, operou-o mais três vezes. Aos 19, teve doença cerebral curada por tratamento médico. Aos 29, ao levantar um fardo de arroz, disseram que o intestino "trincou" e ele fez uma cirurgia intestinal; depois disso, passou a sentir dores lombares e, até conhecer a Fé, pedia aos familiares que batessem em suas costas com um bastão de madeira. Aos 35, teve algo parecido com pneumonia, curada com remédios comerciais. Aos 42, teve apendicite, que sarou sem cirurgia. Ingressou na Fé em maio, aos 48 anos. A partir de novembro, a família toda teve sarna e, em setembro do ano seguinte, ficaram curados; vieram à Sede agradecer e, a partir dessa ocasião, ele começou a ter hemorragia hemorroidária. Continuou sangrando aos poucos por três anos, mas em março, abril e maio do ano 26 da Era Showa (1951), passou a sangrar cerca de cinco vezes ao dia e, em junho, desmaiou por anemia. Com o Johrei, a hemorragia parou, a cor voltou um pouco e ele recuperou o ânimo, vindo à Sede em 15 de outubro. Ao retornar, teve nova purificação, com pouco sangramento; devido à anemia, a pele está pálida. Tem apetite voraz e não emagrece, mas as pernas ficam bambas e, ao levantar-se, diz que a visão fica toda amarela. A cabeça fica "oca" (tonta) e, há dois ou três dias, a urina diminuiu e o rosto inchou. Diz ter tomado todo tipo de remédio antes de ingressar na Fé.
 
@@ -154,7 +154,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 13\. Pessoa com dor de cicatriz de úlcera gástrica, diagnosticada com gastroptose, abdômen duro como tábua, dor interna contínua, dificuldade de andar e protuberância em forma de bastão no baixo-ventre durante a dor *(Gokyōshu-shū, Vol. 3, pág. 49\)*
+### 13\. Pessoa com dor de cicatriz de úlcera gástrica, diagnosticada com gastroptose, abdômen duro como tábua, dor interna contínua, dificuldade de andar e protuberância em forma de bastão no baixo-ventre durante a dor *(Mioshieshu-shū, Vol. 3, pág. 49\)*
 
 **(Pergunta)** Desde janeiro do ano 22 da Era Showa (1947), sofro com purificação abdominal, diagnosticada como "dor de cicatriz de úlcera gástrica" ou "gastroptose". Até maio, piorou muito; o abdômen ficou duro como uma tábua única, dormente e sem sensibilidade; não conseguia comer, vomitava remédios e mucosidade. Evacuava fezes pretas a cada cinco ou seis dias e sentia dores contínuas como se arranhassem o interior do intestino; cheguei a me preparar para a morte. Tive uma melhora a partir de junho e ingressei na Fé em dezembro de 1947\. Não suportando o sofrimento, recorri a tratamentos médicos. Até hoje a dor interna no intestino persiste, sendo difícil caminhar. Ocasionalmente tenho dores intensas; nessas horas, surge uma protuberância em forma de bastão no baixo-ventre, que pulsa violentamente. Recentemente recebo Johrei e consigo comer com gosto cerca de uma tigela e meia de arroz. Minha mãe faleceu anos atrás. Qual seria a razão da pulsação no baixo-ventre?
 
@@ -162,7 +162,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 14\. Jovem que expele muco e sangue antes de evacuar, diagnosticado com disenteria amebiana *(Gokyōshu-shū, Vol. 8, pág. 38\)*
+### 14\. Jovem que expele muco e sangue antes de evacuar, diagnosticado com disenteria amebiana *(Mioshieshu-shū, Vol. 8, pág. 38\)*
 
 **(Pergunta)** Jovem de 18 anos. Há três anos, expele muco e sangue invariavelmente antes de evacuar. Tomou vários remédios e injeções. Há cerca de um ano, foi diagnosticado com úlceras em todo o reto devido a disenteria amebiana. Em fevereiro do ano 27 da Era Showa (1952), prestes a ser operado, começou a receber Johrei inesperadamente. Por mais de dez dias, não acumulou gases, o sangue e o muco diminuíram, o apetite aumentou e ele recuperou um pouco o vigor; contudo, depois disso, o sangue e o muco aumentaram e o estado voltou a ser como antes do Johrei, persistindo assim por mais de vinte dias até hoje. Usa Estreptomicina, Cloromicetina, hemostáticos e grande quantidade de injeções e remédios orais. Sua cor é muito ruim, pálida. Solicito orientação sobre os pontos vitais do Johrei e a causa da disenteria amebiana e das úlceras.
 
@@ -184,7 +184,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 17\. Pessoa que teve induração do tamanho de uma xícara de chá no abdômen e fez cirurgia de incisão *(Gokyōshu-shū, Vol. 5, pág. 32\)*
+### 17\. Pessoa que teve induração do tamanho de uma xícara de chá no abdômen e fez cirurgia de incisão *(Mioshieshu-shū, Vol. 5, pág. 32\)*
 
 **(Pergunta)** Fiel de 53 anos. No outono do ano 25 da Era Showa (1950), surgiu uma induração do tamanho de uma xícara de chá no abdômen; na primavera do ano 26 (1951), o médico diagnosticou algo no mesentério e, após cirurgia de incisão, removeu 21 indurações grandes e pequenas. No verão de 1951, formou-se novamente uma grande induração no mesmo local. Ingressou na Fé em novembro de 1951 e, desde que começou a receber Johrei, teve uma crise de dor intensa, a urina ficou turva, a constipação desapareceu e passou a ouvir-se um som de gorgolejo (ronco) dentro do abdômen. Sente aflição ao se mover e tem dificuldade para andar.
 
@@ -192,7 +192,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 18\. Idoso com dificuldade de evacuar mesmo sentindo vontade, diagnosticado com câncer retal *(Gokyō)*
+### 18\. Idoso com dificuldade de evacuar mesmo sentindo vontade, diagnosticado com câncer retal *(Mioshie)*
 
 **(Pergunta)** Homem de 74 anos. Há cerca de meio ano sente vontade de evacuar, mas tem dificuldade para expelir. O médico diz ser câncer retal. O Johrei pode salvá-lo?
 
@@ -200,7 +200,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 19\. Pessoa diagnosticada com câncer retal, que teve melhora temporária com sangue nas fezes, mas depois parou o sangue, teve constipação e sente aperto no peito *(Gokyōshu-shū, Vol. 4, pág. 82\)*
+### 19\. Pessoa diagnosticada com câncer retal, que teve melhora temporária com sangue nas fezes, mas depois parou o sangue, teve constipação e sente aperto no peito *(Mioshieshu-shū, Vol. 4, pág. 82\)*
 
 **(Pergunta)** Desde junho do ano 26 da Era Showa (1951), com problemas intestinais e sob tratamento médico, foi diagnosticado com câncer retal e informado de que não havia outra via senão a cirurgia. Começou a receber Johrei em 1º de outubro; temporariamente o quadro melhorou, saindo fezes com sangue e regularizando o fluxo. Ingressou na Fé no dia 21\. A partir de meados de novembro, o sangue nas fezes parou, a evacuação diminuiu e passou a sentir aperto no peito.
 
@@ -208,7 +208,7 @@ Quando o abdômen dói, há uma induração nas costas, um pouco acima da regiã
 
 ---
 
-### 20\. Pessoa diagnosticada com câncer de fígado, com induração do tamanho de um ovo no local e abdômen que ronca ao receber Johrei *(Gokyō)*
+### 20\. Pessoa diagnosticada com câncer de fígado, com induração do tamanho de um ovo no local e abdômen que ronca ao receber Johrei *(Mioshie)*
 
 **(Pergunta)** Mulher de 62 anos. O diagnóstico médico é câncer de fígado; disseram que operar ou não operar daria no mesmo. Há cerca de uma semana perdeu o apetite repentinamente...
 
@@ -220,7 +220,7 @@ Esse ronco na barriga é excelente. É a toxina se dissolvendo. Portanto, minist
 
 ---
 
-### 21\. Idoso que percebeu hérnia e usou cinta, mas o inchaço acima da virilha esquerda aumentou; sem dor, retrai-se ao deitar *(Gokyōshu-shū, Vol. 4, pág. 98\)*
+### 21\. Idoso que percebeu hérnia e usou cinta, mas o inchaço acima da virilha esquerda aumentou; sem dor, retrai-se ao deitar *(Mioshieshu-shū, Vol. 4, pág. 98\)*
 
 **(Pergunta)** Homem de 62 anos. Por volta do ano 18 da Era Showa (1943), ao levantar um objeto, sentiu como se a força escapasse do baixo-ventre. A partir desse momento, surgiu um pequeno inchaço um pouco acima da virilha da coxa esquerda. Percebendo ser hérnia, usou cinta para hérnia até hoje, mas o inchaço foi aumentando gradativamente. Porém, não há dor alguma. Se deitar de costas, o inchaço retrai. Em agosto, seus filhos ouviram dizer que se a cor da hérnia mudasse, haveria risco de vida, e, por precaução, ele foi examinado. O médico disse a mesma coisa. Acrescentou que é raro ter hérnia nessa idade avançada; que a cirurgia resolveria, mas poderia voltar. Disseram que se ficasse exposta permanentemente, seria necessário operar sem demora, sob risco de vida. Ele recebe Johrei todas as noites (há cerca de três meses). Não houve mudança na hérnia. Como é agricultor, faz um pouco de trabalho braçal; haveria problema? Peço orientação sobre os pontos vitais do Johrei.
 
@@ -246,25 +246,25 @@ Esse ronco na barriga é excelente. É a toxina se dissolvendo. Portanto, minist
 
 ---
 
-### 23\. A causa da Disenteria e o fato de os germes surgirem no próprio corpo *(Gokyōshu-shū, Vol. 1, pág. 8\)*
+### 23\. A causa da Disenteria e o fato de os germes surgirem no próprio corpo *(Mioshieshu-shū, Vol. 1, pág. 8\)*
 
 Ademais, dizem que este ano haverá epidemia de Disenteria (Sekiri \[赤痢\]) e fazem um grande alvoroço, mas se eu dissesse que a causa da disenteria está na cabeça, a medicina ficaria espantada. Estabeleceu-se que a disenteria é causada por germes, mas, na verdade, os germes brotam no próprio corpo. Há os que contagiam, a disenteria coletiva contagia. No contágio, a pessoa cria os germes e os transfere para todos. Portanto, cumprem um bom papel. Costuma-se fazer alarde sobre de onde vêm os germes, mas, no fim, ninguém sabe de onde vêm. Eles brotam dentro da cabeça. E isso sai como disenteria. Portanto, não há nada mais excelente. Como não sabem disso, os humanos fazem coisas erradas. Corrigir a alma de quem pratica o mal significa remover as nuvens espirituais, pois o espírito está nublado.
 
 ---
 
-### 24\. A Disenteria indica que a toxina medicinal é recente *(Gokyōshu-shū, Vol. 13, pág. 14\)*
+### 24\. A Disenteria indica que a toxina medicinal é recente *(Mioshieshu-shū, Vol. 13, pág. 14\)*
 
 Considerando que a causa da Disenteria está na cabeça, é, na verdade, mais fácil ter disenteria do que a toxina sair sob outra forma de purificação. Isso porque, na disenteria, a toxina medicinal é relativamente nova. Quando não é disenteria, a toxina medicinal é antiga. O sangue tóxico, ao envelhecer, torna-se gradualmente pus. Enquanto é novo, é vermelho. Como a disenteria é toxina medicinal nova, na verdade é melhor, pois termina mais rápido.
 
 ---
 
-### 25\. Causa, evolução e Johrei da Disenteria *(Gokyōshu-shū, Vol. 1, pág. 64\)*
+### 25\. Causa, evolução e Johrei da Disenteria *(Mioshieshu-shū, Vol. 1, pág. 64\)*
 
 Além disso, a Disenteria está muito em voga agora; parece estar surgindo em vários lugares — de forma coletiva. O melhor método agora, o que as autoridades propagandeiam insistentemente, é "lavem as mãos". Bem... se isso resolvesse, nada seria tão simples... Seria bom ir aos santuários e templos de toda parte e lavar as mãos o tempo todo... Nós dizemos que a disenteria é algo excelente. Se eles ouvissem, poderiam achar que somos loucos, mas a causa da disenteria é a toxina da cabeça. O ser humano toma remédios e usa a cabeça constantemente. Assim, as toxinas medicinais sobem todas para a cabeça. Por isso, se olharem a cabeça das pessoas de hoje, não há ninguém sem febre. A cabeça deveria ser fria. Mas não há ninguém com a cabeça fria. Ao ministrar Johrei, verifico primeiro a cabeça e há febre. Assim sei se há muita ou pouca toxina. É fácil ver por aí. Um pouco é aceitável. Mas ter demais não pode.
 
 Depois, verifico aqui (o pescoço). É bom que aqui (pescoço) esteja frio. Se estiver quente, não é bom. Esse sangue tóxico — induração tóxica — dissolve-se e sai pelo ânus. Nesse processo, dissolve-se, escorre para a barriga, acumula-se na barriga e sai pelo ânus. Isso é a disenteria; portanto, a disenteria é uma doença da cabeça. Dizer isso faz os médicos nos tratarem como loucos. Portanto, se ministrar Johrei na toxina da cabeça, não se terá disenteria. Quando se tem disenteria, o sangue tóxico solidifica no peritônio. Ele dissolve e torna-se a causa da disenteria. Por isso, é muito excelente. Se tiver disenteria, pode alegrar-se muito. As indurações tóxicas diminuem. Se tiver disenteria, ministre Johrei na barriga. Já examinei casos assim; enquanto a barriga está quente, há sangue tóxico. Ministrando Johrei, com o tempo a toxina sai e a barriga esfria. Assim sarou. No dia seguinte comeu mingau e, no outro, comida normal. Portanto, a disenteria é algo que sara em dois ou três dias. Mesmo que vocês façam, é assim. É uma pena que façam aquele alvoroço todo. É bom ter isso em mente. A maioria dos fiéis já sabe disso.
 
-### 26\. A causa da Disenteria e os métodos preventivos atuais *(Gokyōshu-shū, Vol. 10, pág. 61\)*
+### 26\. A causa da Disenteria e os métodos preventivos atuais *(Mioshieshu-shū, Vol. 10, pág. 61\)*
 
 Além disso, jornais e rádio dizem insistentemente que este ano haverá surto de Disenteria (Sekiri \[赤痢\]), mas, como já disse em outra ocasião, a disenteria é uma toxina da cabeça. É o sangue tóxico da região occipital que sai. A causa disso é que as pessoas de hoje usam muito a cabeça. Desde criança usam a cabeça na escola e, ao sair para a sociedade, não podem deixar de usá-la. Ao contrário de antigamente, mesmo agricultores e operários hoje em dia têm a cabeça bastante desenvolvida. Costumo ouvir gravações de entrevistas de rua no rádio; há pessoas que trabalham na lavoura que apresentam argumentos muito bons. Fico surpreso. Mesmo operários. Não posso vê-los pelo rádio, mas há quem diga coisas mais inteligentes que deputados. Fico admirado; percebe-se que leem livros e refletem constantemente. Isso mostra que o homem moderno usa a cabeça. Ao usar a cabeça, o sangue sobe para ela. Se fosse sangue bom, tudo bem, mas é sangue tóxico, pois tomam remédios e injeções. O fato de usar a cabeça faz com que o sangue se concentre na região occipital antes de ir para a frontal. Ele passa pela nuca para ir à frente. Mas acaba solidificando-se ali (na nuca/occipital) antes de chegar. Além disso, como escrevem e usam as mãos — é fácil usar os nervos, então o sangue tende a se concentrar ali. Quando ocorre a purificação, isso se dissolve, vai para o abdômen e sai pelo ânus. Isso é a disenteria. Portanto, a causa da disenteria é como descrevi. Os germes são necessários para induzir isso. É preciso expelir o sangue tóxico rapidamente. Por isso, os germes brotam no sangue tóxico. Isso contagia e muitos purificam. É algo muito excelente. O caminho da doença é mais ou menos esse.
 
@@ -272,7 +272,7 @@ O engraçado são os métodos preventivos atuais. Pontos como: "Ao voltar de for
 
 ---
 
-### 27\. A causa da Disenteria e os acidentes *(Gokyōshu-shū, Vol. 10, pág. 54\)*
+### 27\. A causa da Disenteria e os acidentes *(Mioshieshu-shū, Vol. 10, pág. 54\)*
 
 Os jornais noticiam que a disenteria está grassando bastante este ano; de fato, apesar do frio — ainda não é verão — a disenteria surge sucessivamente em vários lugares. Este ano, no auge do verão, haverá muitos casos. Talvez bata o recorde. Já falei sobre a causa da disenteria, mas, resumindo: usar a cabeça e tomar remédios. Essa é a causa. As pessoas de hoje usam muito a cabeça. Não há como não usar na vida social. E há muitas coisas dolorosas. Preocupam-se e precisam espremer a sabedoria. Além disso, a cabeça está muito ruim. Estão abusando da cabeça. Somado a isso, tomam remédios, e a toxina medicinal inevitavelmente se concentra aqui (região occipital).
 
@@ -308,7 +308,7 @@ Isso ocorre porque toxinas medicinais se acumulam no intestino e os chamados ger
 
 ---
 
-### 30\. Cuidados alimentares no Tifo e hemorragia intestinal *(Gokyōshu-shū, Vol. 1, pág. 48\)*
+### 30\. Cuidados alimentares no Tifo e hemorragia intestinal *(Mioshieshu-shū, Vol. 1, pág. 48\)*
 
 **(Pergunta)** Sobre a purificação de Tifo (Chibusu):
 
@@ -319,7 +319,7 @@ Isso ocorre porque toxinas medicinais se acumulam no intestino e os chamados ger
 
 ---
 
-### 31\. Patologia da Febre Tifoide e seleção de alimentos *(Gokyōshu-shū, Vol. 13, pág. 51\)*
+### 31\. Patologia da Febre Tifoide e seleção de alimentos *(Mioshieshu-shū, Vol. 13, pág. 51\)*
 
 Na Febre Tifoide (Chō-chifusu \[腸チフス\]), a mucosa do intestino amolece e surgem germes ali. Então, abrem-se orifícios. Se houver sólidos, eles entram nesses orifícios. Isso causa febre. Por isso, na medicina também se dá alimentação líquida. Contudo, com Johrei, sara logo. Quem está internado em hospital não tem essa facilidade, mas o tifo é algo que sara sem problemas. Para quem está no hospital, os orifícios no intestino não saram facilmente, por isso a dieta líquida. Portanto, é bom ingerir alimentos que se adaptem aos sintomas.
 
@@ -333,7 +333,7 @@ Na Febre Tifoide (Chō-chifusu \[腸チフス\]), a mucosa do intestino amolece 
 
 ---
 
-### 33\. Pontos vitais do Johrei (Apendicite, Fígado, Dor no baixo-ventre, Espasmo gástrico) *(Gokyō)*
+### 33\. Pontos vitais do Johrei (Apendicite, Fígado, Dor no baixo-ventre, Espasmo gástrico) *(Mioshie)*
 
 **(Pergunta)** E nos casos de apendicite ou problemas no fígado?
 
@@ -359,7 +359,7 @@ Na Febre Tifoide (Chō-chifusu \[腸チフス\]), a mucosa do intestino amolece 
 
 ---
 
-### 36\. Pessoa com dor no estômago e em todas as costas do estômago o dia todo, com algo como uma pedra na barriga *(Gokyōshu-shū, Vol. 1, pág. 14\)*
+### 36\. Pessoa com dor no estômago e em todas as costas do estômago o dia todo, com algo como uma pedra na barriga *(Mioshieshu-shū, Vol. 1, pág. 14\)*
 
 **(Pergunta)** Sofria de hiperacidez gástrica desde os 17 anos; na primavera do ano 23 da Era Showa (1948), comecei a sentir dor no estômago, que aumentou gradativamente. Ingressei na Fé em setembro do mesmo ano, mas o quadro não evoluiu como desejado. Recentemente recebo Johrei diariamente, mas a dor não passa. Segundo o diagnóstico médico, tenho úlcera duodenal, atonia gástrica e gastroptose simultaneamente. Sinto dores no estômago e em toda a região das costas correspondente ao estômago quase o dia todo.
 
@@ -407,7 +407,7 @@ Sim. Deve-se fazer sem colocar muita força. É toxina medicinal, sabe. O proble
 
 *(Interlocutor: "Em quantos minutos esfria?")* Varia. Pode esfriar em cinco minutos ou em trinta. Depende da toxina, da quantidade e da força.
 
-### 39\. Homem de meia-idade com úlcera gástrica, purificação intensa, dor contínua, vômito de objetos estranhos, que realiza vômito artificial e tem alimentação desequilibrada *(Gokyōshu-shū, Vol. 7, pág. 34\)*
+### 39\. Homem de meia-idade com úlcera gástrica, purificação intensa, dor contínua, vômito de objetos estranhos, que realiza vômito artificial e tem alimentação desequilibrada *(Mioshieshu-shū, Vol. 7, pág. 34\)*
 
 **(Pergunta)** Fiel de 53 anos (homem). Já recebi orientações repetidas sobre sua úlcera gástrica, mas desde outubro do ano 25 da Era Showa (1950) a purificação tornou-se especialmente intensa; até hoje, ele sente dores diariamente e vomita em média três vezes ao mês matérias estranhas (cerca de 1,8 a 2,7 litros por vez). A cor varia entre branco purulento e verde-chá escuro. Antes de ingressar na Fé, tomou "Gennoshoko" \[ゲンノショウコ\] por cerca de meio ano, cerca de cinco frascos de "Seiro-dama" \[正露玉\], digestivos, analgésicos, além de duas ou três ampolas de morfina e dez ampolas do "Número 606" (Salvarsan), além de várias doses de quinino. Há trinta anos, tomou "Kengoru" \[ケンゴール\] e outro tipo de remédio para gonorreia durante três meses. Também tomou vacinas preventivas na época do exército.
 
@@ -421,7 +421,7 @@ Vômito artificial — na verdade, não se deve fazer. Não é bom forçar o vô
 
 ---
 
-### 40\. Homem de meia-idade com repurificação de úlcera gástrica, dor intensa todas as noites no estômago, inapetência e debilidade progressiva *(Gokyōshu-shū, Vol. 7, pág. 32\)*
+### 40\. Homem de meia-idade com repurificação de úlcera gástrica, dor intensa todas as noites no estômago, inapetência e debilidade progressiva *(Mioshieshu-shū, Vol. 7, pág. 32\)*
 
 **(Pergunta)** Homem de 48 anos, ingressou na Fé em abril do ano 25 da Era Showa (1950). Em abril de 1951 teve purificação no estômago; em 26 de dezembro obteve melhora e pôde voltar ao trabalho, mas em 4 de janeiro teve repurificação, o apetite diminuiu e a debilidade aumentou gradativamente. Especialmente à noite, entre uma e duas da manhã, sente dores gástricas intensas todas as noites, às vezes insuportáveis. O fato de doer sempre nesse horário fixo teria alguma causa espiritual? Ele sempre foi muito saudável; no ano 18 da Era Showa (1943), teve úlcera, foi internado num hospital universitário por duas semanas e disseram que precisaria operar, mas teve alta e curou-se com a terapia do jejum.
 
@@ -429,7 +429,7 @@ Vômito artificial — na verdade, não se deve fazer. Não é bom forçar o vô
 
 ---
 
-### 41\. Diarreia e alimentação, causas da úlcera e alimentação *(Gokyōshu-shū, Vol. 13, pág. 51\)*
+### 41\. Diarreia e alimentação, causas da úlcera e alimentação *(Mioshieshu-shū, Vol. 13, pág. 51\)*
 
 No caso de diarreia, pode-se adaptar a alimentação, mas depende da diarreia. Eu mesmo tive uma diarreia forte dias atrás, mas comi o mesmo de sempre. Isso porque compreendi a verdadeira natureza da diarreia. Como é a toxina daqui (região occipital) que se dissolve e torna-se diarreia, a comida não tem relação. Apenas deve-se ter cuidado nestes casos: úlceras. Quem toma remédio para o estômago continuamente — remédios para estômago são digestivos, e a base dos digestivos é o bicarbonato de sódio; o bicarbonato tem a propriedade de amolecer. Assim, ele amolece gradativamente a parede do estômago e o intestino, deixando a mucosa gástrica num estado em que se corta com qualquer toque; se um alimento sólido bater ali, fere, causa hemorragia ou dor. O mesmo vale para úlcera duodenal. Apenas nesses casos. Nesses casos, percebe-se. Há hemorragia. Se houver hematêmese (vômito de sangue) — sangue da úlcera gástrica — ou se sair nas fezes, é porque há úlcera; nessas horas, é bom comer alimentos que não agridam o local.
 

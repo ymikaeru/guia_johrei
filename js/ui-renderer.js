@@ -109,7 +109,18 @@ function renderTabs() {
         mobileContainer.innerHTML = mobileHtml;
     }
 
-    if (typeof populateCategoryDropdown === 'function') populateCategoryDropdown();
+    // Populate Category Dropdown whenever tab changes
+    if (typeof populateCategoryDropdown === 'function') {
+        populateCategoryDropdown();
+    }
+    // Populate Source Dropdown
+    if (typeof populateSourceDropdown === 'function') {
+        populateSourceDropdown();
+    }
+    // Populate Subject Dropdown (New)
+    if (typeof populateSubjectDropdown === 'function') {
+        populateSubjectDropdown();
+    }
 
     updateUIForTab(STATE.activeTab);
 }
@@ -567,7 +578,24 @@ function renderAlphabet() {
     } else {
         // Standard alphabet for other tabs
         const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-        const availableLetters = new Set(currentData.map(i => i.title ? i.title.charAt(0).toUpperCase() : ''));
+        const availableLetters = new Set(currentData.map(i => {
+            const t = i.title_pt || i.title || '';
+            if (!t) return '';
+
+            // Normalize the ENTIRE string first to match filter logic
+            // This handles cases like " A" (slug: a) or "(O) bs" (slug: o-bs)
+            let clean;
+            if (typeof toSlug === 'function') {
+                clean = toSlug(t); // returns lowercase slug
+            } else {
+                clean = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, '');
+            }
+
+            if (!clean || clean.length === 0) return '';
+
+            // Return first character as uppercase
+            return clean.charAt(0).toUpperCase();
+        }));
 
         // Clear container
         container.innerHTML = `<button onclick="filterByLetter('')" class="flex-none w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-200 dark:border-gray-800 rounded-full transition-all ${STATE.activeLetter === '' ? 'btn-swiss-active' : 'bg-white dark:bg-black'}" id="btn-letter-all">*</button>`;

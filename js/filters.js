@@ -169,6 +169,79 @@ function populateSourceDropdown() {
 // For now, renderTabs calls renderList, maybe we add it there or where populateCategoryDropdown is called.
 
 
+// --- SUBJECT FILTER LOGIC (TITULO MESTRE) ---
+function setSubjectFilter(value) {
+    if (!value) {
+        STATE.activeSubject = null;
+    } else {
+        STATE.activeSubject = value;
+    }
+    applyFilters();
+    renderActiveFilters();
+}
+
+function populateSubjectDropdown() {
+    const selects = document.querySelectorAll('.subject-filter-select');
+    if (selects.length === 0) return;
+
+    // Check if we are in Q&A tab
+    // Adjust 'cases_qa' or 'qa' based on your actual tab ID. 
+    // Usually 'cases_qa' for "Casos e Respostas" or similar.
+    const allowedTabs = ['cases_qa', 'qa', 'casos_especificos'];
+    if (!STATE.activeTab || !allowedTabs.includes(STATE.activeTab)) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    // Determine relevant data source: Current Active Tab Items
+    let itemsToScan = [];
+    if (STATE.activeTab && STATE.data[STATE.activeTab]) {
+        itemsToScan = STATE.data[STATE.activeTab];
+    }
+
+    if (!itemsToScan || itemsToScan.length === 0) {
+        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        return;
+    }
+
+    const subjects = new Set();
+
+    // Scan for Master_Title
+    itemsToScan.forEach(item => {
+        // Use standard 'Master_Title' key
+        if (item.Master_Title) {
+            subjects.add(item.Master_Title.trim());
+        }
+        // Fallback for legacy key if script hasn't run fully or cache issues
+        else if (item.titulo_mestre) {
+            subjects.add(item.titulo_mestre.trim());
+        }
+    });
+
+    const sortedSubjects = Array.from(subjects).sort();
+
+    // Preserve selection
+    const currentVal = STATE.activeSubject || "";
+
+    let html = '<option value="">ASSUNTO</option>';
+    sortedSubjects.forEach(subj => {
+        const selected = subj === currentVal ? 'selected' : '';
+        html += `<option value="${subj}" ${selected}>${subj}</option>`;
+    });
+
+    selects.forEach(select => {
+        select.innerHTML = html;
+        // Hide if no subjects found
+        if (sortedSubjects.length === 0) {
+            select.parentElement.classList.add('hidden');
+        } else {
+            select.parentElement.classList.remove('hidden');
+            select.parentElement.style.display = ''; // Ensure inline style is cleared
+        }
+    });
+}
+
+
 function applyFilters() {
     // Get value from any search input (they should be synced)
     const inputs = document.querySelectorAll('.search-input');
@@ -177,11 +250,11 @@ function applyFilters() {
     const searchValue = inputs.length > 0 ? inputs[0].value : '';
     const q = removeAccents(searchValue); // Normalize for accent-insensitive search
 
-    const { activeTab, activeLetter, activeTags, bodyFilter } = STATE;
+    const { activeTab, activeLetter, activeTags, bodyFilter, activeSubject } = STATE;
 
     // Fix: If in Apostila tab and no search active, do not run applyFilters Logic (prevent overwrite)
     // The Apostila view is rendered by updateUIForTab called in renderTabs
-    if (activeTab === 'apostila' && !q && activeTags.length === 0 && !bodyFilter) {
+    if (activeTab === 'apostila' && !q && activeTags.length === 0 && !bodyFilter && !activeSubject) {
         return;
     }
 
@@ -190,7 +263,7 @@ function applyFilters() {
 
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
     // Coleta todos os itens se estivermos buscando, filtrando por tag ou no mapa
-    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter) {
+    if (q || activeTags.length > 0 || activeTab === 'mapa' || bodyFilter || activeSubject) {
         // GLOBAL SEARCH: Use globalData cache if searching, to find items from other modes
         if (q && STATE.globalData && Object.keys(STATE.globalData).length > 0) {
             rawItems = Object.values(STATE.globalData);
@@ -276,7 +349,26 @@ function applyFilters() {
         }
 
         // 3. Filtro de LETRA (Alfabeto)
-        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter && !(item.title_pt || item.title || '').toUpperCase().startsWith(activeLetter)) return false;
+        if (!q && activeTags.length === 0 && !bodyFilter && activeLetter) {
+            const t = item.title_pt || item.title || '';
+            // Normalize exactly as UI renderer
+            let cleanTitle;
+            if (typeof toSlug === 'function') {
+                cleanTitle = toSlug(t).toUpperCase();
+            } else {
+                cleanTitle = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, '').toUpperCase();
+            }
+
+            if (!cleanTitle.startsWith(activeLetter)) return false;
+        }
+
+        // 3.5. Filtro de ASSUNTO (Master_Title for Q&A)
+        if (activeSubject) {
+            const itemSubject = item.Master_Title || item.titulo_mestre;
+            if (!itemSubject || itemSubject.trim() !== activeSubject) {
+                return false;
+            }
+        }
 
         // 4. Filtro de BUSCA TEXTUAL - Now handled by SearchEngine below
         // Keep this for non-search filters only

@@ -179,6 +179,8 @@
                             </div>
                         </div>
 
+
+
                         <div class="relative flex-grow">
                             <input type="text" placeholder="PESQUISAR..." id="searchInput"
                                 class="search-input w-full bg-white dark:bg-[#111] py-4 pl-0 pr-32 text-xl font-serif font-medium focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all uppercase placeholder-gray-300 dark:placeholder-gray-700">
@@ -287,6 +289,22 @@
                             </svg>
                             <span>FILTROS</span>
                         </button>
+
+                        <!-- Subject Filter (Assunto) -->
+                        <div class="relative hidden ml-2" id="subjectFilterContainer">
+                            <select id="subjectFilterSelect"
+                                onchange="if(typeof setSubjectFilter === 'function') setSubjectFilter(this.value)"
+                                class="subject-filter-select appearance-none bg-transparent text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all border border-gray-200 dark:border-gray-800 rounded-sm px-4 py-2 pr-8 hover:border-gray-900 dark:hover:border-white focus:outline-none cursor-pointer">
+                                <option value="">ASSUNTOS</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
 
                         <button onclick="clearSearch()" id="headerClearFiltersBtn"
                             class="hidden flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-red-500 hover:text-red-700 transition-all border border-red-200 bg-red-50 rounded-sm px-4 py-2 hover:border-red-300 ml-2">

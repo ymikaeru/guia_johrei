@@ -20,7 +20,8 @@
       "johreivol02_05",
       "johreivol02_06",
       "johreivol02_07"
-    ]
+    ],
+    "master_title": null
   },
   {
     "title_jp": "**一、浄霊の合理性**",
@@ -43,7 +44,8 @@
       "johreivol02_05",
       "johreivol02_06",
       "johreivol02_07"
-    ]
+    ],
+    "Master_Title": "A Racionalidade do Johrei"
   },
   {
     "title_jp": "**二、浄霊の霊力について**",
@@ -65,7 +67,8 @@
       "johreivol02_05",
       "johreivol02_06",
       "johreivol02_07"
-    ]
+    ],
+    "Master_Title": "Sobre a Força Espiritual do Johrei"
   },
   {
     "title_jp": "**三、浄霊の順序と浄霊の急所**",
@@ -138,7 +141,8 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
-    ]
+    ],
+    "Master_Title": "A Ordem do Johrei e os Pontos Vitais"
   },
   {
     "title_jp": "**四、毒素集溜の経過と排泄の順序**",
@@ -200,7 +204,8 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
-    ]
+    ],
+    "Master_Title": "A Ordem do Johrei e os Pontos Vitais"
   },
   {
     "title_jp": "**五、頭の働きと薬毒について**",
@@ -241,7 +246,8 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
-    ]
+    ],
+    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais"
   },
   {
     "title_jp": "**六、婦人と前頭部の熱**",
@@ -280,7 +286,8 @@
       "johreivol02_06",
       "johreivol02_08",
       "johreivol02_01"
-    ]
+    ],
+    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais"
   },
   {
     "title_jp": "**七、化粧品中毒**",
@@ -312,7 +319,8 @@
       "johreivol02_07",
       "johreivol02_06",
       "johreivol02_09"
-    ]
+    ],
+    "Master_Title": "Intoxicação por Cosméticos"
   },
   {
     "title_jp": "**八、顔の自然美と一挙三得**",
@@ -332,6 +340,7 @@
       "johreivol02_04",
       "johreivol02_08",
       "johreivol02_05"
-    ]
+    ],
+    "Master_Title": "Intoxicação por Cosméticos"
   }
 ]

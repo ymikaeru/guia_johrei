@@ -81,7 +81,7 @@
         {
           "volume": "4",
           "file": "johrei_vol04_bilingual.json",
-          "count": 32,
+          "count": 31,
           "title_pt": "Palestras sobre o Método de Johrei (4) (Crítica Farmacológica)",
           "title_jp": "浄霊法講座（四）（薬理批判）",
           "tab": "cases_qa"
@@ -155,7 +155,7 @@
         {
           "volume": "2",
           "file": "pontos_focais_vol02_bilingual.json",
-          "count": 138,
+          "count": 137,
           "title_pt": "Tratados Específicos sobre a Arte Médica Japonesa e o Johrei",
           "title_jp": "日本医術・浄霊　各論",
           "tab": "pontos_focais"

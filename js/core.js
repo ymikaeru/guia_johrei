@@ -17,25 +17,7 @@ async function loadData() {
 
         // 2. Fetch Explicações Index (opcional - pode estar vazio)
         let explicacoesItems = [];
-        try {
-            const expRes = await fetch(`${cfg.path}explicacoes_index.json?t=${Date.now()}`);
-            const expData = await expRes.json();
-
-            // Load Explicacoes Content if exists
-            if (expData.categories && expData.categories.length > 0) {
-                await Promise.all(expData.categories.map(async cat => {
-                    const res = await fetch(`${cfg.path}${cat.file}?t=${Date.now()}`);
-                    const items = await res.json();
-                    items.forEach(item => {
-                        item.tags = item.tags || [];
-                        item.tags.push("Guia de Estudo");
-                    });
-                    explicacoesItems.push(...items);
-                }));
-            }
-        } catch (e) {
-            console.log("Explicações not available:", e.message);
-        }
+        // Dependency removed to avoid 404 on explicacoes_index.json
 
         // 3. Load all volumes and group by tab
         const volumesByTab = {};
@@ -47,13 +29,13 @@ async function loadData() {
 
             // Each category has volumes with tab metadata
             await Promise.all(category.volumes.map(async volInfo => {
-                //Use _site.json instead of _bilingual.json for site compatibility
-                const fileName = volInfo.file.replace('_bilingual.json', '_site.json');
+                // Use file defined in index.json directly
+                const fileName = volInfo.file;
                 const res = await fetch(`${cfg.path}${fileName}?t=${Date.now()}`);
                 const items = await res.json();
 
                 // Extract source name from category and volume number from filename
-                const categoryName = category.name || fileName.replace('_site.json', '');
+                const categoryName = category.name || fileName.replace('_bilingual.json', '').replace('_site.json', '');
                 const volMatch = fileName.match(/vol(\d+)/i);
                 const volNumber = volMatch ? ` Vol.${volMatch[1].padStart(2, '0')}` : '';
                 const sourceName = categoryName + volNumber;

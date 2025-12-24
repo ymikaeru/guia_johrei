@@ -173,7 +173,18 @@ function openModal(i, explicitItem = null) {
     const catEl = document.getElementById('modalCategory');
     catEl.textContent = catConfig ? catConfig.label : (item._cat || 'Geral');
 
-    // ... (Source logic remains same) ...
+    const sourceEl = document.getElementById('modalSource');
+    const refEl = document.getElementById('modalRef');
+
+    if (sourceEl) {
+        // Updated Logic: Always show the Source (Volume/Book Name) here
+        // Previously it was overriding with info_pt (citation)
+        sourceEl.textContent = item.source || 'JOHREI: O GUIA PRÁTICO';
+
+        // Clear refEl or set it to empty for now as sourceEl covers the book name
+        if (refEl) refEl.textContent = '';
+    }
+
     // ... (URL Update logic remains same, but using displayTitle) ... 
 
     // Update URL with deep link (Slug + Mode)
@@ -204,10 +215,13 @@ function openModal(i, explicitItem = null) {
         jp = parts.jp;
     }
 
+    // Prepare info_pt html if it exists
+    const infoHtml = item.info_pt ? `<br><br><p class="text-sm text-gray-500 italic border-t pt-2 mt-4">${item.info_pt}</p>` : '';
+
     // Render all three views
-    document.getElementById('contentPT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints);
+    document.getElementById('contentPT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints) + infoHtml;
     document.getElementById('contentJP').innerHTML = formatBodyText(jp, searchQuery, item.focusPoints);
-    document.getElementById('contentComparePT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints);
+    document.getElementById('contentComparePT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints) + infoHtml;
     document.getElementById('contentCompareJP').innerHTML = formatBodyText(jp, searchQuery, item.focusPoints);
 
     const fpContainer = document.getElementById('modalFocusContainer');
