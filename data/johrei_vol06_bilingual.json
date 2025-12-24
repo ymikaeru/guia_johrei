@@ -24,7 +24,10 @@
     ],
     "info_pt": "Mioshie-shu nº 18",
     "source": "Mioshie-shu nº 18",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "１、不眠症と時折の失神及び頭痛の中年男子（御教え集八号　五四頁）",
@@ -61,7 +64,10 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 54",
     "source": "Mioshie-shu nº 8, pág. 54",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "２、脳腫で片眼失明の三歳の女児（御教え集六号　六一頁）",
@@ -97,7 +103,11 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 61",
     "source": "Mioshie-shu nº 6, pág. 61",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Fígado",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "３、中耳炎後頭脳鈍感の少年（地上天国八号　十六頁）",
@@ -164,7 +174,13 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 45",
     "source": "Mioshie-shu nº 1, pág. 45",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "５、目眩及び狭心症の中年婦人（御教え集六号　七八頁）",
@@ -207,7 +223,14 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 78",
     "source": "Mioshie-shu nº 6, pág. 78",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "６、咽喉痛、喀痰多量、下痢数回の中年男子（御教え集四号　八五頁）",
@@ -255,7 +278,11 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 85",
     "source": "Mioshie-shu nº 4, pág. 85",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Garganta",
+      "Pés"
+    ]
   },
   {
     "title_jp": "７、喉頭結核、右肺癒着と言われた人（御教え集四号　九四頁）",
@@ -290,7 +317,10 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 94",
     "source": "Mioshie-shu nº 4, pág. 94",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "１、背中を打って肝臓部が痛む中年男子（御教え）",
@@ -321,7 +351,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
+    ]
   },
   {
     "title_jp": "２、背中に瘤のような塊まりが出来、身長が伸びない男（御教え）",
@@ -357,7 +391,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "１、腰から下が全然動かぬ女（御教え）",
@@ -388,7 +427,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Seção da Cabeça"
+    "Master_Title": "Seção da Cabeça",
+    "focusPoints": [
+      "Pernas",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "２、坐骨神経痛の男（地上天国四三号　一三頁）",
@@ -426,7 +470,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 43, pág. 13",
     "source": "Chijo Tengoku nº 43, pág. 13",
-    "Master_Title": "Seção do Quadril"
+    "Master_Title": "Seção do Quadril",
+    "focusPoints": [
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "１、手頸が痺れ、動かす事不能の男子（御教え集一号　四九頁）",
@@ -459,7 +507,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 49",
     "source": "Mioshie-shu nº 1, pág. 49",
-    "Master_Title": "Seção das Mãos e Pés"
+    "Master_Title": "Seção das Mãos e Pés",
+    "focusPoints": [
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "２、片手不動、血尿の男子（御教え集八号　四五頁）",
@@ -495,7 +547,11 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 45",
     "source": "Mioshie-shu nº 8, pág. 45",
-    "Master_Title": "Seção das Mãos e Pés"
+    "Master_Title": "Seção das Mãos e Pés",
+    "focusPoints": [
+      "Fígado",
+      "Rins"
+    ]
   },
   {
     "title_jp": "３、声がれ、手足の痺れ、歩行困難、高熱の青年（地上天国四〇号　一三頁）",
@@ -535,7 +591,15 @@
     ],
     "info_pt": "Chijo Tengoku nº 40, pág. 13",
     "source": "Chijo Tengoku nº 40, pág. 13",
-    "Master_Title": "Seção das Mãos e Pés"
+    "Master_Title": "Seção das Mãos e Pés",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "４、左足に卵大の固結ある青年（地上天国三六号　一四頁）",
@@ -599,7 +663,12 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 10",
     "source": "Mioshie-shu nº 2, pág. 10",
-    "Master_Title": "Seção das Mãos e Pés"
+    "Master_Title": "Seção das Mãos e Pés",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "１、膀胱及び尿道附近に不快感を感じ、労働時には尿道に激痛を感ずる男子（地上天国三七号　一一頁）",
@@ -636,7 +705,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 37, pág. 11",
     "source": "Chijo Tengoku nº 37, pág. 11",
-    "Master_Title": "Seção do Sistema Urinário"
+    "Master_Title": "Seção do Sistema Urinário",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "２、便通感覚不能の肥満婦人（御教え集一号　四頁）",
@@ -671,7 +743,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 4",
     "source": "Mioshie-shu nº 1, pág. 4",
-    "Master_Title": "Seção do Sistema Urinário"
+    "Master_Title": "Seção do Sistema Urinário",
+    "focusPoints": [
+      "Cabeça",
+      "Rins"
+    ]
   },
   {
     "title_jp": "１、卵巣膿腫、堕胎手術後、全身浄化で一進一退の中年婦人（御教え集七号　六八頁）",
@@ -714,7 +790,15 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 68",
     "source": "Mioshie-shu nº 7, pág. 68",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Intestino",
+      "Pele",
+      "Pernas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "２、子宮癌手術後の中年婦人の浄化（御教え集三号　二六頁）",
@@ -751,7 +835,14 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 26",
     "source": "Mioshie-shu nº 3, pág. 26",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Pele",
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "title_jp": "３、子宮癌と診断された人（地上天国三七号　一三頁）",
@@ -783,7 +874,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 37, pág. 13",
     "source": "Chijo Tengoku nº 37, pág. 13",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "１、毎日ひきつけを起す赤ん坊（地上天国四一号　一三頁）",
@@ -811,7 +905,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 41, pág. 13",
     "source": "Chijo Tengoku nº 41, pág. 13",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Estômago",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "２、寒気、咳嗽、便秘で相当衰弱し、腰部は常に痺れ、息苦しく、鳩尾の固まりが胸につっかけてくるという人（御教え集五号　八八頁）",
@@ -858,7 +956,14 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 88",
     "source": "Mioshie-shu nº 5, pág. 88",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "３、激しい下痢、ヌラ多量の衰弱婦人（子供も同症）（地上天国三九号　一一頁）",
@@ -937,7 +1042,14 @@
     ],
     "info_pt": "Chijo Tengoku nº 43, pág. 14",
     "source": "Chijo Tengoku nº 43, pág. 14",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Amígdalas",
+      "Bulbo",
+      "Cabeça",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "５、頭痛、顔面のしびれ、腰部、足部の不感覚の男子（地上天国四一号　一二頁）",
@@ -974,7 +1086,14 @@
     ],
     "info_pt": "Chijo Tengoku nº 41, pág. 12",
     "source": "Chijo Tengoku nº 41, pág. 12",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pés"
+    ]
   },
   {
     "title_jp": "６、月経不順、白血多量、全身浄化の婦人（地上天国三九号　一一頁）",
@@ -1008,7 +1127,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 39, pág. 11",
     "source": "Chijo Tengoku nº 39, pág. 11",
-    "Master_Title": "Seção de Ginecologia"
+    "Master_Title": "Seção de Ginecologia",
+    "focusPoints": [
+      "Estômago",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "７、結核症状の衰弱婦人（地上天国三七号　九頁）",
@@ -1050,7 +1173,13 @@
     ],
     "info_pt": "Chijo Tengoku nº 37, pág. 9",
     "source": "Chijo Tengoku nº 37, pág. 9",
-    "Master_Title": "Seção do Corpo Inteiro"
+    "Master_Title": "Seção do Corpo Inteiro",
+    "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Pescoço",
+      "Útero"
+    ]
   },
   {
     "title_jp": "８、全身痛、便秘の男子（御教え集四号　二九頁）",
@@ -1085,7 +1214,12 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 29",
     "source": "Mioshie-shu nº 4, pág. 29",
-    "Master_Title": "Seção do Corpo Inteiro"
+    "Master_Title": "Seção do Corpo Inteiro",
+    "focusPoints": [
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "９、急激な熱の高下と胸部痛の男子（御教え集二号　三三頁）",
@@ -1126,7 +1260,11 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 33",
     "source": "Mioshie-shu nº 2, pág. 33",
-    "Master_Title": "Seção do Corpo Inteiro"
+    "Master_Title": "Seção do Corpo Inteiro",
+    "focusPoints": [
+      "Cabeça",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "10、胃癌と診断され、嘔吐、便秘、食欲不振、頭ははっきりせず、衰弱している婦人（地上天国四三号　一二頁）",
@@ -1170,7 +1308,13 @@
     ],
     "info_pt": "Chijo Tengoku nº 43, pág. 12",
     "source": "Chijo Tengoku nº 43, pág. 12",
-    "Master_Title": "Seção do Corpo Inteiro"
+    "Master_Title": "Seção do Corpo Inteiro",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "１、しゃべると身体がだるくなる人（御垂示録一三号　一三頁）",
@@ -1199,7 +1343,10 @@
     ],
     "info_pt": "Gosuishiroku nº 13, pág. 13",
     "source": "Gosuishiroku nº 13, pág. 13",
-    "Master_Title": "Seção de Outros"
+    "Master_Title": "Seção de Outros",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "２、骨が太ると言われた病気（御垂示録一号　三四頁）",
@@ -1227,7 +1374,10 @@
     ],
     "info_pt": "Gosuishiroku nº 1, pág. 34",
     "source": "Gosuishiroku nº 1, pág. 34",
-    "Master_Title": "Seção de Outros"
+    "Master_Title": "Seção de Outros",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "３、骨や爪が軟かくなった女（御教え）",
@@ -1256,7 +1406,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Seção de Outros"
+    "Master_Title": "Seção de Outros",
+    "focusPoints": [
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "４、冷いものに触れると浮腫するという人（御教え集二号　九頁）",
@@ -1287,6 +1441,10 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 9",
     "source": "Mioshie-shu nº 2, pág. 9",
-    "Master_Title": "Seção de Outros"
+    "Master_Title": "Seção de Outros",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   }
 ]

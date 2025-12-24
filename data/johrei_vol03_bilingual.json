@@ -114,7 +114,10 @@
     "related_items": [],
     "info_pt": "Mioshie-shu nº 2, pág. 71",
     "source": "Mioshie-shu nº 2, pág. 71",
-    "Master_Title": "O Objetivo da Educação em Medicina Espiritual"
+    "Master_Title": "O Objetivo da Educação em Medicina Espiritual",
+    "focusPoints": [
+      "Ouvidos"
+    ]
   },
   {
     "title_jp": "3.力を抜くこと（御教え集一五号　五五頁）",
@@ -269,7 +272,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 5, pág. 11",
     "source": "Chijo Tengoku nº 5, pág. 11",
-    "Master_Title": "Formas e Métodos de Johrei"
+    "Master_Title": "Formas e Métodos de Johrei",
+    "focusPoints": [
+      "Mãos"
+    ]
   },
   {
     "title_jp": "６、患部と掌の距離について（御垂示録三号　六三頁）",
@@ -355,7 +361,18 @@
     ],
     "info_pt": "Mioshie-shu nº 24, pág. 6",
     "source": "Mioshie-shu nº 24, pág. 6",
-    "Master_Title": "Formas e Métodos de Johrei"
+    "Master_Title": "Formas e Métodos de Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Glândula Parótida",
+      "Membros",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Região Renal",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "１、浄霊の合理性について（御教え集二九号　五頁）",
@@ -488,7 +505,12 @@
     ],
     "info_pt": "Gosuishiroku nº 28, pág. 27",
     "source": "Gosuishiroku nº 28, pág. 27",
-    "Master_Title": "Outros"
+    "Master_Title": "Outros",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "４、憑霊も薬毒除去によって解決する（御教え集二九号　三十頁）",

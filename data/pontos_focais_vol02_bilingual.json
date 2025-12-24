@@ -62,7 +62,14 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças da cabeça"
+    "Master_title": "Pontos vitais das doenças da cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　淋巴腺",
@@ -92,7 +99,11 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "3)　こめかみ",
@@ -151,7 +162,14 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pescoço"
+    "Master_title": "Pescoço",
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "5)　恥骨（陰部）",
@@ -183,7 +201,12 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças da cabeça"
+    "Master_title": "Pontos vitais das doenças da cabeça",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "1)　後頭部",
@@ -214,7 +237,12 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças dos olhos e ouvidos"
+    "Master_title": "Pontos vitais das doenças dos olhos e ouvidos",
+    "focusPoints": [
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　延髄、頸筋",
@@ -256,7 +284,17 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças dos olhos e ouvidos"
+    "Master_title": "Pontos vitais das doenças dos olhos e ouvidos",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Ouvidos",
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　肩",
@@ -302,7 +340,15 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças dos órgãos internos"
+    "Master_title": "Pontos vitais das doenças dos órgãos internos",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　胃",
@@ -332,7 +378,13 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Estômago"
+    "Master_title": "Estômago",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　体全体（主に頸）",
@@ -372,7 +424,14 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças pulmonares"
+    "Master_title": "Pontos vitais das doenças pulmonares",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "1)　後頭部、頸、肩",
@@ -413,7 +472,16 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais para Vômito, Diarreia e Corrimento (*Koshike*)"
+    "Master_title": "Pontos vitais para Vômito, Diarreia e Corrimento (*Koshike*)",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Pele",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "2)　前頭部、胸、胃",
@@ -445,7 +513,13 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais para Vômito, Diarreia e Corrimento (*Koshike*)"
+    "Master_title": "Pontos vitais para Vômito, Diarreia e Corrimento (*Koshike*)",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "1)　腎臓、肩、腰、尾底骨",
@@ -484,7 +558,13 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças das mãos e pés"
+    "Master_title": "Pontos vitais das doenças das mãos e pés",
+    "focusPoints": [
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　頸、腿の外側",
@@ -510,7 +590,11 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais das doenças das mãos e pés"
+    "Master_title": "Pontos vitais das doenças das mãos e pés",
+    "focusPoints": [
+      "Pernas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "1)　腎臓、下腹部、恥骨",
@@ -542,7 +626,11 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Pontos vitais para distensão abdominal"
+    "Master_title": "Pontos vitais para distensão abdominal",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　脳溢血",
@@ -590,7 +678,20 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Maxilar",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "2)　動脈硬化",
@@ -627,7 +728,12 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　高血圧",
@@ -662,7 +768,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Amígdalas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "4)　逆中風",
@@ -703,7 +813,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "5)　脳膜炎",
@@ -741,7 +854,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Frontal",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "6)　日本脳炎",
@@ -781,7 +898,14 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "7)　脳脊髄膜炎",
@@ -816,7 +940,11 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "8)　脳貧血、神経衰弱",
@@ -864,7 +992,16 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "9)　睡眠不足",
@@ -898,7 +1035,12 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Cérebro"
+    "Master_title": "Cérebro",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "1)　近視、乱視",
@@ -944,7 +1086,16 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Olhos"
+    "Master_title": "Olhos",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "2)　トラホーム、瀘胞性結膜炎",
@@ -976,7 +1127,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Olhos"
+    "Master_title": "Olhos",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "3)　目星",
@@ -1039,7 +1193,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Olhos"
+    "Master_title": "Olhos",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "5)　底翳、白内障、緑内障、黒内障",
@@ -1083,7 +1241,15 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Olhos"
+    "Master_title": "Olhos",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "①　眼球注射の副作用",
@@ -1122,6 +1288,10 @@
       "pontosfocaisvol02_31",
       "pontosfocaisvol02_09",
       "pontosfocaisvol02_19"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
     ]
   },
   {
@@ -1193,7 +1363,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Ouvidos"
+    "Master_title": "Ouvidos",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　耳垂",
@@ -1305,7 +1479,14 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Nariz"
+    "Master_title": "Nariz",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Nariz",
+      "Occipital",
+      "Pele"
+    ]
   },
   {
     "title_jp": "1)　歯痛",
@@ -1343,7 +1524,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "2)　歯槽膿漏",
@@ -1378,7 +1562,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　口内粘膜、喉、舌",
@@ -1418,7 +1606,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Garganta",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "4)　咽喉結核",
@@ -1461,7 +1653,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "5)　喉頭結核",
@@ -1497,7 +1692,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "6)　扁桃腺炎",
@@ -1539,7 +1737,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Boca"
+    "Master_title": "Boca",
+    "focusPoints": [
+      "Amígdalas"
+    ]
   },
   {
     "title_jp": "1)　顔面神経麻痺",
@@ -1577,7 +1778,11 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Face"
+    "Master_title": "Face",
+    "focusPoints": [
+      "Face",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "2)　顔面神経痛",
@@ -1611,7 +1816,10 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Face"
+    "Master_title": "Face",
+    "focusPoints": [
+      "Face"
+    ]
   },
   {
     "title_jp": "1)　バセドー氏病",
@@ -1650,7 +1858,12 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Pescoço"
+    "Master_title": "Pescoço",
+    "focusPoints": [
+      "Frontal",
+      "Garganta",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "1)　慢性気管支炎",
@@ -1692,7 +1905,13 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Bulbo",
+      "Face",
+      "Ombros",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "2)　肺炎",
@@ -1737,7 +1956,11 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Face",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "3)　肺結核",
@@ -1784,7 +2007,15 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "4)　肺壊疽",
@@ -1822,7 +2053,10 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Pleura"
+    ]
   },
   {
     "title_jp": "5)　粟粒結核",
@@ -1852,7 +2086,10 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "6)　肺癌",
@@ -1926,7 +2163,14 @@
       "pontosfocaisvol02_51"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Cabeça",
+      "Pele",
+      "Pescoço",
+      "Pleura",
+      "Rins"
+    ]
   },
   {
     "title_jp": "8)　喘息",
@@ -1980,7 +2224,16 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Pleura",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　狭心症",
@@ -2018,7 +2271,10 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Coração"
+    "Master_title": "Coração",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　弁膜症",
@@ -2058,7 +2314,10 @@
       "pontosfocaisvol02_75"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　心肥大",
@@ -2092,7 +2351,10 @@
     ],
     "category_jp": "Ⅲ．胸部",
     "category_pt": "III. Tórax",
-    "Master_title": "Coração"
+    "Master_title": "Coração",
+    "focusPoints": [
+      "Diafragma"
+    ]
   },
   {
     "title_jp": "4)　心臓麻痺",
@@ -2181,7 +2443,11 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Estômago"
+    "Master_title": "Estômago",
+    "focusPoints": [
+      "Estômago",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　胃アトニー",
@@ -2206,7 +2472,10 @@
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
     "category_pt": "I. Pontos Vitais Básicos do Johrei",
-    "Master_title": "Estômago"
+    "Master_title": "Estômago",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "3)　胃痛",
@@ -2245,7 +2514,11 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Estômago"
+    "Master_title": "Estômago",
+    "focusPoints": [
+      "Estômago",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "4)　胃癌",
@@ -2280,7 +2553,10 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Estômago"
+    "Master_title": "Estômago",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "1)　腎臓萎縮",
@@ -2332,7 +2608,13 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Rins"
+    "Master_title": "Rins",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　急性腎臓病",
@@ -2361,7 +2643,10 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Rins"
+    "Master_title": "Rins",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "3)　慢性腎臓病",
@@ -2398,7 +2683,10 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Rins"
+    "Master_title": "Rins",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "4)　腎臓結核",
@@ -2433,7 +2721,11 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Rins"
+    "Master_title": "Rins",
+    "focusPoints": [
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "5)　結石",
@@ -2469,7 +2761,14 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Rins"
+    "Master_title": "Rins",
+    "focusPoints": [
+      "Estômago",
+      "Face",
+      "Fígado",
+      "Garganta",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　肝臓病・黄疸医診でよく言われる肝臓病というのは、実は誤りで、肝臓そのものには異常がないので、只肝臓の外部に薬毒が固結してをるのを間違えたものである。然し勿論其毒結が肝臓を圧迫しているので、苦痛であるのみか、之が黄疸の原因ともなるから、始末が悪いのである。勿論右の如く毒結によって、肝臓を圧迫する以上、肝臓の裏にある胆嚢も圧迫されるから、胆嚢の中にある胆汁が滲出し全身に廻る。それが黄疸である。処が黄疸は皮膚の変色ばかりの病ではなく、胃の活動をも阻害させる。というのは胆汁は胃の消化を助ける為、絶えず輸胆管を通じて、胃に送流しているに拘わらず、右によって胆汁の供給が減るからである。故に此病気を本当に治すには、原因である肝臓外部の毒結を溶解し、排泄させるより外に方法はないが、医療ではそれが不可能であるから、一時的緩和法によって、小康を得るより手段はないのである。",
@@ -2512,7 +2811,16 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Fígado e Vesícula"
+    "Master_title": "Fígado e Vesícula",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Pele",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　糖尿病",
@@ -2551,7 +2859,14 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Pâncreas"
+    "Master_title": "Pâncreas",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　腸結核",
@@ -2592,7 +2907,15 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Intestinos"
+    "Master_title": "Intestinos",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Peritônio",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　腸チフス",
@@ -2629,7 +2952,12 @@
       "pontosfocaisvol02_116"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Peritônio"
+    ]
   },
   {
     "title_jp": "3)　直腸癌",
@@ -2662,7 +2990,11 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Intestinos"
+    "Master_title": "Intestinos",
+    "focusPoints": [
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "title_jp": "4)　盲腸炎",
@@ -2708,7 +3040,12 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Intestinos"
+    "Master_title": "Intestinos",
+    "focusPoints": [
+      "Amígdalas",
+      "Peritônio",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　腹膜炎",
@@ -2746,7 +3083,11 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Peritônio"
+    "Master_title": "Peritônio",
+    "focusPoints": [
+      "Peritônio",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "# ①　薬毒の原因",
@@ -2872,7 +3213,10 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Ânus"
+    "Master_title": "Ânus",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "4)　痔核",
@@ -2910,7 +3254,12 @@
     ],
     "category_jp": "Ⅳ．腹部",
     "category_pt": "IV. Abdômen",
-    "Master_title": "Ânus"
+    "Master_title": "Ânus",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "１．性病",
@@ -2957,7 +3306,10 @@
     ],
     "category_jp": "Ⅴ．生殖器",
     "category_pt": "V. Órgãos Reprodutores",
-    "Master_title": "Doenças Venéreas"
+    "Master_title": "Doenças Venéreas",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "2)　軟性下疳",
@@ -3040,7 +3392,10 @@
       "pontosfocaisvol02_68"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "2)　無月経",
@@ -3094,7 +3449,11 @@
       "pontosfocaisvol02_39"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Útero"
+    ]
   },
   {
     "title_jp": "4)　子宮筋腫",
@@ -3132,7 +3491,14 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Útero e Trompas"
+    "Master_title": "Útero e Trompas",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Peritônio",
+      "Útero"
+    ]
   },
   {
     "title_jp": "5)　子宮癌",
@@ -3161,7 +3527,10 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Útero e Trompas"
+    "Master_title": "Útero e Trompas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "6)　子宮内膜炎",
@@ -3186,7 +3555,10 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Útero e Trompas"
+    "Master_title": "Útero e Trompas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "7)　子宮実質炎",
@@ -3211,7 +3583,10 @@
       "pontosfocaisvol02_25"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "8)　子宮発育不全",
@@ -3238,7 +3613,11 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Útero e Trompas"
+    "Master_title": "Útero e Trompas",
+    "focusPoints": [
+      "Região Renal",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　卵巣膿腫と卵巣水腫",
@@ -3267,7 +3646,10 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Ovários"
+    "Master_title": "Ovários",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　白帯下",
@@ -3325,7 +3707,13 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Vagina"
+    "Master_title": "Vagina",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Pernas",
+      "Região Renal",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　悪阻",
@@ -3357,7 +3745,11 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Estômago na Gravidez"
+    "Master_title": "Estômago na Gravidez",
+    "focusPoints": [
+      "Estômago",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　妊娠腎",
@@ -3389,7 +3781,10 @@
     ],
     "category_jp": "Ⅵ．婦人病",
     "category_pt": "VI. Doenças Femininas",
-    "Master_title": "Rins na Gravidez"
+    "Master_title": "Rins na Gravidez",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　汁乳不良",
@@ -3416,7 +3811,10 @@
       "pontosfocaisvol02_71"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "1)　消化不良",
@@ -3465,7 +3863,10 @@
     ],
     "related_items": [],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　胃潰瘍",
@@ -3525,7 +3926,10 @@
       "pontosfocaisvol02_51"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "5)　脳膜炎",
@@ -3557,7 +3961,13 @@
     ],
     "category_jp": "Ⅱ．頭部",
     "category_pt": "II. Cabeça",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Nariz",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "6)　泣癖の赤児",
@@ -3587,7 +3997,10 @@
       "pontosfocaisvol02_23"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "7)　猩紅熱",
@@ -3613,7 +4026,10 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "8)　疫痢",
@@ -3651,7 +4067,12 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "9)　小児麻痺",
@@ -3688,7 +4109,11 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Mãos",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "10)　痲疹",
@@ -3728,7 +4153,12 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Olhos",
+      "Ouvidos",
+      "Pele"
+    ]
   },
   {
     "title_jp": "11)　喘息",
@@ -3759,7 +4189,13 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "12)　小児肺炎",
@@ -3829,7 +4265,13 @@
       "pontosfocaisvol02_98"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Intestino",
+      "Pele",
+      "Peritônio",
+      "Rins"
+    ]
   },
   {
     "title_jp": "14)　ヂフテリヤ",
@@ -3859,7 +4301,10 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Doenças Infantis"
+    "Master_title": "Doenças Infantis",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "２．その他の小児病",
@@ -3883,7 +4328,11 @@
     ],
     "category_jp": "Ⅶ．小児",
     "category_pt": "VII. Crianças",
-    "Master_title": "Outras Doenças Infantis"
+    "Master_title": "Outras Doenças Infantis",
+    "focusPoints": [
+      "Cabeça",
+      "Pele"
+    ]
   },
   {
     "title_jp": "１．癌　病",
@@ -3925,7 +4374,13 @@
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
     "category_pt": "VIII. Câncer e Outras Doenças",
-    "Master_title": "Câncer"
+    "Master_title": "Câncer",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　疥癬及び皮膚病",
@@ -3968,7 +4423,13 @@
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
     "category_pt": "VIII. Câncer e Outras Doenças",
-    "Master_title": "Outras Doenças"
+    "Master_title": "Outras Doenças",
+    "focusPoints": [
+      "Mãos",
+      "Pele",
+      "Pernas",
+      "Pés"
+    ]
   },
   {
     "title_jp": "2)　脚　気",
@@ -4005,7 +4466,14 @@
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
     "category_pt": "VIII. Câncer e Outras Doenças",
-    "Master_title": "Outras Doenças"
+    "Master_title": "Outras Doenças",
+    "focusPoints": [
+      "Frontal",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　神経痛",
@@ -4044,7 +4512,12 @@
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
     "category_pt": "VIII. Câncer e Outras Doenças",
-    "Master_title": "Face"
+    "Master_title": "Face",
+    "focusPoints": [
+      "Mãos",
+      "Pele",
+      "Pés"
+    ]
   },
   {
     "title_jp": "4)　リュウマチ",
@@ -4081,7 +4554,11 @@
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
     "category_pt": "VIII. Câncer e Outras Doenças",
-    "Master_title": "Outras Doenças"
+    "Master_title": "Outras Doenças",
+    "focusPoints": [
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "5)　夜尿症",
@@ -4109,7 +4586,12 @@
       "pontosfocaisvol02_54"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Frontal",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "6)　鼾（いびき）",
@@ -4138,7 +4620,11 @@
       "pontosfocaisvol02_23"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "１．腫物",
@@ -4168,7 +4654,10 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅹ．腫物及び火傷・切傷",
-    "category_pt": "X. Tumores, Queimaduras e Cortes"
+    "category_pt": "X. Tumores, Queimaduras e Cortes",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "２．火傷、切傷",
@@ -4195,7 +4684,10 @@
     ],
     "category_jp": "Ⅹ．腫物及び火傷・切傷",
     "category_pt": "X. Tumores, Queimaduras e Cortes",
-    "Master_title": "Queimaduras e Cortes"
+    "Master_title": "Queimaduras e Cortes",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "１．洋薬と漢薬",
@@ -4254,7 +4746,10 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Laxantes"
+    "Master_title": "Laxantes",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "３．鎮痛剤",
@@ -4280,7 +4775,10 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Analgésicos"
+    "Master_title": "Analgésicos",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "４．点眼薬",
@@ -4308,7 +4806,10 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Colírios"
+    "Master_title": "Colírios",
+    "focusPoints": [
+      "Frontal"
+    ]
   },
   {
     "title_jp": "５．鼻　薬",
@@ -4367,7 +4868,10 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Gargarejos"
+    "Master_title": "Gargarejos",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "７．歯　磨",
@@ -4422,7 +4926,11 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Pomadas e Unguentos"
+    "Master_title": "Pomadas e Unguentos",
+    "focusPoints": [
+      "Ombros",
+      "Pele"
+    ]
   },
   {
     "title_jp": "９．仁　丹",
@@ -4476,7 +4984,10 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Salvarsan (606)"
+    "Master_title": "Salvarsan (606)",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "11．予防注射、消毒薬",
@@ -4683,6 +5194,12 @@
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
     "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
-    "Master_title": "Brônquios e Pulmão"
+    "Master_title": "Brônquios e Pulmão",
+    "focusPoints": [
+      "Estômago",
+      "Garganta",
+      "Mãos",
+      "Pés"
+    ]
   }
 ]

@@ -39,7 +39,14 @@
     ],
     "info_pt": "Mioshie-shu nº 21, pág. 6",
     "source": "Mioshie-shu nº 21, pág. 6",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "（２）眼球注射に就いて（御教え集六号　六四頁）",
@@ -87,7 +94,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（４）藪睨みの霊的、体的な原因（御教え）",
@@ -117,7 +127,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（５）乱視の原因に就いて（御教え）",
@@ -149,7 +162,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（６）数年前から視力が鈍り始め、現在全く見えなくなってしまった老人（御教え）",
@@ -178,7 +195,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（７）眩暈の原因に就いて（御教え）",
@@ -210,7 +232,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（８）目薬を用いて、眼を悪くした人（御教え集二号　二二頁）",
@@ -245,7 +271,13 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 22",
     "source": "Mioshie-shu nº 2, pág. 22",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Estômago",
+      "Occipital",
+      "Olhos",
+      "Útero"
+    ]
   },
   {
     "title_jp": "（９）幼年時貧目と診断され、平常は近眼で黒眼に雲がかかり、目星が出たり物が二つに見えたりする娘（地上天国一七号　一一頁）",
@@ -281,7 +313,12 @@
     ],
     "info_pt": "Chijo Tengoku nº 17, pág. 11",
     "source": "Chijo Tengoku nº 17, pág. 11",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（10）生後毒下しを用い、下痢が止まると同時に眼が悪くなり、その後手術をした青年（御教え集八号　九頁）",
@@ -315,7 +352,14 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 9",
     "source": "Mioshie-shu nº 8, pág. 9",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（11）打撲した眼が、医療の結果失明状態になった中年の男（御教え集六号　六二頁）",
@@ -351,7 +395,11 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 62",
     "source": "Mioshie-shu nº 6, pág. 62",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Face",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（12）眼がかすみ、底翳と診断された老婆（御教え）",
@@ -380,7 +428,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（13）白内障（白底翳）の老人（御教え）",
@@ -419,7 +471,14 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（14）次第に視力が弱り、青底翳と診断された人（地上天国四四号　一二頁）",
@@ -460,7 +519,13 @@
     ],
     "info_pt": "Chijo Tengoku nº 44, pág. 12",
     "source": "Chijo Tengoku nº 44, pág. 12",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Membros",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（15）青底翳の手術後、視力が衰えた青年（御教え集三号　二九頁）",
@@ -496,7 +561,14 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 29",
     "source": "Mioshie-shu nº 3, pág. 29",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（16）トラホームにかかり、医療の結果視力を弱らせた母娘（地上天国四〇号　一〇頁）",
@@ -537,7 +609,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 40, pág. 10",
     "source": "Chijo Tengoku nº 40, pág. 10",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（17）三歳の頃、底翳になった少年（光新聞　二〇号）",
@@ -589,7 +664,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（19）脳膜炎のあと、眼を正面に向けると、正面の下から微かに物の形が見える程度の子供（御教え集三号　二九頁）",
@@ -621,7 +700,13 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 29",
     "source": "Mioshie-shu nº 3, pág. 29",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（20）メチールによる失明の原因（御垂示録一二号　一三頁）",
@@ -648,7 +733,10 @@
     ],
     "info_pt": "Gosuishiroku nº 12, pág. 13",
     "source": "Gosuishiroku nº 12, pág. 13",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（21）網膜剥離手術をうけ、失明した婦人（地上天国四四号　一四頁）",
@@ -679,7 +767,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 44, pág. 14",
     "source": "Chijo Tengoku nº 44, pág. 14",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（22）脳膜炎のあと失明した幼児（御教え）",
@@ -711,7 +803,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（23）種痘後失明した幼児（御教え）",
@@ -739,7 +835,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（24）ジフテリヤ注射の後、失明した幼児（御教え）",
@@ -768,7 +867,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（25）眼が次第に見えなくなり、急に危篤状態となった後、失明し、頭髪が抜け変り、夢で赤蛇を見た婦人（御教え集八号　二三頁）",
@@ -809,7 +911,15 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 23",
     "source": "Mioshie-shu nº 8, pág. 23",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（26）飲酒後、頭、肩に激痛があり、眼球が化膿したようになって視力のなくなった人（御教え）",
@@ -838,7 +948,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "（27）妊娠中、下熱注射により失明、眼前に影像の見える婦人（御教え）",
@@ -868,7 +983,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（28）右眼を手術して失明、左眼は強度の近眼の男児（御教え集五号　八〇頁）",
@@ -898,7 +1016,12 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 80",
     "source": "Mioshie-shu nº 5, pág. 80",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（29）眼球を打撲し充血、それを手術した後、頭痛が激しくなった子供（御教え集八号　五四頁）",
@@ -929,7 +1052,12 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 54",
     "source": "Mioshie-shu nº 8, pág. 54",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（30）アブに眼の縁をさされ、慢性脈絡膜炎と診断された娘（御教え集三号　一頁）",
@@ -987,7 +1115,11 @@
     ],
     "info_pt": "Gosuishiroku nº 11, pág. 23",
     "source": "Gosuishiroku nº 11, pág. 23",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（32）眼の先に豆粒のような黒い玉が見える中年の男（御垂示録一九号　二二頁）",
@@ -1013,7 +1145,10 @@
     ],
     "info_pt": "Gosuishiroku nº 19, pág. 22",
     "source": "Gosuishiroku nº 19, pág. 22",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（33）目の玉に、イボ様のものが出来て痛む人（御教え集二号　一九頁）",
@@ -1043,7 +1178,13 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 19",
     "source": "Mioshie-shu nº 2, pág. 19",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（34）眼薬を用いていた処、瞼附近及び睫が白くなってきた人（御教え集三号　五〇頁）",
@@ -1077,7 +1218,13 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 50",
     "source": "Mioshie-shu nº 3, pág. 50",
-    "Master_Title": "Oftalmologia"
+    "Master_Title": "Oftalmologia",
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "（35）眼が痛み、物が二重に見える老婆（御教え）",
@@ -1109,7 +1256,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Occipital",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（１）耳鳴及び耳の聞えの悪い原因（御教え集二一号　六頁）",
@@ -1145,7 +1296,13 @@
     ],
     "info_pt": "Mioshie-shu nº 21, pág. 6",
     "source": "Mioshie-shu nº 21, pág. 6",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Olhos",
+      "Ouvidos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（２）中耳炎後、両耳聞えなくなった娘（御教え）",
@@ -1175,7 +1332,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Ouvidos"
+    ]
   },
   {
     "title_jp": "（３）耳鳴の為、〇氏管通風及び鼻茸の手術をし、その後屡々脳貧血の発作で倒れ、日々頭重、眩暈で苦しんでいる人（御教え集四号　三八頁）",
@@ -1228,7 +1388,16 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 38",
     "source": "Mioshie-shu nº 4, pág. 38",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Nariz",
+      "Occipital",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "（４）生後間もなく多量の血が下り、その後中耳炎となり、尚、火傷、アデノイド手術等を行った智能の低い少年（御教え集八号　五六頁）",
@@ -1269,7 +1438,12 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 56",
     "source": "Mioshie-shu nº 8, pág. 56",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（５）生後一年半位より耳垂れが出続きで、智能的にも遅れている女児（御教え集二号　五二頁）",
@@ -1302,7 +1476,13 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 52",
     "source": "Mioshie-shu nº 2, pág. 52",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Ouvidos",
+      "Rins"
+    ]
   },
   {
     "title_jp": "（６）中耳炎を患い、現在両耳が聞えない様子の女の子（御教え集三号　一〇〇頁）",
@@ -1343,7 +1523,14 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 100",
     "source": "Mioshie-shu nº 3, pág. 100",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Maxilar",
+      "Ouvidos"
+    ]
   },
   {
     "title_jp": "（１）鼻の悪い人の浄霊個所（御教え集二一号　六頁）",
@@ -1375,7 +1562,11 @@
     ],
     "info_pt": "Mioshie-shu nº 21, pág. 6",
     "source": "Mioshie-shu nº 21, pág. 6",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Nariz",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（２）鼻と延髄及び小脳との関係に就いて（ガス中毒）（地上天国一二号　一五頁）",
@@ -1402,7 +1593,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 12, pág. 15",
     "source": "Chijo Tengoku nº 12, pág. 15",
-    "Master_Title": "Otologia"
+    "Master_Title": "Otologia",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（３）鼻の附近に非常な激痛があり、口中、鼻の下より顎一面に膿汁が出ている人（御教え集八号　三〇頁）",
@@ -1436,7 +1631,13 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 30",
     "source": "Mioshie-shu nº 8, pág. 30",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Nariz",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（４）蓄膿症から癌になる徴候があると、死の宣告を受けた人（御教え集三号　七二頁）",
@@ -1471,7 +1672,11 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 72",
     "source": "Mioshie-shu nº 3, pág. 72",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Mãos",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（５）鼻血が一升から二升も出る（御教え集四号　二五頁）",
@@ -1507,7 +1712,14 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 25",
     "source": "Mioshie-shu nº 4, pág. 25",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Nariz",
+      "Pés"
+    ]
   },
   {
     "title_jp": "（６）生まれつき嗅覚のない霊的、体的な原因（地上天国一四号　一二頁）",
@@ -1539,7 +1751,13 @@
     ],
     "info_pt": "Chijo Tengoku nº 14, pág. 12",
     "source": "Chijo Tengoku nº 14, pág. 12",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Nariz",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（７）蓄膿症が治って以来、鼻の通りが悪く、嗅覚のない人（地上天国一二号　一五頁）",
@@ -1570,7 +1788,11 @@
     ],
     "info_pt": "Chijo Tengoku nº 12, pág. 15",
     "source": "Chijo Tengoku nº 12, pág. 15",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（８）鼾が大きい人（御教え集二号　六〇頁）",
@@ -1602,7 +1824,11 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 60",
     "source": "Mioshie-shu nº 2, pág. 60",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（１）咽喉の悪い点で心得て置くべき事（御教え集二三号　五九頁）",
@@ -1630,7 +1856,10 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 59",
     "source": "Mioshie-shu nº 23, pág. 59",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "（２）食事中に舌を噛んだ傷が拡って、痛みが治らない人（御教え）",
@@ -1692,7 +1921,10 @@
     ],
     "info_pt": "Gosuishiroku nº 10, pág. 13",
     "source": "Gosuishiroku nº 10, pág. 13",
-    "Master_Title": "Rinologia"
+    "Master_Title": "Rinologia",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "（４）舌に碁盤の目のような「クビレ」が出来ている人（御教え）",
@@ -1759,7 +1991,10 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 70",
     "source": "Mioshie-shu nº 7, pág. 70",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "（６）頸部淋巴腺の手術を行い、舌癌の手術、レントゲンを行い、耳下腺、顎下腺に腫脹が出来て、口中が火傷のように痛む人（御教え集四号　六四頁）",
@@ -1799,7 +2034,11 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 64",
     "source": "Mioshie-shu nº 4, pág. 64",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "（７）医師に咽喉癌と言われた老人（御垂示録一〇号　一五頁）",
@@ -1830,7 +2069,12 @@
     ],
     "info_pt": "Gosuishiroku nº 10, pág. 15",
     "source": "Gosuishiroku nº 10, pág. 15",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（８）咽喉が圧迫され、物忘れ勝ちの人（御教え集一号　七一頁）",
@@ -1872,7 +2116,13 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 71",
     "source": "Mioshie-shu nº 1, pág. 71",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Garganta"
+    ]
   },
   {
     "title_jp": "（９）喀血後に発声不能となった人（御教え集二号　七頁）",
@@ -1914,7 +2164,12 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 7",
     "source": "Mioshie-shu nº 2, pág. 7",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "（10）サ行の発音が出来ない子供（御垂示録一二号　一六頁）",
@@ -1973,7 +2228,10 @@
     ],
     "info_pt": "Gosuishiroku nº 1, pág. 25",
     "source": "Gosuishiroku nº 1, pág. 25",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "（12）下顎にグリグリが出来、切開後悪化し、眼が悪くなり、涙嚢を除去、耳や顔面にカサ蓋が出来て、下瞼が引きつける人（御教え）",
@@ -2012,7 +2270,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Laringologia"
+    "Master_Title": "Laringologia",
+    "focusPoints": [
+      "Maxilar",
+      "Nariz",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "（１）歯の浄霊に就いて（御教え集三一号　六四頁）",
@@ -2077,7 +2340,10 @@
     ],
     "info_pt": "Gosuishiroku nº 8, pág. 25",
     "source": "Gosuishiroku nº 8, pág. 25",
-    "Master_Title": "Odontologia"
+    "Master_Title": "Odontologia",
+    "focusPoints": [
+      "Membros"
+    ]
   },
   {
     "title_jp": "（３）歯を抜くとか、入歯するというのは、別に悪い事はない（御教え集五号　四〇頁）",
@@ -2137,7 +2403,11 @@
     ],
     "info_pt": "Mioshie-shu nº 13, pág. 12",
     "source": "Mioshie-shu nº 13, pág. 12",
-    "Master_Title": "Odontologia"
+    "Master_Title": "Odontologia",
+    "focusPoints": [
+      "Cabeça",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "（５）歯の痛むのは普通どこからくるか。（御教え集四号　五四頁）",
@@ -2167,7 +2437,10 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 54",
     "source": "Mioshie-shu nº 4, pág. 54",
-    "Master_Title": "Odontologia"
+    "Master_Title": "Odontologia",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "（６）八重歯に就いて（地上天国七号　一三頁）",
@@ -2225,7 +2498,10 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 53",
     "source": "Mioshie-shu nº 4, pág. 53",
-    "Master_Title": "Odontologia"
+    "Master_Title": "Odontologia",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "（８）歯のグラグラするのは浄霊で締る（御教え集一二号　三七頁）",
@@ -2253,7 +2529,10 @@
     ],
     "info_pt": "Mioshie-shu nº 12, pág. 37",
     "source": "Mioshie-shu nº 12, pág. 37",
-    "Master_Title": "Odontologia"
+    "Master_Title": "Odontologia",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "（９）歯のグラグラするのが化粧品中毒が原因であった例（御教え集二四号　六六頁）",

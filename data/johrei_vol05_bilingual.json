@@ -27,7 +27,10 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 47",
     "source": "Mioshie-shu nº 23, pág. 47",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2.健康診断の一番確実なのは肩をみる事（御教え集二三号　四八頁）",
@@ -62,7 +65,11 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 48",
     "source": "Mioshie-shu nº 23, pág. 48",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Estômago",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "3.肩の浄霊を第一にし、頸の廻りを第二にする（御教え集二三号　三七頁）",
@@ -103,7 +110,14 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 37",
     "source": "Mioshie-shu nº 23, pág. 37",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "4.結核の熱は頭に多い（御教え集二三号　五七頁）",
@@ -144,7 +158,15 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 57",
     "source": "Mioshie-shu nº 23, pág. 57",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "5.息切れの原因（御教え集二三号　三七頁）",
@@ -181,7 +203,11 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 37",
     "source": "Mioshie-shu nº 23, pág. 37",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "6.運動はあまりさせない方がよい（御教え集二三号　四九頁）",
@@ -211,7 +237,10 @@
     ],
     "info_pt": "Mioshie-shu nº 23, pág. 49",
     "source": "Mioshie-shu nº 23, pág. 49",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "1.喉が痛むのは危ない（御垂示録二号　五九頁）",
@@ -239,7 +268,10 @@
     ],
     "info_pt": "Gosuishiroku nº 2, pág. 59",
     "source": "Gosuishiroku nº 2, pág. 59",
-    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose"
+    "Master_Title": "Sobre o Johrei em Pacientes com Tuberculose",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "2.咽喉が痛み、食欲皆無で、毎日一升位のヌラが出て衰弱している人（御教え）",
@@ -279,7 +311,14 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Garganta",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "3.再浄化で衰弱している婦人（御教え）",
@@ -318,7 +357,16 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Garganta",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "4.頻繁な咳と食欲減退で衰弱していく人（御教え集六号　五四頁）",
@@ -364,7 +412,14 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 54",
     "source": "Mioshie-shu nº 6, pág. 54",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "5.衰弱甚だしく、月経がなくなった娘（御教え）",
@@ -395,7 +450,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "6.咽喉が痛み呼吸困難、心臓が苦しく歩行出来ず、食欲なく衰弱している娘（御教え集六号　七六頁）",
@@ -441,7 +499,11 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 76",
     "source": "Mioshie-shu nº 6, pág. 76",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta"
+    ]
   },
   {
     "title_jp": "7.胸の下部の激痛は取れたが、呼吸困難、強烈、頻繁な咳嗽に苦しみ、血痰、寝汗、衰弱の増して来た人（御教え集三号　七八頁）",
@@ -517,7 +579,19 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 78",
     "source": "Mioshie-shu nº 3, pág. 78",
-    "Master_Title": "Anatomia dos Sintomas da Tuberculose"
+    "Master_Title": "Anatomia dos Sintomas da Tuberculose",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Bulbo",
+      "Cabeça",
+      "Garganta",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pleura",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1.喘息の原因（御教え集二二号　二二頁）",
@@ -546,7 +620,10 @@
     ],
     "info_pt": "Mioshie-shu nº 22, pág. 22",
     "source": "Mioshie-shu nº 22, pág. 22",
-    "Master_Title": "Asma"
+    "Master_Title": "Asma",
+    "focusPoints": [
+      "Diafragma"
+    ]
   },
   {
     "title_jp": "2.心臓喘息で、動くと心臓が破裂しそうに苦しい人（御教え）",
@@ -576,7 +653,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Asma"
+    "Master_Title": "Asma",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "3.御浄霊を戴くとひどい喘息のように咳込み、呼吸困難の発作が頻発する子供（御教え集七号　七七頁）",
@@ -617,7 +697,11 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 77",
     "source": "Mioshie-shu nº 7, pág. 77",
-    "Master_Title": "Asma"
+    "Master_Title": "Asma",
+    "focusPoints": [
+      "Mãos",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "4.疥癬の浄化後喘息が再発した人（地上天国一三号　一八頁）",
@@ -656,7 +740,15 @@
     ],
     "info_pt": "Chijo Tengoku nº 13, pág. 18",
     "source": "Chijo Tengoku nº 13, pág. 18",
-    "Master_Title": "Asma"
+    "Master_Title": "Asma",
+    "focusPoints": [
+      "Diafragma",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Pleura",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "5.心臓喘息で衰弱が激しい人（御教え集四号　六五頁）",
@@ -693,7 +785,12 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 65",
     "source": "Mioshie-shu nº 4, pág. 65",
-    "Master_Title": "Asma"
+    "Master_Title": "Asma",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Rins"
+    ]
   },
   {
     "title_jp": "6.喘息の冬型と夏型、浄霊の急所に就いて（御教え）",
@@ -815,7 +912,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças Cardíacas"
+    "Master_Title": "Doenças Cardíacas",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "3.心臓弁膜症で脈搏欠滞し、腹部の膨満甚だしくなった婦人（御教え集一号　五六頁）",
@@ -857,7 +958,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 56",
     "source": "Mioshie-shu nº 1, pág. 56",
-    "Master_Title": "Doenças Cardíacas"
+    "Master_Title": "Doenças Cardíacas",
+    "focusPoints": [
+      "Estômago",
+      "Pleura"
+    ]
   },
   {
     "title_jp": "4.床につくと上半身の圧迫感が強く、呼吸が苦しくなる婦人（御教え集五号　八〇頁）",
@@ -896,7 +1001,10 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 80",
     "source": "Mioshie-shu nº 5, pág. 80",
-    "Master_Title": "Doenças Cardíacas"
+    "Master_Title": "Doenças Cardíacas",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "5.水泳中の心臓麻痺に就いて（御教え）",

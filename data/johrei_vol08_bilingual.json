@@ -27,7 +27,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "２、腹部に固結あり、酸気ありヌラ状のものを吐き、衰弱甚だしき少年（御教え）",
@@ -60,7 +63,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "３、胃下垂にて発熱、胃が痛み、食欲不振、連日下痢で疲れ易くなった青年（御教え集六号　六四頁）",
@@ -96,7 +102,10 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 64",
     "source": "Mioshie-shu nº 6, pág. 64",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "４、乳を飲ませる時、首を反対に向けてひきつけ、食物は一切さけて、貰い乳を飲ませている生後一年位の幼児（御垂示録一号　一八頁）",
@@ -126,7 +135,11 @@
     ],
     "info_pt": "Gosuishiroku nº 1, pág. 18",
     "source": "Gosuishiroku nº 1, pág. 18",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "５、御浄霊の都度、黒茶色の物を十五、六回吐き、見る見る衰弱し食欲のない老婦人（御教え集七号　十四頁）",
@@ -160,7 +173,11 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 14",
     "source": "Mioshie-shu nº 7, pág. 14",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "６、胃癌、胃下垂、胃潰瘍と診断され、吐血あり、その後下痢、吐気、食欲不振、便通少なく衰弱せる老婆（御教え集六号　八五頁）",
@@ -201,7 +218,11 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 85",
     "source": "Mioshie-shu nº 6, pág. 85",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
+    ]
   },
   {
     "title_jp": "７、十年位の間ごく少量の食事、一日にサンマ一匹、カリントウ五本位で元気な中年の男子（御垂示録五号　五二頁）",
@@ -230,7 +251,10 @@
     ],
     "info_pt": "Gosuishiroku nº 5, pág. 52",
     "source": "Gosuishiroku nº 5, pág. 52",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "１、腎臓及び腹膜の浄化好転後再び浄化し、発熱、腹部が膨れ、全体に痛み、時折嘔吐があり、食欲減退し、衰弱激しき娘（御教え集三号　八四頁）",
@@ -272,7 +296,13 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 84",
     "source": "Mioshie-shu nº 3, pág. 84",
-    "Master_Title": "Enfermidades Gástricas"
+    "Master_Title": "Enfermidades Gástricas",
+    "focusPoints": [
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "２、下腹部に拳大の固まりがある婦人（地上天国　四〇号　一一頁）",
@@ -345,7 +375,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 8",
     "source": "Mioshie-shu nº 1, pág. 8",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Olhos",
+      "Rins"
+    ]
   },
   {
     "title_jp": "４、腹膜にて食欲を感じても食べられず、腹部に固まりがあって、移動したり消えたりする人（御教え集五号　三一頁）",
@@ -389,7 +423,14 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 31",
     "source": "Mioshie-shu nº 5, pág. 31",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Occipital",
+      "Pele",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "５、腹部膨満し、一進一退の幼児（地上天国四八号　一五頁）",
@@ -419,7 +460,12 @@
     ],
     "info_pt": "Chijo Tengoku nº 48, pág. 15",
     "source": "Chijo Tengoku nº 48, pág. 15",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Membros",
+      "Olhos",
+      "Rins"
+    ]
   },
   {
     "title_jp": "６、両足が痺れ、食後は腹が張って苦しい人（御教え集二号　四〇頁）",
@@ -459,7 +505,11 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 40",
     "source": "Mioshie-shu nº 2, pág. 40",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "７、尿が少量宛一日十数回出、腎臓が痛んで便秘し、アミーバー赤痢が入ったとて、注射した体、現在、御浄霊戴くと腹部全体膨脹し、嘔吐を催すと言う人（御教え）",
@@ -500,7 +550,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
+    ]
   },
   {
     "title_jp": "８、アルバジル、ゲンノショウコ等を服用し、最近特に強い浄化を戴き、吐気と連続的な腹痛にうめき通しの人（御教え集三号　一八頁）",
@@ -544,7 +598,12 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 18",
     "source": "Mioshie-shu nº 3, pág. 18",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "９、開腹手術をしたことがあり、時々恥骨附近に激痛、小用が漏れ、便秘症の婦人（御教え）",
@@ -656,7 +715,15 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 24",
     "source": "Mioshie-shu nº 1, pág. 24",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas",
+      "Pleura",
+      "Rins"
+    ]
   },
   {
     "title_jp": "12、眼の手術、脳を患い、腸の手術をし、肺炎を患い、又凡ゆる薬を飲み、入信後痔出血が続き貧血して倒れ、その後足がふらつき、頭もボーッとして顔がむくんでいるという中年の男子（御教え集四号　四九頁）",
@@ -698,7 +765,15 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 49",
     "source": "Mioshie-shu nº 4, pág. 49",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Olhos",
+      "Pele",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "13、胃潰瘍の傷痕の痛み、胃下垂と診断され、腹部は板のようになり、腸の内部の痛みがつづき、歩行困難で、時折激痛あり、その時は、下腹部に棒状の突起の出来る人（御教え集三号　四九頁）",
@@ -735,7 +810,11 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 49",
     "source": "Mioshie-shu nº 3, pág. 49",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago",
+      "Intestino"
+    ]
   },
   {
     "title_jp": "14、排便の前に必ず粘液と出血をし、アミーバー赤痢と診断された青年（御教え集八号　三八頁）",
@@ -774,7 +853,10 @@
     ],
     "info_pt": "Mioshie-shu nº 8, pág. 38",
     "source": "Mioshie-shu nº 8, pág. 38",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Occipital"
+    ]
   },
   {
     "title_jp": "15、手術をし、胃薬を用い、最近腹痛の浄化の激しい中年の男子（地上天国四〇号　一四頁）",
@@ -806,7 +888,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 40, pág. 14",
     "source": "Chijo Tengoku nº 40, pág. 14",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "16、四年前毎月一回位の割で、腹痛の浄化を繰返している婦人（地上天国三六号　一二頁）",
@@ -841,7 +926,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 36, pág. 12",
     "source": "Chijo Tengoku nº 36, pág. 12",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "17、腹部に湯呑大の固結が出来、切開手術した人（御教え集五号　三二頁）",
@@ -877,7 +965,10 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 32",
     "source": "Mioshie-shu nº 5, pág. 32",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "18、便意を催しても出にくく、直腸癌と診断された老人（御教え）",
@@ -912,7 +1003,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "title_jp": "19、直腸癌と診断され、御浄霊を戴き、一時血便が出るもその後血便止まり便秘し、胸が苦しい人（御教え集四号　八二頁）",
@@ -982,7 +1077,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Fígado",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "21、脱腸と気附き脱腸帯を使用したが、左太股鼠蹊部の上の腫れは段々と大きくなり、痛みはなく、仰臥すれば引込むという老人（御教え集四号　九八頁）",
@@ -1019,7 +1119,14 @@
     ],
     "info_pt": "Mioshie-shu nº 4, pág. 98",
     "source": "Mioshie-shu nº 4, pág. 98",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Intestino",
+      "Pele",
+      "Peritônio",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "22、赤痢、チフス、下痢、便秘と果物に就いて（御垂示録二号　四九頁）",
@@ -1074,7 +1181,10 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 8",
     "source": "Mioshie-shu nº 1, pág. 8",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "24、赤痢は薬毒が新しいという事（御教え集一三号　一四頁）",
@@ -1105,7 +1215,10 @@
     ],
     "info_pt": "Mioshie-shu nº 13, pág. 14",
     "source": "Mioshie-shu nº 13, pág. 14",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "25、赤痢の原因、経過と浄霊に就いて（御教え集一号　六四頁）",
@@ -1142,7 +1255,13 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 64",
     "source": "Mioshie-shu nº 1, pág. 64",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Peritônio",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "26、赤痢の原因と現在の予防法に就いて（御教え集一〇号　六一頁）",
@@ -1178,7 +1297,13 @@
     ],
     "info_pt": "Mioshie-shu nº 10, pág. 61",
     "source": "Mioshie-shu nº 10, pág. 61",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "27、赤痢の原因と事故に就いて（御教え集一〇号　五四頁）",
@@ -1213,7 +1338,13 @@
     ],
     "info_pt": "Mioshie-shu nº 10, pág. 54",
     "source": "Mioshie-shu nº 10, pág. 54",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Mãos",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "28、チフスと赤痢の診断の仕方と食物に就いて（御垂示録二号　五〇頁）",
@@ -1250,7 +1381,11 @@
     ],
     "info_pt": "Gosuishiroku nº 2, pág. 50",
     "source": "Gosuishiroku nº 2, pág. 50",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
+    ]
   },
   {
     "title_jp": "29、チフスの原因、症状、御浄霊の個所、食物の注意に就いて（御垂示録二五号　一九頁）",
@@ -1288,7 +1423,12 @@
     ],
     "info_pt": "Gosuishiroku nº 25, pág. 19",
     "source": "Gosuishiroku nº 25, pág. 19",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Peritônio"
+    ]
   },
   {
     "title_jp": "30、チフスに対する食物の注意と腸出血に就いて（御教え集一号　四八頁）",
@@ -1322,7 +1462,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 48",
     "source": "Mioshie-shu nº 1, pág. 48",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
+    ]
   },
   {
     "title_jp": "31、腸チフスの病理と、食物の選定に就いて（御教え集一三号　五一頁）",
@@ -1349,7 +1493,10 @@
     ],
     "info_pt": "Mioshie-shu nº 13, pág. 51",
     "source": "Mioshie-shu nº 13, pág. 51",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Intestino"
+    ]
   },
   {
     "title_jp": "32、チフスは高熱にかかわらず脈が低い原因に就いて（御垂示録二〇号　七頁）",
@@ -1413,7 +1560,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Fígado"
+    ]
   },
   {
     "title_jp": "34、盲腸の病理（御垂示録二五号　一八頁）",
@@ -1443,7 +1593,11 @@
     ],
     "info_pt": "Gosuishiroku nº 25, pág. 18",
     "source": "Gosuishiroku nº 25, pág. 18",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "８、普通に食事が戴けず、起きて三十分以内だと戴ける人（御垂示録一〇号　一九頁）",
@@ -1469,7 +1623,10 @@
     ],
     "info_pt": "Gosuishiroku nº 10, pág. 19",
     "source": "Gosuishiroku nº 10, pág. 19",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "36、一日中胃及び胃の後一面が痛み、お腹に石のようなものが出来ている人（御教え集一号　一四頁）",
@@ -1504,7 +1661,10 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 14",
     "source": "Mioshie-shu nº 1, pág. 14",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "37、胃、肝臓部に固まりがあり、食欲不振で突上げてくる症状を持った人（御垂示録四号　三四頁）",
@@ -1547,7 +1707,16 @@
     ],
     "info_pt": "Gosuishiroku nº 4, pág. 34",
     "source": "Gosuishiroku nº 4, pág. 34",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Occipital",
+      "Pele",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "38、胃潰瘍、胃下垂で寒気が治りにくい場合の浄霊の急所微熱のとれるに要する時間（御垂示録八号　二八頁）",
@@ -1575,7 +1744,10 @@
     ],
     "info_pt": "Gosuishiroku nº 8, pág. 28",
     "source": "Gosuishiroku nº 8, pág. 28",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "39、胃潰瘍にて、浄化激しく痛み続けて異物を吐き、人工吐瀉もしばしば行っており、偏食がちな中年の男子（御教え集七号　三四頁）",
@@ -1614,7 +1786,13 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 34",
     "source": "Mioshie-shu nº 7, pág. 34",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Garganta",
+      "Rins"
+    ]
   },
   {
     "title_jp": "40、胃潰瘍の再浄化にて、毎晩胃部に激痛を覚え、食欲が減り、衰弱して来た中年の男子（御教え集七号　三二頁）",
@@ -1644,7 +1822,10 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 32",
     "source": "Mioshie-shu nº 7, pág. 32",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "41、下痢と食物、潰瘍の原因と食物について（御教え集一三号　五一頁）",
@@ -1678,7 +1859,12 @@
     ],
     "info_pt": "Mioshie-shu nº 13, pág. 51",
     "source": "Mioshie-shu nº 13, pág. 51",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "42、胃癌と診断され、胃の上部に固結があり、移動し、苦痛あり、水様の物を吐き、現在は吐気のみにて食欲不振、衰弱せる中年の男子（地上天国五〇号　一〇頁）",
@@ -1721,6 +1907,14 @@
     ],
     "info_pt": "Chijo Tengoku nº 50, pág. 10",
     "source": "Chijo Tengoku nº 50, pág. 10",
-    "Master_Title": "Enfermidades Abdominais"
+    "Master_Title": "Enfermidades Abdominais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Occipital",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   }
 ]

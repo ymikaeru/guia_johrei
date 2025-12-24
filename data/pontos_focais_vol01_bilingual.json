@@ -39,7 +39,15 @@
     ],
     "category_jp": "脳疾患と腎臓の働き",
     "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
-    "Master_title": "Doenças Cerebrais e a Função dos Rins"
+    "Master_title": "Doenças Cerebrais e a Função dos Rins",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Face",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "頭痛",
@@ -84,10 +92,17 @@
     "focus_context": "Alto da cabeça (bregma), região occipital, parótidas, glândulas linfáticas cervicais, ombros e rins.",
     "focusPoints": [
       "Alto da cabeça (bregma)",
-      "região occipital",
-      "parótidas",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Occipital",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "glândulas linfáticas cervicais",
       "ombros",
+      "parótidas",
+      "região occipital",
       "rins"
     ],
     "Master_title": "Doenças Cerebrais e a Função dos Rins"
@@ -130,10 +145,17 @@
     "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
     "focus_context": "Bulbo raquidiano (lado direito), glândulas linfáticas cervicais, região frontal, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "glândulas linfáticas cervicais",
-      "região frontal",
       "ombros",
+      "região frontal",
       "rins"
     ],
     "Master_title": "Doenças Cerebrais e a Função dos Rins"
@@ -176,10 +198,17 @@
     "focus_context": "Alto da cabeça, região frontal, região occipital, pescoço, ombros e rins.",
     "focusPoints": [
       "Alto da cabeça",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "ombros",
+      "pescoço",
       "região frontal",
       "região occipital",
-      "pescoço",
-      "ombros",
       "rins"
     ]
   },
@@ -231,20 +260,27 @@
     "focus_context": "Alto da cabeça, região occipital, medula cervical, bulbo raquidiano, cerebelo, ombros, rins e a parte afetada.\n* Caso o braço não se mova: Ombros e glândulas linfáticas (na axila/raiz do braço).\n* Caso a perna não se mova: Rins, região glútea e região inguinal.",
     "focusPoints": [
       "Alto da cabeça",
-      "região occipital",
-      "medula cervical",
+      "Bulbo",
+      "Cabeça",
+      "Caso a perna não se mova",
+      "Caso o braço não se mova",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Ouvidos",
+      "Rins",
+      "a parte afetada",
       "bulbo raquidiano",
       "cerebelo",
-      "ombros",
-      "rins",
-      "a parte afetada",
-      "Caso o braço não se mova",
-      "Ombros",
       "glândulas linfáticas (na axila/raiz do braço)",
-      "Caso a perna não se mova",
-      "Rins",
+      "medula cervical",
+      "ombros",
       "região glútea",
-      "região inguinal"
+      "região inguinal",
+      "região occipital",
+      "rins"
     ],
     "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
@@ -297,21 +333,28 @@
     "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
     "focus_context": "* **Paralisia:** Alto da cabeça, região occipital, bulbo raquidiano, lateral do pescoço, ombros, rins e parte afetada.\n* **Paralisia Inversa:** Nuca (atrás e abaixo da orelha), ombros, raiz do braço, rins e parte afetada.",
     "focusPoints": [
-      "**Paralisia",
       "* Alto da cabeça",
-      "região occipital",
+      "* Nuca (atrás",
+      "**Paralisia",
+      "**Paralisia Inversa",
+      "Bulbo",
+      "Cabeça",
+      "Glândulas Linfáticas",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Pés",
+      "Rins",
+      "abaixo da orelha)",
       "bulbo raquidiano",
       "lateral do pescoço",
       "ombros",
-      "rins",
       "parte afetada",
-      "**Paralisia Inversa",
-      "* Nuca (atrás",
-      "abaixo da orelha)",
-      "ombros",
       "raiz do braço",
-      "rins",
-      "parte afetada"
+      "região occipital",
+      "rins"
     ]
   },
   {
@@ -357,6 +400,9 @@
     "focus_context": "Ao redor do pescoço e ombros.",
     "focusPoints": [
       "Ao redor do pescoço",
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
       "ombros"
     ],
     "Master_title": "Doenças Cerebrais e a Função dos Rins"
@@ -390,7 +436,15 @@
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
-    "Master_title": "Doenças Oculares"
+    "Master_title": "Doenças Oculares",
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "近視",
@@ -429,12 +483,18 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, imediações do bulbo raquidiano, ombros, entre as escápulas e a coluna vertebral, e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região occipital",
-      "imediações do bulbo raquidiano",
-      "ombros",
-      "entre as escápulas",
+      "Rins",
       "a coluna vertebral",
-      "e rins"
+      "e rins",
+      "entre as escápulas",
+      "imediações do bulbo raquidiano",
+      "ombros"
     ],
     "Master_title": "Doenças Oculares"
   },
@@ -467,6 +527,8 @@
     "focus_context": "Cabeça, ombros e rins.",
     "focusPoints": [
       "Cabeça",
+      "Ombros",
+      "Rins",
       "ombros",
       "rins"
     ],
@@ -508,7 +570,11 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, bulbo raquidiano, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Occipital",
+      "Ombros",
       "Região occipital",
+      "Rins",
       "bulbo raquidiano",
       "ombros",
       "rins"
@@ -552,11 +618,17 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, bulbo raquidiano, da região frontal até a região ocular, região supraorbital (ao redor das sobrancelhas), ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região occipital",
+      "Rins",
       "bulbo raquidiano",
       "da região frontal até a região ocular",
-      "região supraorbital (ao redor das sobrancelhas)",
       "ombros",
+      "região supraorbital (ao redor das sobrancelhas)",
       "rins"
     ],
     "Master_title": "Doenças Oculares"
@@ -595,12 +667,16 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região ocular e seus arredores, região occipital, nuca, ombros e rins.",
     "focusPoints": [
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região ocular",
-      "seus arredores",
-      "região occipital",
+      "Rins",
       "nuca",
       "ombros",
-      "rins"
+      "região occipital",
+      "rins",
+      "seus arredores"
     ],
     "Master_title": "Doenças Oculares"
   },
@@ -635,9 +711,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações do bulbo raquidiano, região frontal (área das sobrancelhas), ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
       "Imediações do bulbo raquidiano",
-      "região frontal (área das sobrancelhas)",
+      "Olhos",
+      "Ombros",
+      "Rins",
       "ombros",
+      "região frontal (área das sobrancelhas)",
       "rins"
     ],
     "Master_title": "Doenças Oculares"
@@ -671,7 +752,11 @@
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
-    "Master_title": "Doenças Nasais"
+    "Master_title": "Doenças Nasais",
+    "focusPoints": [
+      "Nariz",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "蓄膿症",
@@ -710,8 +795,12 @@
     "focus_context": "Ambos os lados do osso nasal, centro da glabela (entre as sobrancelhas) e bulbo raquidiano, fundo do nariz, ombros e rins.",
     "focusPoints": [
       "Ambos os lados do osso nasal",
-      "centro da glabela (entre as sobrancelhas)",
+      "Bulbo",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "bulbo raquidiano",
+      "centro da glabela (entre as sobrancelhas)",
       "fundo do nariz",
       "ombros",
       "rins"
@@ -751,10 +840,15 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações do bulbo raquidiano e região frontal, imediações do nariz, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
       "Imediações do bulbo raquidiano",
-      "região frontal",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "imediações do nariz",
       "ombros",
+      "região frontal",
       "rins"
     ],
     "Master_title": "Doenças Nasais"
@@ -789,12 +883,17 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Bulbo raquidiano (lado direito), região frontal, testa, nariz, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
-      "região frontal",
-      "testa",
+      "Frontal",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "nariz",
       "ombros",
-      "rins"
+      "região frontal",
+      "rins",
+      "testa"
     ],
     "Master_title": "Doenças Nasais"
   },
@@ -818,7 +917,10 @@
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
-    "Master_title": "Doenças do Ouvido"
+    "Master_title": "Doenças do Ouvido",
+    "focusPoints": [
+      "Bulbo"
+    ]
   },
   {
     "title_jp": "中耳炎",
@@ -857,7 +959,10 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Glândulas linfáticas, imediações da parótida, ombros e rins.",
     "focusPoints": [
+      "Glândulas Linfáticas",
       "Glândulas linfáticas",
+      "Ombros",
+      "Rins",
       "imediações da parótida",
       "ombros",
       "rins"
@@ -901,10 +1006,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Parótida, região adjacente ao ouvido interno, região do bulbo raquidiano, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Ouvidos",
       "Parótida",
+      "Rins",
+      "ombros",
       "região adjacente ao ouvido interno",
       "região do bulbo raquidiano",
-      "ombros",
       "rins"
     ],
     "Master_title": "Doenças do Ouvido"
@@ -956,9 +1065,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações das glândulas linfáticas cervicais, região das amígdalas, ombros e rins.",
     "focusPoints": [
+      "Amígdalas",
+      "Glândulas Linfáticas",
       "Imediações das glândulas linfáticas cervicais",
-      "região das amígdalas",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "ombros",
+      "região das amígdalas",
       "rins"
     ],
     "Master_title": "Doenças Cerebrais e a Função dos Rins"
@@ -1002,21 +1116,25 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "* **Periodontite:** Local da dor de dente, ombros e rins.\n* **Nevralgia dentária:** Alto da cabeça, local da dor, ombros e rins.\n(Ademais, quando doem os dentes superiores, foca-se principalmente a região frontal; quando doem os inferiores, foca-se as amígdalas e as glândulas linfáticas cervicais).",
     "focusPoints": [
-      "**Periodontite",
-      "* Local da dor de dente",
-      "ombros",
-      "rins",
-      "**Nevralgia dentária",
+      "(Ademais",
       "* Alto da cabeça",
+      "* Local da dor de dente",
+      "**Nevralgia dentária",
+      "**Periodontite",
+      "Amígdalas",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Rins",
+      "as glândulas linfáticas cervicais)",
+      "foca-se as amígdalas",
+      "foca-se principalmente a região frontal",
       "local da dor",
       "ombros",
-      "rins",
-      "(Ademais",
       "quando doem os dentes superiores",
-      "foca-se principalmente a região frontal",
       "quando doem os inferiores",
-      "foca-se as amígdalas",
-      "as glândulas linfáticas cervicais)"
+      "rins"
     ],
     "Master_title": "Sobre as Doenças Dentárias"
   },
@@ -1057,8 +1175,14 @@
     "focus_context": "A parte afetada, ombros e, fundamentalmente, os rins.",
     "focusPoints": [
       "A parte afetada",
-      "ombros e",
+      "Bochechas",
+      "Face",
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "fundamentalmente",
+      "ombros e",
       "os rins"
     ],
     "Master_title": "Sobre as Doenças Dentárias"
@@ -1097,9 +1221,12 @@
     "focus_context": "Cabeça, estômago, região umbilical e rins.",
     "focusPoints": [
       "Cabeça",
+      "Estômago",
+      "Rins",
       "estômago",
       "região umbilical",
-      "rins"
+      "rins",
+      "Útero"
     ]
   },
   {
@@ -1135,6 +1262,9 @@
     "focus_context": "Cabeça, ombros e rins.",
     "focusPoints": [
       "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Rins",
       "ombros",
       "rins"
     ]
@@ -1172,9 +1302,11 @@
     "focus_context": "Ombros, rins, abdômen inferior e região inguinal.",
     "focusPoints": [
       "Ombros",
-      "rins",
+      "Rins",
       "abdômen inferior",
-      "região inguinal"
+      "região inguinal",
+      "rins",
+      "Útero"
     ],
     "Master_title": "Sobre as Doenças Ginecológicas"
   },
@@ -1211,7 +1343,9 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "Ombros, diafragma, região estomacal nas costas e rins.",
     "focusPoints": [
+      "Diafragma",
       "Ombros",
+      "Rins",
       "diafragma",
       "região estomacal nas costas",
       "rins"
@@ -1245,7 +1379,8 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "Locais com febre.",
     "focusPoints": [
-      "Locais com febre"
+      "Locais com febre",
+      "Pele"
     ],
     "Master_title": "Sobre as Doenças Infantis"
   },
@@ -1283,15 +1418,17 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "* Paralisia da perna: Rins, região inguinal e a parte afetada.\n* Paralisia do braço: Glândulas linfáticas cervicais, ombros, axilas e a parte afetada.",
     "focusPoints": [
-      "Paralisia da perna",
-      "Rins",
-      "região inguinal",
-      "a parte afetada",
-      "Paralisia do braço",
+      "Glândulas Linfáticas",
       "Glândulas linfáticas cervicais",
-      "ombros",
+      "Ombros",
+      "Paralisia da perna",
+      "Paralisia do braço",
+      "Pernas",
+      "Rins",
+      "a parte afetada",
       "axilas",
-      "a parte afetada"
+      "ombros",
+      "região inguinal"
     ],
     "Master_title": "Sobre as Doenças Infantis"
   },
@@ -1325,9 +1462,12 @@
     "focus_context": "Cabeça, ombros, rins e locais da erupção.",
     "focusPoints": [
       "Cabeça",
+      "Ombros",
+      "Pele",
+      "Rins",
+      "locais da erupção",
       "ombros",
-      "rins",
-      "locais da erupção"
+      "rins"
     ],
     "Master_title": "Sobre as Doenças Infantis"
   },
@@ -1365,7 +1505,11 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Bulbo raquidiano (lado direito), cérebro, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
+      "Frontal",
+      "Ombros",
+      "Rins",
       "cérebro",
       "ombros",
       "rins"
@@ -1409,18 +1553,25 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Região frontal, centro da cabeça, bulbo raquidiano, glândulas linfáticas, ombros e rins.\n*Nota: No Johrei, o sufrágio aos antepassados e outros espíritos é importante. Dependendo do caso, entoar a Oração Xintoísta (Amatsu-Norito - para espíritos animais) ou a Oração *Zengensanji* (para espíritos puros/divinos). Contudo, não se deve ministrar Johrei enquanto se entoam as orações.*",
     "focusPoints": [
-      "Região frontal",
-      "centro da cabeça",
-      "bulbo raquidiano",
-      "glândulas linfáticas",
-      "ombros",
-      "rins",
-      "Nota",
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
       "No Johrei",
-      "o sufrágio aos antepassados",
-      "outros espíritos é importante. Dependendo do caso",
+      "Nota",
+      "Occipital",
+      "Ombros",
+      "Região frontal",
+      "Rins",
+      "bulbo raquidiano",
+      "centro da cabeça",
       "entoar a Oração Xintoísta (Amatsu-Norito - para espíritos animais) ou a Oração *Zengensanji* (para espíritos puros/divinos). Contudo",
-      "não se deve ministrar Johrei enquanto se entoam as orações.*"
+      "glândulas linfáticas",
+      "não se deve ministrar Johrei enquanto se entoam as orações.*",
+      "o sufrágio aos antepassados",
+      "ombros",
+      "outros espíritos é importante. Dependendo do caso",
+      "rins"
     ],
     "Master_title": "Sobre as Doenças Mentais"
   },
@@ -1455,6 +1606,7 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Seguir os mesmos da doença mental (item anterior).",
     "focusPoints": [
+      "Bulbo",
       "Seguir os mesmos da doença mental (item anterior)"
     ],
     "Master_title": "Sobre as Doenças Mentais"

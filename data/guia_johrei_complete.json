@@ -55,6 +55,17 @@
       "johreivol01_02",
       "johreivol01_06",
       "johreivol01_04"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
     ]
   },
   {
@@ -84,6 +95,9 @@
       "johreivol01_06",
       "johreivol01_03",
       "johreivol01_04"
+    ],
+    "focusPoints": [
+      "Pescoço"
     ]
   },
   {
@@ -110,6 +124,15 @@
       "johreivol01_01",
       "johreivol01_05",
       "johreivol01_02"
+    ],
+    "focusPoints": [
+      "Face",
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ouvidos",
+      "Pele",
+      "Pernas"
     ]
   },
   {
@@ -136,6 +159,9 @@
       "johreivol01_06",
       "johreivol01_01",
       "johreivol01_02"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -179,6 +205,12 @@
       "johreivol01_03",
       "johreivol01_04",
       "johreivol01_06"
+    ],
+    "focusPoints": [
+      "Membros",
+      "Nariz",
+      "Olhos",
+      "Pele"
     ]
   },
   {
@@ -350,6 +382,26 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
+    ],
+    "focusPoints": [
+      "Amígdalas",
+      "Cabeça",
+      "Diafragma",
+      "Estômago",
+      "Frontal",
+      "Fígado",
+      "Glândula Parótida",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Rins"
     ]
   },
   {
@@ -412,6 +464,21 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pele",
+      "Pernas",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -453,6 +520,13 @@
       "johreivol02_07",
       "johreivol02_08",
       "johreivol02_01"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -492,6 +566,12 @@
       "johreivol02_06",
       "johreivol02_08",
       "johreivol02_01"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -524,6 +604,11 @@
       "johreivol02_07",
       "johreivol02_06",
       "johreivol02_09"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Pele"
     ]
   },
   {
@@ -544,6 +629,9 @@
       "johreivol02_04",
       "johreivol02_08",
       "johreivol02_05"
+    ],
+    "focusPoints": [
+      "Pele"
     ]
   },
   {
@@ -643,7 +731,10 @@
     "content_pt": "*Mioshieshu-shū, Edição 2, pág. 71*\n\nCurará muitas vezes melhor do que até agora. Sendo assim, como nos relatos de graças ouvidos agora, dizer que fez por uma hora, duas ou três horas, isso é um erro. Mesmo vós, se fizerdes por vinte ou trinta minutos, curará.",
     "tags": [],
     "categories": [],
-    "related_items": []
+    "related_items": [],
+    "focusPoints": [
+      "Ouvidos"
+    ]
   },
   {
     "title_jp": "3.力を抜くこと（御教え集一五号　五五頁）",
@@ -777,6 +868,9 @@
       "johreivol03_11",
       "johreivol03_12",
       "johreivol03_16"
+    ],
+    "focusPoints": [
+      "Mãos"
     ]
   },
   {
@@ -854,6 +948,17 @@
       "johreivol03_12",
       "johreivol03_01",
       "johreivol03_05"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Glândula Parótida",
+      "Membros",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Região Renal",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -970,6 +1075,11 @@
       "johreivol03_24",
       "johreivol03_01",
       "johreivol03_05"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -1049,6 +1159,9 @@
       "johreivol04_07",
       "johreivol04_04",
       "johreivol04_10"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -1082,6 +1195,10 @@
       "johreivol04_04",
       "johreivol04_08",
       "johreivol04_13"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago"
     ]
   },
   {
@@ -1112,6 +1229,9 @@
       "johreivol04_07",
       "johreivol04_13",
       "johreivol04_11"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -1149,6 +1269,12 @@
       "johreivol04_04",
       "johreivol04_13",
       "johreivol04_09"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Intestino",
+      "Mãos"
     ]
   },
   {
@@ -1208,6 +1334,11 @@
       "johreivol04_04",
       "johreivol04_11",
       "johreivol04_13"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pele",
+      "Rins"
     ]
   },
   {
@@ -1236,6 +1367,9 @@
       "johreivol04_05",
       "johreivol04_07",
       "johreivol04_10"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -1267,6 +1401,11 @@
       "johreivol04_08",
       "johreivol04_13",
       "johreivol04_12"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -1340,6 +1479,11 @@
       "johreivol04_05",
       "johreivol04_09",
       "johreivol04_13"
+    ],
+    "focusPoints": [
+      "Bochechas",
+      "Cabeça",
+      "Pele"
     ]
   },
   {
@@ -1367,6 +1511,10 @@
       "johreivol04_07",
       "johreivol04_04",
       "johreivol04_09"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago"
     ]
   },
   {
@@ -1394,6 +1542,9 @@
       "johreivol05_10",
       "johreivol05_08",
       "johreivol05_17"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -1426,6 +1577,10 @@
       "johreivol05_05",
       "johreivol05_23",
       "johreivol05_03"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Ombros"
     ]
   },
   {
@@ -1464,6 +1619,13 @@
       "johreivol05_04",
       "johreivol05_09",
       "johreivol05_12"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -1502,6 +1664,14 @@
       "johreivol05_05",
       "johreivol05_08",
       "johreivol05_10"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -1536,6 +1706,10 @@
       "johreivol05_08",
       "johreivol05_17",
       "johreivol05_03"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -1563,6 +1737,9 @@
       "johreivol05_02",
       "johreivol05_09",
       "johreivol05_11"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -1588,6 +1765,9 @@
       "johreivol05_04",
       "johreivol05_09",
       "johreivol05_02"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -1625,6 +1805,13 @@
       "johreivol05_10",
       "johreivol05_05",
       "johreivol05_12"
+    ],
+    "focusPoints": [
+      "Garganta",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -1661,6 +1848,15 @@
       "johreivol05_03",
       "johreivol05_17",
       "johreivol05_04"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Garganta",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -1704,6 +1900,13 @@
       "johreivol05_17",
       "johreivol05_03",
       "johreivol05_12"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -1732,6 +1935,9 @@
       "johreivol05_02",
       "johreivol05_03",
       "johreivol05_04"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -1775,6 +1981,10 @@
       "johreivol05_16",
       "johreivol05_24",
       "johreivol05_03"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta"
     ]
   },
   {
@@ -1848,6 +2058,18 @@
       "johreivol05_03",
       "johreivol05_08",
       "johreivol05_04"
+    ],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Bulbo",
+      "Cabeça",
+      "Garganta",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pleura",
+      "Rins"
     ]
   },
   {
@@ -1874,6 +2096,9 @@
       "johreivol05_12",
       "johreivol05_17",
       "johreivol05_18"
+    ],
+    "focusPoints": [
+      "Diafragma"
     ]
   },
   {
@@ -1901,6 +2126,9 @@
       "johreivol05_16",
       "johreivol05_18",
       "johreivol05_08"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -1939,6 +2167,10 @@
       "johreivol05_24",
       "johreivol05_10",
       "johreivol05_17"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Olhos"
     ]
   },
   {
@@ -1975,6 +2207,14 @@
       "johreivol05_03",
       "johreivol05_04",
       "johreivol05_09"
+    ],
+    "focusPoints": [
+      "Diafragma",
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Pleura",
+      "Região Renal"
     ]
   },
   {
@@ -2009,6 +2249,11 @@
       "johreivol05_12",
       "johreivol05_17",
       "johreivol05_03"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Rins"
     ]
   },
   {
@@ -2119,6 +2364,10 @@
       "johreivol05_17",
       "johreivol05_23",
       "johreivol05_08"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Rins"
     ]
   },
   {
@@ -2158,6 +2407,10 @@
       "johreivol05_24",
       "johreivol05_12",
       "johreivol05_22"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pleura"
     ]
   },
   {
@@ -2194,6 +2447,9 @@
       "johreivol05_16",
       "johreivol05_23",
       "johreivol05_08"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -2266,6 +2522,9 @@
       "johreivol06_20",
       "johreivol06_24",
       "johreivol06_26"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -2300,6 +2559,9 @@
       "johreivol06_26",
       "johreivol06_31",
       "johreivol06_06"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -2333,6 +2595,10 @@
       "johreivol06_31",
       "johreivol06_32",
       "johreivol06_05"
+    ],
+    "focusPoints": [
+      "Fígado",
+      "Olhos"
     ]
   },
   {
@@ -2394,6 +2660,12 @@
       "johreivol06_15",
       "johreivol06_02",
       "johreivol06_20"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -2434,6 +2706,13 @@
       "johreivol06_26",
       "johreivol06_27",
       "johreivol06_31"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros"
     ]
   },
   {
@@ -2479,6 +2758,10 @@
       "johreivol06_15",
       "johreivol06_20",
       "johreivol06_08"
+    ],
+    "focusPoints": [
+      "Garganta",
+      "Pés"
     ]
   },
   {
@@ -2511,6 +2794,9 @@
       "johreivol06_27",
       "johreivol06_12",
       "johreivol06_20"
+    ],
+    "focusPoints": [
+      "Rins"
     ]
   },
   {
@@ -2539,6 +2825,10 @@
       "johreivol06_24",
       "johreivol06_28",
       "johreivol06_29"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
     ]
   },
   {
@@ -2572,6 +2862,11 @@
       "johreivol06_15",
       "johreivol06_24",
       "johreivol06_29"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -2600,6 +2895,11 @@
       "johreivol06_06",
       "johreivol06_08",
       "johreivol06_22"
+    ],
+    "focusPoints": [
+      "Pernas",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -2635,6 +2935,10 @@
       "johreivol06_20",
       "johreivol06_32",
       "johreivol06_06"
+    ],
+    "focusPoints": [
+      "Pernas",
+      "Rins"
     ]
   },
   {
@@ -2665,6 +2969,10 @@
       "johreivol06_16",
       "johreivol06_26",
       "johreivol06_29"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -2698,6 +3006,10 @@
       "johreivol06_15",
       "johreivol06_24",
       "johreivol06_31"
+    ],
+    "focusPoints": [
+      "Fígado",
+      "Rins"
     ]
   },
   {
@@ -2735,6 +3047,14 @@
       "johreivol06_07",
       "johreivol06_20",
       "johreivol06_31"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Região Renal"
     ]
   },
   {
@@ -2793,6 +3113,11 @@
       "johreivol06_20",
       "johreivol06_02",
       "johreivol06_05"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -2827,6 +3152,9 @@
       "johreivol06_20",
       "johreivol06_15",
       "johreivol06_24"
+    ],
+    "focusPoints": [
+      "Pescoço"
     ]
   },
   {
@@ -2859,6 +3187,10 @@
       "johreivol06_26",
       "johreivol06_05",
       "johreivol06_06"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Rins"
     ]
   },
   {
@@ -2899,6 +3231,14 @@
       "johreivol06_31",
       "johreivol06_07",
       "johreivol06_15"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Intestino",
+      "Pele",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -2933,6 +3273,13 @@
       "johreivol06_19",
       "johreivol06_20",
       "johreivol06_07"
+    ],
+    "focusPoints": [
+      "Baixo Ventre",
+      "Cabeça",
+      "Pele",
+      "Rins",
+      "Útero"
     ]
   },
   {
@@ -2962,6 +3309,9 @@
       "johreivol06_32",
       "johreivol06_06",
       "johreivol06_11"
+    ],
+    "focusPoints": [
+      "Útero"
     ]
   },
   {
@@ -2987,6 +3337,10 @@
       "johreivol06_32",
       "johreivol06_02",
       "johreivol06_05"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pescoço"
     ]
   },
   {
@@ -3031,6 +3385,13 @@
       "johreivol06_15",
       "johreivol06_20",
       "johreivol06_27"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas"
     ]
   },
   {
@@ -3104,6 +3465,13 @@
       "johreivol06_05",
       "johreivol06_20",
       "johreivol06_29"
+    ],
+    "focusPoints": [
+      "Amígdalas",
+      "Bulbo",
+      "Cabeça",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -3138,6 +3506,13 @@
       "johreivol06_26",
       "johreivol06_15",
       "johreivol06_20"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pés"
     ]
   },
   {
@@ -3169,6 +3544,10 @@
       "johreivol06_12",
       "johreivol06_15",
       "johreivol06_24"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pernas"
     ]
   },
   {
@@ -3208,6 +3587,12 @@
       "johreivol06_07",
       "johreivol06_20",
       "johreivol06_31"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Pescoço",
+      "Útero"
     ]
   },
   {
@@ -3240,6 +3625,11 @@
       "johreivol06_15",
       "johreivol06_18",
       "johreivol06_20"
+    ],
+    "focusPoints": [
+      "Pernas",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -3278,6 +3668,10 @@
       "johreivol06_15",
       "johreivol06_26",
       "johreivol06_29"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pernas"
     ]
   },
   {
@@ -3319,6 +3713,12 @@
       "johreivol06_20",
       "johreivol06_26",
       "johreivol06_05"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Pescoço"
     ]
   },
   {
@@ -3345,6 +3745,9 @@
       "johreivol06_26",
       "johreivol06_02",
       "johreivol06_07"
+    ],
+    "focusPoints": [
+      "Pescoço"
     ]
   },
   {
@@ -3370,6 +3773,9 @@
       "johreivol06_20",
       "johreivol06_02",
       "johreivol06_05"
+    ],
+    "focusPoints": [
+      "Pescoço"
     ]
   },
   {
@@ -3396,6 +3802,10 @@
       "johreivol06_20",
       "johreivol06_27",
       "johreivol06_06"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -3424,6 +3834,10 @@
       "johreivol06_26",
       "johreivol06_01",
       "johreivol06_02"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -3459,6 +3873,13 @@
       "johreivol07_30",
       "johreivol07_23",
       "johreivol07_02"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Pescoço",
+      "Útero"
     ]
   },
   {
@@ -3492,6 +3913,13 @@
       "johreivol07_24",
       "johreivol07_32",
       "johreivol07_33"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Região Renal",
+      "Rins",
+      "Virilha",
+      "Útero"
     ]
   },
   {
@@ -3518,6 +3946,9 @@
       "johreivol07_25",
       "johreivol07_27",
       "johreivol07_30"
+    ],
+    "focusPoints": [
+      "Útero"
     ]
   },
   {
@@ -3556,7 +3987,10 @@
     "content_pt": "_(*Chijō Tengoku* nº 15, pág. 10)_\n\n**Interlocutor:** Segundo o relato de um médico, ao incisar um \"mioma extrauterino\", o tamanho do mioma era o de uma criança de três meses; ao abri-lo, saíram de dentro lanugem (pelos) e algo semelhante a presas. Que significado espiritual isto terá?\n\n**Meishu-Sama:** Isso é possível. É uma gravidez ectópica (fora do útero), mas não é uma criança humana; é a reencarnação de um pequeno animal, como um cão ou gato. Na vida anterior, a pessoa amou esse animal como se fosse o seu próprio filho e, por esse vínculo, ele reencarnou, o que impede uma gravidez normal. Se fosse uma criança humana, não haveria presas nem pelos.",
     "tags": [],
     "categories": [],
-    "related_items": []
+    "related_items": [],
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "７、人工妊娠に関して（御垂示録二二号　一八頁）",
@@ -3611,6 +4045,11 @@
       "johreivol07_33",
       "johreivol07_32",
       "johreivol07_35"
+    ],
+    "focusPoints": [
+      "Pele",
+      "Região Renal",
+      "Útero"
     ]
   },
   {
@@ -3634,6 +4073,12 @@
       "johreivol07_01",
       "johreivol07_23",
       "johreivol07_24"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos",
+      "Útero"
     ]
   },
   {
@@ -3660,6 +4105,10 @@
       "johreivol07_14",
       "johreivol07_26",
       "johreivol07_27"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Útero"
     ]
   },
   {
@@ -3709,6 +4158,9 @@
       "johreivol07_33",
       "johreivol07_10",
       "johreivol07_12"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -3761,6 +4213,9 @@
     ],
     "related_items": [
       "johreivol07_23"
+    ],
+    "focusPoints": [
+      "Pescoço"
     ]
   },
   {
@@ -3801,6 +4256,13 @@
       "johreivol07_01",
       "johreivol07_30",
       "johreivol07_03"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Olhos",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -3826,7 +4288,11 @@
     "categories": [
       "partes_do_corpo"
     ],
-    "related_items": []
+    "related_items": [],
+    "focusPoints": [
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "title_jp": "４、産後に留意すべき事項に関して（御教え集五号　三四頁）",
@@ -3865,6 +4331,11 @@
       "johreivol07_27",
       "johreivol07_30",
       "johreivol07_02"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pernas"
     ]
   },
   {
@@ -3903,6 +4374,13 @@
       "johreivol07_23",
       "johreivol07_30",
       "johreivol07_02"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Virilha"
     ]
   },
   {
@@ -3928,6 +4406,9 @@
       "johreivol07_36",
       "johreivol07_02",
       "johreivol07_10"
+    ],
+    "focusPoints": [
+      "Pernas"
     ]
   },
   {
@@ -3954,6 +4435,9 @@
       "johreivol07_30",
       "johreivol07_33",
       "johreivol07_01"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -3995,6 +4479,12 @@
       "johreivol07_02",
       "johreivol07_30",
       "johreivol07_23"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Olhos",
+      "Ombros"
     ]
   },
   {
@@ -4026,6 +4516,9 @@
       "johreivol07_10",
       "johreivol07_13",
       "johreivol07_14"
+    ],
+    "focusPoints": [
+      "Útero"
     ]
   },
   {
@@ -4064,6 +4557,14 @@
       "johreivol07_24",
       "johreivol07_27",
       "johreivol07_32"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Rins",
+      "Útero"
     ]
   },
   {
@@ -4114,6 +4615,10 @@
       "johreivol07_27",
       "johreivol07_01",
       "johreivol07_24"
+    ],
+    "focusPoints": [
+      "Rins",
+      "Útero"
     ]
   },
   {
@@ -4145,6 +4650,13 @@
       "johreivol07_10",
       "johreivol07_32",
       "johreivol07_36"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Mãos",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -4171,6 +4683,9 @@
       "johreivol07_32",
       "johreivol07_03",
       "johreivol07_10"
+    ],
+    "focusPoints": [
+      "Região Renal"
     ]
   },
   {
@@ -4199,6 +4714,9 @@
       "johreivol07_30",
       "johreivol07_33",
       "johreivol07_36"
+    ],
+    "focusPoints": [
+      "Rins"
     ]
   },
   {
@@ -4230,6 +4748,9 @@
       "johreivol07_33",
       "johreivol07_02",
       "johreivol07_25"
+    ],
+    "focusPoints": [
+      "Rins"
     ]
   },
   {
@@ -4257,6 +4778,9 @@
       "johreivol08_06",
       "johreivol08_14",
       "johreivol08_15"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -4287,6 +4811,9 @@
       "johreivol08_11",
       "johreivol08_15",
       "johreivol08_20"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -4320,6 +4847,9 @@
       "johreivol08_05",
       "johreivol08_06",
       "johreivol08_08"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -4347,6 +4877,10 @@
       "johreivol08_49",
       "johreivol08_02",
       "johreivol08_05"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pescoço"
     ]
   },
   {
@@ -4378,6 +4912,10 @@
       "johreivol08_20",
       "johreivol08_23",
       "johreivol08_03"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Olhos"
     ]
   },
   {
@@ -4416,6 +4954,10 @@
       "johreivol08_44",
       "johreivol08_11",
       "johreivol08_14"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
     ]
   },
   {
@@ -4442,6 +4984,9 @@
       "johreivol08_15",
       "johreivol08_18",
       "johreivol08_20"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -4481,6 +5026,12 @@
       "johreivol08_44",
       "johreivol08_49",
       "johreivol08_14"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Peritônio",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -4548,6 +5099,10 @@
       "johreivol08_19",
       "johreivol08_20",
       "johreivol08_46"
+    ],
+    "focusPoints": [
+      "Olhos",
+      "Rins"
     ]
   },
   {
@@ -4589,6 +5144,13 @@
       "johreivol08_49",
       "johreivol08_05",
       "johreivol08_06"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Occipital",
+      "Pele",
+      "Pescoço"
     ]
   },
   {
@@ -4616,6 +5178,11 @@
       "johreivol08_11",
       "johreivol08_17",
       "johreivol08_18"
+    ],
+    "focusPoints": [
+      "Membros",
+      "Olhos",
+      "Rins"
     ]
   },
   {
@@ -4653,6 +5220,10 @@
       "johreivol08_14",
       "johreivol08_15",
       "johreivol08_02"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Pernas"
     ]
   },
   {
@@ -4691,6 +5262,10 @@
       "johreivol08_06",
       "johreivol08_08",
       "johreivol08_44"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Fígado"
     ]
   },
   {
@@ -4732,6 +5307,11 @@
       "johreivol08_18",
       "johreivol08_44",
       "johreivol08_03"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Ombros"
     ]
   },
   {
@@ -4835,6 +5415,14 @@
       "johreivol08_44",
       "johreivol08_08",
       "johreivol08_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas",
+      "Pleura",
+      "Rins"
     ]
   },
   {
@@ -4874,6 +5462,14 @@
       "johreivol08_46",
       "johreivol08_49",
       "johreivol08_08"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Olhos",
+      "Pele",
+      "Pernas",
+      "Rins"
     ]
   },
   {
@@ -4908,6 +5504,10 @@
       "johreivol08_05",
       "johreivol08_11",
       "johreivol08_15"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Intestino"
     ]
   },
   {
@@ -4944,6 +5544,9 @@
       "johreivol08_36",
       "johreivol08_06",
       "johreivol08_08"
+    ],
+    "focusPoints": [
+      "Occipital"
     ]
   },
   {
@@ -4973,6 +5576,9 @@
       "johreivol08_18",
       "johreivol08_19",
       "johreivol08_44"
+    ],
+    "focusPoints": [
+      "Região Renal"
     ]
   },
   {
@@ -5005,6 +5611,9 @@
       "johreivol08_06",
       "johreivol08_15",
       "johreivol08_20"
+    ],
+    "focusPoints": [
+      "Ombros"
     ]
   },
   {
@@ -5038,6 +5647,9 @@
       "johreivol08_25",
       "johreivol08_49",
       "johreivol08_02"
+    ],
+    "focusPoints": [
+      "Rins"
     ]
   },
   {
@@ -5070,6 +5682,10 @@
       "johreivol08_36",
       "johreivol08_49",
       "johreivol08_06"
+    ],
+    "focusPoints": [
+      "Intestino",
+      "Rins"
     ]
   },
   {
@@ -5134,6 +5750,11 @@
       "johreivol08_11",
       "johreivol08_18",
       "johreivol08_23"
+    ],
+    "focusPoints": [
+      "Fígado",
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -5168,6 +5789,13 @@
       "johreivol08_18",
       "johreivol08_19",
       "johreivol08_08"
+    ],
+    "focusPoints": [
+      "Intestino",
+      "Pele",
+      "Peritônio",
+      "Rins",
+      "Virilha"
     ]
   },
   {
@@ -5217,6 +5845,9 @@
       "johreivol08_32",
       "johreivol08_33",
       "johreivol08_34"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -5245,6 +5876,9 @@
       "johreivol08_06",
       "johreivol08_14",
       "johreivol08_21"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -5279,6 +5913,12 @@
       "johreivol08_33",
       "johreivol08_06",
       "johreivol08_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Peritônio",
+      "Pescoço"
     ]
   },
   {
@@ -5312,6 +5952,12 @@
       "johreivol08_08",
       "johreivol08_14",
       "johreivol08_15"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Occipital"
     ]
   },
   {
@@ -5344,6 +5990,12 @@
       "johreivol08_06",
       "johreivol08_15",
       "johreivol08_18"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Mãos",
+      "Occipital"
     ]
   },
   {
@@ -5378,6 +6030,10 @@
       "johreivol08_08",
       "johreivol08_11",
       "johreivol08_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
     ]
   },
   {
@@ -5413,6 +6069,11 @@
       "johreivol08_19",
       "johreivol08_21",
       "johreivol08_44"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Peritônio"
     ]
   },
   {
@@ -5444,6 +6105,10 @@
       "johreivol08_36",
       "johreivol08_19",
       "johreivol08_20"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Intestino"
     ]
   },
   {
@@ -5468,6 +6133,9 @@
       "johreivol08_08",
       "johreivol08_10",
       "johreivol08_16"
+    ],
+    "focusPoints": [
+      "Intestino"
     ]
   },
   {
@@ -5526,6 +6194,9 @@
       "johreivol08_14",
       "johreivol08_18",
       "johreivol08_19"
+    ],
+    "focusPoints": [
+      "Fígado"
     ]
   },
   {
@@ -5553,6 +6224,10 @@
       "johreivol08_24",
       "johreivol08_25",
       "johreivol08_28"
+    ],
+    "focusPoints": [
+      "Região Renal",
+      "Rins"
     ]
   },
   {
@@ -5576,6 +6251,9 @@
       "johreivol08_05",
       "johreivol08_06",
       "johreivol08_11"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -5608,6 +6286,9 @@
       "johreivol08_15",
       "johreivol08_18",
       "johreivol08_23"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -5648,6 +6329,15 @@
       "johreivol08_49",
       "johreivol08_06",
       "johreivol08_08"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Occipital",
+      "Pele",
+      "Pernas"
     ]
   },
   {
@@ -5673,6 +6363,9 @@
       "johreivol08_23",
       "johreivol08_49",
       "johreivol08_02"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -5709,6 +6402,12 @@
       "johreivol08_14",
       "johreivol08_19",
       "johreivol08_44"
+    ],
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Garganta",
+      "Rins"
     ]
   },
   {
@@ -5736,6 +6435,9 @@
       "johreivol08_15",
       "johreivol08_18",
       "johreivol08_20"
+    ],
+    "focusPoints": [
+      "Estômago"
     ]
   },
   {
@@ -5767,6 +6469,11 @@
       "johreivol08_36",
       "johreivol08_44",
       "johreivol08_49"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Occipital"
     ]
   },
   {
@@ -5807,6 +6514,14 @@
       "johreivol08_44",
       "johreivol08_08",
       "johreivol08_11"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Occipital",
+      "Ombros",
+      "Pescoço",
+      "Rins"
     ]
   },
   {
@@ -5831,6 +6546,10 @@
       "johreivol09_31",
       "johreivol09_33",
       "johreivol09_41"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros"
     ]
   },
   {
@@ -5861,6 +6580,14 @@
       "johreivol09_14",
       "johreivol09_17",
       "johreivol09_24"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -5889,6 +6616,9 @@
       "johreivol09_31",
       "johreivol09_04",
       "johreivol09_09"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -5929,6 +6659,11 @@
       "johreivol09_17",
       "johreivol09_25",
       "johreivol09_31"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Estômago",
+      "Occipital"
     ]
   },
   {
@@ -5970,6 +6705,13 @@
       "johreivol09_26",
       "johreivol09_47",
       "johreivol09_23"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital"
     ]
   },
   {
@@ -6000,6 +6742,10 @@
       "johreivol09_48",
       "johreivol09_02",
       "johreivol09_04"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
     ]
   },
   {
@@ -6030,6 +6776,13 @@
       "johreivol09_29",
       "johreivol09_31",
       "johreivol09_41"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -6052,6 +6805,9 @@
       "johreivol09_03",
       "johreivol09_04",
       "johreivol09_05"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6078,6 +6834,10 @@
       "johreivol09_17",
       "johreivol09_20",
       "johreivol09_22"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -6102,6 +6862,9 @@
       "johreivol09_25",
       "johreivol09_30",
       "johreivol09_42"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6125,6 +6888,9 @@
       "johreivol09_05",
       "johreivol09_06",
       "johreivol09_07"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6151,6 +6917,9 @@
       "johreivol09_37",
       "johreivol09_39",
       "johreivol09_16"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6177,6 +6946,9 @@
       "johreivol09_41",
       "johreivol09_47",
       "johreivol09_05"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6209,6 +6981,12 @@
       "johreivol09_41",
       "johreivol09_02",
       "johreivol09_04"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -6237,6 +7015,9 @@
       "johreivol09_03",
       "johreivol09_09",
       "johreivol09_14"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6265,6 +7046,10 @@
       "johreivol09_05",
       "johreivol09_07",
       "johreivol09_12"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos"
     ]
   },
   {
@@ -6301,6 +7086,11 @@
       "johreivol09_05",
       "johreivol09_24",
       "johreivol09_26"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Occipital",
+      "Pescoço"
     ]
   },
   {
@@ -6325,6 +7115,9 @@
       "johreivol09_33",
       "johreivol09_35",
       "johreivol09_37"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6349,6 +7142,9 @@
       "johreivol09_13",
       "johreivol09_17",
       "johreivol09_24"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6385,6 +7181,13 @@
       "johreivol09_41",
       "johreivol09_47",
       "johreivol09_39"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Pernas",
+      "Pés"
     ]
   },
   {
@@ -6415,6 +7218,10 @@
       "johreivol09_17",
       "johreivol09_22",
       "johreivol09_23"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -6445,6 +7252,10 @@
       "johreivol09_25",
       "johreivol09_29",
       "johreivol09_30"
+    ],
+    "focusPoints": [
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -6479,6 +7290,11 @@
       "johreivol09_26",
       "johreivol09_20",
       "johreivol09_21"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal"
     ]
   },
   {
@@ -6513,6 +7329,14 @@
       "johreivol09_28",
       "johreivol09_47",
       "johreivol09_02"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -6556,6 +7380,14 @@
       "johreivol09_05",
       "johreivol09_17",
       "johreivol09_02"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ouvidos",
+      "Pernas"
     ]
   },
   {
@@ -6592,6 +7424,12 @@
       "johreivol09_25",
       "johreivol09_47",
       "johreivol09_24"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
     ]
   },
   {
@@ -6622,6 +7460,12 @@
       "johreivol09_17",
       "johreivol09_25",
       "johreivol09_26"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Mãos",
+      "Pés"
     ]
   },
   {
@@ -6655,6 +7499,13 @@
       "johreivol09_29",
       "johreivol09_30",
       "johreivol09_31"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Occipital",
+      "Ombros",
+      "Pele",
+      "Pescoço"
     ]
   },
   {
@@ -6689,6 +7540,9 @@
       "johreivol09_33",
       "johreivol09_47",
       "johreivol09_26"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -6721,6 +7575,10 @@
       "johreivol09_29",
       "johreivol09_31",
       "johreivol09_39"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital"
     ]
   },
   {
@@ -6763,6 +7621,15 @@
       "johreivol09_20",
       "johreivol09_47",
       "johreivol09_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Virilha"
     ]
   },
   {
@@ -6789,6 +7656,10 @@
       "johreivol09_29",
       "johreivol09_30",
       "johreivol09_28"
+    ],
+    "focusPoints": [
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -6820,6 +7691,11 @@
       "johreivol09_28",
       "johreivol09_46",
       "johreivol09_04"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal"
     ]
   },
   {
@@ -6850,6 +7726,11 @@
       "johreivol09_17",
       "johreivol09_24",
       "johreivol09_28"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Pescoço"
     ]
   },
   {
@@ -6877,6 +7758,10 @@
       "johreivol09_28",
       "johreivol09_29",
       "johreivol09_30"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -6903,6 +7788,10 @@
       "johreivol09_39",
       "johreivol09_12",
       "johreivol09_29"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
     ]
   },
   {
@@ -6958,6 +7847,10 @@
       "johreivol09_17",
       "johreivol09_20",
       "johreivol09_26"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -6992,6 +7885,10 @@
       "johreivol09_05",
       "johreivol09_22",
       "johreivol09_29"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos"
     ]
   },
   {
@@ -7057,6 +7954,12 @@
       "johreivol09_14",
       "johreivol09_20",
       "johreivol09_46"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
+      "Pés"
     ]
   },
   {
@@ -7088,6 +7991,11 @@
       "johreivol09_30",
       "johreivol09_31",
       "johreivol09_33"
+    ],
+    "focusPoints": [
+      "Bochechas",
+      "Cabeça",
+      "Maxilar"
     ]
   },
   {
@@ -7103,7 +8011,10 @@
     "categories": [
       "partes_do_corpo"
     ],
-    "related_items": []
+    "related_items": [],
+    "focusPoints": [
+      "Nariz"
+    ]
   },
   {
     "title_jp": "（37）二歳の時河に落ち、現在耳は聞えるが、物を言う事が出来ない男（御教え）",
@@ -7127,6 +8038,10 @@
       "johreivol09_04",
       "johreivol09_05",
       "johreivol09_10"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
     ]
   },
   {
@@ -7155,6 +8070,11 @@
       "johreivol09_02",
       "johreivol09_22",
       "johreivol09_28"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -7188,6 +8108,11 @@
       "johreivol09_20",
       "johreivol09_29",
       "johreivol09_33"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Ombros"
     ]
   },
   {
@@ -7228,6 +8153,12 @@
       "johreivol09_41",
       "johreivol09_14",
       "johreivol09_17"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Pescoço"
     ]
   },
   {
@@ -7260,6 +8191,10 @@
       "johreivol09_25",
       "johreivol09_26",
       "johreivol09_39"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pescoço"
     ]
   },
   {
@@ -7284,6 +8219,11 @@
       "johreivol09_09",
       "johreivol09_14",
       "johreivol09_17"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Pernas",
+      "Pescoço"
     ]
   },
   {
@@ -7323,6 +8263,13 @@
       "johreivol10_38",
       "johreivol10_10",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros"
     ]
   },
   {
@@ -7365,6 +8312,9 @@
       "johreivol10_21",
       "johreivol10_25",
       "johreivol10_34"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -7392,6 +8342,9 @@
       "johreivol10_01",
       "johreivol10_05",
       "johreivol10_13"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -7421,6 +8374,10 @@
       "johreivol10_04",
       "johreivol10_13",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
     ]
   },
   {
@@ -7447,6 +8404,11 @@
       "johreivol10_10",
       "johreivol10_14",
       "johreivol10_15"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Olhos"
     ]
   },
   {
@@ -7476,6 +8438,10 @@
       "johreivol10_01",
       "johreivol10_05",
       "johreivol10_06"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
     ]
   },
   {
@@ -7508,6 +8474,12 @@
       "johreivol10_25",
       "johreivol10_29",
       "johreivol10_35"
+    ],
+    "focusPoints": [
+      "Estômago",
+      "Occipital",
+      "Olhos",
+      "Útero"
     ]
   },
   {
@@ -7541,6 +8513,11 @@
       "johreivol10_15",
       "johreivol10_21",
       "johreivol10_34"
+    ],
+    "focusPoints": [
+      "Olhos",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -7572,6 +8549,13 @@
       "johreivol10_16",
       "johreivol10_09",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -7605,6 +8589,10 @@
       "johreivol10_01",
       "johreivol10_09",
       "johreivol10_13"
+    ],
+    "focusPoints": [
+      "Face",
+      "Olhos"
     ]
   },
   {
@@ -7631,6 +8619,10 @@
       "johreivol10_07",
       "johreivol10_13",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
     ]
   },
   {
@@ -7667,6 +8659,13 @@
       "johreivol10_01",
       "johreivol10_25",
       "johreivol10_55"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Olhos",
+      "Pescoço"
     ]
   },
   {
@@ -7705,6 +8704,12 @@
       "johreivol10_11",
       "johreivol10_13",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Membros",
+      "Occipital",
+      "Olhos"
     ]
   },
   {
@@ -7738,6 +8743,13 @@
       "johreivol10_01",
       "johreivol10_10",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
     ]
   },
   {
@@ -7776,6 +8788,9 @@
       "johreivol10_14",
       "johreivol10_25",
       "johreivol10_10"
+    ],
+    "focusPoints": [
+      "Occipital"
     ]
   },
   {
@@ -7822,6 +8837,10 @@
       "johreivol10_10",
       "johreivol10_14",
       "johreivol10_15"
+    ],
+    "focusPoints": [
+      "Occipital",
+      "Olhos"
     ]
   },
   {
@@ -7851,6 +8870,12 @@
       "johreivol10_35",
       "johreivol10_01",
       "johreivol10_08"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Occipital",
+      "Olhos"
     ]
   },
   {
@@ -7875,6 +8900,9 @@
       "johreivol10_16",
       "johreivol10_25",
       "johreivol10_26"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -7903,6 +8931,10 @@
       "johreivol10_14",
       "johreivol10_25",
       "johreivol10_34"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -7932,6 +8964,10 @@
       "johreivol10_16",
       "johreivol10_34",
       "johreivol10_54"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos"
     ]
   },
   {
@@ -7957,6 +8993,9 @@
       "johreivol10_09",
       "johreivol10_14",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -7983,6 +9022,9 @@
       "johreivol10_06",
       "johreivol10_09",
       "johreivol10_10"
+    ],
+    "focusPoints": [
+      "Occipital"
     ]
   },
   {
@@ -8021,6 +9063,14 @@
       "johreivol10_10",
       "johreivol10_38",
       "johreivol10_55"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
     ]
   },
   {
@@ -8047,6 +9097,11 @@
       "johreivol10_25",
       "johreivol10_09",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros"
     ]
   },
   {
@@ -8074,6 +9129,9 @@
       "johreivol10_25",
       "johreivol10_28",
       "johreivol10_34"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -8101,6 +9159,11 @@
       "johreivol10_55",
       "johreivol10_01",
       "johreivol10_05"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos",
+      "Pescoço"
     ]
   },
   {
@@ -8129,6 +9192,11 @@
       "johreivol10_14",
       "johreivol10_01",
       "johreivol10_09"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos"
     ]
   },
   {
@@ -8181,6 +9249,10 @@
       "johreivol10_07",
       "johreivol10_12",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
     ]
   },
   {
@@ -8204,6 +9276,9 @@
       "johreivol10_46",
       "johreivol10_52",
       "johreivol10_56"
+    ],
+    "focusPoints": [
+      "Olhos"
     ]
   },
   {
@@ -8231,6 +9306,12 @@
       "johreivol10_13",
       "johreivol10_14",
       "johreivol10_15"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Occipital",
+      "Olhos"
     ]
   },
   {
@@ -8262,6 +9343,12 @@
       "johreivol10_01",
       "johreivol10_09",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Olhos",
+      "Ombros",
+      "Região Renal"
     ]
   },
   {
@@ -8291,6 +9378,9 @@
       "johreivol10_21",
       "johreivol10_25",
       "johreivol10_38"
+    ],
+    "focusPoints": [
+      "Occipital"
     ]
   },
   {
@@ -8324,6 +9414,12 @@
       "johreivol10_41",
       "johreivol10_38",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos",
+      "Ouvidos",
+      "Pescoço"
     ]
   },
   {
@@ -8351,6 +9447,9 @@
       "johreivol10_11",
       "johreivol10_14",
       "johreivol10_25"
+    ],
+    "focusPoints": [
+      "Ouvidos"
     ]
   },
   {
@@ -8401,6 +9500,15 @@
       "johreivol10_57",
       "johreivol10_01",
       "johreivol10_13"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Nariz",
+      "Occipital",
+      "Pernas"
     ]
   },
   {
@@ -8439,6 +9547,11 @@
       "johreivol10_01",
       "johreivol10_14",
       "johreivol10_41"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital"
     ]
   },
   {
@@ -8469,6 +9582,12 @@
       "johreivol10_58",
       "johreivol10_03",
       "johreivol10_09"
+    ],
+    "focusPoints": [
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Ouvidos",
+      "Rins"
     ]
   },
   {
@@ -8507,6 +9626,13 @@
       "johreivol10_25",
       "johreivol10_36",
       "johreivol10_39"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Maxilar",
+      "Ouvidos"
     ]
   },
   {
@@ -8536,6 +9662,10 @@
       "johreivol10_38",
       "johreivol10_10",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Nariz",
+      "Occipital"
     ]
   },
   {
@@ -8560,6 +9690,10 @@
       "johreivol10_47",
       "johreivol10_01",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
     ]
   },
   {
@@ -8591,6 +9725,13 @@
       "johreivol10_39",
       "johreivol10_61",
       "johreivol10_13"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Face",
+      "Frontal",
+      "Nariz",
+      "Occipital"
     ]
   },
   {
@@ -8623,6 +9764,10 @@
       "johreivol10_55",
       "johreivol10_39",
       "johreivol10_49"
+    ],
+    "focusPoints": [
+      "Mãos",
+      "Nariz"
     ]
   },
   {
@@ -8656,6 +9801,13 @@
       "johreivol10_14",
       "johreivol10_39",
       "johreivol10_57"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Nariz",
+      "Pés"
     ]
   },
   {
@@ -8685,6 +9837,12 @@
       "johreivol10_13",
       "johreivol10_14",
       "johreivol10_25"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Nariz",
+      "Olhos"
     ]
   },
   {
@@ -8713,6 +9871,10 @@
       "johreivol10_38",
       "johreivol10_41",
       "johreivol10_47"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Nariz"
     ]
   },
   {
@@ -8742,6 +9904,10 @@
       "johreivol10_54",
       "johreivol10_41",
       "johreivol10_42"
+    ],
+    "focusPoints": [
+      "Garganta",
+      "Nariz"
     ]
   },
   {
@@ -8767,6 +9933,9 @@
       "johreivol10_39",
       "johreivol10_46",
       "johreivol10_54"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -8823,6 +9992,9 @@
       "johreivol10_39",
       "johreivol10_46",
       "johreivol10_51"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -8884,6 +10056,9 @@
       "johreivol10_55",
       "johreivol10_34",
       "johreivol10_01"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -8921,6 +10096,10 @@
       "johreivol10_36",
       "johreivol10_38",
       "johreivol10_41"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
     ]
   },
   {
@@ -8949,6 +10128,11 @@
       "johreivol10_39",
       "johreivol10_46",
       "johreivol10_52"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Nariz"
     ]
   },
   {
@@ -8988,6 +10172,12 @@
       "johreivol10_58",
       "johreivol10_01",
       "johreivol10_16"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Estômago",
+      "Garganta"
     ]
   },
   {
@@ -9027,6 +10217,11 @@
       "johreivol10_09",
       "johreivol10_39",
       "johreivol10_54"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Ombros"
     ]
   },
   {
@@ -9080,6 +10275,9 @@
       "johreivol10_01",
       "johreivol10_11",
       "johreivol10_14"
+    ],
+    "focusPoints": [
+      "Garganta"
     ]
   },
   {
@@ -9116,6 +10314,11 @@
       "johreivol10_25",
       "johreivol10_44",
       "johreivol10_11"
+    ],
+    "focusPoints": [
+      "Maxilar",
+      "Nariz",
+      "Olhos"
     ]
   },
   {
@@ -9175,6 +10378,9 @@
       "johreivol10_25",
       "johreivol10_54",
       "johreivol10_09"
+    ],
+    "focusPoints": [
+      "Membros"
     ]
   },
   {
@@ -9229,6 +10435,10 @@
       "johreivol10_38",
       "johreivol10_39",
       "johreivol10_54"
+    ],
+    "focusPoints": [
+      "Cabeça",
+      "Occipital"
     ]
   },
   {
@@ -9256,6 +10466,9 @@
       "johreivol10_15",
       "johreivol10_25",
       "johreivol10_44"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -9308,6 +10521,9 @@
       "johreivol10_09",
       "johreivol10_25",
       "johreivol10_39"
+    ],
+    "focusPoints": [
+      "Rins"
     ]
   },
   {
@@ -9333,6 +10549,9 @@
       "johreivol10_16",
       "johreivol10_21",
       "johreivol10_25"
+    ],
+    "focusPoints": [
+      "Cabeça"
     ]
   },
   {
@@ -9429,7 +10648,15 @@
       "pontosfocaisvol01_22"
     ],
     "category_jp": "脳疾患と腎臓の働き",
-    "category_pt": "Doenças Cerebrais e o Funcionamento Renal"
+    "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Face",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "頭痛",
@@ -9474,10 +10701,17 @@
     "focus_context": "Alto da cabeça (bregma), região occipital, parótidas, glândulas linfáticas cervicais, ombros e rins.",
     "focusPoints": [
       "Alto da cabeça (bregma)",
-      "região occipital",
-      "parótidas",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Occipital",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "glândulas linfáticas cervicais",
       "ombros",
+      "parótidas",
+      "região occipital",
       "rins"
     ]
   },
@@ -9519,10 +10753,17 @@
     "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
     "focus_context": "Bulbo raquidiano (lado direito), glândulas linfáticas cervicais, região frontal, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "glândulas linfáticas cervicais",
-      "região frontal",
       "ombros",
+      "região frontal",
       "rins"
     ]
   },
@@ -9564,10 +10805,17 @@
     "focus_context": "Alto da cabeça, região frontal, região occipital, pescoço, ombros e rins.",
     "focusPoints": [
       "Alto da cabeça",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Rins",
+      "ombros",
+      "pescoço",
       "região frontal",
       "região occipital",
-      "pescoço",
-      "ombros",
       "rins"
     ]
   },
@@ -9619,20 +10867,27 @@
     "focus_context": "Alto da cabeça, região occipital, medula cervical, bulbo raquidiano, cerebelo, ombros, rins e a parte afetada.\n* Caso o braço não se mova: Ombros e glândulas linfáticas (na axila/raiz do braço).\n* Caso a perna não se mova: Rins, região glútea e região inguinal.",
     "focusPoints": [
       "Alto da cabeça",
-      "região occipital",
-      "medula cervical",
+      "Bulbo",
+      "Cabeça",
+      "Caso a perna não se mova",
+      "Caso o braço não se mova",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Ouvidos",
+      "Rins",
+      "a parte afetada",
       "bulbo raquidiano",
       "cerebelo",
-      "ombros",
-      "rins",
-      "a parte afetada",
-      "Caso o braço não se mova",
-      "Ombros",
       "glândulas linfáticas (na axila/raiz do braço)",
-      "Caso a perna não se mova",
-      "Rins",
+      "medula cervical",
+      "ombros",
       "região glútea",
-      "região inguinal"
+      "região inguinal",
+      "região occipital",
+      "rins"
     ]
   },
   {
@@ -9684,21 +10939,28 @@
     "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
     "focus_context": "* **Paralisia:** Alto da cabeça, região occipital, bulbo raquidiano, lateral do pescoço, ombros, rins e parte afetada.\n* **Paralisia Inversa:** Nuca (atrás e abaixo da orelha), ombros, raiz do braço, rins e parte afetada.",
     "focusPoints": [
-      "**Paralisia",
       "* Alto da cabeça",
-      "região occipital",
+      "* Nuca (atrás",
+      "**Paralisia",
+      "**Paralisia Inversa",
+      "Bulbo",
+      "Cabeça",
+      "Glândulas Linfáticas",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço",
+      "Pés",
+      "Rins",
+      "abaixo da orelha)",
       "bulbo raquidiano",
       "lateral do pescoço",
       "ombros",
-      "rins",
       "parte afetada",
-      "**Paralisia Inversa",
-      "* Nuca (atrás",
-      "abaixo da orelha)",
-      "ombros",
       "raiz do braço",
-      "rins",
-      "parte afetada"
+      "região occipital",
+      "rins"
     ]
   },
   {
@@ -9744,6 +11006,9 @@
     "focus_context": "Ao redor do pescoço e ombros.",
     "focusPoints": [
       "Ao redor do pescoço",
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
       "ombros"
     ]
   },
@@ -9775,7 +11040,15 @@
       "pontosfocaisvol01_03"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "focusPoints": [
+      "Cabeça",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "近視",
@@ -9814,12 +11087,18 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, imediações do bulbo raquidiano, ombros, entre as escápulas e a coluna vertebral, e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região occipital",
-      "imediações do bulbo raquidiano",
-      "ombros",
-      "entre as escápulas",
+      "Rins",
       "a coluna vertebral",
-      "e rins"
+      "e rins",
+      "entre as escápulas",
+      "imediações do bulbo raquidiano",
+      "ombros"
     ]
   },
   {
@@ -9851,6 +11130,8 @@
     "focus_context": "Cabeça, ombros e rins.",
     "focusPoints": [
       "Cabeça",
+      "Ombros",
+      "Rins",
       "ombros",
       "rins"
     ]
@@ -9891,7 +11172,11 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, bulbo raquidiano, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Occipital",
+      "Ombros",
       "Região occipital",
+      "Rins",
       "bulbo raquidiano",
       "ombros",
       "rins"
@@ -9934,11 +11219,17 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região occipital, bulbo raquidiano, da região frontal até a região ocular, região supraorbital (ao redor das sobrancelhas), ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região occipital",
+      "Rins",
       "bulbo raquidiano",
       "da região frontal até a região ocular",
-      "região supraorbital (ao redor das sobrancelhas)",
       "ombros",
+      "região supraorbital (ao redor das sobrancelhas)",
       "rins"
     ]
   },
@@ -9976,12 +11267,16 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Região ocular e seus arredores, região occipital, nuca, ombros e rins.",
     "focusPoints": [
+      "Occipital",
+      "Olhos",
+      "Ombros",
       "Região ocular",
-      "seus arredores",
-      "região occipital",
+      "Rins",
       "nuca",
       "ombros",
-      "rins"
+      "região occipital",
+      "rins",
+      "seus arredores"
     ]
   },
   {
@@ -10015,9 +11310,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações do bulbo raquidiano, região frontal (área das sobrancelhas), ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
       "Imediações do bulbo raquidiano",
-      "região frontal (área das sobrancelhas)",
+      "Olhos",
+      "Ombros",
+      "Rins",
       "ombros",
+      "região frontal (área das sobrancelhas)",
       "rins"
     ]
   },
@@ -10049,7 +11349,11 @@
       "pontosfocaisvol01_09"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "focusPoints": [
+      "Nariz",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "蓄膿症",
@@ -10088,8 +11392,12 @@
     "focus_context": "Ambos os lados do osso nasal, centro da glabela (entre as sobrancelhas) e bulbo raquidiano, fundo do nariz, ombros e rins.",
     "focusPoints": [
       "Ambos os lados do osso nasal",
-      "centro da glabela (entre as sobrancelhas)",
+      "Bulbo",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "bulbo raquidiano",
+      "centro da glabela (entre as sobrancelhas)",
       "fundo do nariz",
       "ombros",
       "rins"
@@ -10128,10 +11436,15 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações do bulbo raquidiano e região frontal, imediações do nariz, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Frontal",
       "Imediações do bulbo raquidiano",
-      "região frontal",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "imediações do nariz",
       "ombros",
+      "região frontal",
       "rins"
     ]
   },
@@ -10165,12 +11478,17 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Bulbo raquidiano (lado direito), região frontal, testa, nariz, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
-      "região frontal",
-      "testa",
+      "Frontal",
+      "Nariz",
+      "Ombros",
+      "Rins",
       "nariz",
       "ombros",
-      "rins"
+      "região frontal",
+      "rins",
+      "testa"
     ]
   },
   {
@@ -10192,7 +11510,10 @@
       "pontosfocaisvol01_21"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "focusPoints": [
+      "Bulbo"
+    ]
   },
   {
     "title_jp": "中耳炎",
@@ -10231,7 +11552,10 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Glândulas linfáticas, imediações da parótida, ombros e rins.",
     "focusPoints": [
+      "Glândulas Linfáticas",
       "Glândulas linfáticas",
+      "Ombros",
+      "Rins",
       "imediações da parótida",
       "ombros",
       "rins"
@@ -10274,10 +11598,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Parótida, região adjacente ao ouvido interno, região do bulbo raquidiano, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Ouvidos",
       "Parótida",
+      "Rins",
+      "ombros",
       "região adjacente ao ouvido interno",
       "região do bulbo raquidiano",
-      "ombros",
       "rins"
     ]
   },
@@ -10328,9 +11656,14 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "Imediações das glândulas linfáticas cervicais, região das amígdalas, ombros e rins.",
     "focusPoints": [
+      "Amígdalas",
+      "Glândulas Linfáticas",
       "Imediações das glândulas linfáticas cervicais",
-      "região das amígdalas",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "ombros",
+      "região das amígdalas",
       "rins"
     ]
   },
@@ -10373,21 +11706,25 @@
     "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
     "focus_context": "* **Periodontite:** Local da dor de dente, ombros e rins.\n* **Nevralgia dentária:** Alto da cabeça, local da dor, ombros e rins.\n(Ademais, quando doem os dentes superiores, foca-se principalmente a região frontal; quando doem os inferiores, foca-se as amígdalas e as glândulas linfáticas cervicais).",
     "focusPoints": [
-      "**Periodontite",
-      "* Local da dor de dente",
-      "ombros",
-      "rins",
-      "**Nevralgia dentária",
+      "(Ademais",
       "* Alto da cabeça",
+      "* Local da dor de dente",
+      "**Nevralgia dentária",
+      "**Periodontite",
+      "Amígdalas",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Rins",
+      "as glândulas linfáticas cervicais)",
+      "foca-se as amígdalas",
+      "foca-se principalmente a região frontal",
       "local da dor",
       "ombros",
-      "rins",
-      "(Ademais",
       "quando doem os dentes superiores",
-      "foca-se principalmente a região frontal",
       "quando doem os inferiores",
-      "foca-se as amígdalas",
-      "as glândulas linfáticas cervicais)"
+      "rins"
     ]
   },
   {
@@ -10427,8 +11764,14 @@
     "focus_context": "A parte afetada, ombros e, fundamentalmente, os rins.",
     "focusPoints": [
       "A parte afetada",
-      "ombros e",
+      "Bochechas",
+      "Face",
+      "Glândulas Linfáticas",
+      "Ombros",
+      "Pescoço",
+      "Rins",
       "fundamentalmente",
+      "ombros e",
       "os rins"
     ]
   },
@@ -10466,9 +11809,12 @@
     "focus_context": "Cabeça, estômago, região umbilical e rins.",
     "focusPoints": [
       "Cabeça",
+      "Estômago",
+      "Rins",
       "estômago",
       "região umbilical",
-      "rins"
+      "rins",
+      "Útero"
     ]
   },
   {
@@ -10504,6 +11850,9 @@
     "focus_context": "Cabeça, ombros e rins.",
     "focusPoints": [
       "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Rins",
       "ombros",
       "rins"
     ]
@@ -10541,9 +11890,11 @@
     "focus_context": "Ombros, rins, abdômen inferior e região inguinal.",
     "focusPoints": [
       "Ombros",
-      "rins",
+      "Rins",
       "abdômen inferior",
-      "região inguinal"
+      "região inguinal",
+      "rins",
+      "Útero"
     ]
   },
   {
@@ -10579,7 +11930,9 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "Ombros, diafragma, região estomacal nas costas e rins.",
     "focusPoints": [
+      "Diafragma",
       "Ombros",
+      "Rins",
       "diafragma",
       "região estomacal nas costas",
       "rins"
@@ -10613,7 +11966,8 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "Locais com febre.",
     "focusPoints": [
-      "Locais com febre"
+      "Locais com febre",
+      "Pele"
     ]
   },
   {
@@ -10650,15 +12004,17 @@
     "category_pt": "Doenças Infantis",
     "focus_context": "* Paralisia da perna: Rins, região inguinal e a parte afetada.\n* Paralisia do braço: Glândulas linfáticas cervicais, ombros, axilas e a parte afetada.",
     "focusPoints": [
-      "Paralisia da perna",
-      "Rins",
-      "região inguinal",
-      "a parte afetada",
-      "Paralisia do braço",
+      "Glândulas Linfáticas",
       "Glândulas linfáticas cervicais",
-      "ombros",
+      "Ombros",
+      "Paralisia da perna",
+      "Paralisia do braço",
+      "Pernas",
+      "Rins",
+      "a parte afetada",
       "axilas",
-      "a parte afetada"
+      "ombros",
+      "região inguinal"
     ]
   },
   {
@@ -10691,9 +12047,12 @@
     "focus_context": "Cabeça, ombros, rins e locais da erupção.",
     "focusPoints": [
       "Cabeça",
+      "Ombros",
+      "Pele",
+      "Rins",
+      "locais da erupção",
       "ombros",
-      "rins",
-      "locais da erupção"
+      "rins"
     ]
   },
   {
@@ -10730,7 +12089,11 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Bulbo raquidiano (lado direito), cérebro, ombros e rins.",
     "focusPoints": [
+      "Bulbo",
       "Bulbo raquidiano (lado direito)",
+      "Frontal",
+      "Ombros",
+      "Rins",
       "cérebro",
       "ombros",
       "rins"
@@ -10773,18 +12136,25 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Região frontal, centro da cabeça, bulbo raquidiano, glândulas linfáticas, ombros e rins.\n*Nota: No Johrei, o sufrágio aos antepassados e outros espíritos é importante. Dependendo do caso, entoar a Oração Xintoísta (Amatsu-Norito - para espíritos animais) ou a Oração *Zengensanji* (para espíritos puros/divinos). Contudo, não se deve ministrar Johrei enquanto se entoam as orações.*",
     "focusPoints": [
-      "Região frontal",
-      "centro da cabeça",
-      "bulbo raquidiano",
-      "glândulas linfáticas",
-      "ombros",
-      "rins",
-      "Nota",
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Glândulas Linfáticas",
       "No Johrei",
-      "o sufrágio aos antepassados",
-      "outros espíritos é importante. Dependendo do caso",
+      "Nota",
+      "Occipital",
+      "Ombros",
+      "Região frontal",
+      "Rins",
+      "bulbo raquidiano",
+      "centro da cabeça",
       "entoar a Oração Xintoísta (Amatsu-Norito - para espíritos animais) ou a Oração *Zengensanji* (para espíritos puros/divinos). Contudo",
-      "não se deve ministrar Johrei enquanto se entoam as orações.*"
+      "glândulas linfáticas",
+      "não se deve ministrar Johrei enquanto se entoam as orações.*",
+      "o sufrágio aos antepassados",
+      "ombros",
+      "outros espíritos é importante. Dependendo do caso",
+      "rins"
     ]
   },
   {
@@ -10818,6 +12188,7 @@
     "category_pt": "Doenças Mentais",
     "focus_context": "Seguir os mesmos da doença mental (item anterior).",
     "focusPoints": [
+      "Bulbo",
       "Seguir os mesmos da doença mental (item anterior)"
     ]
   },
@@ -10926,7 +12297,14 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　淋巴腺",
@@ -10956,7 +12334,11 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "3)　こめかみ",
@@ -11013,7 +12395,14 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Membros",
+      "Occipital",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "5)　恥骨（陰部）",
@@ -11044,7 +12433,12 @@
       "pontosfocaisvol02_18"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "1)　後頭部",
@@ -11074,7 +12468,12 @@
       "pontosfocaisvol02_03"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　延髄、頸筋",
@@ -11115,7 +12514,17 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Ouvidos",
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　肩",
@@ -11160,7 +12569,15 @@
       "pontosfocaisvol02_12"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　消化不良",
@@ -11208,7 +12625,10 @@
     ],
     "related_items": [],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　胃潰瘍",
@@ -11267,7 +12687,10 @@
       "pontosfocaisvol02_51"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "5)　脳膜炎",
@@ -11298,7 +12721,13 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Nariz",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "6)　泣癖の赤児",
@@ -11328,7 +12757,10 @@
       "pontosfocaisvol02_23"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "7)　猩紅熱",
@@ -11353,7 +12785,10 @@
       "pontosfocaisvol02_38"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "8)　疫痢",
@@ -11390,7 +12825,12 @@
       "pontosfocaisvol02_21"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Estômago",
+      "Intestino",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "9)　小児麻痺",
@@ -11426,7 +12866,11 @@
       "pontosfocaisvol02_50"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Mãos",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "10)　痲疹",
@@ -11465,7 +12909,12 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Olhos",
+      "Ouvidos",
+      "Pele"
+    ]
   },
   {
     "title_jp": "2)　胃",
@@ -11494,7 +12943,13 @@
       "pontosfocaisvol02_10"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "title_jp": "11)　喘息",
@@ -11524,7 +12979,13 @@
       "pontosfocaisvol02_71"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "12)　小児肺炎",
@@ -11593,7 +13054,13 @@
       "pontosfocaisvol02_98"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Intestino",
+      "Pele",
+      "Peritônio",
+      "Rins"
+    ]
   },
   {
     "title_jp": "14)　ヂフテリヤ",
@@ -11622,7 +13089,10 @@
       "pontosfocaisvol02_35"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "２．その他の小児病",
@@ -11645,7 +13115,11 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅶ．小児",
-    "category_pt": "VII. Crianças"
+    "category_pt": "VII. Crianças",
+    "focusPoints": [
+      "Cabeça",
+      "Pele"
+    ]
   },
   {
     "title_jp": "１．癌　病",
@@ -11686,7 +13160,13 @@
       "pontosfocaisvol02_18"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　疥癬及び皮膚病",
@@ -11728,7 +13208,13 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Mãos",
+      "Pele",
+      "Pernas",
+      "Pés"
+    ]
   },
   {
     "title_jp": "2)　脚　気",
@@ -11764,7 +13250,14 @@
       "pontosfocaisvol02_50"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Frontal",
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　神経痛",
@@ -11802,7 +13295,12 @@
       "pontosfocaisvol02_50"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Mãos",
+      "Pele",
+      "Pés"
+    ]
   },
   {
     "title_jp": "4)　リュウマチ",
@@ -11838,7 +13336,11 @@
       "pontosfocaisvol02_108"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "1)　体全体（主に頸）",
@@ -11877,7 +13379,14 @@
       "pontosfocaisvol02_21"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "5)　夜尿症",
@@ -11905,7 +13414,12 @@
       "pontosfocaisvol02_54"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Frontal",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "6)　鼾（いびき）",
@@ -11934,7 +13448,11 @@
       "pontosfocaisvol02_23"
     ],
     "category_jp": "Ⅷ．癌病及びその他の病気",
-    "category_pt": "VIII. Câncer e Outras Doenças"
+    "category_pt": "VIII. Câncer e Outras Doenças",
+    "focusPoints": [
+      "Garganta",
+      "Nariz"
+    ]
   },
   {
     "title_jp": "１．腫物",
@@ -11964,7 +13482,10 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅹ．腫物及び火傷・切傷",
-    "category_pt": "X. Tumores, Queimaduras e Cortes"
+    "category_pt": "X. Tumores, Queimaduras e Cortes",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "２．火傷、切傷",
@@ -11990,7 +13511,10 @@
       "pontosfocaisvol02_43"
     ],
     "category_jp": "Ⅹ．腫物及び火傷・切傷",
-    "category_pt": "X. Tumores, Queimaduras e Cortes"
+    "category_pt": "X. Tumores, Queimaduras e Cortes",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "１．洋薬と漢薬",
@@ -12047,7 +13571,10 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "３．鎮痛剤",
@@ -12072,7 +13599,10 @@
       "pontosfocaisvol02_38"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "４．点眼薬",
@@ -12099,7 +13629,10 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Frontal"
+    ]
   },
   {
     "title_jp": "５．鼻　薬",
@@ -12156,7 +13689,10 @@
       "pontosfocaisvol02_119"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "1)　後頭部、頸、肩",
@@ -12196,7 +13732,16 @@
       "pontosfocaisvol02_75"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital",
+      "Ombros",
+      "Pele",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "７．歯　磨",
@@ -12249,7 +13794,11 @@
       "pontosfocaisvol02_54"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Ombros",
+      "Pele"
+    ]
   },
   {
     "title_jp": "９．仁　丹",
@@ -12301,7 +13850,10 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "11．予防注射、消毒薬",
@@ -12466,7 +14018,13 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Occipital"
+    ]
   },
   {
     "title_jp": "2)　供　養",
@@ -12532,7 +14090,13 @@
       "pontosfocaisvol02_12"
     ],
     "category_jp": "ⅩⅠ．薬毒の種々相",
-    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos"
+    "category_pt": "XI. Vários Aspectos das Toxinas de Medicamentos",
+    "focusPoints": [
+      "Estômago",
+      "Garganta",
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "1)　腎臓、肩、腰、尾底骨",
@@ -12570,7 +14134,13 @@
       "pontosfocaisvol02_49"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Mãos",
+      "Ombros",
+      "Pernas",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　頸、腿の外側",
@@ -12595,7 +14165,11 @@
       "pontosfocaisvol02_06"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Pernas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "1)　腎臓、下腹部、恥骨",
@@ -12626,7 +14200,11 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　脳溢血",
@@ -12673,7 +14251,20 @@
       "pontosfocaisvol02_65"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Maxilar",
+      "Mãos",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "2)　動脈硬化",
@@ -12709,7 +14300,12 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　高血圧",
@@ -12743,7 +14339,11 @@
       "pontosfocaisvol02_44"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Amígdalas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "4)　逆中風",
@@ -12783,7 +14383,10 @@
       "pontosfocaisvol02_50"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "5)　脳膜炎",
@@ -12820,7 +14423,11 @@
       "pontosfocaisvol02_65"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Frontal",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "6)　日本脳炎",
@@ -12859,7 +14466,14 @@
       "pontosfocaisvol02_24"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "7)　脳脊髄膜炎",
@@ -12894,7 +14508,11 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "8)　脳貧血、神経衰弱",
@@ -12941,7 +14559,16 @@
       "pontosfocaisvol02_21"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Garganta",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "9)　睡眠不足",
@@ -12974,7 +14601,12 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "1)　近視、乱視",
@@ -13019,7 +14651,16 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "2)　トラホーム、瀘胞性結膜炎",
@@ -13050,7 +14691,10 @@
       "pontosfocaisvol02_118"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Olhos"
+    ]
   },
   {
     "title_jp": "3)　目星",
@@ -13112,7 +14756,11 @@
       "pontosfocaisvol02_38"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal"
+    ]
   },
   {
     "title_jp": "5)　底翳、白内障、緑内障、黒内障",
@@ -13155,7 +14803,15 @@
       "pontosfocaisvol02_48"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Olhos",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "①　眼球注射の副作用",
@@ -13194,6 +14850,10 @@
       "pontosfocaisvol02_31",
       "pontosfocaisvol02_09",
       "pontosfocaisvol02_19"
+    ],
+    "focusPoints": [
+      "Bulbo",
+      "Olhos"
     ]
   },
   {
@@ -13263,7 +14923,11 @@
       "pontosfocaisvol02_21"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "3)　耳垂",
@@ -13373,7 +15037,14 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Bulbo",
+      "Frontal",
+      "Nariz",
+      "Occipital",
+      "Pele"
+    ]
   },
   {
     "title_jp": "1)　歯痛",
@@ -13410,7 +15081,10 @@
       "pontosfocaisvol02_38"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "2)　歯槽膿漏",
@@ -13444,7 +15118,11 @@
       "pontosfocaisvol02_39"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　口内粘膜、喉、舌",
@@ -13483,7 +15161,11 @@
       "pontosfocaisvol02_54"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Garganta",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "4)　咽喉結核",
@@ -13525,7 +15207,10 @@
       "pontosfocaisvol02_50"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "5)　喉頭結核",
@@ -13560,7 +15245,10 @@
       "pontosfocaisvol02_65"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Garganta"
+    ]
   },
   {
     "title_jp": "6)　扁桃腺炎",
@@ -13601,7 +15289,10 @@
       "pontosfocaisvol02_31"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Amígdalas"
+    ]
   },
   {
     "title_jp": "1)　顔面神経麻痺",
@@ -13638,7 +15329,11 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Face",
+      "Olhos"
+    ]
   },
   {
     "title_jp": "2)　顔面神経痛",
@@ -13671,7 +15366,10 @@
       "pontosfocaisvol02_39"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Face"
+    ]
   },
   {
     "title_jp": "1)　バセドー氏病",
@@ -13709,7 +15407,12 @@
       "pontosfocaisvol02_48"
     ],
     "category_jp": "Ⅱ．頭部",
-    "category_pt": "II. Cabeça"
+    "category_pt": "II. Cabeça",
+    "focusPoints": [
+      "Frontal",
+      "Garganta",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "1)　慢性気管支炎",
@@ -13750,7 +15453,13 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Bulbo",
+      "Face",
+      "Ombros",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "2)　肺炎",
@@ -13794,7 +15503,11 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Face",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "3)　肺結核",
@@ -13840,7 +15553,15 @@
       "pontosfocaisvol02_65"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Mãos",
+      "Ombros",
+      "Pescoço",
+      "Pés"
+    ]
   },
   {
     "title_jp": "4)　肺壊疽",
@@ -13877,7 +15598,10 @@
       "pontosfocaisvol02_49"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Pleura"
+    ]
   },
   {
     "title_jp": "5)　粟粒結核",
@@ -13906,7 +15630,10 @@
       "pontosfocaisvol02_12"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "6)　肺癌",
@@ -13979,7 +15706,14 @@
       "pontosfocaisvol02_51"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Cabeça",
+      "Pele",
+      "Pescoço",
+      "Pleura",
+      "Rins"
+    ]
   },
   {
     "title_jp": "8)　喘息",
@@ -14032,7 +15766,16 @@
       "pontosfocaisvol02_10"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Diafragma",
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Pleura",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　狭心症",
@@ -14069,7 +15812,10 @@
       "pontosfocaisvol02_27"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Ombros"
+    ]
   },
   {
     "title_jp": "2)　弁膜症",
@@ -14109,7 +15855,10 @@
       "pontosfocaisvol02_75"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "3)　心肥大",
@@ -14142,7 +15891,10 @@
       "pontosfocaisvol02_57"
     ],
     "category_jp": "Ⅲ．胸部",
-    "category_pt": "III. Tórax"
+    "category_pt": "III. Tórax",
+    "focusPoints": [
+      "Diafragma"
+    ]
   },
   {
     "title_jp": "4)　心臓麻痺",
@@ -14230,7 +15982,11 @@
       "pontosfocaisvol02_10"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　胃アトニー",
@@ -14254,7 +16010,10 @@
       "pontosfocaisvol02_64"
     ],
     "category_jp": "Ⅰ．浄霊の基本的急所について",
-    "category_pt": "I. Pontos Vitais Básicos do Johrei"
+    "category_pt": "I. Pontos Vitais Básicos do Johrei",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "3)　胃痛",
@@ -14292,7 +16051,11 @@
       "pontosfocaisvol02_10"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "4)　胃癌",
@@ -14326,7 +16089,10 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "1)　腎臓萎縮",
@@ -14377,7 +16143,13 @@
       "pontosfocaisvol02_49"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　急性腎臓病",
@@ -14405,7 +16177,10 @@
       "pontosfocaisvol02_117"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "3)　慢性腎臓病",
@@ -14441,7 +16216,10 @@
       "pontosfocaisvol02_117"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "4)　腎臓結核",
@@ -14475,7 +16253,11 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "5)　結石",
@@ -14510,7 +16292,14 @@
       "pontosfocaisvol02_75"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Face",
+      "Fígado",
+      "Garganta",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　肝臓病・黄疸医診でよく言われる肝臓病というのは、実は誤りで、肝臓そのものには異常がないので、只肝臓の外部に薬毒が固結してをるのを間違えたものである。然し勿論其毒結が肝臓を圧迫しているので、苦痛であるのみか、之が黄疸の原因ともなるから、始末が悪いのである。勿論右の如く毒結によって、肝臓を圧迫する以上、肝臓の裏にある胆嚢も圧迫されるから、胆嚢の中にある胆汁が滲出し全身に廻る。それが黄疸である。処が黄疸は皮膚の変色ばかりの病ではなく、胃の活動をも阻害させる。というのは胆汁は胃の消化を助ける為、絶えず輸胆管を通じて、胃に送流しているに拘わらず、右によって胆汁の供給が減るからである。故に此病気を本当に治すには、原因である肝臓外部の毒結を溶解し、排泄させるより外に方法はないが、医療ではそれが不可能であるから、一時的緩和法によって、小康を得るより手段はないのである。",
@@ -14552,7 +16341,16 @@
       "pontosfocaisvol02_65"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Pele",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　糖尿病",
@@ -14590,7 +16388,14 @@
       "pontosfocaisvol02_72"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Ombros",
+      "Rins"
+    ]
   },
   {
     "title_jp": "1)　腸結核",
@@ -14630,7 +16435,15 @@
       "pontosfocaisvol02_73"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Intestino",
+      "Peritônio",
+      "Região Renal",
+      "Rins"
+    ]
   },
   {
     "title_jp": "2)　腸チフス",
@@ -14667,7 +16480,12 @@
       "pontosfocaisvol02_116"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Cabeça",
+      "Intestino",
+      "Peritônio"
+    ]
   },
   {
     "title_jp": "3)　直腸癌",
@@ -14699,7 +16517,11 @@
       "pontosfocaisvol02_09"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Intestino",
+      "Rins"
+    ]
   },
   {
     "title_jp": "4)　盲腸炎",
@@ -14744,7 +16566,12 @@
       "pontosfocaisvol02_38"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Amígdalas",
+      "Peritônio",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　腹膜炎",
@@ -14781,7 +16608,11 @@
       "pontosfocaisvol02_54"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Peritônio",
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "# ①　薬毒の原因",
@@ -14905,7 +16736,10 @@
       "pontosfocaisvol02_25"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "4)　痔核",
@@ -14942,7 +16776,12 @@
       "pontosfocaisvol02_49"
     ],
     "category_jp": "Ⅳ．腹部",
-    "category_pt": "IV. Abdômen"
+    "category_pt": "IV. Abdômen",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "１．性病",
@@ -14987,7 +16826,10 @@
       "pontosfocaisvol02_64"
     ],
     "category_jp": "Ⅴ．生殖器",
-    "category_pt": "V. Órgãos Reprodutores"
+    "category_pt": "V. Órgãos Reprodutores",
+    "focusPoints": [
+      "Pele"
+    ]
   },
   {
     "title_jp": "2)　軟性下疳",
@@ -15068,7 +16910,10 @@
       "pontosfocaisvol02_68"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "2)　無月経",
@@ -15121,7 +16966,11 @@
       "pontosfocaisvol02_39"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Útero"
+    ]
   },
   {
     "title_jp": "4)　子宮筋腫",
@@ -15158,7 +17007,14 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Peritônio",
+      "Útero"
+    ]
   },
   {
     "title_jp": "5)　子宮癌",
@@ -15186,7 +17042,10 @@
       "pontosfocaisvol02_25"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "6)　子宮内膜炎",
@@ -15210,7 +17069,10 @@
       "pontosfocaisvol02_18"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "7)　子宮実質炎",
@@ -15235,7 +17097,10 @@
       "pontosfocaisvol02_25"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "8)　子宮発育不全",
@@ -15261,7 +17126,11 @@
       "pontosfocaisvol02_24"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Região Renal",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　卵巣膿腫と卵巣水腫",
@@ -15289,7 +17158,10 @@
       "pontosfocaisvol02_30"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　白帯下",
@@ -15345,7 +17217,13 @@
       "pontosfocaisvol02_42"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Baixo Ventre",
+      "Pernas",
+      "Região Renal",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　悪阻",
@@ -15376,7 +17254,11 @@
       "pontosfocaisvol02_55"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Estômago",
+      "Útero"
+    ]
   },
   {
     "title_jp": "1)　妊娠腎",
@@ -15407,7 +17289,10 @@
       "pontosfocaisvol02_25"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "1)　汁乳不良",
@@ -15434,6 +17319,9 @@
       "pontosfocaisvol02_71"
     ],
     "category_jp": "Ⅵ．婦人病",
-    "category_pt": "VI. Doenças Femininas"
+    "category_pt": "VI. Doenças Femininas",
+    "focusPoints": [
+      "Estômago"
+    ]
   }
 ]

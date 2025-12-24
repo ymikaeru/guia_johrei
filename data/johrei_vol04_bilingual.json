@@ -21,7 +21,10 @@
       "johreivol04_04",
       "johreivol04_10"
     ],
-    "info_pt": "Mioshie-shu nº 26, pág. 27"
+    "info_pt": "Mioshie-shu nº 26, pág. 27",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "①麻薬は急激に効果を奏し、他の薬はジリジリ来るため、麻　　薬は恐ろしいが、薬毒は恐ろしくないという、甚だ矛盾した考えが有りの儘の姿である。（御教え集一四号　八頁）",
@@ -55,7 +58,11 @@
       "johreivol04_08",
       "johreivol04_13"
     ],
-    "info_pt": "Mioshie-shu nº 14, pág. 8"
+    "info_pt": "Mioshie-shu nº 14, pág. 8",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago"
+    ]
   },
   {
     "title_jp": "②薬を変えると一時効くという事は、一つ薬を飲んでいると、薬に対する抵抗力が生じて中毒になる為効かなくなり、止むを得ず変えるのである。（御教え集一四号　一六頁）",
@@ -86,7 +93,10 @@
       "johreivol04_13",
       "johreivol04_11"
     ],
-    "info_pt": "Mioshie-shu nº 14, pág. 16"
+    "info_pt": "Mioshie-shu nº 14, pág. 16",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "現代人は、薬毒で頭脳を悪くし、物事を判断する力を失っている。その為薬の一時的効果に幻惑されている。（御教え集一二号　一九頁）",
@@ -124,7 +134,10 @@
       "johreivol04_13",
       "johreivol04_09"
     ],
-    "info_pt": "Mioshie-shu nº 12, pág. 19"
+    "info_pt": "Mioshie-shu nº 12, pág. 19",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "３、薬は消極的健康者にする為、一時的病人が減少するが、形を変えた病気になって現われる（御教え集二六号　七一頁）",
@@ -149,7 +162,10 @@
       "johreivol04_05",
       "johreivol04_11"
     ],
-    "info_pt": "Mioshie-shu nº 26, pág. 71"
+    "info_pt": "Mioshie-shu nº 26, pág. 71",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "４、薬に殺菌力はない（御教え集八号　一一頁）",
@@ -171,7 +187,11 @@
       "johreivol04_05",
       "johreivol04_07"
     ],
-    "info_pt": "Mioshie-shu nº 8, pág. 11"
+    "info_pt": "Mioshie-shu nº 8, pág. 11",
+    "focusPoints": [
+      "Estômago",
+      "Intestino"
+    ]
   },
   {
     "title_jp": "５、医者の言う事には一貫性がない（御教え集一四号　一八頁）",
@@ -191,7 +211,11 @@
       "johreivol04_05",
       "johreivol04_03"
     ],
-    "info_pt": "Mioshie-shu nº 14, pág. 18"
+    "info_pt": "Mioshie-shu nº 14, pág. 18",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos"
+    ]
   },
   {
     "title_jp": "**二、一番の詐欺は売薬**",
@@ -252,7 +276,12 @@
       "johreivol04_11",
       "johreivol04_13"
     ],
-    "info_pt": "Mioshie-shu nº 19, pág. 43"
+    "info_pt": "Mioshie-shu nº 19, pág. 43",
+    "focusPoints": [
+      "Estômago",
+      "Pele",
+      "Rins"
+    ]
   },
   {
     "title_jp": "**二、六〇六号（サルバルサン）**",
@@ -281,7 +310,10 @@
       "johreivol04_07",
       "johreivol04_10"
     ],
-    "info_pt": "Mioshie-shu nº 6, pág. 81"
+    "info_pt": "Mioshie-shu nº 6, pág. 81",
+    "focusPoints": [
+      "Cabeça"
+    ]
   },
   {
     "title_jp": "**三、消　毒　薬**",
@@ -313,7 +345,12 @@
       "johreivol04_13",
       "johreivol04_12"
     ],
-    "info_pt": "Mioshie-shu nº 31, pág. 64"
+    "info_pt": "Mioshie-shu nº 31, pág. 64",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Pés"
+    ]
   },
   {
     "title_jp": "**四、新　　薬**",
@@ -389,7 +426,12 @@
       "johreivol04_09",
       "johreivol04_13"
     ],
-    "info_pt": "Mioshie-shu nº 19, pág. 42"
+    "info_pt": "Mioshie-shu nº 19, pág. 42",
+    "focusPoints": [
+      "Bochechas",
+      "Cabeça",
+      "Pele"
+    ]
   },
   {
     "title_jp": "**七、そ　の　他**",
@@ -417,6 +459,10 @@
       "johreivol04_04",
       "johreivol04_09"
     ],
-    "info_pt": "Gosuishiroku nº 28, pág. 25"
+    "info_pt": "Gosuishiroku nº 28, pág. 25",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago"
+    ]
   }
 ]

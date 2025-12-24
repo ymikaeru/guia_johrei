@@ -35,7 +35,14 @@
     ],
     "info_pt": "Mioshie-shu nº 22, pág. 3",
     "source": "Mioshie-shu nº 22, pág. 3",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Pescoço",
+      "Útero"
+    ]
   },
   {
     "title_jp": "２、妊娠に就いて",
@@ -71,7 +78,14 @@
     ],
     "info_pt": "Chijo Tengoku nº 7, pág. 11",
     "source": "Chijo Tengoku nº 7, pág. 11",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Ombros",
+      "Região Renal",
+      "Rins",
+      "Virilha",
+      "Útero"
+    ]
   },
   {
     "title_jp": "３、妊娠・不妊娠の判断には（御教え集六号　一一二頁）",
@@ -100,7 +114,10 @@
     ],
     "info_pt": "Mioshie-shu nº 6, pág. 112",
     "source": "Mioshie-shu nº 6, pág. 112",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "４、想像妊娠に就いて（御教え）",
@@ -147,7 +164,10 @@
     "related_items": [],
     "info_pt": "Chijo Tengoku nº 15, pág. 10",
     "source": "Chijo Tengoku nº 15, pág. 10",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "７、人工妊娠に関して（御垂示録二二号　一八頁）",
@@ -214,7 +234,12 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Pele",
+      "Região Renal",
+      "Útero"
+    ]
   },
   {
     "title_jp": "11、既往手術が妊娠時に及ぼす影響（御教え）",
@@ -240,7 +265,13 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Olhos",
+      "Útero"
+    ]
   },
   {
     "title_jp": "12、妊娠で心臓の鼓動が激しくなった人に就いて（御教え）",
@@ -269,7 +300,11 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Estômago",
+      "Útero"
+    ]
   },
   {
     "title_jp": "13、妊娠時の浄化に就いて（御教え）",
@@ -324,7 +359,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "15、夫が悪阻の状態をする理由（地上天国一〇号　一一頁）",
@@ -388,7 +426,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "19、腹帯の良否に就いて（御垂示録四号　六七頁）",
@@ -434,7 +475,14 @@
     ],
     "info_pt": "Gosuishiroku nº 4, pág. 67",
     "source": "Gosuishiroku nº 4, pág. 67",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Mãos",
+      "Olhos",
+      "Pernas",
+      "Pescoço"
+    ]
   },
   {
     "title_jp": "２、臍の緒の取れ方の遅速に関して（御教え）",
@@ -465,7 +513,11 @@
     "related_items": [],
     "info_pt": "Gosuishiroku nº 3, pág. 27",
     "source": "Gosuishiroku nº 3, pág. 27",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "title_jp": "４、産後に留意すべき事項に関して（御教え集五号　三四頁）",
@@ -507,7 +559,12 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 34",
     "source": "Mioshie-shu nº 5, pág. 34",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pernas"
+    ]
   },
   {
     "title_jp": "５、産後の出血、おりものに関連して（御教え）",
@@ -548,7 +605,14 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "６、流産による手術後の浄化に就いて（御教え集二号　一八頁）",
@@ -576,7 +640,10 @@
     ],
     "info_pt": "Mioshie-shu nº 2, pág. 18",
     "source": "Mioshie-shu nº 2, pág. 18",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Pernas"
+    ]
   },
   {
     "title_jp": "７、母乳不足の原因（御教え）",
@@ -605,7 +672,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Estômago"
+    ]
   },
   {
     "title_jp": "８、血脚気と、その母乳を与える事の可否（御教え集三号　五八頁）",
@@ -649,7 +719,13 @@
     ],
     "info_pt": "Mioshie-shu nº 3, pág. 58",
     "source": "Mioshie-shu nº 3, pág. 58",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Olhos",
+      "Ombros"
+    ]
   },
   {
     "title_jp": "９、余剰母乳の捨場に就いて（御教え）",
@@ -686,7 +762,10 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Útero"
+    ]
   },
   {
     "title_jp": "11、子宮疑似癌に就いて（御教え集五号　二五頁）",
@@ -727,7 +806,15 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 25",
     "source": "Mioshie-shu nº 5, pág. 25",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Bulbo",
+      "Cabeça",
+      "Frontal",
+      "Occipital",
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "title_jp": "12、子宮筋腫の誤診に関して（御垂示録一号　二二頁）",
@@ -783,7 +870,11 @@
     ],
     "info_pt": "Mioshie-shu nº 1, pág. 20",
     "source": "Mioshie-shu nº 1, pág. 20",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Rins",
+      "Útero"
+    ]
   },
   {
     "title_jp": "14、卵巣水腫、卵巣膿腫に関して（御教え集七号　四八頁）",
@@ -817,7 +908,14 @@
     ],
     "info_pt": "Mioshie-shu nº 7, pág. 48",
     "source": "Mioshie-shu nº 7, pág. 48",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Estômago",
+      "Fígado",
+      "Mãos",
+      "Rins",
+      "Virilha"
+    ]
   },
   {
     "title_jp": "15、卵巣摘出後の浄化に就いて（地上天国一五号　一一頁）",
@@ -846,7 +944,10 @@
     ],
     "info_pt": "Chijo Tengoku nº 15, pág. 11",
     "source": "Chijo Tengoku nº 15, pág. 11",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Região Renal"
+    ]
   },
   {
     "title_jp": "16、月経不順に関して（御教え集五号　二七頁）",
@@ -877,7 +978,10 @@
     ],
     "info_pt": "Mioshie-shu nº 5, pág. 27",
     "source": "Mioshie-shu nº 5, pág. 27",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Rins"
+    ]
   },
   {
     "title_jp": "17、多量の出血に関連して（御教え）",
@@ -911,6 +1015,9 @@
     ],
     "info_pt": "Mioshie",
     "source": "Mioshie",
-    "Master_Title": "Doenças da Mulher"
+    "Master_Title": "Doenças da Mulher",
+    "focusPoints": [
+      "Rins"
+    ]
   }
 ]

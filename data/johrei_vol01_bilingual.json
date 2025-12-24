@@ -56,7 +56,19 @@
       "johreivol01_06",
       "johreivol01_04"
     ],
-    "Master_Title": "O que é a Doença"
+    "Master_Title": "O que é a Doença",
+    "focusPoints": [
+      "Cabeça",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Nariz",
+      "Olhos",
+      "Ombros",
+      "Ouvidos",
+      "Pescoço"
+    ],
+    "master_title": "1. O que é a Doença"
   },
   {
     "title_jp": "**二、黴菌の発生**",
@@ -86,7 +98,11 @@
       "johreivol01_03",
       "johreivol01_04"
     ],
-    "Master_Title": "A Gênese dos Bacilos"
+    "Master_Title": "A Gênese dos Bacilos",
+    "focusPoints": [
+      "Pescoço"
+    ],
+    "master_title": "2. A Gênese dos Bacilos"
   },
   {
     "title_jp": "**三、健康の真理**",
@@ -113,7 +129,17 @@
       "johreivol01_05",
       "johreivol01_02"
     ],
-    "Master_Title": "A Verdade sobre a Saúde"
+    "Master_Title": "A Verdade sobre a Saúde",
+    "focusPoints": [
+      "Face",
+      "Mãos",
+      "Nariz",
+      "Olhos",
+      "Ouvidos",
+      "Pele",
+      "Pernas"
+    ],
+    "master_title": "3. A Verdade sobre a Saúde"
   },
   {
     "title_jp": "**四、人間は健康の器**",
@@ -140,7 +166,11 @@
       "johreivol01_01",
       "johreivol01_02"
     ],
-    "Master_Title": "O Ser Humano é um Vaso de Saúde"
+    "Master_Title": "O Ser Humano é um Vaso de Saúde",
+    "focusPoints": [
+      "Olhos"
+    ],
+    "master_title": "4. O Ser Humano é um Vaso de Saúde"
   },
   {
     "title_jp": "**五、浄霊の原理**",
@@ -184,7 +214,14 @@
       "johreivol01_04",
       "johreivol01_06"
     ],
-    "Master_Title": "O Princípio do Johrei"
+    "Master_Title": "O Princípio do Johrei",
+    "focusPoints": [
+      "Membros",
+      "Nariz",
+      "Olhos",
+      "Pele"
+    ],
+    "master_title": "5. O Princípio do Johrei"
   },
   {
     "title_jp": "**六、薬が効かなくなった**",
@@ -215,6 +252,7 @@
       "johreivol01_04",
       "johreivol01_05"
     ],
-    "Master_Title": "Os Remédios Pararam de Fazer Efeito"
+    "Master_Title": "Os Remédios Pararam de Fazer Efeito",
+    "master_title": "6. Os Remédios Pararam de Fazer Efeito"
   }
 ]

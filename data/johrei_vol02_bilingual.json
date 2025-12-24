@@ -45,7 +45,8 @@
       "johreivol02_06",
       "johreivol02_07"
     ],
-    "Master_Title": "A Racionalidade do Johrei"
+    "Master_Title": "A Racionalidade do Johrei",
+    "master_title": "I. A Racionalidade do Johrei"
   },
   {
     "title_jp": "**二、浄霊の霊力について**",
@@ -68,7 +69,8 @@
       "johreivol02_06",
       "johreivol02_07"
     ],
-    "Master_Title": "Sobre a Força Espiritual do Johrei"
+    "Master_Title": "Sobre a Força Espiritual do Johrei",
+    "master_title": "II. Sobre a Força Espiritual no Johrei"
   },
   {
     "title_jp": "**三、浄霊の順序と浄霊の急所**",
@@ -142,7 +144,28 @@
       "johreivol02_08",
       "johreivol02_01"
     ],
-    "Master_Title": "A Ordem do Johrei e os Pontos Vitais"
+    "Master_Title": "A Ordem do Johrei e os Pontos Vitais",
+    "focusPoints": [
+      "Amígdalas",
+      "Cabeça",
+      "Diafragma",
+      "Estômago",
+      "Frontal",
+      "Fígado",
+      "Glândula Parótida",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Nariz",
+      "Occipital",
+      "Olhos",
+      "Ombros",
+      "Pernas",
+      "Pescoço",
+      "Pés",
+      "Rins"
+    ],
+    "master_title": "III. A Ordem do Johrei e os Pontos Vitais"
   },
   {
     "title_jp": "**四、毒素集溜の経過と排泄の順序**",
@@ -205,7 +228,23 @@
       "johreivol02_08",
       "johreivol02_01"
     ],
-    "Master_Title": "A Ordem do Johrei e os Pontos Vitais"
+    "Master_Title": "A Ordem do Johrei e os Pontos Vitais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Frontal",
+      "Garganta",
+      "Glândulas Linfáticas",
+      "Membros",
+      "Mãos",
+      "Occipital",
+      "Ombros",
+      "Pele",
+      "Pernas",
+      "Pescoço",
+      "Rins"
+    ],
+    "master_title": "IV. O Processo de Acúmulo de Toxinas e a Ordem de Eliminação"
   },
   {
     "title_jp": "**五、頭の働きと薬毒について**",
@@ -247,7 +286,15 @@
       "johreivol02_08",
       "johreivol02_01"
     ],
-    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais"
+    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais",
+    "focusPoints": [
+      "Cabeça",
+      "Estômago",
+      "Ombros",
+      "Pernas",
+      "Pescoço"
+    ],
+    "master_title": "V. Sobre o Funcionamento da Cabeça e as Toxinas de Medicamentos"
   },
   {
     "title_jp": "**六、婦人と前頭部の熱**",
@@ -287,7 +334,14 @@
       "johreivol02_08",
       "johreivol02_01"
     ],
-    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais"
+    "Master_Title": "Sobre o Funcionamento da Cabeça e as Toxinas Medicinais",
+    "focusPoints": [
+      "Cabeça",
+      "Frontal",
+      "Ombros",
+      "Pescoço"
+    ],
+    "master_title": "VI. As Mulheres e a Febre no Lobo Frontal"
   },
   {
     "title_jp": "**七、化粧品中毒**",
@@ -320,7 +374,13 @@
       "johreivol02_06",
       "johreivol02_09"
     ],
-    "Master_Title": "Intoxicação por Cosméticos"
+    "Master_Title": "Intoxicação por Cosméticos",
+    "focusPoints": [
+      "Cabeça",
+      "Face",
+      "Pele"
+    ],
+    "master_title": "VII. Intoxicação por Cosméticos"
   },
   {
     "title_jp": "**八、顔の自然美と一挙三得**",
@@ -341,6 +401,10 @@
       "johreivol02_08",
       "johreivol02_05"
     ],
-    "Master_Title": "Intoxicação por Cosméticos"
+    "Master_Title": "Intoxicação por Cosméticos",
+    "focusPoints": [
+      "Pele"
+    ],
+    "master_title": "VIII. A Beleza Natural do Rosto e Três Benefícios em Um"
   }
 ]

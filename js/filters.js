@@ -366,7 +366,8 @@ function applyFilters() {
 
         // 3.5. Filtro de ASSUNTO (Master_Title for Q&A)
         if (activeSubject) {
-            const itemSubject = item.Master_Title || item.titulo_mestre;
+            // Check all variants: Master_Title (Legacy/Manual), Master_title (Script generated), titulo_mestre (Legacy)
+            const itemSubject = item.Master_Title || item.Master_title || item.titulo_mestre;
             if (!itemSubject || itemSubject.trim() !== activeSubject) {
                 return false;
             }
