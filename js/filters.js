@@ -187,7 +187,8 @@ function populateSubjectDropdown() {
     // Check if we are in Q&A tab
     // Adjust 'cases_qa' or 'qa' based on your actual tab ID. 
     // Usually 'cases_qa' for "Casos e Respostas" or similar.
-    const allowedTabs = ['cases_qa', 'qa', 'casos_especificos'];
+    // Usually 'cases_qa' for "Casos e Respostas" or similar.
+    const allowedTabs = ['cases_qa', 'qa', 'casos_especificos', 'pontos_focais'];
     if (!STATE.activeTab || !allowedTabs.includes(STATE.activeTab)) {
         selects.forEach(select => select.parentElement.classList.add('hidden'));
         return;
@@ -211,6 +212,8 @@ function populateSubjectDropdown() {
         // Use standard 'Master_Title' key
         if (item.Master_Title) {
             subjects.add(item.Master_Title.trim());
+        } else if (item.Master_title) {
+            subjects.add(item.Master_title.trim());
         }
         // Fallback for legacy key if script hasn't run fully or cache issues
         else if (item.titulo_mestre) {
@@ -340,8 +343,7 @@ function applyFilters() {
         // Se estiver na aba mapa e nenhum ponto selecionado (e sem busca/tag), não mostra nada
         if (activeTab === 'mapa' && !bodyFilter && !q && activeTags.length === 0) return false;
 
-        // Na aba mapa, mostrar apenas itens com pontos focais
-        if (activeTab === 'mapa' && !item.focusPoints) return false;
+
 
         // Se houver um filtro de corpo, usa a função matchBodyPoint do body-map.js
         if (bodyFilter && typeof matchBodyPoint === 'function') {

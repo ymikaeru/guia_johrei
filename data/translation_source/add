@@ -1,0 +1,362 @@
+[
+  {
+    "id": "johreivol10_01",
+    "title_pt": "Johrei nos Olhos e a Região Occipital",
+    "info_pt": "Mioshie-shu nº 21, pág. 6",
+  },
+  {
+    "id": "johreivol10_02",
+    "title_pt": "O Perigo das Injeções Oculares",
+    "info_pt": "Mioshie-shu nº 6, pág. 64",
+  },
+  {
+    "id": "johreivol10_03",
+    "title_pt": "Etiologia da \"Estrela\" no Olho (Hoshi)",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_04",
+    "title_pt": "Causas do Estrabismo (Yabunirami)",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_05",
+    "title_pt": "Causa do Astigmatismo",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_06",
+    "title_pt": "Perda de Visão em Idosos",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_07",
+    "title_pt": "A Causa da Vertigem (Memai)",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_08",
+    "title_pt": "Danos Causados por Colírios",
+    "info_pt": "Mioshie-shu nº 2, pág. 22",
+  },
+  {
+    "id": "johreivol10_09",
+    "title_pt": "Purificação de Toxinas e Dores Oculares",
+    "info_pt": "Chijo Tengoku nº 17, pág. 11",
+  },
+  {
+    "id": "johreivol10_10",
+    "title_pt": "Cegueira Causada por \"Antídotos\"",
+    "info_pt": "Mioshie-shu nº 8, pág. 9",
+  },
+  {
+    "id": "johreivol10_11",
+    "title_pt": "Cegueira Iatrogênica Pós-Trauma",
+    "info_pt": "Mioshie-shu nº 6, pág. 62",
+  },
+  {
+    "id": "johreivol10_12",
+    "title_pt": "Diagnóstico de Catarata e o Erro dos Colírios",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_13",
+    "title_pt": "Catarata (Shiro-sokohi) em Idoso",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_14",
+    "title_pt": "Glaucoma (Ao-sokohi) e Histórico Ginecológico",
+    "info_pt": "Chijo Tengoku nº 44, pág. 12",
+  },
+  {
+    "id": "johreivol10_15",
+    "title_pt": "Glaucoma Pós-Cirúrgico e a Falácia da Medicina",
+    "info_pt": "Mioshie-shu nº 3, pág. 29",
+  },
+  {
+    "id": "johreivol10_16",
+    "title_pt": "Tracoma e Cegueira por Medicamentos",
+    "info_pt": "Chijo Tengoku nº 40, pág. 10",
+  },
+  {
+    "id": "johreivol10_17",
+    "title_pt": "Catarata/Amaurose (Kuro-sokohi) Infantil",
+    "info_pt": "Hikari Shimbun nº 20",
+  },
+  {
+    "id": "johreivol10_18",
+    "title_pt": "Patologia da Cegueira e Defeitos no Campo Visual",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_19",
+    "title_pt": "Cegueira Pós-Meningite em Criança",
+    "info_pt": "Mioshie-shu nº 3, pág. 29",
+  },
+  {
+    "id": "johreivol10_20",
+    "title_pt": "Cegueira por Álcool Metílico",
+    "info_pt": "Gosuishiroku nº 12, pág. 13",
+  },
+  {
+    "id": "johreivol10_21",
+    "title_pt": "Descolamento de Retina, Cegueira e Alucinações",
+    "info_pt": "Chijo Tengoku nº 44, pág. 14",
+  },
+  {
+    "id": "johreivol10_22",
+    "title_pt": "Cegueira Infantil Pós-Meningite",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_23",
+    "title_pt": "Cegueira após Vacina Antivariólica",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_24",
+    "title_pt": "Cegueira após Injeção contra Difteria",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_25",
+    "title_pt": "Cegueira, Queda de Cabelo e Alucinações",
+    "info_pt": "Mioshie-shu nº 8, pág. 23",
+  },
+  {
+    "id": "johreivol10_26",
+    "title_pt": "Cegueira Súbita após Ingestão de Álcool",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_27",
+    "title_pt": "Cegueira por Injeção Antipirética na Gravidez",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_28",
+    "title_pt": "Cegueira por Cirurgia e Uso de Antissépticos em Criança",
+    "info_pt": "Mioshie-shu nº 5, pág. 80",
+  },
+  {
+    "id": "johreivol10_29",
+    "title_pt": "Pancada no Olho, Cirurgia e Cefaleia Intensa",
+    "info_pt": "Mioshie-shu nº 8, pág. 54",
+  },
+  {
+    "id": "johreivol10_30",
+    "title_pt": "Picada de Mutuca e Diagnóstico de Coroidite",
+    "info_pt": "Mioshie-shu nº 3, pág. 1",
+  },
+  {
+    "id": "johreivol10_31",
+    "title_pt": "Escurecimento ao Redor dos Olhos",
+    "info_pt": "Gosuishiroku nº 11, pág. 23",
+  },
+  {
+    "id": "johreivol10_32",
+    "title_pt": "Visão de Pontos Pretos e Formas de Serpente",
+    "info_pt": "Gosuishiroku nº 19, pág. 22",
+  },
+  {
+    "id": "johreivol10_33",
+    "title_pt": "Verruga no Globo Ocular e a Metáfora do Palco",
+    "info_pt": "Mioshie-shu nº 2, pág. 19",
+  },
+  {
+    "id": "johreivol10_34",
+    "title_pt": "Vitiligo nas Pálpebras Causado por Colírios",
+    "info_pt": "Mioshie-shu nº 3, pág. 50",
+  },
+  {
+    "id": "johreivol10_35",
+    "title_pt": "Visão Dupla (Diplopia) em Idosa",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_36",
+    "title_pt": "Zumbido e Problemas Auditivos: O Papel do Bulbo Raquidiano",
+    "info_pt": "Mioshie-shu nº 21, pág. 6",
+  },
+  {
+    "id": "johreivol10_37",
+    "title_pt": "Surdez Pós-Otite Média",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_38",
+    "title_pt": "Zumbido, Cateterismo da Trompa de Eustáquio e Erros Médicos",
+    "info_pt": "Mioshie-shu nº 4, pág. 38",
+  },
+  {
+    "id": "johreivol10_39",
+    "title_pt": "Deficiência Intelectual, Hemorragia e Drogas",
+    "info_pt": "Mioshie-shu nº 8, pág. 56",
+  },
+  {
+    "id": "johreivol10_40",
+    "title_pt": "Otorreia Contínua e Atraso Mental",
+    "info_pt": "Mioshie-shu nº 2, pág. 52",
+  },
+  {
+    "id": "johreivol10_41",
+    "title_pt": "Surdez Infantil e Toxinas Hereditárias",
+    "info_pt": "Mioshie-shu nº 3, pág. 100",
+  },
+  {
+    "id": "johreivol10_42",
+    "title_pt": "Pontos Vitais do Johrei para o Nariz",
+    "info_pt": "Mioshie-shu nº 21, pág. 6",
+  },
+  {
+    "id": "johreivol10_43",
+    "title_pt": "A Relação entre Nariz, Bulbo Raquidiano e Cerebelo (Intoxicação por Gás)",
+    "info_pt": "Chijo Tengoku nº 12, pág. 15",
+  },
+  {
+    "id": "johreivol10_44",
+    "title_pt": "Dor Intensa e Secreção Purulenta na Face",
+    "info_pt": "Mioshie-shu nº 8, pág. 30",
+  },
+  {
+    "id": "johreivol10_45",
+    "title_pt": "Sinusite e Falso Diagnóstico de Câncer",
+    "info_pt": "Mioshie-shu nº 3, pág. 72",
+  },
+  {
+    "id": "johreivol10_46",
+    "title_pt": "Hemorragia Nasal Massiva (1,8 a 3,6 Litros)",
+    "info_pt": "Mioshie-shu nº 4, pág. 25",
+  },
+  {
+    "id": "johreivol10_47",
+    "title_pt": "Anosmia Congênita: Causas Espirituais e Físicas",
+    "info_pt": "Chijo Tengoku nº 14, pág. 12",
+  },
+  {
+    "id": "johreivol10_48",
+    "title_pt": "Perda de Olfato após \"Cura\" de Sinusite",
+    "info_pt": "Chijo Tengoku nº 12, pág. 15",
+  },
+  {
+    "id": "johreivol10_49",
+    "title_pt": "Ronco Alto e Pós-Operatório de Sinusite",
+    "info_pt": "Mioshie-shu nº 2, pág. 60",
+  },
+  {
+    "id": "johreivol10_50",
+    "title_pt": "Ponto Chave sobre Doenças de Garganta",
+    "info_pt": "Mioshie-shu nº 23, pág. 59",
+  },
+  {
+    "id": "johreivol10_51",
+    "title_pt": "Ferida na Língua por Mordida",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_52",
+    "title_pt": "Dor e Sensação de Aspereza na Ponta da Língua",
+    "info_pt": "Gosuishiroku nº 10, pág. 13",
+  },
+  {
+    "id": "johreivol10_53",
+    "title_pt": "Fissuras na Língua (Língua Fissurada)",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_54",
+    "title_pt": "Diagnóstico de Câncer de Língua e o Sofrimento Iatrogênico",
+    "info_pt": "Mioshie-shu nº 7, pág. 70",
+  },
+  {
+    "id": "johreivol10_55",
+    "title_pt": "Remoção de Glândulas e \"Câncer\" Recorrente",
+    "info_pt": "Mioshie-shu nº 4, pág. 64",
+  },
+  {
+    "id": "johreivol10_56",
+    "title_pt": "Diagnóstico de Câncer de Garganta em Idoso",
+    "info_pt": "Gosuishiroku nº 10, pág. 15",
+  },
+  {
+    "id": "johreivol10_57",
+    "title_pt": "Opressão na Garganta e Esquecimento",
+    "info_pt": "Mioshie-shu nº 1, pág. 71",
+  },
+  {
+    "id": "johreivol10_58",
+    "title_pt": "Perda de Voz após Hemoptise e Uso de Efedrina",
+    "info_pt": "Mioshie-shu nº 2, pág. 7",
+  },
+  {
+    "id": "johreivol10_59",
+    "title_pt": "Dificuldade na Pronúncia da Família do \"S\"",
+    "info_pt": "Gosuishiroku nº 12, pág. 16",
+  },
+  {
+    "id": "johreivol10_60",
+    "title_pt": "Sobre a Desafinação (Surdez Tonal)",
+    "info_pt": "Gosuishiroku nº 1, pág. 25",
+  },
+  {
+    "id": "johreivol10_61",
+    "title_pt": "Linfadenite, Remoção do Saco Lacrimal e Iatrogenia Óssea",
+    "info_pt": "Mioshie",
+  },
+  {
+    "id": "johreivol10_62",
+    "title_pt": "A Conexão Oculta entre Dor de Dente e Apendicite",
+    "info_pt": "Mioshie-shu nº 31, pág. 64",
+  },
+  {
+    "id": "johreivol10_63",
+    "title_pt": "Tratamento Dentário: O Perigo dos Antissépticos",
+    "info_pt": "Gosuishiroku nº 8, pág. 25",
+  },
+  {
+    "id": "johreivol10_64",
+    "title_pt": "Extração e Próteses: Anestesia é Aceitável",
+    "info_pt": "Mioshie-shu nº 5, pág. 40",
+  },
+  {
+    "id": "johreivol10_65",
+    "title_pt": "Toxina Dentária e a Região Occipital (Experiência Pessoal)",
+    "info_pt": "Mioshie-shu nº 13, pág. 12",
+  },
+  {
+    "id": "johreivol10_66",
+    "title_pt": "Origem da Dor: Dentes Superiores vs. Inferiores",
+    "info_pt": "Mioshie-shu nº 4, pág. 54",
+  },
+  {
+    "id": "johreivol10_67",
+    "title_pt": "Dentes Encavalados (Yaeba): Causas e Johrei",
+    "info_pt": "Chijo Tengoku nº 7, pág. 13",
+  },
+  {
+    "id": "johreivol10_68",
+    "title_pt": "Diagnóstico de Sarcoma após Extração do Siso",
+    "info_pt": "Mioshie-shu nº 4, pág. 53",
+  },
+  {
+    "id": "johreivol10_69",
+    "title_pt": "Dentes Moles que se Firmam com Johrei",
+    "info_pt": "Mioshie-shu nº 12, pág. 37",
+  },
+  {
+    "id": "johreivol10_70",
+    "title_pt": "Dentes Moles por Intoxicação de Cosméticos",
+    "info_pt": "Mioshie-shu nº 24, pág. 66",
+  },
+  {
+    "id": "johreivol10_71",
+    "title_pt": "A Causa do Tártaro",
+    "info_pt": "Chijo Tengoku nº 10, ,pág. 14"
+  },
+  {
+    "id": "johreivol10_72",
+    "title_pt": "Higiene Bucal: Sal vs. Dentifrício",
+    "info_pt": "Mioshie",
+  }
+]

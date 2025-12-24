@@ -38,7 +38,8 @@
       "pontosfocaisvol01_22"
     ],
     "category_jp": "脳疾患と腎臓の働き",
-    "category_pt": "Doenças Cerebrais e o Funcionamento Renal"
+    "category_pt": "Doenças Cerebrais e o Funcionamento Renal",
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "頭痛",
@@ -88,7 +89,8 @@
       "glândulas linfáticas cervicais",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "眩暈",
@@ -133,7 +135,8 @@
       "região frontal",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "脳膜炎－髄膜炎",
@@ -242,7 +245,8 @@
       "Rins",
       "região glútea",
       "região inguinal"
-    ]
+    ],
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "中風",
@@ -354,7 +358,8 @@
     "focusPoints": [
       "Ao redor do pescoço",
       "ombros"
-    ]
+    ],
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "眼病",
@@ -384,7 +389,8 @@
       "pontosfocaisvol01_03"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "近視",
@@ -429,7 +435,8 @@
       "entre as escápulas",
       "a coluna vertebral",
       "e rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "遠視",
@@ -462,7 +469,8 @@
       "Cabeça",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "乱視",
@@ -504,7 +512,8 @@
       "bulbo raquidiano",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "底翳",
@@ -549,7 +558,8 @@
       "região supraorbital (ao redor das sobrancelhas)",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "トラホーム",
@@ -591,7 +601,8 @@
       "nuca",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "結膜炎",
@@ -628,7 +639,8 @@
       "região frontal (área das sobrancelhas)",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Oculares"
   },
   {
     "title_jp": "鼻病",
@@ -658,7 +670,8 @@
       "pontosfocaisvol01_09"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "Master_title": "Doenças Nasais"
   },
   {
     "title_jp": "蓄膿症",
@@ -702,7 +715,8 @@
       "fundo do nariz",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Nasais"
   },
   {
     "title_jp": "肥厚性鼻炎",
@@ -742,7 +756,8 @@
       "imediações do nariz",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Nasais"
   },
   {
     "title_jp": "鼻茸",
@@ -780,7 +795,8 @@
       "nariz",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Nasais"
   },
   {
     "title_jp": "耳病",
@@ -801,7 +817,8 @@
       "pontosfocaisvol01_21"
     ],
     "category_jp": "眼・鼻・耳・歯の病気",
-    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes"
+    "category_pt": "Doenças dos Olhos, Nariz, Ouvidos e Dentes",
+    "Master_title": "Doenças do Ouvido"
   },
   {
     "title_jp": "中耳炎",
@@ -844,7 +861,8 @@
       "imediações da parótida",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças do Ouvido"
   },
   {
     "title_jp": "耳鳴り",
@@ -888,7 +906,8 @@
       "região do bulbo raquidiano",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças do Ouvido"
   },
   {
     "title_jp": "扁桃腺炎－扁桃炎",
@@ -941,7 +960,8 @@
       "região das amígdalas",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Doenças Cerebrais e a Função dos Rins"
   },
   {
     "title_jp": "歯痛",
@@ -997,7 +1017,8 @@
       "quando doem os inferiores",
       "foca-se as amígdalas",
       "as glândulas linfáticas cervicais)"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Dentárias"
   },
   {
     "title_jp": "歯槽膿漏",
@@ -1039,7 +1060,8 @@
       "ombros e",
       "fundamentalmente",
       "os rins"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Dentárias"
   },
   {
     "title_jp": "つわり",
@@ -1153,7 +1175,8 @@
       "rins",
       "abdômen inferior",
       "região inguinal"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Ginecológicas"
   },
   {
     "title_jp": "百日咳",
@@ -1223,7 +1246,8 @@
     "focus_context": "Locais com febre.",
     "focusPoints": [
       "Locais com febre"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Infantis"
   },
   {
     "title_jp": "小児まひ",
@@ -1268,7 +1292,8 @@
       "ombros",
       "axilas",
       "a parte afetada"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Infantis"
   },
   {
     "title_jp": "水痘",
@@ -1303,7 +1328,8 @@
       "ombros",
       "rins",
       "locais da erupção"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Infantis"
   },
   {
     "title_jp": "不眠症",
@@ -1343,7 +1369,8 @@
       "cérebro",
       "ombros",
       "rins"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Mentais"
   },
   {
     "title_jp": "精神病",
@@ -1394,7 +1421,8 @@
       "outros espíritos é importante. Dependendo do caso",
       "entoar a Oração Xintoísta (Amatsu-Norito - para espíritos animais) ou a Oração *Zengensanji* (para espíritos puros/divinos). Contudo",
       "não se deve ministrar Johrei enquanto se entoam as orações.*"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Mentais"
   },
   {
     "title_jp": "癲癇",
@@ -1428,7 +1456,8 @@
     "focus_context": "Seguir os mesmos da doença mental (item anterior).",
     "focusPoints": [
       "Seguir os mesmos da doença mental (item anterior)"
-    ]
+    ],
+    "Master_title": "Sobre as Doenças Mentais"
   },
   {
     "title_jp": "慢性気管支炎",
@@ -1458,6 +1487,7 @@
       "pontosfocaisvol01_04"
     ],
     "category_jp": "胸部疾患",
-    "category_pt": "Doenças Torácicas"
+    "category_pt": "Doenças Torácicas",
+    "Master_title": "Tórax"
   }
 ]

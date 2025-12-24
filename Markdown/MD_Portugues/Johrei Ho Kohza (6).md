@@ -16,7 +16,7 @@ Provavelmente, por ser um problema sem precedentes, creio que viveremos uma era 
 
 Como Deus ajustará a situação para que as pessoas compreendam — e para que sejam forçadas a compreender —, não há motivo para espanto, por maior que seja o problema; todavia, creio que surgirá uma situação inimaginável, ainda que momentânea.』
 
-### I. Seção da Cabeça
+## I. Seção da Cabeça
 
 ### 1\. Homem de meia-idade com insônia, desmaios ocasionais e dor de cabeça
 
