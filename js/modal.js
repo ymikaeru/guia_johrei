@@ -179,7 +179,12 @@ function openModal(i, explicitItem = null) {
     if (sourceEl) {
         // Updated Logic: Always show the Source (Volume/Book Name) here
         // Previously it was overriding with info_pt (citation)
-        sourceEl.textContent = item.source || 'JOHREI: O GUIA PRÁTICO';
+        const sourceText = item.source || 'JOHREI: O GUIA PRÁTICO';
+
+        // Make it clickable to filter
+        // Escape single quotes for the onclick handler
+        const escapedSource = sourceText.replace(/'/g, "\\'");
+        sourceEl.innerHTML = `<span class="cursor-pointer hover:underline hover:opacity-70 transition-opacity" title="Filtrar por esta fonte" onclick="filterBySourceFromModal('${escapedSource}')">${sourceText}</span>`;
 
         // Clear refEl or set it to empty for now as sourceEl covers the book name
         if (refEl) refEl.textContent = '';
@@ -1871,4 +1876,37 @@ closeModal = function () {
     if (glossaryView) glossaryView.classList.add('hidden');
     const readingView = document.getElementById('readingView');
     if (readingView) readingView.classList.remove('hidden'); // Reset for next time
+}
+
+// --- HELPER FOR MODAL FILTERING ---
+window.filterBySourceFromModal = function(sourceName) {
+    // 1. Set the source filter (exclusive mode for clarity)
+    if (typeof setSourceFilter === 'function') {
+        setSourceFilter(sourceName);
+    } else {
+        console.warn("setSourceFilter function not found!");
+        STATE.activeSources = [sourceName];
+        if (typeof applyFilters === 'function') applyFilters();
+        if (typeof renderActiveFilters === 'function') renderActiveFilters();
+    }
+
+    // 2. Clear other filters to avoid empty results and focus on the source content
+    STATE.activeTags = [];
+    STATE.activeFocusPoints = [];
+    STATE.bodyFilter = null;
+    
+    // Re-apply to ensure clean state
+    if (typeof applyFilters === 'function') applyFilters();
+    if (typeof renderActiveFilters === 'function') renderActiveFilters();
+
+    // 3. Close Modal to show results
+    closeModal();
+    
+    // 4. Scroll to top of list
+    const listEl = document.getElementById('contentList');
+    if (listEl) {
+        listEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
