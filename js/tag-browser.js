@@ -97,10 +97,12 @@ function formatSourceLabel(src) {
 }
 
 function initializeTagBrowser() {
+    // Wrapper checks for button visibility control (if needed)
     const wrapper = document.getElementById('tagBrowserWrapper');
-    const content = document.getElementById('tagBrowserContent');
+    // Content is now the INNER container for injection
+    const content = document.getElementById('tagBrowserInnerContent');
 
-    if (!wrapper || !content) return;
+    if (!content) return;
 
     // Only show on ensinamentos/explicacoes mode and NOT on map tab, OR if there are active filters
     const hasActiveFilters = (STATE.activeTags && STATE.activeTags.length > 0) ||
@@ -111,12 +113,14 @@ function initializeTagBrowser() {
 
     const allowedModes = ['ensinamentos', 'explicacoes'];
 
-    if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa' || STATE.activeTab === 'apostila') && !hasActiveFilters) {
-        wrapper.style.display = 'none';
-        return;
+    // Control visibility of the BUTTON wrapper in the header
+    if (wrapper) {
+        if ((!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa' || STATE.activeTab === 'apostila') && !hasActiveFilters) {
+            wrapper.style.display = 'none';
+        } else {
+            wrapper.style.display = 'block';
+        }
     }
-
-    wrapper.style.display = 'block';
 
     // Get all tags from current data with counts
     const tagCounts = {};
@@ -140,106 +144,147 @@ function initializeTagBrowser() {
             sourceCounts[item.source] = (sourceCounts[item.source] || 0) + 1;
         }
     });
+
     const validSources = Object.keys(sourceCounts).sort();
 
     if (validSources.length > 0) {
         html += `
             <div class="tag-category">
-                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3">Fontes</div>
-                <div class="flex flex-wrap gap-2">
+                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-4 mt-2">Fontes</div>
+                <div class="flex flex-col gap-2">
                     ${validSources.map(src => {
             const count = sourceCounts[src];
             const isActive = STATE.activeSources.includes(src);
             let label = formatSourceLabel(src);
             label = typeof cleanTitle === 'function' ? cleanTitle(label) : label;
+
+            const activeClass = isActive
+                ? 'border-gray-900 bg-gray-50 text-black dark:border-white dark:bg-gray-800 dark:text-white'
+                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-gray-800 dark:bg-[#1a1a1a] dark:text-gray-300 dark:hover:border-gray-600';
+
             return `
-                            <button onclick="toggleFilter('source', '${src.replace(/'/g, "\\'")}')" 
-                                class="tag-pill ${isActive ? 'tag-pill-active' : ''} text-xs">
-                                <span>${label}</span>
-                                <span class="tag-count">${count}</span>
+                            <button onclick="toggleFilter('source', '${src.replace(/'/g, "\\'")}'); toggleTagBrowser()" 
+                                class="w-full text-left px-4 py-3 border rounded-lg transition-all flex items-center justify-between group ${activeClass}">
+                                <span class="text-sm font-medium flex-1 pr-4 ${isActive ? 'font-bold' : ''}">${label}</span>
+                                <span class="text-xs font-bold text-gray-400 flex-shrink-0 ${isActive ? 'text-black dark:text-white' : ''}">${count}</span>
                             </button>
                         `;
         }).join('')}
                 </div>
             </div>
         `;
+    }
+
+    // --- INJECT SUBJECTS vs CATEGORIES SECTION ---
+    // If Fundamentos -> Show Categories (from item.categories)
+    // Else -> Show Subjects (Assuntos)
+
+    if (STATE.activeTab === 'fundamentos') {
+        const categoryCounts = {};
+        const items = STATE.data[STATE.activeTab] || [];
+
+        items.forEach(item => {
+            if (item.categories && Array.isArray(item.categories)) {
+                item.categories.forEach(cat => {
+                    if (cat) categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+                });
+            } else if (item.category) {
+                categoryCounts[item.category] = (categoryCounts[item.category] || 0) + 1;
+            }
+        });
+
+        const validCategories = Object.keys(categoryCounts).sort();
+
+        if (validCategories.length > 0) {
+            html += `
+                <div class="tag-category">
+                    <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-4 mt-6">Categorias</div>
+                    <div class="flex flex-col gap-2">
+                        ${validCategories.map(cat => {
+                const count = categoryCounts[cat];
+                const cleanCat = typeof cleanTitle === 'function' ? cleanTitle(cat) : cat;
+                // Reuse category filter logic if exists, or simple tag logic?
+                // Using toggleFilter('category', ...) seems appropriate if filter supports it. 
+                // Let's assume toggleFilter('category') works or we use toggleCategory logic.
+                // Re-checking filters.js: toggleFilter supports 'category'.
+                const isActive = STATE.activeCategories.includes(cat);
+
+                const activeClass = isActive
+                    ? 'border-gray-900 bg-gray-50 text-black dark:border-white dark:bg-gray-800 dark:text-white'
+                    : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-gray-800 dark:bg-[#1a1a1a] dark:text-gray-300 dark:hover:border-gray-600';
+
+                return `
+                                <button onclick="toggleFilter('category', '${cat.replace(/'/g, "\\'")}'); toggleTagBrowser()" 
+                                    class="w-full text-left px-4 py-3 border rounded-lg transition-all flex items-center justify-between group ${activeClass}">
+                                    <span class="text-sm font-medium flex-1 pr-4 ${isActive ? 'font-bold' : ''}">${cleanCat}</span>
+                                    <span class="text-xs font-bold text-gray-400 flex-shrink-0 ${isActive ? 'text-black dark:text-white' : ''}">${count}</span>
+                                </button>
+                            `;
+            }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+    } else {
+        // --- INJECT SUBJECTS SECTION (Standard for Q&A, etc) ---
+        const subjectCounts = {};
+        const items = STATE.data[STATE.activeTab] || [];
+        items.forEach(item => {
+            let subj = item.Master_Title || item.Master_title || item.titulo_mestre;
+            if (subj) {
+                subj = subj.trim();
+                subjectCounts[subj] = (subjectCounts[subj] || 0) + 1;
+            }
+        });
+
+        const validSubjects = Object.keys(subjectCounts).sort();
+
+        if (validSubjects.length > 0) {
+            html += `
+                <div class="tag-category">
+                    <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-4 mt-6">Assuntos</div>
+                    <div class="flex flex-col gap-2">
+                        ${validSubjects.map(subj => {
+                const count = subjectCounts[subj];
+                const isActive = STATE.activeSubject === subj;
+
+                const activeClass = isActive
+                    ? 'border-gray-900 bg-gray-50 text-black dark:border-white dark:bg-gray-800 dark:text-white'
+                    : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-gray-800 dark:bg-[#1a1a1a] dark:text-gray-300 dark:hover:border-gray-600';
+
+                return `
+                                <button onclick="setSubjectFilter('${subj.replace(/'/g, "\\'")}'); toggleTagBrowser()" 
+                                    class="w-full text-left px-4 py-3 border rounded-lg transition-all flex items-center justify-between group ${activeClass}">
+                                    <span class="text-sm font-medium flex-1 pr-4 ${isActive ? 'font-bold' : ''}">${subj}</span>
+                                    <span class="text-xs font-bold text-gray-400 flex-shrink-0 ${isActive ? 'text-black dark:text-white' : ''}">${count}</span>
+                                </button>
+                            `;
+            }).join('')}
+                    </div>
+                </div>
+            `;
+        }
     }
 
     // Generate HTML for each category
-    for (const [category, tags] of Object.entries(TAG_CATEGORIES)) {
-        // Filter to only tags that exist in data
-        const availableTags = tags.filter(tag => tagCounts[tag] > 0);
 
-        if (availableTags.length === 0) continue;
-
-        html += `
-            <div class="tag-category">
-                <div class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-3 mt-4">${category}</div>
-                <div class="flex flex-wrap gap-2">
-                    ${availableTags.map(tag => {
-            const count = tagCounts[tag] || 0;
-            const isActive = STATE.activeTags.includes(tag);
-            const icon = ICON_MAP[tag] ? `<span class="mr-1 opacity-70">${ICON_MAP[tag]}</span>` : '';
-            return `
-                            <button onclick="toggleTag('${tag.replace(/'/g, "\\'")}', event)" 
-                                class="tag-pill ${isActive ? 'tag-pill-active' : ''}"
-                                data-tag="${tag}">
-                                ${icon}
-                                <span>${tag}</span>
-                                <span class="tag-count">${count}</span>
-                            </button>
-                        `;
-        }).join('')}
-                </div>
-            </div>
-        `;
-    }
 
     content.innerHTML = html;
-
-
-    // Logic for toggle button visibility: HIDE toggle if not in allowed modes
-    const toggleBtn = document.getElementById('tagBrowserToggle');
-
-    if (!allowedModes.includes(STATE.mode) || STATE.activeTab === 'mapa') {
-        if (toggleBtn) toggleBtn.style.display = 'none';
-        content.classList.add('hidden');
-    } else {
-        if (toggleBtn) toggleBtn.style.display = 'flex';
-
-        // Force closed by default as per user request
-        const isExpanded = false;
-
-        if (isExpanded) {
-            content.classList.remove('hidden');
-        } else {
-            content.classList.add('hidden');
-        }
-    }
 }
 
 function toggleTagBrowser() {
-    const content = document.getElementById('tagBrowserContent');
+    const modal = document.getElementById('tagBrowserContent');
+    if (!modal) return;
 
-    const isExpanded = !content.classList.contains('hidden');
+    const isHidden = modal.classList.contains('hidden');
 
-    if (isExpanded) {
-        content.classList.add('hidden');
-        localStorage.setItem('tagBrowserExpanded', 'false');
-        document.removeEventListener('click', closeByOutsideClick);
+    if (isHidden) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Lock scroll
     } else {
-        content.classList.remove('hidden');
-        localStorage.setItem('tagBrowserExpanded', 'true');
-        setTimeout(() => {
-            document.addEventListener('click', closeByOutsideClick);
-        }, 10);
-    }
-}
-
-function closeByOutsideClick(event) {
-    const wrapper = document.getElementById('tagBrowserWrapper');
-    if (wrapper && !wrapper.contains(event.target)) {
-        toggleTagBrowser();
+        modal.classList.add('hidden');
+        document.body.style.overflow = ''; // Unlock scroll
     }
 }
 

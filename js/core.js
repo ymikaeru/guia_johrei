@@ -253,6 +253,7 @@ function setTab(id) {
 
     STATE.activeTab = id;
     STATE.activeLetter = '';
+    STATE.activeSubject = null; // Reset Subject Filter on Tab Change
 
     // Ao mudar de aba, geralmente queremos resetar o filtro específico do corpo
     // a menos que estejamos indo PARA o mapa.

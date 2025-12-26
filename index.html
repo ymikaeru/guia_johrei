@@ -52,22 +52,22 @@
         }
 
         .lang-toggle-btn.active {
-            background: #000;
-            color: #fff;
+            background-color: #000 !important;
+            color: #fff !important;
         }
 
         .dark .lang-toggle-btn.active {
-            background: #fff;
-            color: #000;
+            background-color: #fff !important;
+            color: #000 !important;
         }
 
         .lang-toggle-btn:hover:not(.active) {
-            background: #f3f4f6;
+            background-color: #f3f4f6;
             color: #000;
         }
 
         .dark .lang-toggle-btn:hover:not(.active) {
-            background: #262626;
+            background-color: #262626;
             color: #fff;
         }
     </style>
@@ -211,35 +211,9 @@
                 <!-- Mobile Search (Visible only on Mobile) -->
                 <div id="mobileSearchWrapper" class="md:hidden px-8 pb-4 relative">
                     <div class="">
-                        <!-- Mobile Category Filter -->
-                        <div class="relative w-full hidden mb-2" id="mobileCategoryFilterContainer">
-                            <select onchange="if(typeof setCategoryFilter === 'function') setCategoryFilter(this.value)"
-                                class="category-filter-select w-full bg-transparent py-2 pl-0 pr-8 text-xs font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
-                                <option value="">CATEGORIAS</option>
-                            </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
-                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
 
-                        <!-- Mobile Source Filter -->
-                        <div class="relative w-full hidden mb-2" id="mobileSourceFilterContainer">
-                            <select onchange="if(typeof setSourceFilter === 'function') setSourceFilter(this.value)"
-                                class="source-filter-select w-full bg-transparent py-2 pl-0 pr-8 text-xs font-sans font-bold uppercase tracking-widest focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-all appearance-none cursor-pointer text-gray-400 hover:text-black dark:hover:text-white">
-                                <option value="">FONTES</option>
-                            </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-0 text-gray-400">
-                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
+
+
                         <input type="text" placeholder="Pesquisar..."
                             class="search-input w-full bg-transparent py-3 pr-24 text-lg font-serif font-normal placeholder-gray-300 dark:placeholder-gray-700 text-black dark:text-gray-100 focus:outline-none border-b border-gray-100 dark:border-gray-800 focus:border-black dark:focus:border-white transition-colors tracking-wide">
 
@@ -272,64 +246,36 @@
                     <div class="flex overflow-x-auto hide-scrollbar px-8 md:px-12 py-6 gap-4" id="alphabetContainer">
                     </div>
                 </div>
-            </div>
-
-            <!-- Tag Browser Section -->
-            <div id="tagBrowserWrapper" class="border-b border-gray-100 dark:border-gray-900 relative"
-                style="display: none;">
                 <div class="px-8 md:px-12 pt-[1.1rem] pb-0 flex flex-col items-start bg-transparent">
                     <div class="relative flex flex-row items-center gap-2 mb-[0.4rem] w-full">
                         <button onclick="toggleTagBrowser()" id="tagBrowserToggle"
-                            class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all border border-gray-200 dark:border-gray-800 rounded-sm px-6 py-2 hover:border-gray-900 dark:hover:border-white">
-                            <svg id="tagBrowserIcon" class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
-                                </path>
-                            </svg>
-                            <span>FILTROS</span>
+                            class="group flex items-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition-all bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-full px-8 py-2.5 hover:shadow-md hover:border-gray-300 dark:hover:border-gray-600 active:scale-95">
+                            <span>Filtros</span>
                         </button>
 
-                        <!-- Subject Filter (Assunto) -->
-                        <div class="relative hidden ml-2" id="subjectFilterContainer">
-                            <select id="subjectFilterSelect"
-                                onchange="if(typeof setSubjectFilter === 'function') setSubjectFilter(this.value)"
-                                class="subject-filter-select appearance-none bg-transparent text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all border border-gray-200 dark:border-gray-800 rounded-sm px-4 py-2 pr-8 hover:border-gray-900 dark:hover:border-white focus:outline-none cursor-pointer">
-                                <option value="">ASSUNTOS</option>
-                            </select>
-                            <div
-                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
-                                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
+
 
                         <button onclick="clearSearch()" id="headerClearFiltersBtn"
-                            class="hidden flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-red-500 hover:text-red-700 transition-all border border-red-200 bg-red-50 rounded-sm px-4 py-2 hover:border-red-300 ml-2">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="hidden flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-red-400 hover:text-red-600 transition-all border border-red-100 dark:border-red-900/30 bg-red-50/50 dark:bg-red-900/10 rounded-full px-5 py-2.5 hover:border-red-200 hover:shadow-sm ml-3 active:scale-95">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     d="M6 18L18 6M6 6l12 12">
                                 </path>
                             </svg>
-                            <span>LIMPAR FILTROS</span>
+                            <span>Limpar</span>
                         </button>
 
                         <button onclick="addAllVisibleToApostila()" id="addAllBtn"
-                            class="hidden md:flex ml-auto items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 transition-all border border-transparent hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-full px-4 py-2"
+                            class="hidden md:flex ml-auto items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 transition-all border border-transparent hover:bg-yellow-50 dark:hover:bg-yellow-900/20 rounded-full px-6 py-2.5 active:scale-95"
                             title="Adicionar todos os itens visíveis à apostila">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z">
                                 </path>
                             </svg>
                             <span>Add All</span>
                         </button>
-                        <div id="tagBrowserContent"
-                            class="hidden absolute left-0 top-full mt-0 z-50 bg-white dark:bg-[#111] shadow-2xl rounded-sm border border-gray-100 dark:border-gray-800 p-6 w-[80vw] md:w-[600px] max-h-[60vh] overflow-y-auto custom-scrollbar">
-                            <!-- Tag categories will be injected here by JavaScript -->
-                        </div>
+
                     </div>
 
                     <!-- Active Filters -->
@@ -423,16 +369,7 @@
                             0.9x
                         </button>
 
-                        <!-- Language Toggle Button -->
-                        <button onclick="toggleLanguageBar()" id="btnHeaderLanguage"
-                            class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black dark:hover:text-white rounded-full hover:bg-gray-50 dark:hover:bg-[#222] transition-colors"
-                            title="Idioma">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
-                                </path>
-                            </svg>
-                        </button>
+
 
                         <!-- Copy Text (Hidden per user request) -->
                         <button onclick="copyCardContent()" id="btnHeaderCopyText"
@@ -496,6 +433,41 @@
                     <div id="appearanceMenu"
                         class="hidden absolute top-16 right-4 w-64 bg-white dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-gray-800 shadow-xl p-4 z-50 animate-fade-down">
                         <div class="flex flex-col gap-4">
+                            <!-- Language -->
+                            <div>
+                                <p class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Idioma /
+                                    Visualização
+                                </p>
+                                <div class="flex flex-col gap-1 bg-gray-50 dark:bg-[#222] rounded-lg p-1">
+                                    <button onclick="switchLanguageView('pt')" data-lang="pt"
+                                        class="lang-toggle-btn active w-full py-2 px-3 text-left text-[10px] font-bold uppercase tracking-widest rounded hover:bg-white dark:hover:bg-[#333] transition-all flex justify-between items-center group">
+                                        <span>Português</span>
+                                        <svg class="w-3 h-3 opacity-0 group-[.active]:opacity-100" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </button>
+                                    <button onclick="switchLanguageView('jp')" data-lang="jp"
+                                        class="lang-toggle-btn w-full py-2 px-3 text-left text-[10px] font-bold uppercase tracking-widest rounded hover:bg-white dark:hover:bg-[#333] transition-all flex justify-between items-center group">
+                                        <span>Original (JP)</span>
+                                        <svg class="w-3 h-3 opacity-0 group-[.active]:opacity-100" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </button>
+                                    <button onclick="switchLanguageView('compare')" data-lang="compare"
+                                        class="lang-toggle-btn w-full py-2 px-3 text-left text-[10px] font-bold uppercase tracking-widest rounded hover:bg-white dark:hover:bg-[#333] transition-all flex justify-between items-center group">
+                                        <span>Comparar</span>
+                                        <svg class="w-3 h-3 opacity-0 group-[.active]:opacity-100" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
                             <!-- Alignment -->
                             <div>
                                 <p class="text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Alinhamento
@@ -591,22 +563,7 @@
                             <div id="modalFocusPoints" class="flex flex-wrap gap-2"></div>
                         </div>
 
-                        <!-- Language Toggle Bar -->
-                        <div id="languageToggle"
-                            class="hidden flex justify-center gap-2 mb-8 p-2 bg-gray-50 dark:bg-[#161616] rounded-lg border border-gray-200 dark:border-gray-800">
-                            <button onclick="switchLanguageView('pt')" data-lang="pt"
-                                class="lang-toggle-btn active flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
-                                Português
-                            </button>
-                            <button onclick="switchLanguageView('jp')" data-lang="jp"
-                                class="lang-toggle-btn flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
-                                Original (JP)
-                            </button>
-                            <button onclick="switchLanguageView('compare')" data-lang="compare"
-                                class="lang-toggle-btn flex-1 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded transition-all">
-                                Comparar
-                            </button>
-                        </div>
+
 
                         <!-- Content Containers -->
                         <div id="contentPT"
@@ -702,6 +659,81 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
+
+    <!-- 1. Filters (Tags) Modal -->
+    <div id="tagBrowserContent" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleTagBrowser()">
+        </div>
+        <!-- Modal Card -->
+        <div
+            class="relative w-full max-w-2xl bg-white dark:bg-[#111] rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 max-h-[85vh] flex flex-col overflow-hidden animate-fade-up">
+            <!-- Header -->
+            <div
+                class="flex-none flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 bg-white/95 dark:bg-[#111] backdrop-blur z-10">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                        </path>
+                    </svg>
+                    <h3 class="font-bold uppercase tracking-widest text-xs text-gray-900 dark:text-gray-100">Filtros
+                    </h3>
+                </div>
+                <button onclick="toggleTagBrowser()"
+                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Scrollable Content -->
+            <div id="tagBrowserInnerContent" class="flex-grow overflow-y-auto p-6 custom-scrollbar">
+                <!-- Injected by JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. Subjects Modal -->
+    <div id="subjectBrowserContent" class="hidden fixed inset-0 z-[160] flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleSubjectBrowser()">
+        </div>
+        <!-- Modal Card -->
+        <div
+            class="relative w-full max-w-md bg-white dark:bg-[#111] rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 max-h-[85vh] flex flex-col overflow-hidden animate-fade-up">
+            <!-- Search Header -->
+            <div
+                class="flex-none p-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515] flex gap-3 items-center">
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="text" id="subjectSearchInput" placeholder="FILTRAR ASSUNTOS..."
+                    class="flex-1 bg-transparent text-xs font-bold uppercase tracking-widest placeholder-gray-400 focus:outline-none text-black dark:text-white"
+                    oninput="filterSubjectList(this.value)">
+                <button onclick="toggleSubjectBrowser()"
+                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- List Container -->
+            <div id="subjectListContainer"
+                class="flex-grow overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1 bg-white dark:bg-[#111]">
+                <!-- Injected by JS -->
+            </div>
+            <!-- Footer Actions -->
+            <div
+                class="flex-none p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#151515] flex justify-between items-center">
+                <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Selecione um tópico</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Core Dependencies -->
     <script src="js/utils.js?v=100"></script>

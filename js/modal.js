@@ -19,22 +19,7 @@ function splitContent(content) {
 }
 
 // Toggle language bar visibility
-window.toggleLanguageBar = function () {
-    const languageBar = document.getElementById('languageToggle');
-    const btn = document.getElementById('btnHeaderLanguage');
 
-    if (languageBar.classList.contains('hidden')) {
-        languageBar.classList.remove('hidden');
-        // Highlight button when active
-        btn.classList.add('text-black', 'dark:text-white');
-        btn.classList.remove('text-gray-400');
-    } else {
-        languageBar.classList.add('hidden');
-        // Reset button color
-        btn.classList.remove('text-black', 'dark:text-white');
-        btn.classList.add('text-gray-400');
-    }
-}
 
 // Switch language view
 window.switchLanguageView = function (mode) {
@@ -542,11 +527,11 @@ function toggleImmersiveControls(e) {
 function navModal(dir) {
     const next = currentModalIndex + dir;
     if (next >= 0 && next < STATE.list.length) {
-        const content = document.getElementById('modalContent');
-        content.style.opacity = '0';
+        const scrollContainer = document.getElementById('modalScrollContainer');
+        if (scrollContainer) scrollContainer.style.opacity = '0';
         setTimeout(() => {
             openModal(next);
-            content.style.opacity = '1';
+            if (scrollContainer) scrollContainer.style.opacity = '1';
         }, 200);
     } else if (STATE.readingMode === 'book') {
         // --- CROSS-BOOK NAVIGATION (Continuous Mode) ---
@@ -846,18 +831,29 @@ window.setModalTheme = function (theme) {
     STATE.modalTheme = theme;
     localStorage.setItem('modalTheme', theme);
     const scrollContainer = document.getElementById('modalScrollContainer');
-    const content = document.getElementById('modalContent');
+    // const content = document.getElementById('modalContent'); // REMOVED
     const title = document.getElementById('modalTitle');
     const source = document.getElementById('modalSource');
     const header = document.getElementById('modalHeader');
     const footer = document.getElementById('modalFooter');
     const card = document.getElementById('modalCard');
 
-    if (!scrollContainer || !content) return;
+    if (!scrollContainer) return;
 
     // Reset classes first
     scrollContainer.className = 'flex-grow overflow-y-auto scroll-smooth relative transition-colors duration-300';
-    content.className = 'rich-text leading-loose transition-colors duration-300'; // font-serif handled by theme or default?
+
+    // Target all content views
+    const contentViews = [
+        document.getElementById('contentPT'),
+        document.getElementById('contentJP'),
+        document.getElementById('contentComparePT'),
+        document.getElementById('contentCompareJP')
+    ];
+
+    contentViews.forEach(el => {
+        if (el) el.className = 'content-view rich-text leading-loose transition-colors duration-300';
+    });
 
     // Default Variables
     let bgClass = '';
@@ -980,7 +976,10 @@ window.setModalTheme = function (theme) {
 
     // Apply Styles
     scrollContainer.classList.add(...bgClass.split(' '));
-    content.classList.add(...textClass.split(' '), fontClass);
+
+    contentViews.forEach(el => {
+        if (el) el.classList.add(...textClass.split(' '), fontClass);
+    });
 
     // Apply Backdrop
     const backdrop = document.getElementById('modalBackdrop');
@@ -1034,19 +1033,21 @@ window.setModalTheme = function (theme) {
     });
 
     // Apply Highlight Variables
-    content.style.setProperty('--highlight-bg', highlightBg);
-    content.style.setProperty('--highlight-text', highlightText);
+    // Apply Highlight Variables
+    contentViews.forEach(el => {
+        if (!el) return;
+        el.style.setProperty('--highlight-bg', highlightBg);
+        el.style.setProperty('--highlight-text', highlightText);
+        el.style.setProperty('--focus-point-bg', focusPointBg);
+        el.style.setProperty('--focus-point-text', focusPointText);
 
-    // Apply Focus Point Variables
-    content.style.setProperty('--focus-point-bg', focusPointBg);
-    content.style.setProperty('--focus-point-text', focusPointText);
+        // Force color inheritance
+        el.querySelectorAll('p, li, div, h1, h2, h3, h4, h5, h6, strong, span, em').forEach(child => {
+            child.style.color = 'inherit';
+        });
+    });
 
     if (card) card.style.backgroundColor = cardBg;
-
-    // Force color inheritance to override specific .rich-text CSS rules
-    content.querySelectorAll('p, li, div, h1, h2, h3, h4, h5, h6, strong, span, em').forEach(child => {
-        child.style.color = 'inherit';
-    });
 
     if (title) {
         title.className = `text-3xl md:text-4xl ${fontClass} font-medium mb-8 md:mb-12 leading-[1.2] text-center transition-colors duration-300 ${titleClass}`;
@@ -1208,8 +1209,9 @@ window.setModalTheme = function (theme) {
 
         // Apply Container Styles
         // Note: we preserve layout classes but update colors
+        const isHidden = fpContainer.classList.contains('hidden');
         const fpBase = "mb-8 p-6 rounded-r-xl transition-colors duration-300";
-        fpContainer.className = `${fpBase} ${fpBg}`;
+        fpContainer.className = `${fpBase} ${fpBg} ${isHidden ? 'hidden' : ''}`;
 
         if (fpTitle) fpTitle.className = `text-[10px] font-sans font-bold uppercase tracking-widest mb-4 ${fpTitleColor}`;
 
@@ -1334,8 +1336,16 @@ window.toggleSpeech = async function () {
     }
 
     // Get Text Blocks (Karaoke Mode)
-    const contentContainer = document.getElementById('modalContent');
-    if (!contentContainer) return; // Should allow fallback if container missing?
+    // Get available container based on mode
+    let contentContainer = document.getElementById('contentPT');
+    if (STATE.languageView === 'compare') {
+        contentContainer = document.getElementById('contentComparePT');
+    }
+
+    // Fallback if PT is empty but maybe we are in another mode? 
+    // For now TTS is PT-only.
+
+    if (!contentContainer) return;
 
     // Prepare content for granular highlighting (Sentence Level)
     prepareContentForKaraoke(contentContainer);
@@ -1879,7 +1889,7 @@ closeModal = function () {
 }
 
 // --- HELPER FOR MODAL FILTERING ---
-window.filterBySourceFromModal = function(sourceName) {
+window.filterBySourceFromModal = function (sourceName) {
     // 1. Set the source filter (exclusive mode for clarity)
     if (typeof setSourceFilter === 'function') {
         setSourceFilter(sourceName);
@@ -1894,14 +1904,14 @@ window.filterBySourceFromModal = function(sourceName) {
     STATE.activeTags = [];
     STATE.activeFocusPoints = [];
     STATE.bodyFilter = null;
-    
+
     // Re-apply to ensure clean state
     if (typeof applyFilters === 'function') applyFilters();
     if (typeof renderActiveFilters === 'function') renderActiveFilters();
 
     // 3. Close Modal to show results
     closeModal();
-    
+
     // 4. Scroll to top of list
     const listEl = document.getElementById('contentList');
     if (listEl) {

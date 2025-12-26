@@ -31,16 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Modal Shortcuts (Escape, Left, Right)
         const readModal = document.getElementById('readModal');
-        const isModalOpen = readModal && !readModal.classList.contains('hidden');
+        const isReadModalOpen = readModal && !readModal.classList.contains('hidden');
 
-        if (isModalOpen) {
-            // Escape - Close modal
-            if (e.key === 'Escape') {
-                if (typeof closeModal === 'function') {
-                    closeModal();
-                }
+        if (e.key === 'Escape') {
+            if (isReadModalOpen) {
+                if (typeof closeModal === 'function') closeModal();
+                return;
             }
 
+            const tagModal = document.getElementById('tagBrowserContent');
+            if (tagModal && !tagModal.classList.contains('hidden')) {
+                if (typeof toggleTagBrowser === 'function') toggleTagBrowser();
+                return;
+            }
+
+            const subjModal = document.getElementById('subjectBrowserContent');
+            if (subjModal && !subjModal.classList.contains('hidden')) {
+                if (typeof toggleSubjectBrowser === 'function') toggleSubjectBrowser();
+                return;
+            }
+        }
+
+        if (isReadModalOpen) {
             // ArrowLeft - Prev Item
             if (e.key === 'ArrowLeft') {
                 if (typeof navModal === 'function') {
