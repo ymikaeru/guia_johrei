@@ -153,7 +153,7 @@ function renderList(list, activeTags, mode, activeTab) {
 
                 <!-- Add to Apostila (Subtle Icon with larger touch target) -->
                 <button onclick="event.stopPropagation(); toggleApostilaItem('${item.id}', this)" 
-                    class="w-10 h-10 -mr-2 -mt-2 flex items-center justify-center rounded-full transition-colors ${isInApostila ? 'text-yellow-600' : 'text-gray-300 hover:text-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/10'}" 
+                    class="w-10 h-10 -mr-2 -mt-2 hidden md:flex items-center justify-center rounded-full transition-colors ${isInApostila ? 'text-yellow-600' : 'text-gray-300 hover:text-yellow-600 hover:bg-yellow-50 dark:hover:bg-yellow-900/10'}" 
                     title="Adicionar à Apostila">
                      <svg class="w-5 h-5" fill="${isInApostila ? 'currentColor' : 'none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
                 </button>

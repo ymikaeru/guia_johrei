@@ -150,14 +150,14 @@ function selectBodyPointFromDropdown(pointIds) {
 function filterByBodyPoint(pointId, pointName) {
     // Set bodyFilter state
     STATE.bodyFilter = pointId;
-    
+
     // Update selected point name display
     const nameEl = document.getElementById('selectedBodyPointName');
     if (nameEl) nameEl.textContent = pointName || 'Ponto Focal';
-    
+
     // Apply filters to show cards below
     applyFilters();
-    
+
     // Scroll to results on mobile
     const contentList = document.getElementById('contentList');
     if (contentList && window.innerWidth < 1024) {
@@ -383,15 +383,29 @@ function generateSidebarOptions() {
 
     const sortedNames = Object.keys(pointsByName).sort((a, b) => a.localeCompare(b, 'pt-BR'));
 
+    const dataKey = STATE.activeTab === 'mapa' ? 'pontos_focais' : STATE.activeTab;
+    const currentData = STATE.data && STATE.data[dataKey] ? STATE.data[dataKey] : [];
+
     return sortedNames.map(name => {
         const ids = pointsByName[name].join(',');
+        const idList = pointsByName[name];
+
+        // Count items matching ANY of the IDs for this name
+        const count = currentData.filter(item => {
+            return idList.some(id => matchBodyPoint(item, id));
+        }).length;
+
+        // Hide items with no results
+        if (count === 0) return '';
+
         return `
-            <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+            <div class="px-5 py-3 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all group hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black flex justify-between items-center"
                 onclick="selectCustomOption('${ids}', '${name}', event)"
                 onmouseenter="previewBodyPoints('${ids}')"
                 onmouseleave="clearBodyPointPreview()"
             >
-                <span class="text-gray-900 dark:text-gray-100 group-hover:text-white dark:group-hover:text-black transition-colors block">${name}</span>
+                <span class="text-gray-900 dark:text-gray-100 group-hover:text-white dark:group-hover:text-black transition-colors block flex-1 pr-2">${name}</span>
+                <span class="text-[9px] font-bold text-gray-400 group-hover:text-white dark:group-hover:text-black flex-shrink-0">${count}</span>
             </div>
         `;
     }).join('');

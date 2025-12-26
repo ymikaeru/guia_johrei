@@ -173,9 +173,8 @@ function renderBodyMapViews() {
         <!-- Tablet: flex-col makes logic-first appear Visual-Top. We use order-first to make it logic-first. -->
         <div class="w-full lg:hidden flex justify-center px-4 relative z-[40] transition-all min-[768px]:order-first min-[768px]:mb-8 mb-4">
              <button onclick="openBodyFilterModal()" 
-                 class="group flex items-center gap-2 px-6 py-3 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full shadow-sm hover:shadow-md hover:border-black dark:hover:border-white transition-all">
+                 class="group flex items-center px-6 py-3 bg-white dark:bg-[#111] border border-gray-200 dark:border-gray-800 rounded-full shadow-sm hover:shadow-md hover:border-black dark:hover:border-white transition-all">
                  <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors">Filtrar por Região</span>
-                 <svg class="w-4 h-4 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
              </button>
         </div>
     </div>
@@ -207,10 +206,9 @@ function openBodyFilterModal() {
         modal.id = 'bodyFilterModal';
         modal.className = 'fixed inset-0 z-[9999] hidden';
         modal.innerHTML = `
-        < !--Backdrop -->
-            <div class="absolute inset-0 bg-white/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-sm transition-opacity opacity-0" id="filterModalBackdrop" onclick="closeBodyFilterModal()"></div>
             
-            <!--Modal Card(Centered)-- >
+        <!-- Modal Card(Centered) -->
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-white/95 dark:bg-[#111]/95 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800 flex flex-col max-h-[80vh] transition-all scale-95 opacity-0" id="filterModalCard">
 
             <!-- Header -->
@@ -233,6 +231,18 @@ function openBodyFilterModal() {
         </div>
     `;
         document.body.appendChild(modal);
+    }
+
+    // REFRESH CONTENT EVERY TIME (To update counts)
+    const list = document.getElementById('filterModalList');
+    if (list && typeof generateSidebarOptions === 'function') {
+        list.innerHTML = `
+            <div class="px-6 py-4 cursor-pointer text-[10px] font-bold uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 last:border-0 transition-all text-gray-400 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#151515]"
+                onclick="selectCustomOption('', '-- Todos os pontos --', event)">
+                -- Todos os pontos --
+            </div>
+            ${generateSidebarOptions()}
+        `;
     }
 
     // 2. Open Modal Animation
@@ -502,6 +512,14 @@ function renderActiveFilters() {
         });
     }
 
+    // Subject (Assunto)
+    if (STATE.activeSubject) {
+        items.push({
+            text: 'Assunto: ' + STATE.activeSubject,
+            onclick: `setSubjectFilter(null)`
+        });
+    }
+
     // Body Filter
     if (STATE.bodyFilter) {
         // Find body point name if possible
@@ -524,9 +542,9 @@ function renderActiveFilters() {
     container.style.display = 'flex';
     // Generate Chips HTML
     const chipsHtml = items.map(item => `
-        <button onclick="${item.onclick}" class="group flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-lg text-[10px] font-bold uppercase tracking-widest text-gray-500 hover:border-red-400 hover:text-red-500 transition-all shadow-sm">
+        <button onclick="${item.onclick}" class="group flex items-center gap-2 px-5 py-2 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:border-red-400 hover:text-red-500 transition-colors shadow-sm active:scale-95">
             <span>${item.text}</span>
-            <svg class="w-3 h-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <svg class="w-3 h-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
     `).join('');
 

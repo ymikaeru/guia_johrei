@@ -181,67 +181,147 @@ function setSubjectFilter(value) {
 }
 
 function populateSubjectDropdown() {
-    const selects = document.querySelectorAll('.subject-filter-select');
-    if (selects.length === 0) return;
+    // Deprecated in favor of Modal
+    populateSubjectBrowser();
+}
 
-    // Check if we are in Q&A tab
-    // Adjust 'cases_qa' or 'qa' based on your actual tab ID. 
-    // Usually 'cases_qa' for "Casos e Respostas" or similar.
-    // Usually 'cases_qa' for "Casos e Respostas" or similar.
+// --- SUBJECT BROWSER MODAL (New) ---
+// Global variable to store current full list for filtering
+let CURRENT_SUBJECTS_LIST = [];
+
+function toggleSubjectBrowser() {
+    const content = document.getElementById('subjectBrowserContent');
+    if (!content) return;
+
+    const isHidden = content.classList.contains('hidden');
+
+    if (isHidden) {
+        // Open
+        populateSubjectBrowser(); // Refresh list on open
+        content.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Lock scroll
+
+        // Auto-focus search
+        setTimeout(() => {
+            const searchInput = document.getElementById('subjectSearchInput');
+            if (searchInput) searchInput.focus();
+        }, 10);
+
+    } else {
+        // Close
+        content.classList.add('hidden');
+        document.body.style.overflow = ''; // Unlock scroll
+    }
+}
+
+
+function populateSubjectBrowser() {
+    // 1. Check visibility conditions (same as old dropdown)
+    const container = document.getElementById('subjectFilterContainer');
     const allowedTabs = ['cases_qa', 'qa', 'casos_especificos', 'pontos_focais'];
+
     if (!STATE.activeTab || !allowedTabs.includes(STATE.activeTab)) {
-        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        if (container) container.classList.add('hidden');
         return;
     }
 
-    // Determine relevant data source: Current Active Tab Items
+    // 2. Scan Items
     let itemsToScan = [];
     if (STATE.activeTab && STATE.data[STATE.activeTab]) {
         itemsToScan = STATE.data[STATE.activeTab];
     }
 
     if (!itemsToScan || itemsToScan.length === 0) {
-        selects.forEach(select => select.parentElement.classList.add('hidden'));
+        if (container) container.classList.add('hidden');
         return;
     }
 
-    const subjects = new Set();
+    // Show container
+    if (container) container.classList.remove('hidden');
 
-    // Scan for Master_Title
+    // 3. Extract Subjects & Counts
+    const subjectCounts = {};
     itemsToScan.forEach(item => {
-        // Use standard 'Master_Title' key
-        if (item.Master_Title) {
-            subjects.add(item.Master_Title.trim());
-        } else if (item.Master_title) {
-            subjects.add(item.Master_title.trim());
-        }
-        // Fallback for legacy key if script hasn't run fully or cache issues
-        else if (item.titulo_mestre) {
-            subjects.add(item.titulo_mestre.trim());
+        let subj = item.Master_Title || item.Master_title || item.titulo_mestre;
+        if (subj) {
+            subj = subj.trim();
+            subjectCounts[subj] = (subjectCounts[subj] || 0) + 1;
         }
     });
 
-    const sortedSubjects = Array.from(subjects).sort();
+    // Create list of objects {name, count}
+    CURRENT_SUBJECTS_LIST = Object.keys(subjectCounts).map(name => ({
+        name: name,
+        count: subjectCounts[name]
+    })).sort((a, b) => a.name.localeCompare(b.name));
 
-    // Preserve selection
-    const currentVal = STATE.activeSubject || "";
+    // 4. Render Initial List
+    renderSubjectList(CURRENT_SUBJECTS_LIST);
 
-    let html = '<option value="">ASSUNTO</option>';
-    sortedSubjects.forEach(subj => {
-        const selected = subj === currentVal ? 'selected' : '';
-        html += `<option value="${subj}" ${selected}>${subj}</option>`;
-    });
-
-    selects.forEach(select => {
-        select.innerHTML = html;
-        // Hide if no subjects found
-        if (sortedSubjects.length === 0) {
-            select.parentElement.classList.add('hidden');
+    // 5. Update Button Label based on current selection
+    const labelEl = document.getElementById('currentSubjectLabel');
+    if (labelEl) {
+        labelEl.textContent = STATE.activeSubject ? STATE.activeSubject : 'ASSUNTOS';
+        if (STATE.activeSubject) {
+            labelEl.classList.add('text-black', 'dark:text-white');
+            labelEl.classList.remove('text-gray-500');
         } else {
-            select.parentElement.classList.remove('hidden');
-            select.parentElement.style.display = ''; // Ensure inline style is cleared
+            labelEl.classList.remove('text-black', 'dark:text-white');
+            labelEl.classList.add('text-gray-500');
         }
+    }
+}
+
+function renderSubjectList(list) {
+    const listContainer = document.getElementById('subjectListContainer');
+    if (!listContainer) return;
+
+    if (list.length === 0) {
+        listContainer.innerHTML = '<div class="p-4 text-center text-[10px] bg-gray-50 dark:bg-[#222] text-gray-400 font-bold uppercase tracking-widest">Nenhum assunto encontrado</div>';
+        return;
+    }
+
+    let html = '';
+
+    // Add "All Subjects" option at top if not searching? 
+    // Or just a clear button (which is implicit by unselecting or clearing filter elsewhere).
+    // Let's add a "Todos" option at top.
+    const isAllSelected = !STATE.activeSubject;
+    html += `
+        <button onclick="setSubjectFilter(null); toggleSubjectBrowser()" 
+            class="w-full text-left px-4 py-3 rounded-md transition-colors text-[10px] font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-800 last:border-0 ${isAllSelected ? 'bg-black text-white dark:bg-white dark:text-black' : 'hover:bg-gray-50 dark:hover:bg-[#1a1a1a] text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white'}">
+            TODOS OS ASSUNTOS
+        </button>
+    `;
+
+    list.forEach(item => {
+        const subjName = item.name;
+        const count = item.count;
+        const isActive = STATE.activeSubject === subjName;
+        const activeClass = isActive ? 'bg-black text-white dark:bg-white dark:text-black' : 'hover:bg-gray-50 dark:hover:bg-[#1a1a1a] text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white';
+        const countClass = isActive ? 'text-white/60 dark:text-black/60' : 'text-gray-300 group-hover:text-gray-400';
+
+        html += `
+            <button onclick="setSubjectFilter('${subjName.replace(/'/g, "\\'")}'); toggleSubjectBrowser()" 
+                class="group w-full text-left px-4 py-3 rounded-md transition-colors text-[10px] font-bold uppercase tracking-widest border-b border-gray-50 dark:border-gray-800 last:border-0 ${activeClass} flex justify-between items-center">
+                <span>${subjName}</span>
+                <span class="${countClass} text-[9px] font-mono">${count}</span>
+            </button>
+        `;
     });
+
+    listContainer.innerHTML = html;
+}
+
+function filterSubjectList(query) {
+    if (!query) {
+        renderSubjectList(CURRENT_SUBJECTS_LIST);
+        return;
+    }
+
+    const q = removeAccents(query.toLowerCase());
+    const filtered = CURRENT_SUBJECTS_LIST.filter(s => removeAccents(s.name.toLowerCase()).includes(q));
+    renderSubjectList(filtered);
 }
 
 
@@ -589,6 +669,7 @@ function clearSearch() {
     STATE.activeCategories = [];
     STATE.activeSources = [];
     STATE.activeFocusPoints = [];
+    STATE.activeSubject = null;
 
     // Opcional: Limpar mapa ao limpar busca? Geralmente não.
     // if(typeof clearBodyFilter === 'function') clearBodyFilter();
