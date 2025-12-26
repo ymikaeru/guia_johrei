@@ -158,13 +158,31 @@ function filterByBodyPoint(pointId, pointName) {
     // Apply filters to show cards below
     applyFilters();
 
-    // Scroll to results on mobile
+    // Switch Mobile View to the correct map (Front/Back/Detail)
+    if (window.innerWidth < 768) {
+        let targetView = 'front'; // Default
+
+        // Find which view contains the point
+        if (BODY_DATA.points.back.find(p => p.id === pointId)) {
+            targetView = 'back';
+        } else if (BODY_DATA.points.detail.find(p => p.id === pointId)) {
+            targetView = 'detail';
+        }
+
+        if (typeof switchMobileView === 'function') {
+            switchMobileView(targetView);
+        }
+    }
+
+    // REMOVED Autoscroll to results on mobile (User Request)
+    /*
     const contentList = document.getElementById('contentList');
     if (contentList && window.innerWidth < 1024) {
         setTimeout(() => {
             contentList.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 300);
     }
+    */
 }
 
 function highlightBodyPoint(element, name, event) {
