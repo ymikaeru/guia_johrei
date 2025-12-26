@@ -194,6 +194,29 @@ function renderBodyMapViews() {
     map.innerHTML = html;
 }
 
+// Mobile View Switcher
+function switchMobileView(viewId) {
+    // 1. Hide all views
+    ['front', 'back', 'detail'].forEach(id => {
+        const el = document.getElementById(`view-${id}`);
+        const btn = document.getElementById(`tab-${id}`);
+        if (el) el.classList.add('hidden');
+        if (btn) {
+            btn.classList.remove('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
+            btn.classList.add('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+        }
+    });
+
+    // 2. Show target view
+    const targetEl = document.getElementById(`view-${viewId}`);
+    const targetBtn = document.getElementById(`tab-${viewId}`);
+
+    if (targetEl) targetEl.classList.remove('hidden');
+    if (targetBtn) {
+        targetBtn.classList.remove('bg-white', 'dark:bg-black', 'text-gray-400', 'border-gray-200', 'dark:border-gray-800');
+        targetBtn.classList.add('bg-black', 'text-white', 'border-black', 'dark:bg-white', 'dark:text-black');
+    }
+}
 
 
 // --- TABLET FILTER MODAL ---
