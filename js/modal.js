@@ -208,11 +208,21 @@ function openModal(i, explicitItem = null) {
     // Prepare info_pt html if it exists
     const infoHtml = item.info_pt ? `<br><br><p class="text-sm text-gray-500 italic border-t pt-2 mt-4">${item.info_pt}</p>` : '';
 
+    // Expand query with synonyms for rich highlighting
+    let effectiveQuery = searchQuery;
+    if (searchQuery && typeof SearchEngine !== 'undefined' && typeof SearchEngine.getRelatedTerms === 'function') {
+        const related = SearchEngine.getRelatedTerms(searchQuery);
+        // Join with pipe for regex OR logic in formatBodyText
+        if (related.length > 0) {
+            effectiveQuery = related.join('|');
+        }
+    }
+
     // Render all three views
-    document.getElementById('contentPT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints) + infoHtml;
-    document.getElementById('contentJP').innerHTML = formatBodyText(jp, searchQuery, item.focusPoints);
-    document.getElementById('contentComparePT').innerHTML = formatBodyText(pt, searchQuery, item.focusPoints) + infoHtml;
-    document.getElementById('contentCompareJP').innerHTML = formatBodyText(jp, searchQuery, item.focusPoints);
+    document.getElementById('contentPT').innerHTML = formatBodyText(pt, effectiveQuery, item.focusPoints) + infoHtml;
+    document.getElementById('contentJP').innerHTML = formatBodyText(jp, effectiveQuery, item.focusPoints);
+    document.getElementById('contentComparePT').innerHTML = formatBodyText(pt, effectiveQuery, item.focusPoints) + infoHtml;
+    document.getElementById('contentCompareJP').innerHTML = formatBodyText(jp, effectiveQuery, item.focusPoints);
 
     const fpContainer = document.getElementById('modalFocusContainer');
     const showFocusPoints = true;
